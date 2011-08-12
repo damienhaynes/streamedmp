@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-	<id>7986</id>
+  <id>7986</id>
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-	<controls>
+  <controls>
     <import>MyFilmsDummy.xml</import>
     <control>
       <description>Default Background</description>
@@ -14,8 +14,7 @@
       <width>1280</width>
       <height>720</height>
       <texture>hover_moving pictures.png</texture>
-    </control>    
-  
+    </control>
     <control>
       <description>Fanart</description>
       <type>image</type>
@@ -40,7 +39,6 @@
       <animation effect="fade" time="300">visible</animation>
       <animation effect="fade" time="300" delay="300">hidden</animation>
     </control>
-
     <import>MyFilmsBackgroundOverlays.xml</import>
     <import>MyFilmsTopBar.xml</import>
     <import>MyFilmsHiddenMenu.xml</import>
@@ -48,24 +46,24 @@
     <import>MyFilmsIconLayout.xml</import>
     <import>MyFilmsFilmstripLayout.xml</import>
     <import>MyFilmsFacade.xml</import>
-    
-		<control>
+    <import>common.scrollingpopup.xml</import>
+    <control>
       <description>Logos groups 1 + 2 combined logos</description>
-			<type>image</type>
-			<id>2012</id>
-			<posX>25</posX>
+      <type>image</type>
+      <id>2012</id>
+      <posX>25</posX>
       <posY>684</posY>
-			<width>900</width>
-			<height>32</height>
-			<texture>#myfilms.logos_id2012</texture>
-			<keepaspectratio>yes</keepaspectratio>
-			<spaceBetweenItems>2</spaceBetweenItems>
-			<animation effect="fade" time="250">WindowClose</animation>	
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<visible>!facadeview.filmstrip+!facadeview.coverflow+!control.isvisible(34)</visible>
-		</control>
-    
-		<import>common.overlays.xml</import>
+      <width>900</width>
+      <height>32</height>
+      <texture>#myfilms.logos_id2012</texture>
+      <keepaspectratio>yes</keepaspectratio>
+      <spaceBetweenItems>2</spaceBetweenItems>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <visible>!facadeview.filmstrip+!facadeview.coverflow+!control.isvisible(34)</visible>
+    </control>
+    <import>common.overlays.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:1cd033ac6cbf4b783467b84452926798-->
