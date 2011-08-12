@@ -39,6 +39,21 @@
       <texture>overlay_topbar.png</texture>
       <visible>![facadeview.list|facadeview.smallicons|facadeview.largeicons|facadeview.playlist|facadeview.filmstrip]</visible>
     </control>
+    <control>
+      <description>Parental Controls Lock Indicator</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>1030</posX>
+      <posY>8</posY>
+      <width>36</width>
+      <height>36</height>
+      <texture>parentallock.png</texture>
+      <visible>string.equals(#MyVideos.PinLocked, True)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
     <import>myvideoHiddenMenu.xml</import>
     <import>myvideoListView.xml</import>
     <import>myvideoFilmstripView.xml</import>
