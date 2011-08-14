@@ -769,8 +769,14 @@ namespace StreamedMPConfig
 
       // get list of the 3 most recently added episodes in tvseries database
       // use file created date rather than added as we dont want to see all episodes for new databases
-      RecentlyAdded.recentAddedEpisodes = DBEpisode.GetMostRecent(MostRecentType.Created, 30, 3, MiscConfigGUI.FilterWatchedInRecentlyAdded);
-      
+      try
+      {
+          RecentlyAdded.recentAddedEpisodes = DBEpisode.GetMostRecent(MostRecentType.Created, 30, 3, MiscConfigGUI.FilterWatchedInRecentlyAdded);
+      }
+      catch (Exception e)
+      {
+          smcLog.WriteLog("Error: ", e.Message);
+      }
       // Clear the properties first
       for (int i = 1; i < 4; i++)
       {
