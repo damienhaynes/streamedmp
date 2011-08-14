@@ -21,7 +21,8 @@ namespace StreamedMPConfig
       FilterWatchedRecents = 6,
       LargeFontSize = 7,
       UnfocusedAlpha = 8,
-      ListColors = 9
+      ListColors = 9,
+      ListControlScrollPopup = 10,
     }  
     #endregion
 
@@ -64,6 +65,9 @@ namespace StreamedMPConfig
 
     [SkinControl((int)GUIControls.ListColors)]
     protected GUIButtonControl btnListColors = null;
+
+    [SkinControl((int)GUIControls.ListControlScrollPopup)]
+    protected GUIToggleButtonControl btnListControlScrollPopup = null;
     #endregion
 
     #region Constructor
@@ -84,21 +88,24 @@ namespace StreamedMPConfig
     public static string RemoteColor { get; set; }
     public static int UnfocusedAlphaListItems { get; set; }
     public static int UnfocusedAlphaThumbs { get; set; }
-    public static bool UseLargeFonts { get; set; }    
+    public static bool UseLargeFonts { get; set; }
+    public static bool ShowListScrollingPopup { get; set; }
     #endregion
 
     #region Public Methods
     public static void SetProperties()
     {
-      StreamedMPConfig.SetProperty("#StreamedMP.ActionMenu.Image", MiscConfigGUI.ShowHiddenMenuImage ? "Action_menu.png" : "-");
-      StreamedMPConfig.SetProperty("#StreamedMP.RoundedPosters.Image", MiscConfigGUI.ShowRoundedImages ? "round.poster.frame.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.ActionMenu.Image", ShowHiddenMenuImage ? "Action_menu.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.RoundedPosters.Image", ShowRoundedImages ? "round.poster.frame.png" : "-");
 
       // Icons in Artwork require a few image properties
-      StreamedMPConfig.SetProperty("#StreamedMP.Icons.Background", MiscConfigGUI.ShowIconsInArtwork ? "overlaywubg.png" : "-");
-      StreamedMPConfig.SetProperty("#StreamedMP.Icons.Watched", MiscConfigGUI.ShowIconsInArtwork ? "overlaywatched.png" : "-");
-      StreamedMPConfig.SetProperty("#StreamedMP.Icons.UnWatched", MiscConfigGUI.ShowIconsInArtwork ? "overlayunwatched.png" : "-");
-      StreamedMPConfig.SetProperty("#StreamedMP.Icons.NAWatched", MiscConfigGUI.ShowIconsInArtwork ? "overlaywatchedna.png" : "-");
-      StreamedMPConfig.SetProperty("#StreamedMP.Icons.NAUnWatched", MiscConfigGUI.ShowIconsInArtwork ? "overlayunwatchedna.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.Icons.Background", ShowIconsInArtwork ? "overlaywubg.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.Icons.Watched", ShowIconsInArtwork ? "overlaywatched.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.Icons.UnWatched", ShowIconsInArtwork ? "overlayunwatched.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.Icons.NAWatched", ShowIconsInArtwork ? "overlaywatchedna.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.Icons.NAUnWatched", ShowIconsInArtwork ? "overlayunwatchedna.png" : "-");
+
+      StreamedMPConfig.SetProperty("#StreamedMP.ListScrollPopup", ShowListScrollingPopup ? "yes" : "no");
     }
 
     public static void SetColors()
@@ -501,6 +508,10 @@ namespace StreamedMPConfig
       btnLargeFontSize.Selected = UseLargeFonts;
       btnLargeFontSize.Label = Translation.UseLargeFonts;
 
+      // List Control Scrolling Popup
+      btnListControlScrollPopup.Selected = ShowListScrollingPopup;
+      btnListControlScrollPopup.Label = Translation.ShowListScrollingPopup;
+
       // Unfocused Alpha Settings
       btnUnfocusedAlpha.Label = string.Format("{0} ...", Translation.UnfocusedAlpha);
 
@@ -514,7 +525,8 @@ namespace StreamedMPConfig
       ShowRoundedImages = btnRoundedImages.Selected;
       ShowIconsInArtwork = btnIconsInArtwork.Selected;
       EnablePlayMostRecents = btnPlayRecents.Selected;
-      
+      ShowListScrollingPopup = btnListControlScrollPopup.Selected;
+
       // Update BasicHome RecentlyAdded with new setting
       if (FilterWatchedInRecentlyAdded != btnFilterWatchedRecents.Selected)
       {

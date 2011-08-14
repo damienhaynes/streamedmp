@@ -10,7 +10,7 @@
       <height>90</height>
       <width>90</width>
       <texture>popup.png</texture>
-      <visible>facadeview.list+[string.contains(#scrolling.up,yes)|string.contains(#scrolling.down,yes)]</visible>
+      <visible>facadeview.list+[string.contains(#scrolling.up,yes)|string.contains(#scrolling.down,yes)]+string.contains(#StreamedMP.ListScrollPopup,yes)</visible>
       <animation effect="slide" start="0,50" end="0,0" delay="250" time="150" reversible="true">visiblechange</animation>
     </control>
     <control>
@@ -27,7 +27,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
-      <visible>facadeview.list+[string.contains(#scrolling.up,yes)|string.contains(#scrolling.down,yes)]</visible>
+      <visible>facadeview.list+[string.contains(#scrolling.up,yes)|string.contains(#scrolling.down,yes)]+string.contains(#StreamedMP.ListScrollPopup,yes)</visible>
       <animation effect="slide" start="0,50" end="0,0" delay="250" time="150" reversible="true">visiblechange</animation>
     </control>
   </controls>
