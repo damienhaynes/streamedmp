@@ -59,6 +59,30 @@
     <disabledcolor>ffFFFFFF</disabledcolor>
     <textcolorNoFocus>ffFFFFFF</textcolorNoFocus>
   </style>
+  <style Name="skinbutton">
+    <textcolor>ffffffff</textcolor>
+    <textcolorNoFocus>bfffffff</textcolorNoFocus>
+    <font>mediastream12tc</font>
+    <textYOff>8</textYOff>
+    <textXOff>20</textXOff>
+    <width>280</width>
+    <height>40</height>
+    <textureFocus>tv_button_focus.png</textureFocus>
+    <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+  </style>
+  <style Name="skintogglebutton">
+    <textcolor>ffffffff</textcolor>
+    <textcolorNoFocus>bfffffff</textcolorNoFocus>
+    <font>mediastream12tc</font>
+    <textYOff>8</textYOff>
+    <textXOff>20</textXOff>
+    <width>280</width>
+    <height>40</height>
+    <textureFocus>tv_button_focus_ledon.png</textureFocus>
+    <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
+    <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
+    <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
+  </style>
   <style Name="settingsmaintogglebutton">
     <posX>251</posX>
     <width>595</width>
@@ -139,7 +163,7 @@
     <width>200</width>
     <font>mediastream11tc</font>
     <textcolor>ff909090</textcolor>
-		<shadowAngle>45</shadowAngle>
+    <shadowAngle>45</shadowAngle>
     <shadowDistance>2</shadowDistance>
     <shadowColor>ff111111</shadowColor>
   </style>
@@ -148,7 +172,7 @@
     <width>380</width>
     <font>mediastream11tc</font>
     <textcolor>ffffffff</textcolor>
-		<shadowAngle>45</shadowAngle>
+    <shadowAngle>45</shadowAngle>
     <shadowDistance>2</shadowDistance>
     <shadowColor>ff222222</shadowColor>
   </style>
@@ -764,4 +788,4 @@
     <shadow>no</shadow>
   </control>
 </controls>
-<!--Checksum:f7ae5ce38ff93bdfdee4e80dcc3c0037-->
+<!--Checksum:de0cd1e522d6430b6047d14b9d371611-->
