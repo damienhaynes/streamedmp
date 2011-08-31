@@ -11,7 +11,6 @@
     <import>mymusic.autofanart.xml</import>
     <control>
       <description>music overlay image</description>
-      <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -26,7 +25,9 @@
       <posX>50</posX>
       <posY>250</posY>      
       <layout>StackLayout</layout>
-      <control>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <control Style="skinbutton">
         <description>Search Phrase Button</description>
         <type>button</type>
         <id>2</id>
@@ -34,20 +35,10 @@
         <onup>17</onup>
         <ondown>7</ondown>
         <onright>50</onright>
-        <onleft>2</onleft>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <height>40</height>
+        <onleft>2</onleft>        
         <width>300</width>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
-      <control>
+      <control Style="skinbutton">
         <description>Search History Button</description>
         <type>button</type>
         <id>7</id>
@@ -56,94 +47,40 @@
         <ondown>6</ondown>
         <onright>50</onright>
         <onleft>7</onleft>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
         <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
-      <control>
+      <control Style="skinbutton">
         <description>Search Fields Button</description>
         <type>button</type>
         <id>6</id>
         <label>#StreamedMP.SearchFields</label>
         <onup>7</onup>
-        <ondown>5</ondown>
+        <ondown>10</ondown>
         <onright>50</onright>
         <onleft>6</onleft>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
         <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
-      <control>
-        <description>Search Type Select Button</description>
-        <type>selectbutton</type>
-        <id>5</id>
+      <control Style="skinbutton">
+        <description>Search Type Button</description>
+        <type>button</type>
+        <id>10</id>
         <label>#StreamedMP.SearchType</label>
-        <subitems>
-          <subitem>Equals</subitem>
-          <subitem>Starts with</subitem>
-          <subitem>Contains</subitem>
-          <subitem>Ends with</subitem>
-        </subitems>
-        <selected>2</selected>
         <onup>6</onup>
         <ondown>3</ondown>
         <onright>50</onright>
-        <onleft>5</onleft>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
+        <onleft>10</onleft>
         <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <texturebg>tv_button_focus.png</texturebg>
-        <textureLeft>arrow_round_left_focus.png</textureLeft>
-        <textureLeftFocus>arrow_round_left_nofocus.png</textureLeftFocus>
-        <textureRight>arrow_round_right_nofocus.png</textureRight>
-        <textureRightFocus>arrow_round_right_focus.png</textureRightFocus>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
-      <control>
+      <control Style="skintogglebutton">
         <description>Case Sensitivity Button</description>
         <type>togglebutton</type>
         <id>3</id>
         <label>#StreamedMP.CaseSensitive</label>
-        <onup>5</onup>
+        <onup>10</onup>
         <ondown>2</ondown>
         <onright>50</onright>
         <onleft>3</onleft>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
         <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <textureFocus>tv_button_focus_ledon.png</textureFocus>
-        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
-        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
-        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
     </control>
     <control>
