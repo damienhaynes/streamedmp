@@ -278,6 +278,9 @@ namespace StreamedMPEditor
     randomFanartSetting randomFanart = new randomFanartSetting();
     mostRecentDisplaySelection mrDisplaySelection = new mostRecentDisplaySelection();
     getButtonTexture buttonTexture = new getButtonTexture();
+    
+    public static overlaySelectedState ovss = new overlaySelectedState();
+    
     //Menu Theme 
     Form menuThemeForm = new Form();
     Button btThemeOk = new Button();
@@ -1883,6 +1886,7 @@ namespace StreamedMPEditor
       if (itemsOnMenubar.SelectedIndex != -1)
       {
         formSubMenuDesigner subMenuForm = new formSubMenuDesigner();
+        setOverlayStates();
         subMenuForm.createSubmenu(itemsOnMenubar.SelectedIndex);
 
         // If we have added a submenu then disable Background sharing - get background issues outherwise
@@ -1906,25 +1910,54 @@ namespace StreamedMPEditor
         helper.showError("Please Highlight Menu Item to edit Overlays to", errorCode.info);
     }
 
-    void setOverlayStates()
+    public  void setOverlayStates()
     {
       mrDisplaySelection.setEnableState(displayMostRecent.freeDriveSpace, cbFreeDriveSpaceOverlay.Checked);
+      ovss.FreeDriveSpace = cbFreeDriveSpaceOverlay.Checked;
+
       mrDisplaySelection.setEnableState(displayMostRecent.htpcInfo, cbHtpcInfoOverlay.Checked);
+      ovss.HTPCInfo = cbHtpcInfoOverlay.Checked;
+
       mrDisplaySelection.setEnableState(displayMostRecent.music, cbEnableRecentMusic.Checked);
+      ovss.RecentMusic = cbEnableRecentMusic.Checked;
+
       mrDisplaySelection.setEnableState(displayMostRecent.powerControl, cbPowerControlOverlay.Checked);
+      ovss.PowerControl = cbPowerControlOverlay.Checked;
+
       mrDisplaySelection.setEnableState(displayMostRecent.recordedTV, cbEnableRecentRecordedTV.Checked);
+      ovss.RecordedTV = cbEnableRecentRecordedTV.Checked;
+
       mrDisplaySelection.setEnableState(displayMostRecent.sleepControl, cbSleepControlOverlay.Checked);
+      ovss.SleepControl = cbSleepControlOverlay.Checked;
+
       mrDisplaySelection.setEnableState(displayMostRecent.stocks, cbSocksOverlay.Checked);
+      ovss.Stocks = cbSocksOverlay.Checked;
+
       mrDisplaySelection.setEnableState(displayMostRecent.updateControl, cbUpdateControlOverlay.Checked);
+      ovss.UpdateControl = cbUpdateControlOverlay.Checked;
 
+      mrDisplaySelection.setEnableState(displayMostRecent.myemailmanager, cbMyeMailManager.Checked);
+      ovss.MyMailManager = cbMyeMailManager.Checked;
+
+      ovss.Movies = false;
+      ovss.TVSeries = false;
       mrDisplaySelection.setEnableState(displayMostRecent.tvSeries, false);
-      if (cbMostRecentTvSeries.Checked || cbTVSeriesRecentWatched.Checked)
-        mrDisplaySelection.setEnableState(displayMostRecent.tvSeries, true);
-
       mrDisplaySelection.setEnableState(displayMostRecent.movies, false);
+
+      if (cbMostRecentTvSeries.Checked || cbTVSeriesRecentWatched.Checked)
+      {
+        mrDisplaySelection.setEnableState(displayMostRecent.tvSeries, true);
+        ovss.TVSeries = true;
+      }
+
       if (cbMostRecentMovPics.Checked || cbMovPicsRecentWatched.Checked)
+      {
         mrDisplaySelection.setEnableState(displayMostRecent.movies, cbMostRecentMovPics.Checked);
+        ovss.Movies = true;
+      }
     }
+
+    
 
     private void cboParameterViews_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -2696,6 +2729,16 @@ namespace StreamedMPEditor
     }
 
     #endregion
+
+    private void noFocusAlphaSlider_ValueChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    private void focusAlphaSlider_ValueChanged(object sender, EventArgs e)
+    {
+
+    }
 
 
   }
