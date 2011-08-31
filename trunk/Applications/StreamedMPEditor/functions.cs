@@ -801,16 +801,6 @@ namespace StreamedMPEditor
       }
     }
 
-    private void focusAlphaSlider_ValueChanged(object sender, EventArgs e)
-    {
-      focusAlpha.Text = focusAlphaSlider.Value.ToString("X");
-    }
-
-    private void noFocusAlphaSlider_ValueChanged(object sender, EventArgs e)
-    {
-      noFocusAlpha.Text = noFocusAlphaSlider.Value.ToString("X");
-    }
-
     private void focusAlpha_TextChanged(object sender, EventArgs e)
     {
       if (string.IsNullOrEmpty(focusAlpha.Text))
@@ -2266,6 +2256,22 @@ namespace StreamedMPEditor
       public string mymenu;
       public string mymenu_submenu;
       public string mymenu_submenutop;
+    }
+
+
+    public class overlaySelectedState
+    {
+      public bool FreeDriveSpace { get; set; }
+      public bool HTPCInfo { get; set; }
+      public bool RecentMusic { get; set; }
+      public bool PowerControl { get; set; }
+      public bool RecordedTV { get; set; }
+      public bool SleepControl { get; set; }
+      public bool Stocks { get; set; }
+      public bool UpdateControl { get; set; }
+      public bool Movies { get; set; }
+      public bool TVSeries { get; set; }
+      public bool MyMailManager { get; set; }
     }
   }
 }

@@ -13,9 +13,13 @@ namespace StreamedMPEditor
   public partial class formSubMenuDesigner : Form
   {
     #region enums
+
     #endregion
 
     #region Variables
+
+    //public StreamedMPEditor.formStreamedMpEditor.overlaySelectedState ovss = new formStreamedMpEditor.overlaySelectedState();
+    static mostRecentDisplaySelection mrDisplaySelection = new mostRecentDisplaySelection();
 
     List<string> rawXMLFileNames = new List<string>();
     List<string> prettyFileNames = new List<string>();
@@ -713,7 +717,7 @@ namespace StreamedMPEditor
     {
       if (lboxSubMenuLevel1.SelectedIndex >= 0)
       {
-        mostRecentDisplaySelection mrDisplaySelection = new mostRecentDisplaySelection();
+        setEnabledState();
         mrDisplaySelection.mrToDisplay = subMenuLevel1[lboxSubMenuLevel1.SelectedIndex].showMostRecent;
         mrDisplaySelection.ShowDialog();
         subMenuLevel1[lboxSubMenuLevel1.SelectedIndex].showMostRecent = mrDisplaySelection.mrToDisplay;
@@ -724,12 +728,29 @@ namespace StreamedMPEditor
     {
       if (lboxSubMenuLevel2.SelectedIndex >= 0)
       {
-        mostRecentDisplaySelection mrDisplaySelection = new mostRecentDisplaySelection();
+        setEnabledState();
         mrDisplaySelection.mrToDisplay = subMenuLevel2[lboxSubMenuLevel2.SelectedIndex].showMostRecent;
         mrDisplaySelection.ShowDialog();
         subMenuLevel2[lboxSubMenuLevel2.SelectedIndex].showMostRecent = mrDisplaySelection.mrToDisplay;
       };
     }
+
+
+    static void setEnabledState()
+    {
+      mrDisplaySelection.setEnableState(formStreamedMpEditor.displayMostRecent.freeDriveSpace, StreamedMPEditor.formStreamedMpEditor.ovss.FreeDriveSpace);
+      mrDisplaySelection.setEnableState(formStreamedMpEditor.displayMostRecent.htpcInfo, StreamedMPEditor.formStreamedMpEditor.ovss.HTPCInfo);
+      mrDisplaySelection.setEnableState(formStreamedMpEditor.displayMostRecent.movies, StreamedMPEditor.formStreamedMpEditor.ovss.Movies);
+      mrDisplaySelection.setEnableState(formStreamedMpEditor.displayMostRecent.music, StreamedMPEditor.formStreamedMpEditor.ovss.RecentMusic);
+      mrDisplaySelection.setEnableState(formStreamedMpEditor.displayMostRecent.myemailmanager, StreamedMPEditor.formStreamedMpEditor.ovss.MyMailManager);
+      mrDisplaySelection.setEnableState(formStreamedMpEditor.displayMostRecent.powerControl, StreamedMPEditor.formStreamedMpEditor.ovss.PowerControl);
+      mrDisplaySelection.setEnableState(formStreamedMpEditor.displayMostRecent.recordedTV, StreamedMPEditor.formStreamedMpEditor.ovss.RecordedTV);
+      mrDisplaySelection.setEnableState(formStreamedMpEditor.displayMostRecent.sleepControl, StreamedMPEditor.formStreamedMpEditor.ovss.SleepControl);
+      mrDisplaySelection.setEnableState(formStreamedMpEditor.displayMostRecent.stocks, StreamedMPEditor.formStreamedMpEditor.ovss.Stocks);
+      mrDisplaySelection.setEnableState(formStreamedMpEditor.displayMostRecent.tvSeries, StreamedMPEditor.formStreamedMpEditor.ovss.TVSeries);
+      mrDisplaySelection.setEnableState(formStreamedMpEditor.displayMostRecent.updateControl, StreamedMPEditor.formStreamedMpEditor.ovss.UpdateControl);
+    }
+
 
     private void btSaveAndClose_Click(object sender, EventArgs e)
     {

@@ -132,9 +132,7 @@
       this.horizontalContextLabels = new System.Windows.Forms.CheckBox();
       this.globalSettings = new System.Windows.Forms.GroupBox();
       this.panel3 = new System.Windows.Forms.Panel();
-      this.noFocusAlphaSlider = new MB.Controls.ColorSlider();
       this.panel1 = new System.Windows.Forms.Panel();
-      this.focusAlphaSlider = new MB.Controls.ColorSlider();
       this.cdNoFocusItem = new System.Windows.Forms.PictureBox();
       this.cdFocusItem = new System.Windows.Forms.PictureBox();
       this.cbDisableExitMenu = new System.Windows.Forms.CheckBox();
@@ -275,6 +273,8 @@
       this.pbActiveSplashScreen = new System.Windows.Forms.PictureBox();
       this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
       this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+      this.noFocusAlphaSlider = new MB.Controls.ColorSlider();
+      this.focusAlphaSlider = new MB.Controls.ColorSlider();
       this.StreamedMPMenu.SuspendLayout();
       this.menuStyleTab.SuspendLayout();
       this.menuStylesGroup.SuspendLayout();
@@ -1535,31 +1535,6 @@
       this.panel3.Size = new System.Drawing.Size(194, 10);
       this.panel3.TabIndex = 25;
       // 
-      // noFocusAlphaSlider
-      // 
-      this.noFocusAlphaSlider.BackColor = System.Drawing.Color.Transparent;
-      this.noFocusAlphaSlider.BackgroundImage = global::StreamedMPEditor.Properties.Resources.slider;
-      this.noFocusAlphaSlider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-      this.noFocusAlphaSlider.BarInnerColor = System.Drawing.Color.Transparent;
-      this.noFocusAlphaSlider.BarOuterColor = System.Drawing.Color.Transparent;
-      this.noFocusAlphaSlider.BarPenColor = System.Drawing.Color.Transparent;
-      this.noFocusAlphaSlider.BorderRoundRectSize = new System.Drawing.Size(8, 8);
-      this.noFocusAlphaSlider.DrawFocusRectangle = false;
-      this.noFocusAlphaSlider.ElapsedInnerColor = System.Drawing.Color.Transparent;
-      this.noFocusAlphaSlider.ElapsedOuterColor = System.Drawing.Color.Transparent;
-      this.noFocusAlphaSlider.LargeChange = ((uint)(5u));
-      this.noFocusAlphaSlider.Location = new System.Drawing.Point(-1, -1);
-      this.noFocusAlphaSlider.Maximum = 255;
-      this.noFocusAlphaSlider.MouseEffects = false;
-      this.noFocusAlphaSlider.Name = "noFocusAlphaSlider";
-      this.noFocusAlphaSlider.Size = new System.Drawing.Size(194, 10);
-      this.noFocusAlphaSlider.SmallChange = ((uint)(1u));
-      this.noFocusAlphaSlider.TabIndex = 49;
-      this.noFocusAlphaSlider.Text = "colorSlider1";
-      this.noFocusAlphaSlider.ThumbRoundRectSize = new System.Drawing.Size(1, 1);
-      this.noFocusAlphaSlider.ThumbSize = 3;
-      this.noFocusAlphaSlider.ValueChanged += new System.EventHandler(this.noFocusAlphaSlider_ValueChanged);
-      // 
       // panel1
       // 
       this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1568,31 +1543,6 @@
       this.panel1.Name = "panel1";
       this.panel1.Size = new System.Drawing.Size(194, 10);
       this.panel1.TabIndex = 25;
-      // 
-      // focusAlphaSlider
-      // 
-      this.focusAlphaSlider.BackColor = System.Drawing.Color.Transparent;
-      this.focusAlphaSlider.BackgroundImage = global::StreamedMPEditor.Properties.Resources.slider;
-      this.focusAlphaSlider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-      this.focusAlphaSlider.BarInnerColor = System.Drawing.Color.Transparent;
-      this.focusAlphaSlider.BarOuterColor = System.Drawing.Color.Transparent;
-      this.focusAlphaSlider.BarPenColor = System.Drawing.Color.Transparent;
-      this.focusAlphaSlider.BorderRoundRectSize = new System.Drawing.Size(8, 8);
-      this.focusAlphaSlider.DrawFocusRectangle = false;
-      this.focusAlphaSlider.ElapsedInnerColor = System.Drawing.Color.Transparent;
-      this.focusAlphaSlider.ElapsedOuterColor = System.Drawing.Color.Transparent;
-      this.focusAlphaSlider.LargeChange = ((uint)(5u));
-      this.focusAlphaSlider.Location = new System.Drawing.Point(0, 0);
-      this.focusAlphaSlider.Maximum = 255;
-      this.focusAlphaSlider.MouseEffects = false;
-      this.focusAlphaSlider.Name = "focusAlphaSlider";
-      this.focusAlphaSlider.Size = new System.Drawing.Size(194, 10);
-      this.focusAlphaSlider.SmallChange = ((uint)(1u));
-      this.focusAlphaSlider.TabIndex = 48;
-      this.focusAlphaSlider.Text = "colorSlider1";
-      this.focusAlphaSlider.ThumbRoundRectSize = new System.Drawing.Size(1, 1);
-      this.focusAlphaSlider.ThumbSize = 3;
-      this.focusAlphaSlider.ValueChanged += new System.EventHandler(this.focusAlphaSlider_ValueChanged);
       // 
       // cdNoFocusItem
       // 
@@ -2051,14 +2001,15 @@
       this.groupBox6.Size = new System.Drawing.Size(709, 141);
       this.groupBox6.TabIndex = 19;
       this.groupBox6.TabStop = false;
+      this.groupBox6.Text = "Select Overlays";
       // 
-      // cbMyMailManager
+      // cbMyeMailManager
       // 
       this.cbMyeMailManager.AutoSize = true;
       this.cbMyeMailManager.Enabled = false;
-      this.cbMyeMailManager.Location = new System.Drawing.Point(306, 84);
+      this.cbMyeMailManager.Location = new System.Drawing.Point(302, 92);
       this.cbMyeMailManager.Name = "cbMyeMailManager";
-      this.cbMyeMailManager.Size = new System.Drawing.Size(170, 17);
+      this.cbMyeMailManager.Size = new System.Drawing.Size(176, 17);
       this.cbMyeMailManager.TabIndex = 19;
       this.cbMyeMailManager.Text = "Enable MyeMailManger Overlay";
       this.cbMyeMailManager.UseVisualStyleBackColor = true;
@@ -2080,7 +2031,7 @@
       // 
       this.cbSocksOverlay.AutoSize = true;
       this.cbSocksOverlay.Enabled = false;
-      this.cbSocksOverlay.Location = new System.Drawing.Point(306, 38);
+      this.cbSocksOverlay.Location = new System.Drawing.Point(302, 46);
       this.cbSocksOverlay.Name = "cbSocksOverlay";
       this.cbSocksOverlay.Size = new System.Drawing.Size(192, 17);
       this.cbSocksOverlay.TabIndex = 15;
@@ -2091,7 +2042,7 @@
       // btConfigureFreeDriveSpace
       // 
       this.btConfigureFreeDriveSpace.Enabled = false;
-      this.btConfigureFreeDriveSpace.Location = new System.Drawing.Point(608, 11);
+      this.btConfigureFreeDriveSpace.Location = new System.Drawing.Point(598, 19);
       this.btConfigureFreeDriveSpace.Name = "btConfigureFreeDriveSpace";
       this.btConfigureFreeDriveSpace.Size = new System.Drawing.Size(75, 23);
       this.btConfigureFreeDriveSpace.TabIndex = 17;
@@ -2102,7 +2053,7 @@
       // cbEnableRecentMusic
       // 
       this.cbEnableRecentMusic.AutoSize = true;
-      this.cbEnableRecentMusic.Location = new System.Drawing.Point(14, 14);
+      this.cbEnableRecentMusic.Location = new System.Drawing.Point(14, 23);
       this.cbEnableRecentMusic.Name = "cbEnableRecentMusic";
       this.cbEnableRecentMusic.Size = new System.Drawing.Size(162, 17);
       this.cbEnableRecentMusic.TabIndex = 10;
@@ -2114,7 +2065,7 @@
       // 
       this.cbHtpcInfoOverlay.AutoSize = true;
       this.cbHtpcInfoOverlay.Enabled = false;
-      this.cbHtpcInfoOverlay.Location = new System.Drawing.Point(306, 61);
+      this.cbHtpcInfoOverlay.Location = new System.Drawing.Point(302, 69);
       this.cbHtpcInfoOverlay.Name = "cbHtpcInfoOverlay";
       this.cbHtpcInfoOverlay.Size = new System.Drawing.Size(148, 17);
       this.cbHtpcInfoOverlay.TabIndex = 16;
@@ -2125,7 +2076,7 @@
       // cbEnableRecentRecordedTV
       // 
       this.cbEnableRecentRecordedTV.AutoSize = true;
-      this.cbEnableRecentRecordedTV.Location = new System.Drawing.Point(14, 37);
+      this.cbEnableRecentRecordedTV.Location = new System.Drawing.Point(14, 47);
       this.cbEnableRecentRecordedTV.Name = "cbEnableRecentRecordedTV";
       this.cbEnableRecentRecordedTV.Size = new System.Drawing.Size(205, 17);
       this.cbEnableRecentRecordedTV.TabIndex = 11;
@@ -2137,7 +2088,7 @@
       // 
       this.cbFreeDriveSpaceOverlay.AutoSize = true;
       this.cbFreeDriveSpaceOverlay.Enabled = false;
-      this.cbFreeDriveSpaceOverlay.Location = new System.Drawing.Point(306, 15);
+      this.cbFreeDriveSpaceOverlay.Location = new System.Drawing.Point(302, 23);
       this.cbFreeDriveSpaceOverlay.Name = "cbFreeDriveSpaceOverlay";
       this.cbFreeDriveSpaceOverlay.Size = new System.Drawing.Size(184, 17);
       this.cbFreeDriveSpaceOverlay.TabIndex = 12;
@@ -2149,7 +2100,7 @@
       // 
       this.cbSleepControlOverlay.AutoSize = true;
       this.cbSleepControlOverlay.Enabled = false;
-      this.cbSleepControlOverlay.Location = new System.Drawing.Point(14, 96);
+      this.cbSleepControlOverlay.Location = new System.Drawing.Point(14, 95);
       this.cbSleepControlOverlay.Name = "cbSleepControlOverlay";
       this.cbSleepControlOverlay.Size = new System.Drawing.Size(164, 17);
       this.cbSleepControlOverlay.TabIndex = 14;
@@ -2161,7 +2112,7 @@
       // 
       this.cbPowerControlOverlay.AutoSize = true;
       this.cbPowerControlOverlay.Enabled = false;
-      this.cbPowerControlOverlay.Location = new System.Drawing.Point(14, 73);
+      this.cbPowerControlOverlay.Location = new System.Drawing.Point(14, 71);
       this.cbPowerControlOverlay.Name = "cbPowerControlOverlay";
       this.cbPowerControlOverlay.Size = new System.Drawing.Size(167, 17);
       this.cbPowerControlOverlay.TabIndex = 13;
@@ -2289,7 +2240,7 @@
       this.pMovPicsRecent.Controls.Add(this.cbMostRecentMovPics);
       this.pMovPicsRecent.Location = new System.Drawing.Point(6, 127);
       this.pMovPicsRecent.Name = "pMovPicsRecent";
-      this.pMovPicsRecent.Size = new System.Drawing.Size(283, 108);
+      this.pMovPicsRecent.Size = new System.Drawing.Size(283, 103);
       this.pMovPicsRecent.TabIndex = 5;
       this.pMovPicsRecent.Click += new System.EventHandler(this.pMovPicsRecent_Click);
       // 
@@ -2310,7 +2261,7 @@
       this.gbMovPicsOptions.Enabled = false;
       this.gbMovPicsOptions.Location = new System.Drawing.Point(9, 52);
       this.gbMovPicsOptions.Name = "gbMovPicsOptions";
-      this.gbMovPicsOptions.Size = new System.Drawing.Size(264, 51);
+      this.gbMovPicsOptions.Size = new System.Drawing.Size(264, 45);
       this.gbMovPicsOptions.TabIndex = 3;
       this.gbMovPicsOptions.TabStop = false;
       this.gbMovPicsOptions.Text = "MovingPictures Options";
@@ -3049,6 +3000,56 @@
       this.pbActiveSplashScreen.TabIndex = 4;
       this.pbActiveSplashScreen.TabStop = false;
       this.pbActiveSplashScreen.Visible = false;
+      // 
+      // noFocusAlphaSlider
+      // 
+      this.noFocusAlphaSlider.BackColor = System.Drawing.Color.Transparent;
+      this.noFocusAlphaSlider.BackgroundImage = global::StreamedMPEditor.Properties.Resources.slider;
+      this.noFocusAlphaSlider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.noFocusAlphaSlider.BarInnerColor = System.Drawing.Color.Transparent;
+      this.noFocusAlphaSlider.BarOuterColor = System.Drawing.Color.Transparent;
+      this.noFocusAlphaSlider.BarPenColor = System.Drawing.Color.Transparent;
+      this.noFocusAlphaSlider.BorderRoundRectSize = new System.Drawing.Size(8, 8);
+      this.noFocusAlphaSlider.DrawFocusRectangle = false;
+      this.noFocusAlphaSlider.ElapsedInnerColor = System.Drawing.Color.Transparent;
+      this.noFocusAlphaSlider.ElapsedOuterColor = System.Drawing.Color.Transparent;
+      this.noFocusAlphaSlider.LargeChange = ((uint)(5u));
+      this.noFocusAlphaSlider.Location = new System.Drawing.Point(-1, -1);
+      this.noFocusAlphaSlider.Maximum = 255;
+      this.noFocusAlphaSlider.MouseEffects = false;
+      this.noFocusAlphaSlider.Name = "noFocusAlphaSlider";
+      this.noFocusAlphaSlider.Size = new System.Drawing.Size(194, 10);
+      this.noFocusAlphaSlider.SmallChange = ((uint)(1u));
+      this.noFocusAlphaSlider.TabIndex = 49;
+      this.noFocusAlphaSlider.Text = "colorSlider1";
+      this.noFocusAlphaSlider.ThumbRoundRectSize = new System.Drawing.Size(1, 1);
+      this.noFocusAlphaSlider.ThumbSize = 3;
+      this.noFocusAlphaSlider.ValueChanged += new System.EventHandler(this.noFocusAlphaSlider_ValueChanged);
+      // 
+      // focusAlphaSlider
+      // 
+      this.focusAlphaSlider.BackColor = System.Drawing.Color.Transparent;
+      this.focusAlphaSlider.BackgroundImage = global::StreamedMPEditor.Properties.Resources.slider;
+      this.focusAlphaSlider.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.focusAlphaSlider.BarInnerColor = System.Drawing.Color.Transparent;
+      this.focusAlphaSlider.BarOuterColor = System.Drawing.Color.Transparent;
+      this.focusAlphaSlider.BarPenColor = System.Drawing.Color.Transparent;
+      this.focusAlphaSlider.BorderRoundRectSize = new System.Drawing.Size(8, 8);
+      this.focusAlphaSlider.DrawFocusRectangle = false;
+      this.focusAlphaSlider.ElapsedInnerColor = System.Drawing.Color.Transparent;
+      this.focusAlphaSlider.ElapsedOuterColor = System.Drawing.Color.Transparent;
+      this.focusAlphaSlider.LargeChange = ((uint)(5u));
+      this.focusAlphaSlider.Location = new System.Drawing.Point(0, 0);
+      this.focusAlphaSlider.Maximum = 255;
+      this.focusAlphaSlider.MouseEffects = false;
+      this.focusAlphaSlider.Name = "focusAlphaSlider";
+      this.focusAlphaSlider.Size = new System.Drawing.Size(194, 10);
+      this.focusAlphaSlider.SmallChange = ((uint)(1u));
+      this.focusAlphaSlider.TabIndex = 48;
+      this.focusAlphaSlider.Text = "colorSlider1";
+      this.focusAlphaSlider.ThumbRoundRectSize = new System.Drawing.Size(1, 1);
+      this.focusAlphaSlider.ThumbSize = 3;
+      this.focusAlphaSlider.ValueChanged += new System.EventHandler(this.focusAlphaSlider_ValueChanged);
       // 
       // formStreamedMpEditor
       // 

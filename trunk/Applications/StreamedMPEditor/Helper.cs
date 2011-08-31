@@ -113,6 +113,9 @@ namespace StreamedMPEditor
       // to write the entry to MediaPortal.xml
       string returnValue = null;
 
+      if (!File.Exists(pd.filename))
+        return false;
+
       try
       {
         using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.MPSettings())
