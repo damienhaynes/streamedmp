@@ -441,6 +441,9 @@
       else
         overlayYpos = 536;
 
+      if (menuStyle == chosenMenuStyle.graphicMenuStyle)
+        overlayYpos -= 80;
+
       // Build the file
       xml = "<?xml version=" + quote + "1.0" + quote + " encoding=" + quote + "utf-8" + quote + "?>" +
             "<window>" +
@@ -702,6 +705,9 @@
 
       if (enableTwitter.Checked)
         menuTop = int.Parse(txtMenuPos.Text) - basicHomeValues.offsetTwitter + 30;
+
+      if (menuStyle == chosenMenuStyle.graphicMenuStyle)
+        menuTop -= 60;
 
       overlayYpos = menuTop - overlayOffset;
       if (mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.poster)
@@ -1368,6 +1374,9 @@
       else
         overlayYpos = 536;
 
+      if (menuStyle == chosenMenuStyle.graphicMenuStyle)
+        overlayYpos -= 80;
+
       // Build the file
       xml = "<?xml version=" + quote + "1.0" + quote + " encoding=" + quote + "utf-8" + quote + "?>" +
             "<window>" +
@@ -1629,6 +1638,9 @@
 
       if (enableTwitter.Checked)
         menuTop = int.Parse(txtMenuPos.Text) - basicHomeValues.offsetTwitter + 30;
+
+      if (menuStyle == chosenMenuStyle.graphicMenuStyle)
+        menuTop -= 60;
 
       overlayYpos = menuTop - overlayOffset;
       if (mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.poster)
