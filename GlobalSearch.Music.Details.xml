@@ -1,13 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-  <id>510</id>
+  <id>30886</id>
   <defaultcontrol>11</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:Search Music</define>
-  <define>#header.hover:hover_my music.png</define>
   <define>#usePlayFanart:Yes</define>
   <define>#useRandomMusicScraperFanart:Yes</define>
   <controls>
+    <import>mymusic.autofanart.xml</import>
     <control>
       <type>image</type>
       <id>0</id>
@@ -24,13 +23,14 @@
       <width>985</width>
       <height>594</height>
       <texture>dialoginfobg.png</texture>
+      <colordiffuse>bbffffff</colordiffuse>
     </control>
     <control>
       <type>label</type>
       <id>24</id>
       <posX>885</posX>
       <posY>99</posY>
-      <label>Album information</label>
+      <label>1020</label>
       <font>mediastream14tc</font>
       <align>center</align>
     </control>
@@ -38,6 +38,8 @@
       <type>button</type>
       <description>Play now</description>
       <id>11</id>
+      <onleft>11</onleft>
+      <onup>12</onup>
       <posX>640</posX>
       <posY>265</posY>
       <label>4552</label>
@@ -48,6 +50,7 @@
       <type>button</type>
       <description>Add to favorites</description>
       <id>15</id>
+      <onleft>15</onleft>
       <posX>640</posX>
       <posY>307</posY>
       <label>930</label>
@@ -58,6 +61,7 @@
       <type>button</type>
       <description>Add album to playlist</description>
       <id>14</id>
+      <onleft>14</onleft>
       <posX>640</posX>
       <posY>349</posY>
       <label>33041</label>
@@ -68,6 +72,7 @@
       <type>button</type>
       <description>Add to playlist</description>
       <id>13</id>
+      <onleft>13</onleft>
       <posX>640</posX>
       <posY>391</posY>
       <label>926</label>
@@ -78,12 +83,13 @@
       <type>button</type>
       <description>Play next</description>
       <id>12</id>
+      <onleft>12</onleft>
+      <ondown>11</ondown>      
       <posX>640</posX>
       <posY>433</posY>
       <label>4551</label>
       <width>479</width>
       <textXOff>30</textXOff>
-      <ondown>11</ondown>
     </control>
     <control>
       <type>image</type>
@@ -105,7 +111,7 @@
       <posX>180</posX>
       <posY>385</posY>
       <width>180</width>
-      <label>171</label>
+      <label>#(string.rtrim(L(171),':'))</label>
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
@@ -115,6 +121,7 @@
       <label>#artist</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
     </control>
     <control Style="smallTitleB">
       <description>Label Album</description>
@@ -123,7 +130,7 @@
       <posX>180</posX>
       <posY>410</posY>
       <width>180</width>
-      <label>170</label>
+      <label>#(string.rtrim(L(170),':'))</label>
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
@@ -133,6 +140,7 @@
       <label>#album</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
     </control>
     <control Style="smallTitleB">
       <description>Label Songname</description>
@@ -151,6 +159,7 @@
       <label>#songname</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
@@ -169,6 +178,7 @@
       <label>#duration</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
@@ -177,7 +187,7 @@
       <posX>180</posX>
       <posY>485</posY>
       <width>180</width>
-      <label>174</label>
+      <label>#(string.rtrim(L(174),':'))</label>
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
@@ -187,6 +197,7 @@
       <label>#genre</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
     </control>
     <control Style="smallTitleB">
       <description>Label Year</description>
@@ -194,7 +205,7 @@
       <id>29</id>
       <posX>180</posX>
       <posY>510</posY>
-      <label>172</label>
+      <label>#(string.rtrim(L(172),':'))</label>
       <width>180</width>
     </control>
     <control Style="smallTitle">
@@ -205,6 +216,7 @@
       <label>#year</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
     </control>
     <control Style="smallTitleB">
       <description>Label Filename</description>
@@ -223,6 +235,7 @@
       <label>#filename</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
@@ -231,23 +244,23 @@
       <posX>180</posX>
       <posY>560</posY>
       <width>180</width>
-      <label>204</label>
+      <label>#(string.rtrim(L(204),':'))</label>
     </control>
     <control>
       <type>imagelist</type>
       <description>-</description>
       <id>1337</id>
       <posX>370</posX>
-      <posY>560</posY>
-      <width>100</width>
-      <height>30</height>
+      <posY>558</posY>
+      <width>115</width>
+      <height>22</height>
       <colordiffuse>ffffffff</colordiffuse>
-      <percentage>#Play.Current.Rating</percentage>
+      <percentage>#SongDetails.Rating</percentage>
       <textureHeight>20</textureHeight>
       <orientation>horizontal</orientation>
       <textureWidth>20</textureWidth>
       <subitems>
-        <subitem>-.png</subitem>
+        <subitem>starwhitehollow.png</subitem>
         <subitem>starwhite.png</subitem>
       </subitems>
     </control>
@@ -286,17 +299,6 @@
       <label>#tp</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
-    </control>
-    <control>
-      <type>image</type>
-      <description>nowplaying background</description>
-      <id>32</id>
-      <posX>389</posX>
-      <posY>58</posY>
-      <width>307</width>
-      <height>320</height>
-      <animation>WindowOpen</animation>
-      <texture>nowplaying_background.png</texture>
     </control>
   </controls>
 </window>
