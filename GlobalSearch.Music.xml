@@ -22,7 +22,7 @@
       <type>group</type>
       <description>group element</description>
       <posX>50</posX>
-      <posY>250</posY>      
+      <posY>230</posY>      
       <layout>StackLayout</layout>
 			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -180,6 +180,21 @@
         <spinHeight>37</spinHeight>
         <suffix>|</suffix>
       </control>
+    </control>
+		<control>
+      <type>image</type>
+      <description>album art image</description>
+      <id>0</id>
+      <posX>90</posX>
+      <posY>438</posY>
+      <width>230</width>
+      <height>230</height>
+      <zoom>yes</zoom>
+      <texture>#selectedthumb</texture>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Item Count Background</description>
