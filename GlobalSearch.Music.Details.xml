@@ -27,7 +27,7 @@
     </control>
     <control>
       <type>label</type>
-      <id>24</id>
+      <id>0</id>
       <posX>885</posX>
       <posY>99</posY>
       <label>1020</label>
@@ -94,20 +94,20 @@
     <control>
       <type>image</type>
       <description>album art image</description>
-      <id>7</id>
+      <id>0</id>
       <posX>272</posX>
       <posY>101</posY>
       <width>249</width>
       <height>249</height>
       <zoom>yes</zoom>
-      <texture />
+      <texture>#GlobalSearch.Music.Details.CoverArt</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
     </control>
     <control Style="smallTitleB">
       <description>Label Artist</description>
       <type>label</type>
-      <id>25</id>
+      <id>0</id>
       <posX>180</posX>
       <posY>385</posY>
       <width>180</width>
@@ -115,10 +115,10 @@
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
-      <id>1</id>
+      <id>0</id>
       <posX>370</posX>
       <posY>385</posY>
-      <label>#artist</label>
+      <label>#GlobalSearch.Music.Details.Artist</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
       <scrollStartDelaySec>15</scrollStartDelaySec>
@@ -126,7 +126,7 @@
     <control Style="smallTitleB">
       <description>Label Album</description>
       <type>label</type>
-      <id>26</id>
+      <id>0</id>
       <posX>180</posX>
       <posY>410</posY>
       <width>180</width>
@@ -134,10 +134,10 @@
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
-      <id>2</id>
+      <id>0</id>
       <posX>370</posX>
       <posY>410</posY>
-      <label>#album</label>
+      <label>#GlobalSearch.Music.Details.Album</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
       <scrollStartDelaySec>15</scrollStartDelaySec>
@@ -145,7 +145,7 @@
     <control Style="smallTitleB">
       <description>Label Songname</description>
       <type>label</type>
-      <id>27</id>
+      <id>0</id>
       <posX>180</posX>
       <posY>435</posY>
       <width>180</width>
@@ -153,10 +153,10 @@
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
-      <id>3</id>
+      <id>0</id>
       <posX>370</posX>
       <posY>435</posY>
-      <label>#songname</label>
+      <label>#GlobalSearch.Music.Details.Title</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
       <scrollStartDelaySec>15</scrollStartDelaySec>
@@ -172,10 +172,10 @@
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
-      <id>9</id>
+      <id>0</id>
       <posX>370</posX>
       <posY>460</posY>
-      <label>#duration</label>
+      <label>#GlobalSearch.Music.Details.Duration</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
       <scrollStartDelaySec>15</scrollStartDelaySec>
@@ -183,7 +183,7 @@
     <control Style="smallTitleB">
       <type>label</type>
       <description>Label Artist Genre</description>
-      <id>28</id>
+      <id>0</id>
       <posX>180</posX>
       <posY>485</posY>
       <width>180</width>
@@ -191,10 +191,10 @@
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
-      <id>4</id>
+      <id>0</id>
       <posX>370</posX>
       <posY>485</posY>
-      <label>#genre</label>
+      <label>#GlobalSearch.Music.Details.Genre</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
       <scrollStartDelaySec>15</scrollStartDelaySec>
@@ -202,7 +202,7 @@
     <control Style="smallTitleB">
       <description>Label Year</description>
       <type>label</type>
-      <id>29</id>
+      <id>0</id>
       <posX>180</posX>
       <posY>510</posY>
       <label>#(string.rtrim(L(172),':'))</label>
@@ -210,10 +210,10 @@
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
-      <id>5</id>
+      <id>0</id>
       <posX>370</posX>
       <posY>510</posY>
-      <label>#year</label>
+      <label>#GlobalSearch.Music.Details.Year</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
       <scrollStartDelaySec>15</scrollStartDelaySec>
@@ -221,7 +221,7 @@
     <control Style="smallTitleB">
       <description>Label Filename</description>
       <type>label</type>
-      <id>30</id>
+      <id>0</id>
       <posX>180</posX>
       <posY>535</posY>
       <width>180</width>
@@ -229,10 +229,10 @@
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
-      <id>6</id>
+      <id>0</id>
       <posX>370</posX>
       <posY>535</posY>
-      <label>#filename</label>
+      <label>#GlobalSearch.Music.Details.FileName</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
       <scrollStartDelaySec>15</scrollStartDelaySec>
@@ -240,7 +240,7 @@
     <control Style="smallTitleB">
       <type>label</type>
       <description>Label Rating</description>
-      <id>31</id>
+      <id>0</id>
       <posX>180</posX>
       <posY>560</posY>
       <width>180</width>
@@ -249,13 +249,13 @@
     <control>
       <type>imagelist</type>
       <description>-</description>
-      <id>1337</id>
+      <id>0</id>
       <posX>370</posX>
       <posY>558</posY>
       <width>115</width>
       <height>22</height>
       <colordiffuse>ffffffff</colordiffuse>
-      <percentage>#SongDetails.Rating</percentage>
+      <percentage>#GlobalSearch.Music.Details.Rating</percentage>
       <textureHeight>20</textureHeight>
       <orientation>horizontal</orientation>
       <textureWidth>20</textureWidth>
@@ -267,7 +267,7 @@
     <control Style="smallTitleB">
       <type>label</type>
       <description>Label Last played</description>
-      <id>37</id>
+      <id>0</id>
       <posX>180</posX>
       <posY>585</posY>
       <label>Last played</label>
@@ -275,17 +275,17 @@
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
-      <id>10</id>
+      <id>0</id>
       <posX>370</posX>
       <posY>585</posY>
-      <label>#last_played</label>
+      <label>#GlobalSearch.Music.Details.DateTimePlayed</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
     </control>
     <control Style="smallTitleB">
       <description>Label Artist Playcount</description>
       <type>label</type>
-      <id>35</id>
+      <id>0</id>
       <posX>180</posX>
       <posY>610</posY>
       <label>Playcount</label>
@@ -293,10 +293,10 @@
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
-      <id>8</id>
+      <id>0</id>
       <posX>370</posX>
       <posY>610</posY>
-      <label>#tp</label>
+      <label>#GlobalSearch.Music.Details.TimesPlayed</label>
       <textcolor>ffffffff</textcolor>
       <disabledcolor>ff808080</disabledcolor>
     </control>
