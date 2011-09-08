@@ -140,8 +140,8 @@ namespace StreamedMPEditor
         destinationPath = SkinInfo.mpPaths.skinBasePath;
         downloadForm.Text = "Download and Install Alternative SplashScreens";
         pLabel.Text = "Starting Download";
-        thrDownload = new Thread(Download);
-        thrDownload.Start();
+        theDownload = new Thread(Download);
+        theDownload.Start();
         downloadForm.Show();
       }
       else

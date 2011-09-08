@@ -12,7 +12,7 @@ namespace StreamedMPEditor
   public partial class formStreamedMpEditor
   {
 
-    private Thread thrDownload;
+    private Thread theDownload;
     private Stream strResponse;
     private Stream strLocal;
     private HttpWebRequest webRequest;
@@ -54,6 +54,7 @@ namespace StreamedMPEditor
       downloadStop.Location = new System.Drawing.Point(230, 65);
       downloadStop.Click += new System.EventHandler(downloadStop_Click);
       downloadForm.Controls.Add(downloadStop);
+      downloadForm.Enabled = false;
     }
 
 
@@ -66,8 +67,8 @@ namespace StreamedMPEditor
         destinationPath = SkinInfo.mpPaths.skinBasePath;
         downloadForm.Text = "Download and Install Animated Weather Icons";
         pLabel.Text = "Starting Download";
-        thrDownload = new Thread(Download);
-        thrDownload.Start();
+        theDownload = new Thread(Download);
+        theDownload.Start();
         downloadForm.Show();
       }
       else
@@ -86,8 +87,8 @@ namespace StreamedMPEditor
         destinationPath = SkinInfo.mpPaths.skinBasePath;
         downloadForm.Text = "Download and Install Weather Backgrounds";
         pLabel.Text = "Starting Download";
-        thrDownload = new Thread(Download);
-        thrDownload.Start();
+        theDownload = new Thread(Download);
+        theDownload.Start();
         downloadForm.Show();
       }
       else
@@ -105,6 +106,7 @@ namespace StreamedMPEditor
       {
         try
         {
+          downloadForm.Enabled = false;
           webRequest = (HttpWebRequest)WebRequest.Create(optionDownloadURL);
           webRequest.Credentials = CredentialCache.DefaultCredentials;
           webResponse = (HttpWebResponse)webRequest.GetResponse();
@@ -113,6 +115,7 @@ namespace StreamedMPEditor
           strLocal = new FileStream(optionDownloadPath, FileMode.Create, FileAccess.Write, FileShare.None);
           int bytesSize = 0;
           byte[] downBuffer = new byte[2048];
+          downloadForm.Enabled = true;
           while ((bytesSize = strResponse.Read(downBuffer, 0, downBuffer.Length)) > 0)
           {
             strLocal.Write(downBuffer, 0, bytesSize);
@@ -121,7 +124,7 @@ namespace StreamedMPEditor
         }
         catch
         {
-          MessageBox.Show("Error in Download");
+          //MessageBox.Show("Error in Download");
         }
         finally
         {
@@ -143,10 +146,12 @@ namespace StreamedMPEditor
 
     private void downloadStop_Click(object sender, EventArgs e)
     {
+      
       webResponse.Close();
       strResponse.Close();
       strLocal.Close();
-      thrDownload.Abort();
+      theDownload.Abort();
+
       pBar.Value = 0;
       if (!animatedIconsInstalled())
       {
