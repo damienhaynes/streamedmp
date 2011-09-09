@@ -82,7 +82,7 @@
         <id>10</id>        
         <label>#Trakt.Translation.Calendar.Label</label>
 				<hyperlink>87259</hyperlink>
-				<onup>15</onup>
+				<onup>98</onup>
       </control>      
       <control Style="settingsbutton">
         <description>Friends</description>
@@ -123,9 +123,31 @@
         <id>15</id>
         <label>#Trakt.Translation.Settings.Label</label>
 				<hyperlink>87271</hyperlink>
+				<ondown>98</ondown>
+      </control>
+      <control Style="settingsbutton">
+        <description>MPEIUPDATE:a9c3845a_8718_4712_85cc_26f56520bb9a</description>
+        <type>button</type>
+				<width>255</width>
+        <id>98</id>
+        <label>#MPEI.Translation.Update.Label</label>
 				<ondown>10</ondown>
+        <onup>15</onup>
+        <visible>string.equals(#mpei.a9c3845a_8718_4712_85cc_26f56520bb9a.haveupdate, true)</visible>
       </control>
 		</control>
+    <control>
+      <description>Update Indicator</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>420</posX>
+      <posY>467</posY>
+      <width>32</width>
+      <height>32</height>
+      <texture>isupdate.png</texture>
+      <visible>string.equals(#mpei.a9c3845a_8718_4712_85cc_26f56520bb9a.haveupdate, true)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
 		<import>common.time.xml</import>
   </controls>
 </window>
