@@ -644,13 +644,7 @@ namespace StreamedMPEditor
           pbFanartPicTVSeries.Visible = true;
           pbPosterPicMovPics.Visible = false;
           pbFanartPicMovPics.Visible = false;
-          if (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) > 0)
-          {
-            cbEnableRecentMusic.Enabled = false;
-            cbEnableRecentRecordedTV.Enabled = false;
-            mrDisplaySelection.disableMusicRB = false;
-            mrDisplaySelection.disableRecordedTVRB = false;
-          }
+
         }
 
         loadMenuSettings();
@@ -680,6 +674,34 @@ namespace StreamedMPEditor
           pbMenuIconInfo.Visible = true;
         }
         buttonTexture.initButtonTexture();
+
+        if (fanarthandlerVersionRequired.CompareTo(fhOverlayVersion) > 0)
+        {
+          cbEnableRecentMusic.Enabled = false;
+          cbEnableRecentRecordedTV.Enabled = false;
+          mrDisplaySelection.disableMusicRB = false;
+          mrDisplaySelection.disableRecordedTVRB = false;
+        }
+
+
+        // Check for Latest Media Handler & if present check if latest Music and Recorded TV are enabled, disable checkboxes if not
+        if (helper.pluginEnabled(Helper.Plugins.LatestMediaHandler))
+        {
+          using (MediaPortal.Profile.Settings xmlreader = new MediaPortal.Profile.Settings(Config.GetFile(Config.Dir.Config, "LatestMediaHandler.xml")))
+          {
+            if (xmlreader.GetValueAsString("LatestMediaHandler", "latestMusic", "False") == "False")
+            {
+              cbEnableRecentMusic.Checked = false;
+              cbEnableRecentMusic.Enabled = false;
+            }
+
+            if (xmlreader.GetValueAsString("LatestMediaHandler", "latestTVRecordings", "False") == "False")
+            {
+              cbEnableRecentRecordedTV.Checked = false;
+              cbEnableRecentRecordedTV.Enabled = false;
+            }
+          }
+        }
       }
       else
         this.Close();
