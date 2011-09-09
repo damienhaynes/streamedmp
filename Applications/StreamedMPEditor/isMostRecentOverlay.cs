@@ -7,6 +7,9 @@
     public int baseXPosWatched;
     public int baseYPosWatched;
 
+    public string latestMediaPrefix = "#fanarthandler";
+    public bool lmh = false;
+
     #region Main
 
     void generateMostRecentOverlay(chosenMenuStyle menuStyle, isOverlayType isOverlay, int xPosAdded, int yPosAdded, int xPosWatched, int yPosWatched)
@@ -15,6 +18,12 @@
       baseYPosAdded = yPosAdded;
       baseXPosWatched = xPosWatched;
       baseYPosWatched = yPosWatched;
+
+      if (helper.pluginEnabled(Helper.Plugins.LatestMediaHandler))
+      {
+        latestMediaPrefix = "#latestMediaHandler";
+        lmh = true;
+      }
 
       switch (isOverlay)
       {
@@ -2768,7 +2777,7 @@
 
     #endregion
 
-    #region Music Most Recent Added
+    #region Most Recent Music
 
     void MostRecentMusicSummary()
     {
@@ -2778,9 +2787,14 @@
                 "<control>" +
                 "<description>GROUP: RecentlyAdded Music 1</description>" +
                 "<type>group</type>" +
-                "<dimColor>0xffffffff</dimColor>" +
-                "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "+![string.starts(#fanarthandler.music.latest1.artist,#)|string.equals(#fanarthandler.music.latest1.artist,)]" + "</visible>" +
-                "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
+                "<dimColor>0xffffffff</dimColor>";
+
+         if (lmh)
+           xml += "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "+[string.equals(#latestMediaHandler.music.latest.enabled,true)]" + "</visible>";
+         else
+         xml += "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "+![string.starts(#fanarthandler.music.latest1.artist,#)]" + "</visible>";
+
+         xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
                 "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
@@ -2815,7 +2829,7 @@
                   "<id>0</id>" +
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 195).ToString() + "</posY>\n" +
-                  "<label>#fanarthandler.music.latest1.artist</label>" +
+                  "<label>" + latestMediaPrefix + ".music.latest1.artist</label>" +
                   "<textcolor>White</textcolor>" +
                   "<font>mediastream10tc</font>" +
                   "<scrollStartDelaySec>20</scrollStartDelaySec>" +
@@ -2827,7 +2841,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
                   "<width>257</width>" +
-                  "<label>#fanarthandler.music.latest1.album</label>" +
+                  "<label>" + latestMediaPrefix + ".music.latest1.album</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
                 "</control>" +
@@ -2840,16 +2854,21 @@
                   "<width>155</width>" +
                   "<height>155</height>" +
                   "<keepaspectratio>true</keepaspectratio>" +
-                  "<texture>#fanarthandler.music.latest1.thumb</texture>" +
+                  "<texture>" + latestMediaPrefix + ".music.latest1.thumb</texture>" +
                   "<shouldCache>true</shouldCache>\n" +
                 "</control>" +
               "</control>" +
               "<control>" +
                 "<description>GROUP: RecentlyAdded Music 2</description>" +
                 "<type>group</type>" +
-                "<dimColor>0xffffffff</dimColor>" +
-                "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "+![string.starts(#fanarthandler.music.latest2.artist,#)|string.equals(#fanarthandler.music.latest2.artist,)]" + "</visible>" +
-                "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
+                "<dimColor>0xffffffff</dimColor>";
+
+       if (lmh)
+         xml += "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "+[string.equals(#latestMediaHandler.music.latest.enabled,true)]" + "</visible>";
+       else
+         xml += "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "+![string.starts(#fanarthandler.music.latest2.artist,#)]" + "</visible>";
+
+         xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
                 "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
@@ -2863,7 +2882,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 230).ToString() + "</posY>\n" +
                   "<width>258</width>" +
-                  "<label>#fanarthandler.music.latest2.artist</label>" +
+                  "<label>" + latestMediaPrefix + ".music.latest2.artist</label>" +
                   "<font>mediastream10tc</font>" +
                   "<textcolor>White</textcolor>" +
                   "<scrollStartDelaySec>20</scrollStartDelaySec>" +
@@ -2875,7 +2894,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
                   "<width>257</width>" +
-                  "<label>#fanarthandler.music.latest2.album</label>" +
+                  "<label>" + latestMediaPrefix + ".music.latest2.album</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
                 "</control>" +
@@ -2883,9 +2902,14 @@
               "<control>" +
                 "<description>GROUP: RecentlyAdded Music 3</description>" +
                 "<type>group</type>" +
-                "<dimColor>0xffffffff</dimColor>" +
-                "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "+![string.starts(#fanarthandler.music.latest3.artist,#)|string.equals(#fanarthandler.music.latest3.artist,)]" + "</visible>" +
-                "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
+                "<dimColor>0xffffffff</dimColor>";
+
+       if (lmh)
+         xml += "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "+[string.equals(#latestMediaHandler.music.latest.enabled,true)]" + "</visible>";
+       else
+         xml += "<visible>" + mostRecentVisibleControls(isOverlayType.Music) + "+![string.starts(#fanarthandler.music.latest3.artist,#)]" + "</visible>";
+
+         xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
                 "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
@@ -2899,7 +2923,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 265).ToString() + "</posY>\n" +
                   "<width>258</width>" +
-                  "<label>#fanarthandler.music.latest3.artist</label>" +
+                  "<label>" + latestMediaPrefix + ".music.latest3.artist</label>" +
                   "<textcolor>White</textcolor>" +
                   "<font>mediastream10tc</font>" +
                   "<scrollStartDelaySec>20</scrollStartDelaySec>" +
@@ -2911,7 +2935,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
                   "<width>257</width>" +
-                  "<label>#fanarthandler.music.latest3.album</label>" +
+                  "<label>" + latestMediaPrefix + ".music.latest3.album</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
                 "</control>" +
@@ -2932,10 +2956,15 @@
                 "<control>" +
                 "<description>GROUP: RecentlyAdded RecordedTV 1</description>" +
                 "<type>group</type>" +
-                "<dimColor>0xffffffff</dimColor>" +
-                "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "+![string.starts(#fanarthandler.tvrecordings.latest1.title,#)|string.equals(#fanarthandler.tvrecordings.latest1.title,)]" + "</visible>" +
-                "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
-                "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
+                "<dimColor>0xffffffff</dimColor>";
+
+    if (lmh)
+      xml += "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "+[string.equals(#latestMediaHandler.tvrecordings.latest.enabled,true)]" + "</visible>";
+    else
+      xml += "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "+![string.starts(#fanarthandler.tvrecordings.latest1.title,#)]" + "</visible>";
+
+      xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
+             "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
                 "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
@@ -2970,7 +2999,7 @@
                   "<posX>995</posX>" +
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 195).ToString() + "</posY>\n" +
-                  "<label>#fanarthandler.tvrecordings.latest1.title</label>" +
+                  "<label>" + latestMediaPrefix + ".tvrecordings.latest1.title</label>" +
                   "<textcolor>White</textcolor>" +
                   "<font>mediastream10tc</font>" +
                   "<scrollStartDelaySec>20</scrollStartDelaySec>" +
@@ -2982,7 +3011,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
                   "<width>257</width>" +
-                  "<label>#StreamedMP.RecordedOn #fanarthandler.tvrecordings.latest1.dateAdded</label>" +
+                  "<label>#StreamedMP.RecordedOn " + latestMediaPrefix + ".tvrecordings.latest1.dateAdded</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
                 "</control>" +
@@ -2995,16 +3024,21 @@
                   "<width>268</width>" +
                   "<height>151</height>" +
                   "<keepaspectratio>true</keepaspectratio>" +
-                  "<texture>#fanarthandler.tvrecordings.latest1.thumb</texture>" +
+                  "<texture>" + latestMediaPrefix + ".tvrecordings.latest1.thumb</texture>" +
                   "<shouldCache>true</shouldCache>\n" +
                 "</control>" +
               "</control>" +
               "<control>" +
                 "<description>GROUP: RecentlyAdded RecordedTV 2</description>" +
                 "<type>group</type>" +
-                "<dimColor>0xffffffff</dimColor>" +
-                "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "+![string.starts(#fanarthandler.tvrecordings.latest2.title,#)|string.equals(#fanarthandler.tvrecordings.latest2.title,)]" + "</visible>" +
-                "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
+                "<dimColor>0xffffffff</dimColor>";
+
+    if (lmh)
+      xml += "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "+[string.equals(#latestMediaHandler.tvrecordings.latest.enabled,true)]" + "</visible>";
+    else
+      xml += "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "+![string.starts(#fanarthandler.tvrecordings.latest2.title,#)]" + "</visible>";
+
+      xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
                 "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
@@ -3018,7 +3052,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 230).ToString() + "</posY>\n" +
                   "<width>258</width>" +
-                  "<label>#fanarthandler.tvrecordings.latest2.title</label>" +
+                  "<label>" + latestMediaPrefix + ".tvrecordings.latest2.title</label>" +
                   "<font>mediastream10tc</font>" +
                   "<textcolor>White</textcolor>" +
                   "<scrollStartDelaySec>20</scrollStartDelaySec>" +
@@ -3030,7 +3064,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
                   "<width>257</width>" +
-                  "<label>#StreamedMP.RecordedOn #fanarthandler.tvrecordings.latest2.dateAdded</label>" +
+                  "<label>#StreamedMP.RecordedOn " + latestMediaPrefix + ".tvrecordings.latest2.dateAdded</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
                 "</control>" +
@@ -3038,9 +3072,14 @@
               "<control>" +
                 "<description>GROUP: RecentlyAdded RecordedTV 3</description>" +
                 "<type>group</type>" +
-                "<dimColor>0xffffffff</dimColor>" +
-                "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "+![string.starts(#fanarthandler.tvrecordings.latest3.title,#)|string.equals(#fanarthandler.tvrecordings.latest3.title,)]" + "</visible>" +
-                "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
+                "<dimColor>0xffffffff</dimColor>";
+
+    if (lmh)
+      xml += "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "+[string.equals(#latestMediaHandler.tvrecordings.latest.enabled,true)]" + "</visible>";
+    else
+      xml += "<visible>" + mostRecentVisibleControls(isOverlayType.RecordedTV) + "+![string.starts(#fanarthandler.tvrecordings.latest3.title,#)]" + "</visible>";
+
+      xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
                 "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
@@ -3054,7 +3093,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 265).ToString() + "</posY>\n" +
                   "<width>258</width>" +
-                  "<label>#fanarthandler.tvrecordings.latest3.title</label>" +
+                  "<label>" + latestMediaPrefix + ".tvrecordings.latest3.title</label>" +
                   "<textcolor>White</textcolor>" +
                   "<font>mediastream10tc</font>" +
                   "<scrollStartDelaySec>20</scrollStartDelaySec>" +
@@ -3066,7 +3105,7 @@
                   "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
                   "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
                   "<width>257</width>" +
-                  "<label>#StreamedMP.RecordedOn #fanarthandler.tvrecordings.latest3.dateAdded</label>" +
+                  "<label>#StreamedMP.RecordedOn " + latestMediaPrefix + ".tvrecordings.latest3.dateAdded</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
                 "</control>" +
