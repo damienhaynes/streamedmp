@@ -185,12 +185,34 @@
           <description>Update Sites</description>
           <type>button</type>
           <id>13</id>
-          <ondown>2</ondown>
+          <ondown>98</ondown>
           <onleft>50</onleft>
           <onright>50</onright>
           <label>#OnlineVideos.Translation.ManageSites.Label</label>
           <hyperlink>4757</hyperlink>
           <visible>no</visible>
+        </control>
+        <control>
+          <description>MPEICONFIGURE:269bd257_7ce5_450a_b786_1c2834c81849</description>
+          <type>button</type>
+          <id>98</id>
+          <onup>13</onup>
+          <ondown>99</ondown>
+          <onleft>50</onleft>
+          <onright>50</onright>
+          <label>#MPEI.Translation.Settings.Label</label>
+          <visible>string.equals(#mpei.269bd257_7ce5_450a_b786_1c2834c81849.isinstalled, true)</visible>
+        </control>
+        <control>
+          <description>MPEIUPDATE:269bd257_7ce5_450a_b786_1c2834c81849</description>
+          <type>button</type>
+          <id>99</id>
+          <onup>98</onup>
+          <ondown>2</ondown>
+          <onleft>50</onleft>
+          <onright>50</onright>
+          <label>#MPEI.Translation.UpdateAvailable.Label</label>
+          <visible>string.equals(#mpei.269bd257_7ce5_450a_b786_1c2834c81849.haveupdate, true)</visible>
         </control>
       </control>
     </control>
