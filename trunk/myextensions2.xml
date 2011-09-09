@@ -5,7 +5,7 @@
   <allowoverlay>no</allowoverlay>
   <define>#header.label:14001</define>
   <define>#header.extension.label:#MPE.View.Name</define>
-  <define>#header.hover:hover_my plugins.png</define>
+  <define>#header.hover:hover_extensions.png</define>
   <define>#header.BG.overlay:mainoverlay.png</define>
   <define>#header.BG.colordiffuse:ffffffff</define>
   <controls>
@@ -102,7 +102,7 @@
           <description>MPEI Update Available</description>
           <type>button</type>
           <id>90</id>
-          <label>#MPEI.Translation.NewVersion.Label</label>
+          <label>#MPEI.Translation.UpdateAvailable.Label</label>
           <onright>50</onright>
           <onleft>50</onleft>
           <ondown>2</ondown>
@@ -119,6 +119,7 @@
       <font>mediastream11tc</font>
       <textcolor>ffFFFFFF</textcolor>
       <label>#MPE.Selected.Version</label>
+      <visible>facadeview.list+!string.starts(#MPE.Selected.Version, #MPE.)</visible>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -129,11 +130,11 @@
       <posX>26</posX>
       <posY>280</posY>
       <width>570</width>
-      <height>365</height>
+      <height>375</height>
       <font>mediastream11</font>
       <textcolor>ffFFFFFF</textcolor>
-      <seperator>---------------------------------------------------</seperator>
       <label>#MPE.Selected.Description</label>
+      <visible>facadeview.list+!string.starts(#MPE.Selected.Description, #MPE.)</visible>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -161,7 +162,163 @@
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
       <animation effect="fade" time="230" delay="0">WindowClose</animation>
     </control>
-    <import>common.facade.music.xml</import>
+    <control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1010</posX>
+      <posY>683</posY>
+      <width>260</width>
+      <height>32</height>
+      <texture>mediacountbg_Spin.png</texture>      
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Count Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1020</posX>
+      <posY>688</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Item Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1065</posX>
+      <posY>13</posY>
+      <width>202</width>
+      <height>28</height>
+      <texture>mediacountbg.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Items Translation</description>
+      <type>label</type>
+      <label>507</label>
+      <id>0</id>
+      <width>90</width>
+      <posX>1077</posX>
+      <posY>17</posY>
+      <align>left</align>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Item Count</description>
+      <type>label</type>
+      <label>#itemcount</label>
+      <id>0</id>
+      <posX>1240</posX>
+      <posY>16</posY>
+      <font>mediastream10c</font>
+      <textcolor>ff006698</textcolor>
+      <align>right</align>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>      
+    </control>
+    <control>
+      <description>group element</description>
+      <type>group</type>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="250" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <control>
+        <type>facadeview</type>
+        <id>50</id>
+        <control>
+          <description>List</description>
+          <type>listcontrol</type>
+          <id>50</id>
+          <posX>690</posX>
+          <posY>240</posY>
+          <height>480</height>
+          <width>660</width>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <scrollOffset>4</scrollOffset>
+          <itemWidth>42</itemWidth>
+          <itemHeight>32</itemHeight>
+          <IconXOff>-30</IconXOff>
+          <IconYOff>7</IconYOff>
+          <font2>mediastream10</font2>
+          <keepaspectratio>yes</keepaspectratio>
+          <spinPosX>1172</spinPosX>
+          <spinPosY>681</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+          <spinWidth>50</spinWidth>
+          <spinHeight>37</spinHeight>
+          <suffix>|</suffix>
+        </control>
+        <control>
+          <description>Thumbnail Panel</description>
+          <type>thumbnailpanel</type>
+          <id>50</id>
+          <posX>30</posX>
+          <posY>240</posY>
+          <width>1270</width>
+          <height>475</height>
+          <scrollOffset>0</scrollOffset>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <frameNoFocus>imagebg.png</frameNoFocus>
+          <frameFocus>thumbborder5.png</frameFocus>
+          <!-- Small Icons -->
+          <itemWidth>135</itemWidth>
+          <itemHeight>110</itemHeight>
+          <textureWidth>131</textureWidth>
+          <textureHeight>100</textureHeight>
+          <thumbWidth>121</thumbWidth>
+          <thumbHeight>92</thumbHeight>
+          <thumbPosX>5</thumbPosX>
+          <thumbPosY>4</thumbPosY>
+          <!-- Large Icons -->
+          <itemWidthBig>243</itemWidthBig>
+          <itemHeightBig>200</itemHeightBig>
+          <textureWidthBig>240</textureWidthBig>
+          <textureHeightBig>180</textureHeightBig>
+          <thumbWidthBig>221</thumbWidthBig>
+          <thumbHeightBig>166</thumbHeightBig>
+          <thumbPosXBig>9</thumbPosXBig>
+          <thumbPosYBig>7</thumbPosYBig>
+          <!-- Page Spin Buttons -->
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+          <spinPosX>1172</spinPosX>
+          <spinPosY>681</spinPosY>
+          <spinWidth>50</spinWidth>
+          <spinHeight>37</spinHeight>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <spinCanFocus>no</spinCanFocus>
+        </control>
+      </control>
+    </control>
     <import>common.overlays2.xml</import>
   </controls>
 </window>

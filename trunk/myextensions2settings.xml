@@ -10,7 +10,7 @@
   <controls>
     <import>common.window.default.xml</import>
     <import>common.time.xml</import>
-	<control>
+    <control>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
@@ -25,13 +25,13 @@
       <id>1</id>
       <posX>40</posX>
       <posY>684</posY>
-      <width>1200</width>
+      <width>940</width>
       <label>#selecteditem</label>
       <font>mediastream16tc</font>
       <textcolor>White</textcolor>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-	<control>
+    <control>
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
@@ -52,8 +52,53 @@
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>	
-	<control>
+    </control>
+    <control>
+      <description>Item Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1065</posX>
+      <posY>13</posY>
+      <width>202</width>
+      <height>28</height>
+      <texture>mediacountbg.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Items Translation</description>
+      <type>label</type>
+      <label>507</label>
+      <id>0</id>
+      <width>90</width>
+      <posX>1077</posX>
+      <posY>17</posY>
+      <align>left</align>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Item Count</description>
+      <type>label</type>
+      <label>#itemcount</label>
+      <id>0</id>
+      <posX>1240</posX>
+      <posY>16</posY>
+      <font>mediastream10c</font>
+      <textcolor>ff006698</textcolor>
+      <align>right</align>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>      
+    </control>
+    <control>
       <type>group</type>
       <description>group element</description>
       <posX>30</posX>
