@@ -1,183 +1,164 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>804</id>
-  <defaultcontrol>8</defaultcontrol>
+  <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.label:14001</define>
-  <define>#header.hover:hover_my plugins.png</define>
+  <define>#header.hover:hover_extensions.png</define>
   <define>#header.BG.overlay:mainoverlay.png</define>
   <define>#header.BG.colordiffuse:ffffffff</define>
   <controls>
     <import>common.window.default.xml</import>
     <import>common.time.xml</import>
-    <!-- GUI Buttons -->
+    <!-- GUI Buttons -->  
     <control>
-      <description>Change Log Button</description>
-      <type>button</type>
-      <id>8</id>
-      <label>#MPEI.Translation.ChangeLog.Label</label>
+      <description>Action Buttons</description>
+      <type>group</type>
       <posX>30</posX>
       <posY>250</posY>
-      <onup>17</onup>
-      <ondown>2</ondown>
-      <onright>8</onright>
-      <onleft>8</onleft>
-      <textcolor>ffffffff</textcolor>
-      <textcolorNoFocus>bfffffff</textcolorNoFocus>
-      <font>mediastream12tc</font>
-	  <width>240</width>
-      <height>40</height>
-      <textYOff>8</textYOff>
-      <textXOff>20</textXOff>
-      <textureFocus>tv_button_focus.png</textureFocus>
-      <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      <visible>true</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Install Button</description>
-      <type>button</type>
-      <id>2</id>
-      <label>#MPEI.Translation.Install.Label</label>
-      <posX>30</posX>
-      <posY>290</posY>
-      <width>240</width>
-      <height>40</height>
-      <onup>8</onup>
-      <ondown>3</ondown>
-      <onright>2</onright>
-      <onleft>2</onleft>
-      <textcolor>ffffffff</textcolor>
-      <textcolorNoFocus>bfffffff</textcolorNoFocus>
-      <font>mediastream12tc</font>      
-      <textYOff>8</textYOff>
-      <textXOff>20</textXOff>
-      <textureFocus>tv_button_focus.png</textureFocus>
-      <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      <visible>!string.equals(#MPE.Selected.isinstalled,true)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>UnInstall Button</description>
-      <type>button</type>
-      <id>3</id>
-      <label>#MPEI.Translation.Uninstall.Label</label>
-      <posX>30</posX>
-      <posY>290</posY>
-      <width>240</width>
-	  <height>40</height>
-      <onup>2</onup>
-      <ondown>5</ondown>
-      <onright>3</onright>
-      <onleft>3</onleft>
-      <textcolor>ffffffff</textcolor>
-      <textcolorNoFocus>bfffffff</textcolorNoFocus>
-      <font>mediastream12tc</font>
-      <textYOff>8</textYOff>
-      <textXOff>20</textXOff>
-      <textureFocus>tv_button_focus.png</textureFocus>
-      <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      <visible>string.equals(#MPE.Selected.isinstalled,true)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Disable Button</description>
-      <type>button</type>
-      <id>5</id>
-      <label>#MPEI.Translation.Disable.Label</label>
-      <posX>30</posX>
-      <posY>330</posY>
-      <width>240</width>
-	  <height>40</height>
-      <onup>3</onup>
-      <ondown>6</ondown>
-      <onright>5</onright>
-      <onleft>5</onleft>
-      <textcolor>ffffffff</textcolor>
-      <textcolorNoFocus>bfffffff</textcolorNoFocus>
-      <font>mediastream12tc</font>      
-      <textYOff>8</textYOff>
-      <textXOff>20</textXOff>
-      <textureFocus>tv_button_focus.png</textureFocus>
-      <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      <visible>string.equals(#MPE.Selected.IsEnabled,true)+string.equals(#MPE.Selected.isinstalled,true)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Enable Button</description>
-      <type>button</type>
-      <id>6</id>
-      <label>#MPEI.Translation.Enable.Label</label>
-      <posX>30</posX>
-      <posY>330</posY>
-      <width>240</width>
-      <height>40</height>
-      <onup>5</onup>
-      <ondown>7</ondown>
-      <onright>6</onright>
-      <onleft>6</onleft>
-      <textcolor>ffffffff</textcolor>
-      <textcolorNoFocus>bfffffff</textcolorNoFocus>
-      <font>mediastream12tc</font>      
-      <textYOff>8</textYOff>
-      <textXOff>20</textXOff>
-      <textureFocus>tv_button_focus.png</textureFocus>
-      <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      <visible>string.equals(#MPE.Selected.IsDisabled,true)+string.equals(#MPE.Selected.isinstalled,true)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Settings Button</description>
-      <type>button</type>
-      <id>7</id>
-      <label>#MPEI.Translation.Settings.Label</label>
-      <posX>30</posX>
-      <posY>370</posY>
-      <width>240</width>
-      <height>40</height>
-      <onup>6</onup>
-      <ondown>4</ondown>
-      <onright>7</onright>
-      <onleft>7</onleft>
-      <textcolor>ffffffff</textcolor>
-      <textcolorNoFocus>bfffffff</textcolorNoFocus>
-      <font>mediastream12tc</font>      
-      <textYOff>8</textYOff>
-      <textXOff>20</textXOff>
-      <textureFocus>tv_button_focus.png</textureFocus>
-      <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      <visible>string.equals(#MPE.Selected.HaveSettings,true)+string.equals(#MPE.Selected.isinstalled,true)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Update Button</description>
-      <type>button</type>
-      <id>4</id>
-      <label>#MPEI.Translation.Update.Label</label>
-      <posX>30</posX>
-      <posY>410</posY>
-      <width>240</width>
-      <height>40</height>
-      <onup>7</onup>
-      <ondown>8</ondown>
-      <onright>4</onright>
-      <onleft>4</onleft>
-      <textcolor>ffffffff</textcolor>
-      <textcolorNoFocus>bfffffff</textcolorNoFocus>
-      <font>mediastream12tc</font>      
-      <textYOff>8</textYOff>
-      <textXOff>20</textXOff>
-      <textureFocus>tv_button_focus.png</textureFocus>
-      <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      <visible>string.equals(#MPE.Selected.haveupdate,true)+string.equals(#MPE.Selected.isinstalled,true)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
+      <layout>StackLayout(0, Vertical, true)</layout>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="100">WindowClose</animation>    
+      <control>
+        <description>Install Button</description>
+        <type>button</type>
+        <id>2</id>
+        <label>#MPEI.Translation.Install.Label</label>
+        <width>240</width>
+        <height>40</height>
+        <onup>17</onup>
+        <ondown>3</ondown>
+        <onright>2</onright>
+        <onleft>2</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>      
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <visible>!string.equals(#MPE.Selected.isinstalled,true)</visible>
+      </control>
+      <control>
+        <description>UnInstall Button</description>
+        <type>button</type>
+        <id>3</id>
+        <label>#MPEI.Translation.Uninstall.Label</label>
+        <width>240</width>
+        <height>40</height>
+        <onup>2</onup>
+        <ondown>4</ondown>
+        <onright>3</onright>
+        <onleft>3</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <visible>string.equals(#MPE.Selected.isinstalled,true)</visible>
+      </control>
+      <control>
+        <description>Update Button</description>
+        <type>button</type>
+        <id>4</id>
+        <label>#MPEI.Translation.Update.Label</label>
+        <width>240</width>
+        <height>40</height>
+        <onup>3</onup>
+        <ondown>5</ondown>
+        <onright>4</onright>
+        <onleft>4</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>      
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <visible>string.equals(#MPE.Selected.haveupdate,true)+string.equals(#MPE.Selected.isinstalled,true)</visible>
+      </control>
+      <control>
+        <description>Disable Button</description>
+        <type>button</type>
+        <id>5</id>
+        <label>#MPEI.Translation.Disable.Label</label>
+        <width>240</width>
+        <height>40</height>
+        <onup>4</onup>
+        <ondown>6</ondown>
+        <onright>5</onright>
+        <onleft>5</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>      
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <visible>string.equals(#MPE.Selected.IsEnabled,true)+string.equals(#MPE.Selected.isinstalled,true)</visible>
+      </control>
+      <control>
+        <description>Enable Button</description>
+        <type>button</type>
+        <id>6</id>
+        <label>#MPEI.Translation.Enable.Label</label>
+        <width>240</width>
+        <height>40</height>
+        <onup>5</onup>
+        <ondown>7</ondown>
+        <onright>6</onright>
+        <onleft>6</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>      
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <visible>string.equals(#MPE.Selected.IsDisabled,true)+string.equals(#MPE.Selected.isinstalled,true)</visible>
+      </control>
+      <control>
+        <description>Settings Button</description>
+        <type>button</type>
+        <id>7</id>
+        <label>#MPEI.Translation.Settings.Label</label>
+        <width>240</width>
+        <height>40</height>
+        <onup>6</onup>
+        <ondown>8</ondown>
+        <onright>7</onright>
+        <onleft>7</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>      
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <visible>string.equals(#MPE.Selected.HaveSettings,true)+string.equals(#MPE.Selected.isinstalled,true)</visible>
+      </control>
+      <control>
+        <description>Change Log Button</description>
+        <type>button</type>
+        <id>8</id>
+        <label>#MPEI.Translation.ChangeLog.Label</label>
+        <onup>7</onup>
+        <ondown>2</ondown>
+        <onright>8</onright>
+        <onleft>8</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <width>240</width>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <visible>true</visible>
+      </control>
     </control>
     <!-- Details -->
     <control>
@@ -244,8 +225,7 @@
       <posX>310</posX>
       <posY>420</posY>
       <width>911</width>
-      <height>240</height>
-      <seperator>---------------------------------------------------</seperator>
+      <height>250</height>
       <font>mediastream11</font>
       <label>#MPE.Selected.Description</label>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
