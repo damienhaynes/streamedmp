@@ -375,7 +375,7 @@ namespace StreamedMPEditor
             this.name = "HTPC Info";
             break;
           case Plugins.InfoService:
-            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\HTPCInfo.dll");
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\InfoService.dll");
             this.name = "InfoService";
             break;
           case Plugins.MovingPictures:
