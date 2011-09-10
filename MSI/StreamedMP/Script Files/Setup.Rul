@@ -98,7 +98,8 @@
                            
 #define TVSERIES_MIN_VERSION						"3.1.0.1824"
 #define MOVINGPICTURES_MIN_VERSION					"1.2.3.1329"
-#define FANARTHANDLER_MIN_VERSION					"2.2.5.512"
+#define FANARTHANDLER_MIN_VERSION					"2.3.0.522"
+#define LATESTMEDIAHANDLER_MIN_VERSION				"1.0.0.5"
 #define MYLYRICS_MIN_VERSION						"1.6.1.0"
 #define GLOBALSEARCH_MIN_VERSION					"1.7.4.47"
 #define INFOSERVICE_MIN_VERSION						"1.6.5.210"
@@ -2435,6 +2436,9 @@ begin
         case "FANARTHANDLER": 
             szFileName = g_sPluginsDir^"process\\FanartHandler.dll";  
             
+        case "LATESTMEDIAHANDLER": 
+            szFileName = g_sPluginsDir^"process\\LatestMediaHandlerHandler.dll";
+            
         case "TRAKT": 
             szFileName = g_sPluginsDir^"windows\\TraktPlugin.dll";    
 
@@ -2625,7 +2629,23 @@ begin
 		    	if nReturn < 0 then
 		    		szQuestion = szQuestion + "\n\n";
 		    	endif;
-		    	szQuestion = szQuestion + "Your current version of Fanart-Handler plugin v" + svVersion2 + 
+		    	szQuestion = szQuestion + "Your current version of Fanart Handler plugin v" + svVersion2 + 
+		    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+		    				svVersion1;
+		        nReturn = nReturn - 1;
+	    	endif;
+	    endif;
+    endif;   
+    
+    if (!FeatureIsItemSelected(MEDIA,"Plugins\\LatestMediaHandler")) then
+		// Check that compatible version of plugin is used
+		if GetFileVersion(svVersion2,"LATESTMEDIAHANDLER") = 0 then
+			svVersion1 = LATESTMEDIAHANDLER_MIN_VERSION;
+	    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
+		    	if nReturn < 0 then
+		    		szQuestion = szQuestion + "\n\n";
+		    	endif;
+		    	szQuestion = szQuestion + "Your current version of Latest Media Handler plugin v" + svVersion2 + 
 		    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
 		    				svVersion1;
 		        nReturn = nReturn - 1;
