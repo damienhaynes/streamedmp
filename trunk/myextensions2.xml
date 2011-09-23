@@ -9,7 +9,87 @@
   <define>#header.BG.overlay:mainoverlay.png</define>
   <define>#header.BG.colordiffuse:ffffffff</define>
   <controls>
-    <import>common.window.default2.xml</import>
+    <control>
+      <id>1</id>
+      <description>Background Image</description>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+      <colordiffuse>#header.BG.colordiffuse</colordiffuse>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Overlay Image</description>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1281</width>
+      <height>720</height>
+      <texture>#header.BG.overlay</texture>
+    </control>
+    <control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>431</posX>
+      <posY>11</posY>
+      <width>456</width>
+      <height>36</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="fade" time="150">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#header.label</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="fade" time="150">WindowClose</animation>
+    </control>
+    <control>
+      <description>Top Extension Title</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>852</posX>
+      <posY>13</posY>
+      <width>340</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <label>#header.extension.label</label>
+      <wrapString> |  </wrapString>
+      <scrollStartDelaySec>10</scrollStartDelaySec>
+      <visible>yes</visible>
+      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
     <import>common.time.xml</import>
     <control>
       <description>Hidden Menu</description>
@@ -109,35 +189,84 @@
           <visible>string.equals(#mpei.a6afa4d6_4fd8_4607_8878_5911db044fd7.haveupdate,true)</visible>
         </control>
       </control>
-    </control>
-    <control>
-      <description>Summary</description>
-      <type>label</type>
-      <id>0</id>
-      <posX>26</posX>
-      <posY>240</posY>
-      <font>mediastream11tc</font>
-      <textcolor>ffFFFFFF</textcolor>
-      <label>#MPE.Selected.Version</label>
-      <visible>facadeview.list+!string.starts(#MPE.Selected.Version, #MPE.)</visible>
-      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    </control>    
     <control>
       <description>Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
       <posX>26</posX>
-      <posY>280</posY>
+      <posY>350</posY>
       <width>570</width>
-      <height>375</height>
+      <height>280</height>
       <font>mediastream11</font>
       <textcolor>ffFFFFFF</textcolor>
       <label>#MPE.Selected.Description</label>
-      <visible>facadeview.list+!string.starts(#MPE.Selected.Description, #MPE.)</visible>
+      <visible>facadeview.list+!string.starts(#MPE.Selected.Description, #MPE.)+!string.equals(#MPE.Selected.Description,)</visible>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
+    
+    <control Style="smallTitleB">
+      <type>label</type>
+      <posX>26</posX>
+      <posY>250</posY>
+      <width>249</width>
+      <label>#MPEI.Translation.Version.Label</label>
+      <visible>facadeview.list+!string.starts(#MPE.Selected.Version, #MPE.)+!string.equals(#MPE.Selected.Version,)</visible>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="100">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <posX>250</posX>
+      <posY>251</posY>
+      <width>426</width>
+      <label>#MPE.Selected.Version</label>
+      <visible>facadeview.list+!string.starts(#MPE.Selected.Version, #MPE.)+!string.equals(#MPE.Selected.Version,)</visible>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="100">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <type>label</type>
+      <posX>26</posX>
+      <posY>276</posY>
+      <width>249</width>
+      <label>#MPEI.Translation.Author.Label</label>
+      <visible>facadeview.list+!string.starts(#MPE.Selected.Author, #MPE.)+!string.equals(#MPE.Selected.Author,)</visible>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="100">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <type>label</type>
+      <posX>250</posX>
+      <posY>277</posY>
+      <width>428</width>
+      <label>#MPE.Selected.Author</label>
+      <visible>facadeview.list+!string.starts(#MPE.Selected.Author, #MPE.)+!string.equals(#MPE.Selected.Author,)</visible>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="100">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <type>label</type>
+      <posX>26</posX>
+      <posY>302</posY>
+      <width>248</width>
+      <label>#MPEI.Translation.ReleaseDate.Label</label>
+      <visible>facadeview.list+!string.starts(#MPE.Selected.ReleaseDate, #MPE.)+!string.equals(#MPE.Selected.ReleaseDate,)</visible>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="100">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <type>fadelabel</type>
+      <posX>250</posX>
+      <posY>303</posY>
+      <width>428</width>
+      <label>#MPE.Selected.ReleaseDate</label>
+      <visible>facadeview.list+!string.starts(#MPE.Selected.ReleaseDate, #MPE.)+!string.equals(#MPE.Selected.ReleaseDate,)</visible>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="100">WindowClose</animation>
+    </control>
+    
     <control>
       <description>Selected item Background</description>
       <type>image</type>

@@ -4,11 +4,59 @@
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.label:14001</define>
-  <define>#header.hover:hover_my plugins.png</define>
+  <define>#header.hover:hover_extensions.png</define>
   <define>#header.BG.overlay:mainoverlay.png</define>
   <define>#header.BG.colordiffuse:ffffffff</define>
   <controls>
-    <import>common.window.default.xml</import>
+    <control>
+      <id>1</id>
+      <description>Background Image</description>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+      <colordiffuse>#header.BG.colordiffuse</colordiffuse>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Overlay Image</description>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1281</width>
+      <height>720</height>
+      <texture>#header.BG.overlay</texture>
+    </control>    
+    <control>
+      <id>1</id>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="fade" time="150">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#header.label</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="fade" time="150">WindowClose</animation>
+    </control>
     <import>common.time.xml</import>
     <control>
       <type>image</type>
@@ -112,7 +160,7 @@
         <onup>17</onup>
         <ondown>2</ondown>
         <onright>50</onright>
-        <onleft>2</onleft>
+        <onleft>50</onleft>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
@@ -144,7 +192,7 @@
           <posX>356</posX>
           <posY>240</posY>
           <width>900</width>
-          <height>477</height>
+          <height>340</height>
           <textXOff2>880</textXOff2>
           <spinPosX>1175</spinPosX>
           <spinPosY>681</spinPosY>
@@ -160,6 +208,17 @@
         </control>
       </control>
     </control>    
+		<control>
+      <type>textboxscrollup</type>
+      <posX>335</posX>
+      <posY>560</posY>
+      <width>915</width>
+      <height>100</height>
+      <font>font12</font>
+      <label>#MPE.Selection.Description</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="100">WindowClose</animation>
+    </control>
     <import>common.overlays2.xml</import>
   </controls>
 </window>
