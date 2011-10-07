@@ -3,11 +3,11 @@
   <id>87271</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-	<rememberLastFocusedControl>yes</rememberLastFocusedControl>
+  <rememberLastFocusedControl>yes</rememberLastFocusedControl>
   <define>#header.label:Trakt #Trakt.Translation.Settings.Label</define>
   <define>#header.hover:hover_trakt.png</define>
   <define>#defaultcontrol:2</define>
-  <define>#defaultcontrol.onright:9996</define>	
+  <define>#defaultcontrol.onright:9997</define>
   <controls>
     <import>Trakt.Common.xml</import>
     <import>common.time.xml</import>
@@ -26,7 +26,7 @@
         <id>2</id>
         <onup>17</onup>
         <label>#Trakt.Translation.AccountSetup.Label</label>
-				<hyperlink>87272</hyperlink>
+        <hyperlink>87272</hyperlink>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -34,7 +34,7 @@
         <description>Plugin Setup</description>
         <id>3</id>
         <label>#Trakt.Translation.Plugins.Label</label>
-				<hyperlink>87273</hyperlink>
+        <hyperlink>87273</hyperlink>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -42,10 +42,11 @@
         <description>General Settings</description>
         <id>4</id>
         <label>#Trakt.Translation.General.Label</label>
-				<hyperlink>87274</hyperlink>
+        <hyperlink>87274</hyperlink>
         <onright>#defaultcontrol.onright</onright>
         <ondown>2</ondown>
       </control>
     </control>
   </controls>
 </window>
+<!--Checksum:8442609d68306444f2373cf9ec61849c-->

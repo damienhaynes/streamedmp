@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>87272</id>
   <defaultcontrol>2</defaultcontrol>
@@ -6,7 +6,7 @@
   <define>#header.label:#Trakt.Translation.AccountSetup.Label</define>
   <define>#header.hover:hover_trakt.png</define>
   <define>#defaultcontrol:2</define>
-  <define>#defaultcontrol.onright:9996</define>
+  <define>#defaultcontrol.onright:9997</define>
   <controls>
     <import>Trakt.Common.xml</import>
     <import>common.time.xml</import>
@@ -39,10 +39,12 @@
         <description>Disconnect Current Account</description>
         <type>button</type>
         <id>4</id>
-        <label></label>
+        <label>
+        </label>
         <onright>#defaultcontrol.onright</onright>
       </control>
     </control>
     <import>Trakt.AccountDialog.xml</import>
   </controls>
 </window>
+<!--Checksum:8141673bdc6dd97e3af2f15adbe5f0a2-->
