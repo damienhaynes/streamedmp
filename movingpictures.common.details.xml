@@ -123,7 +123,7 @@
       <buttonY>55</buttonY>
       <buttonwidth>49</buttonwidth>
       <buttonheight>253</buttonheight>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(10000)|control.hasfocus(10001)|control.hasfocus(10002)|control.hasfocus(10003)|control.hasfocus(97258)|control.hasfocus(97259)|control.hasfocus(97260)]</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(10000)|control.hasfocus(10001)|control.hasfocus(10002)|control.hasfocus(10003)|control.hasfocus(97258)|control.hasfocus(97259)|control.hasfocus(97260)|control.hasfocus(97261)]</visible>
       <animation effect="slide" time="100" start="300,0">visible</animation>
       <animation effect="slide" time="0" end="300,0">hidden</animation>
       <control>
@@ -262,6 +262,17 @@
           <id>97260</id>
           <label>#Trakt.Translation.Shouts.Label</label>
           <onup>97259</onup>
+          <ondown>97261</ondown>
+          <onleft>6</onleft>
+          <onright>6</onright>
+          <visible>plugin.isenabled(Trakt)</visible>
+        </control>
+        <control>
+          <description>Trakt Add to Custom List</description>
+          <type>button</type>
+          <id>97261</id>
+          <label>#Trakt.Translation.AddToList.Label</label>
+          <onup>97260</onup>
           <ondown>97258</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
@@ -272,7 +283,7 @@
           <type>button</type>
           <id>97258</id>
           <label>#Trakt.Translation.AddToWatchList.Label</label>
-          <onup>97260</onup>
+          <onup>97261</onup>
           <ondown>10000</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
@@ -536,4 +547,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:f86ec5b0c659a034592b5028dce5e53a-->
+<!--Checksum:21896ffbcc1c34bfdfa8fc55964bd489-->

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>87273</id>
   <defaultcontrol>2</defaultcontrol>
@@ -6,7 +6,7 @@
   <define>#header.label:#Trakt.Translation.Plugins.Label</define>
   <define>#header.hover:hover_trakt.png</define>
   <define>#defaultcontrol:2</define>
-  <define>#defaultcontrol.onright:9996</define>
+  <define>#defaultcontrol.onright:9997</define>
   <controls>
     <import>Trakt.Common.xml</import>
     <import>common.time.xml</import>
@@ -42,7 +42,7 @@
         <id>4</id>
         <label>My Videos</label>
         <onleft>4</onleft>
-        <onright>#defaultcontrol.onright</onright>        
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmaintogglebutton">
         <description>My Films</description>
@@ -60,10 +60,10 @@
         <onleft>6</onleft>
         <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmaintogglebutton">
+      <control Style="settingsmaintogglebutton">
         <description>My Anime</description>
         <type>togglebutton</type>
-        <id>7</id>
+        <id>8</id>
         <label>My Anime</label>
         <onleft>7</onleft>
         <onright>#defaultcontrol.onright</onright>
@@ -72,3 +72,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:e93585ecd14411756e2921574fa9ff88-->

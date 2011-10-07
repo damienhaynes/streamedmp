@@ -3,11 +3,11 @@
   <id>87258</id>
   <defaultcontrol>10</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-	<rememberLastFocusedControl>yes</rememberLastFocusedControl>
+  <rememberLastFocusedControl>yes</rememberLastFocusedControl>
   <define>#header.label:Trakt</define>
   <define>#header.hover:hover_trakt.png</define>
   <define>#selecteditem:#highlightedbutton</define>
-  <controls>	
+  <controls>
     <control>
       <type>image</type>
       <description>BG</description>
@@ -61,11 +61,11 @@
       <posX>230</posX>
       <posY>100</posY>
       <width>100</width>
-			<height>100</height>
-			<keepaspectratio>yes</keepaspectratio>
+      <height>100</height>
+      <keepaspectratio>yes</keepaspectratio>
       <texture>logos\trakt.png</texture>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-    </control>    
+    </control>
     <control>
       <type>group</type>
       <description>group element</description>
@@ -78,76 +78,85 @@
       <control Style="settingsbutton">
         <description>Calendar</description>
         <type>button</type>
-				<width>255</width>
-        <id>10</id>        
+        <width>255</width>
+        <id>10</id>
         <label>#Trakt.Translation.Calendar.Label</label>
-				<hyperlink>87259</hyperlink>
-				<onup>98</onup>
-      </control>      
+        <hyperlink>87259</hyperlink>
+        <onup>98</onup>
+      </control>
       <control Style="settingsbutton">
         <description>Friends</description>
         <type>button</type>
-				<width>255</width>
+        <width>255</width>
         <id>11</id>
-				<hyperlink>87260</hyperlink>
+        <hyperlink>87260</hyperlink>
         <label>#Trakt.Translation.Friends.Label</label>
       </control>
       <control Style="settingsbutton">
         <description>Recommendations</description>
         <type>button</type>
-				<width>255</width>
+        <width>255</width>
         <id>12</id>
-				<hyperlink>87261</hyperlink>
-        <label>#Trakt.Translation.Recommendations.Label</label>        
+        <hyperlink>87261</hyperlink>
+        <label>#Trakt.Translation.Recommendations.Label</label>
       </control>
       <control Style="settingsbutton">
         <description>Trending</description>
         <type>button</type>
-				<width>255</width>
+        <width>255</width>
         <id>13</id>
-				<hyperlink>87264</hyperlink>
-        <label>#Trakt.Translation.Trending.Label</label>        
+        <hyperlink>87264</hyperlink>
+        <label>#Trakt.Translation.Trending.Label</label>
       </control>
       <control Style="settingsbutton">
         <description>Watch List</description>
         <type>button</type>
-				<width>255</width>
+        <width>255</width>
         <id>14</id>
-				<hyperlink>87267</hyperlink>
-        <label>#Trakt.Translation.WatchList.Label</label>        
+        <hyperlink>87267</hyperlink>
+        <label>#Trakt.Translation.WatchList.Label</label>
+      </control>
+      <control Style="settingsbutton">
+        <description>Lists</description>
+        <type>button</type>
+        <width>255</width>
+        <id>15</id>
+        <hyperlink>87275</hyperlink>
+        <label>#Trakt.Translation.Lists.Label</label>
       </control>
       <control Style="settingsbutton">
         <description>Settings</description>
         <type>button</type>
-				<width>255</width>
-        <id>15</id>
+        <width>255</width>
+        <id>16</id>
         <label>#Trakt.Translation.Settings.Label</label>
-				<hyperlink>87271</hyperlink>
-				<ondown>98</ondown>
+        <hyperlink>87271</hyperlink>
+        <ondown>98</ondown>
       </control>
       <control Style="settingsbutton">
         <description>MPEIUPDATE:a9c3845a_8718_4712_85cc_26f56520bb9a</description>
         <type>button</type>
-				<width>255</width>
+        <width>255</width>
         <id>98</id>
         <label>#MPEI.Translation.Update.Label</label>
-				<ondown>10</ondown>
-        <onup>15</onup>
+        <ondown>10</ondown>
+        <onup>16</onup>
         <visible>string.equals(#mpei.a9c3845a_8718_4712_85cc_26f56520bb9a.haveupdate, true)</visible>
       </control>
-		</control>
+    </control>
     <control>
       <description>Update Indicator</description>
       <type>image</type>
       <id>0</id>
       <posX>420</posX>
-      <posY>467</posY>
+      <posY>510</posY>
       <width>32</width>
       <height>32</height>
       <texture>isupdate.png</texture>
       <visible>string.equals(#mpei.a9c3845a_8718_4712_85cc_26f56520bb9a.haveupdate, true)</visible>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-		<import>common.time.xml</import>
+    <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:18ba0ce9cc042c87def12aa3d3ce846b-->
