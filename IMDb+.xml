@@ -2,6 +2,8 @@
 	<id>31415</id>
 	<defaultcontrol>101</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
+  <animation effect="fade" time="250">WindowOpen</animation>
+  <animation effect="fade" time="250">WindowClose</animation>
 	<controls>		
     <control>
 			<description>BackGround</description>
@@ -11,7 +13,7 @@
 			<posY>0</posY>
 			<width>1280</width>
 			<height>720</height>
-			<texture>hover_my plugins.png</texture>
+			<texture>hover_moving pictures.png</texture>
 		</control>
 		<control>
 			<description>BackGround</description>
@@ -43,185 +45,88 @@
       <font>mediastream12c</font>
       <label>#IMDb.Translation.ScraperOptionsTitle.Label</label>
       <align>right</align>           
-    </control>		
-		<control>
-			<description>Global Options In Columnized GridLayout</description>
-			<type>group</type>
-			<posX>30</posX>
-			<posY>100</posY>      
-			<layout>GridLayout(4, 5, 5, 8, 1)</layout>
-			<control Style="skintogglebutton">
-				<description>global_options_original_title</description>
-				<type>togglebutton</type>
-				<id>101</id>
-        <width>300</width>
-				<label>#IMDb.Translation.OriginalTitle.Label</label>
-				<onright>201</onright>
-				<onleft>101</onleft>
-			</control>
-			<control Style="skintogglebutton">
-				<description>global_options_foreign_title</description>
-				<type>togglebutton</type>
-				<id>102</id>
-				<label>#IMDb.Translation.AddForeignTitle.Label</label>
-				<onright>202</onright>
-				<onleft>102</onleft>
-        <width>300</width>
-			</control>
-			<control Style="skintogglebutton">
-				<description>global_options_foreign_first</description>
-				<type>togglebutton</type>
-				<id>103</id>
-				<label>#IMDb.Translation.ForeignTitleFirst.Label</label>
-				<onright>203</onright>
-				<onleft>103</onleft>
-        <width>300</width>
-			</control>
-			<control Style="skintogglebutton">
-				<description>global_options_special_edition</description>
-				<type>togglebutton</type>
-				<id>104</id>
-				<label>#IMDb.Translation.SpecialEditions.Label</label>
-				<onright>204</onright>
-				<onleft>104</onleft>
-				<onleft>101</onleft>
-        <width>300</width>
-			</control>
-			<control Style="skintogglebutton">
-				<description>global_options_rename_titles</description>
-				<type>togglebutton</type>
-				<id>105</id>
-				<label>#IMDb.Translation.RenameTitles.Label</label>
-				<onright>205</onright>
-				<onleft>105</onleft>
-				<ondown>201</ondown>
-				<onleft>101</onleft>
-        <width>300</width>
-			</control>
-			<control Style="skintogglebutton">
-				<description>global_options_single_score</description>
-				<type>togglebutton</type>
-				<id>201</id>
-				<label>#IMDb.Translation.SingleScore.Label &#187; &#187;</label>
-				<onright>301</onright>
-				<onleft>101</onleft>
-        <width>300</width>
-			</control>
-			<control Style="skintogglebutton">
-				<description>global_options_min_imdb_votes</description>
-				<type>togglebutton</type>
-				<id>202</id>
-				<label>#IMDb.Translation.MinImdbVotes.Label</label>
-				<onright>302</onright>
-				<onleft>102</onleft>
-        <width>300</width>
-			</control>
-			<control Style="skintogglebutton">
-				<description>global_options_long_summary</description>
-				<type>togglebutton</type>
-				<id>203</id>
-				<label>#IMDb.Translation.LongSummary.Label</label>
-				<onright>303</onright>
-				<onleft>103</onleft>
-        <width>300</width>
-			</control>
-			<control Style="skintogglebutton">
-				<description>global_options_uk_rating</description>
-				<type>togglebutton</type>
-				<id>204</id>
-				<label>#IMDb.Translation.UkRating.Label</label>
-				<onright>304</onright>
-				<onleft>104</onleft>
-        <width>300</width>
-			</control>
-			<control Style="skintogglebutton">
-				<description>global_options_refresh_all_fields</description>
-				<type>togglebutton</type>
-				<id>205</id>
-				<label>#IMDb.Translation.RefreshAllFields.Label</label>
-				<onright>305</onright>
-				<onleft>105</onleft>
-				<ondown>301</ondown>
-        <width>300</width>
-			</control>
-			<control Style="skintogglebutton">
-				<description>global_options_imdb_score</description>
-				<type>togglebutton</type>
-				<id>301</id>
-				<label>#IMDb.Translation.IMDbScore.Label</label>
-				<onright>401</onright>
-				<onleft>201</onleft>
-				<ondown>302</ondown>
-        <width>300</width>
-			</control>
-			<control Style="skintogglebutton">
-				<description>global_options_imdb_metascore</description>
-				<type>togglebutton</type>
-				<id>302</id>
-				<label>#IMDb.Translation.IMDbMetaScore.Label</label>
-				<onright>402</onright>
-				<onleft>202</onleft>
-				<ondown>303</ondown>
-        <width>300</width>
-			</control>
-			<control Style="skintogglebutton">
-				<description>global_options_rotten_meter</description>
-				<type>togglebutton</type>
-				<id>303</id>
-				<label>#IMDb.Translation.RottenMeter.Label</label>
-				<onright>402</onright>
-				<onleft>203</onleft>
-				<ondown>304</ondown>
-        <width>300</width>
-			</control>
-			<control Style="skintogglebutton">
-				<description>global_options_rotten_average</description>
-				<type>togglebutton</type>
-				<id>304</id>
-				<label>#IMDb.Translation.RottenAverage.Label</label>
-				<onright>402</onright>
-				<onleft>204</onleft>
-				<ondown>305</ondown>
-        <width>300</width>
-			</control>
-			<control Style="skintogglebutton">
-				<description>global_options_rotten_top_critics</description>
-				<type>togglebutton</type>
-				<id>305</id>
-				<label>#IMDb.Translation.RottenTopCritics.Label</label>
-				<onright>402</onright>
-				<onleft>205</onleft>
-				<ondown>401</ondown>
-        <width>300</width>
-			</control>
-			<control Style="skinbutton">
-				<description>global_options_language_filter</description>
-				<type>button</type>
-				<id>401</id>
-				<label>#IMDb.Translation.LanguageFilter.Label</label>
-				<onright>401</onright>
-				<onleft>301</onleft>
-        <width>300</width>
-			</control>
-			<control Style="skinbutton">
-				<description>global_options_country_filter</description>
-				<type>button</type>
-				<id>402</id>
-				<label>#IMDb.Translation.CountryFilter.Label</label>
-				<onright>402</onright>
-				<onleft>302</onleft>
-				<ondown>402</ondown>
-        <width>300</width>
-			</control>
-		</control>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>675</posY>
+      <width>1280</width>
+      <height>47</height>
+      <texture>imagestreamtitle.png</texture>
+    </control>
+    <control>
+      <description>Selected Label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>40</posX>
+      <posY>684</posY>
+      <width>900</width>
+      <label>#selecteditem</label>
+      <font>mediastream16tc</font>
+      <textcolor>White</textcolor>
+    </control>
+    <control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1013</posX>
+      <posY>684</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+			<visible>!facadeview.coverflow</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1023</posX>
+      <posY>688</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+			<visible>!facadeview.coverflow</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>group element</description>
+      <type>group</type>
+      <control>
+        <type>facadeview</type>
+        <id>50</id>
+        <control>
+          <type>listcontrol</type>
+          <id>50</id>
+          <onleft>50</onleft>
+          <onright>50</onright>
+          <posX>80</posX>
+          <posY>80</posY>
+          <width>1200</width>
+          <height>400</height>
+          <textXOff2>1140</textXOff2>
+          <spinWidth>50</spinWidth>
+          <spinHeight>37</spinHeight>
+          <spinPosX>1175</spinPosX>
+          <spinPosY>681</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+        </control>
+      </control>
+    </control>
 		<control>
 			<description>Chosen Option Description</description>
 			<type>textboxscrollup</type>
 			<id>500</id>
 			<posX>40</posX>
-			<posY>385</posY>
+			<posY>425</posY>
 			<width>1210</width>
-			<height>315</height>
+			<height>245</height>
 			<onright>101</onright>
 			<onleft>101</onleft>
 			<ondown>101</ondown>
@@ -229,7 +134,7 @@
 			<label>#IMDb.Option.Description</label>
 			<font>mediastream11</font>
 			<textcolor>ffFFFFFF</textcolor>
-			<scrollStartDelaySec>10</scrollStartDelaySec>
+			<scrollStartDelaySec>8</scrollStartDelaySec>
 		</control>
     <import>common.time.xml</import>
 	</controls>
