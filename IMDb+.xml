@@ -1,30 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-	<id>31415</id>
-	<defaultcontrol>101</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+  <id>31415</id>
+  <defaultcontrol>101</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
   <animation effect="fade" time="250">WindowOpen</animation>
   <animation effect="fade" time="250">WindowClose</animation>
-	<controls>		
+  <controls>
     <control>
-			<description>BackGround</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>1280</width>
-			<height>720</height>
-			<texture>hover_moving pictures.png</texture>
-		</control>
-		<control>
-			<description>BackGround</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>1280</width>
-			<height>720</height>
-			<texture>mainoverlaydetails.png</texture>
-		</control>
+      <description>BackGround</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_moving pictures.png</texture>
+    </control>
+    <control>
+      <description>BackGround</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlaydetails.png</texture>
+    </control>
     <control>
       <description>Title Background</description>
       <type>image</type>
@@ -44,7 +45,40 @@
       <width>350</width>
       <font>mediastream12c</font>
       <label>#IMDb.Translation.ScraperOptionsTitle.Label</label>
-      <align>right</align>           
+      <align>right</align>
+    </control>
+    <control>
+      <description>Item Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1065</posX>
+      <posY>13</posY>
+      <width>202</width>
+      <height>28</height>
+      <texture>mediacountbg.png</texture>
+    </control>
+    <control>
+      <description>Items Translation</description>
+      <type>label</type>
+      <label>507</label>
+      <id>0</id>
+      <width>90</width>
+      <posX>1077</posX>
+      <posY>17</posY>
+      <align>left</align>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+    </control>
+    <control>
+      <description>Item Count</description>
+      <type>label</type>
+      <label>#itemcount</label>
+      <id>0</id>
+      <posX>1240</posX>
+      <posY>16</posY>
+      <font>mediastream10c</font>
+      <textcolor>ff006698</textcolor>
+      <align>right</align>
     </control>
     <control>
       <type>image</type>
@@ -75,7 +109,7 @@
       <width>260</width>
       <height>30</height>
       <texture>mediacountbg_Spin.png</texture>
-			<visible>!facadeview.coverflow</visible>
+      <visible>!facadeview.coverflow</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -87,7 +121,7 @@
       <posY>688</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
-			<visible>!facadeview.coverflow</visible>
+      <visible>!facadeview.coverflow</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -119,23 +153,24 @@
         </control>
       </control>
     </control>
-		<control>
-			<description>Chosen Option Description</description>
-			<type>textboxscrollup</type>
-			<id>500</id>
-			<posX>40</posX>
-			<posY>425</posY>
-			<width>1210</width>
-			<height>245</height>
-			<onright>101</onright>
-			<onleft>101</onleft>
-			<ondown>101</ondown>
-			<onup>101</onup>
-			<label>#IMDb.Option.Description</label>
-			<font>mediastream11</font>
-			<textcolor>ffFFFFFF</textcolor>
-			<scrollStartDelaySec>8</scrollStartDelaySec>
-		</control>
+    <control>
+      <description>Chosen Option Description</description>
+      <type>textboxscrollup</type>
+      <id>500</id>
+      <posX>40</posX>
+      <posY>425</posY>
+      <width>1210</width>
+      <height>245</height>
+      <onright>101</onright>
+      <onleft>101</onleft>
+      <ondown>101</ondown>
+      <onup>101</onup>
+      <label>#IMDb.Option.Description</label>
+      <font>mediastream11</font>
+      <textcolor>ffFFFFFF</textcolor>
+      <scrollStartDelaySec>8</scrollStartDelaySec>
+    </control>
     <import>common.time.xml</import>
-	</controls>
+  </controls>
 </window>
+<!--Checksum:bad9b4ae539dcc493ffcc4ec61e2b24f-->
