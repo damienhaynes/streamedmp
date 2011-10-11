@@ -2565,9 +2565,6 @@ namespace StreamedMPEditor
         var x = OnlineVideos.MediaPortal1.Translator.Lang;
         var y = OnlineVideos.MediaPortal1.PluginConfiguration.Instance;
        
-        // get settings instance
-        OnlineVideoSettings onlineVideos = OnlineVideos.OnlineVideoSettings.Instance;
-   
         // build site utils list
         OnlineVideoSettings.Instance.BuildSiteUtilsList();
         
