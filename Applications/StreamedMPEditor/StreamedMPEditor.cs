@@ -2561,25 +2561,13 @@ namespace StreamedMPEditor
       // check if we have already got them
       if (onlineVideosSites.Count == 0)
       {
-        // init translator class
-        string x = OnlineVideos.MediaPortal1.Translator.Lang;
-
-        // set path of config file, so we load user settings
-        OnlineVideoSettings.Instance.ConfigDir = SkinInfo.mpPaths.configBasePath;
-
-        // set path of site utils
-        OnlineVideoSettings.Instance.DllsDir = Path.Combine(SkinInfo.mpPaths.pluginPath, @"Windows\OnlineVideos");
-
-        // set path to Downloads Folder
-        OnlineVideoSettings.Instance.DownloadDir = helper.readMPConfiguration("onlinevideos", "downloadDir", string.Empty);
-        
-        // set path of favourites database
-        OnlineVideoSettings.Instance.FavDB = OnlineVideos.MediaPortal1.FavoritesDatabase.Instance;
-
-        // load list of sites
+        // init onlinevideos
+        var x = OnlineVideos.MediaPortal1.Translator.Lang;
+        var y = OnlineVideos.MediaPortal1.PluginConfiguration.Instance;
+       
+        // get settings instance
         OnlineVideoSettings onlineVideos = OnlineVideos.OnlineVideoSettings.Instance;
-        onlineVideos.LoadSites();
-        
+   
         // build site utils list
         OnlineVideoSettings.Instance.BuildSiteUtilsList();
         
