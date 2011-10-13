@@ -76,10 +76,48 @@
         <id>3</id>
         <label>#StreamedMP.CaseSensitive</label>
         <onup>10</onup>
-        <ondown>2</ondown>
+        <ondown>97</ondown>
         <onright>50</onright>
         <onleft>3</onleft>
         <width>300</width>
+      </control>
+      <control Style="skinbutton">
+        <description>Now Playing JumpTo</description>
+        <type>button</type>
+        <id>97</id>
+        <label>4540</label>
+        <onup>3</onup>
+        <ondown>98</ondown>
+        <onright>50</onright>
+        <onleft>3</onleft>
+        <width>300</width>
+        <hyperlink>510</hyperlink>
+        <visible>player.hasmedia</visible>
+      </control>
+      <control Style="skinbutton">
+        <description>MPEICONFIGURE:fac44102_7190_4006_b7aa_60d0e7c17638</description>
+        <type>button</type>
+        <id>98</id>
+        <onup>97</onup>
+        <ondown>99</ondown>
+        <onright>50</onright>
+        <onleft>98</onleft>
+        <width>300</width>
+        <label>#MPEI.Translation.Settings.Label</label>
+        <!--<visible>string.equals(#mpei.fac44102_7190_4006_b7aa_60d0e7c17638.isinstalled, true)</visible>-->
+        <visible>false</visible>
+      </control>
+      <control Style="skinbutton">
+        <description>MPEIUPDATE:fac44102_7190_4006_b7aa_60d0e7c17638</description>
+        <type>button</type>
+        <id>99</id>
+        <onup>98</onup>
+        <ondown>2</ondown>
+        <onright>50</onright>
+        <onleft>99</onleft>
+        <width>300</width>
+        <label>#MPEI.Translation.UpdateAvailable.Label</label>
+        <visible>string.equals(#mpei.fac44102_7190_4006_b7aa_60d0e7c17638.haveupdate, true)</visible>
       </control>
     </control>
     <control>
@@ -195,6 +233,7 @@
       <centered>yes</centered>
 			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
+      <visible>!player.hasmedia+!string.equals(#mpei.fac44102_7190_4006_b7aa_60d0e7c17638.haveupdate,true)</visible>
     </control>
     <control>
       <description>Item Count Background</description>
