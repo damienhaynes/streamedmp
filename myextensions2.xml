@@ -231,8 +231,8 @@
       <posX>26</posX>
       <posY>276</posY>
       <width>249</width>
-      <label>#MPEI.Translation.Author.Label</label>
-      <visible>facadeview.list+!string.starts(#MPE.Selected.Author, #MPE.)+!string.equals(#MPE.Selected.Author,)</visible>
+      <label>#MPEI.Translation.Status.Label</label>
+      <visible>facadeview.list+!string.starts(#MPE.Selected.Status, #MPE.)+!string.equals(#MPE.Selected.Status,)</visible>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
     </control>
@@ -241,8 +241,8 @@
       <posX>250</posX>
       <posY>277</posY>
       <width>428</width>
-      <label>#MPE.Selected.Author</label>
-      <visible>facadeview.list+!string.starts(#MPE.Selected.Author, #MPE.)+!string.equals(#MPE.Selected.Author,)</visible>
+      <label>#MPE.Selected.Status</label>
+      <visible>facadeview.list+!string.starts(#MPE.Selected.Status, #MPE.)+!string.equals(#MPE.Selected.Status,)</visible>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
     </control>
