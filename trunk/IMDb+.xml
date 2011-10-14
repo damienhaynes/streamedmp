@@ -3,8 +3,6 @@
   <id>31415</id>
   <defaultcontrol>101</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <animation effect="fade" time="250">WindowOpen</animation>
-  <animation effect="fade" time="250">WindowClose</animation>
   <controls>
     <control>
       <description>BackGround</description>
@@ -35,6 +33,8 @@
       <width>437</width>
       <height>35</height>
       <texture>tvtitlebg.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Plugin Name</description>
@@ -46,6 +46,8 @@
       <font>mediastream12c</font>
       <label>#IMDb.Translation.ScraperOptionsTitle.Label</label>
       <align>right</align>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Item Count Background</description>
@@ -56,11 +58,13 @@
       <width>202</width>
       <height>28</height>
       <texture>mediacountbg.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Items Translation</description>
+      <description>Settings Translation</description>
       <type>label</type>
-      <label>507</label>
+      <label>5</label>
       <id>0</id>
       <width>90</width>
       <posX>1077</posX>
@@ -68,6 +72,8 @@
       <align>left</align>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Item Count</description>
@@ -79,6 +85,8 @@
       <font>mediastream10c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <type>image</type>
@@ -88,6 +96,8 @@
       <width>1280</width>
       <height>47</height>
       <texture>imagestreamtitle.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Selected Label</description>
@@ -99,6 +109,8 @@
       <label>#selecteditem</label>
       <font>mediastream16tc</font>
       <textcolor>White</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Page Count Background</description>
@@ -110,7 +122,8 @@
       <height>30</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>!facadeview.coverflow</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Page Label</description>
@@ -122,24 +135,29 @@
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>!facadeview.coverflow</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>group element</description>
       <type>group</type>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <control>
         <type>facadeview</type>
         <id>50</id>
         <control>
           <type>listcontrol</type>
           <id>50</id>
-          <onleft>50</onleft>
-          <onright>50</onright>
+          <onleft>2</onleft>
+          <onright>2</onright>
           <posX>80</posX>
           <posY>80</posY>
           <width>1200</width>
           <height>400</height>
           <textXOff2>1140</textXOff2>
+          <remoteColor>FFFFFFFF</remoteColor>
+          <unfocusedAlpha>200</unfocusedAlpha>
           <spinWidth>50</spinWidth>
           <spinHeight>37</spinHeight>
           <spinPosX>1175</spinPosX>
@@ -169,8 +187,119 @@
       <font>mediastream11</font>
       <textcolor>ffFFFFFF</textcolor>
       <scrollStartDelaySec>8</scrollStartDelaySec>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <buttonX>1232</buttonX>
+      <buttonY>50</buttonY>
+      <buttonwidth>48</buttonwidth>
+      <buttonheight>144</buttonheight>
+      <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
+      <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>Dummy Button (for Mouse)</description>
+        <label>-</label>
+        <type>button</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <description>Menu</description>
+        <id>0</id>
+        <label>924</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>230</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <description>Jump To</description>
+        <id>0</id>
+        <label>1065</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>285</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
+        <posY>250</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout(0, Vertical, true)</layout>
+        <control>
+          <description>Force IMDb+</description>
+          <type>button</type>
+          <id>2</id>
+          <label>#IMDb.Translation.ForceIMDbPlus.Label</label>
+          <onup>17</onup>
+          <onleft>50</onleft>
+          <ondown>96742</ondown>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>true</visible>
+        </control>
+        <control>
+          <description>Moving Pictures</description>
+          <type>button</type>
+          <id>96742</id>
+          <label>Moving Pictures</label>
+          <hyperlink>96742</hyperlink>
+          <onleft>50</onleft>
+          <onup>2</onup>
+          <ondown>99999</ondown>
+        </control>
+        <control>
+          <description>MPEIUPDATE:9d064213_0b4d_4cee_96a5_405812422b58</description>
+          <type>button</type>
+          <id>99999</id>
+          <label>#MPEI.Translation.UpdateAvailable.Label</label>
+          <onup>96742</onup>
+          <ondown>2</ondown>
+          <onleft>50</onleft>
+          <visible>string.equals(#mpei.9d064213_0b4d_4cee_96a5_405812422b58.haveupdate,true)</visible>
+        </control>
+      </control>
     </control>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:bad9b4ae539dcc493ffcc4ec61e2b24f-->
+<!--Checksum:93f9740b7efb2ab2ca349cdd2291df83-->
