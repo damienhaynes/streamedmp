@@ -109,6 +109,21 @@
       <label>#selecteditem</label>
       <font>mediastream16tc</font>
       <textcolor>White</textcolor>
+      <visible>!string.equals(#IMDb.Movie.Refresh.Active,true)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Refresh Progress Label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>40</posX>
+      <posY>684</posY>
+      <width>900</width>
+      <label>#IMDb.Movie.Refresh.Status</label>
+      <font>mediastream16tc</font>
+      <textcolor>White</textcolor>
+      <visible>string.equals(#IMDb.Movie.Refresh.Active,true)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -158,6 +173,10 @@
           <textXOff2>1140</textXOff2>
           <remoteColor>FFFFFFFF</remoteColor>
           <unfocusedAlpha>200</unfocusedAlpha>
+          <itemWidth>32</itemWidth>
+          <itemHeight>32</itemHeight>
+          <IconXOff>-30</IconXOff>
+          <IconYOff>4</IconYOff>
           <spinWidth>50</spinWidth>
           <spinHeight>37</spinHeight>
           <spinPosX>1175</spinPosX>
@@ -245,7 +264,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>285</posY>
+        <posY>340</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -268,6 +287,24 @@
           <label>#IMDb.Translation.ForceIMDbPlus.Label</label>
           <onup>17</onup>
           <onleft>50</onleft>
+          <ondown>3</ondown>
+        </control>
+        <control>
+          <description>Refresh Movies</description>
+          <type>button</type>
+          <id>3</id>
+          <label>-</label>
+          <onup>2</onup>
+          <onleft>50</onleft>
+          <ondown>4</ondown>
+        </control>
+        <control>
+          <description>IMDb+ Information</description>
+          <type>button</type>
+          <id>4</id>
+          <label>#IMDb.Translation.IMDbInfo.Label</label>
+          <onup>3</onup>
+          <onleft>50</onleft>
           <ondown>96742</ondown>
         </control>
         <control>
@@ -284,7 +321,7 @@
           <label>Moving Pictures</label>
           <hyperlink>96742</hyperlink>
           <onleft>50</onleft>
-          <onup>2</onup>
+          <onup>4</onup>
           <ondown>99999</ondown>
         </control>
         <control>
@@ -302,4 +339,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:93f9740b7efb2ab2ca349cdd2291df83-->
+<!--Checksum:5126614a189fb5d5a0942c84456bcfac-->
