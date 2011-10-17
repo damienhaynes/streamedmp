@@ -87,7 +87,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Buttons -->
-    <!-- So no gaps, always show Play & Trailers, very likely that OnlineVideos is installed -->
     <control>
       <description>Play Movie</description>
       <type>button</type>
@@ -96,10 +95,10 @@
       <onup>6</onup>
       <ondown>6</ondown>
       <onright>10000</onright>
-      <onleft>10000</onleft>
-      <posX>1075</posX>
+      <onleft>666</onleft>
+      <posX>1055</posX>
       <posY>665</posY>
-      <width>150</width>
+      <width>170</width>
       <height>32</height>
       <textcolor>ffffffff</textcolor>
       <font>mediastream12tc</font>
@@ -110,6 +109,31 @@
       <textureFocus>tv_button_focus.png</textureFocus>
       <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+		<control>
+      <description>Subtitles</description>
+      <type>button</type>
+      <id>666</id>
+      <label>287</label>
+      <onup>666</onup>
+      <ondown>666</ondown>
+      <onright>6</onright>
+      <onleft>10000</onleft>
+      <posX>880</posX>
+      <posY>665</posY>
+      <width>170</width>
+      <height>32</height>
+      <textcolor>ffffffff</textcolor>
+      <font>mediastream12tc</font>
+      <textYOff>0</textYOff>
+      <textXOff>0</textXOff>
+      <textalign>center</textalign>
+			<hyperlink>84623</hyperlink>
+      <textcolorNoFocus>bfffffff</textcolorNoFocus>
+      <textureFocus>tv_button_focus.png</textureFocus>
+      <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+plugin.isenabled(SubCentral)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Movie Details Hidden Menu -->
@@ -155,13 +179,12 @@
       </control>
       <control>
         <id>0</id>
-        <description>Subtitle</description>
+        <description>Scraper</description>
         <type>label</type>
-        <label>287</label>
+        <label>#StreamedMP.Scraper</label>
         <font>mediastream12tc</font>
         <posX>1040</posX>
         <posY>340</posY>
-        <!--<visible>plugin.isenabled(SubCentral)</visible>-->
       </control>
       <control>
         <id>0</id>
@@ -227,16 +250,15 @@
           <visible>true</visible>
         </control>
         <control>
-          <description>Subtitles</description>
+          <description>IMDb+</description>
           <type>button</type>
           <id>10003</id>
-          <label>287</label>
-          <hyperlink>84623</hyperlink>
+          <label>IMDb+</label>
+          <hyperlink>31415</hyperlink>
           <onup>10002</onup>
           <ondown>97259</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
-          <!--<visible>plugin.isenabled(SubCentral)</visible>-->
         </control>
         <control>
           <description>Empty button</description>
