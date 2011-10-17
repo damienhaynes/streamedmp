@@ -289,6 +289,7 @@ namespace StreamedMPConfig
     public static string SkinMenu = "Skin";
     public static string MediaPortalSettings = "MediaPortal Settings";
     public static string ShowListScrollingPopup = "Show List Scrolling Popup";
+    public static string Scraper = "Scraper";
     #endregion
   }
 }
