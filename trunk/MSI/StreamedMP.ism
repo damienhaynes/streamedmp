@@ -245,7 +245,6 @@
 		<col key="yes" def="s72">Name</col>
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
-		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isregsvr.dll</td></row>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
@@ -347,6 +346,7 @@
 		<row><td>StreamedMPConfig.xml</td><td>{4A4FB3AB-3A7C-4A9B-AB6A-CB3B400D079B}</td><td>MPCONFIGDIR</td><td>144</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>defaultSkinMovingPictures</td><td>{B7171908-83C8-4143-B383-03F8966B8425}</td><td>DEFAULT</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>defaultWideSkinGlobalSearch</td><td>{191418F3-1836-4F6D-B1A1-494065FE9C60}</td><td>DEFAULTWIDE1</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>defaultWideSkinInfoService</td><td>{F8D58B23-F87B-4443-BB01-D93FEA216FEA}</td><td>DEFAULTWIDE1</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>defaultWideSkinMovingPictures</td><td>{A67C966E-E70B-4415-A201-933EB1DDE738}</td><td>DEFAULTWIDE1</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>defaultWideSkinMyLyrics</td><td>{4764DE76-A0A8-448E-A72C-38ADC921A7BA}</td><td>DEFAULTWIDE1</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>defaultWideSkinTVSeries</td><td>{A0A6261A-3D92-4255-96ED-597E29041F37}</td><td>DEFAULTWIDE1</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -708,13 +708,9 @@
 		<col def="I4">ExtendedType</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
-		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td/><td>Required for installations using InstallScript.</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
@@ -1567,6 +1563,7 @@
 		<row><td>GlobalMusicSearchSkin</td><td>GlobalMusicSearch</td><td>##ID_STRING158##</td><td>##ID_STRING159##</td><td>3</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>InfoService</td><td>Plugins</td><td>##ID_STRING78##</td><td>##ID_STRING79##</td><td>12</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>InfoServicePlugin</td><td>InfoService</td><td>##ID_STRING149##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>InfoServiceSkin</td><td>InfoService</td><td>##ID_STRING162##</td><td>##ID_STRING163##</td><td>3</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>LatestMedia</td><td>Plugins</td><td>##ID_STRING160##</td><td>##ID_STRING161##</td><td>16</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Main</td><td/><td>##ID_STRING28##</td><td>##ID_STRING29##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>16</td><td/><td/><td/><td/></row>
 		<row><td>MenuEditor</td><td>Plugins</td><td>##ID_STRING36##</td><td>##ID_STRING38##</td><td>19</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
@@ -1621,6 +1618,7 @@
 		<row><td>InfoService</td><td>languagesInfoService</td></row>
 		<row><td>InfoService</td><td>libWebBrowserDependencies</td></row>
 		<row><td>InfoServicePlugin</td><td>pluginInfoServiceDLL</td></row>
+		<row><td>InfoServiceSkin</td><td>defaultWideSkinInfoService</td></row>
 		<row><td>LatestMedia</td><td>LatestMediaHandlerConfig</td></row>
 		<row><td>LatestMedia</td><td>pluginLatestMediaHandlerDLL</td></row>
 		<row><td>Main</td><td>ClearArt</td></row>
@@ -2020,6 +2018,7 @@
 		<row><td>StreamedMPConfig.xml</td><td/><td/><td>_819A7DFC_E7FB_414E_ADEB_69D1BC17E0A2_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>defaultSkinMovingPictures</td><td/><td/><td>_D37D0ADD_3144_423D_9882_3B55C09C5494_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>defaultWideSkinGlobalSearch</td><td/><td/><td>_E82ABA9B_3540_434F_8C9C_A4CAF741C496_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>defaultWideSkinInfoService</td><td/><td/><td>_95BC16B9_CF5B_4FDA_B4FC_DA077E82A305_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>defaultWideSkinMovingPictures</td><td/><td/><td>_400C2F17_03E4_4BE3_A97C_BE45AE87D848_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>defaultWideSkinMyLyrics</td><td/><td/><td>_5F492178_B332_44C6_8B77_039C80AB53F2_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>defaultWideSkinTVSeries</td><td/><td/><td>_F57917B6_3C0A_458A_AA88_4D68966666D7_FILTER</td><td/><td/><td/><td/></row>
@@ -2138,6 +2137,7 @@
 		<row><td>Fanart</td><td>&lt;StreamedMP&gt;\fanarthandlerconfig\skin fanart</td><td>4</td><td>*.png,*.jpg,*.txt</td><td/><td>2</td></row>
 		<row><td>NowPlayingScreens</td><td>&lt;StreamedMP&gt;\nowplayingscreens</td><td>4</td><td>*.xml</td><td/><td>10</td></row>
 		<row><td>defaultWideSkinGlobalSearch</td><td>&lt;StreamedMP&gt;\defaultskins\globalsearch\defaultwide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
+		<row><td>defaultWideSkinInfoService</td><td>&lt;StreamedMP&gt;\defaultskins\infoservice\defaultwide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
 		<row><td>defaultWideSkinMovingPictures</td><td>&lt;StreamedMP&gt;\defaultskins\movingpictures\defaultwide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
 		<row><td>defaultWideSkinMyLyrics</td><td>&lt;StreamedMP&gt;\defaultskins\mylyrics\defaultwide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
 		<row><td>defaultWideSkinTVSeries</td><td>&lt;StreamedMP&gt;\defaultskins\mp-tvseries\defaultwide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
@@ -2183,6 +2183,7 @@
 		<row><td>GlobalMusicSearchSkin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>InfoService</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>InfoServicePlugin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>InfoServiceSkin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>LatestMedia</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Main</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>MenuEditor</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
@@ -2473,7 +2474,7 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 1.7.1</td></row>
+		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 1.7.2</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -2758,6 +2759,7 @@
 		<row><td>Custom</td><td>GlobalMusicSearchSkin</td></row>
 		<row><td>Custom</td><td>InfoService</td></row>
 		<row><td>Custom</td><td>InfoServicePlugin</td></row>
+		<row><td>Custom</td><td>InfoServiceSkin</td></row>
 		<row><td>Custom</td><td>LatestMedia</td></row>
 		<row><td>Custom</td><td>Main</td></row>
 		<row><td>Custom</td><td>MenuEditor</td></row>
@@ -2804,6 +2806,7 @@
 		<row><td>Minimal</td><td>GlobalMusicSearchSkin</td></row>
 		<row><td>Minimal</td><td>InfoService</td></row>
 		<row><td>Minimal</td><td>InfoServicePlugin</td></row>
+		<row><td>Minimal</td><td>InfoServiceSkin</td></row>
 		<row><td>Minimal</td><td>LatestMedia</td></row>
 		<row><td>Minimal</td><td>Main</td></row>
 		<row><td>Minimal</td><td>MenuEditor</td></row>
@@ -2848,6 +2851,7 @@
 		<row><td>Typical</td><td>GlobalMusicSearchSkin</td></row>
 		<row><td>Typical</td><td>InfoService</td></row>
 		<row><td>Typical</td><td>InfoServicePlugin</td></row>
+		<row><td>Typical</td><td>InfoServiceSkin</td></row>
 		<row><td>Typical</td><td>LatestMedia</td></row>
 		<row><td>Typical</td><td>Main</td></row>
 		<row><td>Typical</td><td>MenuEditor</td></row>
@@ -4186,6 +4190,8 @@
 		<row><td>ID_STRING16</td><td>1033</td><td>mattsk88</td><td>0</td><td/><td>-1919118098</td></row>
 		<row><td>ID_STRING160</td><td>1033</td><td>Latest Media Handler</td><td>0</td><td/><td>1419712009</td></row>
 		<row><td>ID_STRING161</td><td>1033</td><td>Allow for Latest Media to be displayed on Home Screen such as Most Recently Added TV Recording, or Music Album.\n\nStreamedMP handles most recents for TVShows and Movies so ensure you dont enable these in LMH.</td><td>0</td><td/><td>1419749546</td></row>
+		<row><td>ID_STRING162</td><td>1033</td><td>Default Wide Skin</td><td>0</td><td/><td>-1927293065</td></row>
+		<row><td>ID_STRING163</td><td>1033</td><td>Default Wide skin files for the InfoService plugin.</td><td>0</td><td/><td>-1793124352</td></row>
 		<row><td>ID_STRING17</td><td>1033</td><td>spuck </td><td>0</td><td/><td>-1919103762</td></row>
 		<row><td>ID_STRING18</td><td>1033</td><td>Fanart Moving Pictures</td><td>0</td><td/><td>1142761741</td></row>
 		<row><td>ID_STRING19</td><td>1033</td><td>Default Moving Pictures</td><td>0</td><td/><td>1142808813</td></row>
@@ -4491,13 +4497,9 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
-		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td/><td>6602</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
@@ -4939,9 +4941,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{83E8A5EF-EC2A-4ADE-BFF4-F7C680416825}</td><td/></row>
+		<row><td>ProductCode</td><td>{BF7C35FC-28D6-4873-9515-D9D20237609C}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>1.7.1.2953</td><td/></row>
+		<row><td>ProductVersion</td><td>1.7.2.2973</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ARPNOMODIFY;ARPNOREMOVE;ARPSYSTEMCOMPONENT;COMPANYNAME;INSTALLDIR;ISALWAYSINSTALLELEVATED;ISFOUNDNEWERPRODUCTVERSION;ISSETUPDRIVEN;ISX_SERIALNUM;IS_NET_API_GROUP_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_USERNAME_TOKEN;IS_NET_API_NEW_USER_CONFIRM;IS_NET_API_NEW_USER_GROUP;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_SERVER;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NEW_USER_PASSWORD_TEXT;IS_NEW_USER_SERVER_TEXT;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_DATABASE;IS_SQLSERVER_LIST;IS_SQLSERVER_PASSWORD;IS_SQLSERVER_SERVER;IS_SQLSERVER_USERNAME;LOGOS;MAJORUPGRADE_01;SUPPORTDIR;USERNAME</td><td/></row>
