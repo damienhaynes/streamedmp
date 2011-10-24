@@ -208,37 +208,26 @@
           <visible>plugin.isenabled(SubCentral)</visible>
         </control>
         <control>
-          <description>Trakt Recommendations</description>
+          <description>Trakt</description>
           <type>button</type>
           <id>99992</id>
-          <label>#Trakt.Translation.Recommendations.Label</label>
-          <hyperlink>87263</hyperlink>
+          <label>Trakt</label>
+          <hyperlink>87258</hyperlink>
           <onup>99991</onup>
           <ondown>99993</ondown>
           <onleft>50</onleft>
           <visible>plugin.isenabled(Trakt)</visible>
         </control>
         <control>
-          <description>Trakt Trending</description>
+          <description>IMDb+</description>
           <type>button</type>
           <id>99993</id>
-          <label>#Trakt.Translation.Trending.Label</label>
-          <hyperlink>87266</hyperlink>
+          <label>IMDb+</label>
+          <hyperlink>31415</hyperlink>
           <onup>99992</onup>
-          <ondown>99994</ondown>
+          <ondown>2</ondown>
           <onleft>50</onleft>
-          <visible>plugin.isenabled(Trakt)</visible>
-        </control>
-        <control>
-          <description>Trakt Watch List</description>
-          <type>button</type>
-          <id>99994</id>
-          <label>#Trakt.Translation.WatchList.Label</label>
-          <hyperlink>87270</hyperlink>
-          <onup>99993</onup>
-          <ondown>3</ondown>
-          <onleft>50</onleft>
-          <visible>plugin.isenabled(Trakt)</visible>
+          <visible>plugin.isenabled(IMDbPlus)</visible>
         </control>
       </control>      
     </control>    
