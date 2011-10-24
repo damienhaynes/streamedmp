@@ -53,7 +53,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>130</posY>
+        <posY>195</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -65,7 +65,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>272</posY>
+        <posY>337</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -77,7 +77,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>356</posY>
+        <posY>421</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -89,7 +89,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>440</posY>
+        <posY>505</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -101,7 +101,7 @@
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
         <posX>1040</posX>
-        <posY>155</posY>
+        <posY>220</posY>
         <width>220</width>
         <height>720</height>
         <layout>StackLayout(0, Vertical, true)</layout>
@@ -215,45 +215,12 @@
           <visible>plugin.isenabled(SubCentral)+control.isvisible(1239)</visible>
         </control>				
 				<control>
-          <description>Trakt Calendar</description>
+          <description>Trakt</description>
           <type>button</type>
           <id>99991</id>
-          <label>#Trakt.Translation.Calendar.Label</label>
-          <hyperlink>87259</hyperlink>
+          <label>Trakt</label>
+          <hyperlink>87258</hyperlink>
           <onup>66612</onup>
-          <ondown>99992</ondown>
-          <onleft>50</onleft>
-          <visible>plugin.isenabled(Trakt)</visible>
-        </control>
-				<control>
-          <description>Trakt Recommendations</description>
-          <type>button</type>
-          <id>99992</id>
-          <label>#Trakt.Translation.Recommendations.Label</label>
-          <hyperlink>87262</hyperlink>
-          <onup>99991</onup>
-          <ondown>99993</ondown>
-          <onleft>50</onleft>
-          <visible>plugin.isenabled(Trakt)</visible>
-        </control>
-        <control>
-          <description>Trakt Trending</description>
-          <type>button</type>
-          <id>99993</id>
-          <label>#Trakt.Translation.Trending.Label</label>
-          <hyperlink>87265</hyperlink>
-          <onup>99992</onup>
-          <ondown>99994</ondown>
-          <onleft>50</onleft>
-          <visible>plugin.isenabled(Trakt)</visible>
-        </control>
-        <control>
-          <description>Trakt Watch List</description>
-          <type>button</type>
-          <id>99994</id>
-          <label>#Trakt.Translation.WatchList.Label</label>
-          <hyperlink>87268</hyperlink>
-          <onup>99993</onup>
           <ondown>97260</ondown>
           <onleft>50</onleft>
           <visible>plugin.isenabled(Trakt)</visible>
@@ -263,7 +230,7 @@
           <type>button</type>
           <id>97260</id>
           <label>#Trakt.Translation.Shouts.Label</label>
-          <onup>99994</onup>
+          <onup>99991</onup>
           <ondown>97259</ondown>
           <onleft>50</onleft>
           <visible>plugin.isenabled(Trakt)+[control.isvisible(1239)|control.isvisible(1237)]+![facadeview.smallicons|facadeview.largeicons]</visible>
