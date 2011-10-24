@@ -305,7 +305,7 @@
           <label>#IMDb.Translation.IMDbInfo.Label</label>
           <onup>3</onup>
           <onleft>50</onleft>
-          <ondown>96742</ondown>
+          <ondown>99998</ondown>
         </control>
         <control>
           <description>Empty button</description>
@@ -314,6 +314,26 @@
           <label>-</label>
           <visible>true</visible>
         </control>
+				<control>
+					<description>MPEICONFIGURE:9d064213_0b4d_4cee_96a5_405812422b58</description>
+					<type>button</type>
+					<id>99998</id>
+					<label>#MPEI.Translation.Settings.Label</label>
+					<onup>4</onup>
+					<ondown>99999</ondown>
+					<onleft>50</onleft>
+					<visible>string.equals(#mpei.9d064213_0b4d_4cee_96a5_405812422b58.isinstalled,true)</visible>
+				</control>
+				<control>
+          <description>MPEIUPDATE:9d064213_0b4d_4cee_96a5_405812422b58</description>
+          <type>button</type>
+          <id>99999</id>
+          <label>#MPEI.Translation.UpdateAvailable.Label</label>
+          <onup>99998</onup>
+          <ondown>96742</ondown>
+          <onleft>50</onleft>
+          <visible>string.equals(#mpei.9d064213_0b4d_4cee_96a5_405812422b58.haveupdate,true)</visible>
+        </control>
         <control>
           <description>Moving Pictures</description>
           <type>button</type>
@@ -321,18 +341,8 @@
           <label>Moving Pictures</label>
           <hyperlink>96742</hyperlink>
           <onleft>50</onleft>
-          <onup>4</onup>
-          <ondown>99999</ondown>
-        </control>
-        <control>
-          <description>MPEIUPDATE:9d064213_0b4d_4cee_96a5_405812422b58</description>
-          <type>button</type>
-          <id>99999</id>
-          <label>#MPEI.Translation.UpdateAvailable.Label</label>
-          <onup>96742</onup>
+          <onup>99999</onup>
           <ondown>2</ondown>
-          <onleft>50</onleft>
-          <visible>string.equals(#mpei.9d064213_0b4d_4cee_96a5_405812422b58.haveupdate,true)</visible>
         </control>
       </control>
     </control>
