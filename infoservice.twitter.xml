@@ -125,6 +125,8 @@
       <height>214</height>
       <texture>pic_preview_thumb_background.png</texture>
       <visible>control.hasthumb(101)</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <id>101</id>
@@ -135,6 +137,8 @@
       <height>179</height>
       <texture>#infoservice.twitter.selected.userpicture</texture>
       <keepaspectratio>no</keepaspectratio>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <type>actiongroup</type>
@@ -235,25 +239,39 @@
       <type>group</type>
       <control>
         <description>listcontrol</description>
-        <type>listcontrol</type>
-        <id>50</id>
-        <posY>240</posY>
-        <posX>685</posX>
-        <height>500</height>
-        <onleft>2</onleft>
-        <spinPosX>1175</spinPosX>
-        <spinPosY>681</spinPosY>
-        <spinAlign>Right</spinAlign>
-        <textureUp>arrow_round_up_nofocus.png</textureUp>
-        <textureDown>arrow_round_down_nofocus.png</textureDown>
-        <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-        <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-        <spinWidth>50</spinWidth>
-        <spinHeight>37</spinHeight>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
-        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+				<type>listcontrol</type>
+				<id>50</id>
+				<posY>245</posY>
+				<posX>685</posX>
+				<height>475</height>
+				<onleft>2</onleft>
+				<textXOff>15</textXOff>
+				<textXOff2>580</textXOff2>
+				<textYOff>2</textYOff>
+				<textYOff2>35</textYOff2>
+				<font>mediastream12c</font>
+				<font2>mediastream9c</font2>
+				<spaceBetweenItems>5</spaceBetweenItems>
+				<textureHeight>60</textureHeight>
+				<scrollOffset>1</scrollOffset>
+				<IconXOff>3</IconXOff>
+				<IconYOff>2</IconYOff>
+				<itemWidth>50</itemWidth>
+				<itemHeight>50</itemHeight>
+				<keepaspectratio>yes</keepaspectratio>
+				<spinPosX>1175</spinPosX>
+				<spinPosY>681</spinPosY>
+				<spinAlign>Right</spinAlign>
+				<textureUp>arrow_round_up_nofocus.png</textureUp>
+				<textureDown>arrow_round_down_nofocus.png</textureDown>
+				<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+				<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+				<spinWidth>50</spinWidth>
+				<spinHeight>37</spinHeight>
+				<animation effect="fade" time="250">WindowOpen</animation>
+				<animation effect="fade" time="250">WindowClose</animation>
+				<animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+				<animation effect="slide" time="250" end="800,0">WindowClose</animation>			
       </control>
       <control>
         <description>Message</description>
@@ -264,9 +282,10 @@
         <width>600</width>
         <height>250</height>
         <label>-</label>
-        <seperator>----------------------------------------------------------------------------------------------</seperator>
         <font>font12</font>
         <textcolor>FFFFFFFF</textcolor>
+				<animation effect="fade" time="250">WindowOpen</animation>
+				<animation effect="fade" time="250">WindowClose</animation>
       </control>
     </control>
     <control>
@@ -279,6 +298,8 @@
       <font>font18</font>
       <textcolor>20ffffff</textcolor>
       <align>right</align>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
     </control>
   </controls>
 </window>
