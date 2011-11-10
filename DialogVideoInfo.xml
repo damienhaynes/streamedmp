@@ -376,7 +376,7 @@
       <type>group</type>
       <description>Button Group</description>
       <posX>900</posX>
-      <posY>250</posY>
+      <posY>230</posY>
       <layout>StackLayout(0, Vertical, true)</layout>
       <control>
         <description>Play Button</description>
@@ -544,7 +544,7 @@
         <description>Trakt Shouts</description>
         <type>button</type>
         <id>97260</id>
-        <label>#Trakt.Translation.Shouts.Label</label>
+        <label>#Trakt.Translation.Shouts.Label...</label>
         <onleft>10</onleft>
         <onup>97259</onup>
         <ondown>97258</ondown>
@@ -568,6 +568,27 @@
         <label>#Trakt.Translation.AddToWatchList.Label</label>
         <onleft>10</onleft>
         <onup>97260</onup>
+        <ondown>97262</ondown>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <width>300</width>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <visible>plugin.isenabled(Trakt)</visible>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control>
+        <description>Trakt Add To Watch List</description>
+        <type>button</type>
+        <id>97262</id>
+        <label>#Trakt.Translation.RelatedMovies.Label...</label>
+        <onleft>10</onleft>
+        <onup>97258</onup>
         <ondown>2</ondown>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
