@@ -147,7 +147,7 @@
       <buttonY>55</buttonY>
       <buttonwidth>49</buttonwidth>
       <buttonheight>253</buttonheight>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(10000)|control.hasfocus(10001)|control.hasfocus(10002)|control.hasfocus(10003)|control.hasfocus(97258)|control.hasfocus(97259)|control.hasfocus(97260)|control.hasfocus(97261)]</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(10000)|control.hasfocus(10001)|control.hasfocus(10002)|control.hasfocus(10003)|control.hasfocus(97258)|control.hasfocus(97259)|control.hasfocus(97260)|control.hasfocus(97261)|control.hasfocus(97262)]</visible>
       <animation effect="slide" time="100" start="300,0">visible</animation>
       <animation effect="slide" time="0" end="300,0">hidden</animation>
       <control>
@@ -194,7 +194,6 @@
         <font>mediastream12tc</font>
         <posX>1040</posX>
         <posY>395</posY>
-        <visible>plugin.isenabled(Trakt)</visible>
       </control>
       <control>
         <type>group</type>
@@ -275,8 +274,7 @@
           <onup>10003</onup>
           <ondown>97260</ondown>
           <onleft>6</onleft>
-          <onright>6</onright>
-          <visible>plugin.isenabled(Trakt)</visible>
+          <onright>6</onright>         
         </control>
         <control>
           <description>Trakt Shouts</description>
@@ -284,21 +282,29 @@
           <id>97260</id>
           <label>#Trakt.Translation.Shouts.Label</label>
           <onup>97259</onup>
+          <ondown>97262</ondown>
+          <onleft>6</onleft>
+          <onright>6</onright>
+        </control>
+        <control>
+          <description>Trakt Related Movies</description>
+          <type>button</type>
+          <id>97262</id>
+          <label>#Trakt.Translation.RelatedMovies.Label</label>
+          <onup>97260</onup>
           <ondown>97261</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
-          <visible>plugin.isenabled(Trakt)</visible>
         </control>
         <control>
           <description>Trakt Add to Custom List</description>
           <type>button</type>
           <id>97261</id>
           <label>#Trakt.Translation.AddToList.Label</label>
-          <onup>97260</onup>
+          <onup>97262</onup>
           <ondown>97258</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
-          <visible>plugin.isenabled(Trakt)</visible>
         </control>
         <control>
           <description>Trakt Add to Watch List</description>
@@ -309,7 +315,6 @@
           <ondown>10000</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
-          <visible>plugin.isenabled(Trakt)</visible>
         </control>
       </control>
     </control>
