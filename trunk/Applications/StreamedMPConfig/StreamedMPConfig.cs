@@ -286,22 +286,39 @@ namespace StreamedMPConfig
       #region Init Updates
       // Should we check for an update on startup, if so check and set skin properties 
       // to control the visibility of the icons indicating and update is available?
-      if (StreamedMPConfig.checkOnStart)
-      {
-        if (updateCheck.updateAvailable(false))
+      Thread updateThread = new Thread(delegate(object obj)
+      {        
+        if (StreamedMPConfig.checkOnStart)
         {
-          StreamedMPConfig.updateAvailable = true;
+          Thread.Sleep(3000);
+          smcLog.WriteLog("Checking for Updates...");
 
-          // This property controls the visibility of the large update icon on the home screens
-          SetProperty("#StreamedMP.UpdateAvailable", "true");
+          if (updateCheck.updateAvailable(false))
+          {
+            smcLog.WriteLog("Update Available!");
+            StreamedMPConfig.updateAvailable = true;
 
-          // This property controls the visibility or the indicator icon displyed next to the clock on the home screens
-          SetProperty("#StreamedMP.ShowUpdateInd", "true");
+            // This property controls the visibility of the large update icon on the home screens
+            SetProperty("#StreamedMP.UpdateAvailable", "true");
 
-          // This property controls the visibility or the indicator icon that is displayed next to the skin item in the settings screens
-          SetProperty("#StreamedMP.ShowSettingsUpdateInd", "true");
+            // This property controls the visibility or the indicator icon displyed next to the clock on the home screens
+            SetProperty("#StreamedMP.ShowUpdateInd", "true");
+
+            // This property controls the visibility or the indicator icon that is displayed next to the skin item in the settings screens
+            SetProperty("#StreamedMP.ShowSettingsUpdateInd", "true");
+          }
+          else
+          {
+            smcLog.WriteLog("No Updates are available");
+          }
         }
-      }
+      })
+      {
+        Name = "Update",
+        IsBackground = true
+      };
+      updateThread.Start();
+          
 
       // Should we check for an update at a specific time
       if (StreamedMPConfig.checkForUpdateAt)
