@@ -51,6 +51,8 @@
   <define>#plugin44:MY VIDEOS</define>
   <define>#plugin45:SLEEP CONTROL</define>
   <define>#plugin46:SUBCENTRAL</define>  
+	<define>#plugin47:IMDB+</define>
+	<define>#plugin48:TRAKT</define>
   <controls>    
     <control>
       <type>image</type>
@@ -574,7 +576,7 @@
       <id>1</id>
       <posX>930</posX>
       <posY>510</posY>
-	  <label>#plugin40</label>
+			<label>#plugin40</label>
     </control>
 
     <control>
@@ -632,8 +634,7 @@
       <id>1</id>
       <posX>710</posX>
       <posY>550</posY>
-	  <label>#plugin47</label>
-      <visible>string.equals(#plugin47,)</visible>      
+			<label>#plugin47</label>
     </control>
     <control>
       <description>plug value line 12</description>
@@ -642,7 +643,6 @@
       <posX>930</posX>
       <posY>550</posY>
       <label>#plugin48</label>
-      <visible>string.equals(#plugin48,)</visible>
     </control>
     
     <!-- History Link -->
