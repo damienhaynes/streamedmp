@@ -355,7 +355,15 @@ namespace StreamedMPConfig
       #endregion
 
       #region Init Most Recents
-      InitMostRecents();      
+      Thread mostRecentsThread = new Thread(delegate(object obj)
+      {
+        InitMostRecents();
+      })
+      {
+        Name = "MostRecents",
+        IsBackground = true
+      };
+      mostRecentsThread.Start();
       #endregion
       
       #region Init Misc
