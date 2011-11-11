@@ -1014,6 +1014,10 @@ namespace StreamedMPConfig
 
     public void checkUpdateOnTimer(object source)
     {
+      // give some time for network interface to initialize
+      // esp after resume from standby if callback is triggered
+      Thread.Sleep(3000);
+
       smcLog.WriteLog("Update timer fired - checking for update", LogLevel.Debug);
       if (updateCheck.updateAvailable(false))
       {
