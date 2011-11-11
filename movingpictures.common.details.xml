@@ -111,7 +111,7 @@
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Subtitles</description>
       <type>button</type>
       <id>666</id>
@@ -129,7 +129,7 @@
       <textYOff>0</textYOff>
       <textXOff>0</textXOff>
       <textalign>center</textalign>
-			<hyperlink>84623</hyperlink>
+      <hyperlink>84623</hyperlink>
       <textcolorNoFocus>bfffffff</textcolorNoFocus>
       <textureFocus>tv_button_focus.png</textureFocus>
       <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
@@ -194,6 +194,7 @@
         <font>mediastream12tc</font>
         <posX>1040</posX>
         <posY>395</posY>
+        <visible>plugin.isenabled(Trakt)</visible>
       </control>
       <control>
         <type>group</type>
@@ -274,7 +275,8 @@
           <onup>10003</onup>
           <ondown>97260</ondown>
           <onleft>6</onleft>
-          <onright>6</onright>         
+          <onright>6</onright>
+          <visible>plugin.isenabled(Trakt)</visible>
         </control>
         <control>
           <description>Trakt Shouts</description>
@@ -285,6 +287,7 @@
           <ondown>97262</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
+          <visible>plugin.isenabled(Trakt)</visible>
         </control>
         <control>
           <description>Trakt Related Movies</description>
@@ -295,6 +298,7 @@
           <ondown>97261</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
+          <visible>plugin.isenabled(Trakt)</visible>
         </control>
         <control>
           <description>Trakt Add to Custom List</description>
@@ -305,6 +309,7 @@
           <ondown>97258</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
+          <visible>plugin.isenabled(Trakt)</visible>
         </control>
         <control>
           <description>Trakt Add to Watch List</description>
@@ -315,6 +320,7 @@
           <ondown>10000</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
+          <visible>plugin.isenabled(Trakt)</visible>
         </control>
       </control>
     </control>
@@ -574,4 +580,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:21896ffbcc1c34bfdfa8fc55964bd489-->
+<!--Checksum:931ce22e0d4fcf9b9b51c7065321e658-->
