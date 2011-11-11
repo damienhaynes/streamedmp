@@ -27,6 +27,8 @@
       <buttonheight>153</buttonheight>
       <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
       <dimColor>00ffffff</dimColor>
+      <animation effect="slide" time="200" start="300,0">visible</animation>
+      <animation effect="slide" time="0" end="300,0">hidden</animation>
       <control>
         <description>Menu Background</description>
         <type>image</type>
@@ -35,9 +37,6 @@
         <width>278</width>
         <height>720</height>
         <texture>hiddenmenu_right.png</texture>
-        <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
-        <animation effect="slide" time="200" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <description>Views</description>
@@ -46,10 +45,7 @@
         <font>mediastream12tc</font>
         <posX>1040</posX>
         <posY>230</posY>
-        <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
         <label>499</label>
-        <animation effect="slide" time="200" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <description>Filters</description>
@@ -58,22 +54,16 @@
         <font>mediastream12tc</font>
         <posX>1040</posX>
         <posY>283</posY>
-        <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
         <label>19149</label>
-        <animation effect="slide" time="200" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <description>OPTIONS</description>
         <type>label</type>
         <id>0</id>
         <font>mediastream12tc</font>
-        <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
         <posX>1040</posX>
         <posY>455</posY>
         <label>496</label>
-        <animation effect="slide" time="200" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
         <description>Button Group</description>
@@ -83,9 +73,6 @@
         <width>220</width>
         <height>720</height>
         <layout>StackLayout</layout>
-        <visible>!Control.HasFocus(50)+!control.isvisible(51)</visible>
-        <animation effect="slide" time="200" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
         <control>
           <description>Layout</description>
           <type>button</type>
