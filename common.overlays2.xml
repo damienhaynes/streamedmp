@@ -48,7 +48,7 @@ same location everywhere
       <centered>yes</centered>
       <zoom>yes</zoom>
       <texture>defaultAudioBig.png</texture>
-      <visible>player.hasmedia+control.isvisible(3337)+string.equals(#Play.Current.Thumb,)+!facadeview.filmstrip</visible>
+      <visible>player.hasmedia+!facadeview.filmstrip+string.equals(#Play.Current.Thumb,)+control.isvisible(3337)</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
