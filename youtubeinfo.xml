@@ -3,6 +3,7 @@
   <id>29052</id>
   <defaultcontrol>5555</defaultcontrol>
   <allowoverlay>no</allowoverlay>
+  <define>#viewmode:coverflow</define>    
   <controls>
     <control>
       <description>BG</description>
@@ -42,7 +43,7 @@
       <description>Selected item Label</description>
       <type>fadelabel</type>
       <posX>1244</posX>
-      <posY>490</posY>
+      <posY>460</posY>
       <width>610</width>
       <font>mediastream16tc</font>
       <textcolor>ff006698</textcolor>
@@ -65,6 +66,23 @@
       <onup>17</onup>
       <ondown>50</ondown>
     </control>
+
+    <control>
+	    <description>Info Screen Button/Jump To Info Screen</description>
+	    <type>button</type>
+	    <id>96</id>
+	    <posX>140</posX>
+	    <posY>450</posY>
+	    <width>80</width>
+	    <height>50</height>
+      <textureFocus>nav_refresh_focus.png</textureFocus>
+	    <textureNoFocus>nav_refresh_nofocus.png</textureNoFocus>	    
+	    <label>-</label>           	    
+	    <onright>166</onright>
+	    <onup>5555</onup>
+	    <ondown>50</ondown>
+	</control>
+
     <control>
       <id>1</id>
       <description>Video Image</description>
@@ -232,50 +250,94 @@
       <textcolor>ffa9d0f7</textcolor>
       <label>#Youtube.fm.Translation.RelatedVideos.Label</label>
     </control>
-    <control>
-      <id>50</id>
-      <description>Similar Videos</description>
-      <type>thumbnailpanel</type>
-      <dimColor>90ffffff</dimColor>
-      <onleft>5555</onleft>
-      <onright>166</onright>
-      <posX>60</posX>
-      <posY>533</posY>
-      <width>1190</width>
-      <height>217</height>
-      <scrollOffset>1</scrollOffset>
-      <renderFocusText>no</renderFocusText>
-      <renderUnfocusText>no</renderUnfocusText>
-      <itemWidth>170</itemWidth>
-      <itemHeight>180</itemHeight>
-      <textureWidth>166</textureWidth>
-      <textureHeight>129</textureHeight>
-      <thumbWidth>156</thumbWidth>
-      <thumbHeight>119</thumbHeight>
-      <thumbPosX>5</thumbPosX>
-      <thumbPosY>5</thumbPosY>
-      <itemWidthBig>235</itemWidthBig>
-      <itemHeightBig>240</itemHeightBig>
-      <thumbWidthBig>219</thumbWidthBig>
-      <thumbHeightBig>165</thumbHeightBig>
-      <thumbPosXBig>0</thumbPosXBig>
-      <thumbPosYBig>0</thumbPosYBig>
-      <imageFolderFocus>thumbborder3.png</imageFolderFocus>
-      <keepaspectratio>yes</keepaspectratio>
-      <spinCanFocus>no</spinCanFocus>
-      <spinPosX>1175</spinPosX>
-      <spinPosY>681</spinPosY>
-      <spinWidth>50</spinWidth>
-      <spinHeight>37</spinHeight>
-      <spinAlign>right</spinAlign>
-      <spinColor>ff006698</spinColor>
-      <enableFocusZoom>no</enableFocusZoom>
-      <thumbZoom>no</thumbZoom>
-      <textureUp>arrow_round_up_nofocus.png</textureUp>
-      <textureDown>arrow_round_down_nofocus.png</textureDown>
-      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-    </control>
+        <control>
+          <description>composite control consisting of a list control and a thumbnail panel</description>
+          <type>facadeview</type>
+          <id>50</id>
+          <animation effect="zoom" start="100,100" end="103,103" time="100">focus</animation>
+          <animation effect="zoom" start="103,103" end="100,100" time="50">unfocus</animation> 
+	        <control>
+            <description>listcontrol</description>
+            <type>listcontrol</type>
+            <id>50</id>
+            <scrollOffset>2</scrollOffset>
+            <animation effect="zoom" start="100,100" end="103,103" time="100">focus</animation>
+            <animation effect="zoom" start="103,103" end="100,100" time="50">unfocus</animation>            
+          </control>
+          <control>
+            <description>Cover Flow view</description>
+            <type>coverflow</type>
+            <colordiffuse>90ffffff</colordiffuse>
+            <dimColor>90ffffff</dimColor>
+            <id>50</id>
+            <posX>0</posX>
+            <posY>545</posY>
+            <width>1280</width>
+            <height>200</height>
+            <onup>96</onup>            
+            <selectedCard>0</selectedCard>
+            <cardWidth>230</cardWidth>
+            <cardHeight>150</cardHeight>
+            <cardVAlign>Top</cardVAlign>
+            <thumbZoom>yes</thumbZoom>
+            <angle>20</angle>
+            <sideShift>150</sideShift>
+            <sideGap>80</sideGap>
+            <sideDepth>150</sideDepth>
+            <offsetY>0</offsetY>
+            <selectedOffsetY>0</selectedOffsetY>
+            <speed>8</speed>
+            <backgroundHeight>250</backgroundHeight>
+            <backgroundWidth>1280</backgroundWidth>
+            <backgroundX>0</backgroundX>
+            <backgroundY>470</backgroundY>
+            <backgroundDiffuse>FF000000</backgroundDiffuse>
+            <background>background2.png</background>
+            <showBackground>no</showBackground>
+            <foregroundHeight>720</foregroundHeight>
+            <foregroundWidth>1280</foregroundWidth>
+            <foregroundX>0</foregroundX>
+            <foregroundY>0</foregroundY>
+            <foregroundDiffuse>FF000000</foregroundDiffuse>
+            <foreground>coverflow_foreground.png</foreground>
+            <showForeground>no</showForeground>
+            <showFrame>yes</showFrame>
+            <frame>coverflow.poster.square.glass.png</frame>
+            <frameFocus>coverflow.poster.square.glass.png</frameFocus>
+            <frameWidth>230</frameWidth>
+            <frameHeight>150</frameHeight>
+            <spinSpeed>8</spinSpeed>
+            <unfocusedAlpha>FF</unfocusedAlpha>
+            <folderPrefix>[</folderPrefix>
+            <folderSuffix>]</folderSuffix>
+            <font1>mediastream12</font1>
+            <font2>mediastream10</font2>
+            <label1>#selecteditem</label1>
+            <label2>#selecteditem2</label2>
+            <textColor>FFFFFFFF</textColor>
+            <remoteColor>FFFF0000</remoteColor>
+            <playedColor>FFA0D0FF</playedColor>
+            <downloadColor>FF00FF00</downloadColor>
+            <selectedColor>FFFFFFFF</selectedColor>
+            <shadowAngle>20</shadowAngle>
+            <shadowDistance>0</shadowDistance>
+            <shadowColor>FF000000</shadowColor>
+            <label1YOff>405</label1YOff>
+            <label2YOff>430</label2YOff>
+            <pageSize>5</pageSize>
+            <scrollbarBackground>bar_hor.png</scrollbarBackground>
+            <scrollbarLeft>mouse_left_horizontal.png</scrollbarLeft>
+            <scrollbarRight>mouse_right_horizontal.png</scrollbarRight>
+            <scrollbarYOff>955</scrollbarYOff>
+            <showScrollbar>no</showScrollbar>
+            <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_square_mask.png" />	                     
+            <subitems>
+              <subitem>
+                <![CDATA[                 <controls>            
+            </controls>]]></subitem>
+          </subitems>
+        </control>
+      </control> 
     <control>
       <id>0</id>
       <description>Similar Artists label</description>
@@ -321,3 +383,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:f986ece8cc57af152fb614ae5ddb3004-->
