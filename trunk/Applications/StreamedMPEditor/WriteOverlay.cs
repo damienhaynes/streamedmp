@@ -219,7 +219,7 @@ namespace StreamedMPEditor
                   "<keepaspectratio>no</keepaspectratio>" +
                   "<centered>yes</centered>" +
                   "<zoom>yes</zoom>" +
-                  "<texture>#StreamedMP.ArtistPath\\#Play.Current.ArtistL.jpg</texture>" +
+                  "<texture>#StreamedMP.ArtistPath\\#StreamedMP.Current.ArtistL.jpg</texture>" +
                   "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb,)+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
@@ -244,7 +244,7 @@ namespace StreamedMPEditor
                   "<posY>" + (overlayYpos + 18).ToString() + "</posY>" +
                   "<width>114</width>" +
                   "<height>114</height>" +
-                  "<textures>#Play.Current.Thumb;" + "#StreamedMP.ArtistPath\\#Play.Current.ArtistL.jpg</textures>" +
+                  "<textures>#Play.Current.Thumb;" + "#StreamedMP.ArtistPath\\#StreamedMP.Current.ArtistL.jpg</textures>" +
                   "<Duration>0:0:45</Duration>" +
                   "<randomize>no</randomize>" +
                   "<keepaspectratio>no</keepaspectratio>" +

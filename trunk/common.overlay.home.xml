@@ -45,7 +45,7 @@
       <centered>yes</centered>
       <zoom>yes</zoom>
       <!-- Updated by Setup (Ensure ID is unique)-->
-      <texture>#StreamedMP.ArtistPath\#Play.Current.ArtistL.jpg</texture>
+      <texture>#StreamedMP.ArtistPath\#StreamedMP.Current.ArtistL.jpg</texture>
       <visible>player.hasmedia+control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
     </control>
     <control>
@@ -71,7 +71,7 @@
       <width>114</width>
       <height>114</height>
       <!-- Updated by setup (Ensure ID is unique)-->
-      <textures>#Play.Current.Thumb;#StreamedMP.ArtistPath\#Play.Current.ArtistL.jpg</textures>
+      <textures>#Play.Current.Thumb;#StreamedMP.ArtistPath\#StreamedMP.Current.ArtistL.jpg</textures>
       <Duration>0:0:45</Duration>
       <randomize>no</randomize>
       <keepaspectratio>no</keepaspectratio>

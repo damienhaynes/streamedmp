@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using System.Xml;
 using SMPCheckSum;
 
@@ -10,6 +11,16 @@ namespace StreamedMPConfig
   class Helper
   {
     private static readonly logger smcLog = logger.GetInstance();
+
+    #region Path Helpers
+    public static string MakeValidFileName(string name)
+    {
+      string invalidChars = Regex.Escape(new string(Path.GetInvalidFileNameChars()));
+      string invalidReStr = string.Format(@"[{0}]+", invalidChars);
+      return Regex.Replace(name, invalidReStr, "_");
+    }
+
+    #endregion
 
     #region XML Helpers
     /// <summary>

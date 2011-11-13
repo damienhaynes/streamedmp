@@ -16,6 +16,7 @@ using Microsoft.Win32;
 using Cornerstone.Tools;
 using Cornerstone.Database;
 using Cornerstone.Database.Tables;
+using MediaPortal.Player;
 using MediaPortal.Plugins.MovingPictures;
 using MediaPortal.Plugins.MovingPictures.Database;
 using MediaPortal.Plugins.MovingPictures.MainUI;
@@ -396,6 +397,7 @@ namespace StreamedMPConfig
       GUIGraphicsContext.OnVideoWindowChanged += new VideoWindowChangedHandler(GUIGraphicsContext_OnVideoWindowChanged);
       GUIGraphicsContext.OnNewAction += new OnActionHandler(smpAction);
       SystemEvents.PowerModeChanged += new PowerModeChangedEventHandler(SystemEvents_PowerModeChanged);
+      GUIPropertyManager.OnPropertyChanged += new GUIPropertyManager.OnPropertyChangedHandler(GUIPropertyManager_OnPropertyChanged);      
       #endregion      
     }
 
@@ -1480,6 +1482,24 @@ namespace StreamedMPConfig
     void mrTimer_Tick(object sender, EventArgs e)
     {
       cycleMostrecentFanart();
+    }
+
+    private void GUIPropertyManager_OnPropertyChanged(string property, string propertyValue)
+    {
+      // Clean Artist Properties for overlays
+      // we want to display artist thumb, this wont work with multiple
+      // artists or artists with invalid filename chars so we need to clean them
+      if (property == "#Play.Current.Artist")
+      {
+        string firstartist = string.Empty;
+     
+        // first Split by Multiple Artists
+        string[] artists = propertyValue.Split('|');
+        if (artists.Count() > 0)
+          firstartist = Helper.MakeValidFileName(artists.First().Trim());
+
+        GUIPropertyManager.SetProperty("#StreamedMP.Current.Artist", firstartist);
+      }
     }
 
     void SystemEvents_PowerModeChanged(object sender, PowerModeChangedEventArgs e)
