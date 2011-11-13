@@ -64,7 +64,7 @@ same location everywhere
       <centered>yes</centered>
       <zoom>yes</zoom>
       <!-- Update by Setup (Ensure ID is unique)-->
-      <texture>#StreamedMP.ArtistPath\#Play.Current.ArtistL.jpg</texture>
+      <texture>#StreamedMP.ArtistPath\#StreamedMP.Current.ArtistL.jpg</texture>
       <visible>player.hasmedia+control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
@@ -94,7 +94,7 @@ same location everywhere
       <width>114</width>
       <height>114</height>
       <!-- Updated by setup (Ensure ID is unique)-->
-      <textures>#Play.Current.Thumb;#StreamedMP.ArtistPath\#Play.Current.ArtistL.jpg</textures>
+      <textures>#Play.Current.Thumb;#StreamedMP.ArtistPath\#StreamedMP.Current.ArtistL.jpg</textures>
       <Duration>0:0:45</Duration>
       <randomize>no</randomize>
       <keepaspectratio>no</keepaspectratio>
