@@ -284,9 +284,15 @@ namespace StreamedMPEditor
         string[] configuredDrives = driveFreeSpaceList.Split(',');
         foreach (string hd in configuredDrives)
         {
-          DriveInfo hdDetails = new DriveInfo(hd);
-          string thisDrive = hd + " (" + hdDetails.VolumeLabel + ")";
-          formStreamedMpEditor.driveFreeSpaceDrives.Add(hd);
+          try
+          {
+            DriveInfo hdDetails = new DriveInfo(hd);
+            string thisDrive = hd + " (" + hdDetails.VolumeLabel + ")";
+            formStreamedMpEditor.driveFreeSpaceDrives.Add(hd);
+          }
+          catch
+          {
+          }
         }
       }
       
@@ -862,6 +868,9 @@ namespace StreamedMPEditor
           break;
         case 7890:
           theIcon = "homebuttons\\" + theme +"_lastfm.png";
+          break;
+        case 7977:
+          theIcon = "homebuttons\\" + theme + "_weather.png";
           break;
         case 9811:
           theIcon = "homebuttons\\" + theme +"_tv-series.png";

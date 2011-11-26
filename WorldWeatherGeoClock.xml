@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--version="1.0" encoding="utf-8" standalone="yes"-->
+<window>
+  <allowoverlay>yes</allowoverlay>
+  <controls>
+    <!-- *** GeoClock *** -->
+    <control>
+      <description>TV Frame</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>140</posX>
+      <posY>40</posY>
+      <width>1000</width>
+      <height>574</height>
+      <texture>LCD.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>string.equals(#WorldWeather.View,GeoClock)</visible>
+    </control>    
+    
+    <control>
+      <description>Location label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>640</posX>
+      <posY>593</posY>
+      <label>#(L(8))  #WorldWeather.Location  #(L(19100))</label>
+      <font>mediastream16tc</font>
+      <align>center</align>
+      <textcolor>white</textcolor>
+      <visible>string.equals(#WorldWeather.View,GeoClock)</visible>
+    </control>
+    <control>
+      <description>GeoClock image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>180</posX>
+      <posY>80</posY>
+      <width>920</width>
+      <height>494</height>
+      <texture>#WorldWeather.ImageGeoClock</texture>
+      <visible>string.equals(#WorldWeather.View,GeoClock)</visible>
+    </control>
+  </controls>
+</window>
