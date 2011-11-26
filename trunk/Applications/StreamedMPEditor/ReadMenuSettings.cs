@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Xml;
 using System.IO;
+using System.Linq;
 
 namespace StreamedMPEditor
 {
@@ -456,11 +457,11 @@ namespace StreamedMPEditor
         cbContextLabelBelow.Enabled = false;
       }
 
-      Version isver = new Version("1.6.0.0");
-      if (getInfoServiceVersion().CompareTo(isver) >= 0)
-        infoServiceDayProperty = "forecast";
-      else
-        infoServiceDayProperty = "day";
+      //Version isver = new Version("1.6.0.0");
+      //if (getInfoServiceVersion().CompareTo(isver) >= 0)
+      //  infoServiceDayProperty = "forecast";
+      //else
+      //  infoServiceDayProperty = "day";
 
       // Check if Moving Pictures is installed and enabled, if not disable most recent options
       if (MovingPicturesVersion == "0.0.0.0")
@@ -534,7 +535,7 @@ namespace StreamedMPEditor
         mnuItem.showMostRecent = readMostRecentDisplayOption(readEntryValue(menuTag, "menuitem" + i.ToString() + "showMostRecent", nodelist), mnuItem.hyperlink);
         mnuItem.fhBGSource = readFHSource(readEntryValue(menuTag, "menuitem" + i.ToString() + "fanartSource", nodelist), mnuItem.fanartProperty);
         // If this is menu item is weather can be worked out from the hyperlink
-        mnuItem.isWeather = (mnuItem.hyperlink == weatherSkinID);      
+        mnuItem.isWeather = weatherSkinID.Split('|').Contains(mnuItem.hyperlink);
         //
         // Graphical Menu Default Image Load
         //
