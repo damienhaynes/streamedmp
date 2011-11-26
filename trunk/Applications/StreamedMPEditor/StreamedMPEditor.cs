@@ -2320,6 +2320,8 @@ namespace StreamedMPEditor
           return "movies";
         case 7890:
           return "music";
+        case 7977:
+          return "weatherbg";
         case 9811:
           return "tv";
         case 16001:
@@ -2365,6 +2367,8 @@ namespace StreamedMPEditor
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Trailers.jpg");
         case 7890:
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Music.jpg");
+        case 7977:
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Weather.jpg");
         case 9811:
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_TVSeries.jpg");
         case 16001:
