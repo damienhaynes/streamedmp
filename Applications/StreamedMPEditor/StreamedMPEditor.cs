@@ -182,7 +182,8 @@ namespace StreamedMPEditor
     public const string musicSkinID = "501";
     public const string tvMenuSkinID = "1";
     public const string onlineVideosSkinID = "4755";
-    public const string weatherSkinID = "2600";
+    //myweather+yrWeather/BBCWeather/WorldWeather
+    public const string weatherSkinID = "2600|7977|8192";
     public const bool hyperlinkParameterEnabled = true;
     public const bool hyperlinkParameterDisabled = false;
     const string quote = "\"";
@@ -205,7 +206,7 @@ namespace StreamedMPEditor
     string xml;
     string xmlTemplate;
     string dropShadowColor = "1d1f1b";
-    string infoServiceDayProperty = "forecast";
+    //string infoServiceDayProperty = "forecast";
     string splashScreenImage = null;
     string defFocus = "FFFFFF";
     string defUnFocus = "C0C0C0";
@@ -228,7 +229,7 @@ namespace StreamedMPEditor
     Version baseISVerTwitter = new Version("1.2.0.0");
     Version isSeparatorVer = new Version("1.1.0.0");
     Version mpReleaseVersion = new Version("1.0.2.22554");
-    Version isWeatherVersion = new Version("1.6.0.0");
+    Version isWeatherVersion = new Version("0.2.5.0");
     Version fanarthandlerVersionRequired = new Version("2.2.0.0");
     Version fhRelease2 = new Version("2.2.2.0");
 
@@ -821,7 +822,7 @@ namespace StreamedMPEditor
 
         item.fanartHandlerEnabled = cbItemFanartHandlerEnable.Checked;
         item.EnableMusicNowPlayingFanart = cbEnableMusicNowPlayingFanart.Checked;
-        item.isWeather = (item.hyperlink == weatherSkinID);
+        item.isWeather = weatherSkinID.Split('|').Contains(item.hyperlink);
         item.disableBGSharing = disableBGSharing.Checked;
 
         // If using 3D backgrounds disable BG sharing for item.
@@ -1070,7 +1071,7 @@ namespace StreamedMPEditor
         if (!item.fanartHandlerEnabled && (bgBox.Text.ToLower() == "3dbackgrounds"))
           item.disableBGSharing = true;
 
-        item.isWeather = (item.hyperlink == weatherSkinID);
+        item.isWeather = weatherSkinID.Split('|').Contains(item.hyperlink);
         item.showMostRecent = getMostRecentDisplayOption();
 
         if (item.isWeather && weatherBGlink.Checked && item.fanartHandlerEnabled)
@@ -1582,7 +1583,7 @@ namespace StreamedMPEditor
       if (enableFiveDayWeather.Checked)
         GenerateFiveDayWeather();
 
-      if (summaryWeatherCheckBox.Checked && infoserviceOptions.Enabled)
+      if (summaryWeatherCheckBox.Checked)
       {
         bool itemHasWeather = false;
         foreach (backgroundItem item in bgItems)

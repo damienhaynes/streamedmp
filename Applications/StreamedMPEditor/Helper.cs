@@ -346,7 +346,8 @@ namespace StreamedMPEditor
       ForTheRecord,
       UpdateControl,
       eMail,
-      LatestMediaHandler
+      LatestMediaHandler,
+      WorldWeather
     }
 
     class PluginDetails
@@ -409,6 +410,10 @@ namespace StreamedMPEditor
           case Plugins.LatestMediaHandler:
             this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"process\LatestMediaHandler.dll");
             this.name = "Latest Media Handler";
+            break;
+          case Plugins.WorldWeather:
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\WorldWeather.dll");
+            this.name = "World Weather";
             break;
  
         }

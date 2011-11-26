@@ -31,11 +31,15 @@ namespace StreamedMPEditor
       }
       else
       {
-        infoserviceOptions.Enabled = true;
-        enableFiveDayWeather.Enabled = true;
-        summaryWeatherCheckBox.Enabled = true;
+        infoserviceOptions.Enabled = true;        
         useInfoServiceSeparator = true;
         infoserviceOptions.Text = "InfoService Options";
+      }
+
+      if (helper.pluginEnabled(Helper.Plugins.WorldWeather))
+      {
+          enableFiveDayWeather.Enabled = true;
+          summaryWeatherCheckBox.Enabled = true;
       }
 
       // Checkl if Fanart Handler is Enabled
@@ -722,6 +726,11 @@ namespace StreamedMPEditor
       return fv;
     }
 
+    private Version getWorldWeatherVersion()
+    {
+        Version fv = new Version(helper.fileVersion(SkinInfo.mpPaths.pluginPath + "\\windows\\WorldWeather.dll"));
+        return fv;
+    }
 
     private string MovingPicturesVersion
     {
@@ -918,24 +927,32 @@ namespace StreamedMPEditor
 
     private string weatherIcon(int theDay)
     {
-      string day;
-      if (theDay == 0)
-        day = "today";
-      else
-        if (getInfoServiceVersion().CompareTo(isWeatherVersion) >= 0)
-          day = "forecast" + (theDay + 1).ToString() + ".day";
-      else
-        day = "day" + (theDay + 1).ToString() + ".day";
-      if (WeatherIconsAnimated.Checked)
-      {
-        // relative from Animations folder
-        return "weathericons\\animated\\128x128\\#infoservice.weather." + day + ".img.big.filenamewithoutext";
-      }
-      else
-      {
-        // relative from Media folder
-        return "animations\\weathericons\\static\\128x128\\#infoservice.weather." + day + ".img.big.filenamewithoutext.png";
-      }
+        // today
+        if (theDay == 0)
+        {
+            if (WeatherIconsAnimated.Checked)
+            {
+                // relative from Animations folder
+                return "weathericons\\animated\\128x128\\#WorldWeather.TodayIconNumber";
+            }
+            else
+            {
+                // relative from Media folder
+                return "#WorldWeather.TodayIconImage";
+            }
+        }
+
+        // world weather is 0 based.
+        if (WeatherIconsAnimated.Checked)
+        {
+            // relative from Animations folder
+            return "weathericons\\animated\\128x128\\#WorldWeather.ForecastDay" + (theDay - 1).ToString() + "IconNumber";
+        }
+        else
+        {
+            // relative from Media folder
+            return "#WorldWeather.ForecastDay" + (theDay - 1).ToString() + "IconImage";
+        }
     }
 
     private static DateTime getLinkerTimeStamp(string filePath)
