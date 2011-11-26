@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>2600</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>	
+  <controls>    
+    <control>
+      <description>BG</description>
+      <type>image</type>
+      <id>1</id>      
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_my weather.png</texture>
+    </control>
+		<control>
+			<description>BG</description>
+			<type>image</type>
+			<id>1</id>
+			<texture>Animations\LinkedWeather\#WorldWeather.TodayIconNumber.jpg</texture>
+			<width>1280</width>
+			<height>720</height>
+			<visible>plugin.isenabled(World Weather)</visible>
+		</control>
+    <control>
+      <description>Overly BG</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>-110</posY>      
+      <width>1281</width>
+      <height>770</height>
+      <texture>mainoverlay.png</texture>
+      <colordiffuse>99ffffff</colordiffuse>      
+    </control>
+    <control>
+      <type>group</type>      
+      <description>group element</description>
+      <layout>StackLayout</layout>
+      <posX>40</posX>
+      <posY>140</posY>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <control Style="skinbutton">
+        <description>Switch To Next Day</description>
+        <type>button</type>
+        <id>2</id>
+        <label>3014</label>
+        <onup>17</onup>
+        <width>250</width>
+      </control>
+      <control Style="skinbutton">
+        <description>Switch To Previous Day</description>
+        <type>button</type>
+        <id>3</id>
+        <label>3014</label>
+        <width>250</width>
+      </control>
+    </control>
+    <control>
+      <description>Location and date label</description>
+      <type>fadelabel</type>
+      <id>4</id>
+      <posX>300</posX>
+      <posY>150</posY>
+      <label>Temp</label>
+      <width>800</width>
+      <font>mediastream16tc</font>
+      <textcolor>White</textcolor>
+			<align>center</align>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>    
+    <!--  **********  Night Grop  **********  -->
+    <control>
+      <description>Night label</description>
+      <type>label</type>
+      <id>17</id>
+      <posX>130</posX>
+      <posY>280</posY>
+      <label>Temp</label>
+      <font>mediastream14tc</font>
+      <textcolor>white</textcolor>
+			<align>center</align>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Night Current Temp static label</description>
+      <type>label</type>
+      <id>10</id>
+      <posX>20</posX>
+      <posY>330</posY>>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>white</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Night Current Temp label</description>
+      <type>label</type>
+      <id>11</id>
+      <posX>150</posX>
+      <posY>330</posY>>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Night Current Wind static label</description>
+      <type>label</type>
+      <id>12</id>
+      <posX>20</posX>>
+      <posY>360</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Night Current Wind label</description>
+      <type>label</type>
+      <id>13</id>
+      <posX>150</posX>
+      <posY>360</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>    
+    <control>
+      <description>Night Current Preciptation static label</description>
+      <type>label</type>
+      <id>14</id>
+      <posX>20</posX>
+      <posY>390</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Night Current Preciptation label</description>
+      <type>label</type>
+      <id>15</id>
+      <posX>150</posX>
+      <posY>390</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Night current weather icon</description>
+      <type>image</type>
+      <id>16</id>
+      <posX>70</posX>
+      <posY>430</posY>
+      <width>128</width>
+      <height>128</height>
+      <texture>-</texture>
+      <colorkey>FFFF00FF</colorkey>
+      <colordiffuse>FFFFFFFF</colordiffuse>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>    
+    <control>
+      <description>Night Type of weather label</description>
+      <type>label</type>
+      <id>18</id>
+      <posX>130</posX>
+      <posY>590</posY>>
+      <label>Temp</label>
+      <font>mediastream12tc</font>
+			<align>center</align>
+      <textcolor>90FFFFFF</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <!--  **********  AM Grop  **********  -->
+    <control>
+      <description>AM label</description>
+      <type>label</type>
+      <id>27</id>
+      <posX>440</posX>
+      <posY>280</posY>>
+      <label>Temp</label>
+      <font>mediastream14tc</font>
+      <textcolor>white</textcolor>
+			<align>center</align>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>AM Current Temp static label</description>
+      <type>label</type>
+      <id>20</id>
+      <posX>330</posX>
+      <posY>330</posY>>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>white</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>AM Current Temp label</description>
+      <type>label</type>
+      <id>21</id>
+      <posX>460</posX>
+      <posY>330</posY>>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>AM Current Wind static label</description>
+      <type>label</type>
+      <id>22</id>
+      <posX>330</posX>
+      <posY>360</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>AM Current Wind label</description>
+      <type>label</type>
+      <id>23</id>
+      <posX>460</posX>
+      <posY>360</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>AM Current Preciptation static label</description>
+      <type>label</type>
+      <id>24</id>
+      <posX>330</posX>
+      <posY>390</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>AM Current Preciptation label</description>
+      <type>label</type>
+      <id>25</id>
+      <posX>460</posX>
+      <posY>390</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>AM current weather icon</description>
+      <type>image</type>
+      <id>26</id>
+      <posX>380</posX>
+      <posY>430</posY>
+      <width>128</width>
+      <height>128</height>
+      <texture>-</texture>
+      <colorkey>FFFF00FF</colorkey>
+      <colordiffuse>FFFFFFFF</colordiffuse>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>    
+    <control>
+      <description>AM Type of weather label</description>
+      <type>label</type>
+      <id>28</id>
+      <posX>440</posX>
+      <posY>590</posY>>
+      <label>Temp</label>
+      <font>mediastream12tc</font>
+      <textcolor>90FFFFFF</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<align>center</align>
+    </control>
+    <!--  **********  PM Grop  **********  -->
+    <control>
+      <description>PM label</description>
+      <type>label</type>
+      <id>37</id>
+      <posX>750</posX>
+      <posY>280</posY>>
+      <label>Temp</label>
+      <font>mediastream14tc</font>
+      <textcolor>white</textcolor>
+			<align>center</align>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>PM Current Temp static label</description>
+      <type>label</type>
+      <id>30</id>
+      <posX>640</posX>
+      <posY>330</posY>>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>PM Current Temp label</description>
+      <type>label</type>
+      <id>31</id>
+      <posX>770</posX>
+      <posY>330</posY>>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>PM Current Wind static label</description>
+      <type>label</type>
+      <id>32</id>
+      <posX>640</posX>
+      <posY>360</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>PM Current Wind label</description>
+      <type>label</type>
+      <id>33</id>
+      <posX>770</posX>
+      <posY>360</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>PM Current Preciptation static label</description>
+      <type>label</type>
+      <id>34</id>
+      <posX>640</posX>
+      <posY>390</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>PM Current Preciptation label</description>
+      <type>label</type>
+      <id>35</id>
+      <posX>770</posX>
+      <posY>390</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>PM current weather icon</description>
+      <type>image</type>
+      <id>36</id>
+      <posX>690</posX>
+      <posY>430</posY>
+      <width>128</width>
+      <height>128</height>
+      <texture>-</texture>
+      <colorkey>FFFF00FF</colorkey>
+      <colordiffuse>FFFFFFFF</colordiffuse>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>    
+    <control>
+      <description>PM Type of weather label</description>
+      <type>label</type>
+      <id>38</id>
+      <posX>750</posX>
+      <posY>590</posY>>
+      <label>Temp</label>
+      <font>mediastream12tc</font>
+      <textcolor>90FFFFFF</textcolor>
+			<align>center</align>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <!--  **********  Evening Grop  **********  -->
+    <control>
+      <description>Evening label</description>
+      <type>label</type>
+      <id>47</id>
+      <posX>1050</posX>
+      <posY>280</posY>>
+      <label>Temp</label>
+      <font>mediastream14tc</font>
+      <textcolor>white</textcolor>
+			<align>center</align>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Evening Current Temp static label</description>
+      <type>label</type>
+      <id>40</id>
+      <posX>950</posX>
+      <posY>330</posY>>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Evening Current Temp label</description>
+      <type>label</type>
+      <id>41</id>
+      <posX>1080</posX>
+      <posY>330</posY>>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Evening Current Wind static label</description>
+      <type>label</type>
+      <id>42</id>
+      <posX>950</posX>
+      <posY>360</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Evening Current Wind label</description>
+      <type>label</type>
+      <id>43</id>
+      <posX>1080</posX>
+      <posY>360</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Evening Current Preciptation static label</description>
+      <type>label</type>
+      <id>44</id>
+      <posX>950</posX>
+      <posY>390</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Evening Current Preciptation label</description>
+      <type>label</type>
+      <id>45</id>
+      <posX>1080</posX>
+      <posY>390</posY>
+      <label>Temp</label>
+      <font>mediastream10c</font>
+      <textcolor>White</textcolor>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Evening current weather icon</description>
+      <type>image</type>
+      <id>46</id>
+      <posX>1000</posX>
+      <posY>430</posY>
+      <width>128</width>
+      <height>128</height>
+      <texture>-</texture>
+      <colorkey>FFFF00FF</colorkey>
+      <colordiffuse>FFFFFFFF</colordiffuse>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>    
+    <control>
+      <description>Evening Type of weather label</description>
+      <type>label</type>
+      <id>48</id>
+      <posX>1060</posX>
+      <posY>590</posY>>
+      <label>Temp</label>
+      <font>mediastream12tc</font>
+      <textcolor>90FFFFFF</textcolor>
+			<align>center</align>
+			<animation effect="fade" time="250">WindowClose</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+    </control>
+    <import>common.time.xml</import>
+  </controls>
+</window>
