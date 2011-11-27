@@ -241,7 +241,7 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>#selecteditem</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -259,7 +259,7 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>#selecteditem    [#mvCentral.Duration]</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -277,7 +277,7 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>#selecteditem    [#mvCentral.Translation.Album.Label]</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -295,7 +295,7 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>[#mvCentral.Translation.Tracks.Label #mvCentral.TracksForAlbum | #mvCentral.Translation.TotalRuntime.Label #mvCentral.AlbumTracksRuntime]</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -313,7 +313,7 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>Music Videos: #mvCentral.VideosByArtist    [#mvCentral.Translation.TotalRuntime.Label #mvCentral.ArtistTracksRuntime]</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -408,6 +408,83 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
 <!-- ******************************* -->	
+ <!-- :: Artwork - Coverflow View :: -->      
+<!-- ******************************* -->	
+
+<!-- Artist View -->
+		<control>
+			<id>0</id>
+			<description>Artist/Track Description</description>
+			<type>label</type>
+			<posX>640</posX>
+			<posY>670</posY>
+			<font>mediastream16tc</font>
+			<textcolor>ffffffff</textcolor>
+			<shadowAngle>45</shadowAngle> 
+			<shadowDistance>4</shadowDistance> 
+			<shadowColor>ff000000</shadowColor>
+			<align>center</align>
+			<label>#selecteditem</label>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+			<animation effect="fade" time="250" delay="0">WindowOpen</animation>
+			<visible>[facadeview.coverflow]+[string.equals(#mvCentral.ArtistView,true)|string.equals(#mvCentral.GenreView,true)]</visible>
+		</control>
+		<control>
+			<id>0</id>
+			<description>Tracks by Artist</description>
+			<type>label</type>
+			<posX>640</posX>
+			<posY>700</posY>
+			<font>mediastream14tc</font>
+			<textcolor>ffffffff</textcolor>
+			<shadowAngle>45</shadowAngle> 
+			<shadowDistance>4</shadowDistance> 
+			<shadowColor>ff000000</shadowColor>
+			<align>center</align>
+			<label>Music Videos: #mvCentral.VideosByArtist     [#mvCentral.Translation.TotalRuntime.Label #mvCentral.ArtistTracksRuntime]</label>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+			<animation effect="fade" time="250" delay="0">WindowOpen</animation>
+			<visible>facadeview.coverflow+[string.equals(#mvCentral.ArtistView,true)|string.equals(#mvCentral.GenreView,true)]</visible>
+		</control>		
+<!-- Album View -->
+		<control>
+			<id>0</id>
+			<description>Artist/Track Description</description>
+			<type>label</type>
+			<posX>640</posX>
+			<posY>670</posY>
+			<font>mediastream16tc</font>
+			<textcolor>ffffffff</textcolor>
+			<shadowAngle>45</shadowAngle> 
+			<shadowDistance>4</shadowDistance> 
+			<shadowColor>ff000000</shadowColor>
+			<align>center</align>
+			<label>#selecteditem</label>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+			<animation effect="fade" time="250" delay="0">WindowOpen</animation>
+			<visible>[facadeview.coverflow]+[string.equals(#mvCentral.AlbumView,true)]</visible>
+		</control>
+		<control>
+			<id>0</id>
+			<description>Album Runtime and Tracks</description>
+			<type>label</type>
+			<posX>640</posX>
+			<posY>700</posY>
+			<font>mediastream14tc</font>
+			<textcolor>ffffffff</textcolor>
+			<shadowAngle>45</shadowAngle> 
+			<shadowDistance>4</shadowDistance> 
+			<shadowColor>ff000000</shadowColor>
+			<align>center</align>
+			<label>[#mvCentral.Translation.Tracks.Label #mvCentral.TracksForAlbum | #mvCentral.Translation.TotalRuntime.Label #mvCentral.AlbumTracksRuntime]</label>
+			<animation effect="fade" time="250" delay="0">WindowClose</animation>
+			<animation effect="fade" time="250" delay="0">WindowOpen</animation>
+			<visible>[facadeview.coverflow]+string.equals(#mvCentral.AlbumView,true)</visible>
+		</control>
+		
+		
+		
+<!-- ******************************* -->	
  <!-- :: Artwork - Filmstrip View :: -->      
 <!-- ******************************* -->	
  		<control>
@@ -449,7 +526,7 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>#selecteditem</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -467,7 +544,7 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>#selecteditem    [#mvCentral.Duration]</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -485,7 +562,7 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>#selecteditem    [#mvCentral.Translation.Album.Label]</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -503,14 +580,14 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>[#mvCentral.Translation.Tracks.Label #mvCentral.TracksForAlbum | #mvCentral.Translation.TotalRuntime.Label #mvCentral.AlbumTracksRuntime]</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
 			<animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<visible>[facadeview.filmstrip]+[string.equals(#mvCentral.ArtistView,true)]</visible>
+			<visible>[facadeview.filmstrip]+[string.equals(#mvCentral.AlbumView,true)]</visible>
 		</control>
-		<control>Acoustic
+		<control>
 			<id>0</id>
 			<description>Tracks by Artist</description>
 			<type>fadelabel</type>
@@ -521,7 +598,7 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>Music Videos: #mvCentral.VideosByArtist     [#mvCentral.Translation.TotalRuntime.Label #mvCentral.ArtistTracksRuntime]</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -656,7 +733,7 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>#selecteditem</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -674,7 +751,7 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>#selecteditem    [#mvCentral.Duration]</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -692,7 +769,7 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>#selecteditem    [#mvCentral.Translation.Album.Label]</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -710,7 +787,7 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>[#mvCentral.Translation.Tracks.Label #mvCentral.TracksForAlbum | #mvCentral.Translation.TotalRuntime.Label #mvCentral.AlbumTracksRuntime]</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -728,7 +805,7 @@
 			<textcolor>ffffffff</textcolor>
 			<shadowAngle>45</shadowAngle> 
 			<shadowDistance>4</shadowDistance> 
-			<shadowColor>#shadow.dark</shadowColor>
+			<shadowColor>ff000000</shadowColor>
 			<align>left</align>
 			<label>Music Videos: #mvCentral.VideosByArtist    [#mvCentral.Translation.TotalRuntime.Label #mvCentral.ArtistTracksRuntime]</label>
 			<animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -1306,12 +1383,28 @@
           <label>#mvCentral.Translation.StatsAndInfo.Label</label>
         </control>        
         <control>
-          <description>Genre frim Tags Config</description>
+          <description>Genre from Tags Config</description>
           <type>button</type>
           <id>10</id>
           <onleft>50</onleft>
           <label>#mvCentral.Translation.ConfigGenre.Label</label>
         </control>        
+        <control>
+          <description>Search</description>
+          <type>button</type>
+          <id>11</id>
+          <onleft>50</onleft>
+          <label>#mvCentral.Translation.Search.Label #mvCentral.Translation.Artists.Label</label>
+        </control>    
+        <control>
+          <description>Search Youtube.FM</description>
+          <id>12</id>
+          <type>button</type>
+          <label>#mvCentral.Translation.Search.Label Youtube.FM</label>
+          <hyperlink>29050</hyperlink>
+          <hyperlinkParameter>ARTISTVIDEOS:#mvCentral.ArtistName</hyperlinkParameter>
+          <onleft>50</onleft>
+        </control>             
       </control>       
     </control>
     
