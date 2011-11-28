@@ -2,8 +2,11 @@
 <window>
   <id>29051</id>
   <defaultcontrol>2</defaultcontrol>
-  <allowoverlay>[facadeview.playlist|facadeview.filmstrip|facadeview.coverflow]</allowoverlay>
+  <allowoverlay>yes</allowoverlay>
+  <define>#header.Extension.label:#header.label</define>
+  <define>#header.label:YOUTUBE.FM</define>  
   <define>#useSelectedFanart:Yes</define>
+  <define>#usePlayFanart:Yes</define>
   <controls>
     <control>
       <description>BG</description>
@@ -13,9 +16,7 @@
       <width>1280</width>
       <height>720</height>
     </control>
-    <import>mymusic.selected.fanart.xml</import>
-    <import>common.window.xml</import>
-    <import>common.time.xml</import>
+    <import>mymusic.selected.fanart.xml</import>    
     <control>
       <id>0</id>
       <description>music overlay image</description>
@@ -27,11 +28,26 @@
       <texture>mainoverlay.png</texture>
     </control>
     <control>
+			<description>Hidden Menu Indicator</description>
+      <type>image</type>
+      <posX>1232</posX>
+      <posY>50</posY>
+      <width>48</width>
+      <height>144</height>
+      <texture>#StreamedMP.ActionMenu.Image</texture>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
       <type>actiongroup</type>
       <description>action menu</description>
-      <defaultcontrol>10</defaultcontrol>
+      <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
-      <dimColor>50ffffff</dimColor>
+      <dimColor>00ffffff</dimColor>
+      <buttonX>1231</buttonX>
+      <buttonY>55</buttonY>
+      <buttonwidth>49</buttonwidth>
+      <buttonheight>253</buttonheight>
       <control>
         <type>image</type>
         <posX>1002</posX>
@@ -39,6 +55,31 @@
         <width>278</width>
         <height>720</height>
         <texture>hiddenmenu_right.png</texture>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>Dummy Button (for Mouse)</description>
+        <label>-</label>
+        <type>button</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>MENU</description>
+        <label>924</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>225</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -126,14 +167,6 @@
             <onup>21</onup>
             <ondown>26</ondown>
           </control>
-          <!--       <control>
-             <description>Play button</description>
-             <type>button</type>
-             <id>23</id>
-             <label>208</label>
-             <onleft>50</onleft>
-             <visible>false</visible>
-          </control> -->
           <control>
             <description>Now playing</description>
             <type>button</type>
@@ -171,67 +204,36 @@
       </control>
     </control>
     <import>youtube.facade.xml</import>
+    <import>youtube.mediainfo.xml</import>
     <control>
       <id>1</id>
       <type>image</type>
       <posX>78</posX>
-      <posY>220</posY>
-      <width>245</width>
-      <height>232</height>
-      <texture mask="video_poster_mask.png">missing_Coverart.png</texture>
-      <visible>[Control.HasFocus(50)+!control.hasthumb(500)]</visible>
+      <posY>280</posY>
+      <width>256</width>
+      <height>256</height>
+      <texture>missing_Coverart.png</texture>
+      <visible>[facadeview.playlist|facadeview.album]+!control.hasthumb(8082)]</visible>
       <animation effect="fade" time="70" reversible="false">visible</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
-      <id>500</id>
+      <id>8082</id>
       <type>image</type>
       <posX>78</posX>
       <posY>220</posY>
-      <width>245</width>
-      <height>232</height>
+      <width>400</width>
+      <height>400</height>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
       <texture mask="video_poster_mask.png">#selectedthumb</texture>
-      <visible>[Control.HasFocus(50)]</visible>
+      <visible>[facadeview.playlist|facadeview.album]</visible>
       <animation effect="fade" time="70" reversible="false">visible</animation>
-    </control>
-    <control>
-      <description>Selected item Label</description>
-      <type>fadelabel</type>
-      <id>1</id>
-      <posX>78</posX>
-      <posY>462</posY>
-      <width>355</width>
-      <label>Info:</label>
-      <font>mediastream14tc</font>
-      <visible>[Control.HasFocus(50)]</visible>
-      <animation effect="fade" time="70" reversible="false">visible</animation>
-    </control>
-    <control>
-      <description>Selected item Label</description>
-      <type>fadelabel</type>
-      <id>1</id>
-      <posX>78</posX>
-      <posY>492</posY>
-      <width>355</width>
-      <label>#selecteditem</label>
-      <font>mediastream14tc</font>
-      <visible>[Control.HasFocus(50)]</visible>
-      <animation effect="fade" time="70" reversible="false">visible</animation>
-    </control>
-    <control>
-      <description>Selected item Label</description>
-      <type>fadelabel</type>
-      <id>1</id>
-      <posX>78</posX>
-      <posY>525</posY>
-      <width>355</width>
-      <label>#selecteditem2</label>
-      <font>mediastream14tc</font>
-      <visible>[Control.HasFocus(50)]</visible>
-      <animation effect="fade" time="70" reversible="false">visible</animation>
-    </control>
-    <import>common.overlays2.xml</import>
-    <!-- <import>youtubeoverlay.xml</import> -->
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>    
+    <import>youtube.common.window.xml</import>
+    <import>common.time.xml</import>     
   </controls>
 </window>
