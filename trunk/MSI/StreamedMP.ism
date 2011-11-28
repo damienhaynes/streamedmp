@@ -245,6 +245,7 @@
 		<col key="yes" def="s72">Name</col>
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
+		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isregsvr.dll</td></row>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
@@ -365,6 +366,7 @@
 		<row><td>languagesStreamedMP</td><td>{698D38D5-269E-4D2F-9110-25A40C4CAAA1}</td><td>STREAMEDMP1</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>languagesTVSeries</td><td>{5B290964-5B29-43FD-888D-2F26749E3DDC}</td><td>MP_TVSERIES1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>languagesTrakt</td><td>{DEA76A3A-13DF-4090-AE62-C9CDAACF5A5E}</td><td>TRAKT</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>languagesWorldWeather</td><td>{3F64C643-FEF9-4AA5-8C47-5344ECD29E0C}</td><td>WORLDWEATHER</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libGoogleTranslate</td><td>{068938CB-5716-445B-BD0B-FB32B9D24984}</td><td>MPBINDIR</td><td>24</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libLyricsEngine</td><td>{1E4B56F5-8F05-4AB2-8B60-29598AE215DD}</td><td>MPBINDIR</td><td>24</td><td/><td>lyricsengine.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libNLog</td><td>{B9C558E2-1005-46EB-BD3D-19FC898042A3}</td><td>MPBINDIR</td><td>24</td><td/><td>nlog.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -389,6 +391,7 @@
 		<row><td>pluginStreamedMPEditorDLL</td><td>{C447E455-0E1C-431F-BA09-9F10545ED6AC}</td><td>PROCESS</td><td>0</td><td/><td>streamedmpeditor.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginTVSeriesDLL</td><td>{FE092673-1971-4FA4-8388-C3C0FB33F9C0}</td><td>WINDOWS1</td><td>8</td><td/><td>mp_tvseries.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginTraktDLL</td><td>{5905BDB6-D409-4928-A6B2-71D3FA41D027}</td><td>WINDOWS1</td><td>8</td><td/><td>traktplugin.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>pluginWorldWeather</td><td>{246B540A-3D81-45BD-9CDE-6A1F872E377F}</td><td>WINDOWS1</td><td>8</td><td/><td>worldweather.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinMedia</td><td>{46FDBCF7-8677-41BC-9C0B-E63D051E5969}</td><td>MEDIA1</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinSounds</td><td>{DE592347-F6A7-43E7-9D98-C4592DE389E1}</td><td>SOUNDS2</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinXML</td><td>{DA529B60-0E0A-4DE3-9DE3-E6839C1C7127}</td><td>STREAMEDMP</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -708,9 +711,13 @@
 		<col def="I4">ExtendedType</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
+		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
+		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
+		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/><td/></row>
+		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td/><td>Required for installations using InstallScript.</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
@@ -878,6 +885,7 @@
 		<row><td>USERPROFILE</td><td>TARGETDIR</td><td>.:USERPR~1|UserProfile</td><td/><td>0</td><td/></row>
 		<row><td>WEB1</td><td>STREAMEDMP</td><td>Web</td><td/><td>0</td><td/></row>
 		<row><td>WINDOWS1</td><td>MPPLUGINSDIR</td><td>Windows</td><td/><td>0</td><td/></row>
+		<row><td>WORLDWEATHER</td><td>MPLANGUAGESDIR</td><td>WORLDW~1|WorldWeather</td><td/><td>0</td><td/></row>
 		<row><td>WindowsFolder</td><td>TARGETDIR</td><td>.:Windows</td><td/><td>0</td><td/></row>
 		<row><td>WindowsVolume</td><td>TARGETDIR</td><td>.:WinRoot</td><td/><td>0</td><td/></row>
 		<row><td>newfolder1</td><td>ProgramMenuFolder</td><td>##ID_STRING9##</td><td/><td>1</td><td/></row>
@@ -1586,6 +1594,7 @@
 		<row><td>TraktMainPlugin</td><td>Trakt</td><td>##ID_STRING154##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Transparent</td><td>Germany</td><td>##ID_STRING98##</td><td>##ID_STRING101##</td><td>6</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>UK</td><td>TVLogos</td><td>##ID_STRING94##</td><td>##ID_STRING95##</td><td>8</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>WorldWeather</td><td>Plugins</td><td>##ID_STRING164##</td><td>##ID_STRING165##</td><td>20</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>fonts</td><td>Main</td><td>##ID_STRING53##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>16</td><td/><td/><td/><td/></row>
 		<row><td>fontsDefOptions</td><td>Main</td><td>##ID_STRING54##</td><td>##ID_STRING56##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>fontsLgeOptions</td><td>Main</td><td>##ID_STRING55##</td><td>##ID_STRING57##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
@@ -1605,6 +1614,7 @@
 	<table name="FeatureComponents">
 		<col key="yes" def="s38">Feature_</col>
 		<col key="yes" def="s72">Component_</col>
+		<row><td>Australia</td><td>languagesWorldWeather</td></row>
 		<row><td>Australia</td><td>tvlogosAustralia</td></row>
 		<row><td>Canada</td><td>tvlogosCanada</td></row>
 		<row><td>Classical</td><td>tvlogosGermanyClassical</td></row>
@@ -1658,6 +1668,7 @@
 		<row><td>TraktMainPlugin</td><td>pluginTraktDLL</td></row>
 		<row><td>Transparent</td><td>tvlogosGermanyTransparent</td></row>
 		<row><td>UK</td><td>tvlogosUK</td></row>
+		<row><td>WorldWeather</td><td>pluginWorldWeather</td></row>
 		<row><td>fonts</td><td>fontsFluidBody</td></row>
 		<row><td>fonts</td><td>fontsFluidBodyCaps</td></row>
 		<row><td>fonts</td><td>fontsFluidTitleCaps</td></row>
@@ -1708,6 +1719,7 @@
 		<row><td>latestmediahandler.xml</td><td>LatestMediaHandlerConfig</td><td>LATEST~1.XML|LatestMediaHandler.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\latestmediaconfig\LatestMediaHandler.xml</td><td>1</td><td/></row>
 		<row><td>lyricsengine.dll</td><td>libLyricsEngine</td><td>LYRICS~1.DLL|LyricsEngine.dll</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\LyricsEngine.dll</td><td>17</td><td/></row>
 		<row><td>mediaportal.xml</td><td>MediaPortal.xml</td><td>MEDIAP~1.XML|MediaPortal.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\res\MediaPortal.xml</td><td>1</td><td/></row>
+		<row><td>micropolis.mpcore.dll</td><td>pluginWorldWeather</td><td>MICROP~1.DLL|Micropolis.MPCore.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugins\windows\Micropolis.MPCore.dll</td><td>1</td><td/></row>
 		<row><td>microsoft.mshtml.dll</td><td>libWebBrowserDependencies</td><td>MICROS~1.DLL|microsoft.mshtml.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\microsoft.mshtml.dll</td><td>1</td><td/></row>
 		<row><td>movingpictures.dll</td><td>pluginMovingPicturesDLL</td><td>MOVING~1.DLL|MovingPictures.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\MovingPictures.dll</td><td>1</td><td/></row>
 		<row><td>mp_tvseries.dll</td><td>pluginTVSeriesDLL</td><td>MP-TVS~1.DLL|MP-TVSeries.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\MP-TVSeries.dll</td><td>1</td><td/></row>
@@ -1755,6 +1767,8 @@
 		<row><td>updates.url</td><td>webUpdates</td><td>Updates.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Updates.url</td><td>1</td><td/></row>
 		<row><td>webbrowser.dll</td><td>pluginInfoServiceDLL</td><td>WEBBRO~1.DLL|WebBrowser.dll</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\WebBrowser.dll</td><td>17</td><td/></row>
 		<row><td>wiki.url</td><td>webWiki</td><td>Wiki.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Wiki.url</td><td>1</td><td/></row>
+		<row><td>worldweather.core.dll</td><td>pluginWorldWeather</td><td>WORLDW~1.DLL|WorldWeather.Core.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugins\windows\WorldWeather.Core.dll</td><td>1</td><td/></row>
+		<row><td>worldweather.dll</td><td>pluginWorldWeather</td><td>WORLDW~1.DLL|WorldWeather.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugins\windows\WorldWeather.dll</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2037,6 +2051,7 @@
 		<row><td>languagesStreamedMP</td><td/><td/><td>_5A51C813_59FB_4E8F_A5A0_53A0A6D89DFC_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>languagesTVSeries</td><td/><td/><td>_C55A3F6E_3549_42EB_ADC6_E021E8BB43E8_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>languagesTrakt</td><td/><td/><td>_FF021C70_A50B_4135_81C3_F92FA079ABD7_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>languagesWorldWeather</td><td/><td/><td>_3743F641_45C1_4A48_8A46_F355CF60C5E1_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libGoogleTranslate</td><td/><td/><td>_ECA9F67F_1B2F_4CB1_9B0C_11D20D990BFE_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libLyricsEngine</td><td/><td/><td>_46169EBA_6F43_4CDE_A47B_2B6D309338C1_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libNLog</td><td/><td/><td>_66DA8A3D_8044_476A_BD46_7F3BE1BAC0D5_FILTER</td><td/><td/><td/><td/></row>
@@ -2061,6 +2076,7 @@
 		<row><td>pluginStreamedMPEditorDLL</td><td/><td/><td>_991C81C8_1BE2_4F3F_9F0A_AAF72E72278B_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginTVSeriesDLL</td><td/><td/><td>_C7787284_FD8D_46A7_80E6_B37A675DD06F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginTraktDLL</td><td/><td/><td>_F09777EF_4C26_499B_B55D_A030000C9F8C_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>pluginWorldWeather</td><td/><td/><td>_E1827FDC_0BFF_4097_95FD_DEB8A2B5BFB9_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>skinMedia</td><td/><td/><td>_3B3244CB_2B2D_47CB_91AA_830342AB3C98_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>skinSounds</td><td/><td/><td>_84C77638_8B61_4BB4_9F1B_B6EF3C72911F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>skinXML</td><td/><td/><td>_DC47D95D_6D31_4780_896D_85C92FF14D4C_FILTER</td><td/><td/><td/><td/></row>
@@ -2148,6 +2164,7 @@
 		<row><td>languagesStreamedMP</td><td>&lt;StreamedMP&gt;\language\streamedmp</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>languagesTVSeries</td><td>&lt;SKINFILES&gt;\language\mp-tvseries</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>languagesTrakt</td><td>&lt;StreamedMP&gt;\language\trakt</td><td>4</td><td>*.xml</td><td/><td>10</td></row>
+		<row><td>languagesWorldWeather</td><td>&lt;StreamedMP&gt;\language\worldweather</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>skinMedia</td><td>&lt;StreamedMP&gt;\media</td><td>4</td><td>*.png,*.jpg,*.bmp,*.gif</td><td>tvseries_SeriesListIcon.png,tvseries_SeasonListIcon.png</td><td>2</td></row>
 		<row><td>skinSounds</td><td>&lt;SKINFILES&gt;\sounds</td><td>4</td><td>*.wav,*.mp3,*.wma</td><td/><td>2</td></row>
 		<row><td>skinXML</td><td>&lt;StreamedMP&gt;</td><td>4</td><td>*.xml</td><td>fonts.xml, mymusicplayingnow*.xml</td><td>0</td></row>
@@ -2206,6 +2223,7 @@
 		<row><td>TraktMainPlugin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Transparent</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>UK</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>WorldWeather</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>fonts</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>fontsDefOptions</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>fontsLgeOptions</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
@@ -2474,7 +2492,7 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 1.7.3</td></row>
+		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 1.7.4</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -2782,6 +2800,7 @@
 		<row><td>Custom</td><td>TraktMainPlugin</td></row>
 		<row><td>Custom</td><td>Transparent</td></row>
 		<row><td>Custom</td><td>UK</td></row>
+		<row><td>Custom</td><td>WorldWeather</td></row>
 		<row><td>Custom</td><td>fonts</td></row>
 		<row><td>Custom</td><td>fontsDefOptions</td></row>
 		<row><td>Custom</td><td>fontsLgeOptions</td></row>
@@ -2827,6 +2846,7 @@
 		<row><td>Minimal</td><td>TraktMainPlugin</td></row>
 		<row><td>Minimal</td><td>Transparent</td></row>
 		<row><td>Minimal</td><td>UK</td></row>
+		<row><td>Minimal</td><td>WorldWeather</td></row>
 		<row><td>Minimal</td><td>fonts</td></row>
 		<row><td>Minimal</td><td>fontsDefOptions</td></row>
 		<row><td>Minimal</td><td>fontsLgeOptions</td></row>
@@ -2874,6 +2894,7 @@
 		<row><td>Typical</td><td>TraktMainPlugin</td></row>
 		<row><td>Typical</td><td>Transparent</td></row>
 		<row><td>Typical</td><td>UK</td></row>
+		<row><td>Typical</td><td>WorldWeather</td></row>
 		<row><td>Typical</td><td>fonts</td></row>
 		<row><td>Typical</td><td>fontsDefOptions</td></row>
 		<row><td>Typical</td><td>fontsLgeOptions</td></row>
@@ -4192,6 +4213,8 @@
 		<row><td>ID_STRING161</td><td>1033</td><td>Allow for Latest Media to be displayed on Home Screen such as Most Recently Added TV Recording, or Music Album.\n\nStreamedMP handles most recents for TVShows and Movies so ensure you dont enable these in LMH.</td><td>0</td><td/><td>1419749546</td></row>
 		<row><td>ID_STRING162</td><td>1033</td><td>Default Wide Skin</td><td>0</td><td/><td>-1927293065</td></row>
 		<row><td>ID_STRING163</td><td>1033</td><td>Default Wide skin files for the InfoService plugin.</td><td>0</td><td/><td>-1793124352</td></row>
+		<row><td>ID_STRING164</td><td>1033</td><td>World Weather</td><td>0</td><td/><td>-442505781</td></row>
+		<row><td>ID_STRING165</td><td>1033</td><td>World Weather is a replacement weather plugin to the inbuilt one that is no longer operational in MediaPortal.\n\nRemember to configure city in plugin configuration.\n\nAuthor: Micropolis</td><td>0</td><td/><td>-442523316</td></row>
 		<row><td>ID_STRING17</td><td>1033</td><td>spuck </td><td>0</td><td/><td>-1919103762</td></row>
 		<row><td>ID_STRING18</td><td>1033</td><td>Fanart Moving Pictures</td><td>0</td><td/><td>1142761741</td></row>
 		<row><td>ID_STRING19</td><td>1033</td><td>Default Moving Pictures</td><td>0</td><td/><td>1142808813</td></row>
@@ -4260,7 +4283,7 @@
 		<row><td>ID_STRING76</td><td>1033</td><td>Fanart TV Series</td><td>0</td><td/><td>1142770029</td></row>
 		<row><td>ID_STRING77</td><td>1033</td><td>Fanart TV Series</td><td>0</td><td/><td>1142767981</td></row>
 		<row><td>ID_STRING78</td><td>1033</td><td>InfoService</td><td>0</td><td/><td>488478159</td></row>
-		<row><td>ID_STRING79</td><td>1033</td><td>InfoService displays news/twitters from your favourite feeds and 5-Day weather to your homescreen. \nThis feature also includes a WebBrowser to view feed items.\n\nAuthor: edsche</td><td>0</td><td/><td>2032066924</td></row>
+		<row><td>ID_STRING79</td><td>1033</td><td>InfoService displays news/twitters from your favourite feeds to your homescreen. \nThis feature also includes a WebBrowser to view feed items.\n\nAuthor: edsche</td><td>0</td><td/><td>-442512788</td></row>
 		<row><td>ID_STRING8</td><td>1033</td><td>Tools &amp; Utilities</td><td>0</td><td/><td>-979585008</td></row>
 		<row><td>ID_STRING80</td><td>1033</td><td>Global Music Search</td><td>0</td><td/><td>488478834</td></row>
 		<row><td>ID_STRING81</td><td>1033</td><td>This plugin allows you to search through your complete music collection (including lyrics if available) and provides functionality to control what you want to do with the search results.\n\nAutor:  d-fader</td><td>0</td><td/><td>2032034220</td></row>
@@ -4497,9 +4520,13 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
+		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
+		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
+		<row><td>ISSelfRegisterFinalize</td><td/><td>6602</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
+		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
@@ -4941,9 +4968,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{B380826E-DB49-4DC6-96DF-5B508D471BDC}</td><td/></row>
+		<row><td>ProductCode</td><td>{7174A29A-E374-4455-B632-A1F05D6B53E7}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>1.7.3.3010</td><td/></row>
+		<row><td>ProductVersion</td><td>1.7.4.3022</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ARPNOMODIFY;ARPNOREMOVE;ARPSYSTEMCOMPONENT;COMPANYNAME;INSTALLDIR;ISALWAYSINSTALLELEVATED;ISFOUNDNEWERPRODUCTVERSION;ISSETUPDRIVEN;ISX_SERIALNUM;IS_NET_API_GROUP_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_USERNAME_TOKEN;IS_NET_API_NEW_USER_CONFIRM;IS_NET_API_NEW_USER_GROUP;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_SERVER;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NEW_USER_PASSWORD_TEXT;IS_NEW_USER_SERVER_TEXT;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_DATABASE;IS_SQLSERVER_LIST;IS_SQLSERVER_PASSWORD;IS_SQLSERVER_SERVER;IS_SQLSERVER_USERNAME;LOGOS;MAJORUPGRADE_01;SUPPORTDIR;USERNAME</td><td/></row>
