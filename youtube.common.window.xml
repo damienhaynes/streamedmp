@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
+    <control>
+      <id>1</id>
+      <description>Background Image</description>
+      <animation effect="fade" time="500">WindowOpen</animation>
+      <animation effect="fade" time="500">WindowClose</animation>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+      <colordiffuse>#header.BG.colordiffuse</colordiffuse>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Overlay Image</description>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1281</width>
+      <height>720</height>
+      <texture>#header.BG.overlay</texture>
+    </control>    
+    <control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>431</posX>
+      <posY>11</posY>
+      <width>456</width>
+      <height>36</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="fade" time="300" delay="300">WindowOpen</animation>
+      <animation effect="fade" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>      
+    </control>
+    <control>
+      <id>1</id>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebgshort.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="fade" time="150">WindowClose</animation>      
+    </control>
+    <control>
+      <id>1</id>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <posX>483</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#header.label</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="fade" time="150">WindowClose</animation>      
+    </control>
+    <control>
+      <description>Top Extension Title</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>862</posX>
+      <posY>13</posY>
+      <width>340</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>!string.equals(#currentmodule,)</visible>
+      <label>#currentmodule</label>      
+      <animation effect="fade" time="300" delay="300">WindowOpen</animation>
+      <animation effect="fade" time="230" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+    </control>
+  </controls>
+</window>
