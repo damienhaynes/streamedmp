@@ -2384,12 +2384,10 @@ begin
 	sFile = STREAMEDMP_SKIN_EMULATORS;
 	SetXMLProperty(sFile, EMULATORS_SCREENSHOT, g_sThumbsDir^"myEmulators\\screenshots\\#selecteditem.jpg");	
 	
-	// Set Default Skin
+	// Set Default Skin, otherwise leave alone
 	sFile = g_sConfigDir^"MediaPortal.xml";	
 	if g_bSetAsDefaultSkin then
-		SetMPXMLProperty(sFile, "skin","name",SKIN_NAME);
-	else
-		SetMPXMLProperty(sFile, "skin","name",DEFAULT_SKIN);		
+		SetMPXMLProperty(sFile, "skin", "name", SKIN_NAME);
 	endif;             
 	
 	// Start with Basic Home or Standard Home	
@@ -2736,7 +2734,7 @@ begin
 end; 
 
 function VOID UninstallCleanup(bRemoveSkinSettings, bRemoveBasicHomeSettings)
-	STRING szDir, sFile;
+	STRING szDir, sFile, sValue;
 begin 
 	// Remove cached downloaded install files                                           
 	if (Is(PATH_EXISTS,g_sDownloadInstallDir)) then
@@ -2761,9 +2759,12 @@ begin
     // Cleanup Virtual Store
     CleanVirtualStoreDir();
     
-    // Finially set default skin back to DefaultWide
-    sFile = g_sConfigDir^"MediaPortal.xml";    
-    SetMPXMLProperty(sFile, "skin", "name", DEFAULT_SKIN);
+    // Finially set default skin back to DefaultWide if we are still using StreamedMP    
+    sFile = g_sConfigDir^"MediaPortal.xml";
+    GetMPXMLProperty(sFile, "skin", "name", sValue);
+    if sValue = SKIN_NAME then
+    	SetMPXMLProperty(sFile, "skin", "name", DEFAULT_SKIN);
+    endif;
         
 end; 
 
