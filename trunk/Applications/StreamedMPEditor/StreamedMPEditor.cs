@@ -182,8 +182,8 @@ namespace StreamedMPEditor
     public const string musicSkinID = "501";
     public const string tvMenuSkinID = "1";
     public const string onlineVideosSkinID = "4755";
-    //myweather+yrWeather/BBCWeather/WorldWeather
-    public const string weatherSkinID = "2600|7977|8192";
+    //myweather/BBCWeather/WorldWeather/yrWeather
+    public const string weatherSkinID = "2600|7977|8192|3231";
     public const bool hyperlinkParameterEnabled = true;
     public const bool hyperlinkParameterDisabled = false;
     const string quote = "\"";
@@ -2314,6 +2314,8 @@ namespace StreamedMPEditor
           return "music";
         case 2600:
           return "weatherbg";
+        case 3231:
+          return "weatherbg";
         case 4755:
           return "movies";
         case 5900:
@@ -2321,6 +2323,8 @@ namespace StreamedMPEditor
         case 7890:
           return "music";
         case 7977:
+          return "weatherbg";
+        case 8192:
           return "weatherbg";
         case 9811:
           return "tv";
@@ -2360,6 +2364,8 @@ namespace StreamedMPEditor
         case 504:
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Music.jpg");
         case 2600:
+          return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Weather.jpg");
+        case 3231:
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_Weather.jpg");
         case 4755:
           return bgFolderName + setBGFolder(cboThemeSelection.Text + "\\My_OnlineVideos.jpg");
