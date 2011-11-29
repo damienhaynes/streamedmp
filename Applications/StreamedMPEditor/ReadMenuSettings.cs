@@ -860,6 +860,9 @@ namespace StreamedMPEditor
         case 2600:
           theIcon = "homebuttons\\" + theme +"_weather.png";
           break;
+        case 3231:
+          theIcon = "homebuttons\\" + theme + "_weather.png";
+          break;
         case 4755:
           theIcon = "homebuttons\\" + theme +"_onlinevideos.png";
           break;

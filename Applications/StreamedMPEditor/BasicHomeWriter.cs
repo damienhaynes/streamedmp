@@ -2176,8 +2176,8 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")|Control.HasFocus(" + (menItem.id + 900).ToString() + ")" + menuIDControl + "</visible>");
         rawXML.AppendLine("</control>");
-        // Display the current weather location under the menu option
-        if (menItem.isWeather)
+        // Display the current weather location under the menu option (World Weather Only)
+        if (menItem.hyperlink == "7977")
         {
           rawXML.AppendLine("<control>");
           rawXML.AppendLine("<description>" + menItem.name + " Location Label</description>");
