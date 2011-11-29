@@ -1,5 +1,6 @@
 rem Copying patch files Embedded Resources
 copy ..\..\..\Plugins\process\FanartHandler.dll .\ /Y
+copy ..\..\..\Plugins\process\LatestMediaHandler.dll .\ /Y
 copy ..\..\..\Plugins\process\StreamedMPEditor.dll .\ /Y
 copy ..\..\..\Plugins\windows\StreamedMPConfig.dll .\ /Y
 copy ..\..\..\Plugins\windows\MP-TVSeries.dll .\ /Y
