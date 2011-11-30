@@ -143,6 +143,12 @@ namespace StreamedMPConfig
 
     #region Base overrides
 
+    public override void DeInit()
+    {
+        DeInitStreamedMP();
+        base.DeInit();
+    }
+
     public override bool Init()
     {
       logger.LogFile = Path.Combine(Config.GetFolder(Config.Dir.Log), "StreamedMPConfig.log");
@@ -495,10 +501,10 @@ namespace StreamedMPConfig
     {
       smcLog.WriteLog("De-Initializing StreamedMP");
 
-      GUIWindowManager.OnActivateWindow -= new GUIWindowManager.WindowActivationHandler(GUIWindowManager_OnActivateWindow);
-      GUIGraphicsContext.OnVideoWindowChanged -= new VideoWindowChangedHandler(GUIGraphicsContext_OnVideoWindowChanged);
-      GUIGraphicsContext.OnNewAction -= new OnActionHandler(smpAction);
-      SystemEvents.PowerModeChanged -= new PowerModeChangedEventHandler(SystemEvents_PowerModeChanged);
+      GUIWindowManager.OnActivateWindow -= GUIWindowManager_OnActivateWindow;
+      GUIGraphicsContext.OnVideoWindowChanged -= GUIGraphicsContext_OnVideoWindowChanged;
+      GUIGraphicsContext.OnNewAction -= smpAction;
+      SystemEvents.PowerModeChanged -= SystemEvents_PowerModeChanged;
     }
 
     private void DeInitMostRecents()
