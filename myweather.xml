@@ -18,15 +18,15 @@
       <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
     <control>
-      <description>weather background image infoservice</description>
+      <description>Weather BG</description>
       <type>image</type>
       <id>0</id>
       <posx>0</posx>
       <posy>0</posy>
       <width>1280</width>
       <height>720</height>
-      <texture>SMPBackgrounds/linkedweather//#infoservice.weather.today.img.small.filenamewithoutext.jpg</texture>
-      <visible>plugin.isenabled(InfoService)</visible>
+      <texture>SMPbackgrounds\linkedweather\#WorldWeather.TodayIconNumber.jpg</texture>
+      <visible>plugin.isenabled(World Weather)</visible>
     </control>
     <control>
       <description>Current Weather BG</description>
