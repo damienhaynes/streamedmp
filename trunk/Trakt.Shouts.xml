@@ -209,8 +209,8 @@
           <posY>240</posY>
           <height>480</height>
           <width>620</width>
-          <onleft>50</onleft>
-          <onright>50</onright>
+          <onleft>2</onleft>
+          <onright>2</onright>
           <scrollOffset>3</scrollOffset>
           <itemWidth>89</itemWidth>
           <itemHeight>50</itemHeight>
@@ -238,6 +238,152 @@
           <spinWidth>50</spinWidth>
           <spinHeight>37</spinHeight>
           <suffix>|</suffix>
+        </control>
+      </control>
+    </control>
+    <!-- Hidden Menu -->
+    <control>
+      <description>Hidden Menu Indicator</description>
+      <type>image</type>
+      <posX>1232</posX>
+      <posY>50</posY>
+      <width>48</width>
+      <height>144</height>
+      <texture>#StreamedMP.ActionMenu.Image</texture>
+      <visible>control.isvisible(50)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <dimColor>00ffffff</dimColor>
+      <buttonX>1231</buttonX>
+      <buttonY>55</buttonY>
+      <buttonwidth>49</buttonwidth>
+      <buttonheight>253</buttonheight>
+      <control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>Dummy Button (for Mouse)</description>
+        <label>-</label>
+        <type>button</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>MENU</description>
+        <label>924</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>223</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>JUMP TO</description>
+        <label>1065</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>280</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
+        <posY>245</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <control>
+          <description>Toggle Hide Spoilers</description>
+          <type>checkbutton</type>
+          <id>2</id>
+          <width>220</width>
+          <height>28</height>
+          <textXOff>11</textXOff>
+          <textYOff>5</textYOff>
+          <label>-</label>
+          <markWidth>27</markWidth>
+          <markHeight>27</markHeight>
+          <markXOff>15</markXOff>
+          <markalign>right</markalign>
+          <markvalign>middle</markvalign>
+          <textureFocus>hiddenmenu_button_fo.png</textureFocus>
+          <textureNoFocus>-</textureNoFocus>
+          <textureCheckmark>ledon.png</textureCheckmark>
+          <textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
+          <font>mediastream10c</font>
+          <textcolor>ffffffff</textcolor>
+          <colordiffuse>ffffffff</colordiffuse>
+          <disabledcolor>30ffffff</disabledcolor>
+          <textcolorNoFocus>ff909090</textcolorNoFocus>
+          <dimColor>ff000000</dimColor>
+          <textalign>left</textalign>
+          <textvalign>middle</textvalign>
+          <onleft>50</onleft>
+          <onright>50</onright>
+          <onup>50</onup>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>MovingPictures</description>
+          <id>66610</id>
+          <type>button</type>
+          <label>Moving Pictures</label>
+          <hyperlink>96742</hyperlink>
+          <onleft>50</onleft>
+        </control>
+        <control>
+          <description>My Videos</description>
+          <type>button</type>
+          <id>66611</id>
+          <label>100006</label>
+          <onleft>50</onleft>
+          <hyperlink>6</hyperlink>
+          <ondown>66612</ondown>
+        </control>
+        <control>
+          <description>MP-TVSeries</description>
+          <type>button</type>
+          <id>66612</id>
+          <label>MP-TVSeries</label>
+          <hyperlink>9811</hyperlink>
+          <ondown>2</ondown>
+          <onleft>50</onleft>
         </control>
       </control>
     </control>
@@ -281,10 +427,9 @@
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-			<visible>!string.equals(#Trakt.User.FullName,N/A)</visible>
+      <visible>!string.equals(#Trakt.User.FullName,N/A)</visible>
     </control>
-    
-		<control Style="smallTitleB">
+    <control Style="smallTitleB">
       <description>Age</description>
       <id>0</id>
       <label>#Trakt.Translation.Age.Label</label>
@@ -293,7 +438,7 @@
       <posY>318</posY>
       <width>150</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-			<visible>!string.equals(#Trakt.User.Age,)+!string.equals(#Trakt.User.Age,N/A)</visible>
+      <visible>!string.equals(#Trakt.User.Age,)+!string.equals(#Trakt.User.Age,N/A)</visible>
     </control>
     <control Style="smallTitle">
       <description>Age Value</description>
@@ -304,7 +449,7 @@
       <posY>319</posY>
       <width>230</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-			<visible>!string.equals(Trakt.User.Age,)+!string.equals(#Trakt.User.Age,N/A)</visible>
+      <visible>!string.equals(Trakt.User.Age,)+!string.equals(#Trakt.User.Age,N/A)</visible>
     </control>
     <control Style="smallTitleB">
       <description>Gender</description>
@@ -315,7 +460,7 @@
       <posY>338</posY>
       <width>150</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-			<visible>!string.equals(#Trakt.User.Gender,)+!string.equals(#Trakt.User.Gender,N/A)</visible>
+      <visible>!string.equals(#Trakt.User.Gender,)+!string.equals(#Trakt.User.Gender,N/A)</visible>
     </control>
     <control Style="smallTitle">
       <description>Gender Value</description>
@@ -326,7 +471,7 @@
       <posY>339</posY>
       <width>230</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-			<visible>!string.equals(Trakt.User.Gender,)+!string.equals(#Trakt.User.Gender,N/A)</visible>
+      <visible>!string.equals(Trakt.User.Gender,)+!string.equals(#Trakt.User.Gender,N/A)</visible>
     </control>
     <control Style="smallTitleB">
       <description>Location</description>
@@ -337,7 +482,7 @@
       <posY>358</posY>
       <width>150</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-			<visible>!string.equals(#Trakt.User.Location,)+!string.equals(#Trakt.User.Location,N/A)</visible>
+      <visible>!string.equals(#Trakt.User.Location,)+!string.equals(#Trakt.User.Location,N/A)</visible>
     </control>
     <control Style="smallTitle">
       <description>Location Value</description>
@@ -348,8 +493,8 @@
       <posY>359</posY>
       <width>230</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-			<visible>!string.equals(#Trakt.User.Location,)+!string.equals(#Trakt.User.Location,N/A)</visible>
-    </control>    
+      <visible>!string.equals(#Trakt.User.Location,)+!string.equals(#Trakt.User.Location,N/A)</visible>
+    </control>
     <control>
       <description>Shout</description>
       <type>textboxscrollup</type>
@@ -364,8 +509,8 @@
       <scrollStartDelaySec>12</scrollStartDelaySec>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-    </control>    
+    </control>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:e42351c117f1976b6589f7b7d8f65bec-->
+<!--Checksum:0c05e65f4ce4cabd7488dc14c66183c6-->
