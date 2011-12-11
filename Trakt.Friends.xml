@@ -286,7 +286,7 @@
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <visible>!string.equals(#Trakt.View.Level,WatchedHistory)</visible>
+      <visible>!string.equals(#Trakt.View.Level,WatchedHistory)+!string.equals(#Trakt.User.FullName,N/A)</visible>
     </control>    
 		
 		<control Style="smallTitleB">
@@ -382,14 +382,13 @@
     </control>
 		
 		<control>
-      <description>Episode Plot</description>
+      <description>User About</description>
       <type>textboxscrollup</type>
       <id>0</id>
       <posX>18</posX>
       <posY>540</posY>
       <width>620</width>
-      <height>110</height>
-      <seperator>----------------------------------------------------------------------------------------------------</seperator>
+      <height>125</height>
       <font>mediastream11</font>
       <label>#Trakt.User.About</label>
       <scrollStartDelaySec>12</scrollStartDelaySec>
