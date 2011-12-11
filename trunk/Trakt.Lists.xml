@@ -2,7 +2,7 @@
 <window>
   <id>87275</id>
   <defaultcontrol>50</defaultcontrol>
-  <allowoverlay>yes</allowoverlay>
+  <allowoverlay>no</allowoverlay>
   <define>#header.hover:hover_trakt.png</define>
   <define>#header.BG.colordiffuse:ffffffff</define>
   <define>#header.BG.overlay:mainoverlay.png</define>
@@ -281,6 +281,7 @@
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <visible>!string.equals(#Trakt.List.Description,N/A)</visible>
     </control>
+		<import>common.overlays.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>

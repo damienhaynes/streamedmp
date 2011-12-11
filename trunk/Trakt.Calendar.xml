@@ -2,7 +2,7 @@
 <window>
   <id>87259</id>
   <defaultcontrol>50</defaultcontrol>
-  <allowoverlay>yes</allowoverlay>
+  <allowoverlay>no</allowoverlay>
   <define>#header.label:</define>
   <define>#header.hover:hover_trakt.png</define>
   <define>#header.BG.colordiffuse:ffffffff</define>
@@ -572,8 +572,7 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
 			<visible>!string.equals(#Trakt.Show.Certification,)</visible>
     </control>
-		
+		<import>common.overlays.xml</import>
 		<import>common.time.xml</import>
-		
   </controls>
 </window>
