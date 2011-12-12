@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<!--version="1.0" encoding="utf-8" standalone="yes"-->
 <window>
   <allowoverlay>yes</allowoverlay>
   <controls>
-    <!-- *** GeoClock *** -->
+    <!-- *** Starry Sky *** -->
     <control>
       <description>TV Frame</description>
       <type>image</type>
@@ -15,20 +14,20 @@
       <texture>LCD.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <visible>string.equals(#WorldWeather.View,GeoClock)</visible>
+      <visible>string.equals(#WorldWeather.View,StarrySky)</visible>
     </control>    
     
     <control>
-      <description>Location label</description>
+      <description>Starry Sky label</description>
       <type>label</type>
       <id>0</id>
       <posX>640</posX>
       <posY>593</posY>
-      <label>#WorldWeather.TranslationGeoClock</label>
+      <label>#WorldWeather.TranslationStarrySky</label>
       <font>mediastream16tc</font>
       <align>center</align>
       <textcolor>white</textcolor>
-      <visible>string.equals(#WorldWeather.View,GeoClock)</visible>
+      <visible>string.equals(#WorldWeather.View,StarrySky)</visible>
     </control>
     <control>
       <description>GeoClock image</description>
@@ -38,8 +37,8 @@
       <posY>80</posY>
       <width>920</width>
       <height>494</height>
-      <texture>#WorldWeather.ImageGeoClock</texture>
-      <visible>string.equals(#WorldWeather.View,GeoClock)</visible>
+      <texture>#WorldWeather.ImageStarrySky</texture>
+      <visible>string.equals(#WorldWeather.View,StarrySky)</visible>
     </control>
   </controls>
 </window>
