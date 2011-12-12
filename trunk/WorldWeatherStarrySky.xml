@@ -7,9 +7,9 @@
       <description>TV Frame</description>
       <type>image</type>
       <id>0</id>
-      <posX>140</posX>
+      <posX>290</posX>
       <posY>40</posY>
-      <width>1000</width>
+      <width>690</width>
       <height>574</height>
       <texture>LCD.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -28,17 +28,21 @@
       <align>center</align>
       <textcolor>white</textcolor>
       <visible>string.equals(#WorldWeather.View,StarrySky)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>GeoClock image</description>
+      <description>Starry Sky image</description>
       <type>image</type>
       <id>0</id>
-      <posX>180</posX>
-      <posY>80</posY>
-      <width>920</width>
-      <height>494</height>
+      <posX>385</posX>
+      <posY>86</posY>
+      <width>494</width>
+      <height>479</height>
       <texture>#WorldWeather.ImageStarrySky</texture>
       <visible>string.equals(#WorldWeather.View,StarrySky)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
   </controls>
 </window>
