@@ -29,17 +29,21 @@
       <align>center</align>
       <textcolor>white</textcolor>
       <visible>string.equals(#WorldWeather.View,GeoClock)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>GeoClock image</description>
       <type>image</type>
       <id>0</id>
-      <posX>180</posX>
-      <posY>80</posY>
-      <width>920</width>
-      <height>494</height>
+      <posX>186</posX>
+      <posY>86</posY>
+      <width>906</width>
+      <height>480</height>
       <texture>#WorldWeather.ImageGeoClock</texture>
       <visible>string.equals(#WorldWeather.View,GeoClock)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
   </controls>
 </window>
