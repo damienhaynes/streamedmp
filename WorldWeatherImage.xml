@@ -30,7 +30,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#WorldWeather.View,Image)</visible>
       <control>
-        <description>Display</description>
+        <description>Satellite</description>
         <type>button</type>
         <id>19629001</id>
         <width>130</width>
@@ -41,7 +41,7 @@
         <visible>!string.equals(#WorldWeather.ImageSatellite,)</visible>
       </control>
       <control>
-        <description>Display</description>
+        <description>Temperature</description>
         <type>button</type>
         <id>19629002</id>
         <width>130</width>
@@ -52,7 +52,7 @@
         <visible>!string.equals(#WorldWeather.ImageTemperature,)</visible>
      </control>
       <control>
-        <description>Display</description>
+        <description>UV Index</description>
         <type>button</type>
         <id>19629003</id>
         <width>130</width>
@@ -63,7 +63,7 @@
         <visible>!string.equals(#WorldWeather.ImageUVIndex,)</visible>
       </control>
       <control>
-        <description>Display</description>
+        <description>Wind</description>
         <type>button</type>
         <id>19629004</id>
         <width>130</width>
@@ -74,7 +74,7 @@
         <visible>!string.equals(#WorldWeather.ImageWind,)</visible>
       </control>
       <control>
-        <description>Display</description>
+        <description>Precipitation</description>
         <type>button</type>
         <id>19629005</id>
         <width>130</width>
@@ -86,8 +86,6 @@
         <visible>!string.equals(#WorldWeather.ImagePrecipitation,)</visible>
      </control>
     </control>
-  	
-  	
   	
     <!-- *** Location *** -->
     <control>
@@ -104,13 +102,13 @@
       <visible>string.equals(#WorldWeather.View,Image)</visible>
     </control>       
     <control>
-      <description>Location label</description>
+      <description>Images</description>
       <type>label</type>
       <id>0</id>
       <posX>520</posX>
       <posY>85</posY>
-      <label>#(L(8))  #WorldWeather.Location  #(L(716))</label>
-      <font>mediastream14c</font>
+      <label>750</label>
+      <font>mediastream14tc</font>
       <align>center</align>
       <textcolor>white</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -139,7 +137,7 @@
       <id>0</id>
       <posX>520</posX>
       <posY>592</posY>
-      <label>#(L(716))</label>
+      <label>#WorldWeather.TranslationSatelliteImage</label>
       <font>mediastream14c</font>
       <align>center</align>
       <textcolor>white</textcolor>
@@ -147,12 +145,10 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#WorldWeather.View,Image)+control.hasfocus(19629001)</visible>
     </control>    
-    
-    
-    
-    <!-- *** Satellite Temperature Image *** -->
+        
+    <!-- *** Temperature Image *** -->
     <control>
-      <description>Satellite image</description>
+      <description>Temperature image</description>
       <type>image</type>
       <id>0</id>
       <posX>178</posX>
@@ -166,12 +162,12 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Location label</description>
+      <description>Temperature Image label</description>
       <type>label</type>
       <id>0</id>
       <posX>520</posX>
       <posY>592</posY>
-      <label>#(L(1954))</label>
+      <label>#WorldWeather.TranslationTemperatureImage</label>
       <font>mediastream14c</font>
       <align>center</align>
       <textcolor>white</textcolor>
@@ -180,9 +176,9 @@
       <visible>string.equals(#WorldWeather.View,Image)+control.hasfocus(19629002)</visible>
     </control>    
     
-    <!-- *** Satellite UV Image *** -->
+    <!-- *** UV Image *** -->
     <control>
-      <description>Satellite image</description>
+      <description>UV image</description>
       <type>image</type>
       <id>0</id>
       <posX>178</posX>
@@ -196,12 +192,12 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Location label</description>
+      <description>UV Image label</description>
       <type>label</type>
       <id>0</id>
       <posX>520</posX>
       <posY>592</posY>
-      <label>#(L(403))</label>
+      <label>#WorldWeather.TranslationUVIndexImage</label>
       <font>mediastream14c</font>
       <align>center</align>
       <textcolor>white</textcolor>
@@ -210,10 +206,9 @@
       <visible>string.equals(#WorldWeather.View,Image)+control.hasfocus(19629003)</visible>
     </control>    
 
-    
-    <!-- *** Satellite Wind Image *** -->
+    <!-- *** Wind Image *** -->
     <control>
-      <description>Satellite image</description>
+      <description>Wind Image</description>
       <type>image</type>
       <id>0</id>
       <posX>178</posX>
@@ -227,12 +222,12 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Location label</description>
+      <description>Wind Image label</description>
       <type>label</type>
       <id>0</id>
       <posX>520</posX>
       <posY>592</posY>
-      <label>#(L(404))</label>
+      <label>#WorldWeather.TranslationWindImage</label>
       <font>mediastream14c</font>
       <align>center</align>
       <textcolor>white</textcolor>
@@ -241,10 +236,9 @@
       <visible>string.equals(#WorldWeather.View,Image)+control.hasfocus(19629004)</visible>
     </control>    
     
-    
-    <!-- *** Satellite Precipitation Image *** -->
+    <!-- *** Precipitation Image *** -->
     <control>
-      <description>Satellite image</description>
+      <description>Precipitation Image</description>
       <type>image</type>
       <id>0</id>
       <posX>178</posX>
@@ -258,12 +252,12 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Location label</description>
+      <description>Precipitation Image label</description>
       <type>label</type>
       <id>0</id>
       <posX>520</posX>
       <posY>592</posY>
-      <label>#(L(748))</label>
+      <label>#WorldWeather.TranslationPrecipitationImage</label>
       <font>mediastream14c</font>
       <align>center</align>
       <textcolor>white</textcolor>
@@ -271,7 +265,6 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#WorldWeather.View,Image)+control.hasfocus(19629005)</visible>
     </control>    
-    
     
   </controls>
 </window>
