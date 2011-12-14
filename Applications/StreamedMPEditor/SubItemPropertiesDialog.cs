@@ -350,7 +350,6 @@ namespace StreamedMPEditor
       }
     }
 
-
     private void cboViews_SelectedIndexChanged(object sender, EventArgs e)
     {
       if (currentSkinID == formStreamedMpEditor.onlineVideosSkinID)
@@ -367,8 +366,12 @@ namespace StreamedMPEditor
           tbItemDisplayName.Text = formStreamedMpEditor.musicViews[cboViews.SelectedIndex].Value;
         // OnlineVideos
         if (currentSkinID == formStreamedMpEditor.onlineVideosSkinID)
-          tbItemDisplayName.Text = formStreamedMpEditor.onlineVideosSites[cboViews.SelectedIndex].Value;
-         
+        {
+          if (formStreamedMpEditor.IsOnlineVideosGroup(formStreamedMpEditor.onlineVideosSites[cboViews.SelectedIndex].Value))
+            tbItemDisplayName.Text = formStreamedMpEditor.onlineVideosSites[cboViews.SelectedIndex].Value.Substring(7);
+          else
+            tbItemDisplayName.Text = formStreamedMpEditor.onlineVideosSites[cboViews.SelectedIndex].Value;
+        }
         initialIndex = cboViews.SelectedIndex;
       }
     }
@@ -397,17 +400,24 @@ namespace StreamedMPEditor
             if (formStreamedMpEditor.theOnlineVideosViews.Contains(site))
             {
                 cboOnlineVideosCategories.Enabled = false;
-                cboOnlineVideosCategories.Text = "Searching...";
+                txtSearch.Text = string.Empty;
+                txtSearch.Enabled = false;
+                if (!formStreamedMpEditor.IsOnlineVideosGroup(site))
+                {
+                  cboOnlineVideosCategories.Text = "Searching...";
 
-                // update UI 
-                cboOnlineVideosCategories.Update();                
-                
-                // load dynamic categories
-                formStreamedMpEditor.LoadOnlineVideosDynamicCategories(site);
-                cboOnlineVideosCategories.Enabled = true;
+                  // update UI 
+                  cboOnlineVideosCategories.Update();
 
-                if (formStreamedMpEditor.onlineVideosCategories[site].Count > 0)
+                  // load dynamic categories
+                  formStreamedMpEditor.LoadOnlineVideosDynamicCategories(site);
+                  cboOnlineVideosCategories.Enabled = true;
+
+                  if (formStreamedMpEditor.onlineVideosCategories[site].Count > 0)
                     cboOnlineVideosCategories.DataSource = formStreamedMpEditor.onlineVideosCategories[site];
+
+                  txtSearch.Enabled = true;
+                }
             }
             cboOnlineVideosCategories.Text = string.Empty;
             cboOnlineVideosCategories.SelectedIndex = -1;

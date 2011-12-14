@@ -898,6 +898,10 @@ namespace StreamedMPEditor
         if (itemsOnMenubar.Items.Count > 2)
           btGenerateMenu.Enabled = true;
         xmlFiles.SelectedIndex = -1;
+
+        // select item added
+        itemsOnMenubar.SelectedIndex = itemsOnMenubar.Items.Count - 1;
+
         changeOutstanding = true;
       }
       else
@@ -1181,7 +1185,20 @@ namespace StreamedMPEditor
         foreach (prettyItem p in prettyItems)
         {
           if (p.id == mnuItem.hyperlink)
-            break;
+          {
+            if (p.id == onlineVideosSkinID && !string.IsNullOrEmpty(mnuItem.hyperlinkParameter))
+            {
+              // get the right pretty item
+              if (mnuItem.hyperlinkParameter == "iTunes Movie Trailers" || mnuItem.hyperlinkParameter == "YouTube")
+              {
+                if (p.pluginParmeter == mnuItem.hyperlinkParameter) break;
+              }
+              else
+                break;
+            }
+            else
+              break;
+          }
           pindex++;
         }
         if (pindex < prettyItems.Count)
@@ -1998,23 +2015,31 @@ namespace StreamedMPEditor
             if (theOnlineVideosViews.Contains(site))
             {
                 cboOnlineVideosCategories.Enabled = false;
-                cboOnlineVideosCategories.Text = "Searching...";
+                ovTxtSearch.Text = string.Empty;
+                ovTxtSearch.Enabled = false;
+                if (!IsOnlineVideosGroup(site))
+                {
+                  cboOnlineVideosCategories.Text = "Searching...";
 
-                // update UI 
-                cboOnlineVideosCategories.Update();
-                cboParameterViews.Update();
-                lblCategories.Update();
-                lbSearch.Update();
-                lbParameterView.Update();
-                ovTxtSearch.Update();
-                cbOnlineVideosReturn.Update();
+                  // update UI 
+                  tbItemName.Update();
+                  cboOnlineVideosCategories.Update();
+                  cboParameterViews.Update();
+                  lblCategories.Update();
+                  lbSearch.Update();
+                  lbParameterView.Update();
+                  ovTxtSearch.Update();
+                  cbOnlineVideosReturn.Update();
 
-                // load dynamic categories
-                LoadOnlineVideosDynamicCategories(site);
-                cboOnlineVideosCategories.Enabled = true;
+                  // load dynamic categories
+                  LoadOnlineVideosDynamicCategories(site);
+                  cboOnlineVideosCategories.Enabled = true;
 
-                if (onlineVideosCategories[site].Count > 0)
+                  if (onlineVideosCategories[site].Count > 0)
                     cboOnlineVideosCategories.DataSource = onlineVideosCategories[site];
+
+                  ovTxtSearch.Enabled = true;
+                }
             }
             cboOnlineVideosCategories.Text = string.Empty;
             cboOnlineVideosCategories.SelectedIndex = -1;
@@ -2574,11 +2599,23 @@ namespace StreamedMPEditor
       {
         // init onlinevideos
         var x = OnlineVideos.MediaPortal1.Translator.Lang;
-        var y = OnlineVideos.MediaPortal1.PluginConfiguration.Instance;
-       
-        // build site utils list
-        OnlineVideoSettings.Instance.BuildSiteUtilsList();
+        var y = OnlineVideos.MediaPortal1.PluginConfiguration.Instance;       
         
+        // get groups
+        if ((y.SitesGroups != null && y.SitesGroups.Count > 0) || y.autoGroupByLang)
+        {
+          foreach (var group in y.SitesGroups)
+          {
+            // add groups to list of sites
+            string groupName = "Group: " + group.Name;
+            KeyValuePair<string, string> view = new KeyValuePair<string, string>(groupName, groupName);
+            onlineVideosSites.Add(view);
+          }
+        }
+
+        // build site utils list
+        OnlineVideoSettings.Instance.BuildSiteUtilsList();        
+
         foreach (var site in OnlineVideoSettings.Instance.SiteUtilsList)
         {
           // get any categories for site
@@ -2593,10 +2630,15 @@ namespace StreamedMPEditor
           // add to list of sites
           KeyValuePair<string, string> view = new KeyValuePair<string, string>(site.Value.Settings.Name, site.Value.Settings.Name);
           onlineVideosSites.Add(view);
-        }
+        }        
       }
 
       return onlineVideosSites;
+    }
+
+    public static bool IsOnlineVideosGroup(string site)
+    {
+      return site.StartsWith("Group:");
     }
 
     public static void LoadOnlineVideosDynamicCategories(string site)

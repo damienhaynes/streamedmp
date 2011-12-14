@@ -130,9 +130,16 @@ namespace StreamedMPEditor
           switch (parentMenu.subMenuLevel1[j].hyperlink)
           {
             case onlineVideosSkinID:
-              string search = string.IsNullOrEmpty(parentMenu.subMenuLevel1[j].hyperlinkParameterSearch) ? string.Empty : "|search:" + parentMenu.subMenuLevel1[j].hyperlinkParameterSearch;
-              string category = string.IsNullOrEmpty(parentMenu.subMenuLevel1[j].hyperlinkParameterCategory) ? string.Empty : "|category:" + parentMenu.subMenuLevel1[j].hyperlinkParameterCategory;
-              localxml += "<hyperlinkParameter>site:" + parentMenu.subMenuLevel1[j].hyperlinkParameter + category + search + "|return:" + parentMenu.subMenuLevel1[j].hyperlinkParameterOption + "</hyperlinkParameter>";
+              if (!IsOnlineVideosGroup(parentMenu.subMenuLevel1[j].hyperlinkParameter))
+              {
+                string search = string.IsNullOrEmpty(parentMenu.subMenuLevel1[j].hyperlinkParameterSearch) ? string.Empty : "|search:" + parentMenu.subMenuLevel1[j].hyperlinkParameterSearch;
+                string category = string.IsNullOrEmpty(parentMenu.subMenuLevel1[j].hyperlinkParameterCategory) ? string.Empty : "|category:" + parentMenu.subMenuLevel1[j].hyperlinkParameterCategory;
+                localxml += "<hyperlinkParameter>site:" + parentMenu.subMenuLevel1[j].hyperlinkParameter + category + search + "|return:" + parentMenu.subMenuLevel1[j].hyperlinkParameterOption + "</hyperlinkParameter>";
+              }
+              else
+              {
+                localxml += "<hyperlinkParameter>group:" + parentMenu.subMenuLevel1[j].hyperlinkParameter.Substring(7) + "|return:" + parentMenu.subMenuLevel1[j].hyperlinkParameterOption + "</hyperlinkParameter>";
+              }
               break;
             case movingPicturesSkinID:
               localxml +=  "<hyperlinkParameter>categoryid:" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "</hyperlinkParameter>";
@@ -297,9 +304,16 @@ namespace StreamedMPEditor
           switch (parentMenu.subMenuLevel2[j].hyperlink)
           {
             case onlineVideosSkinID:
-              string search = string.IsNullOrEmpty(parentMenu.subMenuLevel2[j].hyperlinkParameterSearch) ? string.Empty : "|search:" + parentMenu.subMenuLevel2[j].hyperlinkParameterSearch;
-              string category = string.IsNullOrEmpty(parentMenu.subMenuLevel2[j].hyperlinkParameterCategory) ? string.Empty : "|category:" + parentMenu.subMenuLevel2[j].hyperlinkParameterCategory;
-              localxml += "<hyperlinkParameter>site:" + parentMenu.subMenuLevel2[j].hyperlinkParameter + category + search + "|return:" + parentMenu.subMenuLevel2[j].hyperlinkParameterOption + "</hyperlinkParameter>";
+              if (!IsOnlineVideosGroup(parentMenu.subMenuLevel2[j].hyperlinkParameter))
+              {
+                string search = string.IsNullOrEmpty(parentMenu.subMenuLevel2[j].hyperlinkParameterSearch) ? string.Empty : "|search:" + parentMenu.subMenuLevel2[j].hyperlinkParameterSearch;
+                string category = string.IsNullOrEmpty(parentMenu.subMenuLevel2[j].hyperlinkParameterCategory) ? string.Empty : "|category:" + parentMenu.subMenuLevel2[j].hyperlinkParameterCategory;
+                localxml += "<hyperlinkParameter>site:" + parentMenu.subMenuLevel2[j].hyperlinkParameter + category + search + "|return:" + parentMenu.subMenuLevel2[j].hyperlinkParameterOption + "</hyperlinkParameter>";
+              }
+              else
+              {
+                localxml += "<hyperlinkParameter>group:" + parentMenu.subMenuLevel2[j].hyperlinkParameter.Substring(7) + "|return:" + parentMenu.subMenuLevel2[j].hyperlinkParameterOption + "</hyperlinkParameter>";
+              }
               break;
             case movingPicturesSkinID:
               localxml += "<hyperlinkParameter>categoryid:" + parentMenu.subMenuLevel2[j].hyperlinkParameter + "</hyperlinkParameter>";

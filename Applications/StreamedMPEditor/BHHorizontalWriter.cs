@@ -59,9 +59,16 @@ namespace StreamedMPEditor
             switch (menItem.hyperlink)
             {
               case onlineVideosSkinID:
-                string search = string.IsNullOrEmpty(menItem.hyperlinkParameterSearch) ? string.Empty : "|search:" + menItem.hyperlinkParameterSearch;
-                string category = string.IsNullOrEmpty(menItem.hyperlinkParameterCategory) ? string.Empty : "|category:" + menItem.hyperlinkParameterCategory;
-                rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + category + search + "|return:" + menItem.hyperlinkParameterOption + "</hyperlinkParameter>");
+                if (!IsOnlineVideosGroup(menItem.hyperlinkParameter))
+                {
+                  string search = string.IsNullOrEmpty(menItem.hyperlinkParameterSearch) ? string.Empty : "|search:" + menItem.hyperlinkParameterSearch;
+                  string category = string.IsNullOrEmpty(menItem.hyperlinkParameterCategory) ? string.Empty : "|category:" + menItem.hyperlinkParameterCategory;
+                  rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + category + search + "|return:" + menItem.hyperlinkParameterOption + "</hyperlinkParameter>");
+                }
+                else
+                {
+                  rawXML.AppendLine("<hyperlinkParameter>group:" + menItem.hyperlinkParameter.Substring(7) + "|return:" + menItem.hyperlinkParameterOption + "</hyperlinkParameter>");
+                }
                 break;
               case movingPicturesSkinID:
                 rawXML.AppendLine("<hyperlinkParameter>categoryid:" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
@@ -129,9 +136,16 @@ namespace StreamedMPEditor
             switch (menItem.hyperlink)
             {
               case onlineVideosSkinID:
-                string search = string.IsNullOrEmpty(menItem.hyperlinkParameterSearch) ? string.Empty : "|search:" + menItem.hyperlinkParameterSearch;
-                string category = string.IsNullOrEmpty(menItem.hyperlinkParameterCategory) ? string.Empty : "|category:" + menItem.hyperlinkParameterCategory;
-                rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + category + search + "|return:" + menItem.hyperlinkParameterOption + "</hyperlinkParameter>");
+                if (!IsOnlineVideosGroup(menItem.hyperlinkParameter))
+                {
+                  string search = string.IsNullOrEmpty(menItem.hyperlinkParameterSearch) ? string.Empty : "|search:" + menItem.hyperlinkParameterSearch;
+                  string category = string.IsNullOrEmpty(menItem.hyperlinkParameterCategory) ? string.Empty : "|category:" + menItem.hyperlinkParameterCategory;
+                  rawXML.AppendLine("<hyperlinkParameter>site:" + menItem.hyperlinkParameter + category + search + "|return:" + menItem.hyperlinkParameterOption + "</hyperlinkParameter>");
+                }
+                else
+                {
+                  rawXML.AppendLine("<hyperlinkParameter>group:" + menItem.hyperlinkParameter.Substring(7) + "|return:" + menItem.hyperlinkParameterOption + "</hyperlinkParameter>");
+                }
                 break;
               case movingPicturesSkinID:
                 rawXML.AppendLine("<hyperlinkParameter>categoryid:" + menItem.hyperlinkParameter + "</hyperlinkParameter>");
