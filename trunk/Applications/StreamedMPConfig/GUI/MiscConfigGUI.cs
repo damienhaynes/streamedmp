@@ -23,6 +23,7 @@ namespace StreamedMPConfig
       UnfocusedAlpha = 8,
       ListColors = 9,
       ListControlScrollPopup = 10,
+      TextualLogos = 11,
     }  
     #endregion
 
@@ -68,6 +69,9 @@ namespace StreamedMPConfig
 
     [SkinControl((int)GUIControls.ListControlScrollPopup)]
     protected GUIToggleButtonControl btnListControlScrollPopup = null;
+
+    [SkinControl((int)GUIControls.TextualLogos)]
+    protected GUIToggleButtonControl btnTextualLogos = null;
     #endregion
 
     #region Constructor
@@ -90,6 +94,7 @@ namespace StreamedMPConfig
     public static int UnfocusedAlphaThumbs { get; set; }
     public static bool UseLargeFonts { get; set; }
     public static bool ShowListScrollingPopup { get; set; }
+    public static bool TextualLogos { get; set; }
     #endregion
 
     #region Public Methods
@@ -106,6 +111,9 @@ namespace StreamedMPConfig
       StreamedMPConfig.SetProperty("#StreamedMP.Icons.NAUnWatched", ShowIconsInArtwork ? "overlayunwatchedna.png" : "-");
 
       StreamedMPConfig.SetProperty("#StreamedMP.ListScrollPopup", ShowListScrollingPopup ? "yes" : "no");
+
+      // Logo Style
+      StreamedMPConfig.SetProperty("#StreamedMP.MediaInfo.Type", TextualLogos ? "Textual" : "Graphical");
     }
 
     public static void SetColors()
@@ -512,6 +520,10 @@ namespace StreamedMPConfig
       btnListControlScrollPopup.Selected = ShowListScrollingPopup;
       btnListControlScrollPopup.Label = Translation.ShowListScrollingPopup;
 
+      // Logo Style
+      btnTextualLogos.Selected = TextualLogos;
+      btnTextualLogos.Label = Translation.TextualMediaInfoLogos;
+
       // Unfocused Alpha Settings
       btnUnfocusedAlpha.Label = string.Format("{0} ...", Translation.UnfocusedAlpha);
 
@@ -526,6 +538,7 @@ namespace StreamedMPConfig
       ShowIconsInArtwork = btnIconsInArtwork.Selected;
       EnablePlayMostRecents = btnPlayRecents.Selected;
       ShowListScrollingPopup = btnListControlScrollPopup.Selected;
+      TextualLogos = btnTextualLogos.Selected;
 
       // Update BasicHome RecentlyAdded with new setting
       if (FilterWatchedInRecentlyAdded != btnFilterWatchedRecents.Selected)
@@ -585,6 +598,11 @@ namespace StreamedMPConfig
       MiscConfigGUI.WatchedColor = WatchedColorTemp;
       MiscConfigGUI.RemoteColor = RemoteColorTemp;
       SetColors();
+      #endregion
+
+      #region Logos
+      // Tvseries / MyFilms Logo Rules
+      // Everything else can use skin property #StreamedMP.MediaInfo.Type
       #endregion
 
       if (requiresRestart)

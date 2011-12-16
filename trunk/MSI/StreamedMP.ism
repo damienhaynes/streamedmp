@@ -245,7 +245,6 @@
 		<col key="yes" def="s72">Name</col>
 		<col def="V0">Data</col>
 		<col def="S255">ISBuildSourcePath</col>
-		<row><td>ISSELFREG.DLL</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\isregsvr.dll</td></row>
 		<row><td>ISSetup.dll</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\ISSetup.dll</td></row>
 		<row><td>ISSetupFilesHelper</td><td/><td>&lt;ISProductFolder&gt;\redist\language independent\i386\SFHelper.dll</td></row>
 		<row><td>NewBinary1</td><td/><td>&lt;ISProjectDataFolder&gt;\res\Banner.bmp</td></row>
@@ -263,6 +262,8 @@
 		<row><td>NewBinary20</td><td/><td>&lt;StreamedMP&gt;\nowplayingscreens\style7\folder-thumb.bmp</td></row>
 		<row><td>NewBinary21</td><td/><td>&lt;StreamedMP&gt;\nowplayingscreens\style2\folder-thumb.bmp</td></row>
 		<row><td>NewBinary22</td><td/><td>&lt;ISPROJECTDIR&gt;\res\Banner.bmp</td></row>
+		<row><td>NewBinary23</td><td/><td>&lt;ISPROJECTDIR&gt;\res\TextualLogos.bmp</td></row>
+		<row><td>NewBinary24</td><td/><td>&lt;ISPROJECTDIR&gt;\res\GraphicalLogos.bmp</td></row>
 		<row><td>NewBinary3</td><td/><td>&lt;ISProductFolder&gt;Script\Dialogs\IconId_10002.ico</td></row>
 		<row><td>NewBinary4</td><td/><td>&lt;ISProductFolder&gt;Script\Dialogs\IconId_10004.ico</td></row>
 		<row><td>NewBinary5</td><td/><td>&lt;ISProjectDataFolder&gt;\res\logo.bmp</td></row>
@@ -570,6 +571,20 @@
 		<row><td>STATUSEX</td><td>ControlId_52</td><td>Text</td><td>0</td><td>0</td><td>374</td><td>44</td><td>3</td><td/><td/><td/><td/><td>131072</td><td>52</td><td/><td/></row>
 		<row><td>STATUSEX</td><td>ControlId_7</td><td>Text</td><td>2</td><td>222</td><td>45</td><td>12</td><td>2</td><td/><td/><td>ControlId_710</td><td/><td>131072</td><td>7</td><td/><td/></row>
 		<row><td>STATUSEX</td><td>ControlId_710</td><td>Text</td><td>18</td><td>49</td><td>332</td><td>39</td><td>131075</td><td/><td>##IDS__DialogId_10305_ControlId_710##</td><td>ControlId_1450</td><td/><td>131072</td><td>710</td><td/><td/></row>
+		<row><td>SelectLogos</td><td>Bitmap1</td><td>Bitmap</td><td>152</td><td>5</td><td>218</td><td>32</td><td>1048577</td><td/><td/><td>RadioButtonGroup1</td><td/><td>0</td><td>1302</td><td/><td>NewBinary9</td></row>
+		<row><td>SelectLogos</td><td>Bitmap2</td><td>Bitmap</td><td>42</td><td>163</td><td>309</td><td>25</td><td>1048577</td><td/><td/><td>ControlId_52</td><td/><td>0</td><td>1325</td><td/><td>NewBinary24</td></row>
+		<row><td>SelectLogos</td><td>Bitmap3</td><td>Bitmap</td><td>42</td><td>95</td><td>309</td><td>25</td><td>1048577</td><td/><td/><td>Bitmap2</td><td/><td>0</td><td>1326</td><td/><td>NewBinary23</td></row>
+		<row><td>SelectLogos</td><td>ControlId_1</td><td>PushButton</td><td>242</td><td>239</td><td>56</td><td>17</td><td>3</td><td/><td>##IDS__NewDialog_ControlId_1##</td><td>ControlId_9</td><td/><td>131072</td><td>1</td><td/><td/></row>
+		<row><td>SelectLogos</td><td>ControlId_12</td><td>PushButton</td><td>187</td><td>239</td><td>56</td><td>17</td><td>3</td><td/><td>##IDS__NewDialog_ControlId_12##</td><td>ControlId_1300</td><td/><td>0</td><td>12</td><td/><td/></row>
+		<row><td>SelectLogos</td><td>ControlId_1300</td><td>Line</td><td>47</td><td>227</td><td>325</td><td>1</td><td>3</td><td/><td/><td>ControlId_7</td><td/><td>131079</td><td>1300</td><td/><td/></row>
+		<row><td>SelectLogos</td><td>ControlId_1301</td><td>Line</td><td>0</td><td>44</td><td>374</td><td>1</td><td>3</td><td/><td/><td>Bitmap1</td><td/><td>131088</td><td>1301</td><td/><td/></row>
+		<row><td>SelectLogos</td><td>ControlId_2</td><td>PushButton</td><td>185</td><td>274</td><td>56</td><td>17</td><td>2</td><td/><td>##IDS__NewDialog_ControlId_2##</td><td/><td/><td>0</td><td>2</td><td/><td/></row>
+		<row><td>SelectLogos</td><td>ControlId_50</td><td>Text</td><td>11</td><td>4</td><td>248</td><td>10</td><td>65539</td><td/><td>##ID_Logos_Title##</td><td>ControlId_51</td><td/><td>131072</td><td>50</td><td/><td/></row>
+		<row><td>SelectLogos</td><td>ControlId_51</td><td>Text</td><td>19</td><td>18</td><td>240</td><td>23</td><td>65539</td><td/><td>##IDS_Logos_Desc##</td><td>ControlId_1301</td><td/><td>131072</td><td>51</td><td/><td/></row>
+		<row><td>SelectLogos</td><td>ControlId_52</td><td>Text</td><td>0</td><td>0</td><td>374</td><td>44</td><td>3</td><td/><td/><td>ControlId_1</td><td/><td>131072</td><td>52</td><td/><td/></row>
+		<row><td>SelectLogos</td><td>ControlId_7</td><td>Text</td><td>2</td><td>222</td><td>45</td><td>12</td><td>2</td><td/><td/><td>ControlId_50</td><td/><td>131072</td><td>7</td><td/><td/></row>
+		<row><td>SelectLogos</td><td>ControlId_9</td><td>PushButton</td><td>306</td><td>239</td><td>56</td><td>17</td><td>3</td><td/><td>##IDS__NewDialog_ControlId_9##</td><td>ControlId_12</td><td/><td>0</td><td>9</td><td/><td/></row>
+		<row><td>SelectLogos</td><td>RadioButtonGroup1</td><td>RadioButtonGroup</td><td>10</td><td>52</td><td>355</td><td>168</td><td>16777219</td><td>NewProperty3</td><td/><td>Bitmap3</td><td/><td>0</td><td>1321</td><td/><td/></row>
 		<row><td>SelectionMovingPictures</td><td>Bitmap1</td><td>Bitmap</td><td>189</td><td>84</td><td>168</td><td>95</td><td>1048581</td><td/><td/><td>Bitmap2</td><td/><td>0</td><td>1327</td><td/><td>NewBinary12</td></row>
 		<row><td>SelectionMovingPictures</td><td>Bitmap2</td><td>Bitmap</td><td>16</td><td>84</td><td>168</td><td>95</td><td>1048581</td><td/><td/><td>RadioButtonGroup1</td><td/><td>0</td><td>1328</td><td/><td>NewBinary13</td></row>
 		<row><td>SelectionMovingPictures</td><td>Bitmap3</td><td>Bitmap</td><td>152</td><td>5</td><td>218</td><td>32</td><td>1048577</td><td/><td/><td>Text1</td><td/><td>0</td><td>1329</td><td/><td>NewBinary9</td></row>
@@ -711,13 +726,9 @@
 		<col def="I4">ExtendedType</col>
 		<col def="S255">ISComments</col>
 		<row><td>ISPreventDowngrade</td><td>19</td><td/><td>[IS_PREVENT_DOWNGRADE_EXIT]</td><td/><td>Exits install when a newer version of this product is found</td></row>
-		<row><td>ISSelfRegisterCosting</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterCosting</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFiles</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td>1</td><td>ISSELFREG.DLL</td><td>ISSelfRegisterFinalize</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>257</td><td>SetAllUsers.dll</td><td>SetAllUsers</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td>257</td><td>ISSetupFilesHelper</td><td>SFCleanupEx</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td>257</td><td>ISSetupFilesHelper</td><td>SFStartupEx</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td>3073</td><td>ISSELFREG.DLL</td><td>ISUnSelfRegisterFiles</td><td/><td/></row>
 		<row><td>ISVerifyScriptingRuntime</td><td>19</td><td/><td>[STANDARD_USE_SETUPEXE]</td><td/><td>Required for installations using InstallScript.</td></row>
 		<row><td>SetARPINSTALLLOCATION</td><td>51</td><td>ARPINSTALLLOCATION</td><td>[INSTALLDIR]</td><td/><td/></row>
 		<row><td>SetAllUsersProfileNT</td><td>51</td><td>ALLUSERSPROFILE</td><td>[%SystemRoot]\Profiles\All Users</td><td/><td/></row>
@@ -751,6 +762,7 @@
 		<row><td>DialogId_12068</td><td>0</td><td>0</td><td>374</td><td>266</td><td>1</td><td>##IDS__DialogId_12068##</td><td>ControlId_1</td><td>ControlId_1</td><td>ControlId_2</td><td/><td>MSSansSerif8</td><td>-2134376256</td><td>12068</td></row>
 		<row><td>DialogId_12071</td><td>0</td><td>0</td><td>374</td><td>266</td><td>1</td><td>##IDS__DialogId_12071##</td><td>ControlId_1</td><td>ControlId_1</td><td>ControlId_2</td><td/><td>MSSansSerif8</td><td>-2134376256</td><td>12071</td></row>
 		<row><td>STATUSEX</td><td>0</td><td>0</td><td>374</td><td>266</td><td>1</td><td>##IDS__DialogId_10305##</td><td>ControlId_710</td><td/><td>ControlId_2</td><td/><td>MSSansSerif8</td><td>-2134376256</td><td>10305</td></row>
+		<row><td>SelectLogos</td><td>0</td><td>0</td><td>374</td><td>266</td><td>1</td><td>##IDS__NewDialog##</td><td>ControlId_52</td><td>ControlId_1</td><td>ControlId_2</td><td/><td>MSSansSerif8</td><td>-2134376256</td><td>13005</td></row>
 		<row><td>SelectionMovingPictures</td><td>0</td><td>0</td><td>374</td><td>266</td><td>1</td><td>##IDS__NewDialog##</td><td>ControlId_52</td><td>ControlId_1</td><td>ControlId_2</td><td/><td>MSSansSerif8</td><td>-2134376256</td><td>13001</td></row>
 		<row><td>SelectionNowPlaying</td><td>0</td><td>0</td><td>374</td><td>266</td><td>1</td><td>##IDS__NewDialog##</td><td>ControlId_52</td><td>ControlId_1</td><td>ControlId_2</td><td/><td>MSSansSerif8</td><td>-2134376256</td><td>13004</td></row>
 		<row><td>SelectionOptions</td><td>0</td><td>0</td><td>374</td><td>266</td><td>1</td><td>##IDS__NewDialog##</td><td>ControlId_52</td><td>ControlId_1</td><td>ControlId_2</td><td/><td>MSSansSerif8</td><td>-2134376256</td><td>13002</td></row>
@@ -3693,6 +3705,7 @@
 		<row><td>IDS_INSTALLSHIELD_FORMATTED</td><td>1033</td><td>{&amp;MSSWhiteSerif8}InstallShield</td><td>0</td><td/><td>-1843706412</td></row>
 		<row><td>IDS_ISSCRIPT_VERSION_MISSING</td><td>1033</td><td>The InstallScript engine is missing from this machine.  If available, please run ISScript.msi, or contact your support personnel for further assistance.</td><td>0</td><td/><td>-1843706412</td></row>
 		<row><td>IDS_ISSCRIPT_VERSION_OLD</td><td>1033</td><td>The InstallScript engine on this machine is older than the version required to run this setup.  If available, please install the latest version of ISScript.msi, or contact your support personnel for further assistance.</td><td>0</td><td/><td>-1843706412</td></row>
+		<row><td>IDS_Logos_Desc</td><td>1033</td><td>Select the style of logos to display</td><td>0</td><td/><td>-2044787984</td></row>
 		<row><td>IDS_NEXT</td><td>1033</td><td>&amp;Next &gt;</td><td>0</td><td/><td>-1843706412</td></row>
 		<row><td>IDS_OK</td><td>1033</td><td>OK</td><td>0</td><td/><td>-1843706412</td></row>
 		<row><td>IDS_OPTIONS_DESC</td><td>1033</td><td>Select your skin options</td><td>0</td><td/><td>-31718038</td></row>
@@ -4139,6 +4152,7 @@
 		<row><td>IDS__TargetReq_DESC_PROCESSOR</td><td>1033</td><td>The processor is not adequate for running [ProductName].</td><td>0</td><td/><td>-1843706412</td></row>
 		<row><td>IDS__TargetReq_DESC_RAM</td><td>1033</td><td>The amount of RAM is not adequate for running [ProductName].</td><td>0</td><td/><td>-1843706412</td></row>
 		<row><td>IDS__TargetReq_DESC_RESOLUTION</td><td>1033</td><td>The screen resolution is not adequate for running [ProductName].</td><td>0</td><td/><td>-1843706412</td></row>
+		<row><td>ID_Logos_Title</td><td>1033</td><td>Logos</td><td>0</td><td/><td>-2044777776</td></row>
 		<row><td>ID_MP_DESC</td><td>1033</td><td>Select your Moving Pictures layout</td><td>0</td><td/><td>-1919096745</td></row>
 		<row><td>ID_MP_TITLE</td><td>1033</td><td>Moving Pictures</td><td>0</td><td/><td>-1919121321</td></row>
 		<row><td>ID_STRING1</td><td>1033</td><td>StreamedMP Team</td><td>0</td><td/><td>1780360906</td></row>
@@ -4215,6 +4229,8 @@
 		<row><td>ID_STRING163</td><td>1033</td><td>Default Wide skin files for the InfoService plugin.</td><td>0</td><td/><td>-1793124352</td></row>
 		<row><td>ID_STRING164</td><td>1033</td><td>World Weather</td><td>0</td><td/><td>-442505781</td></row>
 		<row><td>ID_STRING165</td><td>1033</td><td>World Weather is a replacement weather plugin to the inbuilt one that is no longer operational in MediaPortal.\n\nRemember to configure city in plugin configuration.\n\nAuthor: Micropolis</td><td>0</td><td/><td>-442523316</td></row>
+		<row><td>ID_STRING167</td><td>1033</td><td>Text Logos</td><td>0</td><td/><td>-2044738000</td></row>
+		<row><td>ID_STRING168</td><td>1033</td><td>Graphical Logos</td><td>0</td><td/><td>-2044733904</td></row>
 		<row><td>ID_STRING17</td><td>1033</td><td>spuck </td><td>0</td><td/><td>-1919103762</td></row>
 		<row><td>ID_STRING18</td><td>1033</td><td>Fanart Moving Pictures</td><td>0</td><td/><td>1142761741</td></row>
 		<row><td>ID_STRING19</td><td>1033</td><td>Default Moving Pictures</td><td>0</td><td/><td>1142808813</td></row>
@@ -4363,6 +4379,8 @@
 		<row><td>NEW_STRING53</td><td>1033</td><td>Thumb Mod:</td><td>0</td><td/><td>-2103541428</td></row>
 		<row><td>NEW_STRING54</td><td>1033</td><td/><td>0</td><td/><td>-1407285836</td></row>
 		<row><td>NEW_STRING55</td><td>1033</td><td>Show Watched Icons in Artwork:</td><td>0</td><td/><td>-1407301772</td></row>
+		<row><td>NEW_STRING56</td><td>1033</td><td>&amp;Textual Logos</td><td>0</td><td/><td>-2044769424</td></row>
+		<row><td>NEW_STRING57</td><td>1033</td><td>&amp;Graphical Logos</td><td>0</td><td/><td>-2044759184</td></row>
 		<row><td>NEW_STRING6</td><td>1033</td><td>Options</td><td>0</td><td/><td>773647468</td></row>
 		<row><td>NEW_STRING7</td><td>1033</td><td>&amp;TV Guide Size:</td><td>0</td><td/><td>-644013172</td></row>
 		<row><td>NEW_STRING8</td><td>1033</td><td>Choose the skin layout you prefer to install for the TV Series plugin:</td><td>0</td><td/><td>-1919152361</td></row>
@@ -4520,13 +4538,9 @@
 		<row><td>FileCost</td><td/><td>900</td><td>FileCost</td><td/></row>
 		<row><td>FindRelatedProducts</td><td>NOT ISSETUPDRIVEN</td><td>420</td><td>FindRelatedProducts</td><td/></row>
 		<row><td>ISPreventDowngrade</td><td>ISFOUNDNEWERPRODUCTVERSION</td><td>450</td><td>ISPreventDowngrade</td><td/></row>
-		<row><td>ISSelfRegisterCosting</td><td/><td>2201</td><td/><td/></row>
-		<row><td>ISSelfRegisterFiles</td><td/><td>5601</td><td/><td/></row>
-		<row><td>ISSelfRegisterFinalize</td><td/><td>6602</td><td/><td/></row>
 		<row><td>ISSetAllUsers</td><td>Not Installed</td><td>10</td><td/><td/></row>
 		<row><td>ISSetupFilesCleanup</td><td/><td>6601</td><td/><td/></row>
 		<row><td>ISSetupFilesExtract</td><td/><td>3</td><td/><td/></row>
-		<row><td>ISUnSelfRegisterFiles</td><td/><td>2202</td><td/><td/></row>
 		<row><td>InstallFiles</td><td/><td>4000</td><td>InstallFiles</td><td/></row>
 		<row><td>InstallFinalize</td><td/><td>6600</td><td>InstallFinalize</td><td/></row>
 		<row><td>InstallInitialize</td><td/><td>1501</td><td>InstallInitialize</td><td/></row>
@@ -4945,6 +4959,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>MsiLogging</td><td>voicewarmupx</td><td/></row>
 		<row><td>NewProperty1</td><td>0</td><td/></row>
 		<row><td>NewProperty2</td><td>0</td><td/></row>
+		<row><td>NewProperty3</td><td>1</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEAPPPOOL</td><td>##IDS_PROGMSG_IIS_CREATEAPPPOOL##</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEAPPPOOLS</td><td>##IDS_PROGMSG_IIS_CREATEAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_CREATEVROOT</td><td>##IDS_PROGMSG_IIS_CREATEVROOT##</td><td/></row>
@@ -5003,6 +5018,8 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<col def="I4">ISControlId</col>
 		<row><td>NewProperty22</td><td>1</td><td>1</td><td>15</td><td>6</td><td>143</td><td>15</td><td>##NEW_STRING9##</td><td/><td>1400</td></row>
 		<row><td>NewProperty22</td><td>2</td><td>2</td><td>180</td><td>6</td><td>143</td><td>15</td><td>##NEW_STRING10##</td><td/><td>1401</td></row>
+		<row><td>NewProperty3</td><td>1</td><td>1</td><td>24</td><td>15</td><td>95</td><td>23</td><td>##NEW_STRING56##</td><td/><td>1322</td></row>
+		<row><td>NewProperty3</td><td>2</td><td>2</td><td>24</td><td>83</td><td>95</td><td>23</td><td>##NEW_STRING57##</td><td/><td>1323</td></row>
 		<row><td>NewProperty4</td><td>1</td><td>1</td><td>15</td><td>6</td><td>143</td><td>15</td><td>##NEW_STRING18##</td><td/><td>1400</td></row>
 		<row><td>NewProperty4</td><td>2</td><td>2</td><td>180</td><td>6</td><td>143</td><td>15</td><td>##NEW_STRING19##</td><td/><td>1401</td></row>
 		<row><td>Yes__I_want_to_restart_my_computer_now.</td><td>1</td><td>Yes, I want to restart my computer now.</td><td>0</td><td>0</td><td>223</td><td>15</td><td>##IDS__DialogId_12031_ControlId_502_1##</td><td/><td>502</td></row>

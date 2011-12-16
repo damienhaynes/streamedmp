@@ -79,6 +79,7 @@ namespace StreamedMPConfig
     public const string cXMLSettingMiscWatchedColor = "miscWatchedColor";
     public const string cXMLSettingMiscRemoteColor = "miscRemoteColor";
     public const string cXMLSettingMiscShowListScrollingPopup = "miscShowListScrollingPopup";
+    public const string cXMLSettingMiscTextualLogos = "miscUseTextLogos";
 
     public const string cXMLSettingMovPicsRecentAdded = "movPicsMostRecent";
     public const string cXMLSettingMovPicsRecentWatched = "mrMovPicsWatched";
@@ -371,6 +372,7 @@ namespace StreamedMPConfig
             MiscConfigGUI.MostRecentFanartTimerInt = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscMostRecentFanartTimerInt, 7);
             MiscConfigGUI.UseLargeFonts = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscUseLargeFonts, 0) == 1;
             MiscConfigGUI.ShowListScrollingPopup = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowListScrollingPopup, 1) == 1;
+            MiscConfigGUI.TextualLogos = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscTextualLogos, 1) == 1;
             break;
           #endregion
 
@@ -451,6 +453,7 @@ namespace StreamedMPConfig
             xmlwriter.SetValue(section, settings.cXMLSettingMiscRemoteColor, MiscConfigGUI.RemoteColor);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscWatchedColor, MiscConfigGUI.WatchedColor);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscShowListScrollingPopup, MiscConfigGUI.ShowListScrollingPopup ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscTextualLogos, MiscConfigGUI.TextualLogos ? 1 : 0);
             break;
           #endregion
 
