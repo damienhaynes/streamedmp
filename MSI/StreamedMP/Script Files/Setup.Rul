@@ -46,7 +46,7 @@
 #define TVSERIES_LISTICONS_FEATURE					"Main\\tvseriesListIcons"
 
 #define FONTSDEF_FEATURE_OPTIONS					"Main\\fontsDefOptions"
-#define FONTSLGE_FEATURE_OPTIONS					"Main\\fontsLgeOptions"
+#define FONTSLGE_FEATURE_OPTIONS					"Main\\fontsLgeOptions"   
 
 #define NOWPLAYING_DEFAULT							"Main\\nowPlayingDefault"
 #define NOWPLAYING_FULLSCREEN_HIDDENMENU            "Main\\nowPlayingFullscreenHiddenMenu"
@@ -157,6 +157,7 @@
 #define RES_DLG_OPTIONS								13002
 #define RES_DLG_TVSERIESADVANCED					13003
 #define RES_DLG_MUSICNOWPLAYING						13004
+#define RES_DLG_LOGOSSELECT							13005
 
 // Dialog Controls
 #define RES_RADIO_CHOICE1							1400
@@ -193,6 +194,9 @@
 #define RES_BMP_NOWPLAYINGFULLSCREENSLIDINGMENU		1408
 
 #define RES_COMBO_NOWPLAYINGCHOICE					1420
+
+#define RES_RADIO_LOGOTEXT							1322
+#define RES_RADIO_LOGOGRAPHICAL						1323
         
 // Common Dialog Controls
 #define RES_PBUT_NEXT         			1   			// ID of Next button
@@ -263,6 +267,7 @@ prototype NUMBER 	ShowSelectMovingPics(BOOL);
 prototype NUMBER 	ShowSelectOptions(BOOL);
 prototype NUMBER 	ShowTVSeriesAdvanced(BOOL); 
 prototype NUMBER	ShowSelectNowPlaying(BOOL);
+prototype NUMBER	ShowSelectLogos(BOOL);
  
 prototype VOID		GetTraktSettings();
 prototype VOID		SetTraktSettings();
@@ -280,7 +285,8 @@ BOOL g_bShowRoundedCovers;
 BOOL g_bShowHiddenMenuImage;      
 BOOL g_bEnableRandomFanartInMyTV;
 BOOL g_bBasicHomeUpgrade;
-BOOL g_bLargeFonts;                         
+BOOL g_bLargeFonts;    
+BOOL g_bTextLogos;                     
                                
 STRING g_sMajorUpgradeGUID;
 STRING g_sTVGuideSize;
@@ -525,6 +531,14 @@ begin
 	endif;
 	if svValue = "1" then
 		g_bLargeFonts = TRUE;
+	endif;  
+	
+	// Read Logo Style default 
+	if GetMPXMLProperty(sFile, "MiscConfig", "miscUseTextLogos", svValue) < 0 then
+		svValue = "1";
+	endif;
+	if svValue = "1" then
+		g_bTextLogos = TRUE;
 	endif;
 		
 	// Read Show Hidden Menu Image
@@ -742,11 +756,15 @@ Dlg_SelectMovingPictures:
 
 Dlg_SelectNowPlaying:
 	nResult = ShowSelectNowPlaying(FALSE);
-	if (nResult = BACK) goto Dlg_SelectMovingPictures;
+	if (nResult = BACK) goto Dlg_SelectMovingPictures;    
+	
+Dlg_SelectLogos:
+	nResult = ShowSelectLogos(FALSE);
+	if (nResult = BACK) goto Dlg_SelectNowPlaying;
 	
 Dlg_SelectOptions:
 	nResult = ShowSelectOptions(FALSE);
-	if (nResult = BACK) goto Dlg_SelectNowPlaying;  
+	if (nResult = BACK) goto Dlg_SelectLogos;  
 	
 Dlg_SdStartCopy:
     szTitle = "";
@@ -870,12 +888,18 @@ Dlg_SelectNowPlaying:
 	if (nType = MODIFY) then
 		nResult = ShowSelectNowPlaying(FALSE);
 		if (nResult = BACK) goto Dlg_SelectMovingPictures; 
+	endif;  
+	
+Dlg_SelectLogos:
+	if (nType = MODIFY) then
+		nResult = ShowSelectLogos(FALSE);
+		if (nResult = BACK) goto Dlg_SelectNowPlaying; 
 	endif;
 
 Dlg_SelectOptions:
 	if (nType = MODIFY) then
 		nResult = ShowSelectOptions(FALSE);
-		if (nResult = BACK) goto Dlg_SelectNowPlaying; 
+		if (nResult = BACK) goto Dlg_SelectLogos; 
 	endif;
 		
 	switch(nType)
@@ -1741,6 +1765,75 @@ Dlg_Wait:
    	return nCmdValue;
 end;
 
+function number ShowSelectLogos(bModify)
+	STRING szDialogName, sValue;
+	NUMBER nCmdValue;
+	BOOL bDone, bResult;
+begin
+    
+    if (MODE = SILENTMODE) then
+    	return RES_PBUT_NEXT;
+    endif;
+    
+	szDialogName = "SelectionLogos";
+   	bDone = FALSE;
+      	                         	                     
+    EzDefineDialog(szDialogName,"","",RES_DLG_LOGOSSELECT);
+
+Dlg_Wait:  
+    // Loop unitl done
+    repeat
+    	nCmdValue = WaitOnDialog(szDialogName);
+
+	    switch (nCmdValue)
+	    	
+	    	case DLG_CLOSE:
+	            // The user clicked the window's close button.
+	            Do (EXIT);
+	            
+	        case DLG_ERR:
+	            MessageBox ("Unable to display Logos dialog. Setup canceled.", SEVERE);
+	            abort;
+	            
+	        case DLG_INIT:
+	        	
+	      		// Select Last/Default Logo style
+	      		if g_bTextLogos then
+	   				CtrlSetState(szDialogName, RES_RADIO_LOGOTEXT, BUTTON_CHECKED);		                                      
+	   			else
+	   				CtrlSetState(szDialogName, RES_RADIO_LOGOGRAPHICAL, BUTTON_CHECKED);
+	   			endif;			
+ 				 		 				         		      
+			case RES_PBUT_BACK:
+				bDone = TRUE;	 	        
+	   	        	   	        	   	        
+	        case RES_PBUT_NEXT:
+	            bDone = TRUE;	        
+	        
+	        case RES_PBUT_CANCEL:
+	        	Do (EXIT);
+	        	
+	        case RES_PBUT_CLOSE:
+	        	Do (EXIT);
+	        	
+	     endswitch;
+    
+    until bDone;       
+		
+	bDone = FALSE;
+	
+	// Store settings in Global Variables
+	if (CtrlGetState(szDialogName, RES_RADIO_LOGOTEXT) == BUTTON_CHECKED) then
+		g_bTextLogos = TRUE;
+	else
+		g_bTextLogos = FALSE;
+	endif;
+	
+    EndDialog (szDialogName);
+    ReleaseDialog (szDialogName);
+        
+   	return nCmdValue;
+end;
 
 function number ShowSelectNowPlaying(bModify)
 	STRING szDialogName, sValue;
@@ -2214,7 +2307,8 @@ begin
     
     SetMPXMLProperty(sFile, "MusicConfig", "musicNowPlayingStyle", g_sNowPlayingChoice);
     
-	SetMPXMLProperty(sFile, "MiscConfig", "miscUseLargeFonts", BoolToStringInt(g_bLargeFonts));
+	SetMPXMLProperty(sFile, "MiscConfig", "miscUseLargeFonts", BoolToStringInt(g_bLargeFonts));  
+	SetMPXMLProperty(sFile, "MiscConfig", "miscUseTextLogos", BoolToStringInt(g_bTextLogos));
 	SetMPXMLProperty(sFile, "MiscConfig", "miscShowHiddenMenuImage", BoolToStringInt(g_bShowHiddenMenuImage));
 	SetMPXMLProperty(sFile, "MiscConfig", "miscShowIconsInArtwork", BoolToStringInt(g_bShowArtworkIcons));
 	SetMPXMLProperty(sFile, "MiscConfig", "miscShowRoundedCovers", BoolToStringInt(g_bShowRoundedCovers));

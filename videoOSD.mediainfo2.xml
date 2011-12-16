@@ -10,7 +10,7 @@
       <posY>650</posY>
       <width>100</width>
       <height>32</height>
-      <texture>Logos\Video\#Play.Current.VideoResolution.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#Play.Current.VideoResolution.png</texture>
     </control>
     <control>
       <description>SD/HD Fullscreen/Widescreen</description>
@@ -20,7 +20,7 @@
       <posY>650</posY>
       <width>100</width>
       <height>32</height>
-      <texture>Logos\Video\#Play.Current.VideoResolution #Play.Current.AspectRatio.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#Play.Current.VideoResolution #Play.Current.AspectRatio.png</texture>
       <visible>!Control.HasThumb(9997)</visible>
     </control>
     <!-- Video Codecs -->
@@ -32,7 +32,7 @@
       <posY>650</posY>
       <width>100</width>
       <height>32</height>
-      <texture>Logos\Video\#Play.Current.VideoCodec.Texture.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#Play.Current.VideoCodec.Texture.png</texture>
     </control>
     <!-- Audio Channels / Codecs -->
     <control>
@@ -43,7 +43,7 @@
       <posY>650</posY>
       <width>100</width>
       <height>32</height>
-      <texture>Logos\Audio\#Play.Current.AudioCodec.Texture #Play.Current.AudioChannels.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#Play.Current.AudioCodec.Texture #Play.Current.AudioChannels.png</texture>
     </control>
     <control>
       <description>Audio Codecs - Unknown number of channels</description>
@@ -53,7 +53,7 @@
       <posY>650</posY>
       <width>100</width>
       <height>32</height>
-      <texture>Logos\Audio\#Play.Current.AudioCodec.Texture.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#Play.Current.AudioCodec.Texture.png</texture>
       <visible>!Control.HasThumb(9998)</visible>
     </control>
     <!-- Subtitles -->
@@ -65,7 +65,7 @@
       <posY>650</posY>
       <width>100</width>
       <height>32</height>
-      <texture>Logos\Misc\Subtitles.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\Subtitles.png</texture>
       <visible>string.equals(#Play.Current.HasSubtitles,true)</visible>
     </control>
   </controls>

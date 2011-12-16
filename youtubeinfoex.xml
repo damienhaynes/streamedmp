@@ -434,7 +434,7 @@
       <posY>12</posY>
       <width>100</width>
       <height>32</height>                                             
-      <texture>Logos\Video\HD Widescreen.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\HD Widescreen.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>	  
       <visible>string.equals(#Youtube.fm.Info.Video.IsHD, true)</visible>
@@ -447,7 +447,7 @@
       <posY>12</posY>
       <width>100</width>
       <height>32</height>                                             
-      <texture>Logos\Video\SD Fullscreen.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\SD Fullscreen.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>!string.equals(#Youtube.fm.Info.Video.IsHD, true)</visible>	        
