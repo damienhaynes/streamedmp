@@ -65,11 +65,11 @@
 #define TVLOGOS_UK									"TVLogos\\UK"
 #define TVLOGOS_CANADA								"TVLogos\\Canada"
 
-
 // Skin XML defines
 #define STREAMEDMP_SKIN_TVSERIES					INSTALLDIR^SKIN_NAME^"TVSeries.xml"
 #define STREAMEDMP_SKIN_MOVINGPICTURES				INSTALLDIR^SKIN_NAME^"MovingPictures.xml"
 #define STREAMEDMP_SKIN_TVSERIESSETTINGS			INSTALLDIR^SKIN_NAME^"TVSeries.SkinSettings.xml"
+#define STREAMEDMP_SKIN_MYFILMSLOGOS				INSTALLDIR^SKIN_NAME^"MyFilmsLogos.xml"
 #define STREAMEDMP_SKIN_TVMINIGUIDE					INSTALLDIR^SKIN_NAME^"TVMiniGuide.xml"
 #define STREAMEDMP_SKIN_MYTVGUIDE					INSTALLDIR^SKIN_NAME^"mytvguide.xml"
 #define STREAMEDMP_SKIN_DIALOGTVGUIDE				INSTALLDIR^SKIN_NAME^"dialogTvGuide.xml"
@@ -246,6 +246,7 @@ prototype BOOL 		GetInstalledVersion(STRING,BYREF STRING);
 prototype VOID		SetInstallationDirectories();
 prototype BOOL		AdjustForScreenSize();
 prototype NUMBER	ReplaceLineInFile(STRING, STRING, STRING);
+prototype NUMBER	ReplaceStringInFile(STRING, STRING, STRING);
 prototype VOID		ModifySkinFilesForFULLHD(BOOL);
 prototype VOID 		ShowNowPlayingPreviewImage(STRING);
 prototype VOID 		HideControl(STRING, NUMBER);   
@@ -261,6 +262,8 @@ prototype VOID		ApplyCheckSum();
 prototype VOID		GenerateBasicHome();
 prototype VOID		ReadTVLogoDefaults();
 prototype VOID		SaveTVLogoSelections();
+prototype VOID		UpdateTVSeriesLogoRules();
+prototype VOID		UpdateMyFilmsLogoRules();
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -340,8 +343,7 @@ function OnBegin()
 	STRING szVersion, szUpgradeMessage, szValue;
 	NUMBER nResult;
 	BOOL bUpgradeSupported;	
-begin 
-    
+begin    
 	DetectWinLargeFonts();
  
 	// See if older version is installed
@@ -2219,7 +2221,8 @@ begin
     
     // Misc Section
     MiscSection = 			"\t<section name=\"MiscConfig\">"+
-							"\n\t\t<entry name=\"miscUseLargeFonts\">0</entry>"+							
+							"\n\t\t<entry name=\"miscUseLargeFonts\">0</entry>"+
+							"\n\t\t<entry name=\"miscUseTextLogos\">1</entry>"+				
 							"\n\t\t<entry name=\"miscShowHiddenMenuImage\">1</entry>"+
 							"\n\t\t<entry name=\"miscShowIconsInArtwork\">1</entry>"+
 							"\n\t\t<entry name=\"miscShowRoundedCovers\">1</entry>"+
@@ -2362,7 +2365,13 @@ begin
 	// Adjust Skin to support 1920x1080 resolution
 	bReturn = AdjustForScreenSize();
 	ModifySkinFilesForFULLHD(bReturn);
-
+	
+	// Update TVSeries Logo Rules
+	UpdateTVSeriesLogoRules();
+	
+	// Update MyFilms Logo Rules
+	UpdateMyFilmsLogoRules();
+	
 	// Update TVSeries Imports
 	sFile = STREAMEDMP_SKIN_TVSERIES;
 	
@@ -3202,7 +3211,42 @@ begin
 	return 0;
 
 end;  */
-    
+
+function NUMBER ReplaceStringInFile(szFileName, szSearchStr, szReplaceStr)
+    NUMBER nResult, nIndex;
+	STRING svString;
+	LIST listID;	
+begin
+   
+    Disable(LOGGING);
+
+	listID = ListCreate(STRINGLIST);
+	ListReadFromFile ( listID, szFileName );
+	
+	nResult = ListGetFirstString(listID, svString);
+	
+	while (nResult != END_OF_LIST)		
+		if (svString % szSearchStr) then		
+			// Replace String
+			StrReplace(svString, szSearchStr, szReplaceStr, 0);
+			ListSetCurrentString ( listID, svString );			
+		endif;
+		nResult = ListGetNextString(listID, svString);		
+	endwhile;
+	
+	// Delete old file
+	DeleteFile(szFileName);
+	// Create new file
+	ListWriteToFile(listID,szFileName);
+	
+	ListDestroy(listID);
+	
+	Enable(LOGGING);
+	return 0;
+   
+end;
+
+
 function NUMBER ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr)
 	NUMBER nResult, nIndex;
 	STRING svString;
@@ -3262,6 +3306,35 @@ begin
 	endif;	
 	
 end; 
+
+function VOID UpdateTVSeriesLogoRules()
+   	STRING szFileName, szSearchStr, szReplaceStr;
+begin
+	szFileName = STREAMEDMP_SKIN_TVSERIESSETTINGS;
+	if g_bTextLogos then
+		szSearchStr = "MediaInfo\\Graphical";
+    	szReplaceStr = "MediaInfo\\Textual";    
+    else
+        szSearchStr = "MediaInfo\\Textual";
+    	szReplaceStr = "MediaInfo\\Graphical";
+    endif; 
+    ReplaceStringInFile(szFileName, szSearchStr, szReplaceStr);
+end;
+
+function VOID UpdateMyFilmsLogoRules()
+   	STRING szFileName, szSearchStr, szReplaceStr;
+begin
+	szFileName = STREAMEDMP_SKIN_MYFILMSLOGOS;
+	if g_bTextLogos then
+		szSearchStr = "MediaInfo\\Graphical";
+    	szReplaceStr = "MediaInfo\\Textual";    
+    else
+        szSearchStr = "MediaInfo\\Textual";
+    	szReplaceStr = "MediaInfo\\Graphical";
+    endif; 
+    ReplaceStringInFile(szFileName, szSearchStr, szReplaceStr);
+end;
+
 
 // This function will modify skin files that runing 1920x1080 screen resolution
 // and are also running MediaPortal in Fullscreen
