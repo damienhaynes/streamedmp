@@ -14,8 +14,6 @@
       <width>1280</width>
       <height>720</height>
       <texture>#header.hover</texture>
-      <animation effect="fade" time="300">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Linked Weather Background</description>
@@ -61,7 +59,7 @@
       <posY>108</posY>
       <width>520</width>
       <align>center</align>
-      <label>#(string.rtrim(L(143),':'))</label>
+      <label>#WorldWeather.TranslationCurrentCondition</label>
       <font>mediastream16tc</font>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
@@ -97,14 +95,14 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Weather Label</description>
+      <description>Forecast Label</description>
       <type>label</type>
       <id>0</id>
       <posX>660</posX>
       <posY>108</posY>
       <width>520</width>
       <align>center</align>
-      <label>400</label>
+      <label>#WorldWeather.TranslationForecastCondition</label>
       <font>mediastream16tc</font>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
@@ -141,9 +139,6 @@
       <label>#(string.rtrim(L(397),':')) - #WorldWeather.RefreshDate #WorldWeather.RefreshTime</label>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
-      <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
-      <shadowColor>ff111111</shadowColor>
       <align>center</align>
       <visible>string.equals(#WorldWeather.View,Condition)+!string.equals(#WorldWeather.RefreshDate,)</visible>
       <animation effect="fade" time="250">WindowClose</animation>
