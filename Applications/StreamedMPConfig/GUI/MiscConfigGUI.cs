@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using MediaPortal.Configuration;
 using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
 using Action = MediaPortal.GUI.Library.Action;
@@ -38,6 +39,8 @@ namespace StreamedMPConfig
     private string TextColor3Temp;
     private string WatchedColorTemp;
     private string RemoteColorTemp;
+
+    private bool TextualLogosTemp;
 
     private Dictionary<int, string> KnownColors = new Dictionary<int, string>();
     #endregion
@@ -549,6 +552,57 @@ namespace StreamedMPConfig
       }
     }
 
+    private void UpdateTVSeriesLogos()
+    {
+      try
+      {
+        var filename = Path.Combine(GUIGraphicsContext.Skin, @"TVSeries.SkinSettings.xml");
+        var fileContents = File.ReadAllText(filename);
+        if (TextualLogos)
+        {
+          fileContents = fileContents.Replace("MediaInfo\\Graphical", "MediaInfo\\Textual");
+        }
+        else
+        {
+          fileContents = fileContents.Replace("MediaInfo\\Textual", "MediaInfo\\Graphical");
+        }
+        File.WriteAllText(filename, fileContents);
+      }
+      catch (Exception e)
+      {
+        smcLog.WriteLog("Failed to update TVSeries Logo rules: " + e.Message, LogLevel.Error);
+      }
+    }
+
+    private void UpdateMyFilmsLogos()
+    {
+      try
+      {
+        var filename = Path.Combine(GUIGraphicsContext.Skin, @"MyFilmsLogos.xml");
+        var fileContents = File.ReadAllText(filename);
+        if (TextualLogos)
+        {
+          fileContents = fileContents.Replace("MediaInfo\\Graphical", "MediaInfo\\Textual");
+        }
+        else
+        {
+          fileContents = fileContents.Replace("MediaInfo\\Textual", "MediaInfo\\Graphical");
+        }
+        File.WriteAllText(filename, fileContents);
+
+        // Delete Cached Logos
+        string path = Path.Combine(Config.GetFolder(Config.Dir.Thumbs), @"MyFilms\Thumbs\MyFilms_Logos\");
+        foreach (var file in Directory.GetFiles(path, "MyFilms_StreamedMP*.png"))
+        {
+          File.Delete(file);
+        }
+      }
+      catch (Exception e)
+      {
+        smcLog.WriteLog("Failed to update My Films Logo rules: " + e.Message, LogLevel.Error);
+      }
+    }
+
     /// <summary>
     /// Apply changes to Skin
     /// </summary>
@@ -603,6 +657,12 @@ namespace StreamedMPConfig
       #region Logos
       // Tvseries / MyFilms Logo Rules
       // Everything else can use skin property #StreamedMP.MediaInfo.Type
+      if (TextualLogosTemp != TextualLogos)
+      {
+        requiresRestart = true;
+        UpdateTVSeriesLogos();
+        UpdateMyFilmsLogos();
+      }
       #endregion
 
       if (requiresRestart)
@@ -644,6 +704,8 @@ namespace StreamedMPConfig
       TextColor3Temp = MiscConfigGUI.TextColor3;
       WatchedColorTemp = MiscConfigGUI.WatchedColor;
       RemoteColorTemp = MiscConfigGUI.RemoteColor;
+
+      TextualLogosTemp = MiscConfigGUI.TextualLogos;
     }
 
     protected override void OnPageDestroy(int newWindowId)
