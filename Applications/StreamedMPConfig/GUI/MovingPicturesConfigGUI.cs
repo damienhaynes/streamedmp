@@ -12,7 +12,8 @@ namespace StreamedMPConfig
     private enum GUIControls
     {
       Style = 2,
-      ThumbnailMod = 3
+      ThumbnailMod = 3,
+      TaglineDetails = 4
     }
 
     public enum Thumbnails
@@ -33,6 +34,9 @@ namespace StreamedMPConfig
 
     [SkinControl((int)GUIControls.ThumbnailMod)]
     protected GUIButtonControl btnThumbnailMod = null;
+
+    [SkinControl((int)GUIControls.TaglineDetails)]
+    protected GUIToggleButtonControl btnTagline = null;
     #endregion
 
     #region Constructor
@@ -42,6 +46,7 @@ namespace StreamedMPConfig
     #region Public Properties
     public static bool IsDefaultStyle { get; set; }
     public static Thumbnails ThumbnailMod { get; set; }
+    public static bool ShowMovPicsTaglineInDetails { get; set; }
     #endregion
 
     #region Private Methods
@@ -50,6 +55,8 @@ namespace StreamedMPConfig
       // Set Toggle Button if Default or Fanart Style
       btnStyle.Selected = !IsDefaultStyle;
       btnStyle.Label = Translation.FanartStyle;
+      btnTagline.Selected = ShowMovPicsTaglineInDetails;
+      btnTagline.Label = Translation.ShowTaglineInDetailsSummary;
       
       // Set Label for Current WideBanner Mod
       btnThumbnailMod.Label = GetThumbnailName(ThumbnailMod);
@@ -60,7 +67,9 @@ namespace StreamedMPConfig
       // We already set Selected Thumbnail Mod when changing
 
       // Get Default/Fanart Style
-      IsDefaultStyle = !btnStyle.Selected;      
+      IsDefaultStyle = !btnStyle.Selected;
+      // Show Tagline
+      ShowMovPicsTaglineInDetails = btnTagline.Selected;
     }
 
     private void ShowThumbnailContextMenu()
@@ -172,6 +181,12 @@ namespace StreamedMPConfig
       }
 
     }
+
+    public static void SetProperties()
+    {
+      GUIPropertyManager.SetProperty("#StreamedMP.MovingPictures.Tagline", ShowMovPicsTaglineInDetails.ToString().ToLowerInvariant());
+    }
+
     #endregion
 
     #region Base Overrides
@@ -204,6 +219,9 @@ namespace StreamedMPConfig
       
       // Apply Configuration changes
       ApplyConfigurationChanges();
+
+      // Set Properties
+      SetProperties();
 
       // Save Settings
       settings.Save(settings.cXMLSectionMovingPictures);

@@ -291,6 +291,7 @@ namespace StreamedMPConfig
     public static string ShowListScrollingPopup = "Show List Scrolling Popup";
     public static string Scraper = "Scraper";
     public static string TextualMediaInfoLogos = "Textual MediaInfo Logos";
+    public static string ShowTaglineInDetailsSummary = "Show Tagline in Details Summary";
     #endregion
   }
 }

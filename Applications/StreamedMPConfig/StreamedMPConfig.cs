@@ -398,6 +398,10 @@ namespace StreamedMPConfig
       StreamedMPConfig.SetProperty("#StreamedMP.ArtistPath", artistPath);
       #endregion
 
+      #region Init MovingPictures Config
+      MovingPicturesConfig.SetProperties();
+      #endregion
+
       #region Init Events
       GUIWindowManager.OnActivateWindow += new GUIWindowManager.WindowActivationHandler(GUIWindowManager_OnActivateWindow);
       GUIGraphicsContext.OnVideoWindowChanged += new VideoWindowChangedHandler(GUIGraphicsContext_OnVideoWindowChanged);
