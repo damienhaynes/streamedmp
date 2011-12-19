@@ -12,7 +12,7 @@
       <width>100</width>
       <height>32</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#MovingPictures.LocalMedia.videoresolution.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -24,7 +24,7 @@
       <width>100</width>
       <height>32</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#MovingPictures.LocalMedia.videoresolution #MovingPictures.LocalMedia.videoaspectratio.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9796)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9796)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Video Codecs -->
@@ -37,7 +37,7 @@
       <width>100</width>
       <height>32</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#MovingPictures.LocalMedia.videocodec.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Audio Channels / Codecs-->
@@ -50,7 +50,7 @@
       <width>100</width>
       <height>32</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#MovingPictures.LocalMedia.audiocodec #MovingPictures.LocalMedia.audiochannels.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -62,7 +62,7 @@
       <width>100</width>
       <height>32</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#MovingPictures.LocalMedia.audiocodec.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9797)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9797)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Subtitles -->
@@ -75,7 +75,7 @@
       <width>100</width>
       <height>32</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\#MovingPictures.LocalMedia.Subtitles.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Video Format -->
@@ -88,7 +88,7 @@
       <width>100</width>
       <height>32</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\#MovingPictures.LocalMedia.videoformat.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9798)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9798)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -100,9 +100,9 @@
       <width>100</width>
       <height>32</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\#MovingPictures.LocalMedia.videoformat.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(9798)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(9798)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:78859fe94099cddb06d940b97b21fdf4-->
+<!--Checksum:54c0e60f9599e9ff3a9a8817b730cbd7-->

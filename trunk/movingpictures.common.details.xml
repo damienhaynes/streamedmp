@@ -11,7 +11,7 @@
       <width>1284</width>
       <height>724</height>
       <texture>filmstrip_overlay.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -23,7 +23,7 @@
       <width>257</width>
       <height>380</height>
       <texture flipY="true" diffuse="diffusemirrorwide.png">#MovingPictures.Coverart</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -35,7 +35,7 @@
       <width>297</width>
       <height>414</height>
       <texture>#StreamedMP.RoundedPosters.Image</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -47,7 +47,7 @@
       <width>228</width>
       <height>177</height>
       <texture>glassoverlay2.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!Control.HasThumb(610)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!Control.HasThumb(610)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -59,7 +59,7 @@
       <width>32</width>
       <height>39</height>
       <texture>#StreamedMP.Icons.Background</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -71,7 +71,7 @@
       <width>24</width>
       <height>24</height>
       <texture>#StreamedMP.Icons.Watched</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+control.isvisible(9)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+control.isvisible(9)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -83,7 +83,7 @@
       <width>24</width>
       <height>24</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!control.isvisible(9)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!control.isvisible(9)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Details Box -->
@@ -97,7 +97,7 @@
       <height>385</height>
       <texture>detailsbg.png</texture>
       <colordiffuse>a0ffffff</colordiffuse>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Buttons -->
@@ -107,7 +107,7 @@
       <id>6</id>
       <label>2553</label>
       <onup>6</onup>
-      <ondown>6</ondown>
+      <ondown>667</ondown>
       <onright>10000</onright>
       <onleft>666</onleft>
       <posX>1040</posX>
@@ -122,7 +122,7 @@
       <textcolorNoFocus>bfffffff</textcolorNoFocus>
       <textureFocus>tv_button_focus.png</textureFocus>
       <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible allowhiddenfocus="true">!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -131,7 +131,7 @@
       <id>666</id>
       <label>287</label>
       <onup>666</onup>
-      <ondown>666</ondown>
+      <ondown>667</ondown>
       <onright>6</onright>
       <onleft>10000</onleft>
       <posX>870</posX>
@@ -147,8 +147,20 @@
       <textcolorNoFocus>bfffffff</textcolorNoFocus>
       <textureFocus>tv_button_focus.png</textureFocus>
       <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+plugin.isenabled(SubCentral)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+plugin.isenabled(SubCentral)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>FullSize Fanart</description>
+      <type>button</type>
+      <id>667</id>
+      <label>-</label>
+      <onup>6</onup>
+      <ondown>6</ondown>
+      <onright>6</onright>
+      <onleft>6</onleft>
+      <posX>-100</posX>
+      <posY>-100</posY>
     </control>
     <!-- Movie Details Hidden Menu -->
     <control>
@@ -338,7 +350,6 @@
         </control>
       </control>
     </control>
-    
     <control>
       <description>Movie Title</description>
       <type>label</type>
@@ -349,7 +360,7 @@
       <font>mediastream14tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -362,7 +373,7 @@
       <width>840</width>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -375,7 +386,7 @@
       <posY>450</posY>
       <align>left</align>
       <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,0)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,0)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -385,7 +396,7 @@
       <label>#MovingPictures.UserMovieSettings.user_rating</label>
       <posX>-50</posX>
       <posY>-50</posY>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
     </control>
     <control>
       <description>Star Rating Value + Votes</description>
@@ -400,7 +411,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,0)+!Control.HasText(199)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,0)+!Control.HasText(199)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -413,7 +424,7 @@
       <width>700</width>
       <align>left</align>
       <font>mediastream11c</font>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,0)+Control.HasText(199)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,0)+Control.HasText(199)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -429,10 +440,10 @@
       <font>mediastream11</font>
       <label>#MovingPictures.SelectedMovie.summary</label>
       <scrollStartDelaySec>15</scrollStartDelaySec>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+[!string.equals(#StreamedMP.MovingPictures.Tagline,true)|string.equals(#MovingPictures.SelectedMovie.tagline,)]</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+[!string.equals(#StreamedMP.MovingPictures.Tagline,true)|string.equals(#MovingPictures.SelectedMovie.tagline,)]+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
@@ -446,7 +457,7 @@
       <label>" #MovingPictures.SelectedMovie.tagline "
 #MovingPictures.SelectedMovie.summary</label>
       <scrollStartDelaySec>15</scrollStartDelaySec>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+string.equals(#StreamedMP.MovingPictures.Tagline,true)+!string.equals(#MovingPictures.SelectedMovie.tagline,)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+string.equals(#StreamedMP.MovingPictures.Tagline,true)+!string.equals(#MovingPictures.SelectedMovie.tagline,)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -459,7 +470,7 @@
       <width>120</width>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -472,7 +483,7 @@
       <width>370</width>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -485,7 +496,7 @@
       <width>120</width>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -498,7 +509,7 @@
       <width>370</width>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -511,7 +522,7 @@
       <width>120</width>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -524,7 +535,7 @@
       <width>706</width>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -538,7 +549,7 @@
       <align>right</align>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -552,7 +563,7 @@
       <align>left</align>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -566,7 +577,7 @@
       <align>right</align>
       <font>mediastream11c</font>
       <textcolor>ff909090</textcolor>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -580,7 +591,7 @@
       <align>left</align>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Certification -->
@@ -593,9 +604,55 @@
       <width>259</width>
       <height>57</height>
       <texture>Logos\Certification\#MovingPictures.SelectedMovie.certification.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <!-- Full Screen Fanart -->
+    <control>
+      <description>Overlay Full FanArt</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>470</posY>
+      <width>1280</width>
+      <height>250</height>
+      <texture>filmstrip_overlay.png</texture>
+      <colordiffuse>bbffffff</colordiffuse>
+      <visible>control.hasfocus(667)</visible>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Title (Full Fanart View)</description>
+      <id>1</id>
+      <posX>30</posX>
+      <posY>667</posY>
+      <width>1220</width>
+      <align>center</align>
+      <font>mediastream16tc</font>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
+      <label>#MovingPictures.SelectedMovie.title</label>
+      <visible>control.hasfocus(667)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Year and Category (Full Fanart View)</description>
+      <id>1</id>
+      <posX>30</posX>
+      <posY>690</posY>
+      <width>1220</width>
+      <align>center</align>
+      <font>mediastream12tc</font>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>3</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
+      <textcolor>ff909090</textcolor>
+      <label>#MovingPictures.SelectedMovie.genres</label>
+      <visible>control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:691e876cedd4e622b6b5f67ff19f4257-->
+<!--Checksum:950891cd63a148159d39ee4dc4814199-->
