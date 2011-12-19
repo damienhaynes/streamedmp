@@ -429,7 +429,24 @@
       <font>mediastream11</font>
       <label>#MovingPictures.SelectedMovie.summary</label>
       <scrollStartDelaySec>15</scrollStartDelaySec>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+[!string.equals(#StreamedMP.MovingPictures.Tagline,true)|string.equals(#MovingPictures.SelectedMovie.tagline,)]</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+		<control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>363</posX>
+      <posY>480</posY>
+      <width>860</width>
+      <height>100</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>" #MovingPictures.SelectedMovie.tagline "
+#MovingPictures.SelectedMovie.summary</label>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+string.equals(#StreamedMP.MovingPictures.Tagline,true)+!string.equals(#MovingPictures.SelectedMovie.tagline,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>

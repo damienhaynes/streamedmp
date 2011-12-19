@@ -57,6 +57,7 @@ namespace StreamedMPConfig
 
     public const string cXMLSettingMovingPicturesDefaultStyle = "movingpicturesDefaultStyle";
     public const string cXMLSettingMovingPicturesThumbMod = "movingpicturesThumbMod";
+    public const string cXMLSettingMovingPicturesTagline = "movingpicturesTagline";
 
     public const string cXMLSettingTVGuideSize = "tvGuideSize";
     public const string cXMLSettingTVMiniGuideSize = "tvMiniGuideSize";
@@ -338,6 +339,7 @@ namespace StreamedMPConfig
           case settings.cXMLSectionMovingPictures:
             MovingPicturesConfig.IsDefaultStyle = xmlreader.GetValueAsInt(section, settings.cXMLSettingMovingPicturesDefaultStyle, 1) == 1;
             MovingPicturesConfig.ThumbnailMod = (MovingPicturesConfig.Thumbnails)xmlreader.GetValueAsInt(section, settings.cXMLSettingMovingPicturesThumbMod, 0);
+            MovingPicturesConfig.ShowMovPicsTaglineInDetails = xmlreader.GetValueAsInt(section, settings.cXMLSettingMovingPicturesTagline, 1) == 1;
             break;
           #endregion
 
@@ -419,6 +421,7 @@ namespace StreamedMPConfig
           case cXMLSectionMovingPictures:
             xmlwriter.SetValue(section, settings.cXMLSettingMovingPicturesDefaultStyle, MovingPicturesConfig.IsDefaultStyle ? 1 : 0);
             xmlwriter.SetValue(section, settings.cXMLSettingMovingPicturesThumbMod, (int)MovingPicturesConfig.ThumbnailMod);
+            xmlwriter.SetValue(section, settings.cXMLSettingMovingPicturesTagline, MovingPicturesConfig.ShowMovPicsTaglineInDetails ? 1 : 0);
             break;
           #endregion
 
