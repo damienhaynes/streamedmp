@@ -7,11 +7,11 @@
       <description>720p, 1080i, 1080p</description>
       <type>image</type>
       <id>9796</id>
-      <posX>345</posX>
+      <posX>360</posX>
       <posY>665</posY>
       <width>100</width>
       <height>32</height>
-      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#MovingPictures.LocalMedia.videoresolution.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#MovingPictures.LocalMedia.videoresolution.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -19,11 +19,11 @@
       <description>SD/HD Fullscreen/Widescreen</description>
       <type>image</type>
       <id>0</id>
-      <posX>345</posX>
+      <posX>360</posX>
       <posY>665</posY>
       <width>100</width>
       <height>32</height>
-      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#MovingPictures.LocalMedia.videoresolution #MovingPictures.LocalMedia.videoaspectratio.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#MovingPictures.LocalMedia.videoresolution #MovingPictures.LocalMedia.videoaspectratio.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9796)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -32,11 +32,11 @@
       <description>Video Codecs</description>
       <type>image</type>
       <id>0</id>
-      <posX>445</posX>
+      <posX>460</posX>
       <posY>665</posY>
       <width>100</width>
       <height>32</height>
-      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#MovingPictures.LocalMedia.videocodec.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#MovingPictures.LocalMedia.videocodec.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -45,11 +45,11 @@
       <description>Audio Codecs / Channels</description>
       <type>image</type>
       <id>9797</id>
-      <posX>545</posX>
+      <posX>560</posX>
       <posY>665</posY>
       <width>100</width>
       <height>32</height>
-      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#MovingPictures.LocalMedia.audiocodec #MovingPictures.LocalMedia.audiochannels.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#MovingPictures.LocalMedia.audiocodec #MovingPictures.LocalMedia.audiochannels.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -57,11 +57,11 @@
       <description>Audio Codecs - Unknown number of channels</description>
       <type>image</type>
       <id>0</id>
-      <posX>545</posX>
+      <posX>560</posX>
       <posY>665</posY>
       <width>100</width>
       <height>32</height>
-      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#MovingPictures.LocalMedia.audiocodec.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#MovingPictures.LocalMedia.audiocodec.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9797)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -70,11 +70,11 @@
       <description>Subtitles</description>
       <type>image</type>
       <id>9798</id>
-      <posX>645</posX>
+      <posX>660</posX>
       <posY>665</posY>
       <width>100</width>
       <height>32</height>
-      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\#MovingPictures.LocalMedia.Subtitles.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\#MovingPictures.LocalMedia.Subtitles.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -83,11 +83,11 @@
       <description>Video Format</description>
       <type>image</type>
       <id>78</id>
-      <posX>645</posX>
+      <posX>660</posX>
       <posY>665</posY>
       <width>100</width>
       <height>32</height>
-      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\#MovingPictures.LocalMedia.videoformat.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\#MovingPictures.LocalMedia.videoformat.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+!Control.HasThumb(9798)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -95,14 +95,14 @@
       <description>Video Format</description>
       <type>image</type>
       <id>78</id>
-      <posX>745</posX>
+      <posX>760</posX>
       <posY>665</posY>
       <width>100</width>
       <height>32</height>
-      <texture flipY="true" diffuse="Thumb_Mask.png">Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\#MovingPictures.LocalMedia.videoformat.png</texture>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\#MovingPictures.LocalMedia.videoformat.png</texture>
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(9798)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:ffd643a206976b5212415a1d34623093-->
+<!--Checksum:78859fe94099cddb06d940b97b21fdf4-->

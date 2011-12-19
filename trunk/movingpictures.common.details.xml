@@ -86,6 +86,19 @@
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!control.isvisible(9)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
+    <!-- Details Box -->
+    <control>
+      <description>details background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>340</posX>
+      <posY>380</posY>
+      <width>896</width>
+      <height>385</height>
+      <texture>detailsbg.png</texture>
+      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
     <!-- Buttons -->
     <control>
       <description>Play Movie</description>
@@ -96,7 +109,7 @@
       <ondown>6</ondown>
       <onright>10000</onright>
       <onleft>666</onleft>
-      <posX>1055</posX>
+      <posX>1040</posX>
       <posY>665</posY>
       <width>170</width>
       <height>32</height>
@@ -120,7 +133,7 @@
       <ondown>666</ondown>
       <onright>6</onright>
       <onleft>10000</onleft>
-      <posX>880</posX>
+      <posX>870</posX>
       <posY>665</posY>
       <width>170</width>
       <height>32</height>
@@ -324,19 +337,7 @@
         </control>
       </control>
     </control>
-    <!-- Details Box -->
-    <control>
-      <description>details background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>340</posX>
-      <posY>380</posY>
-      <width>896</width>
-      <height>337</height>
-      <texture>detailsbg.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
+    
     <control>
       <description>Movie Title</description>
       <type>label</type>
@@ -580,4 +581,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:931ce22e0d4fcf9b9b51c7065321e658-->
+<!--Checksum:691e876cedd4e622b6b5f67ff19f4257-->
