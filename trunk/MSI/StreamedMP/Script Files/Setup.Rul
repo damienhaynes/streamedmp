@@ -104,7 +104,7 @@
 #define GLOBALSEARCH_MIN_VERSION					"1.7.5.55"
 #define INFOSERVICE_MIN_VERSION						"1.6.6.230"
 #define TRAKT_MIN_VERSION							"1.3.0.1"    
-#define WEATHER_MIN_VERSION							"0.2.5.0"
+#define WEATHER_MIN_VERSION							"0.3.0.0"
 
 
 // XML Path Defines
@@ -236,7 +236,6 @@ prototype NUMBER 	SHFolder.SHGetFolderPathA(HWND,NUMBER,NUMBER,NUMBER,BYREF STRI
 prototype VOID		CleanVirtualStoreDir();
 prototype NUMBER	GetXMLProperty(STRING,STRING,BYREF STRING);
 prototype NUMBER	SetXMLProperty(STRING,STRING,STRING);
-prototype VOID		TVSeriesIcons(BOOL);
 prototype VOID		EnableControl(STRING, NUMBER, BOOL);
 prototype NUMBER	SetMPXMLProperty(STRING, STRING, STRING, STRING);
 prototype NUMBER	GetMPXMLProperty(STRING, STRING, STRING ,BYREF STRING); 
@@ -264,6 +263,7 @@ prototype VOID		ReadTVLogoDefaults();
 prototype VOID		SaveTVLogoSelections();
 prototype VOID		UpdateTVSeriesLogoRules();
 prototype VOID		UpdateMyFilmsLogoRules();
+prototype VOID		CreateMPSectionEntry(STRING, STRING, STRING, STRING);
 
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -2162,6 +2162,9 @@ begin
 	
 end;
 
+///
+/// Add a complete new Section to StreamedMPConfig.xml if it doesn't exist
+///
 function VOID CheckXMLSectionsExist()
 	STRING TVSeriesSection,  MovingPicturesSection, MusicSection, TVSection, MiscSection, InstallSection;
 	STRING SearchStr, sFile;
@@ -2875,9 +2878,9 @@ function NUMBER SetMPXMLProperty(sFile, sSectionAttribute,sEntryAttribute, sValu
 	STRING sNode, svString;
 	OBJECT oXMLdoc, oNodeListRoot, oNodeListElements;
 	INT i, j;
+	BOOL sectionEntryExists;
 begin
-   	
-   	//sFile = g_sConfigDir^"MediaPortal.xml";        	 
+   	   	   	
     Disable(LOGGING);
     
     try
@@ -2900,7 +2903,8 @@ begin
 			if oNodeListRoot(i).Attributes(0).Text = sSectionAttribute then                
                 // retrieve the list of configurable elements for the section
             	set oNodeListElements = oNodeListRoot(i).childNodes;
-            
+                
+                sectionEntryExists = FALSE;
             	for j = 0 to oNodeListElements.length - 1
                     
                     // we are only interested in the 'entry' elements
@@ -2908,12 +2912,22 @@ begin
 	                    
 	                    if oNodeListElements(j).Attributes(0).Text = sEntryAttribute then
 	                		// set the MediaPortal property
-	                        oNodeListElements(j).Text = sValue;	                       
+	                        oNodeListElements(j).Text = sValue;
+	                        sectionEntryExists = TRUE;                       
 	                    endif;
                 
                 	endif;	                               
                 	
             	endfor;	       
+            	
+            	if sectionEntryExists == FALSE then
+            	      CreateMPSectionEntry(sFile, sSectionAttribute,sEntryAttribute, sValue);
+            	      set oXMLdoc = NOTHING;
+					  set oNodeListRoot = NOTHING;
+					  set oNodeListElements = NOTHING;
+					  Enable(LOGGING);
+					  return 0;
+            	endif;
             	
 	        endif;
 		
@@ -2936,6 +2950,20 @@ begin
 
     Enable(LOGGING);         
     return 0;
+    
+end;
+
+function VOID CreateMPSectionEntry(sFile, sSectionAttribute, sEntryAttribute, sValue)
+   STRING sSearchStr, sReplaceStr;
+begin
+   
+   Disable(LOGGING); 
+   
+   sSearchStr = "<section name=\"" + sSectionAttribute + "\">";
+   sReplaceStr = sSearchStr + "\n\t\t<entry name=\"" + sEntryAttribute + "\">" + sValue + "</entry>";
+   ReplaceLineInFile(sFile, sSearchStr, sReplaceStr);
+   
+   Enable(LOGGING);
     
 end;
 
@@ -3323,6 +3351,7 @@ end;
 
 function VOID UpdateMyFilmsLogoRules()
    	STRING szFileName, szSearchStr, szReplaceStr;
+   	STRING szFiles;
 begin
 	szFileName = STREAMEDMP_SKIN_MYFILMSLOGOS;
 	if g_bTextLogos then
@@ -3333,8 +3362,14 @@ begin
     	szReplaceStr = "MediaInfo\\Graphical";
     endif; 
     ReplaceStringInFile(szFileName, szSearchStr, szReplaceStr);
-end;
+    
+    // clear logo cache
+    if Is(PATH_EXISTS, g_sThumbsDir ^ "MyFilms\\Thumbs\\MyFilms_Logos") then    
+    	szFiles = g_sThumbsDir ^ "MyFilms\\Thumbs\\MyFilms_Logos\\MyFilms_StreamedMP_*.png";
+    	DeleteFile(szFiles);
+    endif;
 
+end;
 
 // This function will modify skin files that runing 1920x1080 screen resolution
 // and are also running MediaPortal in Fullscreen
