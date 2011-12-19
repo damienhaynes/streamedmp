@@ -177,8 +177,10 @@
           <onright>50</onright>
           <onleft>50</onleft>
           <ondown>90</ondown>
+					<visible>string.contains(#mpei.updates,.::.)</visible>
         </control>
-        <control>
+				<!-- we are already in plugin, not much use for this! -->
+        <!--<control>
           <description>MPEI Update Available</description>
           <type>button</type>
           <id>90</id>
@@ -187,7 +189,7 @@
           <onleft>50</onleft>
           <ondown>2</ondown>
           <visible>string.equals(#mpei.a6afa4d6_4fd8_4607_8878_5911db044fd7.haveupdate,true)</visible>
-        </control>
+        </control>-->
       </control>
     </control>    
     <control>
