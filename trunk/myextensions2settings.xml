@@ -4,6 +4,7 @@
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.label:14001</define>
+  <define>#header.extension.label:#MPE.Selected.Name</define>
   <define>#header.hover:hover_extensions.png</define>
   <define>#header.BG.overlay:mainoverlay.png</define>
   <define>#header.BG.colordiffuse:ffffffff</define>
@@ -28,7 +29,21 @@
       <width>1281</width>
       <height>720</height>
       <texture>#header.BG.overlay</texture>
-    </control>    
+    </control>
+    <control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>431</posX>
+      <posY>11</posY>
+      <width>456</width>
+      <height>36</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
     <control>
       <id>1</id>
       <description>Top Title Background</description>
@@ -56,6 +71,24 @@
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
       <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
+    </control>
+    <control>
+      <description>Top Extension Title</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>852</posX>
+      <posY>13</posY>
+      <width>340</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <label>#header.extension.label</label>
+      <wrapString> |  </wrapString>
+      <scrollStartDelaySec>10</scrollStartDelaySec>
+      <visible>yes</visible>
+      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <import>common.time.xml</import>
     <control>
@@ -118,7 +151,7 @@
     <control>
       <description>Items Translation</description>
       <type>label</type>
-      <label>507</label>
+      <label>897</label>
       <id>0</id>
       <width>90</width>
       <posX>1077</posX>
