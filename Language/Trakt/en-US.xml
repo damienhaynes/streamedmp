@@ -23,6 +23,7 @@
   <string Field="Approve">Approve</string>
   <string Field="ApprovedDate">Approved Date</string>
   <string Field="ApproveFriendMessage">Would you like to add user {0}\nas a friend?</string>
+  <string Field="AdvancedSettings">Advanced Settings</string>
   
   <!-- B -->
   
@@ -111,7 +112,9 @@
   <string Field="Hated">Hated</string>
   <string Field="HideTVShowsInWatchlist">Hide TV Shows in Watch List</string>
   <string Field="HideWatched">Hide Watched</string>
-  
+  <string Field="HideSpoilers">Hide Spoilers</string>
+  <string Field="HiddenToPreventSpoilers">This shout has been hidden to prevent spoilers, you can change this option from menu.</string>
+
   <!-- I -->
   <string Field="Inserted">Inserted</string>
   <string Field="Item">Item</string>
@@ -169,6 +172,7 @@
   <string Field="NoListItemsFound">No items found in this list!</string>
   <string Field="NoRelatedMovies">No Related movies found for {0}!</string>
   <string Field="NoRelatedShows">No Related shows found for {0}!</string>
+  <string Field="No">No</string>
   
   <!-- O -->
   <string Field="OK">OK</string>
@@ -181,6 +185,7 @@
   <string Field="Protected">Protected</string>
   <string Field="PersonWatching">1 Person Watching</string>
   <string Field="PeopleWatching">{0} People Watching</string>
+  <string Field="Plugin">Plugin</string>
   <string Field="Plugins">Plugins</string>
   <string Field="Public">Public</string>
   <string Field="Private">Private</string>
@@ -217,17 +222,20 @@
   <!-- S -->
   <string Field="Score">Score</string>
   <string Field="Scrobble">Scrobble</string>
-  <string Field="SearchWithMpNZB">Search with mpNZB</string>
+  <string Field="SearchWithMpNZB">Search NZB</string>
+  <string Field="SearchTorrent">Search Torrent</string>
   <string Field="Season">Season</string>
   <string Field="SearchForFriend">Search for Friend...</string>
   <string Field="SendFriendRequest">Send friend request to {0}?</string>
   <string Field="SelectLists">Select Lists</string>
+  <string Field="SelectUser">Select User</string>
   <string Field="Series">Series</string>
   <string Field="SeriesPlural">Series</string>
   <string Field="Settings">Settings</string>
   <string Field="Shout">Shout</string>
   <string Field="Shouts">Shouts</string>
   <string Field="ShowTVShowsInWatchlist">Show TV Shows in Watch List</string>
+  <string Field="ShowSpoilers">Show Spoilers</string>
   <string Field="SigningIntoAccount">Signing Into Account...</string>
   <string Field="SkinPluginsOutOfDate">Error loading window, skin is out of date!\nExit MediaPortal and enter Configuration to\nenable plugins handlers.</string>
   <string Field="SkinOutOfDate">This feature is not available for your\nskin. See if update is Available.</string>
@@ -235,6 +243,20 @@
   <string Field="Synchronize">Synchronize</string>
   <string Field="SynchronizeNow">New Plugin Handlers have been added.\nWould you like to Synchronize your\nlibraries now?</string>
   <string Field="ShowWatched">Show Watched</string>
+  <string Field="SettingPluginEnabledName">Plugin Enabled</string>
+  <string Field="SettingPluginEnabledDescription">Enable / Disable this setting to control if the Trakt plugin is loaded with MediaPortal.</string>
+  <string Field="SettingListedHomeName">Listed in Home</string>
+  <string Field="SettingListedHomeDescription">Enable this setting for the Trakt plugin to appear in the main Home screen menu items.</string>
+  <string Field="SettingListedPluginsName">Listed in My Plugins</string>
+  <string Field="SettingListedPluginsDescription">Enable this setting for the Trakt plugin to appear in the My Plugins screen menu items.</string>
+  <string Field="SettingSyncTimerName">Library Synchronization Period</string>
+  <string Field="SettingSyncTimerDescription">Set the period of time (in hours) between each Library Synchronization. Default is every 24 hours.</string>
+  <string Field="SettingSyncStartDelayName">Library Synchronization Start Delay</string>
+  <string Field="SettingSyncStartDelayDescription">Delay (in seconds) before Library Synchronization starts on MediaPortal Startup. Default is every 0 seconds.</string>
+  <string Field="SettingWebRequestCacheName">Web Request Cache Time</string>
+  <string Field="SettingWebRequestCacheDescription">Set the period of time (in minutes) that web data is cached in gui windows such as Calendar, Trending and Recommendations. Default is 15 minutes.</string>
+  <string Field="SettingWebRequestTimeoutName">Web Request Timeout</string>
+  <string Field="SettingWebRequestTimeoutDescription">Set the period of time (in seconds) before cancelling any web requests. Default is 30 seconds.</string>
   
   <!-- T -->
   <string Field="Timeout">Timeout</string>
@@ -280,5 +302,6 @@
 
   <!-- Y -->
   <string Field="Year">Year</string>
+  <string Field="Yes">Yes</string>
   
 </strings>
