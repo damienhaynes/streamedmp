@@ -2599,12 +2599,15 @@ namespace StreamedMPEditor
       {
         // init onlinevideos
         var x = OnlineVideos.MediaPortal1.Translator.Lang;
-        var y = OnlineVideos.MediaPortal1.PluginConfiguration.Instance;       
-        
+        var y = OnlineVideos.MediaPortal1.PluginConfiguration.Instance;
+
+        var siteGroups = y.SitesGroups;
+        //if ((siteGroups == null || siteGroups.Count == 0) && y.autoGroupByLang) siteGroups = y.CachedAutomaticSitesGroups;
+
         // get groups
-        if ((y.SitesGroups != null && y.SitesGroups.Count > 0) || y.autoGroupByLang)
+        if ((siteGroups != null && siteGroups.Count > 0))
         {
-          foreach (var group in y.SitesGroups)
+          foreach (var group in siteGroups)
           {
             // add groups to list of sites
             string groupName = "Group: " + group.Name;

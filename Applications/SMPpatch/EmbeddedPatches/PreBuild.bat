@@ -11,6 +11,9 @@ copy ..\..\..\Plugins\windows\Cornerstone.MP.dll .\ /Y
 copy ..\..\..\Plugins\windows\MyLyrics.dll .\ /Y
 copy ..\..\..\Plugins\windows\GUIGlobalSearch.dll .\ /Y
 copy ..\..\..\Plugins\windows\InfoService.dll .\ /Y
+copy ..\..\..\Plugins\windows\WorldWeather.dll .\ /Y
+copy ..\..\..\Plugins\windows\WorldWeather.Core.dll .\ /Y
+copy ..\..\..\Plugins\windows\Micropolis.MPCore.dll .\ /Y
 copy ..\..\SMPMediaPortalRestart\bin\Release\SMPMediaPortalRestart.exe .\ /Y
 copy ..\..\SMPEditor\bin\Release\SMPEditor.exe .\ /Y
 copy ..\..\..\PluginDependencies\SMPCheckSum.dll .\ /Y
