@@ -396,7 +396,7 @@ namespace StreamedMPEditor
       }
 
       string filename = Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "windows"), "MP-TVSeries.dll");
-      if (Helper.IsAssemblyAvailable("MP-TVSeries", new Version(2, 6, 5, 1265), filename))
+      if (Helper.IsAssemblyAvailable("MP-TVSeries", new Version(3, 0, 0, 1673), filename))
       {
         tvseriesViews = GetTVSeriesViews();
         cboParameterViews.Visible = false;
@@ -410,7 +410,7 @@ namespace StreamedMPEditor
       }
 
       filename = Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "windows\\OnlineVideos"), "OnlineVideos.dll");
-      if (Helper.IsAssemblyAvailable("OnlineVideos", new Version(0, 27, 0, 0), filename))
+      if (Helper.IsAssemblyAvailable("OnlineVideos", new Version(1, 0, 0, 0), filename))
       {
         onlineVideosSites = GetOnlineVideosSites();
         cboParameterViews.Visible = false;
@@ -424,7 +424,7 @@ namespace StreamedMPEditor
       }
 
       filename = Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "windows"), "MovingPictures.dll");
-      if (Helper.IsAssemblyAvailable("MovingPictures", new Version(1, 1, 0, 0), filename))
+      if (Helper.IsAssemblyAvailable("MovingPictures", new Version(1, 2, 0, 1256), filename))
       {
         // load categories
         LoadMovingPicturesCategories();
