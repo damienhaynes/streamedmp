@@ -136,9 +136,9 @@
         <posY>250</posY>
         <width>220</width>
         <height>720</height>
-        <layout>StackLayout</layout>
+        <layout>StackLayout(0,Vertical,true)</layout>
         <control>
-          <description>View-As</description>
+          <description>Layout</description>
           <type>button</type>
           <id>2</id>
           <label>100</label>
@@ -176,8 +176,16 @@
           <label>#MPEI.Translation.UpdateAll.Label</label>
           <onright>50</onright>
           <onleft>50</onleft>
-          <ondown>90</ondown>
 					<visible>string.contains(#mpei.updates,.::.)</visible>
+        </control>
+        <control>
+          <description>Download Updates</description>
+          <type>button</type>
+          <id>9</id>
+          <label>#MPEI.Translation.DownloadUpdates.Label</label>
+          <onright>50</onright>
+          <onleft>50</onleft>
+          <ondown>2</ondown>
         </control>
 				<!-- we are already in plugin, not much use for this! -->
         <!--<control>
