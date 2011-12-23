@@ -618,7 +618,7 @@
       <height>250</height>
       <texture>filmstrip_overlay.png</texture>
       <colordiffuse>bbffffff</colordiffuse>
-      <visible>control.hasfocus(667)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+control.hasfocus(667)</visible>
     </control>
     <control>
       <type>label</type>
@@ -633,7 +633,7 @@
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <label>#MovingPictures.SelectedMovie.title</label>
-      <visible>control.hasfocus(667)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -650,9 +650,9 @@
       <shadowColor>#shadow.dark</shadowColor>
       <textcolor>ff909090</textcolor>
       <label>#MovingPictures.SelectedMovie.genres</label>
-      <visible>control.hasfocus(667)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:950891cd63a148159d39ee4dc4814199-->
+<!--Checksum:1b9a3328ac2b4dfa20004240f2f0f122-->
