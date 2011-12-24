@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-  <controls>    
+  <controls>
     <control>
       <description>Details View</description>
       <type>listcontrol</type>
@@ -23,11 +23,10 @@
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
       <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
       <visible>string.equals(#OnlineVideos.state,details)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		
-		<control>
+    <control>
       <description>Add to Trakt Movie Watch List</description>
       <type>button</type>
       <id>97258</id>
@@ -37,14 +36,17 @@
       <onright>51</onright>
       <onleft>51</onleft>
       <posX>20</posX>
-      <posY>642</posY>
-      <width>275</width>
+      <posY>632</posY>
+      <width>270</width>
       <height>32</height>
       <textcolor>ffffffff</textcolor>
       <font>mediastream10tc</font>
       <textYOff>0</textYOff>
-      <textXOff>0</textXOff>
-      <textalign>center</textalign>
+      <textXOff>40</textXOff>
+      <textalign>left</textalign>
+      <textvalign>middle</textvalign>
+      <scrollStartDelaySec>1</scrollStartDelaySec>
+      <scrollWrapString>|</scrollWrapString>
       <textcolorNoFocus>bfffffff</textcolorNoFocus>
       <textureFocus>tv_button_focus.png</textureFocus>
       <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
@@ -52,6 +54,6 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		
   </controls>
 </window>
+<!--Checksum:df1f962b9689817f6d0111a904986196-->
