@@ -112,6 +112,7 @@
           <id>3</id>
           <label>#MovingPictures.Translation.ChangeView.Label</label>
           <onleft>50</onleft>
+					<onright>3</onright>
           <onup>21</onup>
         </control>
         <control>
@@ -120,6 +121,7 @@
           <id>14</id>
           <label>#MovingPictures.Translation.SortBy.Label: #MovingPictures.Sort.Field</label>
           <onleft>50</onleft>
+					<onright>14</onright>
         </control>
         <control>
           <description>Filters Menu</description>
@@ -127,6 +129,7 @@
           <id>4</id>
           <label>#MovingPictures.Translation.FilterBy.Label ...</label>
           <onleft>50</onleft>
+					<onright>4</onright>
         </control>
         <control>
           <description>Parental Controls</description>
@@ -225,7 +228,7 @@
           <label>IMDb+</label>
           <hyperlink>31415</hyperlink>
           <onup>99992</onup>
-          <ondown>2</ondown>
+          <ondown>3</ondown>
           <onleft>50</onleft>
           <visible>plugin.isenabled(IMDbPlus)</visible>
         </control>
