@@ -826,6 +826,16 @@ namespace StreamedMPEditor
       noFocusAlphaSlider.Value = int.Parse(noFocusAlpha.Text, System.Globalization.NumberStyles.HexNumber);
     }
 
+    private void focusAlphaSlider_ValueChanged(object sender, EventArgs e)
+    {
+      focusAlpha.Text = focusAlphaSlider.Value.ToString("X");
+    }
+
+    private void noFocusAlphaSlider_ValueChanged(object sender, EventArgs e)
+    {
+      noFocusAlpha.Text = noFocusAlphaSlider.Value.ToString("X");
+    }
+
     private void removeButton_Click(object sender, EventArgs e)
     {
       removeToolStripMenuItem_Click(sender, e);
