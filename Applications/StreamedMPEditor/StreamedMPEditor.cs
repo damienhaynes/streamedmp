@@ -2793,17 +2793,6 @@ namespace StreamedMPEditor
 
     #endregion
 
-    private void noFocusAlphaSlider_ValueChanged(object sender, EventArgs e)
-    {
-
-    }
-
-    private void focusAlphaSlider_ValueChanged(object sender, EventArgs e)
-    {
-
-    }
-
-
   }
 }
 
