@@ -80,7 +80,7 @@
       <font>mediastream12tc</font>
       <label>#UpdateControl.UpdateSeverity ~ #UpdateControl.UpdateSize</label>
       <textcolor>ff222222</textcolor>
-      <visible>string.equals(#UpdateControl.Action, )</visible>
+      <visible>string.equals(#UpdateControl.Action, )+!string.equals(#UpdateControl.UpdateSize, )</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
@@ -94,7 +94,7 @@
       <font>mediastream12tc</font>
       <label>#UpdateControl.UpdateSeverity ~ #UpdateControl.UpdateSize</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>string.equals(#UpdateControl.Action, )</visible>
+      <visible>string.equals(#UpdateControl.Action, )+!string.equals(#UpdateControl.UpdateSize, )</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
