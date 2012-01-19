@@ -35,7 +35,7 @@ namespace SMPCheckSum_Test
       //SMPCheckSum_Test.Properties.Settings.Default.baseDirs.Clear();
       //SMPCheckSum_Test.Properties.Settings.Default.Save();
 
-      MessageBox.Show(Properties.Settings.Default.baseDirs.Count.ToString());
+      //MessageBox.Show(Properties.Settings.Default.baseDirs.Count.ToString());
 
       if (Properties.Settings.Default.baseDirs.Count < 2)
       {
@@ -48,9 +48,9 @@ namespace SMPCheckSum_Test
       {
         cboxXmlFolder.Items.Insert(i,Properties.Settings.Default.baseDirs[i].ToString());
         baseDirectory = cboxXmlFolder.Items[i - 1].ToString();
-        MessageBox.Show(baseDirectory);
+        //MessageBox.Show(baseDirectory);
       }
-      MessageBox.Show("xx" + baseDirectory);
+      //MessageBox.Show("xx" + baseDirectory);
       cboxXmlFolder.Text = baseDirectory;
       readAndVerifyFiles();
     }
