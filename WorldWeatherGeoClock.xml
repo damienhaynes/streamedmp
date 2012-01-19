@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--version="1.0" encoding="utf-8" standalone="yes"-->
 <window>
   <allowoverlay>yes</allowoverlay>
@@ -16,8 +16,7 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#WorldWeather.View,GeoClock)</visible>
-    </control>    
-    
+    </control>
     <control>
       <description>Location label</description>
       <type>label</type>
@@ -47,3 +46,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:053a68c44a791eeb6ab53acc342a24e6-->
