@@ -96,15 +96,15 @@
 #define MEDIAPORTAL_MINNOWARN_VERSION				"1.1.8.0" 		// 1.2.0 RC1
 #define MEDIAPORTAL_MIN_VERSION						"1.1.6.27644"	// 1.2.0 Beta
                            
-#define TVSERIES_MIN_VERSION						"3.1.3.1888"
+#define TVSERIES_MIN_VERSION						"3.2.0.1909"
 #define MOVINGPICTURES_MIN_VERSION					"1.2.3.1329"
-#define FANARTHANDLER_MIN_VERSION					"2.3.1.524"
-#define LATESTMEDIAHANDLER_MIN_VERSION				"1.0.0.7"
+#define FANARTHANDLER_MIN_VERSION					"2.3.1.529"
+#define LATESTMEDIAHANDLER_MIN_VERSION				"1.5.0.2"
 #define MYLYRICS_MIN_VERSION						"1.6.1.0"
 #define GLOBALSEARCH_MIN_VERSION					"1.7.5.55"
 #define INFOSERVICE_MIN_VERSION						"1.6.6.230"
-#define TRAKT_MIN_VERSION							"1.3.2.1"    
-#define WEATHER_MIN_VERSION							"0.3.0.0"
+#define TRAKT_MIN_VERSION							"1.3.3.1"    
+#define WEATHER_MIN_VERSION							"0.4.0.0"
 
 
 // XML Path Defines
@@ -264,7 +264,9 @@ prototype VOID		SaveTVLogoSelections();
 prototype VOID		UpdateTVSeriesLogoRules();
 prototype VOID		UpdateMyFilmsLogoRules();
 prototype VOID		CreateMPSectionEntry(STRING, STRING, STRING, STRING);
-
+prototype VOID		BackupHoverImages();           
+prototype VOID		RestoreHoverImages();                             
+                                       
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
 prototype NUMBER 	ShowSelectOptions(BOOL);
@@ -802,7 +804,10 @@ Dlg_SdStartCopy:
     
     // Cleanup Virutal Store
     CleanVirtualStoreDir();
- 
+ 	
+ 	// Backup Custom Hover Images
+ 	BackupHoverImages();
+ 	
     return 0;
 end;
 //---------------------------------------------------------------------------
@@ -953,11 +958,10 @@ begin
     CleanCache("Default");
     CleanCache("DefaultWide");
 	CleanCache(SKIN_NAME);
-	        
-    // Major Upgrade Cleanup
-    if g_bMajorUpgrade then
-    	MajorUpgradeCleanup();
-    endif;
+	   
+	// Major Upgrade Tasks
+	RestoreHoverImages();
+   	MajorUpgradeCleanup();
     
 	Disable(STATUSEX);
  	
@@ -2801,7 +2805,11 @@ end;
 function VOID MajorUpgradeCleanup()
 	STRING szUninstallKey, svSubStr, svValue;
 	NUMBER nvSize, nvType;
-begin 
+begin     
+	if (g_bMajorUpgrade = FALSE) then
+		return;
+	endif;
+
 	// For some reason InstallShield doesnt cleanup files/settings properly
 	// after upgrade, this function removes them manually
 
@@ -3652,4 +3660,61 @@ begin
      	endif;
      endcatch;
     
+end;     
+
+
+function void BackupHoverImages()
+	STRING szSrcFile, szTargetPath;
+begin
+    
+    // only backup if we are upgrading
+    if (g_bMajorUpgrade = FALSE) then
+    	return;
+    endif;
+    
+    Disable(LOGGING);
+    
+    if (MODE != SILENTMODE) then
+		SdShowMsg("Backing up Hover images...Please wait.", TRUE);
+	endif;
+	      
+    szSrcFile = INSTALLDIR ^ SKIN_NAME ^ "Media\\hover_*.png";
+    szTargetPath = INSTALLDIR ^ SKIN_NAME + "_Hover_Backup";
+        
+    XCopyFile ( szSrcFile, szTargetPath, COMP_NORMAL ); 
+         
+    if (MODE != SILENTMODE) then
+		SdShowMsg("Backing up Hover images...Please wait.", FALSE);
+	endif;
+	
+	Enable(LOGGING);
 end;
+     
+function void RestoreHoverImages()
+	STRING szSrcFile, szTargetPath;
+begin
+    // only restore if we are upgrading
+    if (g_bMajorUpgrade = FALSE) then
+    	return;
+    endif;
+        
+    Disable(LOGGING);
+    
+    if (MODE != SILENTMODE) then
+		SdShowMsg("Restoring up Hover images...Please wait.", TRUE);
+	endif;
+	   
+	szSrcFile = INSTALLDIR ^ SKIN_NAME + "_Hover_Backup\\hover_*.png";
+    szTargetPath = INSTALLDIR ^ SKIN_NAME ^ "Media";
+        
+    XCopyFile ( szSrcFile, szTargetPath, COMP_NORMAL ); 
+     
+    // delete Backup Folder
+    DeleteDir(INSTALLDIR ^ SKIN_NAME + "_Hover_Backup", ALLCONTENTS);
+         
+    if (MODE != SILENTMODE) then
+		SdShowMsg("Restoring up Hover images...Please wait.", FALSE);
+	endif;
+	
+	Enable(LOGGING);
+end;     
