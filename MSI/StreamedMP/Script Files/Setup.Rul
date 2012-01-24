@@ -264,8 +264,8 @@ prototype VOID		SaveTVLogoSelections();
 prototype VOID		UpdateTVSeriesLogoRules();
 prototype VOID		UpdateMyFilmsLogoRules();
 prototype VOID		CreateMPSectionEntry(STRING, STRING, STRING, STRING);
-prototype VOID		BackupHoverImages();           
-prototype VOID		RestoreHoverImages();                             
+prototype VOID		BackupImages();           
+prototype VOID		RestoreImages();                             
                                        
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -805,8 +805,8 @@ Dlg_SdStartCopy:
     // Cleanup Virutal Store
     CleanVirtualStoreDir();
  	
- 	// Backup Custom Hover Images
- 	BackupHoverImages();
+ 	// Backup Custom Images
+ 	BackupImages();
  	
     return 0;
 end;
@@ -960,7 +960,7 @@ begin
 	CleanCache(SKIN_NAME);
 	   
 	// Major Upgrade Tasks
-	RestoreHoverImages();
+	RestoreImages();
    	MajorUpgradeCleanup();
     
 	Disable(STATUSEX);
@@ -3663,7 +3663,7 @@ begin
 end;     
 
 
-function void BackupHoverImages()
+function void BackupImages()
 	STRING szSrcFile, szTargetPath;
 begin
     
@@ -3677,20 +3677,25 @@ begin
     if (MODE != SILENTMODE) then
 		SdShowMsg("Backing up Hover images...Please wait.", TRUE);
 	endif;
-	      
+	   
+	// backup hovers   
     szSrcFile = INSTALLDIR ^ SKIN_NAME ^ "Media\\hover_*.png";
-    szTargetPath = INSTALLDIR ^ SKIN_NAME + "_Hover_Backup";
+    szTargetPath = INSTALLDIR ^ SKIN_NAME + "_Image_Backup";
         
     XCopyFile ( szSrcFile, szTargetPath, COMP_NORMAL ); 
-         
+ 	
+ 	// backup splashscreen        
+    szSrcFile = INSTALLDIR ^ SKIN_NAME ^ "Media\\splashscreen.png";                     
+    XCopyFile ( szSrcFile, szTargetPath, COMP_NORMAL );
+    
     if (MODE != SILENTMODE) then
-		SdShowMsg("Backing up Hover images...Please wait.", FALSE);
+		SdShowMsg("Backing up Custom images...Please wait.", FALSE);
 	endif;
 	
 	Enable(LOGGING);
 end;
      
-function void RestoreHoverImages()
+function void RestoreImages()
 	STRING szSrcFile, szTargetPath;
 begin
     // only restore if we are upgrading
@@ -3703,17 +3708,18 @@ begin
     if (MODE != SILENTMODE) then
 		SdShowMsg("Restoring up Hover images...Please wait.", TRUE);
 	endif;
-	   
-	szSrcFile = INSTALLDIR ^ SKIN_NAME + "_Hover_Backup\\hover_*.png";
+	
+	// restore images   
+	szSrcFile = INSTALLDIR ^ SKIN_NAME + "_Image_Backup\\*.png";
     szTargetPath = INSTALLDIR ^ SKIN_NAME ^ "Media";
         
     XCopyFile ( szSrcFile, szTargetPath, COMP_NORMAL ); 
      
     // delete Backup Folder
-    DeleteDir(INSTALLDIR ^ SKIN_NAME + "_Hover_Backup", ALLCONTENTS);
+    DeleteDir(INSTALLDIR ^ SKIN_NAME + "_Image_Backup", ALLCONTENTS);
          
     if (MODE != SILENTMODE) then
-		SdShowMsg("Restoring up Hover images...Please wait.", FALSE);
+		SdShowMsg("Restoring up Custom images...Please wait.", FALSE);
 	endif;
 	
 	Enable(LOGGING);
