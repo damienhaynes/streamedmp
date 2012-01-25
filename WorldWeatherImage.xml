@@ -29,7 +29,8 @@
         <type>button</type>
         <id>19629001</id>
         <onleft>2</onleft>
-        <onup>2</onup>
+        <onup>50</onup>
+        <ondown>19629002</ondown>
         <width>130</width>
         <height>88</height>
         <textureFocus>#WorldWeather.ImageSatellite</textureFocus>
@@ -42,6 +43,8 @@
         <type>button</type>
         <id>19629002</id>
         <onleft>2</onleft>
+        <onup>19629001</onup>
+        <ondown>19629003</ondown>
         <width>130</width>
         <height>88</height>
         <textureFocus>#WorldWeather.ImageTemperature</textureFocus>
@@ -54,6 +57,8 @@
         <type>button</type>
         <id>19629003</id>
         <onleft>2</onleft>
+        <onup>19629002</onup>
+        <ondown>19629004</ondown>
         <width>130</width>
         <height>88</height>
         <textureFocus>#WorldWeather.ImageUVIndex</textureFocus>
@@ -66,6 +71,8 @@
         <type>button</type>
         <id>19629004</id>
         <onleft>2</onleft>
+        <onup>19629003</onup>
+        <ondown>19629005</ondown>
         <width>130</width>
         <height>88</height>
         <textureFocus>#WorldWeather.ImageWind</textureFocus>
@@ -77,12 +84,13 @@
         <description>Precipitation</description>
         <type>button</type>
         <id>19629005</id>
+        <onup>19629004</onup>
+        <ondown>2</ondown>
         <width>130</width>
         <height>88</height>
         <textureFocus>#WorldWeather.ImagePrecipitation</textureFocus>
         <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImagePrecipitation</textureNoFocus>
         <disabledcolor>30ffffff</disabledcolor>
-        <ondown>51</ondown>
         <onleft>2</onleft>
         <visible>!string.equals(#WorldWeather.ImagePrecipitation,)+string.equals(#WorldWeather.ImageView,Flat)</visible>
       </control>
@@ -261,121 +269,126 @@
       <visible>string.equals(#WorldWeather.View,Image)+control.hasfocus(19629005)+string.equals(#WorldWeather.ImageView,Flat)</visible>
     </control>
     <control>
-      <description>Filmstrip view</description>
-      <type>filmstrip</type>
-      <id>50</id>
-      <onup>51</onup>
-      <ondown>2</ondown>
-      <posX>100</posX>
-      <posY>400</posY>
-      <width>1200</width>
-      <height>217</height>
-      <thumbWidth>200</thumbWidth>
-      <thumbHeight>140</thumbHeight>
-      <thumbPosX>7</thumbPosX>
-      <thumbPosY>7</thumbPosY>
-      <itemWidth>210</itemWidth>
-      <itemHeight>154</itemHeight>
-      <textureWidth>217</textureWidth>
-      <textureHeight>154</textureHeight>
-      <imageFolderFocus>imagebg.png</imageFolderFocus>
-      <imageFolder>imagebg.png</imageFolder>
-      <frame>imagebg.png</frame>
-      <frameFocus>imagebg.png</frameFocus>
-      <background>imagebg.png</background>
-      <thumbs />
-      <InfoImage />
-      <showFrame>no</showFrame>
-      <showFolder>yes</showFolder>
-      <showBackGround>no</showBackGround>
-      <showInfoImage>no</showInfoImage>
-      <thumbAnimation effect="zoom" start="100,100" end="200,200" time="0">focus</thumbAnimation>
-      <thumbAnimation effect="zoom" start="200,200" end="100,100" time="0">unfocus</thumbAnimation>
-      <thumbAnimation effect="slide" end="0,-18" time="0">focus</thumbAnimation>
-      <thumbAnimation effect="slide" end="0,0" time="0">unfocus</thumbAnimation>
-      <spinPosX>1565</spinPosX>
-      <spinPosY>1685</spinPosY>
-      <spinCanFocus>no</spinCanFocus>
-      <scrollOffset>3</scrollOffset>
-      <visible>string.equals(#WorldWeather.View,Image)+string.equals(#WorldWeather.ImageView,Filmstrip)</visible>
+      <description>group element</description>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Coverflow view</description>
-      <type>coverflow</type>
-      <id>51</id>
-      <colordiffuse>90ffffff</colordiffuse>
-      <dimColor>90ffffff</dimColor>
-      <posX>0</posX>
-      <posY>230</posY>
-      <width>1280</width>
-      <height>720</height>
-      <onright>51</onright>
-      <onleft>51</onleft>
-      <ondown>2</ondown>
-      <onup>19629001</onup>
-      <selectedCard>0</selectedCard>
-      <cardWidth>492</cardWidth>
-      <cardHeight>370</cardHeight>
-      <angle>45</angle>
-      <sideShift>400</sideShift>
-      <sideGap>350</sideGap>
-      <sideDepth>350</sideDepth>
-      <offsetY>0</offsetY>
-      <selectedOffsetY>0</selectedOffsetY>
-      <speed>4</speed>
-      <!-- Background -->
-      <backgroundColor>000000FF</backgroundColor>
-      <backgroundHeight>250</backgroundHeight>
-      <backgroundWidth>1280</backgroundWidth>
-      <backgroundX>0</backgroundX>
-      <backgroundY>370</backgroundY>
-      <backgroundDiffuse>FF000000</backgroundDiffuse>
-      <background>-</background>
-      <showBackground>no</showBackground>
-      <!-- Foreground -->
-      <foregroundHeight>505</foregroundHeight>
-      <foregroundWidth>1280</foregroundWidth>
-      <foregroundX>0</foregroundX>
-      <foregroundY>215</foregroundY>
-      <foregroundDiffuse>FF000000</foregroundDiffuse>
-      <showForeground>no</showForeground>
-      <!-- Frame -->
-      <showFrame>no</showFrame>
-      <frame>-</frame>
-      <frameFocus>-</frameFocus>
-      <frameWidth>455</frameWidth>
-      <frameHeight>350</frameHeight>
-      <spinSpeed>8</spinSpeed>
-      <unfocusedAlpha>ff</unfocusedAlpha>
-      <folderPrefix>[</folderPrefix>
-      <folderSuffix>]</folderSuffix>
-      <font1>mediastream14tc</font1>
-      <font2>mediastream12tc</font2>
-      <label1>#selecteditem</label1>
-      <label2>#selecteditem2</label2>
-      <textColor>FFFFFFFF</textColor>
-      <remoteColor>FFFF0000</remoteColor>
-      <playedColor>FFA0D0FF</playedColor>
-      <downloadColor>FF00FF00</downloadColor>
-      <selectedColor>FFFFFFFF</selectedColor>
-      <shadowAngle>45</shadowAngle>
-      <shadowDistance>1</shadowDistance>
-      <shadowColor>FF000000</shadowColor>
-      <label1YOff>400</label1YOff>
-      <label2YOff>425</label2YOff>
-      <pageSize>5</pageSize>
-      <scrollbarBackground>bar_hor.png</scrollbarBackground>
-      <scrollbarLeft>mouse_left_horizontal.png</scrollbarLeft>
-      <scrollbarRight>mouse_right_horizontal.png</scrollbarRight>
-      <scrollbarYOff>405</scrollbarYOff>
-      <showScrollbar>no</showScrollbar>
-      <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_square_mask.png" />
-      <visible>string.equals(#WorldWeather.View,Image)+string.equals(#WorldWeather.ImageView,Coverflow)</visible>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
+      <type>group</type>
+      <control>
+        <type>facadeview</type>
+        <id>50</id>
+        <control>
+          <description>Filmstrip view</description>
+          <type>filmstrip</type>
+          <id>50</id>
+          <onup>2</onup>
+          <ondown>2</ondown>
+          <posX>100</posX>
+          <posY>400</posY>
+          <width>1200</width>
+          <height>217</height>
+          <thumbWidth>200</thumbWidth>
+          <thumbHeight>140</thumbHeight>
+          <thumbPosX>7</thumbPosX>
+          <thumbPosY>7</thumbPosY>
+          <itemWidth>210</itemWidth>
+          <itemHeight>154</itemHeight>
+          <textureWidth>217</textureWidth>
+          <textureHeight>154</textureHeight>
+          <imageFolderFocus>imagebg.png</imageFolderFocus>
+          <imageFolder>imagebg.png</imageFolder>
+          <frame>imagebg.png</frame>
+          <frameFocus>imagebg.png</frameFocus>
+          <background>imagebg.png</background>
+          <thumbs />
+          <InfoImage />
+          <showFrame>no</showFrame>
+          <showFolder>yes</showFolder>
+          <showBackGround>no</showBackGround>
+          <showInfoImage>no</showInfoImage>
+          <thumbAnimation effect="zoom" start="100,100" end="200,200" time="0">focus</thumbAnimation>
+          <thumbAnimation effect="zoom" start="200,200" end="100,100" time="0">unfocus</thumbAnimation>
+          <thumbAnimation effect="slide" end="0,-18" time="0">focus</thumbAnimation>
+          <thumbAnimation effect="slide" end="0,0" time="0">unfocus</thumbAnimation>
+          <spinPosX>1565</spinPosX>
+          <spinPosY>1685</spinPosY>
+          <spinCanFocus>no</spinCanFocus>
+          <scrollOffset>3</scrollOffset>
+          <visible>string.equals(#WorldWeather.View,Image)+string.equals(#WorldWeather.ImageView,Filmstrip)</visible>
+        </control>
+        <control>
+          <description>Cover Flow view</description>
+          <type>coverflow</type>
+          <colordiffuse>90ffffff</colordiffuse>
+          <dimColor>90ffffff</dimColor>
+          <id>50</id>
+          <posX>0</posX>
+          <posY>230</posY>
+          <width>1280</width>
+          <height>720</height>
+          <onup>2</onup>
+          <ondown>2</ondown>
+          <onright>50</onright>
+          <selectedCard>0</selectedCard>
+          <cardWidth>492</cardWidth>
+          <cardHeight>370</cardHeight>
+          <angle>45</angle>
+          <sideShift>400</sideShift>
+          <sideGap>350</sideGap>
+          <sideDepth>350</sideDepth>
+          <offsetY>0</offsetY>
+          <selectedOffsetY>0</selectedOffsetY>
+          <speed>4</speed>
+          <backgroundColor>000000FF</backgroundColor>
+          <backgroundHeight>250</backgroundHeight>
+          <backgroundWidth>1280</backgroundWidth>
+          <backgroundX>0</backgroundX>
+          <backgroundY>370</backgroundY>
+          <backgroundDiffuse>FF000000</backgroundDiffuse>
+          <background>black.png</background>
+          <showBackground>no</showBackground>
+          <foregroundHeight>505</foregroundHeight>
+          <foregroundWidth>1280</foregroundWidth>
+          <foregroundX>0</foregroundX>
+          <foregroundY>215</foregroundY>
+          <foregroundDiffuse>FF000000</foregroundDiffuse>
+          <foreground>coverflow_overlay.png</foreground>
+          <showForeground>no</showForeground>
+          <showFrame>no</showFrame>
+          <frame>-</frame>
+          <frameFocus>-</frameFocus>
+          <frameWidth>455</frameWidth>
+          <frameHeight>350</frameHeight>
+          <spinSpeed>8</spinSpeed>
+          <unfocusedAlpha>ff</unfocusedAlpha>
+          <folderPrefix>[</folderPrefix>
+          <folderSuffix>]</folderSuffix>
+          <font1>mediastream14tc</font1>
+          <font2>mediastream12tc</font2>
+          <label1>#selecteditem</label1>
+          <label2>#selecteditem2</label2>
+          <textColor>FFFFFFFF</textColor>
+          <remoteColor>FFFF0000</remoteColor>
+          <playedColor>FFA0D0FF</playedColor>
+          <downloadColor>FF00FF00</downloadColor>
+          <selectedColor>FFFFFFFF</selectedColor>
+          <shadowAngle>45</shadowAngle>
+          <shadowDistance>1</shadowDistance>
+          <shadowColor>FF000000</shadowColor>
+          <label1YOff>400</label1YOff>
+          <label2YOff>425</label2YOff>
+          <pageSize>5</pageSize>
+          <scrollbarBackground>bar_hor.png</scrollbarBackground>
+          <scrollbarLeft>mouse_left_horizontal.png</scrollbarLeft>
+          <scrollbarRight>mouse_right_horizontal.png</scrollbarRight>
+          <scrollbarYOff>405</scrollbarYOff>
+          <showScrollbar>no</showScrollbar>
+          <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_square_mask.png" />
+          <visible>string.equals(#WorldWeather.View,Image)+string.equals(#WorldWeather.ImageView,Coverflow)</visible>
+        </control>
+      </control>
     </control>
   </controls>
 </window>
-<!--Checksum:73f4b87f593fb3f4965d1e668055e4c8-->
+<!--Checksum:bf55a839d2c77223f26cdb41df56ebca-->
