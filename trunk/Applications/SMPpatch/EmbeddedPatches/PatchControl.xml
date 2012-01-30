@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <patches>
   <!-- This defines the minium skin version this patch can run against -->
-  <minskinversion>1.7.1.2953</minskinversion>
+  <minskinversion>1.7.5.3066</minskinversion>
   <!-- There are 4 possible fields for each patch, 'version' is only needed for the zip file as versions are extracted from .dll and .exe -->
   <!-- Set <action> to mandatoryinstall if it must be installed even though it doesn't exist locally e.g. new core file -->
   <!-- Window Plugins -->
@@ -10,7 +10,7 @@
     <action>install</action>
     <location>windows</location>
   </patch>
-  <patch>
+  <!--<patch>
     <name>GUIGlobalSearch.dll</name>
     <action>install</action>
     <location>windows</location>
@@ -19,7 +19,7 @@
     <name>InfoService.dll</name>
     <action>install</action>
     <location>windows</location>
-  </patch>
+  </patch>-->
   <patch>
     <name>TraktPlugin.dll</name>
     <action>install</action>
@@ -112,6 +112,6 @@
     <name>SkinUpdate.zip</name>
     <action>unzip</action>
     <location>temp</location>
-    <version>1.7.5.3066</version>
+    <version>1.7.6.3093</version>
   </patch>
 </patches>
