@@ -103,7 +103,7 @@
 #define MYLYRICS_MIN_VERSION						"1.6.1.0"
 #define GLOBALSEARCH_MIN_VERSION					"1.7.5.55"
 #define INFOSERVICE_MIN_VERSION						"1.6.6.230"
-#define TRAKT_MIN_VERSION							"1.4.0.0"    
+#define TRAKT_MIN_VERSION							"1.5.1.0"    
 #define WEATHER_MIN_VERSION							"0.4.0.0"
 
 
@@ -208,14 +208,6 @@
 #ifndef CSIDL_PROFILE
 	#define CSIDL_PROFILE          		0x0028      
 #endif
-
-// XML Entries
-#define XML_TRAKT_USERNAME				"Username"
-#define XML_TRAKT_PASSWORD				"Password"
-#define XML_TRAKT_MOVPICS				"MovingPictures"
-#define XML_TRAKT_TVSERIES				"TVSeries"
-#define XML_TRAKT_MYVIDEOS				"MyVideos"
-#define XML_TRAKT_MYFILMS				"MyFilms"
          
 // Prototype Functions         
 prototype VOID 		CleanCache(STRING);
@@ -274,8 +266,6 @@ prototype NUMBER 	ShowTVSeriesAdvanced(BOOL);
 prototype NUMBER	ShowSelectNowPlaying(BOOL);
 prototype NUMBER	ShowSelectLogos(BOOL);
  
-prototype VOID		GetTraktSettings();
-prototype VOID		SetTraktSettings();
 
 // Global Variables
 BOOL g_bTVSeriesDefault;
@@ -328,12 +318,6 @@ STRING g_sTVLogosGermanyTransparent;
 STRING g_sTVLogosCanada;
 STRING g_sTVLogosUK;
        
-STRING g_sTraktUserName;
-STRING g_sTraktPassword;
-STRING g_sTraktTVSeries;
-STRING g_sTraktMovingPictures;
-STRING g_sTraktMyVideos;
-STRING g_sTraktMyFilms;
 
 //---------------------------------------------------------------------------
 // OnBegin
@@ -605,23 +589,7 @@ begin
 			g_bStartBasicHome = TRUE;
 		endif;
 	endif;	
-	
-	// Trakt Migration, for old users
-	// Set Trakt Defaults
-	// Settings will be read from config file later
-	g_sTraktUserName = "";
-	g_sTraktPassword = "";
-	g_sTraktMyVideos = "-1";
-	g_sTraktMyFilms = "-1";
-	g_sTraktTVSeries = "0";
-	if (Is(FILE_EXISTS, g_sPluginsDir ^ "Windows\\MovingPictures.dll")) then
-		g_sTraktMovingPictures = "1";
-	else
-		g_sTraktMovingPictures = "-1";
-	endif;
-	
-	GetTraktSettings();
-	
+		
 	g_bSetAsDefaultSkin = TRUE; // Should always be default	
 	
 end;
@@ -2507,9 +2475,6 @@ begin
 		SetMPXMLProperty(sFile, "gui","startbasichome","no");
 	endif;
 	
-	// Set Trakt Settings
-	SetTraktSettings();
-	
 	// Apply CheckSums
 	ApplyCheckSum();	
 	
@@ -3550,118 +3515,6 @@ begin
     endif;    
     
 end;
-
-function void GetTraktSettings()
-	OBJECT xmlReader, db;
-	STRING sFile, sResult;	
-begin
-	try
-		set xmlReader = CoCreateObjectDotNet(SUPPORTDIR^"Setup.dll", "MediaPortal.XmlReader" );
-		
-		sFile = g_sConfigDir ^ "MediaPortal.xml";
-		
-		// Load MediaPortal XML file
-		xmlReader.Load(sFile);
-		
-		// Read Settings
-		g_sTraktUserName = xmlReader.GetEntry("Trakt", XML_TRAKT_USERNAME);
-		g_sTraktPassword = xmlReader.GetEntry("Trakt", XML_TRAKT_PASSWORD);
-		
-		sResult = xmlReader.GetEntry("Trakt", XML_TRAKT_TVSERIES);
-		if (sResult != "") then
-			g_sTraktTVSeries = sResult;
-		endif;
-		
-		sResult = xmlReader.GetEntry("Trakt", XML_TRAKT_MOVPICS);
-		if (sResult != "") then
-			g_sTraktMovingPictures = sResult;
-		endif; 
-		
-		sResult = xmlReader.GetEntry("Trakt", XML_TRAKT_MYVIDEOS);
-		if (sResult != "") then
-			g_sTraktMyVideos = sResult;
-		endif;
-		
-		sResult = xmlReader.GetEntry("Trakt", XML_TRAKT_MYFILMS);
-		if (sResult != "") then
-			g_sTraktMyFilms = sResult;
-		endif;
-						
-		if (g_sTraktUserName = "" && g_sTraktPassword = "") then 
-			
-			// Try load setting from TVSeries database
-			set db = CoCreateObjectDotNet(SUPPORTDIR^"Setup.dll", "TVSeries.Database" );
-			
-			sFile = g_sDatabaseDir ^ "TVSeriesDatabase4.db3";			 
-			if db.Open(sFile) then		
-				// Upgrade settings from tvseries database
-				g_sTraktUserName = db.GetOption("TraktUsername");
-				g_sTraktPassword = db.GetOption("TraktPassword");
-				
-				// Clear settings in TVSeries database now that we have upgraded
-				db.SetOption("TraktUsername", "");
-				db.SetOption("TraktPassword", "");
-			endif;	
-						 
-			set db = NOTHING;
-			 			 
-		endif;
-				
-		// Destroy Object
-	    set xmlReader = NOTHING;
-	catch
-		if (MODE != SILENTMODE) then
-	 		//MessageBox("Error reading Trakt settings!",INFORMATION);
-	 	endif;
-	endcatch;	      
-end;
-
-function void SetTraktSettings()
-	OBJECT xmlWriter;
-	STRING sFile;
-begin        
-	
-	sFile = g_sConfigDir ^ "MediaPortal.xml";
-    
-    try 
-	    set xmlWriter = CoCreateObjectDotNet(SUPPORTDIR^"Setup.dll", "MediaPortal.XmlWriter" );
-	    
-	    // check if MediaPortal.xml exists, otherwise create it
-	    // this could happen if we install directly after 
-	    // MediaPortal without loading and saving configuration
-	    if (!Is(FILE_EXISTS, sFile)) then
-	    	// Create it
-	    	xmlWriter.CreateXmlConfigFile(sFile);
-	    endif;
-       
-       	// Load Document
-       	xmlWriter.Load(sFile);
-         
-        xmlWriter.SetEntry("Trakt", XML_TRAKT_USERNAME, g_sTraktUserName);
-        xmlWriter.SetEntry("Trakt", XML_TRAKT_PASSWORD, g_sTraktPassword);
-        xmlWriter.SetEntry("Trakt", XML_TRAKT_TVSERIES, g_sTraktTVSeries);  
-        xmlWriter.SetEntry("Trakt", XML_TRAKT_MOVPICS, g_sTraktMovingPictures);  
-        xmlWriter.SetEntry("Trakt", XML_TRAKT_MYVIDEOS, g_sTraktMyVideos);    
-        xmlWriter.SetEntry("Trakt", XML_TRAKT_MYFILMS, g_sTraktMyFilms);
-        
-        // Enable plugin on mediaportal startup
-        if (Is(FILE_EXISTS, g_sPluginsDir ^ "windows\\TraktPlugin.dll")) then
-        	xmlWriter.SetEntry("plugins", "Trakt", "yes");
-        	xmlWriter.SetEntry("pluginsdlls", "TraktPlugin.dll", "yes");
-        endif;
-        
-        // Save Document
-        xmlWriter.Save(sFile);
-           
-     	set xmlWriter = NOTHING;
-     catch
-     	if (MODE != SILENTMODE) then
-     		//MessageBox("Error writing Trakt settings!",INFORMATION);
-     	endif;
-     endcatch;
-    
-end;     
-
 
 function void BackupImages()
 	STRING szSrcFile, szTargetPath;
