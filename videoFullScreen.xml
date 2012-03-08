@@ -155,6 +155,7 @@
       <font>mediastream11</font>
       <visible>[window.ispauseosdvisible+!window.isosdvisible]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
+    <import>mvCentral.PlayStart.xml</import> 
     <import>common.player.xml</import>
     <import>common.play.fullscreen.xml</import>
     <import>common.progressbar.xml</import>

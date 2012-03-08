@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <controls>
+    <!--
+   **************************************************************************************
+   This file is an import to videoFullScreen.xml
+   **************************************************************************************
+   NOTE: *** DO NOT USE WindowOpen/WindowClose Animation Types in videoFullScreen.xml ***
+   **************************************************************************************
+   -->
+    <!-- ******** Pop next Video Box for mvCentral ********* -->
+    <control>
+      <description>Movie/File Status Icons group</description>
+      <type>group</type>
+      <dimColor>ffffffff</dimColor>
+      <visible>!window.isosdvisible+string.equals(#mvCentral.Play.Started,true)</visible>
+      <animation effect="fade" time="300" delay="300">VisibleChange</animation>
+      <animation effect="slide" start="600,0" end="0,0" tween="quadratic" time="500" delay="100">VisibleChange</animation>
+      <control>
+        <description>background</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>700</posX>
+        <posY>530</posY>
+        <width>585</width>
+        <height>192</height>
+        <texture>mpinfo_filmbox.old.png</texture>
+      </control>
+      <control>
+        <description>Artist Thumb</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>732</posX>
+        <posY>555</posY>
+        <width>150</width>
+        <height>150</height>
+        <texture>#Play.Current.Thumb</texture>
+      </control>
+      <control>
+        <description>Atrtist Name</description>
+        <id>0</id>
+        <type>fadelabel</type>
+        <posX>900</posX>
+        <posY>550</posY>
+        <width>300</width>
+        <font>mediastream11tc</font>
+        <label>#Play.Current.mvArtist</label>
+      </control>
+      <control>
+        <description>Track Name</description>
+        <id>0</id>
+        <type>fadelabel</type>
+        <posX>900</posX>
+        <posY>570</posY>
+        <width>300</width>
+        <font>mediastream10tc</font>
+        <label>#Play.Current.mvVideo</label>
+        <textcolor>ff909090</textcolor>
+      </control>
+      <control>
+        <description>Genre</description>
+        <id>0</id>
+        <type>fadelabel</type>
+        <posX>900</posX>
+        <posY>590</posY>
+        <width>300</width>
+        <font>mediastream10tc</font>
+        <label>#Play.Current.Genre </label>
+        <textcolor>ff909090</textcolor>
+      </control>
+      <control>
+        <description>Runtime</description>
+        <id>0</id>
+        <type>fadelabel</type>
+        <posX>900</posX>
+        <posY>620</posY>
+        <width>300</width>
+        <font>mediastream10tc</font>
+        <label>#Play.Current.Runtime </label>
+        <textcolor>ff909090</textcolor>
+      </control>
+      <control>
+        <description>Album Star Rating Image</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>900</posX>
+        <posY>645</posY>
+        <width>300</width>
+        <width>94</width>
+        <height>18</height>
+        <texture>star#Play.Current.Rating.png</texture>
+      </control>
+      <!-- Video Codecs -->
+      <control>
+        <description>SD/HD Fullscreen/Widescreen</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>900</posX>
+        <posY>675</posY>
+        <width>100</width>
+        <height>32</height>
+        <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#Play.Current.VideoResolution #Play.Current.AspectRatio.png</texture>
+      </control>
+      <control>
+        <description>Video Codecs</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>1020</posX>
+        <posY>675</posY>
+        <width>100</width>
+        <height>32</height>
+        <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#Play.Current.VideoCodec.Texture.png</texture>
+      </control>
+      <!-- Audio Channels / Codecs-->
+      <control>
+        <description>Audio Codecs / Channels</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>1140</posX>
+        <posY>675</posY>
+        <width>100</width>
+        <height>32</height>
+        <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#Play.Current.AudioCodec.Texture #Play.Current.AudioChannels.png</texture>
+      </control>
+    </control>
+  </controls>
+</window>
