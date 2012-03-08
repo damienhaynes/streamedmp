@@ -96,6 +96,18 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
+      <description>Page Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1023</posX>
+      <posY>688</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
       <description>Page Count Spin Control Background</description>
       <type>image</type>
       <id>0</id>
@@ -164,7 +176,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <type>Number of files (Album View)</type>
+      <type>label</type>
       <description>Number of Files Label (Album)</description>
       <id>0</id>
       <posX>1246</posX>
@@ -193,9 +205,11 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
+
     <!-- ******************************************************************** -->
     <!-- Section: List View and Icon Views - Artwork/Information                       -->
     <!-- ******************************************************************** -->
+
     <control>
       <id>0</id>
       <type>image</type>
