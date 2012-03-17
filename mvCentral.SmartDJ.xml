@@ -4,18 +4,10 @@
   <defaultcontrol>30</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.hover:-</define>
+  <define>#useSelectedFanart:Yes</define>
   <controls>
-    <control>
-      <description>Main Background image</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <colordiffuse>F0ffffff</colordiffuse>
-      <texture>mvcSmartDJ.jpg</texture>
-    </control>
+
+    <import>mvcentral.smartdj.selected.fanart.xml</import>
     <control>
       <id>0</id>
       <description>Main overlay image</description>
