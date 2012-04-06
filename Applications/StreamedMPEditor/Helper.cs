@@ -347,7 +347,8 @@ namespace StreamedMPEditor
       UpdateControl,
       eMail,
       LatestMediaHandler,
-      WorldWeather
+      WorldWeather,
+      mvCentral
     }
 
     class PluginDetails
@@ -359,6 +360,10 @@ namespace StreamedMPEditor
       {
         switch (plugin)
         {
+          case Plugins.mvCentral:
+            this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\mvCentral.dll");
+            this.name = "mvCentral";
+            break;
           case Plugins.DriveFreeSpace:
             this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"process\DriveFreeSpace.dll");
             this.name = "DriveFreeSpace";

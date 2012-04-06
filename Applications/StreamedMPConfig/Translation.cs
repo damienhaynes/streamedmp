@@ -258,6 +258,7 @@ namespace StreamedMPConfig
     public static string MediaPortalShutDownMenu = "Shutdown Menu";
     public static string MediaPortalRestartMessage = "Are you sure you want to restart MediaPortal?";
     public static string LatestMusic = "Latest Music";
+    public static string LatestMusicVideos = "Latest Music Videos";
     public static string LatestTVRecordings = "Latest TV Recordings";
     public static string FilterWatchedRecents = "Filter Watched in Recently Added";
     public static string RecordedOn = "Recorded On";

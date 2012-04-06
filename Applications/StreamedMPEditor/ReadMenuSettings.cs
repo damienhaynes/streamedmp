@@ -260,6 +260,7 @@ namespace StreamedMPEditor
         movPicsOptions.DisableFadeLabels = bool.Parse(readEntryValue(optionsTag, "mrMovPicsDisableFadeLabel", nodelist));
         cbEnableRecentRecordedTV.Checked = bool.Parse(readEntryValue(optionsTag, "mrRecordedTVEnabled", nodelist));
         cbEnableRecentMusic.Checked = bool.Parse(readEntryValue(optionsTag, "mrMusicEnabled", nodelist));
+        cbEnableRecentMusicVideos.Checked = bool.Parse(readEntryValue(optionsTag, "mrMusicVideosEnabled", nodelist));
         driveFreeSpaceList = readEntryValue(optionsTag, "driveFreeSpaceList", nodelist);
         cbSleepControlOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "sleepControlEnabled", nodelist));
         cbSocksOverlay.Checked = bool.Parse(readEntryValue(optionsTag, "stocksControlEnabled", nodelist));
@@ -785,6 +786,11 @@ namespace StreamedMPEditor
       if (mrOption == "false" && skinId == musicSkinID)
         return displayMostRecent.music;
 
+      // Enable most recent Music on Music menu item if not defined
+      if (mrOption == "false" && skinId == mvCentralSkinID)
+        return displayMostRecent.musicVideos;
+
+
       if (mrOption == displayMostRecent.movies.ToString() || mrOption == "movies")
           return displayMostRecent.movies;
       else if (mrOption == displayMostRecent.tvSeries.ToString())
@@ -793,6 +799,8 @@ namespace StreamedMPEditor
           return displayMostRecent.music;
       else if (mrOption == displayMostRecent.recordedTV.ToString())
           return displayMostRecent.recordedTV;
+      else if (mrOption == displayMostRecent.musicVideos.ToString())
+        return displayMostRecent.musicVideos;
       else if (mrOption == displayMostRecent.freeDriveSpace.ToString())
           return displayMostRecent.freeDriveSpace;
       else if (mrOption == displayMostRecent.htpcInfo.ToString())

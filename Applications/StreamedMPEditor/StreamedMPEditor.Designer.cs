@@ -178,6 +178,7 @@
       this.fullWeatherSummaryMiddle = new System.Windows.Forms.RadioButton();
       this.tabPage1 = new System.Windows.Forms.TabPage();
       this.groupBox6 = new System.Windows.Forms.GroupBox();
+      this.cbEnableRecentMusicVideos = new System.Windows.Forms.CheckBox();
       this.cbMyeMailManager = new System.Windows.Forms.CheckBox();
       this.cbUpdateControlOverlay = new System.Windows.Forms.CheckBox();
       this.cbSocksOverlay = new System.Windows.Forms.CheckBox();
@@ -874,7 +875,7 @@
       this.cboContextLabel.Size = new System.Drawing.Size(148, 21);
       this.cboContextLabel.TabIndex = 10;
       this.toolTip1.SetToolTip(this.cboContextLabel, "The lable used above the menu item in the vertical default menu style.\r\n\r\nUsed in" +
-              ": Default Horizontal Menu");
+        ": Default Horizontal Menu");
       this.cboContextLabel.TextChanged += new System.EventHandler(this.cboContextLabels_TextChanged);
       // 
       // label18
@@ -955,7 +956,7 @@
       this.richTextBox2.TabIndex = 122;
       this.richTextBox2.TabStop = false;
       this.richTextBox2.Text = "           To create new menu item\n  1. Select Menu Item from Dropdown.\n         " +
-          "                  OR\n  2. Select Skin file from List.";
+    "                  OR\n  2. Select Skin file from List.";
       // 
       // groupBox3
       // 
@@ -1437,7 +1438,7 @@
       this.cbOverlayFanart.TabIndex = 42;
       this.cbOverlayFanart.Text = "Enable Fanart in Music/Video Overlay";
       this.toolTip1.SetToolTip(this.cbOverlayFanart, "If ticked Fanart for now playing artist will be displayed as a background to the " +
-              "Music/Video overlay.");
+        "Music/Video overlay.");
       this.cbOverlayFanart.UseVisualStyleBackColor = true;
       // 
       // cboLabelFont
@@ -1674,7 +1675,7 @@
       this.wrapString.TabIndex = 13;
       this.wrapString.Text = "Enable text wrap (RSS and Twitter tickers)\r\n";
       this.toolTip1.SetToolTip(this.wrapString, "This enables the text wrap feature avaiable in  MP 1.1 Beta+ If MP 1.1 or greater" +
-              " is not installed this option will be disabled.\r\n");
+        " is not installed this option will be disabled.\r\n");
       this.wrapString.UseVisualStyleBackColor = true;
       // 
       // noFocusAlpha
@@ -1775,7 +1776,7 @@
       this.txtFocusColour.TabIndex = 5;
       this.txtFocusColour.Text = "FFFFFF";
       this.toolTip1.SetToolTip(this.txtFocusColour, "This is the colour of the selected item, clicking in this box will display the\r\nc" +
-              "olour choser.\r\n");
+        "olour choser.\r\n");
       // 
       // label16
       // 
@@ -2036,6 +2037,7 @@
       // 
       // groupBox6
       // 
+      this.groupBox6.Controls.Add(this.cbEnableRecentMusicVideos);
       this.groupBox6.Controls.Add(this.cbMyeMailManager);
       this.groupBox6.Controls.Add(this.cbUpdateControlOverlay);
       this.groupBox6.Controls.Add(this.cbSocksOverlay);
@@ -2053,11 +2055,23 @@
       this.groupBox6.TabStop = false;
       this.groupBox6.Text = "Select Overlays";
       // 
+      // cbEnableRecentAddedMusicVideo
+      // 
+      this.cbEnableRecentMusicVideos.AutoSize = true;
+      this.cbEnableRecentMusicVideos.Enabled = false;
+      this.cbEnableRecentMusicVideos.Location = new System.Drawing.Point(14, 70);
+      this.cbEnableRecentMusicVideos.Name = "cbEnableRecentAddedMusicVideo";
+      this.cbEnableRecentMusicVideos.Size = new System.Drawing.Size(191, 17);
+      this.cbEnableRecentMusicVideos.TabIndex = 20;
+      this.cbEnableRecentMusicVideos.Text = "Enable Last 3 Added Music Videos";
+      this.cbEnableRecentMusicVideos.UseVisualStyleBackColor = true;
+      this.cbEnableRecentMusicVideos.CheckedChanged += new System.EventHandler(this.cnEnableRecentAddedMusicVideo_CheckedChanged);
+      // 
       // cbMyeMailManager
       // 
       this.cbMyeMailManager.AutoSize = true;
       this.cbMyeMailManager.Enabled = false;
-      this.cbMyeMailManager.Location = new System.Drawing.Point(302, 92);
+      this.cbMyeMailManager.Location = new System.Drawing.Point(302, 116);
       this.cbMyeMailManager.Name = "cbMyeMailManager";
       this.cbMyeMailManager.Size = new System.Drawing.Size(176, 17);
       this.cbMyeMailManager.TabIndex = 19;
@@ -2081,7 +2095,7 @@
       // 
       this.cbSocksOverlay.AutoSize = true;
       this.cbSocksOverlay.Enabled = false;
-      this.cbSocksOverlay.Location = new System.Drawing.Point(302, 46);
+      this.cbSocksOverlay.Location = new System.Drawing.Point(302, 70);
       this.cbSocksOverlay.Name = "cbSocksOverlay";
       this.cbSocksOverlay.Size = new System.Drawing.Size(192, 17);
       this.cbSocksOverlay.TabIndex = 15;
@@ -2092,7 +2106,7 @@
       // btConfigureFreeDriveSpace
       // 
       this.btConfigureFreeDriveSpace.Enabled = false;
-      this.btConfigureFreeDriveSpace.Location = new System.Drawing.Point(598, 19);
+      this.btConfigureFreeDriveSpace.Location = new System.Drawing.Point(608, 19);
       this.btConfigureFreeDriveSpace.Name = "btConfigureFreeDriveSpace";
       this.btConfigureFreeDriveSpace.Size = new System.Drawing.Size(75, 23);
       this.btConfigureFreeDriveSpace.TabIndex = 17;
@@ -2115,7 +2129,7 @@
       // 
       this.cbHtpcInfoOverlay.AutoSize = true;
       this.cbHtpcInfoOverlay.Enabled = false;
-      this.cbHtpcInfoOverlay.Location = new System.Drawing.Point(302, 69);
+      this.cbHtpcInfoOverlay.Location = new System.Drawing.Point(302, 93);
       this.cbHtpcInfoOverlay.Name = "cbHtpcInfoOverlay";
       this.cbHtpcInfoOverlay.Size = new System.Drawing.Size(148, 17);
       this.cbHtpcInfoOverlay.TabIndex = 16;
@@ -2162,7 +2176,7 @@
       // 
       this.cbPowerControlOverlay.AutoSize = true;
       this.cbPowerControlOverlay.Enabled = false;
-      this.cbPowerControlOverlay.Location = new System.Drawing.Point(14, 71);
+      this.cbPowerControlOverlay.Location = new System.Drawing.Point(302, 47);
       this.cbPowerControlOverlay.Name = "cbPowerControlOverlay";
       this.cbPowerControlOverlay.Size = new System.Drawing.Size(167, 17);
       this.cbPowerControlOverlay.TabIndex = 13;
@@ -3418,6 +3432,7 @@
     private System.Windows.Forms.ComboBox cboOnlineVideosCategories;
     private System.Windows.Forms.Label lblCategories;
     private System.Windows.Forms.CheckBox cbMyeMailManager;
+    private System.Windows.Forms.CheckBox cbEnableRecentMusicVideos;
   }
 }
 
