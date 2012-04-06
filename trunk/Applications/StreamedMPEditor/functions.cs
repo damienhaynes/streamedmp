@@ -1917,7 +1917,12 @@ namespace StreamedMPEditor
 
     void checkAndEnableOverlays()
     {
-        if (helper.pluginEnabled(Helper.Plugins.SleepControl))
+      if (helper.pluginEnabled(Helper.Plugins.mvCentral))
+        cbEnableRecentMusicVideos.Enabled = true;
+      else
+        cbEnableRecentMusicVideos.Text += " (Not Installed)";
+      
+      if (helper.pluginEnabled(Helper.Plugins.SleepControl))
             cbSleepControlOverlay.Enabled = true;
         else
             cbSleepControlOverlay.Text += " (Not Installed)";
@@ -2291,6 +2296,7 @@ namespace StreamedMPEditor
       public bool FreeDriveSpace { get; set; }
       public bool HTPCInfo { get; set; }
       public bool RecentMusic { get; set; }
+      public bool RecentMusicVideos { get; set; }
       public bool PowerControl { get; set; }
       public bool RecordedTV { get; set; }
       public bool SleepControl { get; set; }

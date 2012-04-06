@@ -37,6 +37,10 @@
           MostRecentMusicSummary();
           writeXMLFile("basichome.recentlyadded.Music.Summary.xml");
           break;
+        case isOverlayType.MusicVideos:
+          MostRecentMusicVideosSummary();
+          writeXMLFile("basichome.recentlyadded.MusicVideo.Summary.xml");
+          break;
         case isOverlayType.RecordedTV:
           MostRecentRecordedTVSummary();
           writeXMLFile("basichome.recentlyadded.RecordedTV.Summary.xml");
@@ -2946,6 +2950,169 @@
 
     #endregion
 
+    #region Most Recent Music Videos
+
+    void MostRecentMusicVideosSummary()
+    {
+      xml = "<?xml version=" + quote + "1.0" + quote + " encoding=" + quote + "utf-8" + quote + "?>\n" +
+            "<window>\n" +
+              "<controls>\n" +
+                "<control>" +
+                "<description>GROUP: RecentlyAdded Music Videos1</description>" +
+                "<type>group</type>" +
+                "<dimColor>0xffffffff</dimColor>";
+
+
+        xml += "<visible>" + mostRecentVisibleControls(isOverlayType.MusicVideos) + "+[string.equals(#mvCentral.latest.enabled,true)]" + "</visible>";
+
+      xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
+             "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
+             "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
+             "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+             "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+             "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+             "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+             "<control>" +
+               "<description>Music 1 BG</description>" +
+               "<posX>" + baseXPosAdded.ToString() + "</posX>\n" +
+               "<posY>" + baseYPosAdded.ToString() + "</posY>\n" +
+               "<type>image</type>" +
+               "<id>0</id>" +
+               "<width>306</width>" +
+               "<height>320</height>" +
+               "<texture>recentsummoverlaybg.png</texture>" +
+               "<colordiffuse>EEFFFFFF</colordiffuse>" +
+             "</control>" +
+             "<control>" +
+               "<description>Header label</description>" +
+               "<type>label</type>" +
+               "<id>0</id>" +
+               "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 20).ToString() + "</posY>\n" +
+               "<width>258</width>" +
+               "<label>#StreamedMP.LatestMusicVideos</label>" +
+               "<font>mediastream10tc</font>" +
+               "<textcolor>White</textcolor>" +
+             "</control>" +
+             "<control>" +
+               "<description>Music Video 1 Artist</description>" +
+               "<type>label</type>" +
+               "<id>0</id>" +
+               "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 195).ToString() + "</posY>\n" +
+               "<label>#mvCentral.Latest.Artist1</label>" +
+               "<textcolor>White</textcolor>" +
+               "<font>mediastream10tc</font>" +
+               "<scrollStartDelaySec>20</scrollStartDelaySec>" +
+             "</control>" +
+             "<control>" +
+               "<description>Music 1 Track</description>" +
+               "<type>label</type>" +
+               "<id>0</id>" +
+               "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
+               "<width>257</width>" +
+               "<label>#mvCentral.Latest.Track1</label>" +
+               "<font>mediastream10c</font>" +
+               "<textcolor>White</textcolor>" +
+             "</control>" +
+             "<control>" +
+               "<description>Music Video 1 thumb/fanart</description>" +
+               "<type>image</type>" +
+               "<id>0</id>" +
+               "<posX>" + (baseXPosAdded + 71).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 42).ToString() + "</posY>\n" +
+               "<width>155</width>" +
+               "<height>155</height>" +
+               "<keepaspectratio>true</keepaspectratio>" +
+               "<texture>#mvCentral.Latest.ArtistImage1</texture>" +
+               "<shouldCache>true</shouldCache>\n" +
+             "</control>" +
+           "</control>" +
+           "<control>" +
+             "<description>GROUP: RecentlyAdded Music Video 2</description>" +
+             "<type>group</type>" +
+             "<dimColor>0xffffffff</dimColor>";
+
+      xml += "<visible>" + mostRecentVisibleControls(isOverlayType.MusicVideos) + "+[string.equals(#mvCentral.latest.enabled,true)]" + "</visible>";
+
+
+      xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
+             "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
+             "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
+             "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+             "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+             "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+             "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+             "<control>" +
+               "<description>Music 2 Video Artist</description>" +
+               "<type>label</type>" +
+               "<id>0</id>" +
+               "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 230).ToString() + "</posY>\n" +
+               "<width>258</width>" +
+               "<label>#mvCentral.Latest.Artist2</label>" +
+               "<font>mediastream10tc</font>" +
+               "<textcolor>White</textcolor>" +
+               "<scrollStartDelaySec>20</scrollStartDelaySec>" +
+             "</control>" +
+             "<control>" +
+               "<description>Music Video 2 Track</description>" +
+               "<type>label</type>" +
+               "<id>0</id>" +
+               "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
+               "<width>257</width>" +
+               "<label>#mvCentral.Latest.Track2</label>" +
+               "<font>mediastream10c</font>" +
+               "<textcolor>White</textcolor>" +
+             "</control>" +
+           "</control>" +
+           "<control>" +
+             "<description>GROUP: RecentlyAdded Music Video 3</description>" +
+             "<type>group</type>" +
+             "<dimColor>0xffffffff</dimColor>";
+
+      xml += "<visible>" + mostRecentVisibleControls(isOverlayType.MusicVideos) + "+[string.equals(#mvCentral.latest.enabled,true)]" + "</visible>";
+
+
+      xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
+             "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
+             "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
+             "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+             "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+             "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
+             "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+             "<control>" +
+               "<description>Music 3 Artist</description>" +
+               "<type>label</type>" +
+               "<id>0</id>" +
+               "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 265).ToString() + "</posY>\n" +
+               "<width>258</width>" +
+               "<label>#mvCentral.Latest.Artist3</label>" +
+               "<textcolor>White</textcolor>" +
+               "<font>mediastream10tc</font>" +
+               "<scrollStartDelaySec>20</scrollStartDelaySec>" +
+             "</control>" +
+             "<control>" +
+               "<description>Music Video 3 Track</description>" +
+               "<type>label</type>" +
+               "<id>0</id>" +
+               "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
+               "<width>257</width>" +
+               "<label>#mvCentral.Latest.Track3</label>" +
+               "<font>mediastream10c</font>" +
+               "<textcolor>White</textcolor>" +
+             "</control>" +
+           "</control>" +
+         "</controls>" +
+       "</window>";
+    }
+
+    #endregion
+
     #region Most Recent RecordedTV
 
     void MostRecentRecordedTVSummary()
@@ -4700,6 +4867,52 @@
         }
       }
       //
+      //Controls to display recent Music Video overlay
+      //
+      if (isOverlay == isOverlayType.MusicVideos)
+      {
+        foreach (menuItem item in menuItems)
+        {
+          if (item.showMostRecent == displayMostRecent.musicVideos)
+          {
+            if (visibleOn == null)
+              visibleOn = "[control.isvisible(" + item.id.ToString() + ")";
+            else
+              visibleOn += "|control.isvisible(" + item.id.ToString() + ")";
+          }
+          // Check Sunmenu Level 1
+          if (item.subMenuLevel1.Count > 0)
+          {
+            for (int i = 0; i < item.subMenuLevel1.Count; i++)
+            {
+              if (item.subMenuLevel1[i].showMostRecent == displayMostRecent.musicVideos)
+              {
+                if (visibleOn == null)
+                  visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+                else
+                  visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 1)).ToString() + ")";
+              }
+            }
+          }
+          // Check Sunmenu Level 2
+          if (item.subMenuLevel2.Count > 0)
+          {
+            for (int i = 0; i < item.subMenuLevel2.Count; i++)
+            {
+              if (item.subMenuLevel2[i].showMostRecent == displayMostRecent.musicVideos)
+              {
+                if (visibleOn == null)
+                  visibleOn = "[control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+                else
+                  visibleOn += "|control.hasfocus(" + (item.subMenuLevel1ID + (i + 100 + 1)).ToString() + ")";
+              }
+            }
+          }
+        }
+      }
+
+      
+      //
       //Controls to display recent RecordedTV overlay
       //
       if (isOverlay == isOverlayType.RecordedTV)
@@ -5053,6 +5266,7 @@
       }
 
       if ((isOverlay == isOverlayType.Music ||
+           isOverlay == isOverlayType.MusicVideos ||
            isOverlay == isOverlayType.RecordedTV ||
            isOverlay == isOverlayType.freeDriveSpace ||
            isOverlay == isOverlayType.sleepControl ||

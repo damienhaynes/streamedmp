@@ -41,11 +41,13 @@
       this.rbSubMovies = new System.Windows.Forms.RadioButton();
       this.rbSubTVSeries = new System.Windows.Forms.RadioButton();
       this.btSaveAndClose = new System.Windows.Forms.Button();
+      this.rbSubMusicVideos = new System.Windows.Forms.RadioButton();
       this.groupBox1.SuspendLayout();
       this.SuspendLayout();
       // 
       // groupBox1
       // 
+      this.groupBox1.Controls.Add(this.rbSubMusicVideos);
       this.groupBox1.Controls.Add(this.rbSubUpdateControl);
       this.groupBox1.Controls.Add(this.rbSubHtpcInfo);
       this.groupBox1.Controls.Add(this.rbSubStocks);
@@ -59,7 +61,7 @@
       this.groupBox1.Controls.Add(this.rbSubTVSeries);
       this.groupBox1.Location = new System.Drawing.Point(23, 12);
       this.groupBox1.Name = "groupBox1";
-      this.groupBox1.Size = new System.Drawing.Size(541, 141);
+      this.groupBox1.Size = new System.Drawing.Size(541, 156);
       this.groupBox1.TabIndex = 0;
       this.groupBox1.TabStop = false;
       this.groupBox1.Text = "When Menu Item is Selected Display";
@@ -187,7 +189,7 @@
       // 
       // btSaveAndClose
       // 
-      this.btSaveAndClose.Location = new System.Drawing.Point(202, 159);
+      this.btSaveAndClose.Location = new System.Drawing.Point(206, 174);
       this.btSaveAndClose.Name = "btSaveAndClose";
       this.btSaveAndClose.Size = new System.Drawing.Size(182, 23);
       this.btSaveAndClose.TabIndex = 1;
@@ -195,11 +197,22 @@
       this.btSaveAndClose.UseVisualStyleBackColor = true;
       this.btSaveAndClose.Click += new System.EventHandler(this.btSaveAndClose_Click);
       // 
+      // rbSubMusicVideos
+      // 
+      this.rbSubMusicVideos.AutoSize = true;
+      this.rbSubMusicVideos.Location = new System.Drawing.Point(10, 138);
+      this.rbSubMusicVideos.Name = "rbSubMusicVideos";
+      this.rbSubMusicVideos.Size = new System.Drawing.Size(152, 17);
+      this.rbSubMusicVideos.TabIndex = 12;
+      this.rbSubMusicVideos.TabStop = true;
+      this.rbSubMusicVideos.Text = "Most Recent Music Videos";
+      this.rbSubMusicVideos.UseVisualStyleBackColor = true;
+      // 
       // mostRecentDisplaySelection
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(586, 187);
+      this.ClientSize = new System.Drawing.Size(586, 209);
       this.Controls.Add(this.btSaveAndClose);
       this.Controls.Add(this.groupBox1);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -227,5 +240,6 @@
     private System.Windows.Forms.RadioButton rbSubPowerControl;
     private System.Windows.Forms.RadioButton rbSubFreeDriveSpace;
     private System.Windows.Forms.RadioButton rbSubUpdateControl;
+    private System.Windows.Forms.RadioButton rbSubMusicVideos;
   }
 }

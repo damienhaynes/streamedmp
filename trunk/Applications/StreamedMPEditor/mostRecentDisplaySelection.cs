@@ -26,6 +26,7 @@ namespace StreamedMPEditor
       rbSubStocks.Checked = false;
       rbSubHtpcInfo.Checked = false;
       rbSubUpdateControl.Checked = false;
+      rbSubMusicVideos.Checked = false;
     }
 
     public void setEnableState(formStreamedMpEditor.displayMostRecent overlayType, bool state)
@@ -47,6 +48,10 @@ namespace StreamedMPEditor
             case formStreamedMpEditor.displayMostRecent.recordedTV:
                 rbSubTV.Enabled = state;
                 rbSubTV.Checked = state;
+                break;
+          case formStreamedMpEditor.displayMostRecent.musicVideos:
+                rbSubMusicVideos.Enabled = state;
+                rbSubMusicVideos.Checked = state;
                 break;
             case formStreamedMpEditor.displayMostRecent.freeDriveSpace:
                 rbSubFreeDriveSpace.Enabled = state;
@@ -94,6 +99,15 @@ namespace StreamedMPEditor
       }
     }
 
+    public bool disableMusicVideoRB
+    {
+      set
+      {
+        rbSubMusicVideos.Enabled = value; ;
+      }
+    }
+
+    
     public formStreamedMpEditor.displayMostRecent mrToDisplay
     {
       get { return selectedMostRecent(); }
@@ -113,6 +127,9 @@ namespace StreamedMPEditor
 
       if (rbSubTV.Checked)
         return formStreamedMpEditor.displayMostRecent.recordedTV;
+
+      if (rbSubMusicVideos.Checked)
+        return formStreamedMpEditor.displayMostRecent.musicVideos;
 
       if (rbSubFreeDriveSpace.Checked)
           return formStreamedMpEditor.displayMostRecent.freeDriveSpace;
@@ -153,6 +170,9 @@ namespace StreamedMPEditor
           break;
         case formStreamedMpEditor.displayMostRecent.recordedTV:
           rbSubTV.Checked = true;
+          break;
+        case formStreamedMpEditor.displayMostRecent.musicVideos:
+          rbSubMusicVideos.Checked = true;
           break;
         case formStreamedMpEditor.displayMostRecent.freeDriveSpace:
           rbSubFreeDriveSpace.Checked = true;

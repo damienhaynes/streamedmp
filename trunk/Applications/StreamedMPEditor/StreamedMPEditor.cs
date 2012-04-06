@@ -120,7 +120,8 @@ namespace StreamedMPEditor
       stocks,
       htpcInfo,
       updateControl,
-      myemailmanager
+      myemailmanager,
+      musicVideos
     }
 
     enum isOverlayType
@@ -135,7 +136,8 @@ namespace StreamedMPEditor
       stocks,
       htpcInfo,
       updateControl,
-      myemailmanager
+      myemailmanager,
+      MusicVideos
     }
 
     public enum fanartSource
@@ -182,6 +184,7 @@ namespace StreamedMPEditor
     public const string musicSkinID = "501";
     public const string tvMenuSkinID = "1";
     public const string onlineVideosSkinID = "4755";
+    public const string mvCentralSkinID = "112011";
     //myweather/BBCWeather/WorldWeather/yrWeather
     public const string weatherSkinID = "2600|7977|8192|3231";
     public const bool hyperlinkParameterEnabled = true;
@@ -683,8 +686,6 @@ namespace StreamedMPEditor
           mrDisplaySelection.disableMusicRB = false;
           mrDisplaySelection.disableRecordedTVRB = false;
         }
-
-
         // Check for Latest Media Handler & if present check if latest Music and Recorded TV are enabled, disable checkboxes if not
         if (helper.pluginEnabled(Helper.Plugins.LatestMediaHandler))
         {
@@ -1801,6 +1802,10 @@ namespace StreamedMPEditor
           if (cbEnableRecentMusic.Checked)
             generateMostRecentOverlay(menuStyle, isOverlayType.Music, 976, 50, 0, 0);
 
+          // Parms: Overlay Type, Recent added summary x,y, Recent watched summary x,y
+          if (cbEnableRecentMusicVideos.Checked)
+            generateMostRecentOverlay(menuStyle, isOverlayType.MusicVideos, 976, 50, 0, 0);
+
           // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
           if (cbEnableRecentRecordedTV.Checked)
             generateMostRecentOverlay(menuStyle, isOverlayType.RecordedTV, 976, 50, 0, 0);
@@ -1850,6 +1855,9 @@ namespace StreamedMPEditor
             generateMostRecentInclude(isOverlayType.RecordedTV);
         }
 
+        if (cbEnableRecentMusicVideos.Checked && mostRecentVisibleControls(isOverlayType.MusicVideos) != null)
+          generateMostRecentInclude(isOverlayType.MusicVideos);
+
         if (cbFreeDriveSpaceOverlay.Checked)
           generateMostRecentInclude(isOverlayType.freeDriveSpace);
 
@@ -1893,6 +1901,23 @@ namespace StreamedMPEditor
           {
             if (menuItems[i].hyperlink.ToString() == musicSkinID)
               menuItems[i].showMostRecent = displayMostRecent.music;
+          }
+        }
+      }
+      // Check if most recent music video is enabled, does it have an assiocated menu item, if not default to music
+      if (mostRecentVisibleControls(isOverlayType.MusicVideos) == "No" && cbEnableRecentMusicVideos.Checked)
+      {
+        foreach (menuItem menItem in menuItems)
+        {
+          if (menItem.showMostRecent == displayMostRecent.musicVideos)
+            norecent = false;
+        }
+        if (norecent)
+        {
+          for (int i = 0; i < menuItems.Count; i++)
+          {
+            if (menuItems[i].hyperlink.ToString() == musicSkinID)
+              menuItems[i].showMostRecent = displayMostRecent.musicVideos;
           }
         }
       }
@@ -1960,6 +1985,9 @@ namespace StreamedMPEditor
 
       mrDisplaySelection.setEnableState(displayMostRecent.music, cbEnableRecentMusic.Checked);
       ovss.RecentMusic = cbEnableRecentMusic.Checked;
+
+      mrDisplaySelection.setEnableState(displayMostRecent.musicVideos, cbEnableRecentMusicVideos.Checked);
+      ovss.RecentMusicVideos = cbEnableRecentMusicVideos.Checked;
 
       mrDisplaySelection.setEnableState(displayMostRecent.powerControl, cbPowerControlOverlay.Checked);
       ovss.PowerControl = cbPowerControlOverlay.Checked;
@@ -2113,6 +2141,10 @@ namespace StreamedMPEditor
       mrDisplaySelection.setEnableState(displayMostRecent.recordedTV, cbEnableRecentRecordedTV.Checked);
     }
 
+    private void cnEnableRecentAddedMusicVideo_CheckedChanged(object sender, EventArgs e)
+    {
+      mrDisplaySelection.setEnableState(displayMostRecent.musicVideos, cbEnableRecentMusicVideos.Checked);
+    }
 
     private void cbMyeMailManager_CheckedChanged(object sender, EventArgs e)
     {

@@ -3734,6 +3734,13 @@ namespace StreamedMPEditor
         }
       }
 
+      if (overlayType == isOverlayType.MusicVideos)
+      {
+        replaceString = "<!-- BEGIN MOST RECENT MUSICVIDEO CODE-->";
+        rawXML.AppendLine("<import>basichome.recentlyadded.MusicVideo.Summary.xml</import>");
+      }
+
+
       if (overlayType == isOverlayType.freeDriveSpace)
       {
         replaceString = "<!-- BEGIN FREEDRIVESPACE OVERLAY CODE-->";
@@ -3952,6 +3959,7 @@ namespace StreamedMPEditor
       string mrTVSeriesDisableFadeLabel = tvSeriesOptions.mrDisableFadeLabels ? "true" : "false";
       string mrMovPicsDisableFadeLabel = movPicsOptions.DisableFadeLabels ? "true" : "false";
       string mrMusicEnabled = cbEnableRecentMusic.Checked ? "true" : "false";
+      string mrMusicVidoesEnabled = cbEnableRecentMusicVideos.Checked ? "true" : "false";
       string mrRecordedTVEnabled = cbEnableRecentRecordedTV.Checked ? "true" : "false";
       string sleepControlEnabled = cbSleepControlOverlay.Checked ? "true" : "false";
       string stocksControlEnabled = cbSocksOverlay.Checked ? "true" : "false";
@@ -4098,6 +4106,7 @@ namespace StreamedMPEditor
                 + generateEntry("mrMovPicsDisableFadeLabel", mrMovPicsDisableFadeLabel, 3, true)
                 + generateEntry("mrRecordedTVEnabled", mrRecordedTVEnabled, 3, true)
                 + generateEntry("mrMusicEnabled", mrMusicEnabled, 3, true)
+                + generateEntry("mrMusicVideosEnabled", mrMusicVidoesEnabled, 3, true)
                 + generateEntry("driveFreeSpaceList", driveFreeSpaceList, 3, true)
                 + generateEntry("sleepControlEnabled", sleepControlEnabled, 3, true)
                 + generateEntry("stocksControlEnabled", stocksControlEnabled, 3, true)
