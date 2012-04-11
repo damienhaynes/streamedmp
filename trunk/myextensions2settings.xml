@@ -191,6 +191,27 @@
         <id>2</id>
         <label>#MPEI.Translation.Sections.Label</label>
         <onup>17</onup>
+        <ondown>3</ondown>
+        <onright>50</onright>
+        <onleft>3</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <height>40</height>
+        <width>280</width>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+			<control>
+        <description>Restore Defaults</description>
+        <type>button</type>
+        <id>3</id>
+        <label>#MPEI.Translation.RestoreDefaults.Label</label>
+        <onup>2</onup>
         <ondown>2</ondown>
         <onright>50</onright>
         <onleft>50</onleft>
