@@ -1,543 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <controls>
-    <!-- *** PROGRESSBARS *** -->
-    <!-- *** Processor *** -->
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>255</posX>
-      <posY>240</posY>
-      <width>205</width>
-      <height>20</height>
-      <texture>osdprogressbackv.png</texture>
-      <keepaspectratio>no</keepaspectratio>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <type>progress</type>
-      <description>progress</description>
-      <id>1</id>
-      <posX>243</posX>
-      <posY>242</posY>
-      <width>225</width>
-      <label>#HTPCInfo.ProcessorUsage</label>
-      <visible>Control.IsVisible(53)+!string.starts(#HTPCInfo.ProcessorUsage,#)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Processor Gauge Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>65</posX>
-      <posY>240</posY>
-      <label>Processor</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Processor Usage Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>65</posX>
-      <posY>260</posY>
-      <width>120</width>
-      <label>Usage</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Processor Usage</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>255</posX>
-      <posY>260</posY>
-      <width>250</width>
-      <label>#HTPCInfo.ProcessorUsage%</label>
-      <font>mediastream10</font>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Processor Core Count Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>65</posX>
-      <posY>280</posY>
-      <label>Processor(s)</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Processor Core Count</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>255</posX>
-      <posY>280</posY>
-      <label>#HTPCInfo.ProcessorCoresx #HTPCInfo.ProcessorManufacturer (#HTPCInfo.SensorTemperatureCPU/#HTPCInfo.SensorVoltagevCore/#HTPCInfo.SensorFanFan1)</label>
-      <font>mediastream10</font>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Processor Usage Gauge Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>65</posX>
-      <posY>300</posY>
-      <label>Type</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Processor Core Count</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>255</posX>
-      <posY>300</posY>
-      <label>#HTPCInfo.ProcessorDescription</label>
-      <font>mediastream10</font>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <!-- *** Memory *** -->
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>855</posX>
-      <posY>240</posY>
-      <width>205</width>
-      <height>20</height>
-      <texture>osdprogressbackv.png</texture>
-      <keepaspectratio>no</keepaspectratio>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <type>progress</type>
-      <description>progress</description>
-      <id>1</id>
-      <posX>843</posX>
-      <posY>242</posY>
-      <width>225</width>
-      <label>#HTPCInfo.MemoryPercentUsed</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Memory Gauge Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>665</posX>
-      <posY>240</posY>
-      <width>120</width>
-      <label>Memory</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Memory Usage Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>665</posX>
-      <posY>260</posY>
-      <label>Usage</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Memory Usage</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>855</posX>
-      <posY>260</posY>
-      <font>mediastream10</font>
-      <label>#HTPCInfo.MemoryPercentUsed% (#HTPCInfo.MemoryAvailable MBytes free)</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Pagefile Usage Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>665</posX>
-      <posY>280</posY>
-      <label>Pagefile Usage</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Pagefile Usage</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>855</posX>
-      <posY>280</posY>
-      <font>mediastream10</font>
-      <label>#HTPCInfo.PagefileUsed%</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Memory Size Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>665</posX>
-      <posY>300</posY>
-      <label>Memory Size</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Memory Size</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>855</posX>
-      <posY>300</posY>
-      <font>mediastream10</font>
-      <label>#HTPCInfo.MemoryPhysical MBytes</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <!-- *** HD progressbars *** -->
-    <control>
-      <description>Drives Gauge Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>65</posX>
-      <posY>340</posY>
-      <label>Harddisks</label>
-      <font>mediastream14tc</font>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <!-- *** Drive 1 *** -->
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>62</posX>
-      <posY>413</posY>
-      <width>205</width>
-      <height>20</height>
-      <texture>osdprogressbackv.png</texture>
-      <keepaspectratio>no</keepaspectratio>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <type>progress</type>
-      <description>progress</description>
-      <id>1</id>
-      <posX>50</posX>
-      <posY>415</posY>
-      <width>225</width>
-      <label>#HTPCInfo.Drive1PercentUsedSpace</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Drive 1 Usage Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>65</posX>
-      <posY>375</posY>
-      <label>Drive #HTPCInfo.Drive1Name</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Drive 1 Usage</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>65</posX>
-      <posY>395</posY>
-      <label>#HTPCInfo.Drive1PercentUsedSpace% used (#HTPCInfo.Drive1FreeSpace free)</label>
-      <font>mediastream10</font>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <!-- *** Drive 2 Usage *** -->
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>450</posX>
-      <posY>413</posY>
-      <width>205</width>
-      <height>20</height>
-      <texture>osdprogressbackv.png</texture>
-      <keepaspectratio>no</keepaspectratio>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <type>progress</type>
-      <description>progress</description>
-      <id>1</id>
-      <posX>438</posX>
-      <posY>415</posY>
-      <width>225</width>
-      <label>#HTPCInfo.Drive2PercentUsedSpace</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Drive 2 Usage Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>450</posX>
-      <posY>375</posY>
-      <label>Drive #HTPCInfo.Drive2Name</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Drive 2 Usage</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>450</posX>
-      <posY>395</posY>
-      <label>#HTPCInfo.Drive2PercentUsedSpace% used (#HTPCInfo.Drive2FreeSpace free)</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-      <font>mediastream10</font>
-    </control>
-    <!-- *** Share progressbars *** -->
-    <control>
-      <description>Drives Gauge Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>65</posX>
-      <posY>450</posY>
-      <label>Shares</label>
-      <font>mediastream14tc</font>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <!-- *** SharedDrive 1 Usage *** -->
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>62</posX>
-      <posY>523</posY>
-      <width>205</width>
-      <height>20</height>
-      <texture>osdprogressbackv.png</texture>
-      <keepaspectratio>no</keepaspectratio>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <type>progress</type>
-      <description>progress</description>
-      <id>1</id>
-      <posX>50</posX>
-      <posY>525</posY>
-      <width>225</width>
-      <label>#HTPCInfo.SharedDrive1PercentUsedSpace</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>SharedDrive 1 Usage Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>65</posX>
-      <posY>485</posY>
-      <label>Drive #HTPCInfo.SharedDrive1Name</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>SharedDrive1 Usage</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>65</posX>
-      <posY>505</posY>
-      <label>#HTPCInfo.SharedDrive1PercentUsedSpace% used (#HTPCInfo.SharedDrive1FreeSpace free)</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-      <font>mediastream10</font>
-    </control>
-    <!-- *** SharedDrive 2 Usage *** -->
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>450</posX>
-      <posY>523</posY>
-      <width>205</width>
-      <height>20</height>
-      <texture>osdprogressbackv.png</texture>
-      <keepaspectratio>no</keepaspectratio>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <type>progress</type>
-      <description>progress</description>
-      <id>1</id>
-      <posX>438</posX>
-      <posY>525</posY>
-      <width>225</width>
-      <label>#HTPCInfo.SharedDrive2PercentUsedSpace</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Drive 4 Usage Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>450</posX>
-      <posY>485</posY>
-      <label>Drive #HTPCInfo.SharedDrive2Name</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Drive 4 Usage</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>450</posX>
-      <posY>505</posY>
-      <label>#HTPCInfo.SharedDrive2PercentUsedSpace% used (#HTPCInfo.SharedDrive2FreeSpace free)</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-      <font>mediastream10</font>
-    </control>
-    <!-- *** SharedDrive 3 Usage *** -->
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>855</posX>
-      <posY>523</posY>
-      <width>205</width>
-      <height>20</height>
-      <texture>osdprogressbackv.png</texture>
-      <keepaspectratio>no</keepaspectratio>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <type>progress</type>
-      <description>progress</description>
-      <id>123</id>
-      <posX>843</posX>
-      <posY>525</posY>
-      <width>225</width>
-      <label>#HTPCInfo.SharedDrive3PercentUsedSpace</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>SharedDrive3 Usage Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>855</posX>
-      <posY>485</posY>
-      <label>Drive #HTPCInfo.SharedDrive3Name</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>SharedDrive3 Usage</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>855</posX>
-      <posY>505</posY>
-      <label>#HTPCInfo.SharedDrive3PercentUsedSpace% used (#HTPCInfo.SharedDrive3FreeSpace free)</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-      <font>mediastream10</font>
-    </control>
-    <!-- *** SharedDrive 4 Usage *** -->
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>62</posX>
-      <posY>623</posY>
-      <width>205</width>
-      <height>20</height>
-      <texture>osdprogressbackv.png</texture>
-      <keepaspectratio>no</keepaspectratio>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <type>progress</type>
-      <description>progress</description>
-      <id>1</id>
-      <posX>50</posX>
-      <posY>625</posY>
-      <width>225</width>
-      <label>#HTPCInfo.SharedDrive4PercentUsedSpace</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>SharedDrive 4 Usage Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>65</posX>
-      <posY>585</posY>
-      <label>Drive #HTPCInfo.SharedDrive4Name</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>SharedDrive4 Usage</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>65</posX>
-      <posY>605</posY>
-      <label>#HTPCInfo.SharedDrive4PercentUsedSpace% used (#HTPCInfo.SharedDrive4FreeSpace free)</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-      <font>mediastream10</font>
-    </control>
-    <!-- *** SharedDrive 5 Usage *** -->
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>450</posX>
-      <posY>623</posY>
-      <width>205</width>
-      <height>20</height>
-      <texture>osdprogressbackv.png</texture>
-      <keepaspectratio>no</keepaspectratio>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <type>progress</type>
-      <description>progress</description>
-      <id>1</id>
-      <posX>438</posX>
-      <posY>625</posY>
-      <width>225</width>
-      <label>#HTPCInfo.SharedDrive5PercentUsedSpace</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Drive 5 Usage Label</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>450</posX>
-      <posY>585</posY>
-      <label>Drive #HTPCInfo.SharedDrive5Name</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-    </control>
-    <control>
-      <description>Drive 5 Usage</description>
-      <type>label</type>
-      <id>1</id>
-      <posX>450</posX>
-      <posY>605</posY>
-      <label>#HTPCInfo.SharedDrive5PercentUsedSpace% used (#HTPCInfo.SharedDrive5FreeSpace free)</label>
-      <visible>Control.IsVisible(53)</visible>
-      <animation effect="fade" time="500">visiblechange</animation>
-      <font>mediastream10</font>
-    </control>
     <!-- *** GAUGES *** -->
     <!-- *** Processor Gauge *** -->
     <control>
@@ -547,10 +10,10 @@
       <posX>50</posX>
       <posY>250</posY>
       <width>145</width>
-      <height>130</height>
+      <height>120</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.ProcessorGauge</texture>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -559,8 +22,8 @@
       <id>1</id>
       <posX>65</posX>
       <posY>230</posY>
-      <label>Processor</label>
-      <visible>Control.IsVisible(52)</visible>
+      <label>#HTPCInfo.TranslationProcessor</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -569,20 +32,19 @@
       <id>1</id>
       <posX>210</posX>
       <posY>280</posY>
-      <width>120</width>
-      <label>Usage</label>
-      <visible>Control.IsVisible(52)</visible>
+      <width>195</width>
+      <label>#HTPCInfo.TranslationProcessorUsage</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>Processor Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>400</posX>
+      <posX>430</posX>
       <posY>280</posY>
-      <width>250</width>
       <label>#HTPCInfo.ProcessorUsage%</label>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -591,18 +53,29 @@
       <id>1</id>
       <posX>210</posX>
       <posY>300</posY>
-      <label>Processor(s)</label>
-      <visible>Control.IsVisible(52)</visible>
+      <width>195</width>
+      <label>#HTPCInfo.TranslationProcessorCore</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>Processor Core Count</description>
       <type>label</type>
       <id>1</id>
-      <posX>400</posX>
+      <posX>430</posX>
       <posY>300</posY>
       <label>#HTPCInfo.ProcessorCoresx #HTPCInfo.ProcessorManufacturer (#HTPCInfo.SensorTemperatureCPU/#HTPCInfo.SensorVoltageVcore/#HTPCInfo.SensorFan2)</label>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)+!string.equals(#HTPCInfo.SensorTemperatureCPU,#HTPCInfo.SensorTemperatureCPU)</visible>
+      <animation effect="fade" time="500">visiblechange</animation>
+    </control>
+    <control>
+      <description>Processor Core Count</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>430</posX>
+      <posY>300</posY>
+      <label>#HTPCInfo.ProcessorCoresx #HTPCInfo.ProcessorManufacturer</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -611,18 +84,19 @@
       <id>1</id>
       <posX>210</posX>
       <posY>320</posY>
-      <label>Type</label>
-      <visible>Control.IsVisible(52)</visible>
+      <width>195</width>
+      <label>#HTPCInfo.TranslationProcessorType</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>Processor Core Count</description>
       <type>label</type>
       <id>1</id>
-      <posX>400</posX>
+      <posX>430</posX>
       <posY>320</posY>
-      <label>#HTPCInfo.ProcessorVersion</label>
-      <visible>Control.IsVisible(52)</visible>
+      <label>#HTPCInfo.ProcessorName</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Memory Gauge *** -->
@@ -633,10 +107,10 @@
       <posX>50</posX>
       <posY>400</posY>
       <width>145</width>
-      <height>130</height>
+      <height>120</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.MemoryGauge</texture>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -644,11 +118,10 @@
       <type>label</type>
       <id>1</id>
       <posX>65</posX>
-      <posY>390</posY>
-      <width>120</width>
-      <label>Memory</label>
-      <align>center</align>
-      <visible>Control.IsVisible(52)</visible>
+      <posY>380</posY>
+      <width>195</width>
+      <label>#HTPCInfo.TranslationMemory</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -657,18 +130,19 @@
       <id>1</id>
       <posX>210</posX>
       <posY>430</posY>
-      <label>Usage</label>
-      <visible>Control.IsVisible(52)</visible>
+      <label>#HTPCInfo.TranslationMemoryUsage</label>
+      <width>195</width>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>Memory Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>400</posX>
+      <posX>430</posX>
       <posY>430</posY>
-      <label>#HTPCInfo.MemoryPercentUsed% (#HTPCInfo.MemoryAvailable MBytes free)</label>
-      <visible>Control.IsVisible(52)</visible>
+      <label>#HTPCInfo.MemoryPercentUsed% (#HTPCInfo.MemoryAvailable)</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -677,18 +151,19 @@
       <id>1</id>
       <posX>210</posX>
       <posY>450</posY>
-      <label>Pagefile Usage</label>
-      <visible>Control.IsVisible(52)</visible>
+      <label>#HTPCInfo.TranslationMemoryPagefileUsage</label>
+      <width>195</width>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>Pagefile Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>400</posX>
+      <posX>430</posX>
       <posY>450</posY>
       <label>#HTPCInfo.PagefileUsed%</label>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -697,18 +172,19 @@
       <id>1</id>
       <posX>210</posX>
       <posY>470</posY>
-      <label>Memory Size</label>
-      <visible>Control.IsVisible(52)</visible>
+      <label>#HTPCInfo.TranslationMemorySize</label>
+      <width>195</width>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>Memory Size</description>
       <type>label</type>
       <id>1</id>
-      <posX>400</posX>
+      <posX>430</posX>
       <posY>470</posY>
-      <label>#HTPCInfo.MemoryPhysical MBytes</label>
-      <visible>Control.IsVisible(52)</visible>
+      <label>#HTPCInfo.MemoryPhysical</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** HD Gauges *** -->
@@ -723,7 +199,7 @@
       <height>63</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.Drive1Gauge</texture>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Drive2 Gauge *** -->
@@ -737,7 +213,7 @@
       <height>63</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.Drive2Gauge</texture>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Drive3 Gauge *** -->
@@ -751,7 +227,7 @@
       <height>63</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.Drive3Gauge</texture>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Drive4 Gauge *** -->
@@ -765,7 +241,7 @@
       <height>63</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.Drive4Gauge</texture>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Drive5 Gauge *** -->
@@ -774,12 +250,12 @@
       <type>image</type>
       <id>1</id>
       <posX>850</posX>
-      <posY>620</posY>
+      <posY>555</posY>
       <width>68</width>
       <height>63</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.Drive5Gauge</texture>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Label Drives Gauge *** -->
@@ -790,7 +266,7 @@
       <posX>65</posX>
       <posY>530</posY>
       <label>Harddisks</label>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Drive 1 Usage *** -->
@@ -800,8 +276,8 @@
       <id>1</id>
       <posX>130</posX>
       <posY>555</posY>
-      <label>Drive #HTPCInfo.Drive1Name</label>
-      <visible>Control.IsVisible(52)</visible>
+      <label>#HTPCInfo.Drive1Name</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -810,9 +286,9 @@
       <id>1</id>
       <posX>130</posX>
       <posY>575</posY>
-      <label>#HTPCInfo.Drive1PercentUsedSpace% used (#HTPCInfo.Drive1FreeSpace free)</label>
+      <label>#HTPCInfo.Drive1PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.Drive1FreeSpace #HTPCInfo.TranslationFree)</label>
       <font>mediastream10</font>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Drive 2 Usage *** -->
@@ -822,8 +298,8 @@
       <id>1</id>
       <posX>130</posX>
       <posY>625</posY>
-      <label>Drive #HTPCInfo.Drive2Name</label>
-      <visible>Control.IsVisible(52)</visible>
+      <label>#HTPCInfo.Drive2Name</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -832,9 +308,9 @@
       <id>1</id>
       <posX>130</posX>
       <posY>645</posY>
-      <label>#HTPCInfo.Drive2PercentUsedSpace% used (#HTPCInfo.Drive2FreeSpace free)</label>
+      <label>#HTPCInfo.Drive2PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.Drive2FreeSpace #HTPCInfo.TranslationFree)</label>
       <font>mediastream10</font>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Drive 3 Usage *** -->
@@ -844,8 +320,8 @@
       <id>1</id>
       <posX>530</posX>
       <posY>555</posY>
-      <label>Drive #HTPCInfo.Drive3Name</label>
-      <visible>Control.IsVisible(52)</visible>
+      <label>#HTPCInfo.Drive3Name</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -854,9 +330,9 @@
       <id>1</id>
       <posX>530</posX>
       <posY>575</posY>
-      <label>#HTPCInfo.Drive3PercentUsedSpace% used (#HTPCInfo.Drive3FreeSpace free)</label>
+      <label>#HTPCInfo.Drive3PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.Drive3FreeSpace #HTPCInfo.TranslationFree)</label>
       <font>mediastream10</font>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Drive F Usage *** -->
@@ -866,8 +342,8 @@
       <id>1</id>
       <posX>530</posX>
       <posY>625</posY>
-      <label>Drive #HTPCInfo.Drive4Name</label>
-      <visible>Control.IsVisible(52)</visible>
+      <label>#HTPCInfo.Drive4Name</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -876,9 +352,9 @@
       <id>1</id>
       <posX>530</posX>
       <posY>645</posY>
-      <label>#HTPCInfo.Drive4PercentUsedSpace% used (#HTPCInfo.Drive4FreeSpace free)</label>
+      <label>#HTPCInfo.Drive4PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.Drive4FreeSpace #HTPCInfo.TranslationFree)</label>
       <font>mediastream10</font>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Drive G Usage *** -->
@@ -888,8 +364,8 @@
       <id>1</id>
       <posX>930</posX>
       <posY>555</posY>
-      <label>Drive #HTPCInfo.Drive5Name</label>
-      <visible>Control.IsVisible(52)</visible>
+      <label>#HTPCInfo.Drive5Name</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -898,11 +374,11 @@
       <id>1</id>
       <posX>930</posX>
       <posY>575</posY>
-      <label>#HTPCInfo.Drive5PercentUsedSpace% used (#HTPCInfo.Drive5FreeSpace free)</label>
+      <label>#HTPCInfo.Drive5PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.Drive5FreeSpace #HTPCInfo.TranslationFree)</label>
       <font>mediastream10</font>
-      <visible>Control.IsVisible(52)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:3387ff2897c9554b98532bff4af3ef5a-->
+<!--Checksum:960172c5db442ebbf5371d2396e0e52d-->
