@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>7972</id>
-  <defaultcontrol>6</defaultcontrol>
+  <defaultcontrol>1223</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
   <define>#header.label:HTPCInfo | #HTPCInfo.SectionName</define>
   <rememberLastFocusedControl>yes</rememberLastFocusedControl>
@@ -17,7 +17,7 @@
       <height>720</height>
       <texture>HTPCInfo\htpcinfo_overview_bg.jpg</texture>
       <animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
-      <visible>Control.isVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
     </control>
     <control>
       <description>programs background image</description>
@@ -30,7 +30,7 @@
       <height>720</height>
       <texture>HTPCInfo\htpcinfo_details_bg.jpg</texture>
       <animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
-      <visible>Control.isVisible(51)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
     </control>
     <control>
       <description>programs background image</description>
@@ -43,7 +43,7 @@
       <height>720</height>
       <texture>HTPCInfo\htpcinfo_gauges_bg.jpg</texture>
       <animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
-      <visible>Control.isVisible(52)|Control.isVisible(53)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Gauges)|string.equals(#HTPCInfo.SectionView, Summary)</visible>
     </control>
     <control>
       <description>programs overlay image</description>
@@ -56,24 +56,31 @@
       <height>720</height>
       <texture>streamed_overlay.png</texture>
     </control>
-    <import>common.window.xml</import>
-    <import>common.time.xml</import>
-    <import>HTPCInfo_details.xml</import>
-    <import>HTPCInfo_gauges.xml</import>
-    <import>HTPCInfo_overview.xml</import>
     <!-- *** Menu *** -->
+    <control>
+      <description>Hidden Menu Indicator</description>
+      <type>image</type>
+      <posX>1232</posX>
+      <posY>50</posY>
+      <width>48</width>
+      <height>144</height>
+      <texture>#StreamedMP.ActionMenu.Image</texture>
+      <visible>control.isvisible(1223)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
-      <defaultcontrol>2</defaultcontrol>
-      <onexit>6</onexit>
+      <defaultcontrol>6</defaultcontrol>
+      <onexit>1223</onexit>
       <buttonX>1231</buttonX>
       <buttonY>55</buttonY>
       <buttonwidth>49</buttonwidth>
       <buttonheight>153</buttonheight>
-      <textureFocus>Action_menu.png</textureFocus>
-      <textureNoFocus>Action_menu.png</textureNoFocus>
       <dimColor>00ffffff</dimColor>
+      <animation effect="slide" time="100" start="300,0">visible</animation>
+      <animation effect="slide" time="0" end="300,0">hidden</animation>
+      <visible>!Control.HasFocus(1223)</visible>
       <control>
         <id>1</id>
         <type>image</type>
@@ -83,20 +90,14 @@
         <height>720</height>
         <texture>hiddenmenu_right.png</texture>
         <colorDiffuse>fffffffff</colorDiffuse>
-        <visible>!Control.HasFocus(6)</visible>
-        <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" start="268,0" end="0,0">visible</animation>
-        <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" end="268,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <posX>1040</posX>
-        <posY>210</posY>
+        <posY>250</posY>
         <width>220</width>
         <height>720</height>
-        <visible>!Control.HasFocus(6)</visible>
-        <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" start="268,0" end="0,0">visible</animation>
-        <animation effect="slide" time="500" tween="quadratic" easing="out" reversible="false" end="268,0">hidden</animation>
         <layout>StackLayout</layout>
         <control>
           <id>0</id>
@@ -106,13 +107,21 @@
           <height>20</height>
         </control>
         <control>
+          <description>View Section</description>
+          <type>button</type>
+          <id>6</id>
+          <label>View</label>
+          <onup>17</onup>
+          <ondown>2</ondown>
+          <onright>2</onright>
+        </control>
+        <control>
           <description>Flush Memory</description>
           <type>button</type>
           <id>2</id>
           <label>Flush Memory</label>
-          <onup>9</onup>
+          <onup>6</onup>
           <ondown>8</ondown>
-          <onleft>6</onleft>
           <onright>2</onright>
         </control>
         <control>
@@ -122,7 +131,6 @@
           <label>Flush Caches</label>
           <onup>2</onup>
           <ondown>3</ondown>
-          <onleft>6</onleft>
           <width>160</width>
         </control>
         <control>
@@ -132,7 +140,6 @@
           <label>Empty Recycle Bin</label>
           <onup>8</onup>
           <ondown>4</ondown>
-          <onleft>6</onleft>
           <onright>3</onright>
         </control>
         <control>
@@ -142,7 +149,6 @@
           <label>Kill Not Responding Processes</label>
           <onup>3</onup>
           <ondown>5</ondown>
-          <onleft>6</onleft>
           <onright>4</onright>
         </control>
         <control>
@@ -152,7 +158,6 @@
           <label>Synchronize Time</label>
           <onup>4</onup>
           <ondown>7</ondown>
-          <onleft>6</onleft>
           <onright>5</onright>
         </control>
         <control>
@@ -162,8 +167,6 @@
           <label>Wake On LAN</label>
           <onup>5</onup>
           <ondown>9</ondown>
-          <onleft>6</onleft>
-          <width>160</width>
         </control>
         <control>
           <description>Safely Remove USB</description>
@@ -171,65 +174,24 @@
           <id>9</id>
           <label>Safely Remove</label>
           <onup>7</onup>
-          <ondown>2</ondown>
-          <onleft>6</onleft>
-          <width>160</width>
+          <ondown>10</ondown>
+        </control>
+        <control>
+          <description>Create Restore Point</description>
+          <type>button</type>
+          <id>10</id>
+          <label>Create Restore Point</label>
+          <onup>9</onup>
+          <ondown>6</ondown>
         </control>
       </control>
     </control>
-    <!-- *** Dummy contols indicating section visibility *** -->
-    <control>
-      <description>Hidden Control TVServer</description>
-      <type>label</type>
-      <id>10</id>
-      <label />
-    </control>
-    <control>
-      <description>Hidden Control TVClient</description>
-      <type>label</type>
-      <id>11</id>
-      <label />
-    </control>
-    <control>
-      <description>Section Overview</description>
-      <type>label</type>
-      <id>50</id>
-      <label />
-    </control>
-    <control>
-      <description>Section Details</description>
-      <type>label</type>
-      <id>51</id>
-      <label />
-    </control>
-    <control>
-      <description>Section Gauges</description>
-      <type>label</type>
-      <id>52</id>
-      <label />
-    </control>
-    <control>
-      <description>Section Progressbars</description>
-      <type>label</type>
-      <id>53</id>
-      <label />
-    </control>
-    <control>
-      <description>Section Self designed</description>
-      <type>label</type>
-      <id>54</id>
-      <label />
-    </control>
-    <control>
-      <description>Section</description>
-      <type>button</type>
-      <id>6</id>
-      <onup>2</onup>
-      <onleft>2</onleft>
-      <ondown>2</ondown>
-      <onright>2</onright>
-      <posY>-100</posY>
-    </control>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+    <import>HTPCInfo_details.xml</import>
+    <import>HTPCInfo_gauges.xml</import>
+    <import>HTPCInfo_overview.xml</import>
+    <import>HTPCInfo_summary.xml</import>
     <control>
       <description>Dummy</description>
       <type>button</type>
@@ -237,10 +199,9 @@
       <posY>-100</posY>
       <onup>6</onup>
       <ondown>6</ondown>
-      <onleft>1224</onleft>
+      <onleft>6</onleft>
       <onright>6</onright>
-      <action>6</action>
     </control>
   </controls>
 </window>
-<!--Checksum:b6a4119d41055275a17de5d2b7d72b05-->
+<!--Checksum:9e609cec6299e4e2980a9b190af0b0a2-->

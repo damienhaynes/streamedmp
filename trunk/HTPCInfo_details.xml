@@ -11,7 +11,7 @@
       <height>32</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_videocard.png</texture>
-      <visible>Control.IsVisible(51)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -24,7 +24,7 @@
       <height>32</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_keyboard.png</texture>
-      <visible>Control.IsVisible(51)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -37,7 +37,7 @@
       <height>32</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_pointer.png</texture>
-      <visible>Control.IsVisible(51)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -50,7 +50,7 @@
       <height>32</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_soundcard.png</texture>
-      <visible>Control.IsVisible(51)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -63,7 +63,7 @@
       <height>32</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_networkcard.png</texture>
-      <visible>Control.IsVisible(51)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -76,7 +76,7 @@
       <height>32</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_device.png</texture>
-      <visible>Control.IsVisible(51)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -89,7 +89,7 @@
       <height>32</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_codec.png</texture>
-      <visible>Control.IsVisible(51)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Header labels *** -->
@@ -99,8 +99,8 @@
       <id>1</id>
       <posX>70</posX>
       <posY>230</posY>
-      <label>Graphic (#HTPCInfo.DisplayDeviceCount):</label>
-      <visible>Control.IsVisible(51)</visible>
+      <label>#HTPCInfo.TranslationDisplayDevice (#HTPCInfo.DisplayDeviceCount):</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -109,8 +109,8 @@
       <id>1</id>
       <posX>70</posX>
       <posY>370</posY>
-      <label>Keyboard (#HTPCInfo.KeyboardDeviceCount):</label>
-      <visible>Control.IsVisible(51)</visible>
+      <label>#HTPCInfo.TranslationKeyboardDevice (#HTPCInfo.KeyboardDeviceCount):</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -119,8 +119,8 @@
       <id>1</id>
       <posX>70</posX>
       <posY>430</posY>
-      <label>Pointing (#HTPCInfo.PointingDeviceCount):</label>
-      <visible>Control.IsVisible(51)</visible>
+      <label>#HTPCInfo.TranslationPointingDevice (#HTPCInfo.PointingDeviceCount):</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -129,8 +129,8 @@
       <id>1</id>
       <posX>70</posX>
       <posY>490</posY>
-      <label>Sound (#HTPCInfo.SoundDeviceCount):</label>
-      <visible>Control.IsVisible(51)</visible>
+      <label>#HTPCInfo.TranslationSoundDevice (#HTPCInfo.SoundDeviceCount):</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -139,8 +139,8 @@
       <id>1</id>
       <posX>70</posX>
       <posY>550</posY>
-      <label>Network (#HTPCInfo.NetworkDeviceCount):</label>
-      <visible>Control.IsVisible(51)</visible>
+      <label>#HTPCInfo.TranslationNetworkDevice (#HTPCInfo.NetworkDeviceCount):</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Icons *** -->
@@ -150,8 +150,8 @@
       <id>1</id>
       <posX>600</posX>
       <posY>230</posY>
-      <label>Drives (#HTPCInfo.DriveCount):</label>
-      <visible>Control.IsVisible(51)</visible>
+      <label>#HTPCInfo.TranslationDriveDevice (#HTPCInfo.DriveCount):</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -160,8 +160,8 @@
       <id>1</id>
       <posX>600</posX>
       <posY>310</posY>
-      <label>Codecs (#HTPCInfo.CodecCount):</label>
-      <visible>Control.IsVisible(51)</visible>
+      <label>#HTPCInfo.TranslationCodec (#HTPCInfo.CodecCount):</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Row 1 Values *** -->
@@ -172,8 +172,8 @@
       <posX>70</posX>
       <posY>250</posY>
       <font>mediastream10</font>
-      <label>#HTPCInfo.DisplayDevice1Description (Driver version #HTPCInfo.DisplayDevice1DriverVersion)</label>
-      <visible>Control.IsVisible(51)</visible>
+      <label>#HTPCInfo.DisplayDevice1Description (#HTPCInfo.TranslationDriverVersion #HTPCInfo.DisplayDevice1DriverVersion)</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -183,8 +183,8 @@
       <posX>70</posX>
       <posY>270</posY>
       <font>mediastream10</font>
-      <label>Refreshrate min/max: #HTPCInfo.DisplayDevice1MinimumRefreshRate / #HTPCInfo.DisplayDevice1MaximumRefreshRate</label>
-      <visible>Control.IsVisible(51)</visible>
+      <label>VSYNC: #HTPCInfo.DisplayDevice1MinimumRefreshRate / #HTPCInfo.DisplayDevice1MaximumRefreshRate</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -194,8 +194,8 @@
       <posX>70</posX>
       <posY>290</posY>
       <font>mediastream10</font>
-      <label>Resolution: #HTPCInfo.DisplayDevice1Resolution</label>
-      <visible>Control.IsVisible(51)</visible>
+      <label>#(L(169)) #HTPCInfo.DisplayDevice1Resolution</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -206,7 +206,7 @@
       <posY>310</posY>
       <font>mediastream10</font>
       <label>VRAM: #HTPCInfo.DisplayDevice1MemoryPhysical</label>
-      <visible>Control.IsVisible(51)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -216,8 +216,8 @@
       <posX>70</posX>
       <posY>330</posY>
       <font>mediastream10</font>
-      <label>FPS: #HTPCInfo.DisplayDeviceCurrentFrameCount (Max: #HTPCInfo.DisplayDeviceMaximumFrameCount)</label>
-      <visible>Control.IsVisible(51)</visible>
+      <label>#(L(989)): #HTPCInfo.DisplayDeviceCurrentFrameCount (#(L(973)): #HTPCInfo.DisplayDeviceMaximumFrameCount)</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Keyboard Devices *** -->
@@ -229,7 +229,7 @@
       <posY>390</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.KeyboardDevice1Name</label>
-      <visible>Control.IsVisible(51)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Pointing Devices *** -->
@@ -241,7 +241,7 @@
       <posY>450</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.PointingDevice1Name (#HTPCInfo.PointingDevice1Manufacturer)</label>
-      <visible>Control.IsVisible(51)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!--
@@ -279,7 +279,7 @@
       <posY>510</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.SoundDevice1Name (#HTPCInfo.SoundDevice1Manufacturer)</label>
-      <visible>Control.IsVisible(51)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!--
@@ -309,7 +309,7 @@
       <posY>570</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.NetworkDevice8Description (#HTPCInfo.NetworkDevice8Manufacturer) #HTPCInfo.NetworkDevice8Type</label>
-      <visible>Control.IsVisible(51)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Row 2 valus *** -->
@@ -321,8 +321,8 @@
       <posX>600</posX>
       <posY>250</posY>
       <font>mediastream10</font>
-      <label>#HTPCInfo.Drive1Model, Interface #HTPCInfo.Drive1InterfaceType, Format #HTPCInfo.Drive1Type, #HTPCInfo.Drive1PartitionCount partition(s)</label>
-      <visible>Control.IsVisible(51)</visible>
+      <label>#HTPCInfo.Drive1Model, #HTPCInfo.Drive1InterfaceType, #HTPCInfo.Drive1Type, #HTPCInfo.Drive1PartitionCount #HTPCInfo.TranslationDrivePartition</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -332,8 +332,8 @@
       <posX>600</posX>
       <posY>270</posY>
       <font>mediastream10</font>
-      <label>#HTPCInfo.Drive2Model, Interface #HTPCInfo.Drive2InterfaceType, Format #HTPCInfo.Drive2Type, #HTPCInfo.Drive2PartitionCount partition(s)</label>
-      <visible>Control.IsVisible(51)</visible>
+      <label>#HTPCInfo.Drive2Model, #HTPCInfo.Drive2InterfaceType, #HTPCInfo.Drive2Type, #HTPCInfo.Drive2PartitionCount #HTPCInfo.TranslationDrivePartition</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -344,9 +344,9 @@
       <posY>330</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.Codec10Description (#HTPCInfo.Codec10Version)</label>
-      <visible>Control.IsVisible(51)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:7cead26659c8910a7fc47daa8c34201c-->
+<!--Checksum:02fb5c9e902e725ecf1054d4142c6de1-->

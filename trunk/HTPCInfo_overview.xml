@@ -12,7 +12,7 @@
       <height>32</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_computer.png</texture>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -21,64 +21,64 @@
       <id>1</id>
       <posX>60</posX>
       <posY>220</posY>
-      <label>Machine</label>
-      <font>mediastream16c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <label>#HTPCInfo.TranslationMachine</label>
+      <font>mediastream16tc</font>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>Machine Name</description>
       <type>label</type>
       <id>1</id>
-      <label>Machine Name:</label>
+      <label>#HTPCInfo.TranslationMachineName:</label>
       <font>mediastream10c</font>
       <posX>60</posX>
       <posY>250</posY>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>Model</description>
       <type>label</type>
       <id>1</id>
-      <label>Model:</label>
+      <label>#HTPCInfo.TranslationMachineModel:</label>
       <font>mediastream10c</font>
       <posX>60</posX>
       <posY>270</posY>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>BIOS</description>
       <type>label</type>
       <id>1</id>
-      <label>BIOS:</label>
+      <label>#HTPCInfo.TranslationMachineBIOS:</label>
       <font>mediastream10c</font>
       <posX>60</posX>
       <posY>290</posY>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>Processor</description>
       <type>label</type>
       <id>1</id>
-      <label>Processor:</label>
+      <label>#HTPCInfo.TranslationProcessor:</label>
       <font>mediastream10c</font>
       <posX>60</posX>
       <posY>310</posY>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>User Name</description>
       <type>label</type>
       <id>1</id>
-      <label>User Name:</label>
+      <label>#HTPCInfo.TranslationUserName:</label>
       <font>mediastream10c</font>
       <posX>60</posX>
       <posY>330</posY>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** HTPC Machine Info values *** -->
@@ -90,7 +90,7 @@
       <label>#HTPCInfo.MachineName</label>
       <posX>260</posX>
       <posY>250</posY>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -101,7 +101,7 @@
       <posX>260</posX>
       <posY>270</posY>
       <label>#HTPCInfo.Model (#HTPCInfo.MotherboardManufacturer), #HTPCInfo.SystemType</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -112,7 +112,7 @@
       <posX>260</posX>
       <posY>290</posY>
       <label>#HTPCInfo.BIOSManufacturer, #HTPCInfo.BIOSDescription</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -123,7 +123,7 @@
       <posX>260</posX>
       <posY>310</posY>
       <label>#HTPCInfo.ProcessorCount Processor(s) (#HTPCInfo.ProcessorManufacturer), #HTPCInfo.ProcessorDescription</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -134,7 +134,7 @@
       <posX>260</posX>
       <posY>330</posY>
       <label>#HTPCInfo.UserName</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** OS Information labels *** -->
@@ -148,7 +148,7 @@
       <height>32</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.OSVersionImage</texture>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -157,20 +157,20 @@
       <id>1</id>
       <posX>60</posX>
       <posY>350</posY>
-      <label>Operating System</label>
-      <font>mediastream16c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <label>#HTPCInfo.TranslationOS</label>
+      <font>mediastream16tc</font>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>OS Version</description>
       <type>label</type>
       <id>1</id>
-      <label>Version:</label>
+      <label>#HTPCInfo.TranslationOSVersion:</label>
       <font>mediastream10c</font>
       <posX>60</posX>
       <posY>380</posY>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** OS Information values*** -->
@@ -181,13 +181,14 @@
       <font>mediastream10c</font>
       <posX>260</posX>
       <posY>380</posY>
-      <label>#HTPCInfo.OSDescription (#HTPCInfo.OSVersionName)</label>
-      <visible>Control.IsVisible(50)</visible>
+      <width>620</width>
+      <label>#HTPCInfo.OSDescription</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** System Information labels *** -->
     <control>
-      <description>OS</description>
+      <description>System Info</description>
       <type>image</type>
       <id>1</id>
       <posX>20</posX>
@@ -196,7 +197,7 @@
       <height>32</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_system.png</texture>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -205,9 +206,9 @@
       <id>1</id>
       <posX>60</posX>
       <posY>400</posY>
-      <label>System Information</label>
-      <font>mediastream16c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <label>#HTPCInfo.TranslationSystem</label>
+      <font>mediastream16tc</font>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -216,9 +217,9 @@
       <id>1</id>
       <posX>60</posX>
       <posY>430</posY>
-      <label>Uptime:</label>
+      <label>#HTPCInfo.TranslationUpTime:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -227,40 +228,40 @@
       <id>1</id>
       <posX>60</posX>
       <posY>450</posY>
-      <label>CPU Usage:</label>
+      <label>#HTPCInfo.TranslationProcessorUsage:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>Memory Usage</description>
       <type>label</type>
       <id>1</id>
-      <label>Memory Usage:</label>
+      <label>#HTPCInfo.TranslationMemoryUsage:</label>
       <font>mediastream10c</font>
       <posX>60</posX>
       <posY>470</posY>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>Disk Read</description>
       <type>label</type>
       <id>1</id>
-      <label>Disk Read:</label>
+      <label>#HTPCInfo.TranslationDriveRead:</label>
       <font>mediastream10c</font>
       <posX>60</posX>
       <posY>490</posY>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>Disk Write</description>
       <type>label</type>
       <id>1</id>
-      <label>Disk Write:</label>
+      <label>#HTPCInfo.TranslationDriveWrite:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
       <posX>60</posX>
       <posY>510</posY>
@@ -274,7 +275,7 @@
       <label>#HTPCInfo.Uptime</label>
       <posX>260</posX>
       <posY>430</posY>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -285,7 +286,7 @@
       <posX>260</posX>
       <posY>450</posY>
       <label>#HTPCInfo.ProcessorCurrentClock / #HTPCInfo.ProcessorMaximumClock / #HTPCInfo.ProcessorUsage%</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -295,30 +296,30 @@
       <posX>260</posX>
       <posY>470</posY>
       <font>mediastream10c</font>
-      <label>#HTPCInfo.MemoryAvailable MBytes / #HTPCInfo.MemoryPhysical MBytes (#HTPCInfo.PagefileUsed% Pagefile Usage)</label>
-      <visible>Control.IsVisible(50)</visible>
+      <label>#HTPCInfo.MemoryAvailable / #HTPCInfo.MemoryPhysical (#HTPCInfo.PagefileUsed% #HTPCInfo.TranslationMemoryPagefileUsage)</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
-      <description>Memory Usage Value</description>
+      <description>Disk Usage Value</description>
       <type>label</type>
       <id>1</id>
       <posX>260</posX>
       <posY>490</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.DiskRead%</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
-      <description>Memory Usage Value</description>
+      <description>Disk Usage Value</description>
       <type>label</type>
       <id>1</id>
       <posX>260</posX>
       <posY>510</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.DiskWrite%</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Network Information labels *** -->
@@ -332,7 +333,7 @@
       <height>32</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_networkcard.png</texture>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -341,20 +342,20 @@
       <id>1</id>
       <posX>60</posX>
       <posY>530</posY>
-      <label>Network</label>
-      <font>mediastream16c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <label>#HTPCInfo.TranslationNetwork</label>
+      <font>mediastream16tc</font>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
       <description>Network</description>
       <type>label</type>
       <id>1</id>
-      <label>Domain/Workgroup:</label>
+      <label>#HTPCInfo.TranslationNetworkGroup:</label>
       <font>mediastream10c</font>
       <posX>60</posX>
       <posY>560</posY>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -363,9 +364,9 @@
       <id>1</id>
       <posX>60</posX>
       <posY>580</posY>
-      <label>Internal/External IP:</label>
+      <label>#HTPCInfo.TranslationNetworkIPAddress/#HTPCInfo.TranslationNetworkExternalIPAddress:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -374,9 +375,9 @@
       <id>1</id>
       <posX>60</posX>
       <posY>600</posY>
-      <label>Traffic:</label>
+      <label>#HTPCInfo.TranslationNetworkTraffic:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Network Information values *** -->
@@ -388,7 +389,7 @@
       <posY>560</posY>
       <font>mediastream10c</font>
       <label>Server Mode #HTPCInfo.NetworkServerModeIsEnabled, #HTPCInfo.NetworkWorkgroup</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -399,7 +400,7 @@
       <posY>580</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.NetworkIPv4Address1 / #HTPCInfo.NetworkExternalIPAddress (IPv6 support #HTPCInfo.NetworkIPv6Enabled)</label>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -409,8 +410,8 @@
       <posX>260</posX>
       <posY>600</posY>
       <font>mediastream10c</font>
-      <label>#HTPCInfo.NetworkSent KBytes sent / #HTPCInfo.NetworkReceived KBytes received</label>
-      <visible>Control.IsVisible(50)</visible>
+      <label>#HTPCInfo.NetworkSent #HTPCInfo.TranslationNetworkSent / #HTPCInfo.NetworkReceived #HTPCInfo.TranslationNetworkReceived</label>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Local Sensor Informations labels *** -->
@@ -424,7 +425,7 @@
       <height>32</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_sensor.png</texture>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -433,9 +434,9 @@
       <id>1</id>
       <posX>910</posX>
       <posY>220</posY>
-      <label>Local Sensors</label>
-      <font>mediastream16c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <label>Local #HTPCInfo.TranslationSensor</label>
+      <font>mediastream16tc</font>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -444,9 +445,9 @@
       <id>1</id>
       <posX>910</posX>
       <posY>250</posY>
-      <label>CPU:</label>
+      <label>#HTPCInfo.TranslationSensorTypeProcessor:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -455,9 +456,9 @@
       <id>1</id>
       <posX>910</posX>
       <posY>270</posY>
-      <label>Core:</label>
+      <label>#HTPCInfo.TranslationSensorTypeCore:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -466,9 +467,9 @@
       <id>1</id>
       <posX>910</posX>
       <posY>290</posY>
-      <label>HD:</label>
+      <label>#HTPCInfo.TranslationSensorTypeHarddisk:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -477,9 +478,9 @@
       <id>1</id>
       <posX>910</posX>
       <posY>310</posY>
-      <label>Fans:</label>
+      <label>#HTPCInfo.TranslationSensorFan:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -490,7 +491,7 @@
       <posY>330</posY>
       <label>vRAM:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -501,7 +502,7 @@
       <posY>350</posY>
       <label>vCore:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -512,7 +513,7 @@
       <posY>370</posY>
       <label>+5v:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -523,7 +524,7 @@
       <posY>390</posY>
       <label>vBat:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** Local Sensor Informations values *** -->
@@ -535,7 +536,7 @@
       <posX>1040</posX>
       <posY>250</posY>
       <label>#HTPCInfo.SensorTemperatureCPU</label>
-      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorTemperatureCPU,#)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.SensorTemperatureCPU,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -546,7 +547,7 @@
       <posX>1040</posX>
       <posY>270</posY>
       <label>#HTPCInfo.SensorTemperatureCore0</label>
-      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorTemperatureCore0,#)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.SensorTemperatureCore0,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -557,7 +558,7 @@
       <posX>1040</posX>
       <posY>290</posY>
       <label>#HTPCInfo.SensorTemperatureHD</label>
-      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorTemperatureHD,#)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.SensorTemperatureHD,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -568,7 +569,7 @@
       <posX>1040</posX>
       <posY>310</posY>
       <label>#HTPCInfo.SensorFanFan1, #HTPCInfo.SensorFanFan2</label>
-      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorFanFan2,#)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.SensorFanFan2,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -579,7 +580,7 @@
       <posY>330</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.SensorVoltagevRAM</label>
-      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorVoltagevRAM,#)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.SensorVoltagevRAM,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -590,7 +591,7 @@
       <posY>350</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.SensorVoltagevCore</label>
-      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorVoltagevCore,#)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.SensorVoltagevCore,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -601,7 +602,7 @@
       <posY>370</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.SensorVoltageplus5V1</label>
-      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorVoltageplus5V1,#)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.SensorVoltageplus5V1,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -612,7 +613,7 @@
       <posY>390</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.SensorVoltageVbat</label>
-      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.SensorVoltageVbat,#)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.SensorVoltageVbat,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** XAP Sensor Informations labels *** -->
@@ -626,7 +627,7 @@
       <height>32</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_sensor.png</texture>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -635,9 +636,9 @@
       <id>1</id>
       <posX>910</posX>
       <posY>420</posY>
-      <label>XAP Sensors</label>
-      <font>mediastream16c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <label>XAP #HTPCInfo.TranslationSensor</label>
+      <font>mediastream16tc</font>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -646,9 +647,9 @@
       <id>1</id>
       <posX>910</posX>
       <posY>450</posY>
-      <label>CPU:</label>
+      <label>#HTPCInfo.TranslationSensorTypeProcessor:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -659,7 +660,7 @@
       <posY>470</posY>
       <label>Mobo:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -670,7 +671,7 @@
       <posY>490</posY>
       <label>HD:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -681,7 +682,7 @@
       <posY>510</posY>
       <label>Fan:</label>
       <font>mediastream10c</font>
-      <visible>Control.IsVisible(50)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <!-- *** XAP Sensor Informations values *** -->
@@ -693,7 +694,7 @@
       <posX>1040</posX>
       <posY>450</posY>
       <label>#HTPCInfo.xAPSensorTemperatureCPU</label>
-      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.xAPSensorTemperatureCPU,#)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.xAPSensorTemperatureCPU,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -704,7 +705,7 @@
       <posX>1040</posX>
       <posY>470</posY>
       <label>#HTPCInfo.xAPSensorTemperatureMobo</label>
-      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.xAPSensorTemperatureMobo,#)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.xAPSensorTemperatureMobo,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -715,7 +716,7 @@
       <posX>1040</posX>
       <posY>490</posY>
       <label>#HTPCInfo.xAPSensorTemperatureHD0</label>
-      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.xAPSensorTemperatureHD0,#)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.xAPSensorTemperatureHD0,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
     <control>
@@ -726,9 +727,9 @@
       <posY>510</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.xAPSensorFanCPUFan</label>
-      <visible>Control.IsVisible(50)+!string.starts(#HTPCInfo.xAPSensorFanCPUFan,#)</visible>
+      <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.xAPSensorFanCPUFan,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:f5c531e47482e658b86606bf9f6782ff-->
+<!--Checksum:33d23a4641b7b3b1c5238506408e3f7d-->
