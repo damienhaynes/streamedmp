@@ -22,7 +22,7 @@
       <posX>60</posX>
       <posY>220</posY>
       <label>#HTPCInfo.TranslationMachine</label>
-      <font>mediastream16tc</font>
+      <font>mediastream14tc</font>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
@@ -158,7 +158,7 @@
       <posX>60</posX>
       <posY>350</posY>
       <label>#HTPCInfo.TranslationOS</label>
-      <font>mediastream16tc</font>
+      <font>mediastream14tc</font>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
@@ -207,7 +207,7 @@
       <posX>60</posX>
       <posY>400</posY>
       <label>#HTPCInfo.TranslationSystem</label>
-      <font>mediastream16tc</font>
+      <font>mediastream14tc</font>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
@@ -229,6 +229,7 @@
       <posX>60</posX>
       <posY>450</posY>
       <label>#HTPCInfo.TranslationProcessorUsage:</label>
+			<width>190</width>
       <font>mediastream10c</font>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -239,6 +240,7 @@
       <id>1</id>
       <label>#HTPCInfo.TranslationMemoryUsage:</label>
       <font>mediastream10c</font>
+			<width>190</width>
       <posX>60</posX>
       <posY>470</posY>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
@@ -343,7 +345,7 @@
       <posX>60</posX>
       <posY>530</posY>
       <label>#HTPCInfo.TranslationNetwork</label>
-      <font>mediastream16tc</font>
+      <font>mediastream14tc</font>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
@@ -352,6 +354,7 @@
       <type>label</type>
       <id>1</id>
       <label>#HTPCInfo.TranslationNetworkGroup:</label>
+			<width>190</width>
       <font>mediastream10c</font>
       <posX>60</posX>
       <posY>560</posY>
@@ -364,6 +367,7 @@
       <id>1</id>
       <posX>60</posX>
       <posY>580</posY>
+			<width>190</width>
       <label>#HTPCInfo.TranslationNetworkIPAddress/#HTPCInfo.TranslationNetworkExternalIPAddress:</label>
       <font>mediastream10c</font>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
@@ -375,6 +379,7 @@
       <id>1</id>
       <posX>60</posX>
       <posY>600</posY>
+			<width>190</width>
       <label>#HTPCInfo.TranslationNetworkTraffic:</label>
       <font>mediastream10c</font>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
@@ -434,8 +439,9 @@
       <id>1</id>
       <posX>910</posX>
       <posY>220</posY>
-      <label>Local #HTPCInfo.TranslationSensor</label>
-      <font>mediastream16tc</font>
+      <label>#HTPCInfo.TranslationSensor</label>
+			<width>345</width>
+      <font>mediastream14tc</font>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
@@ -478,7 +484,7 @@
       <id>1</id>
       <posX>910</posX>
       <posY>310</posY>
-      <label>#HTPCInfo.TranslationSensorFan:</label>
+      <label>Fan:</label>
       <font>mediastream10c</font>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -533,7 +539,7 @@
       <type>label</type>
       <id>1</id>
       <font>mediastream10c</font>
-      <posX>1040</posX>
+      <posX>1080</posX>
       <posY>250</posY>
       <label>#HTPCInfo.SensorTemperatureCPU</label>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.SensorTemperatureCPU,#)</visible>
@@ -544,7 +550,7 @@
       <type>label</type>
       <id>1</id>
       <font>mediastream10c</font>
-      <posX>1040</posX>
+      <posX>1080</posX>
       <posY>270</posY>
       <label>#HTPCInfo.SensorTemperatureCore0</label>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.SensorTemperatureCore0,#)</visible>
@@ -555,7 +561,7 @@
       <type>label</type>
       <id>1</id>
       <font>mediastream10c</font>
-      <posX>1040</posX>
+      <posX>1080</posX>
       <posY>290</posY>
       <label>#HTPCInfo.SensorTemperatureHD</label>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.SensorTemperatureHD,#)</visible>
@@ -566,7 +572,7 @@
       <type>label</type>
       <id>1</id>
       <font>mediastream10c</font>
-      <posX>1040</posX>
+      <posX>1080</posX>
       <posY>310</posY>
       <label>#HTPCInfo.SensorFanFan1, #HTPCInfo.SensorFanFan2</label>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.SensorFanFan2,#)</visible>
@@ -576,7 +582,7 @@
       <description>Fan Sensors Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>1040</posX>
+      <posX>1080</posX>
       <posY>330</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.SensorVoltagevRAM</label>
@@ -587,7 +593,7 @@
       <description>Voltage Sensors Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>1040</posX>
+      <posX>1080</posX>
       <posY>350</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.SensorVoltagevCore</label>
@@ -598,7 +604,7 @@
       <description>Voltage Sensors Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>1040</posX>
+      <posX>1080</posX>
       <posY>370</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.SensorVoltageplus5V1</label>
@@ -609,7 +615,7 @@
       <description>Voltage Sensors Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>1040</posX>
+      <posX>1080</posX>
       <posY>390</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.SensorVoltageVbat</label>
@@ -637,7 +643,8 @@
       <posX>910</posX>
       <posY>420</posY>
       <label>XAP #HTPCInfo.TranslationSensor</label>
-      <font>mediastream16tc</font>
+			<width>345</width>
+      <font>mediastream14tc</font>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
@@ -669,7 +676,7 @@
       <id>1</id>
       <posX>910</posX>
       <posY>490</posY>
-      <label>HD:</label>
+      <label>HDD:</label>
       <font>mediastream10c</font>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -691,7 +698,7 @@
       <type>label</type>
       <id>1</id>
       <font>mediastream10c</font>
-      <posX>1040</posX>
+      <posX>1080</posX>
       <posY>450</posY>
       <label>#HTPCInfo.xAPSensorTemperatureCPU</label>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.xAPSensorTemperatureCPU,#)</visible>
@@ -702,7 +709,7 @@
       <type>label</type>
       <id>1</id>
       <font>mediastream10c</font>
-      <posX>1040</posX>
+      <posX>1080</posX>
       <posY>470</posY>
       <label>#HTPCInfo.xAPSensorTemperatureMobo</label>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.xAPSensorTemperatureMobo,#)</visible>
@@ -713,7 +720,7 @@
       <type>label</type>
       <id>1</id>
       <font>mediastream10c</font>
-      <posX>1040</posX>
+      <posX>1080</posX>
       <posY>490</posY>
       <label>#HTPCInfo.xAPSensorTemperatureHD0</label>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)+!string.starts(#HTPCInfo.xAPSensorTemperatureHD0,#)</visible>
@@ -723,7 +730,7 @@
       <description>Fan Sensors Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>1040</posX>
+      <posX>1080</posX>
       <posY>510</posY>
       <font>mediastream10c</font>
       <label>#HTPCInfo.xAPSensorFanCPUFan</label>
