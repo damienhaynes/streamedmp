@@ -89,11 +89,16 @@ This file should contain the details view
         <layout>StackLayout(0, Vertical, true)</layout>
         <control>
           <description>View-As</description>
-          <type>button</type>
+          <type>menubutton</type>
           <id>2</id>
-          <label>100</label>
-          <onup>10</onup>
+          <label></label>
           <onleft>50</onleft>
+          <onup>10</onup>
+          <ondown>5</ondown>
+          <mode>dialoglist</mode>
+          <dialogTitle>792</dialogTitle>
+          <valueTextInButton>yes</valueTextInButton>
+          <valuePrefixText>95</valuePrefixText>
         </control>
         <control>
           <description>Sort</description>
@@ -101,14 +106,20 @@ This file should contain the details view
           <id>3</id>
           <label>103</label>
           <onleft>50</onleft>
+          <ondown>5</ondown>
         </control>
         <control>
           <description>Switch View</description>
-          <type>button</type>
+          <type>menubutton</type>
           <id>5</id>
-          <label>457</label>
+          <label></label>
           <onleft>50</onleft>
+          <onup>3</onup>
           <ondown>20</ondown>
+          <mode>dialoglist</mode>
+          <dialogTitle>499</dialogTitle>
+          <valueTextInButton>yes</valueTextInButton>
+          <valuePrefixText>97</valuePrefixText>
         </control>
         <control>
           <description>Empty button</description>
@@ -206,7 +217,7 @@ This file should contain the details view
           <label>#Trakt.Translation.WatchList.Label</label>
           <hyperlink>87270</hyperlink>
           <onup>99993</onup>
-          <ondown>99995</ondown>          
+          <ondown>99995</ondown>
           <onleft>50</onleft>
           <visible>plugin.isenabled(Trakt)</visible>
         </control>
@@ -236,4 +247,4 @@ This file should contain the details view
     </control>
   </controls>
 </window>
-<!--Checksum:2934f8fcf28283b96aa14e0ca2ddbf5a-->
+<!--Checksum:6ec9d27a9dab611bfe2b7529ea6f1f27-->
