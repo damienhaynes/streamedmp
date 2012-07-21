@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>2</id>
   <defaultcontrol>2</defaultcontrol>
@@ -168,11 +168,16 @@
         <layout>StackLayout</layout>
         <control>
           <description>View-As</description>
-          <type>button</type>
+          <type>menubutton</type>
           <id>2</id>
-          <label>100</label>
+          <label></label>
           <onleft>50</onleft>
           <onup>17</onup>
+          <ondown>3</ondown>
+          <mode>dialoglist</mode>
+          <dialogTitle>792</dialogTitle>
+          <valueTextInButton>yes</valueTextInButton>
+          <valuePrefixText>95</valuePrefixText>
         </control>
         <control>
           <description>Sort</description>
@@ -183,10 +188,16 @@
         </control>
         <control>
           <description>Switch View</description>
-          <type>button</type>
+          <type>menubutton</type>
           <id>5</id>
-          <label>457</label>
+          <label></label>
           <onleft>50</onleft>
+          <onup>4</onup>
+          <ondown>0</ondown>
+          <mode>dialoglist</mode>
+          <dialogTitle>499</dialogTitle>
+          <valueTextInButton>yes</valueTextInButton>
+          <valuePrefixText>97</valuePrefixText>
         </control>
         <control>
           <description>Empty button</description>
@@ -223,7 +234,7 @@
           <label>108</label>
           <hyperlink>12</hyperlink>
           <onleft>50</onleft>
-          <ondown>99</ondown>
+          <ondown>2</ondown>
         </control>
       </control>
     </control>
@@ -233,4 +244,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:183cf6a8adc175ce072034eec04e1465-->
+<!--Checksum:6696a4c3eb5880c6668ccb366ac779c3-->
