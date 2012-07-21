@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
   <controls>
     <control>
@@ -26,11 +27,22 @@
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
+      <description>your label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>908</posX>
+      <posY>65</posY>
+      <label>Delay Not Possible/need FFDShow</label>
+      <font>mediastream10c</font>
+      <visible>string.equals(#VideoOSD.AudioVideoDelayPossible, false)</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+    </control>
+    <control>
       <description>A/v Delay label</description>
       <type>label</type>
       <id>550</id>
       <posX>908</posX>
-      <posY>64</posY>
+      <posY>50</posY>
       <label>297</label>
       <font>mediastream10tc</font>
       <visible>no</visible>
@@ -73,3 +85,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:eb5ecf85ecf1f13636b82da0018765ab-->
