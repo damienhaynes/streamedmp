@@ -86,14 +86,19 @@ This file should contain the details view
         <posY>250</posY>
         <width>220</width>
         <height>720</height>
-        <layout>StackLayout</layout>
+        <layout>StackLayout(0, Vertical, true)</layout>
         <control>
-          <description>Layout</description>
-          <type>button</type>
+          <description>View-As</description>
+          <type>menubutton</type>
           <id>2</id>
-          <label>100</label>
-          <onup>17</onup>
+          <label></label>
           <onleft>50</onleft>
+          <onup>17</onup>
+          <ondown>3</ondown>
+          <mode>dialoglist</mode>
+          <dialogTitle>792</dialogTitle>
+          <valueTextInButton>yes</valueTextInButton>
+          <valuePrefixText>95</valuePrefixText>
         </control>
         <control>
           <description>Sort</description>
@@ -103,17 +108,23 @@ This file should contain the details view
         </control>
         <control>
           <description>Switch View</description>
-          <type>button</type>
+          <type>menubutton</type>
           <id>5</id>
-          <label>457</label>
+          <label></label>
           <onleft>50</onleft>
+          <onup>3</onup>
+          <ondown>20</ondown>
+          <mode>dialoglist</mode>
+          <dialogTitle>499</dialogTitle>
+          <valueTextInButton>yes</valueTextInButton>
+          <valuePrefixText>97</valuePrefixText>
         </control>
         <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
           <label>-</label>
-          <visible>false</visible>
+          <visible>true</visible>
         </control>
         <control>
           <description>Current Playlist</description>
@@ -122,6 +133,7 @@ This file should contain the details view
           <label>4555</label>
           <action>33</action>
           <onleft>50</onleft>
+					<onup>5</onup>
         </control>
         <control>
           <description>My Playlists</description>
@@ -129,13 +141,14 @@ This file should contain the details view
           <id>10</id>
           <label>983</label>
           <onleft>50</onleft>
+					<ondown>11</ondown>
         </control>
         <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
           <label>-</label>
-          <visible>false</visible>
+          <visible>true</visible>
         </control>
         <control>
           <description>Now Playing</description>
@@ -143,6 +156,7 @@ This file should contain the details view
           <id>11</id>
           <label>4540</label>
           <onleft>50</onleft>
+					<onup>10</onup>
           <hyperlink>510</hyperlink>
         </control>
         <control>
@@ -216,4 +230,4 @@ This file should contain the details view
     </control>
   </controls>
 </window>
-<!--Checksum:9332c5cd828e0ee92c98584012dfb9b0-->
+<!--Checksum:00cdb87edf74a83fc89e605f72235380-->
