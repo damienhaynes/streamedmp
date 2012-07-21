@@ -157,12 +157,17 @@
         <height>720</height>
         <layout>StackLayout</layout>
         <control>
-          <description>View-As button</description>
-          <type>button</type>
+          <description>View-As</description>
+          <type>menubutton</type>
           <id>2</id>
-          <label>100</label>
+          <label></label>
           <onleft>50</onleft>
-          <onup>17</onup>
+          <onup>10</onup>
+          <ondown>20</ondown>
+          <mode>dialoglist</mode>
+          <dialogTitle>792</dialogTitle>
+          <valueTextInButton>yes</valueTextInButton>
+          <valuePrefixText>95</valuePrefixText>
         </control>
         <control>
           <description>Empty button</description>
@@ -233,7 +238,7 @@
           <id>9</id>
           <label>983</label>
           <onleft>50</onleft>
-          <ondown>99</ondown>
+          <ondown>2</ondown>
         </control>
       </control>
     </control>
