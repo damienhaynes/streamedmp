@@ -83,12 +83,17 @@
         <height>720</height>
         <layout>StackLayout</layout>
         <control>
-          <description>View-As button</description>
-          <type>button</type>
+          <description>View-As</description>
+          <type>menubutton</type>
           <id>2</id>
-          <label>100</label>
-          <onup>21</onup>
+          <label></label>
           <onleft>50</onleft>
+          <onup>21</onup>
+          <ondown>0</ondown>
+          <mode>dialoglist</mode>
+          <dialogTitle>792</dialogTitle>
+          <valueTextInButton>yes</valueTextInButton>
+          <valuePrefixText>95</valuePrefixText>
         </control>
         <control>
           <type>sortbutton</type>
@@ -125,34 +130,26 @@
           <onleft>50</onleft>
           <hyperlink>762</hyperlink>
         </control>
-				<control>
-					<description>Recorded Radio</description>
-					<type>button</type>
-					<id>9</id>
-					<label>914</label>
-					<onright>50</onright>
-					<onup>8</onup>
-					<ondown>10</ondown>
-					<hyperlink>763</hyperlink>
-				</control>
-				<control>
-					<description>Radio Search</description>
-					<type>button</type>
-					<id>10</id>
-					<label>137</label>
-					<onright>50</onright>
-					<onup>9</onup>
-					<ondown>2</ondown>
-					<hyperlink>8900</hyperlink>
-				</control>
-        <!--<control>
-          <description>Now playing button</description>
+        <control>
+          <description>Recorded Radio</description>
           <type>button</type>
-          <id>11</id>
-          <label>4540</label>
-          <onleft>50</onleft>
-          <hyperlink>510</hyperlink>
-        </control>-->
+          <id>9</id>
+          <label>914</label>
+          <onright>50</onright>
+          <onup>8</onup>
+          <ondown>10</ondown>
+          <hyperlink>763</hyperlink>
+        </control>
+        <control>
+          <description>Radio Search</description>
+          <type>button</type>
+          <id>10</id>
+          <label>137</label>
+          <onright>50</onright>
+          <onup>9</onup>
+          <ondown>2</ondown>
+          <hyperlink>8900</hyperlink>
+        </control>
         <control>
           <description>My Lyrics</description>
           <type>button</type>
@@ -195,4 +192,4 @@
     <import>common.overlays.xml</import>
   </controls>
 </window>
-<!--Checksum:4e9b30018f728e4217b7775f33d0320a-->
+<!--Checksum:2cd1305c115231a0144c07e2d6e9ab1b-->
