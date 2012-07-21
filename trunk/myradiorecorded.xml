@@ -97,13 +97,17 @@
         <height>720</height>
         <layout>StackLayout</layout>
         <control>
-          <type>button</type>
-          <description>View-As button</description>
+          <description>View-As</description>
+          <type>menubutton</type>
           <id>2</id>
-          <onup>21</onup>
+          <label></label>
           <onleft>50</onleft>
-          <onright>50</onright>
-          <label>100</label>
+          <onup>21</onup>
+          <ondown>0</ondown>
+          <mode>dialoglist</mode>
+          <dialogTitle>792</dialogTitle>
+          <valueTextInButton>yes</valueTextInButton>
+          <valuePrefixText>95</valuePrefixText>
         </control>
         <control>
           <type>sortbutton</type>
@@ -113,12 +117,17 @@
           <label>620</label>
         </control>
         <control>
-          <type>button</type>
-          <description>All,Genre,Channel button</description>
+          <description>View-As</description>
+          <type>menubutton</type>
           <id>5</id>
+          <label></label>
           <onleft>50</onleft>
-          <onright>50</onright>
-          <label>457</label>
+          <onup>3</onup>
+          <ondown>6</ondown>
+          <mode>dialoglist</mode>
+          <dialogTitle>499</dialogTitle>
+          <valueTextInButton>yes</valueTextInButton>
+          <valuePrefixText>97</valuePrefixText>
         </control>
         <control>
           <description>Empty button</description>
