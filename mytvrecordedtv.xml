@@ -106,13 +106,19 @@
         <height>720</height>
         <layout>StackLayout</layout>
         <control>
-          <type>button</type>
-          <description>View-As button</description>
+          <description>View-As</description>
+          <type>menubutton</type>
           <id>2</id>
+          <label></label>
+          <onleft>50</onleft>
           <onup>21</onup>
+          <ondown>0</ondown>
           <onleft>50</onleft>
           <onright>50</onright>
-          <label>100</label>
+          <mode>dialoglist</mode>
+          <dialogTitle>792</dialogTitle>
+          <valueTextInButton>yes</valueTextInButton>
+          <valuePrefixText>95</valuePrefixText>
         </control>
         <control>
           <type>sortbutton</type>
@@ -122,12 +128,18 @@
           <label>620</label>
         </control>
         <control>
-          <type>button</type>
-          <description>All,Genre,Channel button</description>
+          <description>Switch View</description>
+          <type>menubutton</type>
           <id>5</id>
+          <label></label>
           <onleft>50</onleft>
           <onright>50</onright>
-          <label>457</label>
+          <onup>3</onup>
+          <ondown>6</ondown>
+          <mode>dialoglist</mode>
+          <dialogTitle>499</dialogTitle>
+          <valueTextInButton>yes</valueTextInButton>
+          <valuePrefixText>97</valuePrefixText>
         </control>
         <control>
           <description>Empty button</description>
@@ -173,17 +185,7 @@
           <visible>plugin.isenabled(MP-TV Series)</visible>
           <onleft>50</onleft>
           <onright>50</onright>
-        </control>
-        <control>
-          <description>Trailers</description>
-          <type>button</type>
-          <id>66604</id>
-          <label>5906</label>
-          <hyperlink>5900</hyperlink>
-          <visible>plugin.isenabled(My Trailers)</visible>
-          <onleft>50</onleft>
-          <onright>50</onright>
-          <ondown>2</ondown>
+					<ondown>2</ondown>
         </control>
       </control>
     </control>
@@ -392,4 +394,4 @@
     <import>common.overlays.xml</import>
   </controls>
 </window>
-<!--Checksum:544dd01176d8f72d1da089b007445830-->
+<!--Checksum:979933b47720f035877c82bccf5a4de8-->
