@@ -347,7 +347,8 @@
 		<row><td>MediaPortal.xml</td><td>{65FB78CA-66E4-4DD4-B49C-DB2E46D16FD3}</td><td>MPCONFIGDIR</td><td>144</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>NowPlayingScreens</td><td>{9FC08E77-B550-44DF-AD29-4128CE226363}</td><td>NOWPLAYINGSCREENS</td><td>0</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>StreamedMPConfig.xml</td><td>{4A4FB3AB-3A7C-4A9B-AB6A-CB3B400D079B}</td><td>MPCONFIGDIR</td><td>144</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
-		<row><td>WorldWeatherWebsites.xml</td><td>{01609ECA-6623-436B-873B-D7DB63C19D12}</td><td>MPCONFIGDIR</td><td>136</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>WorldWeather.xml</td><td>{64AB9ED8-7343-4C1B-9676-31A708E0BE31}</td><td>MPCONFIGDIR</td><td>152</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>WorldWeatherWebsites.xml</td><td>{01609ECA-6623-436B-873B-D7DB63C19D12}</td><td>MPCONFIGDIR</td><td>152</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>defaultSkinMovingPictures</td><td>{B7171908-83C8-4143-B383-03F8966B8425}</td><td>DEFAULT</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>defaultWideSkinGlobalSearch</td><td>{191418F3-1836-4F6D-B1A1-494065FE9C60}</td><td>DEFAULTWIDE1</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>defaultWideSkinInfoService</td><td>{F8D58B23-F87B-4443-BB01-D93FEA216FEA}</td><td>DEFAULTWIDE1</td><td>24</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1685,6 +1686,7 @@
 		<row><td>TraktMainPlugin</td><td>pluginTraktDLL</td></row>
 		<row><td>Transparent</td><td>tvlogosGermanyTransparent</td></row>
 		<row><td>UK</td><td>tvlogosUK</td></row>
+		<row><td>WorldWeather</td><td>WorldWeather.xml</td></row>
 		<row><td>WorldWeather</td><td>WorldWeatherWebsites.xml</td></row>
 		<row><td>WorldWeather</td><td>languagesWorldWeather</td></row>
 		<row><td>WorldWeather</td><td>pluginWorldWeather</td></row>
@@ -1788,7 +1790,8 @@
 		<row><td>wiki.url</td><td>webWiki</td><td>Wiki.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Wiki.url</td><td>1</td><td/></row>
 		<row><td>worldweather.core.dll</td><td>pluginWorldWeather</td><td>WORLDW~1.DLL|WorldWeather.Core.dll</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;StreamedMP&gt;\plugins\windows\WorldWeather.Core.dll</td><td>17</td><td/></row>
 		<row><td>worldweather.dll</td><td>pluginWorldWeather</td><td>WORLDW~1.DLL|WorldWeather.dll</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;StreamedMP&gt;\plugins\windows\WorldWeather.dll</td><td>17</td><td/></row>
-		<row><td>worldweatherwebsites.xml</td><td>WorldWeatherWebsites.xml</td><td>WORLDW~1.XML|WorldWeatherWebsites.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\res\WorldWeatherWebsites.xml</td><td>1</td><td/></row>
+		<row><td>worldweather.xml</td><td>WorldWeather.xml</td><td>WORLDW~1.XML|WorldWeather.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\worldweatherconfig\WorldWeather.xml</td><td>1</td><td/></row>
+		<row><td>worldweatherwebsites.xml</td><td>WorldWeatherWebsites.xml</td><td>WORLDW~1.XML|WorldWeatherWebsites.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\worldweatherconfig\WorldWeatherWebsites.xml</td><td>1</td><td/></row>
 	</table>
 
 	<table name="FileSFPCatalog">
@@ -2050,6 +2053,7 @@
 		<row><td>MediaPortal.xml</td><td/><td/><td>_CD034108_FD6E_4B64_A24C_7915DD8FE4E0_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>NowPlayingScreens</td><td/><td/><td>_D43FAB30_E63B_4CD2_9F37_62D2E46479EB_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>StreamedMPConfig.xml</td><td/><td/><td>_819A7DFC_E7FB_414E_ADEB_69D1BC17E0A2_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>WorldWeather.xml</td><td/><td/><td>_C47D77EF_B3F7_4DFB_9FEC_8A3E0F746E9A_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>WorldWeatherWebsites.xml</td><td/><td/><td>_F5FAB9CE_D10E_49AA_85F5_454E8B4D070A_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>defaultSkinMovingPictures</td><td/><td/><td>_D37D0ADD_3144_423D_9882_3B55C09C5494_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>defaultWideSkinGlobalSearch</td><td/><td/><td>_E82ABA9B_3540_434F_8C9C_A4CAF741C496_FILTER</td><td/><td/><td/><td/></row>
@@ -2513,7 +2517,7 @@
 		<col key="yes" def="s72">Property</col>
 		<col def="L255">Value</col>
 		<row><td>Release</td><td>IncludeActionHelp</td><td>1</td></row>
-		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 1.7.7</td></row>
+		<row><td>Release</td><td>ProductName</td><td>MediaPortal StreamedMP Skin 1.8.0</td></row>
 		<row><td>Release</td><td>SetupFileName</td><td>setup</td></row>
 	</table>
 
@@ -4996,9 +5000,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{0C42C5D9-3AE9-4E15-BCFC-DF835B61B0DF}</td><td/></row>
+		<row><td>ProductCode</td><td>{73DD856D-4E71-4E17-8302-E538DD0442B3}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>1.7.7.3113</td><td/></row>
+		<row><td>ProductVersion</td><td>1.8.0.3136</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ARPNOMODIFY;ARPNOREMOVE;ARPSYSTEMCOMPONENT;COMPANYNAME;INSTALLDIR;ISALWAYSINSTALLELEVATED;ISFOUNDNEWERPRODUCTVERSION;ISSETUPDRIVEN;ISX_SERIALNUM;IS_NET_API_GROUP_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_USERNAME_TOKEN;IS_NET_API_NEW_USER_CONFIRM;IS_NET_API_NEW_USER_GROUP;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_SERVER;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NEW_USER_PASSWORD_TEXT;IS_NEW_USER_SERVER_TEXT;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_DATABASE;IS_SQLSERVER_LIST;IS_SQLSERVER_PASSWORD;IS_SQLSERVER_SERVER;IS_SQLSERVER_USERNAME;LOGOS;MAJORUPGRADE_01;SUPPORTDIR;USERNAME</td><td/></row>
