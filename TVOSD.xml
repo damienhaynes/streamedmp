@@ -193,10 +193,13 @@
       <filltexture1>-</filltexture1>
       <filltexture2>osdprogressmid_blue.png</filltexture2>
       <filltexture3>osdprogressmid_blue.png</filltexture3>
+	  <markertexture>osdprogressmid_blue.png</markertexture>
       <fillheight>8</fillheight>
       <label>#TV.Record.percent1</label>
       <label1>#TV.Record.percent2</label1>
-      <label2>#TV.Record.percent3</label2>
+      <label2>#TV.Record.percent3</label2>	
+      <labelmarkerstarts>#TV.Record.jumppoints</labelmarkerstarts>
+      <labelmarkerends>#TV.Record.chapters</labelmarkerends>
       <font>mediastream10c</font>
       <textcolor>ff888888</textcolor>
     </control>
@@ -508,138 +511,97 @@
       <textureSliderNib>slidernibnf.png</textureSliderNib>
       <textureSliderNibFocus>slidernibfo.png</textureSliderNibFocus>
       <onup>700</onup>
-      <ondown>701</ondown>
+      <ondown>707</ondown>
       <onleft>700</onleft>
       <onright>702</onright>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
       <visible>no</visible>
     </control>
     <control>
-      <description>Non-Interleaved Checkbox</description>
+      <description>Postprocessing deblock checkbox</description>
       <type>checkmark</type>
-      <id>701</id>
+      <id>707</id>
       <posX>948</posX>
-      <posY>124</posY>
-      <label>306</label>
+      <posY>134</posY>
+      <label>200074</label>
       <MarkWidth>20</MarkWidth>
       <MarkHeight>20</MarkHeight>
       <onup>700</onup>
-      <ondown>702</ondown>
-      <onleft>701</onleft>
-      <onright>701</onright>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <ondown>708</ondown>
+      <onleft>707</onleft>
+      <onright>707</onright>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
-      <description>No Cache Checkbox</description>
+      <description>Postprocessing resize checkbox</description>
       <type>checkmark</type>
-      <id>702</id>
+      <id>708</id>
       <posX>948</posX>
-      <posY>154</posY>
-      <label>431</label>
+      <posY>164</posY>
+      <label>200075</label>
       <MarkWidth>20</MarkWidth>
       <MarkHeight>20</MarkHeight>
-      <onup>701</onup>
-      <ondown>703</ondown>
-      <onleft>702</onleft>
-      <onright>702</onright>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <onup>707</onup>
+      <ondown>711</ondown>
+      <onleft>708</onleft>
+      <onright>708</onright>
       <visible>no</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
-      <description>Adjust Framerate Checkbox</description>
-      <type>checkmark</type>
-      <id>703</id>
-      <posX>73</posX>
-      <posY>948</posY>
-      <label>343</label>
-      <MarkWidth>20</MarkWidth>
-      <MarkHeight>20</MarkHeight>
-      <onup>702</onup>
-      <ondown>750</ondown>
-      <onleft>703</onleft>
-      <onright>703</onright>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
-      <visible>no</visible>
-    </control>
-    <control>
-      <description>brightness label</description>
+      <description>Postprocessing crop vertical label</description>
       <type>label</type>
-      <id>752</id>
-      <posX>1281</posX>
+      <id>710</id>
+      <posX>948</posX>
+      <posY>190</posY>
+      <label>200079</label>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <visible>no</visible>
+    </control>
+    <control>
+      <description>Postprocessing crop vertical</description>
+      <type>slider</type>
+      <id>711</id>
+      <posX>948</posX>
       <posY>214</posY>
-      <label>464</label>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
-      <visible>no</visible>
-    </control>
-    <control>
-      <description>brightness</description>
-      <type>slider</type>
-      <id>704</id>
-      <posX>1281</posX>
-      <posY>239</posY>
       <spintype>int</spintype>
       <textureSliderBar>sliderbackground.png</textureSliderBar>
       <textureSliderNib>slidernibnf.png</textureSliderNib>
       <textureSliderNibFocus>slidernibfo.png</textureSliderNibFocus>
-      <onup>703</onup>
-      <ondown>705</ondown>
-      <onleft>704</onleft>
-      <onright>704</onright>
+      <onup>708</onup>
+      <ondown>713</ondown>
+      <onleft>711</onleft>
+      <onright>711</onright>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
       <visible>no</visible>
     </control>
     <control>
-      <description>contrast label</description>
+      <description>Postprocessing crop horizontal label</description>
       <type>label</type>
-      <id>753</id>
-      <posX>1281</posX>
+      <id>712</id>
+      <posX>948</posX>
+      <posY>250</posY>
+      <label>200080</label>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <visible>no</visible>
+    </control>
+    <control>
+      <description>Postprocessing horizontal</description>
+      <type>slider</type>
+      <id>713</id>
+      <posX>948</posX>
       <posY>274</posY>
-      <label>465</label>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
-      <visible>no</visible>
-    </control>
-    <control>
-      <description>contrast</description>
-      <type>slider</type>
-      <id>705</id>
-      <posX>1281</posX>
-      <posY>299</posY>
       <spintype>int</spintype>
       <textureSliderBar>sliderbackground.png</textureSliderBar>
       <textureSliderNib>slidernibnf.png</textureSliderNib>
       <textureSliderNibFocus>slidernibfo.png</textureSliderNibFocus>
-      <onup>704</onup>
-      <ondown>706</ondown>
-      <onleft>705</onleft>
-      <onright>705</onright>
+      <onup>711</onup>
+      <ondown>713</ondown>
+      <onleft>713</onleft>
+      <onright>713</onright>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
       <visible>no</visible>
-    </control>
-    <control>
-      <description>gamma label</description>
-      <type>label</type>
-      <id>754</id>
-      <posX>1281</posX>
-      <posY>334</posY>
-      <label>466</label>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
-    </control>
-    <control>
-      <description>gamma</description>
-      <type>slider</type>
-      <id>706</id>
-      <posX>1281</posX>
-      <posY>359</posY>
-      <spintype>int</spintype>
-      <textureSliderBar>sliderbackground.png</textureSliderBar>
-      <textureSliderNib>slidernibnf.png</textureSliderNib>
-      <textureSliderNibFocus>slidernibfo.png</textureSliderNibFocus>
-      <onup>705</onup>
-      <ondown>750</ondown>
-      <onleft>706</onleft>
-      <onright>706</onright>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <!-- :::::::::: AUDIO MENU :::::::::: -->
     <control>
@@ -668,11 +630,22 @@
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
+      <description>your label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>948</posX>
+      <posY>65</posY>
+      <label>Delay Not Possible/need FFDShow</label>
+      <font>mediastream10c</font>
+      <visible>string.equals(#TvOSD.AudioVideoDelayPossible, false)</visible>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+    </control>
+    <control>
       <description>A/v Delay label</description>
       <type>label</type>
       <id>550</id>
       <posX>948</posX>
-      <posY>64</posY>
+      <posY>90</posY>
       <label>297</label>
       <font>mediastream10tc</font>
       <visible>no</visible>
@@ -683,7 +656,7 @@
       <type>slider</type>
       <id>500</id>
       <posX>948</posX>
-      <posY>89</posY>
+      <posY>115</posY>
       <spintype>float</spintype>
       <textureSliderBar>sliderbackground.png</textureSliderBar>
       <textureSliderNib>slidernibnf.png</textureSliderNib>
@@ -791,4 +764,4 @@
     <import>common.player.xml</import>
   </controls>
 </window>
-<!--Checksum:0e58bd45296ebe7282ccdd6936b93575-->
+<!--Checksum:80fab156fd00d546fa32b0cbe3a7b3a3-->
