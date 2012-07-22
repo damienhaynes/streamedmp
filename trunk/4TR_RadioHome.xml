@@ -242,6 +242,24 @@
         <ondown>2</ondown>
       </control>
     </control>
+    
+    <control>
+      <description>Radio Backgound</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>650</posX>
+      <posY>150</posY>
+      <width>682</width>
+      <height>300</height>
+      <texture>#Play.Current.Thumb</texture>
+      <keepaspectratio>yes</keepaspectratio>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>player.hasmedia+!string.equals(#Play.Current.Thumb,)</visible>
+    </control>
+
+    
+    <!--
     <control>
       <description>TV background</description>
       <type>image</type>
@@ -279,6 +297,7 @@
       <action>18</action>
       <textureFocus>tv_blue_border.png</textureFocus>
     </control>
+    -->
     <control>
       <type>image</type>
       <id>0</id>
@@ -298,7 +317,7 @@
       <posX>506</posX>
       <posY>470</posY>
       <width>622</width>
-      <label>#TV.View.Percentage</label>
+      <label>#Radio.View.Percentage</label>
       <visible>yes</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -386,6 +405,22 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="slide" time="150" end="1300,0">WindowClose</animation>
     </control>
+
+    <control>
+      <description>Recording Channel</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>25</posX>
+      <posY>540</posY>
+      <width>150</width>
+      <height>150</height>
+      <texture flipY="true" diffuse="diffusemirrorwide.png">#Play.Current.Thumb</texture>
+      <keepaspectratio>yes</keepaspectratio>
+      <animation effect="slide" start="0,-50" tween="bounce" time="700" delay="100">WindowOpen</animation>
+      <animation effect="rotatey" start="0" end="-131" center="15,0" time="500" reversible="false">WindowClose</animation>
+      <visible>player.hasmedia+!string.equals(#Play.Current.Thumb,)</visible>
+    </control>    
+    
     <control>
       <description>Recording Channel</description>
       <type>image</type>

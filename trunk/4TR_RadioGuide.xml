@@ -303,6 +303,36 @@
       <font>mediastream13</font>
       <textcolor>FFFFFFFF</textcolor>
     </control>
+
+    <control>
+      <description>Radio Group button</description>
+      <type>button</type>
+      <id>100</id>
+      <posX>15</posX>
+      <posY>120</posY>
+      <width>30</width>
+      <height>435</height>
+      <textureFocus>small_vbutton_focus.png</textureFocus>
+      <textureNoFocus>tvguide_button_light_middle.png</textureNoFocus>
+      <onleft>60</onleft>
+      <onright>6</onright>
+      <onup>6</onup>
+      <ondown>6</ondown>
+      <animation effect="zoom" start="100,100" end="100,100" time="0">focus</animation>
+      <animation effect="zoom" start="100,100" end="100,100" time="0">unfocus</animation>
+    </control>
+    <control>
+      <description>Radio Group button label</description>
+      <type>label</type>
+      <id>61</id>
+      <posX>40</posX>
+      <posY>125</posY>
+      <label>#Radio.Guide.ChangeGroup</label>
+      <font>mediastream12c</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="rotate" end="-90" time="0">WindowOpen</animation>
+    </control>    
+    
     <control>
       <description>TV background</description>
       <type>image</type>
