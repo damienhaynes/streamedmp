@@ -7,6 +7,13 @@
   <define>#header.hover:hover_my tv.png</define>
   <controls>
     <control>
+      <description>Dummy label to hold global settings for this skin!</description>
+      <type>label</type>
+      <id>420</id>
+      <label>#settings:logo-icon-size=240,240;guide_time=Center</label>
+      <visible>no</visible>
+    </control>  	
+    <control>
       <description>Background Image</description>
       <type>image</type>
       <id>1</id>
@@ -232,7 +239,29 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-		<width>300</width>
+		    <width>300</width>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <onright>99</onright>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+        <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
+        <animation effect="zoom" start="110,100" end="100,100" center="433,81" time="500">unfocus</animation>
+      </control>
+      <control>
+        <description>Teletext</description>
+        <type>button</type>
+        <id>9</id>
+        <label>Teletext</label>
+        <onup>8</onup>
+        <ondown>2</ondown>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+		    <width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
@@ -424,9 +453,9 @@
       <description>Description</description>
       <type>textboxscrollup</type>
       <id>15</id>
-      <posX>250</posX>
+      <posX>220</posX>
       <posY>570</posY>
-      <width>970</width>
+      <width>1000</width>
       <height>135</height>
       <seperator>__________________________________________________________________________________________________________</seperator>
       <label>#TV.View.description</label>
