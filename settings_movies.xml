@@ -15,7 +15,7 @@
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
       <posX>251</posX>
-      <posY>150</posY>
+      <posY>60</posY>
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
@@ -24,7 +24,7 @@
         <description>MPEG-2 Video Codecs</description>
         <id>24</id>
         <label>6000</label>
-        <onup>17</onup>
+        <onup>33</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -32,6 +32,27 @@
         <type>button</type>
         <id>29</id>
         <label>6036</label>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>VC1 Video Codecs</description>
+        <type>button</type>
+        <id>34</id>
+        <label>VC1 Video Codecs</label>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>VC1i Video Codecs</description>
+        <type>button</type>
+        <id>35</id>
+        <label>VC1i Video Codecs</label>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>XVID Video Codecs</description>
+        <type>button</type>
+        <id>36</id>
+        <label>XVID Video Codecs</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -55,6 +76,29 @@
         <label>6002</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
+      <control Style="settingsmaintogglebutton">
+        <description>Source Splitter Selection</description>
+        <type>togglebutton</type>
+        <id>39</id>
+        <label>Source Splitter Selection</label>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Splitter Source</description>
+        <type>button</type>
+        <id>38</id>
+        <label>Splitter Source</label>
+        <onright>#defaultcontrol.onright</onright>
+				<disabledcolor>ff909090</disabledcolor>
+      </control>	  
+      <control Style="settingsmainbutton">
+        <description>Splitter Filesync</description>
+        <type>button</type>
+        <id>37</id>
+        <label>Splitter Filesync</label>
+        <onright>#defaultcontrol.onright</onright>
+				<disabledcolor>ff909090</disabledcolor>
+      </control>	  
       <control Style="settingsmainbutton">
         <description>Apect Ratio</description>
         <type>button</type>
@@ -82,8 +126,9 @@
         <id>33</id>
         <label>492</label>
         <onright>#defaultcontrol.onright</onright>
+				<ondown>24</ondown>
       </control>
-      <control Style="settingsmainbutton">
+      <!--<control Style="settingsmainbutton">
         <description>Skip steps screen button</description>
         <type>button</type>
         <id>21</id>
@@ -91,7 +136,7 @@
         <hyperlink>708</hyperlink>
         <onright>#defaultcontrol.onright</onright>
         <ondown>24</ondown>
-      </control>
+      </control>-->
     </control>
   </controls>
 </window>
