@@ -189,10 +189,13 @@
       <filltexture1>-</filltexture1>
       <filltexture2>osdprogressmid_blue.png</filltexture2>
       <filltexture3>osdprogressmid_blue.png</filltexture3>
+			<markertexture>osdprogressmid_blue.png</markertexture>
       <fillheight>8</fillheight>
       <label>#TV.Record.percent1</label>
       <label1>#TV.Record.percent2</label1>
       <label2>#TV.Record.percent3</label2>
+      <labelmarkerstarts>#TV.Record.jumppoints</labelmarkerstarts>
+      <labelmarkerends>#TV.Record.chapters</labelmarkerends>
       <font>mediastream10c</font>
       <textcolor>ff888888</textcolor>
       <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]</visible>
@@ -303,18 +306,7 @@
       <visible>yes</visible>
     </control>
     <import>common.play.fullscreen.xml</import>
-    <!--<control>
-      <description>rec logo</description>
-      <type>image</type>
-      <id>39</id>
-      <posX>14</posX>
-      <posY>16</posY>
-      <width>18</width>
-      <height>18</height>
-      <texture>tvguide_record_button.png</texture>
-      <animation effect="fade" start="20" time="2000" condition="true" pulse="true">Conditional</animation>
-    </control>-->
     <import>common.player.xml</import>
   </controls>
 </window>
-<!--Checksum:800651e269780ded0b3c8411782e708e-->
+<!--Checksum:d4c589d77ab11248fbf9ef28806dabf6-->
