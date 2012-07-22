@@ -327,9 +327,9 @@
       <description>Sub Menu Background (subtitles)</description>
       <type>image</type>
       <id>302</id>
-      <posX>909</posX>
+      <posX>865</posX>
       <posY>0</posY>
-      <width>371</width>
+      <width>415</width>
       <height>473</height>
       <texture>osdmenubg.png</texture>
       <visible>control.isvisible(800)</visible>
@@ -339,9 +339,9 @@
       <description>Menu Title Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>18</posY>
-      <label>SUBTITLES MENU</label>
+      <label>200083</label>
       <font>mediastream16c</font>
       <textcolor>FFFFFFFF</textcolor>
       <visible>control.isvisible(800)</visible>
@@ -351,7 +351,7 @@
       <description>SubTitle Delay label</description>
       <type>label</type>
       <id>850</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>64</posY>
       <label>303</label>
       <visible>no</visible>
@@ -361,7 +361,7 @@
       <description>SubTitle Delay Slider</description>
       <type>slider</type>
       <id>800</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>89</posY>
       <spintype>float</spintype>
       <textureSliderBar>sliderbackground.png</textureSliderBar>
@@ -378,7 +378,7 @@
       <description>SubTitles On/Off Checkbox</description>
       <type>checkmark</type>
       <id>801</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>139</posY>
       <MarkWidth>20</MarkWidth>
       <MarkHeight>20</MarkHeight>
@@ -469,9 +469,9 @@
       <description>Sub Menu Background (video)</description>
       <type>image</type>
       <id>304</id>
-      <posX>909</posX>
+      <posX>865</posX>
       <posY>0</posY>
-      <width>371</width>
+      <width>415</width>
       <height>473</height>
       <texture>osdmenubg.png</texture>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
@@ -481,9 +481,9 @@
       <description>Menu Title Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>18</posY>
-      <label>VIDEO MENU</label>
+      <label>200081</label>
       <font>mediastream16c</font>
       <textcolor>FFFFFFFF</textcolor>
       <visible>control.isvisible(700)</visible>
@@ -493,7 +493,7 @@
       <description>Video Position label</description>
       <type>label</type>
       <id>750</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>64</posY>
       <label>298</label>
       <font>mediastream10tc</font>
@@ -504,7 +504,7 @@
       <description>Video Position Slider</description>
       <type>slider</type>
       <id>700</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>89</posY>
       <spintype>int</spintype>
       <textureSliderBar>sliderbackground.png</textureSliderBar>
@@ -521,7 +521,7 @@
       <description>Postprocessing deblock checkbox</description>
       <type>checkmark</type>
       <id>707</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>134</posY>
       <label>200074</label>
       <MarkWidth>20</MarkWidth>
@@ -537,7 +537,7 @@
       <description>Postprocessing resize checkbox</description>
       <type>checkmark</type>
       <id>708</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>164</posY>
       <label>200075</label>
       <MarkWidth>20</MarkWidth>
@@ -553,7 +553,7 @@
       <description>Postprocessing crop vertical label</description>
       <type>label</type>
       <id>710</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>190</posY>
       <label>200079</label>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
@@ -563,7 +563,7 @@
       <description>Postprocessing crop vertical</description>
       <type>slider</type>
       <id>711</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>214</posY>
       <spintype>int</spintype>
       <textureSliderBar>sliderbackground.png</textureSliderBar>
@@ -580,7 +580,7 @@
       <description>Postprocessing crop horizontal label</description>
       <type>label</type>
       <id>712</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>250</posY>
       <label>200080</label>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
@@ -590,7 +590,7 @@
       <description>Postprocessing horizontal</description>
       <type>slider</type>
       <id>713</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>274</posY>
       <spintype>int</spintype>
       <textureSliderBar>sliderbackground.png</textureSliderBar>
@@ -608,9 +608,9 @@
       <description>Sub Menu Background (audio)</description>
       <type>image</type>
       <id>305</id>
-      <posX>909</posX>
+      <posX>865</posX>
       <posY>0</posY>
-      <width>371</width>
+      <width>415</width>
       <height>473</height>
       <texture>osdmenubg.png</texture>
       <visible>control.isvisible(500)</visible>
@@ -620,20 +620,19 @@
       <description>Menu Title Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>18</posY>
-      <label>AUDIO MENU</label>
-      <!-- no string available for this one? -->
+      <label>200082</label>
       <font>mediastream16c</font>
       <textcolor>FFFFFFFF</textcolor>
       <visible>control.isvisible(500)</visible>
       <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
-      <description>your label</description>
+      <description>Delay Possibility label</description>
       <type>label</type>
       <id>1</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>65</posY>
       <label>Delay Not Possible/need FFDShow</label>
       <font>mediastream10c</font>
@@ -644,7 +643,7 @@
       <description>A/v Delay label</description>
       <type>label</type>
       <id>550</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>90</posY>
       <label>297</label>
       <font>mediastream10tc</font>
@@ -655,7 +654,7 @@
       <description>A/V Delay Slider</description>
       <type>slider</type>
       <id>500</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>115</posY>
       <spintype>float</spintype>
       <textureSliderBar>sliderbackground.png</textureSliderBar>
@@ -672,7 +671,7 @@
       <description>Audio Stream List Control</description>
       <type>listcontrol</type>
       <id>501</id>
-      <posX>749</posX>
+      <posX>908</posX>
       <posY>154</posY>
       <width>531</width>
       <height>500</height>
@@ -684,6 +683,7 @@
       <visible>no</visible>
       <spinPosX>1300</spinPosX>
       <spinPosY>515</spinPosY>
+			<animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>Sub Menu Nib</description>
@@ -697,7 +697,7 @@
       <description>Volume Slider</description>
       <type>slider</type>
       <id>400</id>
-      <posX>948</posX>
+      <posX>908</posX>
       <posY>89</posY>
       <textureSliderBar>sliderbackground.png</textureSliderBar>
       <textureSliderNib>slidernibnf.png</textureSliderNib>
@@ -707,15 +707,17 @@
       <onleft>400</onleft>
       <onright>400</onright>
       <visible>yes</visible>
+			<animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
+		<!-- Button Text on Selection -->
     <control>
       <description>subtitles label</description>
       <type>label</type>
       <id>0</id>
       <posX>1115</posX>
-      <posY>630</posY>
-      <width>140</width>
-      <label>Subtitles</label>
+      <posY>570</posY>
+      <width>150</width>
+      <label>200083</label>
       <font>mediastream10tc</font>
       <align>center</align>
       <textcolor>ff808080</textcolor>
@@ -726,9 +728,9 @@
       <type>label</type>
       <id>0</id>
       <posX>1115</posX>
-      <posY>630</posY>
-      <width>140</width>
-      <label>Video Menu</label>
+      <posY>570</posY>
+      <width>150</width>
+      <label>200081</label>
       <font>mediastream10tc</font>
       <align>center</align>
       <textcolor>ff808080</textcolor>
@@ -739,9 +741,9 @@
       <type>label</type>
       <id>0</id>
       <posX>1115</posX>
-      <posY>630</posY>
-      <width>140</width>
-      <label>Audio Menu</label>
+      <posY>570</posY>
+      <width>150</width>
+      <label>200082</label>
       <font>mediastream10tc</font>
       <align>center</align>
       <textcolor>ff808080</textcolor>
