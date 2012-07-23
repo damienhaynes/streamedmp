@@ -135,7 +135,7 @@
       <type>image</type>
       <id>0</id>
       <posX>28</posX>
-      <posY>650</posY>
+      <posY>645</posY>
       <width>260</width>
       <height>30</height>
       <texture>mediacountbg_Spin.png</texture>
@@ -146,7 +146,7 @@
       <type>spincontrol</type>
       <id>10</id>
       <posX>191</posX>
-      <posY>646</posY>
+      <posY>641</posY>
       <width>50</width>
       <height>37</height>
       <onup>6</onup>
@@ -167,7 +167,7 @@
       <type>label</type>
       <id>30</id>
       <posX>38</posX>
-      <posY>655</posY>
+      <posY>650</posY>
       <label>#(string.rtrim(L(734),':'))</label>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
@@ -636,7 +636,8 @@
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-    </control>
+    </control>		
+		<import>myvideo.mediainfo.xml</import>
     <import>common.overlays2.xml</import>
   </controls>
 </window>
