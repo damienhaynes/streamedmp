@@ -49,7 +49,7 @@
       <width>32</width>
       <height>39</height>
       <texture>#StreamedMP.Icons.Background</texture>
-      <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(60)+!string.equals(#iswatched,)</visible>
+      <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(60)+!string.equals(#iswatched,)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -61,7 +61,7 @@
       <width>24</width>
       <height>24</height>
       <texture>#StreamedMP.Icons.Watched</texture>
-      <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(60)+string.equals(#iswatched,yes)</visible>
+      <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(60)+string.equals(#iswatched,yes)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -73,7 +73,7 @@
       <width>24</width>
       <height>24</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
-      <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(60)+string.equals(#iswatched,no)</visible>
+      <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(60)+string.equals(#iswatched,no)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -106,7 +106,24 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
-      <visible>facadeview.list+control.isvisible(4441)</visible>
+      <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control>
+      <description>Date Of Birth / Place Of Birth</description>
+      <type>label</type>
+      <label>#Actor.DateOfBirth / #Actor.PlaceOfBirth</label>
+      <id>0</id>
+      <posX>309</posX>
+      <posY>282</posY>
+      <width>900</width>
+      <font>mediastream11tc</font>
+      <textcolor>ff909090</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>3</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
+      <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, False)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -126,7 +143,7 @@
       <align>left</align>
       <imagesToDraw>5</imagesToDraw>
       <percentage>#rating</percentage>
-      <visible>facadeview.list+control.isvisible(4441)</visible>
+      <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>    
@@ -139,12 +156,12 @@
       <posY>306</posY>
       <width>400</width>
       <font>mediastream10</font>
-      <visible>facadeview.list+control.isvisible(4441)+!string.equals(#rating,0)</visible>
+      <visible>facadeview.list+control.isvisible(4441)+!string.equals(#rating,0)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Summary</description>
+      <description>Movie Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
       <posX>308</posX>
@@ -155,7 +172,23 @@
       <seperator>-----------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#plot</label>
-      <visible>facadeview.list+control.isvisible(4441)</visible>
+      <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control>
+      <description>Actor Biography</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>308</posX>
+      <posY>318</posY>
+      <width>430</width>
+      <height>320</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#Actor.Biography</label>
+      <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, False)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -167,7 +200,7 @@
       <posX>310</posX>
       <posY>550</posY>
       <width>140</width>
-      <visible>facadeview.list+control.isvisible(4441)</visible>
+      <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>    
@@ -179,7 +212,7 @@
       <posX>470</posX>
       <posY>551</posY>
       <width>200</width>
-      <visible>facadeview.list+control.isvisible(4441)</visible>
+      <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -191,7 +224,7 @@
       <posX>310</posX>
       <posY>572</posY>
       <width>140</width>
-      <visible>facadeview.list+control.isvisible(4441)</visible>
+      <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -203,7 +236,7 @@
       <posX>470</posX>
       <posY>573</posY>
       <width>200</width>
-      <visible>facadeview.list+control.isvisible(4441)</visible>
+      <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -215,7 +248,7 @@
       <posX>310</posX>
       <posY>594</posY>
       <width>140</width>
-      <visible>facadeview.list+control.isvisible(4441)</visible>
+      <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -227,7 +260,7 @@
       <posX>470</posX>
       <posY>595</posY>
       <width>200</width>
-      <visible>facadeview.list+control.isvisible(4441)</visible>
+      <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -239,7 +272,7 @@
       <posX>310</posX>
       <posY>616</posY>
       <width>140</width>
-      <visible>facadeview.list+control.isvisible(4441)</visible>
+      <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -252,7 +285,7 @@
       <posY>617</posY>
       <width>250</width>
       <font>mediastream9c</font>
-      <visible>facadeview.list+control.isvisible(4441)</visible>
+      <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>

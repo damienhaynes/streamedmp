@@ -79,7 +79,7 @@ This file should contain the details view
       <width>32</width>
       <height>39</height>
       <texture>#StreamedMP.Icons.Background</texture>
-      <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(61)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(61)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -91,7 +91,7 @@ This file should contain the details view
       <width>24</width>
       <height>24</height>
       <texture>#StreamedMP.Icons.Watched</texture>
-      <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(61)+string.equals(#iswatched,yes)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(61)+string.equals(#iswatched,yes)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -103,7 +103,7 @@ This file should contain the details view
       <width>24</width>
       <height>24</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
-      <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(61)+string.equals(#iswatched,no)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(61)+string.equals(#iswatched,no)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -136,7 +136,69 @@ This file should contain the details view
       <font>mediastream11</font>
       <label>#plot</label>
       <scrollStartDelaySec>15</scrollStartDelaySec>
-      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control>
+      <description>Actor Date Of Birth / Place Of Birth</description>
+      <type>label</type>
+      <label>#Actor.DateOfBirth / #Actor.PlaceOfBirth</label>
+      <id>0</id>
+      <posX>410</posX>
+      <posY>100</posY>
+      <width>900</width>
+      <font>mediastream11tc</font>
+      <textcolor>ff909090</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>3</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, False)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control>
+      <description>Actor Biography</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>410</posX>
+      <posY>130</posY>
+      <width>500</width>
+      <height>350</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#Actor.Biography</label>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, False)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control>
+      <description>Movies Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>930</posX>
+      <posY>130</posY>
+      <label>#(L(342))</label>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, False)</visible>
+    </control>
+		<control>
+      <description>Actor Movie List</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>930</posX>
+      <posY>150</posY>
+      <width>300</width>
+      <height>350</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#groupmovielist </label>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, False)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -150,7 +212,7 @@ This file should contain the details view
       <font>mediastream12tc</font>
       <label>1020</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -161,7 +223,7 @@ This file should contain the details view
       <posY>305</posY>
       <width>360</width>
       <font>mediastream10</font>
-      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -172,7 +234,7 @@ This file should contain the details view
       <posY>325</posY>
       <width>360</width>
       <font>mediastream10</font>
-      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -183,7 +245,7 @@ This file should contain the details view
       <posY>345</posY>
       <width>360</width>
       <font>mediastream10</font>
-      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -195,7 +257,7 @@ This file should contain the details view
       <width>400</width>
       <height>50</height>
       <font>mediastream10</font>
-      <visible><![CDATA[facadeview.filmstrip+control.isvisible(4441)+!string.starts(#mpaarating,<)+!string.starts(#mpaarating,unknown)]]></visible>
+      <visible><![CDATA[facadeview.filmstrip+control.isvisible(4441)+!string.starts(#mpaarating,<)+!string.starts(#mpaarating,unknown)+string.equals(#hideActorinfo, True)]]></visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -207,7 +269,7 @@ This file should contain the details view
       <posY>410</posY>
       <width>360</width>
       <font>mediastream11tc</font>
-      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>    
@@ -229,7 +291,7 @@ This file should contain the details view
       <align>left</align>
       <imagesToDraw>5</imagesToDraw>
       <percentage>#rating</percentage>
-      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -240,7 +302,7 @@ This file should contain the details view
       <posY>457</posY>
       <width>360</width>
       <font>mediastream10</font>
-      <visible>facadeview.filmstrip+control.isvisible(4441)+!string.equals(#rating,0)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+!string.equals(#rating,0)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -254,7 +316,7 @@ This file should contain the details view
       <font>mediastream12tc</font>
       <label>#StreamedMP.Director</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>facadeview.filmstrip+control.isvisible(4441)+Control.HasText(1005)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+Control.HasText(1005)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -266,7 +328,7 @@ This file should contain the details view
       <posY>305</posY>
       <width>360</width>
       <font>mediastream10</font>
-      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -280,7 +342,7 @@ This file should contain the details view
       <font>mediastream12tc</font>
       <label>206</label>
       <textcolor>ffFFFFFF</textcolor>
-      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -293,7 +355,7 @@ This file should contain the details view
       <width>360</width>
       <height>115</height>
       <font>mediastream10</font>
-      <visible>facadeview.filmstrip+control.isvisible(4441)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
