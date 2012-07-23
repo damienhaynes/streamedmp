@@ -257,7 +257,7 @@
       <description>Cast</description>
       <type>textbox</type>
       <id>22</id>
-      <posX>308</posX>
+      <posX>-2308</posX>
       <posY>338</posY>
       <width>430</width>
       <height>190</height>
@@ -265,6 +265,39 @@
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#cast</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control>
+      <type>listcontrol</type>
+      <description>Cast List</description>
+      <id>24</id>
+      <posX>440</posX>
+      <posY>338</posY>
+      <width>440</width>
+      <height>250</height>
+      <textXOff>9</textXOff>
+      <textYOff>5</textYOff>
+      <textXOff2>-1000</textXOff2>
+      <textYOff2>-55</textYOff2>
+			<textXOff3>-2000</textXOff3>
+      <textureHeight>42</textureHeight>
+      <onright>4</onright>
+      <onleft>4</onleft>
+      <scrollOffset>1</scrollOffset>
+      <spinPosX>2175</spinPosX>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control>
+      <description>Selected Actor Image</description>
+      <type>image</type>
+      <id>25</id>
+      <posX>300</posX>
+      <posY>338</posY>
+      <width>150</width>
+      <height>210</height>
+      <texture>#actorThumb</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -298,7 +331,7 @@
       <description>Runtime</description>
       <id>1000</id>
       <type>label</type>
-      <label>#(iif(neq(#runtime,''),'#runtime #StreamedMP.Minutes','N/A'))</label>
+      <label>#(iif(neq(#runtime,''),'#runtime','N/A'))</label>
       <posX>470</posX>
       <posY>551</posY>
       <width>200</width>
@@ -422,7 +455,7 @@
         <type>togglebutton</type>
         <id>4</id>
         <label>206</label>
-        <onleft>10</onleft>
+        <onleft>24</onleft>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
