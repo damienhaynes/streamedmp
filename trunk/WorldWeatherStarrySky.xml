@@ -14,7 +14,7 @@
       <texture>LCD.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <visible>string.equals(#WorldWeather.View,StarrySky)</visible>
+      <visible>string.equals(#WorldWeather.View,Astronomy)</visible>
     </control>
     <control>
       <description>Starry Sky label</description>
@@ -26,7 +26,7 @@
       <font>mediastream16tc</font>
       <align>center</align>
       <textcolor>white</textcolor>
-      <visible>string.equals(#WorldWeather.View,StarrySky)</visible>
+      <visible>string.equals(#WorldWeather.View,Astronomy)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -39,7 +39,7 @@
       <width>494</width>
       <height>479</height>
       <texture>#WorldWeather.ImageStarrySky</texture>
-      <visible>string.equals(#WorldWeather.View,StarrySky)</visible>
+      <visible>string.equals(#WorldWeather.View,Astronomy)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
