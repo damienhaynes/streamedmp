@@ -175,7 +175,7 @@
       <description>Runtime</description>
       <id>1000</id>
       <type>label</type>
-      <label>#(iif(neq(#runtime,''),'#runtime #StreamedMP.Minutes','N/A'))</label>      
+      <label>#(iif(neq(#runtime,''),'#videoruntime','N/A'))</label>      
       <posX>470</posX>
       <posY>551</posY>
       <width>200</width>
