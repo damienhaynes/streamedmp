@@ -36,7 +36,7 @@
       this.lblCategory = new System.Windows.Forms.Label();
       this.txtSearch = new System.Windows.Forms.TextBox();
       this.lblSearch = new System.Windows.Forms.Label();
-      this.movPicsCategoryCombo = new Cornerstone.GUI.Controls.FilterComboBox();
+      
       this.cbOnlineVideosReturn = new System.Windows.Forms.CheckBox();
       this.btClearParameter = new System.Windows.Forms.Button();
       this.tbItemDisplayName = new System.Windows.Forms.TextBox();
@@ -77,7 +77,7 @@
       this.gbHyperlinkParameter.Controls.Add(this.lblCategory);
       this.gbHyperlinkParameter.Controls.Add(this.txtSearch);
       this.gbHyperlinkParameter.Controls.Add(this.lblSearch);
-      this.gbHyperlinkParameter.Controls.Add(this.movPicsCategoryCombo);
+      
       this.gbHyperlinkParameter.Controls.Add(this.cbOnlineVideosReturn);
       this.gbHyperlinkParameter.Controls.Add(this.btClearParameter);
       this.gbHyperlinkParameter.Controls.Add(this.cboViews);
@@ -120,19 +120,7 @@
       this.lblSearch.Size = new System.Drawing.Size(44, 13);
       this.lblSearch.TabIndex = 108;
       this.lblSearch.Text = "Search:";
-      // 
-      // movPicsCategoryCombo
-      // 
-      this.movPicsCategoryCombo.DropDownHeight = 200;
-      this.movPicsCategoryCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-      this.movPicsCategoryCombo.FormattingEnabled = true;
-      this.movPicsCategoryCombo.IntegralHeight = false;
-      this.movPicsCategoryCombo.Location = new System.Drawing.Point(18, 19);
-      this.movPicsCategoryCombo.Name = "movPicsCategoryCombo";
-      this.movPicsCategoryCombo.Size = new System.Drawing.Size(229, 21);
-      this.movPicsCategoryCombo.TabIndex = 107;
-      this.movPicsCategoryCombo.DropDown += new System.EventHandler(this.movPicsCategoryCombo_DropDown);
-      this.movPicsCategoryCombo.SelectedIndexChanged += new System.EventHandler(this.movPicsCategoryCombo_SelectedIndexChanged);
+      
       // 
       // cbOnlineVideosReturn
       // 
@@ -191,11 +179,29 @@
     private System.Windows.Forms.GroupBox gbHyperlinkParameter;
     private System.Windows.Forms.Button btClearParameter;
     private System.Windows.Forms.CheckBox cbOnlineVideosReturn;
-    private Cornerstone.GUI.Controls.FilterComboBox movPicsCategoryCombo;
+    
     private System.Windows.Forms.TextBox txtSearch;
     private System.Windows.Forms.Label lblSearch;
     private System.Windows.Forms.Label lblCategory;
     private System.Windows.Forms.TextBox tbItemDisplayName;
     private System.Windows.Forms.ComboBox cboOnlineVideosCategories;
+
+    private void CreateMovingPicturesCategoryDropDown()
+    {
+        var movPicsCategoryCombo = new Cornerstone.GUI.Controls.FilterComboBox();
+
+        movPicsCategoryCombo.DropDownHeight = 200;
+        movPicsCategoryCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+        movPicsCategoryCombo.FormattingEnabled = true;
+        movPicsCategoryCombo.IntegralHeight = false;
+        movPicsCategoryCombo.Location = new System.Drawing.Point(18, 19);
+        movPicsCategoryCombo.Name = "movPicsCategoryCombo";
+        movPicsCategoryCombo.Size = new System.Drawing.Size(229, 21);
+        movPicsCategoryCombo.TabIndex = 107;
+        movPicsCategoryCombo.DropDown += new System.EventHandler(this.movPicsCategoryCombo_DropDown);
+        movPicsCategoryCombo.SelectedIndexChanged += new System.EventHandler(this.movPicsCategoryCombo_SelectedIndexChanged);
+
+        this.gbHyperlinkParameter.Controls.Add(movPicsCategoryCombo);
+    }
   }
 }
