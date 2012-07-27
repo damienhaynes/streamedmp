@@ -320,6 +320,15 @@ namespace StreamedMPEditor
     public formStreamedMpEditor()
     {
       InitializeComponent();
+
+      // 
+      // create movPicsCategoryCombo
+      // 
+      if (!DesignMode && MovingPicturesInstalled)
+      {
+          CreateMovingPicturesCategoryDropDown();
+      }
+
       randomFanart.fanartGames = false;
       randomFanart.fanartMovies = false;
       randomFanart.fanartMovingPictures = false;
@@ -426,8 +435,7 @@ namespace StreamedMPEditor
         }
       }
 
-      filename = Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "windows"), "MovingPictures.dll");
-      if (Helper.IsAssemblyAvailable("MovingPictures", new Version(1, 2, 0, 1256), filename))
+      if (MovingPicturesInstalled)
       {
         // load categories
         LoadMovingPicturesCategories();
@@ -829,9 +837,9 @@ namespace StreamedMPEditor
         // If using 3D backgrounds disable BG sharing for item.
         if (!item.fanartHandlerEnabled && (bgBox.Text.ToLower() == "3dbackgrounds"))
           item.disableBGSharing = true;
-
+          
         item.showMostRecent = getMostRecentDisplayOption();
-        if ((pluginTakesParameter(item.hyperlink) && cboParameterViews.SelectedIndex != -1) || (movPicsCategoryCombo.Visible && movPicsCategoryCombo.SelectedIndex != -1))
+        if ((pluginTakesParameter(item.hyperlink) && cboParameterViews.SelectedIndex != -1) || (MovPicsCategoryVisibility && MovPicsCategorySelectedIndex != -1))
         {
           switch (item.hyperlink)
           {
@@ -847,16 +855,24 @@ namespace StreamedMPEditor
               item.hyperlinkParameterCategory = cboOnlineVideosCategories.Text;
               break;
             case movingPicturesSkinID:
-              if (movPicsCategoryCombo.SelectedIndex != -1)
+              if (MovingPicturesInstalled)
               {
-                // store the ID of the selected node
-                if (item.hyperlink == movingPicturesSkinID)
-                {
-                  int? id = GetMovPicsCategoryNodeID(movPicsCategoryCombo.SelectedNode);
-                  if (id != null)
-                    item.hyperlinkParameter = id.ToString();
-                }
-                ClearMovingPicturesCategories();
+                  if (MovPicsCategorySelectedIndex != -1)
+                  {
+                      // store the ID of the selected node
+                      if (item.hyperlink == movingPicturesSkinID)
+                      {
+                          int? id = GetMovPicsSelectedCategoryNodeID();
+                          if (id != null)
+                              item.hyperlinkParameter = id.ToString();
+                      }
+                      ClearMovingPicturesCategories();
+                  }
+              }
+              else
+              {
+                  lbParameterView.Visible = false;
+                  linkClearCategories.Visible = false;
               }
               break;
             default:
@@ -982,15 +998,23 @@ namespace StreamedMPEditor
             cboParameterViews.Text = string.Empty;
           break;
         case movingPicturesSkinID:
-          linkClearCategories.Visible = true;
-          if (mnuItem.hyperlinkParameter != "false" && !string.IsNullOrEmpty(mnuItem.hyperlinkParameter))
+          if (MovingPicturesInstalled)
           {
-            int id = 0;
-            Int32.TryParse(mnuItem.hyperlinkParameter, out id);
-            movPicsCategoryCombo.SelectedNode = GetMovPicsDBNodeFromID(id);
+              linkClearCategories.Visible = true;
+              if (mnuItem.hyperlinkParameter != "false" && !string.IsNullOrEmpty(mnuItem.hyperlinkParameter))
+              {
+                  int id = 0;
+                  Int32.TryParse(mnuItem.hyperlinkParameter, out id);
+                  SetMovPicsCategorySelectedNode(id);
+              }
+              else
+                  ClearMovingPicturesCategories();
           }
           else
-            ClearMovingPicturesCategories();
+          {
+              lbParameterView.Visible = false;
+              linkClearCategories.Visible = false;
+          }
           break;
         default:
           break;
@@ -1060,12 +1084,12 @@ namespace StreamedMPEditor
           cboParameterViews.Text = string.Empty;
         }
 
-        if (movPicsCategoryCombo.SelectedIndex != -1)
+        if (MovPicsCategorySelectedIndex != -1)
         {
           // store the ID of the selected node
           if (item.hyperlink == movingPicturesSkinID)
-          { 
-            int? id = GetMovPicsCategoryNodeID(movPicsCategoryCombo.SelectedNode);
+          {
+            int? id = GetMovPicsSelectedCategoryNodeID();
             if (id != null)
               item.hyperlinkParameter = id.ToString();
           }
@@ -1120,6 +1144,16 @@ namespace StreamedMPEditor
       }
     }
 
+    public void SetMovPicsCategorySelectedNode(int id)
+    {
+        MovPicsCategorySelectedNode = GetMovPicsDBNodeFromID(id);
+    }
+
+    int? GetMovPicsSelectedCategoryNodeID()
+    {
+        return ((DBNode<DBMovieInfo>)MovPicsCategorySelectedNode).ID;
+    }
+
     int? GetMovPicsCategoryNodeID(IDBNode node)
     {
       return ((DBNode<DBMovieInfo>)node).ID;
@@ -1151,7 +1185,7 @@ namespace StreamedMPEditor
       ovTxtSearch.Visible = false;
       lbSearch.Visible = false;
       lblCategories.Visible = false;
-      movPicsCategoryCombo.SelectedIndex = -1;
+      MovPicsCategorySelectedIndex = -1;
     }
 
 
@@ -1222,7 +1256,7 @@ namespace StreamedMPEditor
       {
         cboParameterViews.Visible = true;
         lbParameterView.Visible = true;
-        movPicsCategoryCombo.Visible = false;
+        MovPicsCategoryVisibility = false;
 
         switch (mnuItem.hyperlink)
         {
@@ -1274,13 +1308,24 @@ namespace StreamedMPEditor
             lblCategories.Visible = true;
             break;
           case movingPicturesSkinID:
-            movPicsCategoryCombo.Visible = true;
             cboParameterViews.Visible = false;
-            if (mnuItem.hyperlinkParameter != "false")
+            if (MovingPicturesInstalled)
             {
-              int id = 0;
-              Int32.TryParse(mnuItem.hyperlinkParameter, out id);
-              movPicsCategoryCombo.SelectedNode = GetMovPicsDBNodeFromID(id);
+                MovPicsCategoryVisibility = true;
+                if (mnuItem.hyperlinkParameter != "false")
+                {
+                    int id = 0;
+                    Int32.TryParse(mnuItem.hyperlinkParameter, out id);
+                    if (MovingPicturesInstalled)
+                    {
+                        SetMovPicsCategorySelectedNode(id);
+                    }
+                }
+            }
+            else
+            {
+                lbParameterView.Visible = false;
+                linkClearCategories.Visible = false;
             }
             break;
           default:
@@ -1291,7 +1336,7 @@ namespace StreamedMPEditor
       {
         cboParameterViews.Visible = false;
         lbParameterView.Visible = false;
-        movPicsCategoryCombo.Visible = false;
+        MovPicsCategoryVisibility = false;
       }
 
       bgBox.Text = mnuItem.bgFolder;
@@ -2467,17 +2512,17 @@ namespace StreamedMPEditor
 
     private void movPicsCategoryCombo_DropDown(object sender, EventArgs e)
     {
-      if (movPicsCategoryCombo.SelectedIndex == -1 && MovingPicturesCore.Settings.CategoriesEnabled)
+      if (MovPicsCategorySelectedIndex == -1 && MovingPicturesCore.Settings.CategoriesEnabled)
       {
-        movPicsCategoryCombo.SelectedNode = MovingPicturesCore.Settings.CategoriesMenu.RootNodes[0];
+          MovPicsCategorySelectedNode = MovingPicturesCore.Settings.CategoriesMenu.RootNodes[0];
       }
     }
 
     void ClearMovingPicturesCategories()
     {
-      movPicsCategoryCombo.Text = string.Empty;
-      movPicsCategoryCombo.SelectedNode = null;
-      movPicsCategoryCombo.SelectedIndex = -1;
+      MovPicsCategoryText = string.Empty;
+      MovPicsCategorySelectedNode = null;
+      MovPicsCategorySelectedIndex = -1;
     }
 
     private void buildThemeScreen()
@@ -2610,6 +2655,123 @@ namespace StreamedMPEditor
 
     #region Parmeter Handling
 
+    public string MovPicsCategoryText
+    {
+        set
+        {
+            if (this.itemProperties.Controls.ContainsKey("movPicsCategoryCombo"))
+            {
+                // control exists
+                var movpicsCombo = this.itemProperties.Controls["movPicsCategoryCombo"];
+
+                Type type = movpicsCombo.GetType();
+                PropertyInfo prop = type.GetProperty("Text");
+
+                prop.SetValue(movpicsCombo, value, null);
+            }
+        }
+    }
+
+      public bool MovPicsCategoryVisibility
+      {
+          set
+          {
+              if (this.itemProperties.Controls.ContainsKey("movPicsCategoryCombo"))
+              {
+                  // control exists
+                  var movpicsCombo = this.itemProperties.Controls["movPicsCategoryCombo"];
+
+                  Type type = movpicsCombo.GetType();
+                  PropertyInfo prop = type.GetProperty("Visible");
+
+                  prop.SetValue(movpicsCombo, value, null);
+              }
+          }
+          get
+          {
+              if (this.itemProperties.Controls.ContainsKey("movPicsCategoryCombo"))
+              {
+                  // control exists
+                  var movpicsCombo = this.itemProperties.Controls["movPicsCategoryCombo"];
+
+                  Type type = movpicsCombo.GetType();
+                  PropertyInfo prop = type.GetProperty("Visible");
+
+                  var retValue = prop.GetValue(movpicsCombo, null);
+                  return retValue == null ? false : (bool)retValue;
+              }
+              else
+                  return false;
+          }
+      }
+
+      public int MovPicsCategorySelectedIndex
+      {
+          set
+          {
+              if (this.itemProperties.Controls.ContainsKey("movPicsCategoryCombo"))
+              {
+                  // control exists
+                  var movpicsCombo = this.itemProperties.Controls["movPicsCategoryCombo"];
+
+                  Type type = movpicsCombo.GetType();
+                  PropertyInfo prop = type.GetProperty("SelectedIndex");
+
+                  prop.SetValue(movpicsCombo, value, null);
+              }
+          }
+          get
+          {
+              if (this.itemProperties.Controls.ContainsKey("movPicsCategoryCombo"))
+              {
+                  // control exists
+                  var movpicsCombo = this.itemProperties.Controls["movPicsCategoryCombo"];
+
+                  Type type = movpicsCombo.GetType();
+                  PropertyInfo prop = type.GetProperty("SelectedIndex");
+
+                  var retValue = prop.GetValue(movpicsCombo, null);
+                  return retValue == null ? -1 : (int)retValue;
+              }
+              else
+                  return -1;
+          }
+      }
+
+      public IDBNode MovPicsCategorySelectedNode
+      {
+          set
+          {
+              if (this.itemProperties.Controls.ContainsKey("movPicsCategoryCombo"))
+              {
+                  // control exists
+                  var movpicsCombo = this.itemProperties.Controls["movPicsCategoryCombo"];
+
+                  Type type = movpicsCombo.GetType();
+                  PropertyInfo prop = type.GetProperty("SelectedNode");
+
+                  prop.SetValue(movpicsCombo, value, null);
+              }
+          }
+          get
+          {
+              if (this.itemProperties.Controls.ContainsKey("movPicsCategoryCombo"))
+              {
+                  // control exists
+                  var movpicsCombo = this.itemProperties.Controls["movPicsCategoryCombo"];
+
+                  Type type = movpicsCombo.GetType();
+                  PropertyInfo prop = type.GetProperty("SelectedNode");
+
+                  var retValue = prop.GetValue(movpicsCombo, null);
+                  return (IDBNode)retValue;
+              }
+              else
+                  return null;
+          }
+      }
+
+
     /// <summary>
     /// Get list of views in TVseries database
     /// Key: should be used as hyperlinkParameter
@@ -2700,6 +2862,8 @@ namespace StreamedMPEditor
     /// </summary>
     private void LoadMovingPicturesCategories()
     {
+      var movPicsCategoryCombo = this.itemProperties.Controls["movPicsCategoryCombo"] as Cornerstone.GUI.Controls.FilterComboBox;
+
       // initialize filter combo to manage the default filter
       movPicsCategoryCombo.TreePanel.TranslationParser = new TranslationParserDelegate(MediaPortal.Plugins.MovingPictures.MainUI.Translation.ParseString);
       movPicsCategoryCombo.Menu = MovingPicturesCore.Settings.CategoriesMenu;

@@ -335,7 +335,7 @@ namespace StreamedMPEditor
       if (pluginTakesParameter(selectedWindowID.Text))
       {
         cboParameterViews.Visible = true;
-        movPicsCategoryCombo.Visible = false;
+        MovPicsCategoryVisibility = false;
         lbParameterView.Visible = true;
         if (selectedWindowID.Text == onlineVideosSkinID)
         {
@@ -348,8 +348,9 @@ namespace StreamedMPEditor
         if (selectedWindowID.Text == movingPicturesSkinID)
         {
           cboParameterViews.Visible = false;
-          movPicsCategoryCombo.Visible = true;
-          linkClearCategories.Visible = true;
+          lbParameterView.Visible = true && MovingPicturesInstalled;
+          MovPicsCategoryVisibility = true && MovingPicturesInstalled;
+          linkClearCategories.Visible = true && MovingPicturesInstalled;
         }
       }
       else
@@ -361,7 +362,7 @@ namespace StreamedMPEditor
         cbOnlineVideosReturn.Visible = false;
         ovTxtSearch.Visible = false;
         lbSearch.Visible = false;
-        movPicsCategoryCombo.Visible = false;
+        MovPicsCategoryVisibility = false;
       }
 
       switch (selectedWindowID.Text)
@@ -756,6 +757,14 @@ namespace StreamedMPEditor
       }
     }
 
+    public static bool MovingPicturesInstalled
+    {
+        get
+        {
+            string filename = Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "windows"), "MovingPictures.dll");
+            return Helper.IsAssemblyAvailable("MovingPictures", new Version(1, 2, 0, 1256), filename);
+        }   
+    }
 
     public bool validForMPVersion(string validForMPVersion)
     {
@@ -2147,6 +2156,7 @@ namespace StreamedMPEditor
           return this._fullName;
         }
       }
+
     }
 
     public class menuItem
