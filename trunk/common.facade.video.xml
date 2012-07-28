@@ -96,7 +96,7 @@ This file should contain the facade view
           <onleft>2</onleft>
           <onright>2</onright>
           <textXOff3>0</textXOff3>
-          <textYOff3>12</textYOff3>
+          <textYOff3>11</textYOff3>
           <textalign3>right</textalign3>
           <font3>mediastream10c</font3>
           <posX>840</posX>
@@ -334,7 +334,7 @@ This file should contain the facade view
                     <label>#rating (#votes #StreamedMP.Votes)</label>
                     <font>mediastream10</font>
                     <textcolor>FFFFFFFF</textcolor>
-										<visible>!string.equals(#rating,0)</visible>
+                  <visible>!string.equals(#rating,0)</visible>
                   </control>                 
                   <control>
                     <description>Director Label</description>
@@ -356,7 +356,7 @@ This file should contain the facade view
                     <font>mediastream10</font>
                     <textcolor>FFFFFFFF</textcolor>
                   </control>
-									<control>
+                  <control>
                     <description>Plot Label</description>
                     <type>label</type>
                     <posX>20</posX>
@@ -377,7 +377,7 @@ This file should contain the facade view
                     <font>mediastream10</font>
                     <lineSpacing>2</lineSpacing>
                     <textcolor>FFFFFFFF</textcolor>
-										<scrollStartDelaySec>15</scrollStartDelaySec>
+                    <scrollStartDelaySec>15</scrollStartDelaySec>
                   </control>
                 </controls>
               ]]></subitem>
