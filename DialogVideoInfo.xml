@@ -411,6 +411,8 @@
       <posX>900</posX>
       <posY>230</posY>
       <layout>StackLayout(0, Vertical, true)</layout>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <control>
         <description>Play Button</description>
         <type>button</type>
@@ -427,8 +429,6 @@
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
         <description>Plot</description>
@@ -447,8 +447,6 @@
         <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
         <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
         <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
         <description>Cast</description>
@@ -467,8 +465,6 @@
         <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
         <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
         <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
         <description>Review</description>
@@ -487,8 +483,6 @@
         <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
         <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
         <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
         <description>Refresh</description>
@@ -505,8 +499,22 @@
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+			<control>
+        <description>Rename</description>
+        <type>button</type>
+        <id>26</id>
+        <label>118</label>
+        <onleft>10</onleft>
+        <textcolor>ffffffff</textcolor>
+        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <font>mediastream12tc</font>
+        <width>300</width>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
       </control>
       <control>
         <description>Watched</description>
@@ -526,8 +534,6 @@
         <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
         <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
         <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
         <description>Trailer</description>
@@ -536,7 +542,7 @@
         <label>#StreamedMP.Trailer</label>
         <onleft>10</onleft>
         <onup>6</onup>
-        <ondown>97259</ondown>
+        <ondown>97270</ondown>
         <hyperlink>4755</hyperlink>
         <hyperlinkParameter>site:IMDb Movie Trailers|search:#(iif(neq(#imdbnumber,''),#imdbnumber,#title))|return:Locked</hyperlinkParameter>
         <textcolor>ffffffff</textcolor>
@@ -549,77 +555,12 @@
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <visible>plugin.isenabled(OnlineVideos)</visible>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
-        <description>Trakt Rate Movie</description>
+        <description>Trakt Menu</description>
         <type>button</type>
-        <id>97259</id>
-        <label>#Trakt.Translation.Rate.Label</label>
-        <onleft>10</onleft>
-        <onup>4755</onup>
-        <ondown>97260</ondown>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <visible>plugin.isenabled(Trakt)</visible>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
-      </control>
-      <control>
-        <description>Trakt Shouts</description>
-        <type>button</type>
-        <id>97260</id>
-        <label>#Trakt.Translation.Shouts.Label...</label>
-        <onleft>10</onleft>
-        <onup>97259</onup>
-        <ondown>97258</ondown>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <visible>plugin.isenabled(Trakt)</visible>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
-      </control>
-      <control>
-        <description>Trakt Add To Watch List</description>
-        <type>button</type>
-        <id>97258</id>
-        <label>#Trakt.Translation.AddToWatchList.Label</label>
-        <onleft>10</onleft>
-        <onup>97260</onup>
-        <ondown>97262</ondown>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <visible>plugin.isenabled(Trakt)</visible>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
-      </control>
-      <control>
-        <description>Trakt Add To Watch List</description>
-        <type>button</type>
-        <id>97262</id>
-        <label>#Trakt.Translation.RelatedMovies.Label...</label>
+        <id>97270</id>
+        <label>Trakt...</label>
         <onleft>10</onleft>
         <onup>97258</onup>
         <ondown>2</ondown>
@@ -633,8 +574,6 @@
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <visible>plugin.isenabled(Trakt)</visible>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
     </control>		
 		<import>myvideo.mediainfo.xml</import>
