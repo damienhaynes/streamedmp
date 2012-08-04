@@ -22,9 +22,9 @@
       <type>group</type>
       <description>group element</description>
       <posX>50</posX>
-      <posY>230</posY>      
+      <posY>230</posY>
       <layout>StackLayout</layout>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <control Style="skinbutton">
         <description>Search Phrase Button</description>
@@ -34,7 +34,7 @@
         <onup>17</onup>
         <ondown>7</ondown>
         <onright>50</onright>
-        <onleft>2</onleft>        
+        <onleft>2</onleft>
         <width>300</width>
       </control>
       <control Style="skinbutton">
@@ -219,7 +219,7 @@
         <suffix>|</suffix>
       </control>
     </control>
-		<control>
+    <control>
       <type>image</type>
       <description>album art image</description>
       <id>0</id>
@@ -231,7 +231,7 @@
       <texture>#selectedthumb</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>!player.hasmedia+!string.equals(#mpei.fac44102_7190_4006_b7aa_60d0e7c17638.haveupdate,true)</visible>
     </control>
@@ -285,4 +285,4 @@
     <import>common.overlays.xml</import>
   </controls>
 </window>
-<!--Checksum:ff78779123df78804006615e7fb63d9c-->
+<!--Checksum:21d0411fa418b26f941e618103e40712-->

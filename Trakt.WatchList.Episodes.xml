@@ -8,9 +8,8 @@
   <define>#header.BG.overlay:mainoverlay.png</define>
   <define>#Fanart.1:#Trakt.WatchListEpisodes.Fanart.1</define>
   <define>#Fanart.2:#Trakt.WatchListEpisodes.Fanart.2</define>
-  <controls>    
-		
-		<control>
+  <controls>
+    <control>
       <id>1</id>
       <description>Background Image</description>
       <type>image</type>
@@ -20,23 +19,21 @@
       <height>720</height>
       <texture>#header.hover</texture>
       <colordiffuse>#header.BG.colordiffuse</colordiffuse>
-			<animation effect="fade" time="300">WindowOpen</animation>
+      <animation effect="fade" time="300">WindowOpen</animation>
     </control>
-    
     <import>Trakt.Common.Fanart.xml</import>
-    
     <control>
       <id>1</id>
-      <description>Overlay Image</description>      
+      <description>Overlay Image</description>
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
       <width>1281</width>
       <height>720</height>
       <texture>#header.BG.overlay</texture>
-			<visible>!facadeview.filmstrip</visible>
+      <visible>!facadeview.filmstrip</visible>
     </control>
-		<control>
+    <control>
       <description>Topbar Overlay</description>
       <type>image</type>
       <id>0</id>
@@ -58,7 +55,6 @@
       <texture>filmstrip_overlay.png</texture>
       <visible>facadeview.filmstrip</visible>
     </control>
-		
     <control>
       <description>Top Title Extension Background</description>
       <type>image</type>
@@ -69,10 +65,10 @@
       <height>35</height>
       <texture>tvtitlebgshort.png</texture>
       <animation effect="fade" time="100" delay="0">visiblechange</animation>
-			<animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Current User</description>
       <type>label</type>
       <id>0</id>
@@ -81,12 +77,12 @@
       <width>220</width>
       <font>mediastream12c</font>
       <label>#Trakt.WatchList.CurrentUser</label>
-      <align>right</align> 
-			<animation effect="fade" time="100" delay="0">visiblechange</animation>
+      <align>right</align>
+      <animation effect="fade" time="100" delay="0">visiblechange</animation>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Title Background</description>
       <type>image</type>
       <id>0</id>
@@ -111,7 +107,6 @@
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		
     <control>
       <type>image</type>
       <id>0</id>
@@ -124,7 +119,6 @@
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-    
     <!-- Facade Item Counts -->
     <control>
       <description>Item Count Background</description>
@@ -200,8 +194,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="800,0">WindowClose</animation>
-		</control>
-		
+    </control>
     <control>
       <description>Selected item Label</description>
       <type>fadelabel</type>
@@ -215,7 +208,6 @@
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-    
     <control>
       <description>group element</description>
       <type>group</type>
@@ -224,10 +216,10 @@
       <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <control>
-				<type>facadeview</type>
-				<id>50</id>
-				<animation effect="fade" time="250" delay="0">WindowClose</animation>
-				<control>
+        <type>facadeview</type>
+        <id>50</id>
+        <animation effect="fade" time="250" delay="0">WindowClose</animation>
+        <control>
           <description>listcontrol</description>
           <type>listcontrol</type>
           <id>50</id>
@@ -264,18 +256,18 @@
           <spinHeight>37</spinHeight>
           <suffix>|</suffix>
         </control>
-				<control>
-					<visible>control.isvisible(50)</visible>
-					<description>Filmstrip</description>
-					<type>filmstrip</type>
-					<id>50</id>
-					<onup>2</onup>
-					<posX>30</posX>
-					<posY>470</posY>
-					<width>1280</width>
-					<height>220</height>
-					<scrollOffset>4</scrollOffset>
-					<thumbWidth>230</thumbWidth>
+        <control>
+          <visible>control.isvisible(50)</visible>
+          <description>Filmstrip</description>
+          <type>filmstrip</type>
+          <id>50</id>
+          <onup>2</onup>
+          <posX>30</posX>
+          <posY>470</posY>
+          <width>1280</width>
+          <height>220</height>
+          <scrollOffset>4</scrollOffset>
+          <thumbWidth>230</thumbWidth>
           <thumbHeight>129</thumbHeight>
           <thumbPosX>4</thumbPosX>
           <thumbPosY>4</thumbPosY>
@@ -283,33 +275,33 @@
           <itemHeight>185</itemHeight>
           <textureWidth>250</textureWidth>
           <textureHeight>152</textureHeight>
-					<thumbPosX>7</thumbPosX>
-					<thumbPosY>7</thumbPosY>
-					<thumbs flipY="true" diffuse="diffusemirrorwide.png" />
-					<InfoImage>
-					</InfoImage>
-					<imageFolder>-</imageFolder>
-					<imageFolderFocus>-</imageFolderFocus>
-					<frame>-</frame>
-					<frameFocus>-</frameFocus>
-					<showFrame>no</showFrame>
-					<showFolder>yes</showFolder>
-					<showBackGround>no</showBackGround>
-					<showInfoImage>no</showInfoImage>
-					<thumbAnimation effect="zoom" start="100,100" end="120,120" tween="quadratic" time="0">focus</thumbAnimation>
-					<!-- Spin Controls -->
-					<spinWidth>50</spinWidth>
-					<spinHeight>37</spinHeight>
-					<spinPosX>585</spinPosX>
+          <thumbPosX>7</thumbPosX>
+          <thumbPosY>7</thumbPosY>
+          <thumbs flipY="true" diffuse="diffusemirrorwide.png" />
+          <InfoImage>
+          </InfoImage>
+          <imageFolder>-</imageFolder>
+          <imageFolderFocus>-</imageFolderFocus>
+          <frame>-</frame>
+          <frameFocus>-</frameFocus>
+          <showFrame>no</showFrame>
+          <showFolder>yes</showFolder>
+          <showBackGround>no</showBackGround>
+          <showInfoImage>no</showInfoImage>
+          <thumbAnimation effect="zoom" start="100,100" end="120,120" tween="quadratic" time="0">focus</thumbAnimation>
+          <!-- Spin Controls -->
+          <spinWidth>50</spinWidth>
+          <spinHeight>37</spinHeight>
+          <spinPosX>585</spinPosX>
           <spinPosY>685</spinPosY>
-					<spinAlign>center</spinAlign>
-					<spinColor>ff006698</spinColor>
-					<textureUp>arrow_round_up_nofocus.png</textureUp>
-					<textureDown>arrow_round_down_nofocus.png</textureDown>
-					<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-					<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-				</control>
-				<control>
+          <spinAlign>center</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+        </control>
+        <control>
           <description>Thumbnail Panel</description>
           <type>thumbnailpanel</type>
           <id>50</id>
@@ -353,12 +345,11 @@
           <spinColor>ff006698</spinColor>
           <spinCanFocus>no</spinCanFocus>
         </control>
-			</control>   
-		</control>		
-    
-		<!-- Hidden Menu -->
-		<control>
-			<description>Hidden Menu Indicator</description>
+      </control>
+    </control>
+    <!-- Hidden Menu -->
+    <control>
+      <description>Hidden Menu Indicator</description>
       <type>image</type>
       <posX>1232</posX>
       <posY>50</posY>
@@ -441,18 +432,18 @@
           <description>Change Layout</description>
           <type>button</type>
           <id>2</id>
-					<label>-</label>
+          <label>-</label>
           <onup>21</onup>
           <!-- Top Bar -->
           <onleft>50</onleft>
-        </control>        
+        </control>
         <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
           <label>-</label>
           <visible>false</visible>
-        </control>        
+        </control>
         <control>
           <description>MovingPictures</description>
           <id>66610</id>
@@ -478,12 +469,11 @@
           <hyperlink>9811</hyperlink>
           <ondown>2</ondown>
           <onleft>50</onleft>
-        </control>				
+        </control>
       </control>
     </control>
-		
-		<!-- Episode List Layout -->
-		<control>
+    <!-- Episode List Layout -->
+    <control>
       <description>Big Episode Thumb</description>
       <type>image</type>
       <id>1</id>
@@ -493,12 +483,11 @@
       <width>354</width>
       <keepaspectratio>yes</keepaspectratio>
       <zoom>no</zoom>
-      <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>      
+      <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<visible>facadeview.list</visible>
+      <visible>facadeview.list</visible>
     </control>
-    
     <control>
       <description>Episode Plot</description>
       <type>textboxscrollup</type>
@@ -513,7 +502,7 @@
       <scrollStartDelaySec>12</scrollStartDelaySec>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<visible>facadeview.list+!string.equals(#Trakt.Episode.Overview,)</visible>
+      <visible>facadeview.list+!string.equals(#Trakt.Episode.Overview,)</visible>
     </control>
     <control>
       <type>label</type>
@@ -529,7 +518,7 @@
       <shadowColor>#shadow.dark</shadowColor>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<visible>facadeview.list+!string.equals(#Trakt.Episode.Season,)</visible>
+      <visible>facadeview.list+!string.equals(#Trakt.Episode.Season,)</visible>
     </control>
     <control>
       <type>textbox</type>
@@ -546,7 +535,7 @@
       <shadowColor>#shadow.light</shadowColor>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<visible>facadeview.list+!string.equals(#Trakt.Episode.Title,)</visible>
+      <visible>facadeview.list+!string.equals(#Trakt.Episode.Title,)</visible>
     </control>
     <control Style="smallTitleB">
       <id>0</id>
@@ -557,7 +546,7 @@
       <width>150</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<visible>facadeview.list+!string.equals(#Trakt.Show.Network,)</visible>
+      <visible>facadeview.list+!string.equals(#Trakt.Show.Network,)</visible>
     </control>
     <control Style="smallTitle">
       <id>0</id>
@@ -568,7 +557,7 @@
       <width>100</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<visible>facadeview.list+!string.equals(#Trakt.Show.Network,)</visible>
+      <visible>facadeview.list+!string.equals(#Trakt.Show.Network,)</visible>
     </control>
     <control Style="smallTitleB">
       <label>#Trakt.Translation.AirDay.Label</label>
@@ -578,7 +567,7 @@
       <width>150</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<visible>facadeview.list+!string.equals(#Trakt.Show.AirDay,)</visible>
+      <visible>facadeview.list+!string.equals(#Trakt.Show.AirDay,)</visible>
     </control>
     <control Style="smallTitle">
       <id>0</id>
@@ -589,8 +578,8 @@
       <width>100</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<visible>facadeview.list+!string.equals(#Trakt.Show.AirDay,)</visible>
-    </control>        
+      <visible>facadeview.list+!string.equals(#Trakt.Show.AirDay,)</visible>
+    </control>
     <control Style="smallTitleB">
       <id>0</id>
       <label>#Trakt.Translation.AirTime.Label</label>
@@ -600,7 +589,7 @@
       <width>150</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<visible>facadeview.list+!string.equals(#Trakt.Show.AirTime,)</visible>
+      <visible>facadeview.list+!string.equals(#Trakt.Show.AirTime,)</visible>
     </control>
     <control Style="smallTitle">
       <id>0</id>
@@ -612,9 +601,8 @@
       <width>100</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<visible>facadeview.list+!string.equals(#Trakt.Show.AirTime,)</visible>
+      <visible>facadeview.list+!string.equals(#Trakt.Show.AirTime,)</visible>
     </control>
-    
     <control Style="smallTitleB">
       <label>#Trakt.Translation.Certification.Label</label>
       <type>label</type>
@@ -623,7 +611,7 @@
       <width>150</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<visible>facadeview.list+!string.equals(#Trakt.Show.Certification,)</visible>
+      <visible>facadeview.list+!string.equals(#Trakt.Show.Certification,)</visible>
     </control>
     <control Style="smallTitle">
       <id>10005</id>
@@ -634,9 +622,8 @@
       <width>180</width>
       <width>100</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-			<visible>facadeview.list+!string.equals(#Trakt.Show.Certification,)</visible>
+      <visible>facadeview.list+!string.equals(#Trakt.Show.Certification,)</visible>
     </control>
-		
     <!-- Filmstrip -->
     <control>
       <description>Episode Title</description>
@@ -651,7 +638,7 @@
       <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#Trakt.Show.Title,)</visible>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <description>FirstAired</description>
       <type>label</type>
@@ -663,14 +650,15 @@
       <align>center</align>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
-			<shadowAngle>45</shadowAngle>
-			<shadowDistance>3</shadowDistance>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#Trakt.Episode.FirstAired,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
     <import>common.overlays.xml</import>
-		<import>common.time.xml</import>
+    <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:b8bfa58d6ce64b4bbd0bb8da3d61e8f4-->

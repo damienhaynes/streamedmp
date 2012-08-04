@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<window>	
-	<controls>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
     <control>
       <description>UnWatched BG Logo</description>
       <type>image</type>
@@ -8,12 +8,12 @@
       <posX>130</posX>
       <posY>642</posY>
       <width>25</width>
-      <height>25</height>                                              
-      <texture>youtube.fm_unwatched.png</texture>	  
+      <height>25</height>
+      <texture>youtube.fm_unwatched.png</texture>
       <visible>!facadeview.smallicons+[Control.HasFocus(50)+string.equals(#Youtube.fm.Curent.Video.IsWatched, false )]+!string.equals(#Youtube.fm.Curent.Video.Title,)+!string.equals(#selecteditem,..)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control> 
+    </control>
     <control>
       <description>Watched Logo</description>
       <type>image</type>
@@ -21,8 +21,8 @@
       <posX>130</posX>
       <posY>642</posY>
       <width>25</width>
-      <height>25</height>                                             
-      <texture>youtube.fm_watched.png</texture>	  
+      <height>25</height>
+      <texture>youtube.fm_watched.png</texture>
       <visible>!facadeview.smallicons+[Control.HasFocus(50)+!string.equals(#Youtube.fm.Curent.Video.IsWatched, false )]</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -34,8 +34,8 @@
       <posX>20</posX>
       <posY>640</posY>
       <width>100</width>
-      <height>32</height>                                             
-      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\HD Widescreen.png</texture>	  
+      <height>32</height>
+      <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\HD Widescreen.png</texture>
       <visible>!facadeview.smallicons+[Control.HasFocus(50)+!string.equals(#Youtube.fm.Curent.Video.IsHD, false )]+!string.equals(#Youtube.fm.Curent.Video.Title,)+!string.equals(#selecteditem,..)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -47,7 +47,7 @@
       <posX>20</posX>
       <posY>640</posY>
       <width>100</width>
-      <height>32</height>                                             
+      <height>32</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\SD Fullscreen.png</texture>
       <visible>!facadeview.smallicons+[Control.HasFocus(50)+string.equals(#Youtube.fm.Curent.Video.IsHD, false )]+!string.equals(#Youtube.fm.Curent.Video.Title,)+!string.equals(#selecteditem,..)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -60,11 +60,12 @@
       <posX>170</posX>
       <posY>640</posY>
       <width>50</width>
-      <height>29</height>                                             
+      <height>29</height>
       <texture>youtube.fm_isdownloaded.png</texture>
       <visible>!facadeview.smallicons+!string.equals(#Youtube.fm.Curent.Video.Title,)+[Control.HasFocus(50)+!string.equals(#Youtube.fm.Curent.Video.IsDownloaded, false )]+!string.equals(#selecteditem,..)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-	</controls>
+  </controls>
 </window>
+<!--Checksum:cc97cb2f8c5444be95160357d2f99369-->

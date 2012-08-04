@@ -82,7 +82,7 @@
       <type>group</type>
       <description>group element</description>
       <posX>80</posX>
-      <posY>100</posY>      
+      <posY>100</posY>
       <layout>StackLayout</layout>
       <control>
         <description>RadioGuide</description>
@@ -184,7 +184,7 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-		<width>300</width>
+        <width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
@@ -207,7 +207,7 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-		<width>300</width>
+        <width>300</width>
         <height>40</height>
         <width>300</width>
         <textYOff>8</textYOff>
@@ -242,7 +242,6 @@
         <ondown>2</ondown>
       </control>
     </control>
-    
     <control>
       <description>Radio Backgound</description>
       <type>image</type>
@@ -257,8 +256,6 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>player.hasmedia+!string.equals(#Play.Current.Thumb,)</visible>
     </control>
-
-    
     <!--
     <control>
       <description>TV background</description>
@@ -405,7 +402,6 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="slide" time="150" end="1300,0">WindowClose</animation>
     </control>
-
     <control>
       <description>Recording Channel</description>
       <type>image</type>
@@ -419,8 +415,7 @@
       <animation effect="slide" start="0,-50" tween="bounce" time="700" delay="100">WindowOpen</animation>
       <animation effect="rotatey" start="0" end="-131" center="15,0" time="500" reversible="false">WindowClose</animation>
       <visible>player.hasmedia+!string.equals(#Play.Current.Thumb,)</visible>
-    </control>    
-    
+    </control>
     <control>
       <description>Recording Channel</description>
       <type>image</type>
@@ -465,4 +460,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:a50eba3fe9f8e5d02a7ecea643e24701-->
+<!--Checksum:8c427aadbb942c3f437bf908137035bc-->

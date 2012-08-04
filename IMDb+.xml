@@ -314,17 +314,17 @@
           <label>-</label>
           <visible>true</visible>
         </control>
-				<control>
-					<description>MPEICONFIGURE:9d064213_0b4d_4cee_96a5_405812422b58</description>
-					<type>button</type>
-					<id>99998</id>
-					<label>#MPEI.Translation.Settings.Label</label>
-					<onup>4</onup>
-					<ondown>99999</ondown>
-					<onleft>50</onleft>
-					<visible>string.equals(#mpei.9d064213_0b4d_4cee_96a5_405812422b58.isinstalled,true)</visible>
-				</control>
-				<control>
+        <control>
+          <description>MPEICONFIGURE:9d064213_0b4d_4cee_96a5_405812422b58</description>
+          <type>button</type>
+          <id>99998</id>
+          <label>#MPEI.Translation.Settings.Label</label>
+          <onup>4</onup>
+          <ondown>99999</ondown>
+          <onleft>50</onleft>
+          <visible>string.equals(#mpei.9d064213_0b4d_4cee_96a5_405812422b58.isinstalled,true)</visible>
+        </control>
+        <control>
           <description>MPEIUPDATE:9d064213_0b4d_4cee_96a5_405812422b58</description>
           <type>button</type>
           <id>99999</id>
@@ -349,4 +349,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:5126614a189fb5d5a0942c84456bcfac-->
+<!--Checksum:010ee96a79c04ad19af853a711a4541b-->

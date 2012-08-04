@@ -11,13 +11,13 @@
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
     <control Style="settingsmaintexturefo">
-	  <id>0</id>
+      <id>0</id>
       <type>image</type>
       <posY>150</posY>
       <visible>control.hasfocus(2)</visible>
     </control>
     <control Style="settingsmaintexturenf">
-	  <id>0</id>
+      <id>0</id>
       <type>image</type>
       <posY>150</posY>
       <visible>!control.hasfocus(2)</visible>
@@ -38,13 +38,13 @@
         <label>228</label>
         <onleft>2</onleft>
         <onright>#defaultcontrol.onright</onright>
-        <onup>17</onup>        
-      </control>      
+        <onup>17</onup>
+      </control>
       <control Style="settingsmainbutton">
         <description>Reorganize My Music Database button</description>
         <type>button</type>
         <id>8</id>
-        <label>334</label>            
+        <label>334</label>
         <onleft>8</onleft>
         <onright>#defaultcontrol.onright</onright>
       </control>
@@ -52,7 +52,7 @@
         <description>delete album button</description>
         <type>button</type>
         <id>13</id>
-        <label>485</label>        
+        <label>485</label>
         <onleft>13</onleft>
         <onright>#defaultcontrol.onright</onright>
       </control>
@@ -60,7 +60,7 @@
         <description>Delete Album Info</description>
         <type>button</type>
         <id>10</id>
-        <label>422</label>        
+        <label>422</label>
         <ondown>2</ondown>
         <onleft>10</onleft>
         <onright>#defaultcontrol.onright</onright>
@@ -68,4 +68,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:2704023b2c6f7099031de23f93d11719-->
+<!--Checksum:41d7c6525598a2ca39248e4874d8cf34-->

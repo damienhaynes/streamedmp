@@ -56,7 +56,6 @@
       <textcolor>White</textcolor>
       <align>left</align>
     </control>
-      
     <control>
       <description>Rating value</description>
       <type>label</type>
@@ -71,7 +70,6 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-        
     <control>
       <description>right button</description>
       <type>button</type>
@@ -108,7 +106,6 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-   
     <control>
       <type>imagelist</type>
       <id>100</id>
@@ -120,7 +117,7 @@
       <textureHeight>32</textureHeight>
       <subitems>
         <subitem>UserRatingStarOff.png</subitem>
-        <subitem>UserRatingStarOn.png</subitem>        
+        <subitem>UserRatingStarOn.png</subitem>
       </subitems>
       <orientation>horizontal</orientation>
       <percentage>#myfilms.rating</percentage>
@@ -128,7 +125,6 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-    
     <control>
       <description>OK button</description>
       <type>button</type>
@@ -148,6 +144,6 @@
       <onup>10</onup>
       <ondown>10</ondown>
     </control>
-    
   </controls>
 </window>
+<!--Checksum:9f9bc39ccb5b0b27e19fdc3e062280eb-->

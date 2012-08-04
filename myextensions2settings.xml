@@ -177,13 +177,13 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>      
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
     </control>
     <control>
       <type>group</type>
       <description>group element</description>
       <posX>30</posX>
-      <posY>250</posY>      
+      <posY>250</posY>
       <layout>StackLayout</layout>
       <control>
         <description>Sections</description>
@@ -206,7 +206,7 @@
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-			<control>
+      <control>
         <description>Restore Defaults</description>
         <type>button</type>
         <id>3</id>
@@ -227,7 +227,7 @@
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-    </control>  
+    </control>
     <control>
       <description>group element</description>
       <type>group</type>
@@ -261,8 +261,8 @@
           <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
         </control>
       </control>
-    </control>    
-		<control>
+    </control>
+    <control>
       <type>textboxscrollup</type>
       <posX>335</posX>
       <posY>560</posY>
@@ -276,4 +276,4 @@
     <import>common.overlays2.xml</import>
   </controls>
 </window>
-<!--Checksum:515c6c09296b7b086d2434cee512fed5-->
+<!--Checksum:82dc94aa470e45976a6976f73328c3de-->

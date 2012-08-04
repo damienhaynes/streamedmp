@@ -60,7 +60,7 @@
       <texture>glassoverlay2.png</texture>
       <visible>[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(146)|Control.HasThumb(46)]]+facadeview.list+!Control.HasThumb(246)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <description>Series Title</description>
       <type>label</type>
@@ -73,12 +73,12 @@
       <align>left</align>
       <font>mediastream16tc</font>
       <label>#TVSeries.Series.Pretty_Name</label>
-			<shadowAngle>45</shadowAngle>
+      <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.list+[control.isvisible(1237)+control.isvisible(1242)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <description>Season Title</description>
       <type>label</type>
@@ -91,12 +91,12 @@
       <align>left</align>
       <font>mediastream16tc</font>
       <label>#TVSeries.Series.Pretty_Name #TVSeries.Season.SeasonLabel</label>
-			<shadowAngle>45</shadowAngle>
+      <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.list+control.isvisible(1238)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>    
+    </control>
     <control Style="TVSeriesTitle">
       <description>Genres</description>
       <type>label</type>
@@ -105,7 +105,7 @@
       <posY>448</posY>
       <width>490</width>
       <label>#TVSeries.Series.DataPanelLine1Value</label>
-			<shadowAngle>45</shadowAngle>
+      <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]</visible>
@@ -129,7 +129,7 @@
       <label>#TVSeries.Series.DataPanelLine41Value #TVSeries.Series.DataPanelLine42Value</label>
       <posX>360</posX>
       <posY>469</posY>
-      <font>mediastream11c</font>      
+      <font>mediastream11c</font>
       <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+control.isvisible(5555)+control.isvisible(5556)+!control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -139,7 +139,7 @@
       <label>#TVSeries.Series.DataPanelLine40Value #TVSeries.Series.DataPanelLine43Value</label>
       <posX>360</posX>
       <posY>469</posY>
-      <font>mediastream11c</font>      
+      <font>mediastream11c</font>
       <width>350</width>
       <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+control.isvisible(5555)+control.isvisible(5556)+control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -150,7 +150,7 @@
       <label>#TVSeries.Series.DataPanelLine41Value #TVSeries.Series.DataPanelLine44Value</label>
       <posX>360</posX>
       <posY>469</posY>
-      <font>mediastream11c</font>      
+      <font>mediastream11c</font>
       <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+control.isvisible(5555)+!control.isvisible(5556)+control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -160,7 +160,7 @@
       <label>#TVSeries.Series.DataPanelLine41Value</label>
       <posX>360</posX>
       <posY>469</posY>
-      <font>mediastream11c</font>      
+      <font>mediastream11c</font>
       <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+control.isvisible(5555)+!control.isvisible(5556)+!control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -170,7 +170,7 @@
       <label>N/A</label>
       <posX>360</posX>
       <posY>469</posY>
-      <font>mediastream11c</font>      
+      <font>mediastream11c</font>
       <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+!control.isvisible(5555)+!control.isvisible(5556)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -293,4 +293,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:1f40e6198f244bd2fe70978402a6a259-->
+<!--Checksum:4c3ef8a3432db2e729e2a4e42441ba48-->

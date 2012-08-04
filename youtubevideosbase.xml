@@ -4,11 +4,11 @@
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.Extension.label:#header.label</define>
-  <define>#header.label:YOUTUBE.FM</define>  
+  <define>#header.label:YOUTUBE.FM</define>
   <define>#header.hover:hover_youtubefm.png</define>
   <define>#useSelectedFanart:Yes</define>
   <controls>
-    <import>mymusic.selected.fanart.xml</import>       
+    <import>mymusic.selected.fanart.xml</import>
     <control>
       <id>0</id>
       <description>music overlay image</description>
@@ -29,9 +29,9 @@
       <height>51</height>
       <texture>overlay_topbar.png</texture>
       <visible>facadeview.coverflow</visible>
-    </control>   
+    </control>
     <control>
-			<description>Hidden Menu Indicator</description>
+      <description>Hidden Menu Indicator</description>
       <type>image</type>
       <posX>1232</posX>
       <posY>50</posY>
@@ -147,7 +147,7 @@
             <onright>50</onright>
             <onup>6</onup>
             <ondown>7</ondown>
-          </control>          
+          </control>
           <control>
             <description>Playlist</description>
             <type>button</type>
@@ -217,6 +217,7 @@
     </control>
     <import>common.overlays2.xml</import>
     <import>youtube.common.window.xml</import>
-    <import>common.time.xml</import>     
+    <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:0cf9a68ef52f421a7f188ebaf0df2554-->

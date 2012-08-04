@@ -106,7 +106,6 @@
       <keepaspectratio>yes</keepaspectratio>
       <visible>[window.ispauseosdvisible|player.rewinding|player.forwarding]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
-
     <control>
       <description>mvCentral Artist Name</description>
       <id>0</id>
@@ -131,8 +130,6 @@
       <textcolor>ffFFFFFF</textcolor>
       <visible>window.ispauseosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)+string.equals(#mvCentral.isPlaying,true)</visible>
     </control>
-    
-    
     <control>
       <description>Movie Name</description>
       <id>0</id>
@@ -169,7 +166,6 @@
       <textcolor>ff909090</textcolor>
       <visible>[window.ispauseosdvisible|player.rewinding|player.forwarding]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
-
     <control>
       <description>Album Star Rating Image</description>
       <type>image</type>
@@ -181,7 +177,7 @@
       <height>18</height>
       <texture>star#Play.Current.Rating.png</texture>
       <visible>[player.rewinding|player.forwarding]+string.equals(#StreamedMP.fullVideoOSD,true)+string.equals(#mvCentral.isPlaying,true)</visible>
-    </control>     
+    </control>
     <control>
       <description>Album Star Rating Image</description>
       <type>image</type>
@@ -193,8 +189,7 @@
       <height>18</height>
       <texture>star#Play.Current.Rating.png</texture>
       <visible>window.ispauseosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)+string.equals(#mvCentral.isPlaying,true)</visible>
-    </control>     
-    
+    </control>
     <control>
       <description>Plot</description>
       <type>textboxscrollup</type>
@@ -208,10 +203,10 @@
       <font>mediastream11</font>
       <visible>[window.ispauseosdvisible+!window.isosdvisible]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
-    <import>mvCentral.PlayStart.xml</import> 
+    <import>mvCentral.PlayStart.xml</import>
     <import>common.player.xml</import>
     <import>common.play.fullscreen.xml</import>
     <import>common.progressbar.xml</import>
   </controls>
 </window>
-<!--Checksum:c975cd4b10d4515d2980b6b9c41a26b5-->
+<!--Checksum:960187de24297523c217ac3db53f60f0-->

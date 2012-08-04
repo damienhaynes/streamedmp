@@ -40,7 +40,7 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Watched Icon Background</description>
       <type>image</type>
       <id>0</id>
@@ -110,7 +110,7 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Date Of Birth / Place Of Birth</description>
       <type>label</type>
       <label>#Actor.DateOfBirth / #Actor.PlaceOfBirth</label>
@@ -146,7 +146,7 @@
       <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <description>Rating Label</description>
       <id>0</id>
@@ -176,7 +176,7 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Actor Biography</description>
       <type>textboxscrollup</type>
       <id>0</id>
@@ -203,12 +203,12 @@
       <visible>facadeview.list+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control Style="smallTitle">
       <description>Runtime</description>
       <id>1000</id>
       <type>label</type>
-      <label>#(iif(neq(#runtime,''),'#videoruntime','N/A'))</label>      
+      <label>#(iif(neq(#runtime,''),'#videoruntime','N/A'))</label>
       <posX>470</posX>
       <posY>551</posY>
       <width>200</width>
@@ -244,7 +244,7 @@
       <description>Year Label</description>
       <id>0</id>
       <type>label</type>
-      <label>#(string.rtrim(L(201),':'))</label>      
+      <label>#(string.rtrim(L(201),':'))</label>
       <posX>310</posX>
       <posY>594</posY>
       <width>140</width>
@@ -268,7 +268,7 @@
       <description>MPAA Label</description>
       <id>0</id>
       <type>label</type>
-      <label>#(string.rtrim(L(173),':'))</label>      
+      <label>#(string.rtrim(L(173),':'))</label>
       <posX>310</posX>
       <posY>616</posY>
       <width>140</width>
@@ -291,4 +291,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:54b43a30686680ad8521d11d343b6eea-->
+<!--Checksum:5786092644b8c50656f274163d2e923e-->

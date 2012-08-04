@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>614</id>
   <defaultcontrol>3</defaultcontrol>
@@ -35,7 +35,7 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Movie Poster Thumb</description>
       <type>image</type>
       <id>25</id>
@@ -59,7 +59,7 @@
       <visible>true</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <description>Actor Name</description>
       <type>label</type>
@@ -70,14 +70,14 @@
       <font>mediastream16tc</font>
       <label>#Actor.Name</label>
       <textcolor>ffFFFFFF</textcolor>
-			<shadowAngle>45</shadowAngle>
-			<shadowDistance>4</shadowDistance>
-			<shadowColor>#shadow.light</shadowColor>
-			<visible>!control.isvisible(24)</visible>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
+      <visible>!control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Movie title</description>
       <type>label</type>
       <id>0</id>
@@ -87,10 +87,10 @@
       <font>mediastream16tc</font>
       <label>#Actor.MovieTitle</label>
       <textcolor>ffFFFFFF</textcolor>
-			<shadowAngle>45</shadowAngle>
-			<shadowDistance>4</shadowDistance>
-			<shadowColor>#shadow.light</shadowColor>
-			<visible>control.isvisible(24)</visible>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
+      <visible>control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -104,14 +104,14 @@
       <width>900</width>
       <font>mediastream11tc</font>
       <textcolor>ff909090</textcolor>
-			<shadowAngle>45</shadowAngle>
-			<shadowDistance>3</shadowDistance>
-			<shadowColor>#shadow.dark</shadowColor>
-			<visible>!control.isvisible(24)</visible>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>3</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
+      <visible>!control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Movie Extra Details</description>
       <type>fadelabel</type>
       <label>#Actor.MovieExtraDetails</label>
@@ -121,10 +121,10 @@
       <width>900</width>
       <font>mediastream11tc</font>
       <textcolor>ff909090</textcolor>
-			<shadowAngle>45</shadowAngle>
-			<shadowDistance>3</shadowDistance>
-			<shadowColor>#shadow.dark</shadowColor>
-			<visible>control.isvisible(24)</visible>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>3</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
+      <visible>control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -140,11 +140,11 @@
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#Actor.Biography</label>
-			<scrollStartDelaySec>15</scrollStartDelaySec>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Movie Summary</description>
       <type>textboxscrollup</type>
       <id>26</id>
@@ -163,7 +163,7 @@
       <description>Movies Starred In</description>
       <type>textbox</type>
       <id>22</id>
-			<onleft>3</onleft>
+      <onleft>3</onleft>
       <posX>-1308</posX>
       <posY>315</posY>
       <width>430</width>
@@ -171,12 +171,12 @@
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
-      <label>#Actor.Movies</label>	 
-			<spinWidth>25</spinWidth>
-			<spinHeight>25</spinHeight>
-			<spinPosX>-1680</spinPosX>			
+      <label>#Actor.Movies</label>
+      <spinWidth>25</spinWidth>
+      <spinHeight>25</spinHeight>
+      <spinPosX>-1680</spinPosX>
     </control>
-		<control>
+    <control>
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
@@ -185,7 +185,7 @@
       <width>260</width>
       <height>30</height>
       <texture>mediacountbg_Spin.png</texture>
-			<visible>control.isvisible(24)</visible>
+      <visible>control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -198,36 +198,36 @@
       <posY>688</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
-			<visible>control.isvisible(24)</visible>
+      <visible>control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
-			<description>Movie List for Actor</description>
-			<type>listcontrol</type>
-			<id>24</id>
-			<onleft>4</onleft>
-			<onright>4</onright>
-			<posX>760</posX>
-			<posY>310</posY>
-			<height>410</height>
-			<dimColor>50ffffff</dimColor>
-			<explicitlyEnableScrollLabel>no</explicitlyEnableScrollLabel>
-			<IconXOff>-1389</IconXOff>
-			<!-- Spin Controls -->
-			<spinWidth>50</spinWidth>
-			<spinHeight>37</spinHeight>
-			<spinPosX>1175</spinPosX>
-			<spinPosY>681</spinPosY>
-			<spinAlign>Right</spinAlign>
-			<spinColor>ff006698</spinColor>
-			<textureUp>arrow_round_up_nofocus.png</textureUp>
-			<textureDown>arrow_round_down_nofocus.png</textureDown>
-			<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-			<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-			<animation effect="fade" time="250">WindowOpen</animation>
+    <control>
+      <description>Movie List for Actor</description>
+      <type>listcontrol</type>
+      <id>24</id>
+      <onleft>4</onleft>
+      <onright>4</onright>
+      <posX>760</posX>
+      <posY>310</posY>
+      <height>410</height>
+      <dimColor>50ffffff</dimColor>
+      <explicitlyEnableScrollLabel>no</explicitlyEnableScrollLabel>
+      <IconXOff>-1389</IconXOff>
+      <!-- Spin Controls -->
+      <spinWidth>50</spinWidth>
+      <spinHeight>37</spinHeight>
+      <spinPosX>1175</spinPosX>
+      <spinPosY>681</spinPosY>
+      <spinAlign>Right</spinAlign>
+      <spinColor>ff006698</spinColor>
+      <textureUp>arrow_round_up_nofocus.png</textureUp>
+      <textureDown>arrow_round_down_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-		</control>
+    </control>
     <control>
       <type>group</type>
       <description>Button Group</description>
@@ -239,14 +239,14 @@
         <type>togglebutton</type>
         <id>3</id>
         <label>1011</label>
-				<onup>4</onup>
-				<ondown>4</ondown>
+        <onup>4</onup>
+        <ondown>4</ondown>
         <onleft>24</onleft>
-				<onright>24</onright>
+        <onright>24</onright>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-				<width>270</width>
+        <width>270</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
@@ -257,19 +257,19 @@
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-			<control>
+      <control>
         <description>Movies</description>
         <type>togglebutton</type>
         <id>4</id>
         <label>342</label>
         <onleft>24</onleft>
-				<onup>3</onup>
-				<ondown>3</ondown>
-				<onright>24</onright>
+        <onup>3</onup>
+        <ondown>3</ondown>
+        <onright>24</onright>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-				<width>270</width>
+        <width>270</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
@@ -281,6 +281,7 @@
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
     </control>
-		<import>common.overlays2.xml</import>
+    <import>common.overlays2.xml</import>
   </controls>
 </window>
+<!--Checksum:ddd027902a64d745fe2b0f9431d76082-->

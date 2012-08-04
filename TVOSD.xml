@@ -193,11 +193,11 @@
       <filltexture1>-</filltexture1>
       <filltexture2>osdprogressmid_blue.png</filltexture2>
       <filltexture3>osdprogressmid_blue.png</filltexture3>
-	  <markertexture>osdprogressmid_blue.png</markertexture>
+      <markertexture>osdprogressmid_blue.png</markertexture>
       <fillheight>8</fillheight>
       <label>#TV.Record.percent1</label>
       <label1>#TV.Record.percent2</label1>
-      <label2>#TV.Record.percent3</label2>	
+      <label2>#TV.Record.percent3</label2>
       <labelmarkerstarts>#TV.Record.jumppoints</labelmarkerstarts>
       <labelmarkerends>#TV.Record.chapters</labelmarkerends>
       <font>mediastream10c</font>
@@ -683,7 +683,7 @@
       <visible>no</visible>
       <spinPosX>1300</spinPosX>
       <spinPosY>515</spinPosY>
-			<animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>Sub Menu Nib</description>
@@ -707,9 +707,9 @@
       <onleft>400</onleft>
       <onright>400</onright>
       <visible>yes</visible>
-			<animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
-		<!-- Button Text on Selection -->
+    <!-- Button Text on Selection -->
     <control>
       <description>subtitles label</description>
       <type>label</type>
@@ -766,4 +766,4 @@
     <import>common.player.xml</import>
   </controls>
 </window>
-<!--Checksum:80fab156fd00d546fa32b0cbe3a7b3a3-->
+<!--Checksum:5fa0fcc9d413533351fbd2a217ba2890-->

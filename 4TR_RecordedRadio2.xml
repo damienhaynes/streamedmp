@@ -8,7 +8,6 @@
   <controls>
     <import>common.window.tv.xml</import>
     <import>common.time.xml</import>
-    
     <control>
       <description>Background Image</description>
       <type>image</type>
@@ -19,7 +18,7 @@
       <height>720</height>
       <texture>#header.hover</texture>
     </control>
-    <import>common.window.tv.xml</import>   
+    <import>common.window.tv.xml</import>
     <control>
       <type>fadelabel</type>
       <description>Selected item Label</description>
@@ -34,7 +33,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-			<description>Hidden Menu Indicator</description>
+      <description>Hidden Menu Indicator</description>
       <type>image</type>
       <posX>1232</posX>
       <posY>50</posY>
@@ -110,15 +109,13 @@
           <onup>17</onup>
           <label>-</label>
         </control>
-        
         <control>
           <type>button</type>
           <id>5</id>
           <onleft>50</onleft>
           <onright>2</onright>
           <label>457</label>
-        </control>        
-
+        </control>
         <control>
           <type>sortbutton</type>
           <description>All,Genre,Channel button</description>
@@ -234,11 +231,11 @@
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
     </control>
-    
     <control>
       <description>Disk used</description>
       <type>label</type>
-      <id></id>
+      <id>
+      </id>
       <posX>510</posX>
       <posY>670</posY>
       <width>680</width>
@@ -250,7 +247,8 @@
     <control>
       <description>Disk used</description>
       <type>progress</type>
-      <id></id>
+      <id>
+      </id>
       <posX>505</posX>
       <posY>690</posY>
       <width>500</width>
@@ -268,7 +266,8 @@
     <control>
       <description>Percent Watched</description>
       <type>label</type>
-      <id></id>
+      <id>
+      </id>
       <posX>30</posX>
       <posY>670</posY>
       <width>680</width>
@@ -282,7 +281,8 @@
     <control>
       <description>Percent Watched Progress Bar</description>
       <type>progress</type>
-      <id></id>
+      <id>
+      </id>
       <posX>27</posX>
       <posY>685</posY>
       <width>400</width>
@@ -299,11 +299,8 @@
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="150" end="-1000,0">WindowClose</animation>
     </control>
-    
-    
-    
     <import>common.facade.recordings4tr.xml</import>
     <import>common.overlays.xml</import>
   </controls>
 </window>
-<!--Checksum:52c825e95eba804d3984c17a5a1a8a43-->
+<!--Checksum:8281d853dc44d7c5c3ecd737df732a2e-->

@@ -2,7 +2,7 @@
 <window>
   <controls>
     <control>
-			<description>Hidden Menu Indicator</description>
+      <description>Hidden Menu Indicator</description>
       <type>image</type>
       <posX>1232</posX>
       <posY>50</posY>
@@ -134,7 +134,7 @@
           <id>4</id>
           <label>496</label>
           <onleft>50</onleft>
-					<ondown>20</ondown>
+          <ondown>20</ondown>
         </control>
         <control>
           <description>Empty button</description>
@@ -149,7 +149,7 @@
           <id>20</id>
           <label>4555</label>
           <action>33</action>
-					<onup>4</onup>
+          <onup>4</onup>
           <onleft>50</onleft>
         </control>
         <control>
@@ -158,7 +158,7 @@
           <id>9</id>
           <label>983</label>
           <onleft>50</onleft>
-					<ondown>66608</ondown>
+          <ondown>66608</ondown>
         </control>
         <control>
           <description>Empty button</description>
@@ -173,7 +173,7 @@
           <id>66608</id>
           <label>100006</label>
           <hyperlink>703</hyperlink>
-					<onup>9</onup>
+          <onup>9</onup>
           <onleft>50</onleft>
         </control>
         <control>
@@ -183,7 +183,7 @@
           <label>#StreamedMP.SkinSettings</label>
           <hyperlink>196205</hyperlink>
           <onleft>50</onleft>
-					<ondown>66610</ondown>
+          <ondown>66610</ondown>
         </control>
         <control>
           <description>Empty button</description>
@@ -199,9 +199,9 @@
           <label>Moving Pictures</label>
           <hyperlink>96742</hyperlink>
           <onleft>50</onleft>
-					<onup>66609</onup>
-					<ondown>66612</ondown>
-					<visible>plugin.isenabled(Moving Pictures)</visible>
+          <onup>66609</onup>
+          <ondown>66612</ondown>
+          <visible>plugin.isenabled(Moving Pictures)</visible>
         </control>
         <control>
           <description>SubCentral</description>
@@ -209,12 +209,12 @@
           <id>66612</id>
           <label>287</label>
           <hyperlink>84623</hyperlink>
-					<onup>66610</onup>
+          <onup>66610</onup>
           <ondown>99991</ondown>
           <onleft>50</onleft>
           <visible>plugin.isenabled(SubCentral)+control.isvisible(1239)</visible>
-        </control>				
-				<control>
+        </control>
+        <control>
           <description>Trakt</description>
           <type>button</type>
           <id>99991</id>
@@ -225,7 +225,7 @@
           <onleft>50</onleft>
           <visible>plugin.isenabled(Trakt)</visible>
         </control>
-				<control>
+        <control>
           <description>Trakt Shouts</description>
           <type>button</type>
           <id>97260</id>
@@ -269,4 +269,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:aa35216800836e28c965815cbaef5ed8-->
+<!--Checksum:e960a6d6b71b51dc422f1081caa51691-->

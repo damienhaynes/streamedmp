@@ -11,19 +11,19 @@
     <import>common.window.default.xml</import>
     <import>common.time.xml</import>
     <import>common.overlays.xml</import>
-		<control>
-			<type>image</type>
-			<id>0</id>
-			<posX>266</posX>
-			<posY>675</posY>
-			<width>1280</width>
-			<height>47</height>
-			<texture>imagestreamtitle.png</texture>
-		</control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>266</posX>
+      <posY>675</posY>
+      <width>1280</width>
+      <height>47</height>
+      <texture>imagestreamtitle.png</texture>
+    </control>
     <import>UpdateControl.Menu.xml</import>
     <import>UpdateControl.Info.xml</import>
     <import>UpdateControl.List.xml</import>
-		<control>
+    <control>
       <description>Update Action</description>
       <type>fadelabel</type>
       <id>1</id>
@@ -38,7 +38,7 @@
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
     <!-- need a IsDownloading and IsInstalling property, both default to zero -->
-		<control>
+    <control>
       <description>Update Action [Downloading]</description>
       <type>fadelabel</type>
       <id>1</id>
@@ -52,7 +52,7 @@
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Update Action [Installing]</description>
       <type>fadelabel</type>
       <id>1</id>
@@ -68,4 +68,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:9ce3929ba80e47913cb3531fa04b7bc1-->
+<!--Checksum:0807b4615e45967a111f7efd190acdae-->

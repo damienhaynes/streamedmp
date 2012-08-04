@@ -87,8 +87,8 @@
       <width>257</width>
       <height>380</height>
       <texture>#myfilms.groupcoverimage</texture>
-			<keepaspectratio>yes</keepaspectratio>
-			<valign>middle</valign>
+      <keepaspectratio>yes</keepaspectratio>
+      <valign>middle</valign>
       <visible>facadeview.list+control.isvisible(50)+control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -103,7 +103,7 @@
       <font>mediastream16tc</font>
       <label>#selecteditem</label>
       <textcolor>ffFFFFFF</textcolor>
-			<shadowAngle>45</shadowAngle>
+      <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.list+control.isvisible(50)+!control.isvisible(34)</visible>
@@ -162,7 +162,7 @@
       <imagesToDraw>5</imagesToDraw>
       <percentage>#myfilms.db.rating.value</percentage>
       <visible>facadeview.list+control.isvisible(50)+!control.isvisible(34)+!string.equals(#myfilms.db.rating.value,)</visible>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
@@ -180,7 +180,7 @@
       <visible>facadeview.list+control.isvisible(50)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>        
+    </control>
     <control Style="smallTitleB">
       <description>User Item 1 Label</description>
       <id>0</id>
@@ -200,11 +200,11 @@
       <label>#myfilms.user.item1.value</label>
       <posX>470</posX>
       <posY>573</posY>
-      <width>200</width>      
+      <width>200</width>
       <visible>facadeview.list+control.isvisible(50)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>    
+    </control>
     <control Style="smallTitleB">
       <description>User Item 2 Label</description>
       <id>0</id>
@@ -228,7 +228,7 @@
       <visible>facadeview.list+control.isvisible(50)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>        
+    </control>
     <control Style="smallTitleB">
       <description>User Item 4 Label</description>
       <type>label</type>
@@ -251,6 +251,7 @@
       <visible>facadeview.list+control.isvisible(50)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>    
+    </control>
   </controls>
 </window>
+<!--Checksum:1caf121002b8dbc1caac19a80ce2a3fe-->

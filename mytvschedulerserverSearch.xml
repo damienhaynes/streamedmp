@@ -2,7 +2,7 @@
 <window>
   <id>747</id>
   <defaultcontrol>7</defaultcontrol>
-  <allowoverlay>no</allowoverlay>  
+  <allowoverlay>no</allowoverlay>
   <define>#header.label:Search</define>
   <define>#useRandomTVSeriesFanart:No</define>
   <controls>
@@ -34,11 +34,11 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <type>group</type>
       <description>group element</description>
       <posX>80</posX>
-      <posY>250</posY>		
+      <posY>250</posY>
       <layout>StackLayout</layout>
       <control>
         <description>Search title</description>
@@ -49,7 +49,7 @@
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
         <width>300</width>
-				<height>40</height>
+        <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
@@ -67,7 +67,7 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-				<width>300</width>
+        <width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
@@ -86,19 +86,19 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-				<width>300</width>
+        <width>300</width>
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
-				<ondown>7</ondown>
+        <ondown>7</ondown>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
         <animation effect="zoom" start="110,100" end="100,100" center="433,81" time="500">unfocus</animation>
-      </control>      
-    </control>		
+      </control>
+    </control>
     <control>
       <description>listcontrol</description>
       <type>listcontrol</type>
@@ -123,7 +123,7 @@
       <textXOff2>0</textXOff2>
       <textYOff2>5</textYOff2>
       <font>mediastream11c</font>
-			<font2>mediastream10c</font2>
+      <font2>mediastream10c</font2>
       <keepaspectratio>yes</keepaspectratio>
       <spinPosX>1175</spinPosX>
       <spinPosY>682</spinPosY>
@@ -140,7 +140,7 @@
       <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="800,0">WindowClose</animation>
     </control>
-		<import>common.overlays.xml</import>
+    <import>common.overlays.xml</import>
   </controls>
 </window>
-<!--Checksum:0361f72a5f647a2ea4db729d119d5507-->
+<!--Checksum:582f71d84a669871cdf1fc87942145c3-->

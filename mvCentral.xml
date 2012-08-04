@@ -205,11 +205,9 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-
     <!-- ******************************************************************** -->
     <!-- Section: List View and Icon Views - Artwork/Information                       -->
     <!-- ******************************************************************** -->
-
     <control>
       <id>0</id>
       <type>image</type>
@@ -925,7 +923,8 @@
           <itemHeight>100</itemHeight>
           <textureWidth>100</textureWidth>
           <textureHeight>100</textureHeight>
-          <thumbs flipY="true" diffuse="Thumb_Mask.png"></thumbs>
+          <thumbs flipY="true" diffuse="Thumb_Mask.png">
+          </thumbs>
           <showFrame>yes</showFrame>
           <showFolder>yes</showFolder>
           <showBackGround>no</showBackGround>
@@ -987,10 +986,13 @@
           <frameHeight>360</frameHeight>
           <spinSpeed>8</spinSpeed>
           <unfocusedAlpha>FF</unfocusedAlpha>
-          <folderPrefix></folderPrefix>
-          <folderSuffix></folderSuffix>
+          <folderPrefix>
+          </folderPrefix>
+          <folderSuffix>
+          </folderSuffix>
           <font1>mediastream14tc</font1>
-          <label1></label1>
+          <label1>
+          </label1>
           <textColor>FFFFFFFF</textColor>
           <remoteColor>FFFF0000</remoteColor>
           <playedColor>FFFFFFFF</playedColor>
@@ -1004,7 +1006,8 @@
           <scrollbarBackground>bar_hor.png</scrollbarBackground>
           <scrollbarLeft>mouse_left_horizontal.png</scrollbarLeft>
           <scrollbarRight>mouse_right_horizontal.png</scrollbarRight>
-          <scrollbarYOff></scrollbarYOff>
+          <scrollbarYOff>
+          </scrollbarYOff>
           <showScrollbar>no</showScrollbar>
           <thumbZoom>no</thumbZoom>
           <cardAlign>Center</cardAlign>
@@ -1369,4 +1372,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:246b8a81a9de2aea3eb6c1bfd426ea6a-->
+<!--Checksum:05f56d3e95f6394388e12874a1e4a4be-->
