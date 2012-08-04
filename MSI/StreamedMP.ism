@@ -395,6 +395,7 @@
 		<row><td>pluginStreamedMPEditorDLL</td><td>{C447E455-0E1C-431F-BA09-9F10545ED6AC}</td><td>PROCESS</td><td>0</td><td/><td>streamedmpeditor.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginTVSeriesDLL</td><td>{FE092673-1971-4FA4-8388-C3C0FB33F9C0}</td><td>WINDOWS1</td><td>8</td><td/><td>mp_tvseries.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginTraktDLL</td><td>{5905BDB6-D409-4928-A6B2-71D3FA41D027}</td><td>WINDOWS1</td><td>8</td><td/><td>traktplugin.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>pluginWebBrowserDLL</td><td>{9B3C603D-811D-4A8E-9749-89E300814A66}</td><td>WINDOWS1</td><td>8</td><td/><td>webbrowser.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>pluginWorldWeather</td><td>{246B540A-3D81-45BD-9CDE-6A1F872E377F}</td><td>WINDOWS1</td><td>8</td><td/><td>worldweather.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinMedia</td><td>{46FDBCF7-8677-41BC-9C0B-E63D051E5969}</td><td>MEDIA1</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>skinSounds</td><td>{DE592347-F6A7-43E7-9D98-C4592DE389E1}</td><td>SOUNDS2</td><td>0</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -1592,19 +1593,19 @@
 		<row><td>InfoServicePlugin</td><td>InfoService</td><td>##ID_STRING149##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>InfoServiceSkin</td><td>InfoService</td><td>##ID_STRING162##</td><td>##ID_STRING163##</td><td>3</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>LatestMedia</td><td>Plugins</td><td>##ID_STRING160##</td><td>##ID_STRING161##</td><td>16</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
-		<row><td>Main</td><td/><td>##ID_STRING28##</td><td>##ID_STRING29##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>16</td><td/><td/><td/><td/></row>
+		<row><td>Main</td><td/><td>##ID_STRING28##</td><td>##ID_STRING29##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>16</td><td>FULL</td><td/><td/><td/></row>
 		<row><td>MenuEditor</td><td>Plugins</td><td>##ID_STRING36##</td><td>##ID_STRING38##</td><td>19</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Modern</td><td>Germany</td><td>##ID_STRING96##</td><td>##ID_STRING99##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MovingPictures</td><td>Plugins</td><td>##ID_STRING14##</td><td>##ID_STRING33##</td><td>2</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MovingPicturesDefaultSkin</td><td>MovingPictures</td><td>##ID_STRING121##</td><td>##ID_STRING123##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MovingPicturesDefaultWideSkin</td><td>MovingPictures</td><td>##ID_STRING122##</td><td>##ID_STRING124##</td><td>3</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MovingPicturesMainPlugin</td><td>MovingPictures</td><td>##ID_STRING130##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
-		<row><td>MyLyrics</td><td>Plugins</td><td>##ID_STRING84##</td><td>##ID_STRING85##</td><td>10</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>MyLyrics</td><td>Plugins</td><td>##ID_STRING84##</td><td>##ID_STRING85##</td><td>10</td><td>1</td><td>INSTALLDIR</td><td>0</td><td>PENDING</td><td/><td/><td/></row>
 		<row><td>MyLyricsDefaultWideSkin</td><td>MyLyrics</td><td>##ID_STRING145##</td><td>##ID_STRING146##</td><td>1</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>MyLyricsMainPlugin</td><td>MyLyrics</td><td>##ID_STRING144##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
-		<row><td>Plugins</td><td/><td>##ID_STRING7##</td><td>##ID_STRING30##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>Plugins</td><td/><td>##ID_STRING7##</td><td>##ID_STRING30##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td>FULL</td><td/><td/><td/></row>
 		<row><td>StreamedMP</td><td>Main</td><td>##ID_STRING132##</td><td>##ID_STRING133##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>16</td><td/><td/><td/><td/></row>
-		<row><td>TVLogos</td><td/><td>##ID_STRING64##</td><td>##ID_STRING66##</td><td>6</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>TVLogos</td><td/><td>##ID_STRING64##</td><td>##ID_STRING66##</td><td>6</td><td>1</td><td>LOGOS</td><td>0</td><td>FULL</td><td/><td/><td/></row>
 		<row><td>TVSeries</td><td>Plugins</td><td>##ID_STRING13##</td><td>##ID_STRING32##</td><td>4</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>TVSeriesDefaultWideSkin</td><td>TVSeries</td><td>##ID_STRING125##</td><td>##ID_STRING126##</td><td>5</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>TVSeriesMainPlugin</td><td>TVSeries</td><td>##ID_STRING129##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
@@ -1613,6 +1614,7 @@
 		<row><td>TraktMainPlugin</td><td>Trakt</td><td>##ID_STRING154##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>Transparent</td><td>Germany</td><td>##ID_STRING98##</td><td>##ID_STRING101##</td><td>6</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>UK</td><td>TVLogos</td><td>##ID_STRING94##</td><td>##ID_STRING95##</td><td>8</td><td>1</td><td>LOGOS</td><td>0</td><td/><td/><td/><td/></row>
+		<row><td>WebBrowser</td><td>Plugins</td><td>##ID_STRING166##</td><td>##ID_STRING169##</td><td>22</td><td>1</td><td>INSTALLDIR</td><td>0</td><td>PENDING</td><td/><td/><td/></row>
 		<row><td>WorldWeather</td><td>Plugins</td><td>##ID_STRING164##</td><td>##ID_STRING165##</td><td>20</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
 		<row><td>fonts</td><td>Main</td><td>##ID_STRING53##</td><td/><td>0</td><td>1</td><td>INSTALLDIR</td><td>16</td><td/><td/><td/><td/></row>
 		<row><td>fontsDefOptions</td><td>Main</td><td>##ID_STRING54##</td><td>##ID_STRING56##</td><td>0</td><td>1</td><td>INSTALLDIR</td><td>0</td><td/><td/><td/><td/></row>
@@ -1643,8 +1645,7 @@
 		<row><td>GlobalMusicSearchPlugin</td><td>languagesGlobalSearch</td></row>
 		<row><td>GlobalMusicSearchPlugin</td><td>pluginGlobalMusicSearchDLL</td></row>
 		<row><td>GlobalMusicSearchSkin</td><td>defaultWideSkinGlobalSearch</td></row>
-		<row><td>InfoService</td><td>languagesInfoService</td></row>
-		<row><td>InfoService</td><td>libWebBrowserDependencies</td></row>
+		<row><td>InfoServicePlugin</td><td>languagesInfoService</td></row>
 		<row><td>InfoServicePlugin</td><td>pluginInfoServiceDLL</td></row>
 		<row><td>InfoServiceSkin</td><td>defaultWideSkinInfoService</td></row>
 		<row><td>LatestMedia</td><td>LatestMediaHandlerConfig</td></row>
@@ -1686,6 +1687,8 @@
 		<row><td>TraktMainPlugin</td><td>pluginTraktDLL</td></row>
 		<row><td>Transparent</td><td>tvlogosGermanyTransparent</td></row>
 		<row><td>UK</td><td>tvlogosUK</td></row>
+		<row><td>WebBrowser</td><td>libWebBrowserDependencies</td></row>
+		<row><td>WebBrowser</td><td>pluginWebBrowserDLL</td></row>
 		<row><td>WorldWeather</td><td>WorldWeather.xml</td></row>
 		<row><td>WorldWeather</td><td>WorldWeatherWebsites.xml</td></row>
 		<row><td>WorldWeather</td><td>languagesWorldWeather</td></row>
@@ -1786,7 +1789,7 @@
 		<row><td>tvseries_seasonlisticon.png</td><td>tvseriesListWatchedIcons</td><td>TVSERI~1.PNG|tvseries_SeasonListIcon.png</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\media\tvseries_SeasonListIcon.png</td><td>1</td><td/></row>
 		<row><td>tvseries_serieslisticon.png</td><td>tvseriesListWatchedIcons</td><td>TVSERI~1.PNG|tvseries_SeriesListIcon.png</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\media\tvseries_SeriesListIcon.png</td><td>1</td><td/></row>
 		<row><td>updates.url</td><td>webUpdates</td><td>Updates.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Updates.url</td><td>1</td><td/></row>
-		<row><td>webbrowser.dll</td><td>pluginInfoServiceDLL</td><td>WEBBRO~1.DLL|WebBrowser.dll</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugins\windows\WebBrowser.dll</td><td>17</td><td/></row>
+		<row><td>webbrowser.dll</td><td>pluginWebBrowserDLL</td><td>WEBBRO~1.DLL|WebBrowser.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugins\windows\WebBrowser.dll</td><td>1</td><td/></row>
 		<row><td>wiki.url</td><td>webWiki</td><td>Wiki.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Wiki.url</td><td>1</td><td/></row>
 		<row><td>worldweather.core.dll</td><td>pluginWorldWeather</td><td>WORLDW~1.DLL|WorldWeather.Core.dll</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;StreamedMP&gt;\plugins\windows\WorldWeather.Core.dll</td><td>17</td><td/></row>
 		<row><td>worldweather.dll</td><td>pluginWorldWeather</td><td>WORLDW~1.DLL|WorldWeather.dll</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;StreamedMP&gt;\plugins\windows\WorldWeather.dll</td><td>17</td><td/></row>
@@ -2101,6 +2104,7 @@
 		<row><td>pluginStreamedMPEditorDLL</td><td/><td/><td>_991C81C8_1BE2_4F3F_9F0A_AAF72E72278B_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginTVSeriesDLL</td><td/><td/><td>_C7787284_FD8D_46A7_80E6_B37A675DD06F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginTraktDLL</td><td/><td/><td>_F09777EF_4C26_499B_B55D_A030000C9F8C_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>pluginWebBrowserDLL</td><td/><td/><td>_3E31B578_D668_4386_BFD8_A98BB85A974A_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>pluginWorldWeather</td><td/><td/><td>_E1827FDC_0BFF_4097_95FD_DEB8A2B5BFB9_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>skinMedia</td><td/><td/><td>_3B3244CB_2B2D_47CB_91AA_830342AB3C98_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>skinSounds</td><td/><td/><td>_84C77638_8B61_4BB4_9F1B_B6EF3C72911F_FILTER</td><td/><td/><td/><td/></row>
@@ -2248,6 +2252,7 @@
 		<row><td>TraktMainPlugin</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>Transparent</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>UK</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
+		<row><td>WebBrowser</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>WorldWeather</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>fonts</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
 		<row><td>fontsDefOptions</td><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/><td/></row>
@@ -2502,7 +2507,7 @@
 		<col key="yes" def="s72">ISProductConfiguration</col>
 		<col def="S255">ProductConfigurationFlags</col>
 		<col def="I4">GeneratePackageCode</col>
-		<row><td>Release</td><td/><td>1</td></row>
+		<row><td>Release</td><td>FULL</td><td>1</td></row>
 	</table>
 
 	<table name="ISProductConfigurationInstance">
@@ -2825,6 +2830,7 @@
 		<row><td>Custom</td><td>TraktMainPlugin</td></row>
 		<row><td>Custom</td><td>Transparent</td></row>
 		<row><td>Custom</td><td>UK</td></row>
+		<row><td>Custom</td><td>WebBrowser</td></row>
 		<row><td>Custom</td><td>WorldWeather</td></row>
 		<row><td>Custom</td><td>fonts</td></row>
 		<row><td>Custom</td><td>fontsDefOptions</td></row>
@@ -2871,6 +2877,7 @@
 		<row><td>Minimal</td><td>TraktMainPlugin</td></row>
 		<row><td>Minimal</td><td>Transparent</td></row>
 		<row><td>Minimal</td><td>UK</td></row>
+		<row><td>Minimal</td><td>WebBrowser</td></row>
 		<row><td>Minimal</td><td>WorldWeather</td></row>
 		<row><td>Minimal</td><td>fonts</td></row>
 		<row><td>Minimal</td><td>fontsDefOptions</td></row>
@@ -2919,6 +2926,7 @@
 		<row><td>Typical</td><td>TraktMainPlugin</td></row>
 		<row><td>Typical</td><td>Transparent</td></row>
 		<row><td>Typical</td><td>UK</td></row>
+		<row><td>Typical</td><td>WebBrowser</td></row>
 		<row><td>Typical</td><td>WorldWeather</td></row>
 		<row><td>Typical</td><td>fonts</td></row>
 		<row><td>Typical</td><td>fontsDefOptions</td></row>
@@ -4242,8 +4250,10 @@
 		<row><td>ID_STRING163</td><td>1033</td><td>Default Wide skin files for the InfoService plugin.</td><td>0</td><td/><td>-1793124352</td></row>
 		<row><td>ID_STRING164</td><td>1033</td><td>World Weather</td><td>0</td><td/><td>-442505781</td></row>
 		<row><td>ID_STRING165</td><td>1033</td><td>World Weather is a replacement weather plugin to the inbuilt one that is no longer operational in MediaPortal.\n\nRemember to configure city in plugin configuration.\n\nAuthor: Micropolis</td><td>0</td><td/><td>-442523316</td></row>
+		<row><td>ID_STRING166</td><td>1033</td><td>WebBrowser</td><td>0</td><td/><td>337663571</td></row>
 		<row><td>ID_STRING167</td><td>1033</td><td>Text Logos</td><td>0</td><td/><td>-2044738000</td></row>
 		<row><td>ID_STRING168</td><td>1033</td><td>Graphical Logos</td><td>0</td><td/><td>-2044733904</td></row>
+		<row><td>ID_STRING169</td><td>1033</td><td>This feature installs the WebBrowser plugin which allows loading of sites from 3rd Party plugins such as InfoServices RSS feed.</td><td>0</td><td/><td>337659507</td></row>
 		<row><td>ID_STRING17</td><td>1033</td><td>spuck </td><td>0</td><td/><td>-1919103762</td></row>
 		<row><td>ID_STRING18</td><td>1033</td><td>Fanart Moving Pictures</td><td>0</td><td/><td>1142761741</td></row>
 		<row><td>ID_STRING19</td><td>1033</td><td>Default Moving Pictures</td><td>0</td><td/><td>1142808813</td></row>
@@ -4312,7 +4322,7 @@
 		<row><td>ID_STRING76</td><td>1033</td><td>Fanart TV Series</td><td>0</td><td/><td>1142770029</td></row>
 		<row><td>ID_STRING77</td><td>1033</td><td>Fanart TV Series</td><td>0</td><td/><td>1142767981</td></row>
 		<row><td>ID_STRING78</td><td>1033</td><td>InfoService</td><td>0</td><td/><td>488478159</td></row>
-		<row><td>ID_STRING79</td><td>1033</td><td>InfoService displays news/twitters from your favourite feeds to your homescreen. \nThis feature also includes a WebBrowser to view feed items.\n\nAuthor: edsche</td><td>0</td><td/><td>-442512788</td></row>
+		<row><td>ID_STRING79</td><td>1033</td><td>InfoService displays news/twitters from your favourite feeds to your homescreen.\n\nAuthor: edsche</td><td>0</td><td/><td>337690227</td></row>
 		<row><td>ID_STRING8</td><td>1033</td><td>Tools &amp; Utilities</td><td>0</td><td/><td>-979585008</td></row>
 		<row><td>ID_STRING80</td><td>1033</td><td>Global Music Search</td><td>0</td><td/><td>488478834</td></row>
 		<row><td>ID_STRING81</td><td>1033</td><td>This plugin allows you to search through your complete music collection (including lyrics if available) and provides functionality to control what you want to do with the search results.\n\nAutor:  d-fader</td><td>0</td><td/><td>2032034220</td></row>
@@ -5000,7 +5010,7 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{73DD856D-4E71-4E17-8302-E538DD0442B3}</td><td/></row>
+		<row><td>ProductCode</td><td>{2DB2B8C9-7EAA-463C-A82E-E3CC6030BE98}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
 		<row><td>ProductVersion</td><td>1.8.0.3136</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
