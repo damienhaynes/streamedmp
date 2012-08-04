@@ -1,5 +1,6 @@
-﻿<window>
-	<controls>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
     <control>
       <type>image</type>
       <id>0</id>
@@ -8,11 +9,11 @@
       <width>1280</width>
       <height>47</height>
       <texture>imagestreamtitle.png</texture>
-			<visible>!facadeview.coverflow</visible>
+      <visible>!facadeview.coverflow</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<!-- Video Resolutions / Aspect Ratio-->
+    <!-- Video Resolutions / Aspect Ratio-->
     <control>
       <description>720p, 1080i, 1080p</description>
       <type>image</type>
@@ -94,5 +95,6 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-	</controls>
+  </controls>
 </window>
+<!--Checksum:5a62947bd9fe5d8686439772f2962f4c-->

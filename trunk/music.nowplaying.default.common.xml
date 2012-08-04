@@ -331,7 +331,7 @@
       <font>mediastream12tc</font>
       <align>right</align>
       <textcolor>ff000000</textcolor>
-			<visible>!string.equals(#Play.Next.Title,)</visible>
+      <visible>!string.equals(#Play.Next.Title,)</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
@@ -345,7 +345,7 @@
       <font>mediastream12tc</font>
       <align>right</align>
       <textcolor>ff006699</textcolor>
-			<visible>!string.equals(#Play.Next.Title,)</visible>
+      <visible>!string.equals(#Play.Next.Title,)</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
@@ -387,7 +387,7 @@
       <height>66</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>defaultAudio.png</texture>
-			<visible>!string.equals(#Play.Next.Title,)</visible>
+      <visible>!string.equals(#Play.Next.Title,)</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
@@ -413,7 +413,7 @@
       <width>76</width>
       <height>76</height>
       <texture>mayacdborder.png</texture>
-			<visible>control.hasthumb(600)</visible>
+      <visible>control.hasthumb(600)</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
     </control>
@@ -436,7 +436,7 @@
       </subitems>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <id>0</id>
       <description>Shadow -list of top album tracks label</description>
@@ -815,4 +815,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:6017263d594e2373c5bb4fb9a174ad20-->
+<!--Checksum:f393e404310b634c55efe1ff88eaf52c-->

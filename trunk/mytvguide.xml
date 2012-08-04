@@ -198,7 +198,7 @@
       <onleft>6</onleft>
       <onright>8</onright>
     </control>
-    <import tag="TVGuideChannelTemplate">mytvguide.common.10rows.channeltemplate.xml</import>    
+    <import tag="TVGuideChannelTemplate">mytvguide.common.10rows.channeltemplate.xml</import>
     <control>
       <description>record pin</description>
       <type>image</type>
@@ -215,20 +215,20 @@
       <description>Current program title</description>
       <type>fadelabel</type>
       <id>0</id>
-			<posX>240</posX>
+      <posX>240</posX>
       <posY>585</posY>
       <width>800</width>
       <label>#TV.Guide.CompositeTitle</label>
       <font>mediastream11tc</font>
     </control>
-		<control>
+    <control>
       <description>Current program time</description>
       <type>label</type>
-      <id>0</id>      
+      <id>0</id>
       <posX>1250</posX>
       <posY>585</posY>
       <width>220</width>
-			<align>right</align>
+      <align>right</align>
       <label>#TV.Guide.Time</label>
       <font>mediastream11tc</font>
     </control>
@@ -245,7 +245,7 @@
       <font>mediastream11</font>
       <textcolor>FFFFFFFF</textcolor>
     </control>
-		<control>
+    <control>
       <description>Current program genre</description>
       <type>label</type>
       <id>27</id>
@@ -255,7 +255,7 @@
       <label>#TV.Guide.Genre</label>
       <align>right</align>
       <font>mediastream11tc</font>
-			<visible>!skin.hassetting(#skin.tvguide.showgenrekey)</visible>
+      <visible>!skin.hassetting(#skin.tvguide.showgenrekey)</visible>
     </control>
     <control>
       <description>vertical timeline</description>
@@ -283,7 +283,8 @@
       <textureNonFocusedRight>small_vbutton_lr_colorize.png</textureNonFocusedRight>
       <textureIcon>-</textureIcon>
       <textureIcon2>-</textureIcon2>
-      <label></label>
+      <label>
+      </label>
       <onleft>60</onleft>
       <onright>6</onright>
       <onup>6</onup>
@@ -325,7 +326,7 @@
       <textureFocus>tv_green_border.png</textureFocus>
       <visible>Player.HasVideo</visible>
     </control>
-	    <control>
+    <control>
       <description>template for program on now button</description>
       <type>button3part</type>
       <id>35</id>
@@ -412,7 +413,7 @@
       <iconOffsetY>0</iconOffsetY>
       <iconInlineLabel1>no</iconInlineLabel1>
     </control>
-	    <control>
+    <control>
       <description>Template for genre key color</description>
       <type>image</type>
       <id>110</id>
@@ -434,4 +435,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:338d44eefbaec18bfae7c1cd5f5dd340-->
+<!--Checksum:65fc0156f00923eb680aaa7ba1ef8320-->

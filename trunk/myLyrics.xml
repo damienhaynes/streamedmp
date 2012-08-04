@@ -239,7 +239,7 @@
       <label>#Play.Current.Track | #Play.Current.Year</label>
       <font>mediastream12c</font>
       <textcolor>ff222222</textcolor>
-			<visible>!string.equals(#Play.Current.Track,)</visible>
+      <visible>!string.equals(#Play.Current.Track,)</visible>
       <animation effect="fade" time="150">WindowOpen</animation>
     </control>
     <control>
@@ -252,7 +252,7 @@
       <height>28</height>
       <label>#Play.Current.Track | #Play.Current.Year</label>
       <font>mediastream12c</font>
-			<visible>!string.equals(#Play.Current.Track,)</visible>
+      <visible>!string.equals(#Play.Current.Track,)</visible>
       <animation effect="fade" time="150">WindowOpen</animation>
     </control>
     <control>
@@ -329,7 +329,7 @@
       <height>390</height>
       <texture>tvseries_focusframe.png</texture>
       <colordiffuse>90ffffff</colordiffuse>
-			<visible>control.hasthumb(112)</visible>
+      <visible>control.hasthumb(112)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -395,7 +395,7 @@
       <font>mediastream12c</font>
       <align>right</align>
       <textcolor>80ffffff</textcolor>
-			<visible>player.hasmedia+!string.equals(#duration,)</visible>
+      <visible>player.hasmedia+!string.equals(#duration,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -1241,4 +1241,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:1dcbbdad06f0d95e88b4b263910771b0-->
+<!--Checksum:6e322a833cf5dc8d1887f9c1176c74dc-->

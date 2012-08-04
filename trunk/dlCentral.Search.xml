@@ -1,174 +1,175 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-    <controls>
-        <control>
-            <id>0</id>
-            <description>Media File(s)</description>
-            <type>fadelabel</type>
-            <visible>control.isvisible(102)+string.equals(#dlCentral.Search.SearchType.Type,TVSHOW)</visible>
-            <posX>40</posX>
-            <posY>684</posY>
-            <width>900</width>
-            <font>mediastream16tc</font>
-            <textcolor>ffffffff</textcolor>
-            <label>#dlCentral.Search.Files.AllNames</label>
-            <animation effect="Fade" time="250">WindowOpen</animation>
-            <animation effect="Fade" time="250">WindowClose</animation>
-        </control>
-        <control>
-            <id>0</id>
-            <description>TVSeries Media Title</description>
-            <type>fadelabel</type>
-            <visible>control.isvisible(102)+string.equals(#dlCentral.Search.SearchType.Type,TVSHOW)</visible>
-            <posX>852</posX>
-            <posY>13</posY>
-            <width>340</width>
-            <font>mediastream12c</font>
-            <align>RIGHT</align>
-            <label>#dlCentral.Search.Media.TitleWithSE</label>
-            <animation delay="300" effect="Slide" end="0,0" start="-514,0" time="700" tween="Bounce">Visible</animation>
-            <animation effect="Fade" time="250">WindowOpen</animation>
-            <animation effect="Fade" time="250">WindowClose</animation>
-            <wrapString> |  </wrapString>
-            <scrollStartDelaySec>10</scrollStartDelaySec>
-        </control>
-        <control>
-            <id>911</id>
-            <description>Cover Art</description>
-            <type>image</type>
-            <visible>control.isvisible(102)</visible>
-            <posX>30</posX>
-            <posY>250</posY>
-            <width>256</width>
-            <height>224</height>
-            <texture>#dlCentral.Search.Media.Thumb</texture>
-            <animation effect="Fade" time="250">WindowOpen</animation>
-            <animation effect="Fade" time="250">WindowClose</animation>
-        </control>
-        <control>
-            <id>0</id>
-            <description>Cover Art Glass Overlay</description>
-            <type>image</type>
-            <visible>control.isvisible(102)+Control.HasThumb(911)</visible>
-            <posX>39</posX>
-            <posY>259</posY>
-            <width>228</width>
-            <height>211</height>
-            <texture>glassoverlay2.png</texture>
-            <animation effect="Fade" time="250">WindowOpen</animation>
-            <animation effect="Fade" time="250">WindowClose</animation>
-        </control>
-        <control>
-            <id>0</id>
-            <type>image</type>
-            <visible>control.isvisible(102)</visible>
-            <posX>0</posX>
-            <posY>675</posY>
-            <width>1280</width>
-            <height>47</height>
-            <texture>imagestreamtitle.png</texture>
-            <animation effect="Fade" time="250">WindowOpen</animation>
-            <animation effect="Fade" time="250">WindowClose</animation>
-        </control>
-        <control>
-            <id>0</id>
-            <description>Media Count Label</description>
-            <type>label</type>
-            <visible>control.isvisible(102)</visible>
-            <posX>1260</posX>
-            <posY>14</posY>
-            <font>mediastream12tc</font>
-            <textcolor>ffffffff</textcolor>
-            <align>RIGHT</align>
-            <label>#itemcount</label>
-            <animation effect="Fade" time="250">WindowOpen</animation>
-            <animation effect="Fade" time="250">WindowClose</animation>
-        </control>
-        <control>
-            <id>0</id>
-            <description>Page Count Background</description>
-            <type>image</type>
-            <visible>control.isvisible(102)</visible>
-            <posX>1013</posX>
-            <posY>684</posY>
-            <width>260</width>
-            <height>30</height>
-            <texture>mediacountbg_Spin.png</texture>
-            <animation effect="Fade" time="250">WindowOpen</animation>
-            <animation effect="Fade" time="250">WindowClose</animation>
-        </control>
-        <control>
-            <id>0</id>
-            <description>Page Label</description>
-            <type>label</type>
-            <visible>control.isvisible(102)</visible>
-            <posX>1023</posX>
-            <posY>688</posY>
-            <font>mediastream12tc</font>
-            <textcolor>ff909090</textcolor>
-            <label>30009</label>
-            <animation effect="Fade" time="250">WindowOpen</animation>
-            <animation effect="Fade" time="250">WindowClose</animation>
-        </control>
-        <control>
-            <description>group element</description>
-            <type>group</type>
-            <control>
-                <id>50</id>
-                <description>listcontrol</description>
-                <type>listcontrol</type>
-                <onleft>202</onleft>
-                <onright>202</onright>
-                <visible>control.isvisible(102)</visible>
-                <posX>500</posX>
-                <posY>250</posY>
-                <width>755</width>
-                <height>475</height>
-                <animation effect="Fade" time="250">WindowOpen</animation>
-                <animation effect="Fade" time="250">WindowClose</animation>
-                <animation effect="Slide" start="800,0" time="150">WindowOpen</animation>
-                <animation effect="Slide" end="800,0" time="250">WindowClose</animation>
-                <animation effect="Fade" time="250">WindowOpen</animation>
-                <animation effect="Fade" time="250">WindowClose</animation>
-                <animation effect="Slide" start="800,0" time="150">WindowOpen</animation>
-                <animation effect="Slide" end="800,0" time="250">WindowClose</animation>
-                <textXOff>15</textXOff>
-                <textXOff2>740</textXOff2>
-                <textXOff3>90</textXOff3>
-                <textYOff>2</textYOff>
-                <textYOff2>35</textYOff2>
-                <textYOff3>35</textYOff3>
-                <font>mediastream12c</font>
-                <font2>mediastream9c</font2>
-                <font3>mediastream9c</font3>
-                <playedColor>#selectedcolor</playedColor>
-                <spaceBetweenItems>5</spaceBetweenItems>
-                <textureHeight>60</textureHeight>
-                <scrollOffset>1</scrollOffset>
-                <IconXOff>3</IconXOff>
-                <IconYOff>2</IconYOff>
-                <itemWidth>50</itemWidth>
-                <itemHeight>50</itemHeight>
-                <keepaspectratio>yes</keepaspectratio>
-                <spinPosX>1175</spinPosX>
-                <spinPosY>681</spinPosY>
-                <spinAlign>Right</spinAlign>
-                <spinWidth>50</spinWidth>
-                <spinHeight>37</spinHeight>
-                <textureUp>arrow_round_up_nofocus.png</textureUp>
-                <textureDown>arrow_round_down_nofocus.png</textureDown>
-                <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-                <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-            </control>
-        </control>
-        <control>
-            <id>210</id>
-            <type>textboxscrollup</type>
-            <visible>control.isvisible(102)</visible>
-            <posX>33</posX>
-            <posY>479</posY>
-            <width>455</width>
-            <height>185</height>
-        </control>
-    </controls>
+  <controls>
+    <control>
+      <id>0</id>
+      <description>Media File(s)</description>
+      <type>fadelabel</type>
+      <visible>control.isvisible(102)+string.equals(#dlCentral.Search.SearchType.Type,TVSHOW)</visible>
+      <posX>40</posX>
+      <posY>684</posY>
+      <width>900</width>
+      <font>mediastream16tc</font>
+      <textcolor>ffffffff</textcolor>
+      <label>#dlCentral.Search.Files.AllNames</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>0</id>
+      <description>TVSeries Media Title</description>
+      <type>fadelabel</type>
+      <visible>control.isvisible(102)+string.equals(#dlCentral.Search.SearchType.Type,TVSHOW)</visible>
+      <posX>852</posX>
+      <posY>13</posY>
+      <width>340</width>
+      <font>mediastream12c</font>
+      <align>RIGHT</align>
+      <label>#dlCentral.Search.Media.TitleWithSE</label>
+      <animation delay="300" effect="Slide" end="0,0" start="-514,0" time="700" tween="Bounce">Visible</animation>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+      <wrapString> |  </wrapString>
+      <scrollStartDelaySec>10</scrollStartDelaySec>
+    </control>
+    <control>
+      <id>911</id>
+      <description>Cover Art</description>
+      <type>image</type>
+      <visible>control.isvisible(102)</visible>
+      <posX>30</posX>
+      <posY>250</posY>
+      <width>256</width>
+      <height>224</height>
+      <texture>#dlCentral.Search.Media.Thumb</texture>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>0</id>
+      <description>Cover Art Glass Overlay</description>
+      <type>image</type>
+      <visible>control.isvisible(102)+Control.HasThumb(911)</visible>
+      <posX>39</posX>
+      <posY>259</posY>
+      <width>228</width>
+      <height>211</height>
+      <texture>glassoverlay2.png</texture>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>0</id>
+      <type>image</type>
+      <visible>control.isvisible(102)</visible>
+      <posX>0</posX>
+      <posY>675</posY>
+      <width>1280</width>
+      <height>47</height>
+      <texture>imagestreamtitle.png</texture>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>0</id>
+      <description>Media Count Label</description>
+      <type>label</type>
+      <visible>control.isvisible(102)</visible>
+      <posX>1260</posX>
+      <posY>14</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ffffffff</textcolor>
+      <align>RIGHT</align>
+      <label>#itemcount</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>0</id>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <visible>control.isvisible(102)</visible>
+      <posX>1013</posX>
+      <posY>684</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <id>0</id>
+      <description>Page Label</description>
+      <type>label</type>
+      <visible>control.isvisible(102)</visible>
+      <posX>1023</posX>
+      <posY>688</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <label>30009</label>
+      <animation effect="Fade" time="250">WindowOpen</animation>
+      <animation effect="Fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>group element</description>
+      <type>group</type>
+      <control>
+        <id>50</id>
+        <description>listcontrol</description>
+        <type>listcontrol</type>
+        <onleft>202</onleft>
+        <onright>202</onright>
+        <visible>control.isvisible(102)</visible>
+        <posX>500</posX>
+        <posY>250</posY>
+        <width>755</width>
+        <height>475</height>
+        <animation effect="Fade" time="250">WindowOpen</animation>
+        <animation effect="Fade" time="250">WindowClose</animation>
+        <animation effect="Slide" start="800,0" time="150">WindowOpen</animation>
+        <animation effect="Slide" end="800,0" time="250">WindowClose</animation>
+        <animation effect="Fade" time="250">WindowOpen</animation>
+        <animation effect="Fade" time="250">WindowClose</animation>
+        <animation effect="Slide" start="800,0" time="150">WindowOpen</animation>
+        <animation effect="Slide" end="800,0" time="250">WindowClose</animation>
+        <textXOff>15</textXOff>
+        <textXOff2>740</textXOff2>
+        <textXOff3>90</textXOff3>
+        <textYOff>2</textYOff>
+        <textYOff2>35</textYOff2>
+        <textYOff3>35</textYOff3>
+        <font>mediastream12c</font>
+        <font2>mediastream9c</font2>
+        <font3>mediastream9c</font3>
+        <playedColor>#selectedcolor</playedColor>
+        <spaceBetweenItems>5</spaceBetweenItems>
+        <textureHeight>60</textureHeight>
+        <scrollOffset>1</scrollOffset>
+        <IconXOff>3</IconXOff>
+        <IconYOff>2</IconYOff>
+        <itemWidth>50</itemWidth>
+        <itemHeight>50</itemHeight>
+        <keepaspectratio>yes</keepaspectratio>
+        <spinPosX>1175</spinPosX>
+        <spinPosY>681</spinPosY>
+        <spinAlign>Right</spinAlign>
+        <spinWidth>50</spinWidth>
+        <spinHeight>37</spinHeight>
+        <textureUp>arrow_round_up_nofocus.png</textureUp>
+        <textureDown>arrow_round_down_nofocus.png</textureDown>
+        <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+        <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+      </control>
+    </control>
+    <control>
+      <id>210</id>
+      <type>textboxscrollup</type>
+      <visible>control.isvisible(102)</visible>
+      <posX>33</posX>
+      <posY>479</posY>
+      <width>455</width>
+      <height>185</height>
+    </control>
+  </controls>
 </window>
+<!--Checksum:d329405d4a5c454ec6de36abdfac0783-->

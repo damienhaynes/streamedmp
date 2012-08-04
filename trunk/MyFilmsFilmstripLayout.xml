@@ -14,7 +14,7 @@
       <visible>facadeview.filmstrip+control.isvisible(50)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <description>User Item 3 (Default: Genres)</description>
       <type>label</type>
@@ -26,8 +26,8 @@
       <align>center</align>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
-			<shadowAngle>45</shadowAngle>
-			<shadowDistance>3</shadowDistance>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#myfilms.db.category.value,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -35,3 +35,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:93c95b1a339187051d409d3a95b65101-->

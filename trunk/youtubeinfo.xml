@@ -31,11 +31,11 @@
       <description>music overlay image</description>
       <type>image</type>
       <posx>0</posx>
-			<posy>0</posy>
-			<width>1280</width>
-			<height>720</height>
-			<texture>mainoverlaydetails.png</texture>
-    </control>    
+      <posy>0</posy>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlaydetails.png</texture>
+    </control>
     <import>common.window.xml</import>
     <import>common.time.xml</import>
     <control>
@@ -46,12 +46,12 @@
       <posY>680</posY>
       <label>#selectedindex/#itemcount</label>
       <align>right</align>
-      <textcolor>ff006698</textcolor>   
+      <textcolor>ff006698</textcolor>
       <font>mediastream12c</font>
       <visible>string.equals(#selectedindex)+string.equals(#itemcount)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control> 		
+    </control>
     <control>
       <id>101</id>
       <description>Selected item Label</description>
@@ -139,7 +139,7 @@
       <posX>196</posX>
       <posY>458</posY>
       <width>296</width>
-      <height>27</height>            
+      <height>27</height>
       <texturebg>osdprogressbackv.png</texturebg>
       <onlymidtexture>yes</onlymidtexture>
       <midwidth>294</midwidth>
@@ -155,10 +155,10 @@
     <control>
       <id>0</id>
       <type>label</type>
-      <description>Track Progress/Currentplaytime</description>            
+      <description>Track Progress/Currentplaytime</description>
       <posX>145</posX>
       <posY>460</posY>
-      <label>#currentplaytime</label>            
+      <label>#currentplaytime</label>
       <font>mediastream12c</font>
       <visible>player.hasmedia</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -167,7 +167,7 @@
     <control>
       <id>0</id>
       <type>label</type>
-      <description>Track Progress/Duration</description>            
+      <description>Track Progress/Duration</description>
       <posX>504</posX>
       <posY>460</posY>
       <label>#Youtube.fm.NowPlaying.Video.Duration</label>
@@ -176,7 +176,7 @@
       <visible>player.hasmedia</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>        
+    </control>
     <control>
       <id>47</id>
       <description>Artist Name Value</description>
@@ -341,7 +341,7 @@
       <suffix>|</suffix>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <description>composite control consisting of a list control and a thumbnail panel</description>
       <type>facadeview</type>
@@ -431,7 +431,7 @@
             </controls>]]></subitem>
         </subitems>
       </control>
-    </control>    
+    </control>
     <!--     **********  Logos  **********    -->
     <control>
       <description>HD Logo</description>
@@ -440,10 +440,10 @@
       <posX>1165</posX>
       <posY>12</posY>
       <width>100</width>
-      <height>32</height>                                             
+      <height>32</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\HD Widescreen.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>	  
+      <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#Youtube.fm.NowPlaying.Video.IsHD, True)</visible>
     </control>
     <control>
@@ -453,7 +453,7 @@
       <posX>1165</posX>
       <posY>12</posY>
       <width>100</width>
-      <height>32</height>                                             
+      <height>32</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\SD Fullscreen.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -466,12 +466,12 @@
       <posX>1107</posX>
       <posY>14</posY>
       <width>50</width>
-      <height>27</height>                                             
+      <height>27</height>
       <texture>youtube.fm_isdownloaded.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#Youtube.fm.NowPlaying.Video.IsDownloaded, True)</visible>
-    </control> 
+    </control>
     <control>
       <description>Downloading Notification Logo</description>
       <type>image</type>
@@ -479,11 +479,12 @@
       <posX>1071</posX>
       <posY>14</posY>
       <width>28</width>
-      <height>28</height>                 
+      <height>28</height>
       <texture>isupdate.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>	  
+      <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#Youtube.fm.IsDownloading, True)</visible>
-    </control>                             	               
+    </control>
   </controls>
 </window>
+<!--Checksum:d46ea10aeccf77a6243a7521ffec0872-->

@@ -70,7 +70,7 @@ This file should contain the details view
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Watched Icon Background</description>
       <type>image</type>
       <id>0</id>
@@ -116,7 +116,7 @@ This file should contain the details view
       <font>mediastream16tc</font>
       <label>#selecteditem</label>
       <textcolor>ffFFFFFF</textcolor>
-			<shadowAngle>45</shadowAngle>
+      <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.filmstrip</visible>
@@ -140,7 +140,7 @@ This file should contain the details view
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Actor Date Of Birth / Place Of Birth</description>
       <type>label</type>
       <label>#Actor.DateOfBirth / #Actor.PlaceOfBirth</label>
@@ -157,7 +157,7 @@ This file should contain the details view
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Actor Biography</description>
       <type>textboxscrollup</type>
       <id>0</id>
@@ -174,7 +174,7 @@ This file should contain the details view
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Movies Label</description>
       <type>label</type>
       <id>0</id>
@@ -185,7 +185,7 @@ This file should contain the details view
       <textcolor>ff909090</textcolor>
       <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, False)</visible>
     </control>
-		<control>
+    <control>
       <description>Actor Movie List</description>
       <type>textboxscrollup</type>
       <id>0</id>
@@ -262,7 +262,7 @@ This file should contain the details view
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-	  <description>Rating Label</description>
+      <description>Rating Label</description>
       <type>label</type>
       <label>#(string.rtrim(L(173),':'))</label>
       <posX>410</posX>
@@ -272,7 +272,7 @@ This file should contain the details view
       <visible>facadeview.filmstrip+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <description>Rating Stars</description>
       <type>imagelist</type>
@@ -361,4 +361,4 @@ This file should contain the details view
     </control>
   </controls>
 </window>
-<!--Checksum:91b7248a51818a7d6e2dd6d812f9a2af-->
+<!--Checksum:14f9e5b7243dcf6d85ca951a3d840ffa-->

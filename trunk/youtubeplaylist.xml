@@ -4,7 +4,7 @@
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
   <define>#header.Extension.label:#header.label</define>
-  <define>#header.label:YOUTUBE.FM</define>  
+  <define>#header.label:YOUTUBE.FM</define>
   <define>#useSelectedFanart:Yes</define>
   <define>#usePlayFanart:Yes</define>
   <controls>
@@ -16,7 +16,7 @@
       <width>1280</width>
       <height>720</height>
     </control>
-    <import>mymusic.selected.fanart.xml</import>    
+    <import>mymusic.selected.fanart.xml</import>
     <control>
       <id>0</id>
       <description>music overlay image</description>
@@ -28,7 +28,7 @@
       <texture>mainoverlay.png</texture>
     </control>
     <control>
-			<description>Hidden Menu Indicator</description>
+      <description>Hidden Menu Indicator</description>
       <type>image</type>
       <posX>1232</posX>
       <posY>50</posY>
@@ -232,8 +232,9 @@
       <animation effect="fade" time="70" reversible="false">visible</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>    
+    </control>
     <import>youtube.common.window.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:00d22de9b4f40c9fdab50f43e9e9efb5-->

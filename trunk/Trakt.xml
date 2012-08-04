@@ -7,7 +7,7 @@
   <define>#header.label:Trakt</define>
   <define>#header.hover:hover_trakt.png</define>
   <define>#selecteditem:#highlightedbutton</define>
-	<define>#activityOnLeft:10</define>
+  <define>#activityOnLeft:10</define>
   <controls>
     <control>
       <type>image</type>
@@ -28,47 +28,47 @@
     <control>
       <type>image</type>
       <id>0</id>
-			<posX>18</posX>
+      <posX>18</posX>
       <posY>0</posY>
       <width>300</width>
       <height>720</height>
       <texture>homebladesub.png</texture>
       <animation effect="slide" time="200" start="-434,0">windowopen</animation>
-			<animation effect="slide" time="200" end="-434,0">windowclose</animation>
+      <animation effect="slide" time="200" end="-434,0">windowclose</animation>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-			<posX>-780</posX>
+      <posX>-780</posX>
       <posY>0</posY>
       <width>846</width>
       <height>720</height>
       <texture>homebladeleft.png</texture>
       <animation effect="slide" time="100" start="-846,0">windowopen</animation>
-			<animation effect="slide" time="100" end="-846,0">windowclose</animation>
+      <animation effect="slide" time="100" end="-846,0">windowclose</animation>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-			<posX>70</posX>
+      <posX>70</posX>
       <posY>100</posY>
       <width>100</width>
       <height>100</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>logos\trakt.png</texture>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-			<animation effect="fade" time="200" delay="200">windowclose</animation>
-			<animation effect="slide" time="100" start="-846,0">windowopen</animation>
-			<animation effect="slide" time="100" end="-846,0">windowclose</animation>
+      <animation effect="fade" time="200" delay="200">windowclose</animation>
+      <animation effect="slide" time="100" start="-846,0">windowopen</animation>
+      <animation effect="slide" time="100" end="-846,0">windowclose</animation>
     </control>
     <control>
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-			<animation effect="fade" time="200" delay="200">windowclose</animation>
-			<animation effect="slide" time="100" start="-846,0">windowopen</animation>
-			<animation effect="slide" time="100" end="-846,0">windowclose</animation>
-			<posX>56</posX>
+      <animation effect="fade" time="200" delay="200">windowclose</animation>
+      <animation effect="slide" time="100" start="-846,0">windowopen</animation>
+      <animation effect="slide" time="100" end="-846,0">windowclose</animation>
+      <posX>56</posX>
       <posY>201</posY>
       <width>255</width>
       <height>379</height>
@@ -153,12 +153,12 @@
       <texture>isupdate.png</texture>
       <visible>string.equals(#mpei.a9c3845a_8718_4712_85cc_26f56520bb9a.haveupdate, true)</visible>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-			<animation effect="fade" time="200" delay="200">windowclose</animation>
-			<animation effect="slide" time="100" start="-846,0">windowopen</animation>
-			<animation effect="slide" time="100" end="-846,0">windowclose</animation>
+      <animation effect="fade" time="200" delay="200">windowclose</animation>
+      <animation effect="slide" time="100" start="-846,0">windowopen</animation>
+      <animation effect="slide" time="100" end="-846,0">windowclose</animation>
     </control>
-		<import>Trakt.Dashboard.xml</import>
+    <import>Trakt.Dashboard.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:18ba0ce9cc042c87def12aa3d3ce846b-->
+<!--Checksum:2125b5253251c5f770fff206225b11cc-->

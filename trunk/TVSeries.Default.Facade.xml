@@ -53,14 +53,14 @@
       <texture>movieviewbg.png</texture>
       <visible>facadeview.filmstrip</visible>
     </control>
-		<control>
+    <control>
       <description>TopBar Overlay</description>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
       <width>1280</width>
-      <height>51</height>      
+      <height>51</height>
       <texture>overlay_topbar.png</texture>
       <visible>facadeview.coverflow</visible>
     </control>
@@ -199,7 +199,7 @@
       <width>260</width>
       <height>30</height>
       <texture>mediacountbg_Spin.png</texture>
-			<visible>!facadeview.coverflow</visible>
+      <visible>!facadeview.coverflow</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -211,7 +211,7 @@
       <posY>688</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
-			<visible>!facadeview.coverflow</visible>
+      <visible>!facadeview.coverflow</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -219,7 +219,7 @@
       <id>28</id>
       <layout>StackLayout</layout>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-			<animation effect="slide" time="250" end="1000,0">WindowClose</animation>
+      <animation effect="slide" time="250" end="1000,0">WindowClose</animation>
       <control>
         <type>facadeview</type>
         <id>50</id>
@@ -525,12 +525,11 @@
                   <textcolor>FFFFFFFF</textcolor>
                   <scrollStartDelaySec>15</scrollStartDelaySec>
                 </control>
-              </controls>]]>
-            </subitem>
+              </controls>]]></subitem>
           </subitems>
         </control>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:223f3f2e6fd47aa361bb8e765d712f05-->
+<!--Checksum:b220a2cf2866947fb4c57b397db197e7-->

@@ -9,7 +9,6 @@
 	-->
   <!-- version may be useful for logging purposes and/or future upgrades -->
   <version>1.5.0.0</version>
-  
   <!-- Skin Defines -->
   <defines>
     <!-- fanart can be disabled per layout and/or per view by setting to false -->
@@ -21,7 +20,6 @@
     <property key="fanart.filmstriplayout">true</property>
     <property key="fanart.coverflowlayout">true</property>
   </defines>
-  
   <!-- Position of 'NEW' stamp in thumb views -->
   <!-- Draws 'tvseries_newlabel.png' on thumbnail -->
   <thumbstamp>
@@ -34,7 +32,6 @@
       <posy>-5</posy>
     </posters>
   </thumbstamp>
-  
   <!-- Define the images loaded in Video OSD -->
   <!-- Note: You can reorder the items to set priority -->
   <!-- Values of custom tag is a path to custom image, where you could use:
@@ -49,7 +46,6 @@
     <season use="true" />
     <!--<custom use="false"><![CDATA[skin\StreamedMP\Media\custom.png]]></custom>-->
   </videoosdimages>
-  
   <!-- Define the images loaded in properties during play -->
   <videoplayimages import="true">
     <property>
@@ -58,7 +54,6 @@
     </property>
     <!-- You can define multiple properties -->
   </videoplayimages>
-  
   <!-- 
 		Possible Layout Types supported by the plugin, the defined layout will be what is loaded by default for the corresponding view:
 		
@@ -212,4 +207,4 @@ skin\StreamedMP\Media\Logos\MediaInfo\Textual\Misc\SUBTITLES.png;-;<Episode.Avai
     <episodethumbs>90</episodethumbs>
   </graphicsquality>
 </settings>
-<!--Checksum:967c9ffbfa06872114d2e10b2f7d1d19-->
+<!--Checksum:866f5c67c9e78d279834281cd435e6a9-->

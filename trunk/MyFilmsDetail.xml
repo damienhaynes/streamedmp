@@ -1,58 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
-	<id>7987</id>
-	<defaultcontrol>10000</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
+  <id>7987</id>
+  <defaultcontrol>10000</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
   <animation effect="fade" time="250" delay="0">WindowClose</animation>
-  <animation effect="fade" time="250" delay="0">WindowOpen</animation>    
-	<controls>
-
+  <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+  <controls>
     <import>MyFilmsDummy.xml</import>
-    
     <control>
-			<description>Fanart</description>
-			<type>image</type>
-			<id>1000</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>1280</width>
-			<height>720</height>
-			<keepaspectratio>yes</keepaspectratio>
-			<centered>yes</centered>
-			<zoom>yes</zoom>
-			<texture>#myfilms.fanart</texture>
-		</control>    
-		<control>
-			<description>Fanart</description>
-			<type>multiimage</type>
-			<id>1001</id>
-			<posX>0</posX>
-			<posY>0</posY>
-			<width>1280</width>
-			<height>720</height>
-			<imagepath></imagepath>
-			<timeperimage>5000</timeperimage>
-			<fadetime>1000</fadetime>
-			<loop>yes</loop>
-			<keepaspectratio>yes</keepaspectratio>
-			<centered>yes</centered>
-			<zoom>yes</zoom>
-			<randomize>true</randomize>
-		</control>    
-		<control>
-			<description>Overlay Detail FanArt</description>
-			<id>0</id>
-			<type>image</type>
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>1280</width>
-			<height>720</height>
-			<texture>mainoverlaydetails.png</texture>
-			<visible>control.isvisible(35)+!control.hasfocus(10099)</visible>
+      <description>Fanart</description>
+      <type>image</type>
+      <id>1000</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+      <zoom>yes</zoom>
+      <texture>#myfilms.fanart</texture>
+    </control>
+    <control>
+      <description>Fanart</description>
+      <type>multiimage</type>
+      <id>1001</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <imagepath>
+      </imagepath>
+      <timeperimage>5000</timeperimage>
+      <fadetime>1000</fadetime>
+      <loop>yes</loop>
+      <keepaspectratio>yes</keepaspectratio>
+      <centered>yes</centered>
+      <zoom>yes</zoom>
+      <randomize>true</randomize>
+    </control>
+    <control>
+      <description>Overlay Detail FanArt</description>
+      <id>0</id>
+      <type>image</type>
+      <posx>0</posx>
+      <posy>0</posy>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlaydetails.png</texture>
+      <visible>control.isvisible(35)+!control.hasfocus(10099)</visible>
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
-		</control>
-		<control>
+    </control>
+    <control>
       <description>Overlay FullColor FanArt</description>
       <type>image</type>
       <id>0</id>
@@ -63,10 +62,8 @@
       <texture>filmstrip_overlay.png</texture>
       <visible>control.hasfocus(10099)</visible>
     </control>
-    
     <import>MyFilmsTopBar.xml</import>
     <import>MyFilmsDetailsHiddenMenu.xml</import>
-		
     <control>
       <type>image</type>
       <id>0</id>
@@ -81,7 +78,7 @@
     </control>
     <control>
       <type>group</type>
-      <description>Movie Detail Buttons</description>      
+      <description>Movie Detail Buttons</description>
       <posX>40</posX>
       <posY>684</posY>
       <width>220</width>
@@ -92,7 +89,7 @@
       <control>
         <description>Play Button and Overview</description>
         <type>button</type>
-        <id>10000</id>		
+        <id>10000</id>
         <width>240</width>
         <height>32</height>
         <onup>107</onup>
@@ -164,7 +161,7 @@
       </control>
       <control>
         <type>button</type>
-        <description>Technical Details</description>		
+        <description>Technical Details</description>
         <width>240</width>
         <height>32</height>
         <id>10004</id>
@@ -180,9 +177,8 @@
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      </control>    
+      </control>
     </control>
-
     <control>
       <type>button</type>
       <description>Full Colour Fanart View</description>
@@ -198,7 +194,6 @@
       <textureNoFocus>-</textureNoFocus>
       <visible>control.isvisible(35)</visible>
     </control>
-    
     <control>
       <type>image</type>
       <description>Movie Poster</description>
@@ -227,7 +222,6 @@
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
-    
     <control>
       <description>Watched Icon Background</description>
       <type>image</type>
@@ -267,7 +261,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
-    
     <!-- Detail menu for Overview -->
     <control>
       <description>Title</description>
@@ -288,7 +281,6 @@
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
-    
     <control>
       <description>Star Rating Image</description>
       <type>imagelist</type>
@@ -325,7 +317,6 @@
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
-        
     <control>
       <description>Certification (PG-13)</description>
       <type>image</type>
@@ -391,7 +382,6 @@
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
-    
     <control>
       <description>Director Label</description>
       <type>label</type>
@@ -593,14 +583,13 @@
       <height>218</height>
       <textcolor>FFFFFFFF</textcolor>
       <label>#myfilms.db.description.value</label>
-      <seperator>&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;	&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;	&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;</seperator>
+      <seperator>⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</seperator>
       <font>mediastream11</font>
       <scrollStartDelaySec>15</scrollStartDelaySec>
       <visible>!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
       <animation effect="fade" time="250" delay="0">visible</animation>
       <!--<animation effect="fade" time="250" delay="0">hidden</animation>-->
     </control>
-	
     <!-- Detail menu for Description -->
     <control>
       <description>Plot/Description Value</description>
@@ -613,15 +602,14 @@
       <textcolor>FFFFFFFF</textcolor>
       <label>#myfilms.db.description.value</label>
       <seperator>: : :</seperator>
-      <font>mediastream11</font>      
-      <seperator>&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;	&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;	&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;</seperator>
+      <font>mediastream11</font>
+      <seperator>⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</seperator>
       <scrollStartDelaySec>10</scrollStartDelaySec>
       <visible>control.hasfocus(10001)</visible>
       <animation effect="fade" time="250" delay="0">visible</animation>
       <!--<animation effect="fade" time="250" delay="0">hidden</animation>-->
     </control>
-
-    <!--  Detailmenu for Comments -->	
+    <!--  Detailmenu for Comments -->
     <control>
       <description>Comments Value</description>
       <type>textboxscrollup</type>
@@ -634,14 +622,13 @@
       <label>#myfilms.db.comments.value</label>
       <seperator>: : :</seperator>
       <font>mediastream11</font>
-      <seperator>&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;	&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;	&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;</seperator>
+      <seperator>⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</seperator>
       <scrollStartDelaySec>10</scrollStartDelaySec>
       <visible>control.hasfocus(10002)</visible>
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
-	
-    <!-- Detail menu for Actors -->	
+    <!-- Detail menu for Actors -->
     <control>
       <description>Actors value</description>
       <type>textboxscrollup</type>
@@ -653,13 +640,12 @@
       <textcolor>FFFFFFFF</textcolor>
       <label>#myfilms.db.actors.value</label>
       <font>mediastream11</font>
-      <seperator>&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;	&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;	&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;&#8901;</seperator>
+      <seperator>⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</seperator>
       <scrollStartDelaySec>10</scrollStartDelaySec>
       <visible>control.hasfocus(10003)</visible>
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
-	
     <!-- Detailmenu for technical details -->
     <control>
       <type>label</type>
@@ -1153,7 +1139,6 @@
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
-
     <control>
       <type>image</type>
       <description>Logos groups 1 + 2 combined logos</description>
@@ -1184,7 +1169,6 @@
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
-    
     <!-- Special View for FullColor Fanart -->
     <control>
       <type>label</type>
@@ -1199,7 +1183,7 @@
       <visible>control.hasfocus(10099)</visible>
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
-    </control> 
+    </control>
     <control>
       <type>label</type>
       <description>Year and Category (FullColor Fanart View)</description>
@@ -1214,8 +1198,8 @@
       <visible>control.hasfocus(10099)</visible>
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
-    </control>     
-    
+    </control>
     <import>common.time.xml</import>
   </controls>
 </window>
+<!--Checksum:892ee0fb62b567dc78d50658d0b29205-->

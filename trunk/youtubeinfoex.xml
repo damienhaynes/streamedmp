@@ -30,11 +30,11 @@
       <description>music overlay image</description>
       <type>image</type>
       <posx>0</posx>
-			<posy>0</posy>
-			<width>1280</width>
-			<height>720</height>
-			<texture>mainoverlaydetails.png</texture>
-    </control>    
+      <posy>0</posy>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlaydetails.png</texture>
+    </control>
     <import>common.window.xml</import>
     <import>common.time.xml</import>
     <control>
@@ -49,7 +49,7 @@
       <textureNoFocus>play_disabled.png</textureNoFocus>
       <label>-</label>
       <onup>17</onup>
-    </control>   
+    </control>
     <control>
       <id>1</id>
       <description>Video Image</description>
@@ -407,12 +407,12 @@
       <posX>1233</posX>
       <posY>14</posY>
       <width>25</width>
-      <height>25</height>                                              
+      <height>25</height>
       <texture>youtube.fm_unwatched.png</texture>
       <visible>!string.equals(#Youtube.fm.Info.Video.IsWatched, true)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control> 
+    </control>
     <control>
       <description>Watched Logo</description>
       <type>image</type>
@@ -420,11 +420,11 @@
       <posX>1233</posX>
       <posY>14</posY>
       <width>25</width>
-      <height>25</height>                                             
-      <texture>youtube.fm_watched.png</texture>	  
+      <height>25</height>
+      <texture>youtube.fm_watched.png</texture>
       <visible>string.equals(#Youtube.fm.Info.Video.IsWatched, true)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>      
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>HD Logo</description>
@@ -433,10 +433,10 @@
       <posX>1126</posX>
       <posY>12</posY>
       <width>100</width>
-      <height>32</height>                                             
+      <height>32</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\HD Widescreen.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>	  
+      <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#Youtube.fm.Info.Video.IsHD, true)</visible>
     </control>
     <control>
@@ -446,11 +446,11 @@
       <posX>1126</posX>
       <posY>12</posY>
       <width>100</width>
-      <height>32</height>                                             
+      <height>32</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\SD Fullscreen.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <visible>!string.equals(#Youtube.fm.Info.Video.IsHD, true)</visible>	        
+      <visible>!string.equals(#Youtube.fm.Info.Video.IsHD, true)</visible>
     </control>
     <control>
       <description>IsDownloaded Logo</description>
@@ -459,12 +459,7 @@
       <posX>1069</posX>
       <posY>14</posY>
       <width>50</width>`
-      <height>27</height>                                             
-      <texture>youtube.fm_isdownloaded.png</texture>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <visible>string.equals(#Youtube.fm.Info.Video.IsDownloaded, True)</visible>
-    </control>
+      <height>27</height><texture>youtube.fm_isdownloaded.png</texture><animation effect="fade" time="250">WindowOpen</animation><animation effect="fade" time="250">WindowClose</animation><visible>string.equals(#Youtube.fm.Info.Video.IsDownloaded, True)</visible></control>
     <control>
       <type>image</type>
       <id>0</id>
@@ -495,3 +490,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:9b11ad38faf9ee875dcaf789f15e04e8-->

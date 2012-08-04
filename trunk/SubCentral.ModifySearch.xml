@@ -5,7 +5,7 @@
 		This skin file is meant for all controls that should be visible for the user
 		when in the modify search view of the plugin. All controls should be tagged at a minimum
 		with "<visible>Control.IsVisible(103)</visible>". 
-		-->		
+		-->
     <control>
       <description>Subcentral Search dialog</description>
       <type>image</type>
@@ -358,21 +358,21 @@
       <visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
       <animation effect="fade" time="250">Visible</animation>
     </control>
-		<control>
-			<description>Absolute Numbering Button</description>
-			<type>checkmark</type>
-			<id>226</id>
-			<label>#SubCentral.Translation.AbsoluteNumbering.Label</label>
-			<font>mediastream12tc</font>
-			<posX>200</posX>
-			<posY>405</posY>
-			<onup>225</onup>
-			<ondown>214</ondown>
-			<onleft>225</onleft>
-			<onright>214</onright>
-			<visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
-			<animation effect="fade" time="250">Visible</animation>
-		</control>
+    <control>
+      <description>Absolute Numbering Button</description>
+      <type>checkmark</type>
+      <id>226</id>
+      <label>#SubCentral.Translation.AbsoluteNumbering.Label</label>
+      <font>mediastream12tc</font>
+      <posX>200</posX>
+      <posY>405</posY>
+      <onup>225</onup>
+      <ondown>214</ondown>
+      <onleft>225</onleft>
+      <onright>214</onright>
+      <visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
+      <animation effect="fade" time="250">Visible</animation>
+    </control>
     <control>
       <type>image</type>
       <id>0</id>
@@ -399,4 +399,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:db66dc02fe9306d558fb19c63f222caf-->
+<!--Checksum:e9866f74e732dd6b179104fd3f68b2a8-->

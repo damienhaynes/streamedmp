@@ -6,7 +6,6 @@
   <define>#header.hover:-</define>
   <define>#useSelectedFanart:Yes</define>
   <controls>
-
     <import>mvcentral.smartdj.selected.fanart.xml</import>
     <control>
       <id>0</id>
@@ -140,7 +139,7 @@
       <texture>mediacountbg_Spin.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <description>Page Label</description>
       <type>label</type>
@@ -149,10 +148,10 @@
       <posX>1023</posX>
       <posY>688</posY>
       <font>mediastream12tc</font>
-      <textcolor>ff909090</textcolor>    
+      <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <!-- *************************************************** -->
     <!--          Match/Filter Selection Buttons             -->
     <!-- *************************************************** -->
@@ -269,7 +268,8 @@
       <posY>687</posY>
       <width>700</width>
       <font>mediastream11c</font>
-      <label></label>
+      <label>
+      </label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -443,4 +443,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:da82566a2d2fd42308e0a967d081a037-->
+<!--Checksum:8f12d7b410f0540e52dd538dea030ee9-->

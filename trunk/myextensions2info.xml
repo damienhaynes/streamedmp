@@ -28,7 +28,7 @@
       <width>1281</width>
       <height>720</height>
       <texture>#header.BG.overlay</texture>
-    </control>    
+    </control>
     <control>
       <id>1</id>
       <description>Top Title Background</description>
@@ -58,7 +58,7 @@
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <import>common.time.xml</import>
-    <!-- GUI Buttons -->  
+    <!-- GUI Buttons -->
     <control>
       <description>Action Buttons</description>
       <type>group</type>
@@ -80,7 +80,7 @@
         <onleft>2</onleft>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>      
+        <font>mediastream12tc</font>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
@@ -120,7 +120,7 @@
         <onleft>4</onleft>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>      
+        <font>mediastream12tc</font>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
@@ -140,7 +140,7 @@
         <onleft>5</onleft>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>      
+        <font>mediastream12tc</font>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
@@ -160,7 +160,7 @@
         <onleft>6</onleft>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>      
+        <font>mediastream12tc</font>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
@@ -180,7 +180,7 @@
         <onleft>7</onleft>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>      
+        <font>mediastream12tc</font>
         <textYOff>8</textYOff>
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
@@ -406,7 +406,6 @@
       <animation effect="Fade" time="100">WindowClose</animation>
       <visible>string.equals(#MPE.View.Name,#MPEI.Translation.MPOnlineExtensions.Label)</visible>
     </control>
-    
     <control>
       <type>textboxscrollup</type>
       <posX>310</posX>
@@ -431,7 +430,6 @@
       <animation effect="Fade" time="100">WindowClose</animation>
       <visible>!string.equals(#MPE.View.Name,#MPEI.Translation.MPOnlineExtensions.Label)</visible>
     </control>
-    
     <control>
       <type>image</type>
       <id>0</id>
@@ -458,4 +456,4 @@
     <import>common.overlays2.xml</import>
   </controls>
 </window>
-<!--Checksum:83d14a51a0801a9842bb90c3cd051b79-->
+<!--Checksum:6f0a647f9beba6cdd3df26995062833a-->

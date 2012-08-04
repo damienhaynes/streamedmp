@@ -78,7 +78,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-			<description>Hidden Menu Indicator</description>
+      <description>Hidden Menu Indicator</description>
       <type>image</type>
       <posX>1232</posX>
       <posY>50</posY>
@@ -153,36 +153,36 @@
           <ondown>12</ondown>
           <onup>17</onup>
         </control>
-      <control>
-        <type>togglebutton</type>
-        <description>group by schedule</description>
-        <id>12</id>
-        <onleft>10</onleft>
-        <onright>10</onright>
-        <onup>2</onup>
-        <ondown>9</ondown>
-        <label>group by schedule</label>
-      </control>
-      <control>
-        <type>sortbutton</type>
-        <description>Sort button</description>
-        <id>9</id>
-        <onleft>10</onleft>
-        <onright>10</onright>
-        <onup>12</onup>
-        <ondown>11</ondown>
-        <label>sort</label>
-      </control>
-      <control>
-        <type>button</type>
-        <description>new</description>
-        <id>11</id>
-        <onleft>10</onleft>
-        <onright>10</onright>
-        <onup>9</onup>
-        <ondown>2</ondown>
-        <label>617</label>
-      </control>
+        <control>
+          <type>togglebutton</type>
+          <description>group by schedule</description>
+          <id>12</id>
+          <onleft>10</onleft>
+          <onright>10</onright>
+          <onup>2</onup>
+          <ondown>9</ondown>
+          <label>group by schedule</label>
+        </control>
+        <control>
+          <type>sortbutton</type>
+          <description>Sort button</description>
+          <id>9</id>
+          <onleft>10</onleft>
+          <onright>10</onright>
+          <onup>12</onup>
+          <ondown>11</ondown>
+          <label>sort</label>
+        </control>
+        <control>
+          <type>button</type>
+          <description>new</description>
+          <id>11</id>
+          <onleft>10</onleft>
+          <onright>10</onright>
+          <onup>9</onup>
+          <ondown>2</ondown>
+          <label>617</label>
+        </control>
       </control>
     </control>
     <control>
@@ -245,15 +245,15 @@
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
     </control>
-    
-      <control>
-        <type>fadelabel</type>
-        <description>Current program title - not used</description>
-        <id>13</id>
-        <posX>0</posX>
-        <posY>750</posY>
-        <label></label>
-      </control>    
+    <control>
+      <type>fadelabel</type>
+      <description>Current program title - not used</description>
+      <id>13</id>
+      <posX>0</posX>
+      <posY>750</posY>
+      <label>
+      </label>
+    </control>
     <control>
       <description>Current program time</description>
       <type>label</type>
@@ -286,4 +286,4 @@
     <import>common.overlays.xml</import>
   </controls>
 </window>
-<!--Checksum:9400c4ff54a95f6e464db2c7460ae735-->
+<!--Checksum:334e74051344494242ac5235db20f503-->

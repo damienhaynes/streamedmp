@@ -17,35 +17,35 @@
         <type>image</type>
         <id>0</id>
         <posX>765</posX>
-				<posY>540</posY>
-				<width>519</width>
-				<height>152</height>
-				<texture>dialogprogressbg.png</texture>
+        <posY>540</posY>
+        <width>519</width>
+        <height>152</height>
+        <texture>dialogprogressbg.png</texture>
       </control>
-			<control>
-				<description>music logo</description>
-				<type>image</type>
-				<id>0</id>
-				<posX>783</posX>
-				<posY>558</posY>
-				<width>114</width>
-				<height>114</height>
-				<keepaspectratio>yes</keepaspectratio>
-				<centered>yes</centered>
-				<zoom>no</zoom>
-				<texture>defaultAudioBig.png</texture>
-			</control>
+      <control>
+        <description>music logo</description>
+        <type>image</type>
+        <id>0</id>
+        <posX>783</posX>
+        <posY>558</posY>
+        <width>114</width>
+        <height>114</height>
+        <keepaspectratio>yes</keepaspectratio>
+        <centered>yes</centered>
+        <zoom>no</zoom>
+        <texture>defaultAudioBig.png</texture>
+      </control>
       <control>
         <description>Artist Thumb</description>
         <type>image</type>
         <id>0</id>
         <posX>783</posX>
-				<posY>558</posY>
-				<width>114</width>
-				<height>114</height>
-				<keepaspectratio>no</keepaspectratio>
-				<centered>yes</centered>
-				<zoom>yes</zoom>
+        <posY>558</posY>
+        <width>114</width>
+        <height>114</height>
+        <keepaspectratio>no</keepaspectratio>
+        <centered>yes</centered>
+        <zoom>yes</zoom>
         <texture>#Youtube.fm.NowPlaying.Artist.Image</texture>
       </control>
       <control>
@@ -53,13 +53,13 @@
         <id>0</id>
         <type>fadelabel</type>
         <width>340</width>
-				<height>40</height>
-				<posX>908</posX>
-				<posY>563</posY>
+        <height>40</height>
+        <posX>908</posX>
+        <posY>563</posY>
         <textcolor>FFFFFFFF</textcolor>
-				<font>mediastream12tc</font>
-				<scrollStartDelaySec>2</scrollStartDelaySec>
-				<wrapString> | </wrapString>
+        <font>mediastream12tc</font>
+        <scrollStartDelaySec>2</scrollStartDelaySec>
+        <wrapString> | </wrapString>
         <label>#Youtube.fm.NowPlaying.Artist.Name</label>
       </control>
       <control>
@@ -67,61 +67,60 @@
         <id>0</id>
         <type>fadelabel</type>
         <width>340</width>
-				<height>40</height>
-				<posX>908</posX>
-				<posY>584</posY>
+        <height>40</height>
+        <posX>908</posX>
+        <posY>584</posY>
         <textcolor>FFFFFFFF</textcolor>
-				<font>mediastream10tc</font>
-				<scrollStartDelaySec>2</scrollStartDelaySec>
-				<wrapString> | </wrapString>
+        <font>mediastream10tc</font>
+        <scrollStartDelaySec>2</scrollStartDelaySec>
+        <wrapString> | </wrapString>
         <label>#Youtube.fm.NowPlaying.Video.Title</label>
       </control>
       <control>
-				<description>play time / duration label</description>
-				<type>fadelabel</type>
-				<id>0</id>
-				<width>340</width>
-				<height>40</height>
-				<posX>908</posX>
-				<posY>621</posY>
-				<align>left</align>
-				<label>#currentplaytime / #duration</label>
-				<textcolor>FFFFFFFF</textcolor>
-				<font>mediastream10c</font>
-			</control>
-			<control>
-				<description>next song label</description>
-				<type>fadelabel</type>
-				<id>0</id>
-				<width>42</width>
-				<height>40</height>
-				<posX>908</posX>
-				<posY>647</posY>
-				<label>Next</label>
-				<textcolor>FF025984</textcolor>
-				<font>mediastream10</font>
-				<align>left</align>
-				<visible>!string.equals(#Youtube.fm.Next.Video.Title,)</visible>
-			</control>
-			<control>
-				<description>next song info label</description>
-				<type>fadelabel</type>
-				<id>0</id>
-				<posX>945</posX>
-				<posY>647</posY>
-				<width>300</width>
-				<height>40</height>
-				<label>: #Youtube.fm.Next.Video.Title by #Youtube.fm.Next.Artist.Name</label>
-				<textcolor>white</textcolor>
-				<align>left</align>
-				<font>mediastream10</font>
-				<scrollStartDelaySec>2</scrollStartDelaySec>
-				<wrapString> | </wrapString>
-				<visible>!string.equals(#Youtube.fm.Next.Video.Title,)</visible>
-			</control>
+        <description>play time / duration label</description>
+        <type>fadelabel</type>
+        <id>0</id>
+        <width>340</width>
+        <height>40</height>
+        <posX>908</posX>
+        <posY>621</posY>
+        <align>left</align>
+        <label>#currentplaytime / #duration</label>
+        <textcolor>FFFFFFFF</textcolor>
+        <font>mediastream10c</font>
+      </control>
+      <control>
+        <description>next song label</description>
+        <type>fadelabel</type>
+        <id>0</id>
+        <width>42</width>
+        <height>40</height>
+        <posX>908</posX>
+        <posY>647</posY>
+        <label>Next</label>
+        <textcolor>FF025984</textcolor>
+        <font>mediastream10</font>
+        <align>left</align>
+        <visible>!string.equals(#Youtube.fm.Next.Video.Title,)</visible>
+      </control>
+      <control>
+        <description>next song info label</description>
+        <type>fadelabel</type>
+        <id>0</id>
+        <posX>945</posX>
+        <posY>647</posY>
+        <width>300</width>
+        <height>40</height>
+        <label>: #Youtube.fm.Next.Video.Title by #Youtube.fm.Next.Artist.Name</label>
+        <textcolor>white</textcolor>
+        <align>left</align>
+        <font>mediastream10</font>
+        <scrollStartDelaySec>2</scrollStartDelaySec>
+        <wrapString> | </wrapString>
+        <visible>!string.equals(#Youtube.fm.Next.Video.Title,)</visible>
+      </control>
     </control>
-		
-		<control>
+    <control>
       <description>dummy to fix images disappearing on more than 2x seeking (MP BUG)</description>
       <type>image</type>
       <id>0</id>
@@ -198,7 +197,7 @@
       <height>160</height>
       <align>left</align>
       <centered>yes</centered>
-			<zoom>no</zoom>
+      <zoom>no</zoom>
       <keepaspectratio>no</keepaspectratio>
       <visible>[window.ispauseosdvisible|player.rewinding|player.forwarding]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
@@ -238,9 +237,10 @@
       <label>#Play.Current.Plot</label>
       <font>mediastream11</font>
       <visible>[window.ispauseosdvisible+!window.isosdvisible]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
-    </control>    
+    </control>
     <import>common.player.xml</import>
     <import>common.play.fullscreen.xml</import>
     <import>common.progressbar.xml</import>
   </controls>
 </window>
+<!--Checksum:3d6a610553ef7c006925c52e6af7ac54-->

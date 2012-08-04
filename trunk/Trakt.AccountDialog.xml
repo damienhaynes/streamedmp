@@ -4,7 +4,6 @@
   <animation effect="fade" time="200">visible</animation>
   <animation effect="fade" time="200">hidden</animation>
   <controls>
-    
     <control>
       <type>image</type>
       <id>0</id>
@@ -14,7 +13,6 @@
       <colordiffuse>90ffffff</colordiffuse>
       <visible>string.equals(#Trakt.Settings.Account.Dialog.Visible,true)</visible>
     </control>
-    
     <control>
       <description>Dialog Background</description>
       <type>image</type>
@@ -26,19 +24,18 @@
       <texture>traktAccountCreate.png</texture>
       <visible>string.equals(#Trakt.Settings.Account.Dialog.Visible,true)</visible>
     </control>
-    
     <control>
       <description>Title (Create/Login)</description>
       <type>label</type>
       <id>10</id>
       <posX>320</posX>
       <posY>160</posY>
-      <label></label>
+      <label>
+      </label>
       <font>mediastream14tc</font>
       <textcolor>ff006699</textcolor>
       <visible>string.equals(#Trakt.Settings.Account.Dialog.Visible,true)</visible>
     </control>
-    
     <control>
       <description>Username Label</description>
       <type>label</type>
@@ -54,11 +51,12 @@
       <description>Username Button</description>
       <type>button</type>
       <id>11</id>
-      <label></label>
+      <label>
+      </label>
       <posX>320</posX>
       <posY>242</posY>
       <onleft>15</onleft>
-      <onright>15</onright>      
+      <onright>15</onright>
       <onup>16</onup>
       <ondown>12</ondown>
       <textXOff>15</textXOff>
@@ -73,7 +71,6 @@
       <textureNoFocus>traktLoginFieldNoFocus.png</textureNoFocus>
       <visible>string.equals(#Trakt.Settings.Account.Dialog.Visible,true)</visible>
     </control>
-    
     <control>
       <description>Password Label</description>
       <type>label</type>
@@ -89,7 +86,8 @@
       <description>Password Button</description>
       <type>button</type>
       <id>12</id>
-      <label></label>
+      <label>
+      </label>
       <posX>320</posX>
       <posY>307</posY>
       <onleft>15</onleft>
@@ -108,7 +106,6 @@
       <textureNoFocus>traktLoginFieldNoFocus.png</textureNoFocus>
       <visible>string.equals(#Trakt.Settings.Account.Dialog.Visible,true)</visible>
     </control>
-    
     <!-- Only Visible for Create New User -->
     <control>
       <description>Email Label</description>
@@ -125,7 +122,8 @@
       <description>Email Button</description>
       <type>button</type>
       <id>13</id>
-      <label></label>
+      <label>
+      </label>
       <posX>320</posX>
       <posY>372</posY>
       <onleft>15</onleft>
@@ -144,12 +142,12 @@
       <textureNoFocus>traktLoginFieldNoFocus.png</textureNoFocus>
       <visible>string.equals(#Trakt.Settings.Account.Dialog.Visible,true)+string.equals(#Trakt.Settings.Account.Dialog.NewUser,true)</visible>
     </control>
-    
     <control>
       <description>Create\Login Button</description>
       <type>button</type>
       <id>15</id>
-      <label></label>
+      <label>
+      </label>
       <onup>13</onup>
       <ondown>11</ondown>
       <onright>16</onright>
@@ -191,18 +189,18 @@
       <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
       <visible>string.equals(#Trakt.Settings.Account.Dialog.Visible,true)</visible>
     </control>
- 
     <control>
       <description>Test Connection</description>
       <type>label</type>
       <id>17</id>
       <posX>320</posX>
       <posY>450</posY>
-      <label></label>
+      <label>
+      </label>
       <font>mediastream12tc</font>
       <textcolor>ffFFFFFF</textcolor>
       <visible>string.equals(#Trakt.Settings.Account.Dialog.Visible,true)</visible>
     </control>
-    
   </controls>
 </window>
+<!--Checksum:bd493b615474778ff6b4fbceed625f06-->

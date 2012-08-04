@@ -8,11 +8,11 @@
   <define>#header.BG.overlay:mainoverlay.png</define>
   <define>#header.BG.colordiffuse:ffffffff</define>
   <define>#header.label:102003</define>
-	<define>#useSelectedFanart:Yes</define>
+  <define>#useSelectedFanart:Yes</define>
   <controls>
     <import>common.time.xml</import>
-		<import>myvideos.selected.fanart.xml</import>
-		<control>
+    <import>myvideos.selected.fanart.xml</import>
+    <control>
       <id>1</id>
       <description>Overlay Image</description>
       <type>image</type>
@@ -307,7 +307,7 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <type>listcontrol</type>
       <description>Cast List</description>
       <id>24</id>
@@ -319,16 +319,16 @@
       <textYOff>5</textYOff>
       <textXOff2>-1000</textXOff2>
       <textYOff2>-55</textYOff2>
-			<textXOff3>-2000</textXOff3>
+      <textXOff3>-2000</textXOff3>
       <textureHeight>42</textureHeight>
       <onright>4</onright>
       <onleft>4</onleft>
       <scrollOffset>1</scrollOffset>
       <spinPosX>2175</spinPosX>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Selected Actor Image</description>
       <type>image</type>
       <id>25</id>
@@ -450,7 +450,7 @@
       <posX>900</posX>
       <posY>230</posY>
       <layout>StackLayout(0, Vertical, true)</layout>
-			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <control>
         <description>Play Button</description>
@@ -539,7 +539,7 @@
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
       </control>
-			<control>
+      <control>
         <description>Rename</description>
         <type>button</type>
         <id>26</id>
@@ -614,9 +614,9 @@
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <visible>plugin.isenabled(Trakt)</visible>
       </control>
-    </control>		
-		<import>myvideo.mediainfo.xml</import>
+    </control>
+    <import>myvideo.mediainfo.xml</import>
     <import>common.overlays2.xml</import>
   </controls>
 </window>
-<!--Checksum:a7de40dd28638fa04f51dae323fd97b7-->
+<!--Checksum:a18b116dacf35dd0e1e902fba7a85dff-->

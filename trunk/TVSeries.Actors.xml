@@ -8,10 +8,8 @@
   <define>#header.BG.colordiffuse:ffffffff</define>
   <define>#header.BG.overlay:mainoverlay.png</define>
   <controls>
-    
     <import>common.window.default.xml</import>
     <import>common.time.xml</import>
-    
     <control>
       <type>image</type>
       <id>0</id>
@@ -36,7 +34,6 @@
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-    
     <control>
       <description>Item Count Background</description>
       <type>image</type>
@@ -142,9 +139,8 @@
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-    
     <!-- Facade -->
-		<control>
+    <control>
       <description>group element</description>
       <type>group</type>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -170,7 +166,7 @@
           <PinIconXOff>57</PinIconXOff>
           <PinIconYOff>13</PinIconYOff>
           <itemWidth>22</itemWidth>
-          <itemHeight>32</itemHeight>          
+          <itemHeight>32</itemHeight>
           <IconXOff>12</IconXOff>
           <IconYOff>4</IconYOff>
           <textXOff>25</textXOff>
@@ -178,7 +174,7 @@
           <textXOff2>0</textXOff2>
           <textYOff2>5</textYOff2>
           <font2>mediastream10</font2>
-          <keepaspectratio>no</keepaspectratio>          
+          <keepaspectratio>no</keepaspectratio>
           <spinPosX>1175</spinPosX>
           <spinPosY>681</spinPosY>
           <spinAlign>Right</spinAlign>
@@ -192,25 +188,26 @@
           <suffix>|</suffix>
         </control>
         <control>
-					<description>Filmstrip view (Series/Season Views)</description>
-					<type>filmstrip</type>
-					<id>50</id>					
-					<posX>25</posX>
-					<posY>300</posY>
-					<width>1250</width>
-					<height>400</height>
-					<onup>2</onup>
-					<onleft>2</onleft>
-					<thumbWidth>170</thumbWidth>
-					<thumbHeight>250</thumbHeight>					
-					<itemWidth>172</itemWidth>
-					<itemHeight>252</itemHeight>				
-					<scrollOffset>3</scrollOffset>					
-					<showFolder>no</showFolder>
-					<showBackGround>no</showBackGround>					
-					<thumbs flipY="true" diffuse="Thumb_Mask.png"></thumbs>
-					<thumbAnimation effect="zoom" start="100,100" end="130,130" time="200">focus</thumbAnimation>
-					<thumbAnimation effect="zoom" start="130,130" end="100,100" time="200">unfocus</thumbAnimation>										
+          <description>Filmstrip view (Series/Season Views)</description>
+          <type>filmstrip</type>
+          <id>50</id>
+          <posX>25</posX>
+          <posY>300</posY>
+          <width>1250</width>
+          <height>400</height>
+          <onup>2</onup>
+          <onleft>2</onleft>
+          <thumbWidth>170</thumbWidth>
+          <thumbHeight>250</thumbHeight>
+          <itemWidth>172</itemWidth>
+          <itemHeight>252</itemHeight>
+          <scrollOffset>3</scrollOffset>
+          <showFolder>no</showFolder>
+          <showBackGround>no</showBackGround>
+          <thumbs flipY="true" diffuse="Thumb_Mask.png">
+          </thumbs>
+          <thumbAnimation effect="zoom" start="100,100" end="130,130" time="200">focus</thumbAnimation>
+          <thumbAnimation effect="zoom" start="130,130" end="100,100" time="200">unfocus</thumbAnimation>
           <!-- Spin Controls -->
           <spinWidth>50</spinWidth>
           <spinHeight>37</spinHeight>
@@ -269,10 +266,9 @@
           <textureDown>arrow_round_down_nofocus.png</textureDown>
           <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
           <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-        </control>        
+        </control>
       </control>
     </control>
-		    
     <!--      :: HIDDEN MENU ::      -->
     <control>
       <type>actiongroup</type>
@@ -337,7 +333,7 @@
         <control>
           <description>Change Layout</description>
           <type>button</type>
-          <id>2</id>          
+          <id>2</id>
           <onleft>50</onleft>
         </control>
         <control>
@@ -349,8 +345,7 @@
         </control>
       </control>
     </control>
-    
-		<control>
+    <control>
       <description>Actor Image</description>
       <type>image</type>
       <id>0</id>
@@ -364,6 +359,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>facadeview.list|facadeview.smallicons|facadeview.largeicons</visible>
     </control>
-		
   </controls>
 </window>
+<!--Checksum:fc41adcdb6069a621555b894a0a374af-->

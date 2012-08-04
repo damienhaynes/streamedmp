@@ -3,7 +3,7 @@
 This file should contain the details view
 -->
 <window>
-  <controls>    
+  <controls>
     <control>
       <description>Movie Title</description>
       <type>label</type>
@@ -14,13 +14,13 @@ This file should contain the details view
       <font>mediastream16tc</font>
       <label>#selecteditem</label>
       <textcolor>ffFFFFFF</textcolor>
-			<shadowAngle>45</shadowAngle>
+      <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+!string.equals(#selecteditem,..)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>   
+    </control>
     <control>
       <description>Genres</description>
       <type>label</type>
@@ -31,14 +31,14 @@ This file should contain the details view
       <width>490</width>
       <font>mediastream11tc</font>
       <textcolor>ff909090</textcolor>
-			<shadowAngle>45</shadowAngle>
+      <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Actor Date Of Birth / Place Of Birth</description>
       <type>label</type>
       <label>#Actor.DateOfBirth / #Actor.PlaceOfBirth</label>
@@ -48,7 +48,7 @@ This file should contain the details view
       <width>490</width>
       <font>mediastream11tc</font>
       <textcolor>ff909090</textcolor>
-			<shadowAngle>45</shadowAngle>
+      <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+string.equals(#hideActorinfo, False)</visible>
@@ -74,7 +74,7 @@ This file should contain the details view
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>    
+    </control>
     <control>
       <description>Rating Label</description>
       <id>0</id>
@@ -104,7 +104,7 @@ This file should contain the details view
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Actor Biography</description>
       <type>textboxscrollup</type>
       <id>0</id>
@@ -131,7 +131,7 @@ This file should contain the details view
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>  
+    </control>
     <control Style="smallTitle">
       <description>Runtime</description>
       <id>1000</id>
@@ -143,7 +143,7 @@ This file should contain the details view
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>   
+    </control>
     <control Style="smallTitleB">
       <description>Directors Label</description>
       <id>0</id>
@@ -155,7 +155,7 @@ This file should contain the details view
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>  
+    </control>
     <control Style="smallTitle">
       <description>Directors</description>
       <id>1001</id>
@@ -167,7 +167,7 @@ This file should contain the details view
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>      
+    </control>
     <control Style="smallTitleB">
       <description>Year Label</description>
       <id>0</id>
@@ -179,7 +179,7 @@ This file should contain the details view
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>   
+    </control>
     <control Style="smallTitle">
       <description>Year</description>
       <id>1002</id>
@@ -191,7 +191,7 @@ This file should contain the details view
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(4441)+string.equals(#hideActorinfo, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-    </control>      
+    </control>
     <control Style="smallTitleB">
       <description>MPAA Label</description>
       <id>0</id>
@@ -219,4 +219,4 @@ This file should contain the details view
     </control>
   </controls>
 </window>
-<!--Checksum:26e1d5719a25903e1962e9ef7b98412e-->
+<!--Checksum:65dde073bc7c73474b61ea7f2cd4b409-->

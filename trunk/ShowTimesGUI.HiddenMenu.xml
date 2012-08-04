@@ -18,7 +18,7 @@
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
-			<onleft>50</onleft>
+      <onleft>50</onleft>
       <buttonX>1231</buttonX>
       <buttonY>55</buttonY>
       <buttonwidth>49</buttonwidth>
@@ -79,7 +79,7 @@
         <posY>245</posY>
         <width>220</width>
         <height>720</height>
-				<onexit>50</onexit>
+        <onexit>50</onexit>
         <layout>StackLayout(0, Vertical, true)</layout>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -91,7 +91,7 @@
           <label>417</label>
           <onup>17</onup>
           <ondown>3</ondown>
-					<onleft>50</onleft>
+          <onleft>50</onleft>
         </control>
         <control>
           <type>button</type>
@@ -100,7 +100,7 @@
           <label>-</label>
           <onup>2</onup>
           <ondown>4</ondown>
-					<onleft>50</onleft>
+          <onleft>50</onleft>
         </control>
         <control>
           <type>button</type>
@@ -109,7 +109,7 @@
           <label>-</label>
           <onup>3</onup>
           <ondown>66602</ondown>
-					<onleft>50</onleft>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Empty button</description>
@@ -117,7 +117,7 @@
           <id>0</id>
           <label>-</label>
           <visible>true</visible>
-					<onleft>50</onleft>
+          <onleft>50</onleft>
         </control>
         <control>
           <description>Moving Pictures</description>
@@ -145,7 +145,7 @@
           <description>Trailers (IMDb)</description>
           <type>button</type>
           <id>66604</id>
-					<onleft>50</onleft>
+          <onleft>50</onleft>
           <onup>66603</onup>
           <ondown>66605</ondown>
           <label>#(L(5900)) IMDb</label>
@@ -153,11 +153,11 @@
           <hyperlinkParameter>site:IMDb Movie Trailers|return:Locked</hyperlinkParameter>
           <visible>plugin.isenabled(OnlineVideos)</visible>
         </control>
-				<control>
+        <control>
           <description>Trailers (iTunes)</description>
           <type>button</type>
           <id>66605</id>
-					<onleft>50</onleft>
+          <onleft>50</onleft>
           <onup>66604</onup>
           <ondown>2</ondown>
           <label>#(L(5900)) iTunes</label>
@@ -169,7 +169,7 @@
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
-					<onleft>50</onleft>
+          <onleft>50</onleft>
           <label>-</label>
           <visible>true</visible>
         </control>
@@ -177,7 +177,7 @@
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
-					<onleft>50</onleft>
+          <onleft>50</onleft>
           <label>-</label>
           <visible>true</visible>
         </control>
@@ -186,7 +186,7 @@
           <description>Next Refresh</description>
           <id>0</id>
           <width>220</width>
-					<onleft>50</onleft>
+          <onleft>50</onleft>
           <font>mediastream10</font>
           <label>#showtimes_nextupdate</label>
         </control>
@@ -194,4 +194,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:529529291d84f95252b43b01b446c821-->
+<!--Checksum:08b9dde1e45a03b56b181fdd4036864c-->

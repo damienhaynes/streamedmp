@@ -6,7 +6,7 @@
   <define>#header.label:5</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:#highlightedbutton</define>
-  <controls>	
+  <controls>
     <control>
       <type>image</type>
       <description>BG</description>
@@ -92,7 +92,7 @@
         <onup>14</onup>
         <label>#StreamedMP.SkinMenu</label>
         <hyperlink>196200</hyperlink>
-      </control>      
+      </control>
       <control Style="settingsbutton">
         <description>General</description>
         <type>button</type>
@@ -151,7 +151,7 @@
         <hyperlink>9000</hyperlink>
         <onup>6</onup>
         <ondown>13</ondown>
-      </control>      
+      </control>
       <control Style="settingsbutton">
         <description>Intelligent Frame Correction</description>
         <type>button</type>
@@ -162,7 +162,7 @@
         <ondown>14</ondown>
         <visible>plugin.isenabled(Intelligent Frame Correction)</visible>
       </control>
-			<control Style="settingsbutton">
+      <control Style="settingsbutton">
         <description>Trakt Settings</description>
         <type>button</type>
         <id>14</id>
@@ -176,4 +176,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:0f41f3c690d688f1db7215eca529d060-->
+<!--Checksum:c6928ebe8d087fe4227c39fc946c34d5-->
