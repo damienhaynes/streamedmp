@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>47286</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:136</define>
+  <define>#header.hover:hover_my music.png</define>
+  <define>#useRandomMusicFanart:Yes</define>
+  <define>#usePlayFanart:Yes</define>
+  <controls>
+    <import>rockstar.autofanart.xml</import>
+    <control>
+      <id>0</id>
+      <description>music overlay image</description>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>mainoverlay.png</texture>
+    </control>
+    <control>
+      <id>10</id>
+      <type>image</type>
+      <visible>[Control.HasFocus(200)|Control.HasFocus(300)]</visible>
+      <posX>50</posX>
+      <posY>251</posY>
+      <width>320</width>
+      <height>320</height>
+      <texture>albumnocover.png</texture>
+      <animation effect="fade" reversible="false" time="250">visiblechange</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>675</posY>
+      <width>1280</width>
+      <height>47</height>
+      <texture>imagestreamtitle.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Media Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1065</posX>
+      <posY>13</posY>
+      <width>202</width>
+      <height>28</height>
+      <texture>mediacountbackground.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Item Count Label</description>
+      <type>label</type>
+      <label>#(L(507))</label>
+      <id>0</id>
+      <width>135</width>
+      <posX>1078</posX>
+      <posY>16</posY>
+      <align>left</align>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Item Count</description>
+      <type>label</type>
+      <label>#itemcount</label>
+      <id>0</id>
+      <posX>1238</posX>
+      <posY>14</posY>
+      <font>mediastream11c</font>
+      <align>right</align>
+      <textcolor>ff006698</textcolor>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1013</posX>
+      <posY>684</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Page Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1023</posX>
+      <posY>688</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>281</posX>
+      <posY>11</posY>
+      <width>486</width>
+      <height>35</height>
+      <texture>tvtitlebgshort.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Current View/Category Label</description>
+      <type>fadelabel</type>
+      <label>#Rockstar.CurrentModule</label>
+      <id>0</id>
+      <posX>739</posX>
+      <posY>14</posY>
+      <width>320</width>
+      <align>right</align>
+      <font>mediastream12c</font>
+      <scrollStartDelaySec>30</scrollStartDelaySec>
+      <wrapString> |  </wrapString>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>337</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Series Name</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>393</posX>
+      <posY>14</posY>
+      <width>300</width>
+      <font>mediastream12c</font>
+      <label>#Rockstar.PluginName</label>
+      <align>right</align>
+      <wrapString> |  </wrapString>
+      <scrollStartDelaySec>30</scrollStartDelaySec>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <import>common.time.xml</import>
+    <control>
+      <description>action menu</description>
+      <type>actiongroup</type>
+      <dimColor>00ffffff</dimColor>
+      <width>220</width>
+      <height>140</height>
+      <buttonX>0</buttonX>
+      <buttonY>0</buttonY>
+      <buttonwidth>106</buttonwidth>
+      <buttonheight>720</buttonheight>
+      <onexit>50</onexit>
+      <defaultcontrol>2</defaultcontrol>
+      <textureFocus>Action_focus.png</textureFocus>
+      <textureNoFocus>Action_nofocus.png</textureNoFocus>
+      <control>
+        <description>group element</description>
+        <type>group</type>
+        <control>
+          <description>button group</description>
+          <type>group</type>
+          <posX>30</posX>
+          <posY>240</posY>
+          <layout>StackLayout</layout>
+          <animation effect="fade" reversible="false" time="150">visiblechange</animation>
+          <animation effect="fade" time="250" delay="0">WindowClose</animation>
+          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+          <control Style="skinbutton">
+            <id>2</id>
+            <description>Search Music</description>
+            <type>button</type>
+            <onright>200</onright>
+            <ondown>3</ondown>
+            <label>Search Music</label>
+          </control>
+          <control Style="skinbutton">
+            <id>3</id>
+            <description>Default Playlist</description>
+            <type>button</type>
+            <onright>200</onright>
+            <onup>2</onup>
+            <ondown>4</ondown>
+            <label>Default Playlist</label>
+          </control>
+          <control Style="skinbutton">
+            <id>4</id>
+            <description>Playlists</description>
+            <type>button</type>
+            <onright>200</onright>
+            <onup>3</onup>
+            <ondown>20</ondown>
+            <label>Playlists</label>
+          </control>
+          <control Style="skinbutton">
+            <id>20</id>
+            <description>Popular Songs</description>
+            <type>button</type>
+            <onright>200</onright>
+            <onup>4</onup>
+            <ondown>32</ondown>
+            <label>Popular Songs</label>
+          </control>
+          <control Style="skintogglebutton">
+            <id>32</id>
+            <description>Shuffle on/off button</description>
+            <type>togglebutton</type>
+            <onright>200</onright>
+            <onup>20</onup>
+            <ondown>30</ondown>
+            <label>Shuffle</label>
+          </control>
+          <control Style="skintogglebutton">
+            <id>30</id>
+            <description>Repeat on/off button</description>
+            <type>togglebutton</type>
+            <onright>200</onright>
+            <onup>32</onup>
+            <label>Repeat</label>
+          </control>
+        </control>
+      </control>
+    </control>
+    <control>
+      <description>Selected Item Label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>40</posX>
+      <posY>684</posY>
+      <width>900</width>
+      <label>#selecteditem</label>
+      <font>mediastream16tc</font>
+      <textcolor>White</textcolor>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <id>300</id>
+      <type>playlistcontrol</type>
+      <onleft>2</onleft>
+      <posX>480</posX>
+      <posY>240</posY>
+      <width>810</width>
+      <height>472</height>
+      <upBtnXOffset>699</upBtnXOffset>
+      <downBtnXOffset>717</downBtnXOffset>
+      <deleteBtnXOffset>735</deleteBtnXOffset>
+      <textXOff2>670</textXOff2>
+      <itemWidth>32</itemWidth>
+      <itemHeight>32</itemHeight>
+      <IconXOff>-35</IconXOff>
+      <IconYOff>5</IconYOff>
+      <!-- Spin Controls -->
+      <spinWidth>50</spinWidth>
+      <spinHeight>37</spinHeight>
+      <spinPosX>1175</spinPosX>
+      <spinPosY>681</spinPosY>
+      <spinAlign>Right</spinAlign>
+      <spinColor>ff006698</spinColor>
+      <textureUp>arrow_round_up_nofocus.png</textureUp>
+      <textureDown>arrow_round_down_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+      <animation effect="fade" reversible="false" time="150">visiblechange</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <id>200</id>
+      <description>Track listing</description>
+      <type>listcontrol</type>
+      <onleft>2</onleft>
+      <posX>480</posX>
+      <posY>240</posY>
+      <width>810</width>
+      <height>472</height>
+      <textXOff2>760</textXOff2>
+      <itemWidth>32</itemWidth>
+      <itemHeight>32</itemHeight>
+      <IconXOff>-35</IconXOff>
+      <IconYOff>5</IconYOff>
+      <!-- Spin Controls -->
+      <spinWidth>50</spinWidth>
+      <spinHeight>37</spinHeight>
+      <spinPosX>1175</spinPosX>
+      <spinPosY>681</spinPosY>
+      <spinAlign>Right</spinAlign>
+      <spinColor>ff006698</spinColor>
+      <textureUp>arrow_round_up_nofocus.png</textureUp>
+      <textureDown>arrow_round_down_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+      <animation effect="fade" reversible="false" time="150">visiblechange</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <id>0</id>
+      <description>Album Name</description>
+      <type>fadelabel</type>
+      <visible>[Control.HasFocus(200)|Control.HasFocus(300)]</visible>
+      <posX>50</posX>
+      <posY>585</posY>
+      <width>347</width>
+      <label>#Rockstar.SelectedTrack.AlbumName</label>
+      <animation effect="fade" reversible="false" time="150">visiblechange</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <id>0</id>
+      <description>Album Year</description>
+      <type>fadelabel</type>
+      <visible>[Control.HasFocus(200)|Control.HasFocus(300)]</visible>
+      <posX>50</posX>
+      <posY>605</posY>
+      <width>347</width>
+      <textcolor>ff909090</textcolor>
+      <label>#Rockstar.SelectedTrack.AlbumYear</label>
+      <animation effect="fade" reversible="false" time="150">visiblechange</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <import>common.overlays.xml</import>
+  </controls>
+</window>
+<!--Checksum:63cbd302f32605d1c48f2710cae9163c-->
