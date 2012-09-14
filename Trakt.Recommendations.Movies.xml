@@ -363,7 +363,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>420</posY>
+        <posY>445</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -388,6 +388,12 @@
           <onleft>50</onleft>
         </control>
 				<control>
+          <description>Sort</description>
+          <type>sortbutton</type>
+          <id>8</id>
+          <label>-</label>
+        </control>
+				<control>
           <description>Genre</description>
           <type>button</type>
           <id>3</id>
@@ -398,56 +404,14 @@
           <description>Toggle HideCollected</description>
           <type>checkbutton</type>
           <id>4</id>
-          <width>220</width>
-          <height>28</height>
-          <textXOff>11</textXOff>
-          <textYOff>5</textYOff>
           <label>#Trakt.Translation.HideCollected.Label</label>
-          <markWidth>27</markWidth>
-          <markHeight>27</markHeight>
-          <markXOff>15</markXOff>
-          <markalign>right</markalign>
-          <markvalign>middle</markvalign>
-          <textureFocus>hiddenmenu_button_fo.png</textureFocus>
-          <textureNoFocus>-</textureNoFocus>
-          <textureCheckmark>ledon.png</textureCheckmark>
-          <textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
-          <font>mediastream10c</font>
-          <textcolor>ffffffff</textcolor>
-          <colordiffuse>ffffffff</colordiffuse>
-          <disabledcolor>30ffffff</disabledcolor>
-          <textcolorNoFocus>ff909090</textcolorNoFocus>
-          <dimColor>ff000000</dimColor>
-          <textalign>left</textalign>
-          <textvalign>middle</textvalign>
           <onleft>50</onleft>
         </control>
 				<control>
           <description>Toggle HideWatchlisted</description>
           <type>checkbutton</type>
           <id>5</id>
-          <width>220</width>
-          <height>28</height>
-          <textXOff>11</textXOff>
-          <textYOff>5</textYOff>
           <label>#Trakt.Translation.HideWatchlisted.Label</label>
-          <markWidth>27</markWidth>
-          <markHeight>27</markHeight>
-          <markXOff>15</markXOff>
-          <markalign>right</markalign>
-          <markvalign>middle</markvalign>
-          <textureFocus>hiddenmenu_button_fo.png</textureFocus>
-          <textureNoFocus>-</textureNoFocus>
-          <textureCheckmark>ledon.png</textureCheckmark>
-          <textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
-          <font>mediastream10c</font>
-          <textcolor>ffffffff</textcolor>
-          <colordiffuse>ffffffff</colordiffuse>
-          <disabledcolor>30ffffff</disabledcolor>
-          <textcolorNoFocus>ff909090</textcolorNoFocus>
-          <dimColor>ff000000</dimColor>
-          <textalign>left</textalign>
-          <textvalign>middle</textvalign>
           <onleft>50</onleft>
         </control>
 				<control>
