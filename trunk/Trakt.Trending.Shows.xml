@@ -364,7 +364,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>280</posY>
+        <posY>305</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -388,6 +388,12 @@
           <onup>21</onup>
           <!-- Top Bar -->
           <onleft>50</onleft>
+        </control>
+				<control>
+          <description>Sort</description>
+          <type>sortbutton</type>
+          <id>8</id>
+          <label>-</label>
         </control>
         <control>
           <description>Empty button</description>
