@@ -18,7 +18,8 @@
 		<String id="22">Change current condition weather provider...</String>
 		<String id="23">Change forecast condition weather provider...</String>
 		<String id="24">Change hour forecast condition weather provider...</String>
-		<String id="25">Change weather icon collection...</String>
+		<String id="25">Change map provider...</String>
+		<String id="26">Change weather icon collection...</String>
 
 		<String id="30">Provider</String>
 		<String id="31">Location</String>
@@ -33,9 +34,11 @@
 		<String id="40">Do you want to add a new weather location?</String>
 		<String id="41">Do you want to overwrite the last weather location?</String>
 		<String id="42">Do you really want to change your weather provider?</String>
-		<String id="43">Do you really want to change your icon collection?</String>
+		<String id="43">Do you really want to change your map provider?</String>
+		<String id="44">Do you really want to change your icon collection?</String>
 
 		<String id="45">There is no free weather location available.</String>
+		<String id="46">Invalid or empty provider key specified.</String>
 
 		<String id="50">A required internet connection is not established.</String>
 		<String id="51">Error loading weather condition data from %1.</String>
@@ -74,7 +77,7 @@
 		<String id="83">Chance of thunderstorm</String>
 		<String id="84">Flurries</String>
 		<String id="85">Sleet</String>
-		<String id="86">Icy</String>
+		<String id="86">Ice</String>
 		<String id="87">Fog</String>
 		<String id="88">Smoke</String>
 		<String id="89">Haze</String>
@@ -132,55 +135,82 @@
 		<String id="141">Light storm</String>
 		<String id="142">Heavy storm</String>
 		<String id="143">Heavy drizzle</String>
+		<String id="144">Chance of drizzle</String>
+		<String id="145">Chance of snow flurries</String>
+		<String id="146">Chance of snow showers</String>
+		<String id="147">Chance of light snow</String>
+		<String id="148">Chance of sleet</String>
+		<String id="149">Chance of freezing rain</String>
+		<String id="150">Chance of mixed rain and snow</String>
+		<String id="151">Chance of freezing drizzle</String>
+		<String id="152">Scattered snow showers</String>
+		<String id="153">Partly sunny</String>
+		<String id="154">Mixed rain and mist</String>
+		<String id="155">Mixed rain and thunderstorms</String>
+		<String id="156">Chance of flurries</String>
+		<String id="157">Mixed snow and mist</String>
+		<String id="158">Mixed snow and thunderstorms</String>
+		<String id="159">Ice showers</String>
+		<String id="160">Mixed ice and thunderstorms</String>
+		<String id="161">Hail showers</String>
+		<String id="162">Mixed hail and thunderstorms</String>
+		<String id="163">Sand</String>
+		<String id="164">Sandstorm</String>
+		<String id="165">Volcanic ash</String>
 
-		<String id="150">N</String>
-		<String id="151">NNE</String>
-		<String id="152">NE</String>
-		<String id="153">ENE</String>
-		<String id="154">E</String>
-		<String id="155">ESE</String>
-		<String id="156">SE</String>
-		<String id="157">SSE</String>
-		<String id="158">S</String>
-		<String id="159">SSW</String>
-		<String id="160">SW</String>
-		<String id="161">WSW</String>
-		<String id="162">W</String>
-		<String id="163">WNW</String>
-		<String id="164">NW</String>
-		<String id="165">NNW</String>
+		<String id="180">N</String>
+		<String id="181">NNE</String>
+		<String id="182">NE</String>
+		<String id="183">ENE</String>
+		<String id="184">E</String>
+		<String id="185">ESE</String>
+		<String id="186">SE</String>
+		<String id="187">SSE</String>
+		<String id="188">S</String>
+		<String id="189">SSW</String>
+		<String id="190">SW</String>
+		<String id="191">WSW</String>
+		<String id="192">W</String>
+		<String id="193">WNW</String>
+		<String id="194">NW</String>
+		<String id="195">NNW</String>
 
-		<String id="170">Calm</String>
-		<String id="171">Light air</String>
-		<String id="172">Light breeze</String>
-		<String id="173">Gentle breeze</String>
-		<String id="174">Moderate breeze</String>
-		<String id="175">Fresh breeze</String>
-		<String id="176">Strong breeze</String>
-		<String id="177">Near gale</String>
-		<String id="178">Gale</String>
-		<String id="179">Strong gale</String>
-		<String id="180">Storm</String>
-		<String id="181">Violent storm</String>
-		<String id="182">Hurricane</String>
+		<String id="200">Calm</String>
+		<String id="201">Light air</String>
+		<String id="202">Light breeze</String>
+		<String id="203">Gentle breeze</String>
+		<String id="204">Moderate breeze</String>
+		<String id="205">Fresh breeze</String>
+		<String id="206">Strong breeze</String>
+		<String id="207">Near gale</String>
+		<String id="208">Gale</String>
+		<String id="209">Strong gale</String>
+		<String id="210">Storm</String>
+		<String id="211">Violent storm</String>
+		<String id="212">Hurricane</String>
 
-		<String id="190">New moon</String>
-		<String id="191">Waxing crescent</String>
-		<String id="192">First quarter</String>
-		<String id="193">Waxing gibbous</String>
-		<String id="194">Full moon</String>
-		<String id="195">Waning gibbous</String>
-		<String id="196">Last quarter</String>
-		<String id="197">Waning crescent</String>
+		<String id="220">Low</String>
+		<String id="221">Medium</String>
+		<String id="222">High</String>
+		<String id="223">Very high</String>
 
-		<String id="200">Flat view</String>
-		<String id="201">Filmstrip view</String>
-		<String id="202">Coverflow view</String>
-		<String id="203">Thumbnail view</String>
+		<String id="230">New moon</String>
+		<String id="231">Waxing crescent</String>
+		<String id="232">First quarter</String>
+		<String id="233">Waxing gibbous</String>
+		<String id="234">Full moon</String>
+		<String id="235">Waning gibbous</String>
+		<String id="236">Last quarter</String>
+		<String id="237">Waning crescent</String>
 
-		<String id="210">Normal view</String>
-		<String id="211">Hourly view</String>
-		<String id="212">Graphical view</String>
+		<String id="250">Flat view</String>
+		<String id="251">Filmstrip view</String>
+		<String id="252">Coverflow view</String>
+		<String id="253">Thumbnail view</String>
+
+		<String id="260">Normal view</String>
+		<String id="261">Hourly view</String>
+		<String id="262">Graphical view</String>
 
 		<String id="300">°C</String>
 		<String id="301">°F</String>
@@ -201,6 +231,7 @@
 		<String id="331">hPa</String>
 		<String id="332">psi</String>
 		<String id="333">torr</String>
+		<String id="334">inch</String>
 
 		<String id="340">rising</String>
 		<String id="341">steady</String>
@@ -223,8 +254,9 @@
 		<String id="400">Location name</String>
 		<String id="401">Location code</String>
 		<String id="402">Location postal code</String>
-		<String id="403">Time zones</String>
-		<String id="404">Metric</String>
+		<String id="403">Location country</String>
+		<String id="404">Time zones</String>
+		<String id="405">Metric</String>
 
 		<String id="500">Temperature</String>
 		<String id="501">Condition</String>
@@ -248,6 +280,8 @@
 		<String id="519">High</String>
 		<String id="520">Cloud coverage</String>
 		<String id="521">Fog coverage</String>
+		<String id="522">feels like</String>
+		<String id="523">UV Index</String>
 
 		<String id="525">Satellite</String>
 		<String id="526">Temperature</String>
