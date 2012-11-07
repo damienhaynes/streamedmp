@@ -53,7 +53,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>226</posY>
+        <posY>200</posY>
         <visible>!control.hasfocus(50)+control.isvisible(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -89,7 +89,7 @@
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
         <posX>1040</posX>
-        <posY>250</posY>
+        <posY>225</posY>
         <width>220</width>
         <height>720</height>
         <layout>StackLayout(0, Vertical, true)</layout>
@@ -151,6 +151,14 @@
           <width>260</width>
           <onleft>50</onleft>
           <onup>6</onup>
+          <ondown>8</ondown>
+        </control>
+				<control>
+          <description>Global Updates</description>
+          <type>button</type>
+          <id>8</id>
+          <onright>50</onright>
+          <onup>7</onup>
           <ondown>66610</ondown>
         </control>
         <control>
@@ -166,7 +174,7 @@
           <id>66610</id>
           <label>100006</label>
           <hyperlink>703</hyperlink>
-          <onup>7</onup>
+          <onup>8</onup>
           <ondown>99989</ondown>
           <onleft>50</onleft>
         </control>
