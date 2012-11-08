@@ -76,6 +76,19 @@
       <animation effect="fade" time="250" delay="0">hidden</animation>
       <visible>!control.hasfocus(10099)</visible>
     </control>
+		<control>
+      <description>Download Icon - whenever background downloading is in process</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1240</posX>
+      <posY>12</posY>
+      <width>30</width>
+      <height>30</height>
+      <texture>MyFilms\download.png</texture>
+      <visible>!Control.HasFocus(10099)+string.equals(#myfilms.details.downloads.status)|string.equals(#myfilms.statusmessage)|!string.equals(#OnlineVideos.currentDownloads,0)</visible>
+      <animation effect="zoom" start="100,100" end="105,105" time="500" condition="true" pulse="true">conditional</animation>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
     <control>
       <type>group</type>
       <description>Movie Detail Buttons</description>
@@ -630,6 +643,33 @@
     </control>
     <!-- Detail menu for Actors -->
     <control>
+      <description>Persons Download Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>520</posX>
+      <posY>155</posY>
+      <width>25</width>
+      <height>25</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>MyFilms\Persons.png</texture>
+      <visible>Control.HasFocus(10003)+!string.equals(#myfilms.details.downloads.status,)+!string.equals(#myfilms.statusmessage)+string.equals(#OnlineVideos.currentDownloads,0)</visible>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
+    <control>
+      <description>Person Image/Info Download Status Messages</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>550</posX>
+      <posY>155</posY>
+      <width>550</width>
+      <align>left</align>
+      <font>mediastream11c</font>
+      <textcolor>ffffffff</textcolor>
+      <label>#myfilms.details.downloads.count - #myfilms.details.downloads.name</label>
+      <visible>Control.HasFocus(10003)+!string.equals(#myfilms.details.downloads.status,)+!string.equals(#myfilms.statusmessage)</visible>
+      <animation effect="fade" time="250">visiblechange</animation>
+    </control>
+    <control>
       <description>Actors value</description>
       <type>textboxscrollup</type>
       <id>1</id>
@@ -644,6 +684,231 @@
       <scrollStartDelaySec>10</scrollStartDelaySec>
       <visible>control.hasfocus(10003)</visible>
       <animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+		<control>
+      <description>Actors 1 Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>510</posX>
+      <posY>595</posY>
+      <width>120</width>
+      <align>center</align>
+      <font>mediastream9c</font>
+      <textcolor>white</textcolor>
+      <label>#myfilms.db.actors.actor1.name</label>
+      <visible>Control.HasFocus(10003)+!Control.HasFocus(10099)+!string.equals(#myfilms.db.actors.actor1.image,)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Actors 1 image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>520</posX>
+      <posY>430</posY>
+      <width>100</width>
+      <height>150</height>
+      <align>center</align>
+      <valign>top</valign>
+      <zoom>yes</zoom>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture mask="video_poster_mask.png">#myfilms.db.actors.actor1.image</texture>
+      <visible>Control.HasFocus(10003)+!Control.HasFocus(10099)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Actors 1 image default</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>520</posX>
+      <posY>430</posY>
+      <width>100</width>
+      <height>150</height>
+      <texture>defaultActor.png</texture>
+      <visible>Control.HasFocus(10003)+!string.equals(#myfilms.db.actors.actor1.image)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Actors 2 Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>650</posX>
+      <posY>595</posY>
+      <width>140</width>
+      <align>center</align>
+      <font>mediastream9c</font>
+      <textcolor>white</textcolor>
+      <label>#myfilms.db.actors.actor2.name</label>
+      <visible>Control.HasFocus(10003)+!Control.HasFocus(10099)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Actors 2 image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>670</posX>
+      <posY>430</posY>
+      <width>100</width>
+      <height>150</height>
+      <align>center</align>
+      <valign>top</valign>
+      <zoom>yes</zoom>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture mask="video_poster_mask.png">#myfilms.db.actors.actor2.image</texture>
+      <visible>Control.HasFocus(10003)+!Control.HasFocus(10099)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Actors 2 image default</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>670</posX>
+      <posY>430</posY>
+      <width>100</width>
+      <height>150</height>
+      <texture>defaultActor.png</texture>
+      <visible>Control.HasFocus(10003)+!string.equals(#myfilms.db.actors.actor2.image)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Actors 3 Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>800</posX>
+      <posY>595</posY>
+      <width>140</width>
+      <align>center</align>
+      <font>mediastream9c</font>
+      <textcolor>white</textcolor>
+      <label>#myfilms.db.actors.actor3.name</label>
+      <visible>Control.HasFocus(10003)+!Control.HasFocus(10099)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Actors 3 image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>820</posX>
+      <posY>430</posY>
+      <width>100</width>
+      <height>150</height>
+      <align>center</align>
+      <valign>top</valign>
+      <zoom>yes</zoom>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture mask="video_poster_mask.png">#myfilms.db.actors.actor3.image</texture>
+      <visible>Control.HasFocus(10003)+!Control.HasFocus(10099)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Actors 3 image default</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>820</posX>
+      <posY>430</posY>
+      <width>100</width>
+      <height>150</height>
+      <texture>defaultActor.png</texture>
+      <visible>Control.HasFocus(10003)+!string.equals(#myfilms.db.actors.actor3.image)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Actors 4 Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>950</posX>
+      <posY>595</posY>
+      <width>140</width>
+      <align>center</align>
+      <font>mediastream9c</font>
+      <textcolor>white</textcolor>
+      <label>#myfilms.db.actors.actor4.name</label>
+      <visible>Control.HasFocus(10003)+!Control.HasFocus(10099)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Actors 4 image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>970</posX>
+      <posY>430</posY>
+      <width>100</width>
+      <height>150</height>
+      <align>center</align>
+      <valign>top</valign>
+      <zoom>yes</zoom>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture mask="video_poster_mask.png">#myfilms.db.actors.actor4.image</texture>
+      <visible>Control.HasFocus(10003)+!Control.HasFocus(10099)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Actors 4 image defalt</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>970</posX>
+      <posY>430</posY>
+      <width>100</width>
+      <height>150</height>
+      <texture>defaultActor.png</texture>
+      <visible>Control.HasFocus(10003)+!string.equals(#myfilms.db.actors.actor4.image)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Actors 5 Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>1100</posX>
+      <posY>595</posY>
+      <width>140</width>
+      <align>center</align>
+      <font>mediastream9c</font>
+      <textcolor>white</textcolor>
+      <label>#myfilms.db.actors.actor5.name</label>
+      <visible>Control.HasFocus(10003)+!Control.HasFocus(10099)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Actors 5 image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1120</posX>
+      <posY>430</posY>
+      <width>100</width>
+      <height>150</height>
+      <align>center</align>
+      <valign>top</valign>
+      <zoom>yes</zoom>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture mask="video_poster_mask.png">#myfilms.db.actors.actor5.image</texture>
+      <visible>Control.HasFocus(10003)+!Control.HasFocus(10099)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Actors 5 image default</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1120</posX>
+      <posY>430</posY>
+      <width>100</width>
+      <height>150</height>
+      <texture>defaultActor.png</texture>
+      <visible>Control.HasFocus(10003)+!string.equals(#myfilms.db.actors.actor5.image)</visible>
+			<animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
     <!-- Detailmenu for technical details -->
