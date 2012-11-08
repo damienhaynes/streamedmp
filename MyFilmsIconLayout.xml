@@ -31,9 +31,9 @@
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
     <control>
-      <description>User Item 3 (Default: Genres)</description>
+      <description>Genres</description>
       <type>label</type>
-      <label>#myfilms.user.item3.value</label>
+      <label>#myfilms.db.category.value</label>
       <id>0</id>
       <posX>20</posX>
       <posY>265</posY>
@@ -101,36 +101,12 @@
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
     <control Style="smallTitleB">
-      <description>User Item 1 Label</description>
-      <id>0</id>
-      <type>label</type>
-      <label>#myfilms.user.item1.label</label>
-      <posX>20</posX>
-      <posY>551</posY>
-      <width>140</width>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-    </control>
-    <control Style="smallTitle">
-      <description>User Item 1</description>
-      <id>0</id>
-      <type>label</type>
-      <label>#myfilms.user.item1.value</label>
-      <posX>180</posX>
-      <posY>552</posY>
-      <width>200</width>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-    </control>
-    <control Style="smallTitleB">
       <description>User Item 2 Label</description>
       <id>0</id>
       <type>label</type>
       <label>#myfilms.user.item2.label</label>
       <posX>20</posX>
-      <posY>573</posY>
+      <posY>551</posY>
       <width>140</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -142,6 +118,30 @@
       <type>label</type>
       <label>#myfilms.user.item2.value</label>
       <posX>180</posX>
+      <posY>552</posY>
+      <width>200</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>User Item 3 Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#myfilms.user.item3.label</label>
+      <posX>20</posX>
+      <posY>573</posY>
+      <width>140</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>User Item 3</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#myfilms.user.item3.value</label>
+      <posX>180</posX>
       <posY>574</posY>
       <width>200</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
@@ -149,9 +149,9 @@
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
     <control Style="smallTitleB">
-      <description>User Item 4 Label</description>
+      <description>User Item 5 Label</description>
       <type>label</type>
-      <label>#myfilms.user.item4.label</label>
+      <label>#myfilms.user.item5.label</label>
       <posX>20</posX>
       <posY>595</posY>
       <width>140</width>
@@ -160,10 +160,10 @@
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
     <control Style="smallTitle">
-      <description>User Item 4</description>
+      <description>User Item 5</description>
       <id>0</id>
       <type>label</type>
-      <label>#myfilms.user.item4.value</label>
+      <label>#myfilms.user.item5.value</label>
       <posX>180</posX>
       <posY>596</posY>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
