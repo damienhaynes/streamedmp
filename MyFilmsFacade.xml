@@ -50,7 +50,19 @@
       <posY>14</posY>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
-      <visible>control.isvisible(50)</visible>
+      <visible>control.isvisible(50)+[control.isvisible(36)|control.isvisible(39)]</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+		<control>
+      <description>Movie Count Label</description>
+      <type>label</type>
+      <label>507</label>
+      <id>0</id>
+      <posX>1123</posX>
+      <posY>14</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>control.isvisible(50)+![control.isvisible(36)|control.isvisible(39)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -62,7 +74,7 @@
       <font>mediastream11c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
-      <label>#itemcount</label>
+      <label>#myfilms.nbobjects.value</label>
       <visible>control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
