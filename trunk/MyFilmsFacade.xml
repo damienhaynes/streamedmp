@@ -399,6 +399,49 @@
         </control>
       </control>
     </control>
+		<!-- Selected Category Facade Item (note plugin visible conditions are too slow!, using poster control instead) -->	
+		<control>
+			<description>Default Image</description>
+			<type>image</type>
+			<id>1</id>
+			<posX>125</posX>
+			<posY>175</posY>
+			<width>454</width>
+			<height>455</height>
+			<texture flipY="true" diffuse="Thumb_Mask.png">Categories\Movies.png</texture>
+			<keepaspectratio>yes</keepaspectratio>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>			
+			<visible>facadeview.list+!control.isvisible(1155)+!Control.HasThumb(100)+!control.isvisible(38)</visible>
+		</control>
+		<control>
+			<description>Default Image</description>
+			<type>image</type>
+			<id>100</id>
+			<posX>125</posX>
+			<posY>175</posY>
+			<width>454</width>
+			<height>455</height>
+			<texture flipY="true" diffuse="Thumb_Mask.png">Categories\#selecteditem.png</texture>	
+			<keepaspectratio>yes</keepaspectratio>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>			
+			<visible>facadeview.list+!control.isvisible(1155)+!control.isvisible(38)</visible>
+		</control>
+		<control>
+			<description>Default Image</description>
+			<type>image</type>
+			<id>101</id>
+			<posX>125</posX>
+			<posY>175</posY>
+			<width>454</width>
+			<height>455</height>
+			<texture flipY="true" diffuse="Thumb_Mask.png">Categories\actors.png</texture>	
+			<keepaspectratio>yes</keepaspectratio>
+			<animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>			
+			<visible>facadeview.list+control.isvisible(38)</visible>
+		</control>
   </controls>
 </window>
 <!--Checksum:7504b476512751cf19b9c89b9797b427-->
