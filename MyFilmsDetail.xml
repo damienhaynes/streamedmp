@@ -322,7 +322,7 @@
       <id>1</id>
       <posX>655</posX>
       <posY>128</posY>
-      <label>#(string.format('{0:0.0} / 10', cflt(#myfilms.db.rating.value)))</label>
+      <label>#(string.format('{0:0.0} / 10', cflt(#myfilms.db.rating.value))) #(iif(neq(#myfilms.user.rating.value,''),'(Rated: #myfilms.user.rating.value)',''))</label>
       <font>mediastream11c</font>
       <align>left</align>
       <textcolor>ffffffff</textcolor>
@@ -352,7 +352,7 @@
       <width>259</width>
       <height>57</height>
       <texture>Logos\Certification\PG.png</texture>
-      <visible>!control.hasfocus(10099)+[string.contains(#myfilms.db.certification.value,Rated PG)+!string.contains(#myfilms.db.certification.value,USA PG)]</visible>
+      <visible>!control.hasfocus(10099)+[string.equals(#myfilms.db.certification.value,Rated PG)|string.equals(#myfilms.db.certification.value,USA PG)]</visible>
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
