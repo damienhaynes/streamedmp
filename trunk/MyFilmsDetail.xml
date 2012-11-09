@@ -240,7 +240,7 @@
       <type>image</type>
       <id>0</id>
       <posX>394</posX>
-      <posY>184</posY>
+      <posY>182</posY>
       <width>32</width>
       <height>39</height>
       <texture>#StreamedMP.Icons.Background</texture>
@@ -322,7 +322,8 @@
       <id>1</id>
       <posX>655</posX>
       <posY>128</posY>
-      <label>#(string.format('{0:0.0} / 10', cflt(#myfilms.db.rating.value))) #(iif(neq(#myfilms.user.rating.value,''),'(Rated: #myfilms.user.rating.value)',''))</label>
+			<width>300</width>
+      <label>#(string.format('{0:0.0} / 10', cflt(#myfilms.db.rating.value))) #(iif(neq(#myfilms.user.rating.value,''),'(#myfilms.user.rating.label: #myfilms.user.rating.value)',''))</label>
       <font>mediastream11c</font>
       <align>left</align>
       <textcolor>ffffffff</textcolor>
@@ -395,6 +396,33 @@
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
+		<control>
+      <description>Watched Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>520</posX>
+      <posY>160</posY>
+      <label>#myfilms.user.watchedcount.label:</label>
+      <textcolor>90ffffff</textcolor>
+      <font>font12</font>
+      <width>200</width>
+      <visible>string.equals(#myfilms.user.watchedcount.value)+!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
+      <animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
+    <control>
+      <description>Watched Value</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>730</posX>
+      <posY>160</posY>
+      <label>#myfilms.user.watchedcount.value #(iif(neq(#myfilms.user.watcheddate.value,''),'(#myfilms.user.watcheddate.label: #myfilms.user.watcheddate.value)',''))</label>
+      <width>520</width>
+      <font>font12</font>
+      <visible>!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
+      <animation effect="fade" time="250" delay="0">visible</animation>
+      <animation effect="fade" time="250" delay="0">hidden</animation>
+    </control>
     <control>
       <description>User Display Item 6 Label</description>
       <type>label</type>
@@ -405,7 +433,7 @@
       <textcolor>90ffffff</textcolor>
       <font>font12</font>
       <width>200</width>
-      <visible>string.equals(#myfilms.user.detailsitem6.value)+!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
+      <visible>!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
@@ -415,10 +443,10 @@
       <id>1</id>
       <posX>730</posX>
       <posY>190</posY>
-      <label>#myfilms.user.detailsitem6.value</label>
+      <label>#(iif(neq(#myfilms.user.detailsitem6.value,''),'#myfilms.user.detailsitem6.value','N/A'))</label>
       <width>520</width>
       <font>font12</font>
-      <visible>string.equals(#myfilms.user.detailsitem6.value)+!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
+      <visible>!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
