@@ -402,7 +402,7 @@
       <id>1</id>
       <posX>520</posX>
       <posY>160</posY>
-      <label>#myfilms.user.watchedcount.label:</label>
+      <label>#myfilms.user.watched.label</label>
       <textcolor>90ffffff</textcolor>
       <font>font12</font>
       <width>200</width>
@@ -416,7 +416,7 @@
       <id>1</id>
       <posX>730</posX>
       <posY>160</posY>
-      <label>#myfilms.user.watchedcount.value #(iif(neq(#myfilms.user.watcheddate.value,''),'(#myfilms.user.watcheddate.label: #myfilms.user.watcheddate.value)',''))</label>
+      <label>#myfilms.user.watchedcount.label: #myfilms.user.watchedcount.value #(iif(neq(#myfilms.user.watcheddate.value,''),'(#myfilms.user.watcheddate.label: #myfilms.user.watcheddate.value)',''))</label>
       <width>520</width>
       <font>font12</font>
       <visible>!control.hasfocus(10001)+!control.hasfocus(10002)+!control.hasfocus(10003)+!control.hasfocus(10004)+!control.hasfocus(10099)</visible>
