@@ -411,7 +411,7 @@
 			<texture flipY="true" diffuse="Thumb_Mask.png">Categories\Movies.png</texture>
 			<keepaspectratio>yes</keepaspectratio>
 			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>			
+			<animation effect="fade" time="250">WindowClose</animation>
 			<visible>facadeview.list+!control.isvisible(1155)+!Control.HasThumb(100)+!control.isvisible(38)</visible>
 		</control>
 		<control>
@@ -425,7 +425,7 @@
 			<texture flipY="true" diffuse="Thumb_Mask.png">Categories\#selecteditem.png</texture>	
 			<keepaspectratio>yes</keepaspectratio>
 			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>			
+			<animation effect="fade" time="250">WindowClose</animation>
 			<visible>facadeview.list+!control.isvisible(1155)+!control.isvisible(38)</visible>
 		</control>
 		<control>
@@ -439,9 +439,24 @@
 			<texture flipY="true" diffuse="Thumb_Mask.png">Categories\actors.png</texture>	
 			<keepaspectratio>yes</keepaspectratio>
 			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>			
+			<animation effect="fade" time="250">WindowClose</animation>
 			<visible>facadeview.list+control.isvisible(38)</visible>
 		</control>
+		<control>
+      <description>Selected Category Label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>40</posX>
+      <posY>684</posY>
+      <width>900</width>
+      <label>#selecteditem</label>
+      <font>mediastream16tc</font>
+      <textcolor>White</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+			<animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+			<visible>facadeview.list+!control.isvisible(1155)</visible>
+    </control>
   </controls>
 </window>
 <!--Checksum:7504b476512751cf19b9c89b9797b427-->
