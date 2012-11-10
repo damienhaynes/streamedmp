@@ -366,6 +366,7 @@
 		<row><td>fontsXMLLarge</td><td>{5E47442D-BFB5-434B-B252-22E6750CAFEA}</td><td>NEW_DIRECTORY21</td><td>0</td><td/><td>fonts.xml1</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>languagesGlobalSearch</td><td>{9FCD9A57-7807-4996-8D72-463907D42DCC}</td><td>GLOBALSEARCH</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>languagesInfoService</td><td>{9F87BCB4-6FF3-4E89-BF9C-77BC71D447D6}</td><td>INFOSERVICE</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>languagesLatestMediaHandler</td><td>{55A2604B-0D56-4ED4-B086-8ABFAD343BD3}</td><td>LATESTMEDIAHANDLER</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>languagesMovingPictures</td><td>{9F81BA9F-04F7-45FD-ACE6-57993CAA7FDA}</td><td>MOVINGPICTURES</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>languagesStreamedMP</td><td>{698D38D5-269E-4D2F-9110-25A40C4CAAA1}</td><td>STREAMEDMP1</td><td>8</td><td/><td/><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>languagesTVSeries</td><td>{5B290964-5B29-43FD-888D-2F26749E3DDC}</td><td>MP_TVSERIES1</td><td>8</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -804,6 +805,7 @@
 		<row><td>INSTALLDIR</td><td>SKIN</td><td>.</td><td/><td>0</td><td/></row>
 		<row><td>ISMyCompanyDir</td><td>ProgramFilesFolder</td><td>MYCOMP~1|My Company Name</td><td/><td>0</td><td/></row>
 		<row><td>ISMyProductDir</td><td>ISMyCompanyDir</td><td>MYPROD~1|My Product Name</td><td/><td>0</td><td/></row>
+		<row><td>LATESTMEDIAHANDLER</td><td>MPLANGUAGESDIR</td><td>LATEST~1|LatestMediaHandler</td><td/><td>0</td><td/></row>
 		<row><td>LOGOS</td><td>TV1</td><td>logos</td><td/><td>0</td><td/></row>
 		<row><td>LocalAppDataFolder</td><td>TARGETDIR</td><td>.:LocalA~1|LocalAppData</td><td/><td>0</td><td/></row>
 		<row><td>MEDIA1</td><td>STREAMEDMP</td><td>Media</td><td/><td>0</td><td/></row>
@@ -1649,6 +1651,7 @@
 		<row><td>InfoServicePlugin</td><td>pluginInfoServiceDLL</td></row>
 		<row><td>InfoServiceSkin</td><td>defaultWideSkinInfoService</td></row>
 		<row><td>LatestMedia</td><td>LatestMediaHandlerConfig</td></row>
+		<row><td>LatestMedia</td><td>languagesLatestMediaHandler</td></row>
 		<row><td>LatestMedia</td><td>pluginLatestMediaHandlerDLL</td></row>
 		<row><td>Main</td><td>ClearArt</td></row>
 		<row><td>Main</td><td>ISRegistryComponent</td></row>
@@ -1740,7 +1743,7 @@
 		<row><td>interop.shdocvw.dll</td><td>libWebBrowserDependencies</td><td>INTERO~1.DLL|Interop.SHDocVw.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\Interop.SHDocVw.dll</td><td>1</td><td/></row>
 		<row><td>issues.url</td><td>webIssues</td><td>Issues.url</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\web\Issues.url</td><td>1</td><td/></row>
 		<row><td>latestmediahandler.dll</td><td>pluginLatestMediaHandlerDLL</td><td>LATEST~1.DLL|LatestMediaHandler.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugins\process\LatestMediaHandler.dll</td><td>1</td><td/></row>
-		<row><td>latestmediahandler.xml</td><td>LatestMediaHandlerConfig</td><td>LATEST~1.XML|LatestMediaHandler.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\latestmediaconfig\LatestMediaHandler.xml</td><td>1</td><td/></row>
+		<row><td>latestmediahandler.org</td><td>LatestMediaHandlerConfig</td><td>LATEST~1.ORG|LatestMediaHandler.org</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\latestmediaconfig\LatestMediaHandler.org</td><td>1</td><td/></row>
 		<row><td>lyricsengine.dll</td><td>libLyricsEngine</td><td>LYRICS~1.DLL|LyricsEngine.dll</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\LyricsEngine.dll</td><td>17</td><td/></row>
 		<row><td>mediaportal.xml</td><td>MediaPortal.xml</td><td>MEDIAP~1.XML|MediaPortal.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;ISPROJECTDIR&gt;\res\MediaPortal.xml</td><td>1</td><td/></row>
 		<row><td>micropolis.mpcore.dll</td><td>pluginWorldWeather</td><td>MICROP~1.DLL|Micropolis.MPCore.dll</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;StreamedMP&gt;\plugins\windows\Micropolis.MPCore.dll</td><td>17</td><td/></row>
@@ -2075,6 +2078,7 @@
 		<row><td>fontsXMLLarge</td><td/><td/><td>_3C065494_D8A3_4950_9AD2_9DAC9A1D522C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>languagesGlobalSearch</td><td/><td/><td>_3EE46C05_7736_463E_8547_717B298B8CD7_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>languagesInfoService</td><td/><td/><td>_1018D5F5_478E_44D4_BD89_C3A6E3F5147F_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>languagesLatestMediaHandler</td><td/><td/><td>_F1A2DD9E_1504_4C12_B924_B7EB12162967_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>languagesMovingPictures</td><td/><td/><td>_D39B4922_8438_4D62_842B_24BCD3FC0BBF_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>languagesStreamedMP</td><td/><td/><td>_5A51C813_59FB_4E8F_A5A0_53A0A6D89DFC_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>languagesTVSeries</td><td/><td/><td>_C55A3F6E_3549_42EB_ADC6_E021E8BB43E8_FILTER</td><td/><td/><td/><td/></row>
@@ -2189,6 +2193,7 @@
 		<row><td>defaultWideSkinTrakt</td><td>&lt;StreamedMP&gt;\defaultskins\trakt\defaultwide</td><td>4</td><td>*.xml,*.png</td><td/><td>10</td></row>
 		<row><td>languagesGlobalSearch</td><td>&lt;StreamedMP&gt;\language\globalsearch</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>languagesInfoService</td><td>&lt;SKINFILES&gt;\language\infoservice</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
+		<row><td>languagesLatestMediaHandler</td><td>&lt;StreamedMP&gt;\language\latestmediahandler</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>languagesMovingPictures</td><td>&lt;SKINFILES&gt;\language\movingpictures</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>languagesStreamedMP</td><td>&lt;StreamedMP&gt;\language\streamedmp</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
 		<row><td>languagesTVSeries</td><td>&lt;SKINFILES&gt;\language\mp-tvseries</td><td>4</td><td>*.xml</td><td/><td>8</td></row>
