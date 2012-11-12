@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <controls>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>675</posY>
+      <width>1280</width>
+      <height>47</height>
+      <texture>imagestreamtitle.png</texture>
+      <visible>yes</visible>
+    </control>
+		<control>
+      <description>Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1065</posX>
+      <posY>13</posY>
+      <width>202</width>
+      <height>28</height>
+      <texture>mediacountbackground.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control>
+      <description>Count Label</description>
+      <type>label</type>
+      <label>#(L(507))</label>
+      <id>0</id>
+      <width>135</width>
+      <posX>1078</posX>
+      <posY>16</posY>
+      <align>left</align>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control>
+      <description>Series Episode Count</description>
+      <type>label</type>
+      <label>#itemcount</label>
+      <id>0</id>
+      <posX>1238</posX>
+      <posY>14</posY>
+      <font>mediastream11c</font>
+      <align>right</align>
+      <textcolor>ff006698</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1013</posX>
+      <posY>684</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <visible>yes</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Count Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1023</posX>
+      <posY>688</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>yes</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Selected Bookmark</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>28</posX>
+      <posY>684</posY>
+      <width>950</width>
+      <font>mediastream16tc</font>
+      <textcolor>ff909090</textcolor>
+      <label>#selecteditem</label>
+      <visible>yes</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>group element</description>
+      <type>group</type>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <control>
+        <description>composite control consisting of a list control and a thumbnail panel</description>
+        <type>facadeview</type>
+        <id>50</id>
+        <control>
+          <description>listcontrol</description>
+          <type>listcontrol</type>
+          <id>50</id>
+          <posX>620</posX>
+          <posY>240</posY>
+          <height>480</height>
+          <width>660</width>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <scrollOffset>2</scrollOffset>
+          <PinIconWidth>15</PinIconWidth>
+          <PinIconHeight>15</PinIconHeight>
+          <PinIconXOff>57</PinIconXOff>
+          <PinIconYOff>13</PinIconYOff>
+          <itemWidth>50</itemWidth>
+          <itemHeight>32</itemHeight>
+          <!--<textureHeight>50</textureHeight>-->
+          <IconXOff>12</IconXOff>
+          <IconYOff>4</IconYOff>
+          <textXOff>25</textXOff>
+          <textYOff>5</textYOff>
+          <textXOff2>0</textXOff2>
+          <textYOff2>5</textYOff2>
+          <font2>mediastream11</font2>
+          <keepaspectratio>no</keepaspectratio>
+          <!--<unfocusedAlpha>0xFF</unfocusedAlpha>-->
+          <spinPosX>1175</spinPosX>
+          <spinPosY>681</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+          <spinWidth>50</spinWidth>
+          <spinHeight>37</spinHeight>
+          <suffix>|</suffix>
+        </control>
+        <control>
+          <description>Thumbnail Panel</description>
+          <type>thumbnailpanel</type>
+          <id>50</id>
+          <posX>28</posX>
+          <posY>240</posY>
+          <height>480</height>
+          <width>1252</width>
+          <scrollOffset>0</scrollOffset>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <itemWidth>110</itemWidth>
+          <itemHeight>130</itemHeight>
+          <textureWidth>100</textureWidth>
+          <textureHeight>100</textureHeight>
+          <thumbWidth>94</thumbWidth>
+          <thumbHeight>94</thumbHeight>
+          <thumbPosX>3</thumbPosX>
+          <thumbPosY>3</thumbPosY>
+          <itemWidthBig>200</itemWidthBig>
+          <itemHeightBig>220</itemHeightBig>
+          <textureWidthBig>180</textureWidthBig>
+          <textureHeightBig>180</textureHeightBig>
+          <thumbWidthBig>170</thumbWidthBig>
+          <thumbHeightBig>170</thumbHeightBig>
+          <thumbPosXBig>5</thumbPosXBig>
+          <thumbPosYBig>5</thumbPosYBig>
+          <zoomXPixels>0</zoomXPixels>
+          <zoomYPixels>0</zoomYPixels>
+          <thumbZoom>no</thumbZoom>
+          <enableFocusZoom>no</enableFocusZoom>
+          <keepaspectratio>no</keepaspectratio>
+          <hideUnfocusTexture>no</hideUnfocusTexture>
+          <renderFocusText>yes</renderFocusText>
+          <renderUnfocusText>yes</renderUnfocusText>
+          <textYOff>0</textYOff>
+          <spinPosX>1175</spinPosX>
+          <spinPosY>681</spinPosY>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+          <spinWidth>50</spinWidth>
+          <spinHeight>37</spinHeight>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <spinCanFocus>no</spinCanFocus>
+          <font>mediastream10c</font>
+          <imageFolderFocus>thumbborder3.png</imageFolderFocus>
+          <suffix>|</suffix>
+        </control>
+      </control>
+    </control>
+  </controls>
+</window>

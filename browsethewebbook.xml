@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>54537688</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:Bookmarks</define>
+  <define>#header.hover:hover_browsetheweb.png</define>
+  <define>#header.BG.colordiffuse:ffffffff</define>
+  <define>#header.BG.overlay:mainoverlay.png</define>
+  <controls>
+    <import>common.window.default.xml</import>
+    <import>common.time.xml</import>
+    <import>common.overlays.xml</import>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <buttonX>1231</buttonX>
+      <buttonY>55</buttonY>
+      <buttonwidth>49</buttonwidth>
+      <buttonheight>153</buttonheight>
+      <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
+      <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
+			<animation effect="slide" time="100" start="300,0">visible</animation>
+      <animation effect="slide" time="0" end="300,0">hidden</animation>
+      <dimColor>00ffffff</dimColor>
+      <control>
+        <type>image</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>dummy button</description>
+        <label>-</label>
+        <type>button</type>
+        <posX>1002</posX>
+        <posY>0</posY>
+        <width>278</width>
+        <height>720</height>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>label SWITCH VIEW</description>
+        <label>457</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>225</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>label JUMP TO</description>
+        <label>1065</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>285</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+				<visible>plugin.isenabled(InfoService)</visible>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <posX>1040</posX>
+        <posY>250</posY>
+        <width>220</width>
+        <height>720</height>
+        <layout>StackLayout</layout>
+        <control>
+          <description>View-As button</description>
+          <type>button</type>
+          <id>2</id>
+          <label>100</label>
+          <onleft>50</onleft>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>InfoService</description>
+          <type>button</type>
+          <id>3333</id>
+          <label>News</label>
+          <onleft>50</onleft>
+          <ondown>2</ondown>
+          <hyperlink>16000</hyperlink>
+          <visible>plugin.isenabled(InfoService)</visible>
+        </control>
+      </control>
+    </control>
+    <import>browsethewebbook.facade.xml</import>
+  </controls>
+</window>
