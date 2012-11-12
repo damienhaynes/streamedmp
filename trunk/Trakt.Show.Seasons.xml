@@ -632,7 +632,7 @@
       <posY>240</posY>
       <width>500</width>
       <font>mediastream14tc</font>
-      <label>#Trakt.Show.Title</label>
+      <label>#Trakt.Show.Title #(iif(eq(#Trakt.Season.Number,'0'),'#Trakt.Translation.Specials.Label','#Trakt.Translation.Season.Label #Trakt.Season.Number'))</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
@@ -801,7 +801,7 @@
       <width>1280</width>
       <align>center</align>
       <font>mediastream16tc</font>
-      <label>#Trakt.Show.Title</label>
+      <label>#Trakt.Show.Title #(iif(eq(#Trakt.Season.Number,'0'),'#Trakt.Translation.Specials.Label','#Trakt.Translation.Season.Label #Trakt.Season.Number'))</label>
       <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#Trakt.Show.Title,)</visible>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
