@@ -5,7 +5,7 @@
   <skin>
     <width>1280</width>
     <height>720</height>
-    <version>1.3.0.0</version>
+    <version>1.3.0.1</version>
   </skin>
   <style Name="leftmenubutton">
     <width>200</width>
@@ -100,29 +100,29 @@
     <disabledcolor>ffFFFFFF</disabledcolor>
     <textcolorNoFocus>ffFFFFFF</textcolorNoFocus>
   </style>
-	<style Name="settingsmaincheckbutton">
+  <style Name="settingsmaincheckbutton">
     <posX>251</posX>
-		<width>590</width>
-		<height>42</height>
-		<textXOff>0</textXOff>
-		<textYOff>8</textYOff>
-		<textXOff2>10</textXOff2>
-		<textYOff2>8</textYOff2>
-		<font>mediastream12c</font>
-		<markWidth>27</markWidth>
-		<markHeight>27</markHeight>
-		<markXOff>40</markXOff>
-		<markalign>right</markalign>
-		<markvalign>middle</markvalign>
-		<textureFocus>hiddenmenu_button_fo.png</textureFocus>
-		<textureNoFocus>-</textureNoFocus>
-		<textureCheckmark>ledon.png</textureCheckmark>
-		<textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
-		<colordiffuse>ffFFFFFF</colordiffuse>
-		<disabledcolor>ffFFFFFF</disabledcolor>
-		<textcolorNoFocus>ffFFFFFF</textcolorNoFocus>
-		<textalign>left</textalign>
-		<textvalign>middle</textvalign>
+    <width>590</width>
+    <height>42</height>
+    <textXOff>0</textXOff>
+    <textYOff>8</textYOff>
+    <textXOff2>10</textXOff2>
+    <textYOff2>8</textYOff2>
+    <font>mediastream12c</font>
+    <markWidth>27</markWidth>
+    <markHeight>27</markHeight>
+    <markXOff>40</markXOff>
+    <markalign>right</markalign>
+    <markvalign>middle</markvalign>
+    <textureFocus>hiddenmenu_button_fo.png</textureFocus>
+    <textureNoFocus>-</textureNoFocus>
+    <textureCheckmark>ledon.png</textureCheckmark>
+    <textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
+    <colordiffuse>ffFFFFFF</colordiffuse>
+    <disabledcolor>ffFFFFFF</disabledcolor>
+    <textcolorNoFocus>ffFFFFFF</textcolorNoFocus>
+    <textalign>left</textalign>
+    <textvalign>middle</textvalign>
   </style>
   <style Name="settingsmaincheckmark">
     <posX>251</posX>
@@ -385,32 +385,32 @@
     <disabledcolor>30ffffff</disabledcolor>
     <textcolorNoFocus>ff909090</textcolorNoFocus>
   </control>
-	<control>
-		<description>default check button</description>
-		<type>checkbutton</type>
-		<width>220</width>
-		<height>28</height>
-		<textXOff>11</textXOff>
-		<textYOff>5</textYOff>
-		<label>-</label>
-		<markWidth>27</markWidth>
-		<markHeight>27</markHeight>
-		<markXOff>15</markXOff>
-		<markalign>right</markalign>
-		<markvalign>middle</markvalign>
-		<textureFocus>hiddenmenu_button_fo.png</textureFocus>
-		<textureNoFocus>-</textureNoFocus>
-		<textureCheckmark>ledon.png</textureCheckmark>
-		<textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
-		<font>mediastream10c</font>
-		<textcolor>ffffffff</textcolor>
-		<colordiffuse>ffffffff</colordiffuse>
-		<disabledcolor>30ffffff</disabledcolor>
-		<textcolorNoFocus>ff909090</textcolorNoFocus>
-		<dimColor>ff000000</dimColor>
-		<textalign>left</textalign>
-		<textvalign>middle</textvalign>
-	</control>
+  <control>
+    <description>default check button</description>
+    <type>checkbutton</type>
+    <width>220</width>
+    <height>28</height>
+    <textXOff>11</textXOff>
+    <textYOff>5</textYOff>
+    <label>-</label>
+    <markWidth>27</markWidth>
+    <markHeight>27</markHeight>
+    <markXOff>15</markXOff>
+    <markalign>right</markalign>
+    <markvalign>middle</markvalign>
+    <textureFocus>hiddenmenu_button_fo.png</textureFocus>
+    <textureNoFocus>-</textureNoFocus>
+    <textureCheckmark>ledon.png</textureCheckmark>
+    <textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
+    <font>mediastream10c</font>
+    <textcolor>ffffffff</textcolor>
+    <colordiffuse>ffffffff</colordiffuse>
+    <disabledcolor>30ffffff</disabledcolor>
+    <textcolorNoFocus>ff909090</textcolorNoFocus>
+    <dimColor>ff000000</dimColor>
+    <textalign>left</textalign>
+    <textvalign>middle</textvalign>
+  </control>
   <control>
     <description>playlist item button</description>
     <type>playlistbutton</type>
@@ -579,7 +579,7 @@
     <font3>mediastream10c</font3>
     <shadedColor>20ffffff</shadedColor>
     <selectedColor>ffEB9E17</selectedColor>
-    <playedColor>FF808080</playedColor>
+    <playedColor>FFFFFFFF</playedColor>
     <textcolor>FFFFFFFF</textcolor>
     <textcolor2>FFFFFFFF</textcolor2>
     <textcolor3>FFFFFFFF</textcolor3>
@@ -732,7 +732,7 @@
     <font3>mediastream10c</font3>
     <shadedColor>20ffffff</shadedColor>
     <selectedColor>ffEB9E17</selectedColor>
-    <playedColor>FF808080</playedColor>
+    <playedColor>FFFFFFFF</playedColor>
     <textcolor>FFFFFFFF</textcolor>
     <textcolor2>FFFFFFFF</textcolor2>
     <textcolor3>FFFFFFFF</textcolor3>
@@ -814,7 +814,7 @@
     <bdDvdDirectoryColor>FFffffff</bdDvdDirectoryColor>
     <bdDvdDirectoryColor2>FFffffff</bdDvdDirectoryColor2>
     <bdDvdDirectoryColor3>FFffffff</bdDvdDirectoryColor3>
-    <unfocusedAlpha>100</unfocusedAlpha>
+    <unfocusedAlpha>200</unfocusedAlpha>
     <suffix>|</suffix>
     <itemWidthBig>150</itemWidthBig>
     <itemHeightBig>145</itemHeightBig>
@@ -1046,4 +1046,4 @@
     <shadow>no</shadow>
   </control>
 </controls>
-<!--Checksum:91881bbad42ea0a9ec5187696cb72295-->
+<!--Checksum:7d1ab8fb19771e8f18afb7bbb98725ce-->
