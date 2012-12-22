@@ -1,13 +1,9 @@
-<window>
+﻿<window>
 	<controls>
 		<control>
 			<description>group element</description>
 			<type>group</type>
 			<dimColor>FFFFFFFF</dimColor>
-			<animation effect="fade" time="200">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
-			<animation effect="slide" time="200" start="1200,0">WindowOpen</animation>
-			<animation effect="slide" time="250" end="1200,0">WindowClose</animation>
 			<control>
 				<type>label</type>
 				<id>0</id>
@@ -32,9 +28,9 @@
 					<itemWidth>32</itemWidth>
 					<itemHeight>32</itemHeight>
 					<IconXOff>25</IconXOff>
-					<IconYOff>4</IconYOff>
+					<IconYOff>1</IconYOff>
 					<PinIconXOff>900</PinIconXOff>
-					<PinIconYOff>3</PinIconYOff>
+					<PinIconYOff>1</PinIconYOff>
 					<PinIconWidth>32</PinIconWidth>
 					<PinIconHeight>32</PinIconHeight>					
 					<textXOff>25</textXOff>
@@ -55,87 +51,11 @@
 				<type>label</type>
 				<id>0</id>
 				<posX>340</posX>
-				<posY>312</posY>
+				<posY>315</posY>
 				<width>840</width>
 				<font>font14</font>
 				<label>#Trakt.Translation.TrendingShowsAndMovies.Label</label>
 			</control>
-			<!-- Full Width Filmstrip -->
-			<!--<control>
-				<description>Trending Shows</description>
-        <type>facadeview</type>
-        <id>98301</id>
-        <control>
-          <type>filmstrip</type>
-					<dimColor>ffffffff</dimColor>
-          <id>98301</id>
-          <onup>98300</onup>
-					<posX>340</posX>
-          <posY>350</posY>
-					<width>960</width>
-          <height>220</height>
-          <scrollOffset>0</scrollOffset>
-          <itemWidth>128</itemWidth>
-          <itemHeight>156</itemHeight>
-          <textureWidth>116</textureWidth>
-          <textureHeight>170</textureHeight>
-          <thumbWidth>110</thumbWidth>
-          <thumbHeight>163</thumbHeight>
-          <thumbPosX>3</thumbPosX>
-          <thumbPosY>3</thumbPosY>
-					<frame>videothumbframe.png</frame>
-          <frameFocus>videothumbframe.png</frameFocus>
-					<showFrame>yes</showFrame>
-          <showFolder>no</showFolder>
-          <showBackGround>no</showBackGround>
-          <showInfoImage>no</showInfoImage>
-          <enableFocusZoom>no</enableFocusZoom>
-					<keepaspectratio>no</keepaspectratio>
-					<spinCanFocus>no</spinCanFocus>
-					<spinXOff>-2000</spinXOff>
-					<thumbs mask="Videothumbmask.png"></thumbs>
-					<thumbAnimation effect="zoom" start="100,100" end="105,105" time="200" tween="circle" ease="inout">focus</thumbAnimation>
-          <thumbAnimation effect="zoom" start="105,105" end="100,100" time="200" tween="back" ease="inout">unfocus</thumbAnimation>
-        </control>
-      </control>
-			<control>
-				<description>Trending Movies</description>
-        <type>facadeview</type>
-        <id>98302</id>
-        <control>
-          <type>filmstrip</type>
-					<dimColor>ffffffff</dimColor>
-          <id>98302</id>
-          <onup>98301</onup>
-					<ondown>98301</ondown>
-					<posX>340</posX>
-          <posY>530</posY>
-					<width>960</width>
-          <height>220</height>
-          <scrollOffset>0</scrollOffset>
-          <itemWidth>128</itemWidth>
-          <itemHeight>156</itemHeight>
-          <textureWidth>120</textureWidth>
-          <textureHeight>170</textureHeight>
-          <thumbWidth>110</thumbWidth>
-          <thumbHeight>163</thumbHeight>
-          <thumbPosX>3</thumbPosX>
-          <thumbPosY>3</thumbPosY>
-					<frame>videothumbframe.png</frame>
-          <frameFocus>videothumbframe.png</frameFocus>
-					<showFrame>yes</showFrame>
-          <showFolder>no</showFolder>
-          <showBackGround>no</showBackGround>
-          <showInfoImage>no</showInfoImage>
-          <enableFocusZoom>no</enableFocusZoom>
-					<keepaspectratio>no</keepaspectratio>
-					<spinCanFocus>no</spinCanFocus>
-					<spinXOff>-2000</spinXOff>
-					<thumbs mask="Videothumbmask.png"></thumbs>
-					<thumbAnimation effect="zoom" start="100,100" end="105,105" time="200" tween="circle" ease="inout">focus</thumbAnimation>
-          <thumbAnimation effect="zoom" start="105,105" end="100,100" time="200" tween="back" ease="inout">unfocus</thumbAnimation>
-        </control>-->
-				<!-- Half Width Filmstrip + Info -->
 				<control>
 				<description>Trending Shows</description>
         <type>facadeview</type>
@@ -650,10 +570,10 @@
 				<description>Update Animation</description>
 				<type>animation</type>
 				<id>98299</id>
-				<posX>630</posX>
-				<posY>5</posY>
-				<width>36</width>
-				<height>36</height>
+				<posX>1200</posX>
+				<posY>34</posY>
+				<width>32</width>
+				<height>32</height>
 				<textures>common.waiting.1.png;common.waiting.2.png;common.waiting.3.png;common.waiting.4.png;common.waiting.5.png;common.waiting.6.png;common.waiting.7.png;common.waiting.8.png</textures>
 				<Duration>0:0:01.5</Duration>
 				<keepaspectratio>yes</keepaspectratio>

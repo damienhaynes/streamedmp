@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--version="1.0" encoding="utf-8" standalone="yes"-->
 <window>
   <id>87272</id>
   <defaultcontrol>2</defaultcontrol>
@@ -8,15 +9,25 @@
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onleft:9997</define>
   <controls>
-    <import>common.settings.xml</import>
+    <control>
+      <description>BG</description>
+      <type>image</type>
+      <id>1</id>
+      <texture>BH Videos.jpg</texture>
+      <width>1280</width>
+      <height>720</height>
+      <colordiffuse>90ffffff</colordiffuse>
+    </control>
+    <import>Trakt.Common.Fanart.xml</import>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
     <import>Trakt.Common.xml</import>
     <control>
       <type>group</type>
       <description>group element</description>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>580</posX>
-      <posY>201</posY>
-      <width>500</width>
+      <posX>350</posX>
+      <posY>221</posY>
+      <width>373</width>
       <height>379</height>
       <layout>StackLayout(Vertical)</layout>
       <visible>!string.equals(#Trakt.Settings.Account.Dialog.Visible,true)</visible>
@@ -24,16 +35,17 @@
         <type>button</type>
         <description>Create New Account</description>
         <id>2</id>
-        <width>500</width>
+        <width>400</width>
         <label>#Trakt.Translation.CreateNewAccount.Label</label>
         <onup>17</onup>
+        <width>533</width>
         <onleft>#defaultcontrol.onleft</onleft>
       </control>
       <control>
         <description>Login to Existing Account</description>
         <type>button</type>
         <id>3</id>
-        <width>500</width>
+        <width>533</width>
         <label>#Trakt.Translation.LoginExistingAccount.Label</label>
         <onleft>#defaultcontrol.onleft</onleft>
       </control>
@@ -41,8 +53,8 @@
         <description>Disconnect Current Account</description>
         <type>button</type>
         <id>4</id>
-        <width>500</width>
-        <label></label>
+        <width>533</width>
+        <label />
         <onleft>#defaultcontrol.onleft</onleft>
         <ondown>2</ondown>
       </control>

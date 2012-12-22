@@ -19,8 +19,6 @@
 			<width>970</width>
 			<height>530</height>
 			<texture>context_background.png</texture>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
 		<control>
 			<description>GFX-Heading "menu" text label</description>
@@ -32,8 +30,6 @@
 			<label>924</label>
 			<font>font14</font>
 			<textcolor>Black</textcolor>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
 			<visible>false</visible>
 		</control>
 		<control>
@@ -45,8 +41,6 @@
 			<label>181</label>
 			<font>font14</font>
 			<textcolor>FFFFFFFF</textcolor>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
 		<control>
 			<description>Exit button</description>
@@ -63,8 +57,6 @@
 			<onright>3</onright>
 			<onup>3</onup>
 			<ondown>3</ondown>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
 		<control>
 			<description>options listcontrol</description>
@@ -77,7 +69,7 @@
 			<onup>2</onup>
 			<onleft>10</onleft>
 			<onright>10</onright>
-			<spinPosX>977</spinPosX>
+			<spinPosX>1977</spinPosX>
 			<spinPosY>472</spinPosY>
 			<textXOff>88</textXOff>
 			<PinIconXOff>60</PinIconXOff>
@@ -91,8 +83,6 @@
 			<itemWidth>53</itemWidth>
 			<IconXOff>17</IconXOff>
 			<IconYOff>3</IconYOff>
-			<animation effect="fade" time="250">WindowOpen</animation>
-			<animation effect="fade" time="250">WindowClose</animation>
 		</control>
 		<control>
 			<description>Okay button</description>
@@ -107,8 +97,6 @@
 			<onright>11</onright>
 			<onup>3</onup>
 			<ondown>3</ondown>
-			<textureFocus>tvguide_button_middle.png</textureFocus>
-			<textureNoFocus>tvguide_button_light_middle.png</textureNoFocus>
 		</control>
 		<control>
 			<description>Cancel button</description>
@@ -123,8 +111,6 @@
 			<onright>3</onright>
 			<onup>3</onup>
 			<ondown>3</ondown>
-			<textureFocus>tvguide_button_middle.png</textureFocus>
-			<textureNoFocus>tvguide_button_light_middle.png</textureNoFocus>
 		</control>
 	</controls>
 </window>

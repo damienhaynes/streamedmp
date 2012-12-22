@@ -3,21 +3,31 @@
   <id>87264</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-	<rememberLastFocusedControl>yes</rememberLastFocusedControl>
+  <rememberLastFocusedControl>yes</rememberLastFocusedControl>
   <define>#currentmodule:#Trakt.Translation.Trending.Label</define>
   <define>#selecteditem:#highlightedbutton</define>
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onleft:9994</define>
-  <controls>    
-    <import>common.settings.xml</import> 
-    <import>Trakt.Common.xml</import>    
+  <controls>
+    <control>
+      <description>BG</description>
+      <type>image</type>
+      <id>1</id>
+      <texture>BH Videos.jpg</texture>
+      <width>1280</width>
+      <height>720</height>
+      <colordiffuse>90ffffff</colordiffuse>
+    </control>
+    <import>Trakt.Common.Fanart.xml</import>
+    <import>common.window.xml</import>
+    <import>common.time.xml</import>
+    <import>Trakt.Common.xml</import>
     <control>
       <type>group</type>
       <description>group element</description>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>580</posX>
-      <posY>201</posY>
-      <width>350</width>
+      <posX>350</posX>
+      <posY>221</posY>
+      <width>373</width>
       <height>379</height>
       <layout>StackLayout(Vertical)</layout>
       <control>
@@ -25,9 +35,9 @@
         <description>Trending Movies</description>
         <id>2</id>
         <label>#Trakt.Translation.TrendingMovies.Label</label>
-				<hyperlink>87266</hyperlink>
+        <hyperlink>87266</hyperlink>
         <onup>17</onup>
-        <width>350</width>
+        <width>373</width>
         <onleft>#defaultcontrol.onleft</onleft>
       </control>
       <control>
@@ -35,11 +45,11 @@
         <type>button</type>
         <id>3</id>
         <label>#Trakt.Translation.TrendingShows.Label</label>
-				<hyperlink>87265</hyperlink>
-        <width>350</width>
+        <hyperlink>87265</hyperlink>
+        <width>373</width>
         <onleft>#defaultcontrol.onleft</onleft>
         <ondown>2</ondown>
-      </control>      
+      </control>
     </control>
   </controls>
 </window>
