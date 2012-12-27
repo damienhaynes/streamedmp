@@ -65,7 +65,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>337</posY>
+        <posY>362</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -77,7 +77,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>421</posY>
+        <posY>446</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -89,7 +89,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>505</posY>
+        <posY>530</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -111,7 +111,13 @@
           <id>2</id>
           <label>457</label>
           <onup>21</onup>
-          <!-- Top Bar -->
+          <onleft>50</onleft>
+        </control>
+				<control>
+          <description>Filters</description>
+          <type>button</type>
+          <id>10</id>
+          <label>#TVSeries.Translation.Filters.Label...</label>
           <onleft>50</onleft>
         </control>
         <control>
@@ -210,57 +216,26 @@
           <label>287</label>
           <hyperlink>84623</hyperlink>
           <onup>66610</onup>
-          <ondown>99991</ondown>
+          <ondown>97270</ondown>
           <onleft>50</onleft>
           <visible>plugin.isenabled(SubCentral)+control.isvisible(1239)</visible>
         </control>
         <control>
           <description>Trakt</description>
           <type>button</type>
-          <id>99991</id>
-          <label>Trakt</label>
-          <hyperlink>87258</hyperlink>
+          <id>97270</id>
+          <label>Trakt...</label>
           <onup>66612</onup>
-          <ondown>97260</ondown>
-          <onleft>50</onleft>
-          <visible>plugin.isenabled(Trakt)</visible>
-        </control>
-        <control>
-          <description>Trakt Shouts</description>
-          <type>button</type>
-          <id>97260</id>
-          <label>#Trakt.Translation.Shouts.Label</label>
-          <onup>99991</onup>
-          <ondown>97259</ondown>
-          <onleft>50</onleft>
-          <visible>plugin.isenabled(Trakt)+[control.isvisible(1239)|control.isvisible(1237)]+![facadeview.smallicons|facadeview.largeicons]</visible>
-        </control>
-        <control>
-          <description>Trakt Rate</description>
-          <type>button</type>
-          <id>97259</id>
-          <label>#Trakt.Translation.Rate.Label</label>
-          <onup>97260</onup>
-          <ondown>97262</ondown>
-          <onleft>50</onleft>
-          <visible>plugin.isenabled(Trakt)+[control.isvisible(1239)|control.isvisible(1237)]+![facadeview.smallicons|facadeview.largeicons]</visible>
-        </control>
-        <control>
-          <description>Trakt Related Shows</description>
-          <type>button</type>
-          <id>97262</id>
-          <label>#Trakt.Translation.RelatedShows.Label</label>
-          <onup>97259</onup>
           <ondown>99000</ondown>
           <onleft>50</onleft>
-          <visible>plugin.isenabled(Trakt)+control.isvisible(1237)+![facadeview.smallicons|facadeview.largeicons]</visible>
+          <visible>plugin.isenabled(Trakt)+[control.isvisible(1239)|control.isvisible(1237)]+![facadeview.smallicons|facadeview.largeicons]</visible>
         </control>
         <control>
           <description>MPEIUPDATE:5e2777c3_966c_407f_b5a9_e51205b70b3e</description>
           <type>button</type>
           <id>99000</id>
           <label>#MPEI.Translation.UpdateAvailable.Label</label>
-          <onup>97262</onup>
+          <onup>97270</onup>
           <ondown>2</ondown>
           <onleft>50</onleft>
           <visible>string.equals(#mpei.5e2777c3_966c_407f_b5a9_e51205b70b3e.haveupdate, true)+control.isvisible(1237)</visible>
