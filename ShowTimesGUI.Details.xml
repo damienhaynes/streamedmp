@@ -280,9 +280,11 @@
       <type>group</type>
       <description>group element</description>
       <posX>1008</posX>
-      <posY>220</posY>
+      <posY>180</posY>
       <layout>StackLayout</layout>
       <visible>control.isvisible(24)</visible>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
       <control>
         <description>Show Times</description>
         <type>button</type>
@@ -301,8 +303,6 @@
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
         <description>Play Trailer</description>
@@ -310,7 +310,7 @@
         <id>41</id>
         <label>Play Trailer</label>
         <onup>40</onup>
-        <ondown>42</ondown>
+        <ondown>97258</ondown>
         <onright>41</onright>
         <onleft>41</onleft>
         <textcolor>ffffffff</textcolor>
@@ -322,15 +322,35 @@
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
+			<control>
+				<description>Add to Trakt Movie Watch List</description>
+				<type>button</type>
+				<id>97258</id>
+				<label>#Trakt.Translation.AddToWatchList.Label</label>
+				<onup>41</onup>
+				<ondown>42</ondown>
+				<onright>97258</onright>
+				<onleft>97258</onleft>
+				<textcolor>ffffffff</textcolor>
+				<textcolorNoFocus>bfffffff</textcolorNoFocus>
+				<font>mediastream12tc</font>
+				<width>250</width>
+        <height>40</height>
+        <textYOff>8</textYOff>
+        <textXOff>20</textXOff>
+				<scrollStartDelaySec>1</scrollStartDelaySec>
+				<scrollWrapString>|</scrollWrapString>
+				<textureFocus>tv_button_focus.png</textureFocus>
+				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+				<visible>control.isvisible(24)+plugin.isenabled(Trakt)</visible>
+			</control>
       <control>
         <description>Next</description>
         <type>button</type>
         <id>42</id>
         <label>Next</label>
-        <onup>41</onup>
+        <onup>97258</onup>
         <ondown>43</ondown>
         <onright>42</onright>
         <onleft>42</onleft>
@@ -343,8 +363,6 @@
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
         <description>Previous</description>
@@ -364,8 +382,6 @@
         <textXOff>20</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
       </control>
     </control>
   </controls>
