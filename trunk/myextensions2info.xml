@@ -321,9 +321,10 @@
       <label>#MPEI.Translation.Downloads.Label</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
-      <visible>string.equals(#MPE.View.Name,#MPEI.Translation.MPOnlineExtensions.Label)</visible>
+      <visible>!string.equals(#MPE.Selected.Hits,)</visible>
     </control>
     <control Style="smallTitle">
+			<id>101</id>
       <type>fadelabel</type>
       <posX>500</posX>
       <posY>357</posY>
@@ -332,7 +333,7 @@
       <label>#(string.format('{0:#,0} ({1:#,0} #MPEI.Translation.Hits.Label)',cint(#MPE.Selected.Downloads),cint(#MPE.Selected.Hits)))</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
-      <visible>string.equals(#MPE.View.Name,#MPEI.Translation.MPOnlineExtensions.Label)+!string.equals(#MPE.Selected.Downloads,)</visible>
+      <visible>!string.equals(#MPE.Selected.Hits,)+!string.equals(#MPE.Selected.Downloads,)</visible>
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
@@ -343,7 +344,7 @@
       <label>#(string.format('{0:#,0} #MPEI.Translation.Hits.Label',cint(#MPE.Selected.Hits)))</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
-      <visible>string.equals(#MPE.View.Name,#MPEI.Translation.MPOnlineExtensions.Label)+string.equals(#MPE.Selected.Downloads,)</visible>
+      <visible>!string.equals(#MPE.Selected.Hits,)+!control.hastext(101)</visible>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
@@ -353,7 +354,7 @@
       <label>#MPEI.Translation.Compatibility.Label</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
-      <visible>string.equals(#MPE.View.Name,#MPEI.Translation.MPOnlineExtensions.Label)</visible>
+      <visible>!string.equals(#MPE.Selected.CompatibleVersions,)</visible>
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
@@ -363,7 +364,7 @@
       <label>MediaPortal #(iif(eq(#MPE.Selected.CompatibleVersions,' '),'N/A','#MPE.Selected.CompatibleVersions'))</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
-      <visible>string.equals(#MPE.View.Name,#MPEI.Translation.MPOnlineExtensions.Label)</visible>
+      <visible>!string.equals(#MPE.Selected.CompatibleVersions,)</visible>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
@@ -373,7 +374,7 @@
       <label>#MPEI.Translation.Rating.Label</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
-      <visible>string.equals(#MPE.View.Name,#MPEI.Translation.MPOnlineExtensions.Label)</visible>
+      <visible>!string.equals(#MPE.Selected.Votes,)</visible>
     </control>
     <control>
       <type>imagelist</type>
@@ -394,7 +395,7 @@
       </subitems>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
-      <visible>string.equals(#MPE.View.Name,#MPEI.Translation.MPOnlineExtensions.Label)</visible>
+      <visible>!string.equals(#MPE.Selected.Votes,)</visible>
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
@@ -404,7 +405,7 @@
       <label>#(div(cint(#MPE.Selected.Rating), cflt(2))) #(string.format('({0:#,0} #MPEI.Translation.Votes.Label)',cint(#MPE.Selected.Votes)))</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
-      <visible>string.equals(#MPE.View.Name,#MPEI.Translation.MPOnlineExtensions.Label)</visible>
+      <visible>!string.equals(#MPE.Selected.Votes,)</visible>
     </control>
     <control>
       <type>textboxscrollup</type>
@@ -416,19 +417,6 @@
       <label>#MPE.Selected.Description</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
-      <visible>string.equals(#MPE.View.Name,#MPEI.Translation.MPOnlineExtensions.Label)</visible>
-    </control>
-    <control>
-      <type>textboxscrollup</type>
-      <posX>310</posX>
-      <posY>420</posY>
-      <width>911</width>
-      <height>250</height>
-      <font>mediastream11</font>
-      <label>#MPE.Selected.Description</label>
-      <animation effect="Fade" time="250">WindowOpen</animation>
-      <animation effect="Fade" time="100">WindowClose</animation>
-      <visible>!string.equals(#MPE.View.Name,#MPEI.Translation.MPOnlineExtensions.Label)</visible>
     </control>
     <control>
       <type>image</type>
