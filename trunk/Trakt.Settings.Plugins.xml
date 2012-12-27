@@ -15,7 +15,7 @@
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
       <posX>251</posX>
-      <posY>150</posY>
+      <posY>110</posY>
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
@@ -26,7 +26,7 @@
         <label>MP-TVSeries</label>
         <onleft>2</onleft>
         <onright>#defaultcontrol.onright</onright>
-        <onup>17</onup>
+        <onup>13</onup>
       </control>
       <control Style="settingsmaintogglebutton">
         <description>MovingPictures</description>
@@ -84,6 +84,14 @@
         <onleft>9</onleft>
         <onright>#defaultcontrol.onright</onright>
       </control>
+			<control Style="settingsmaintogglebutton">
+        <description>Argus TV Recordings</description>
+        <type>togglebutton</type>
+        <id>12</id>
+        <label>Argus Recordings</label>
+        <onleft>10</onleft>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
       <control Style="settingsmaintogglebutton">
         <description>My TV Live</description>
         <type>togglebutton</type>
@@ -97,6 +105,14 @@
         <type>togglebutton</type>
         <id>11</id>
         <label>4TR TV Live</label>
+        <onleft>11</onleft>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmaintogglebutton">
+        <description>Argus TV Live</description>
+        <type>togglebutton</type>
+        <id>13</id>
+        <label>Argus TV Live</label>
         <onleft>11</onleft>
         <onright>#defaultcontrol.onright</onright>
         <ondown>2</ondown>
