@@ -70,21 +70,21 @@
       <width>486</width>
       <height>35</height>
       <texture>tvtitlebgshort.png</texture>
-      <visible>!control.isvisible(24)+control.hastext(101)</visible>
+      <visible>!control.isvisible(24)+!string.equals(#st_extra,)+!string.contains(#st_extra,st_extra)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>ShowTimes Extras</description>
       <type>fadelabel</type>
       <label>#st_extra</label>
-      <id>101</id>
+      <id>0</id>
       <posX>839</posX>
       <posY>14</posY>
       <width>320</width>
       <align>right</align>
       <font>mediastream12c</font>
       <scrollStartDelaySec>30</scrollStartDelaySec>
-      <visible>!control.isvisible(24)+[!string.equals(#st_extra,)|!string.starts(#st_extra,#)]</visible>
+      <visible>!control.isvisible(24)+!string.equals(#st_extra,)+!string.contains(#st_extra,st_extra)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
