@@ -1,0 +1,365 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>49857</id>
+  <defaultcontrol>8</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.hover:hover_my tv.png</define>
+  <define>#header.label:TV/ARGUS Client Settings</define>
+  <controls>
+    <control>
+      <description>Background Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#header.hover</texture>
+    </control>
+    <control>
+      <description>Overlay Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>60</height>
+      <texture>overlay_topbar.png</texture>
+      <colordiffuse>c9ffffff</colordiffuse>
+    </control>
+    <control>
+      <description>Overlay Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>0</posX>
+      <posY>60</posY>
+      <width>1280</width>
+      <height>660</height>
+      <texture>osdbackground1.png</texture>
+      <colordiffuse>f9ffffff</colordiffuse>
+    </control>
+    <control>
+      <id>1</id>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="fade" time="150">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#header.label</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="fade" time="150">WindowClose</animation>
+    </control>
+    <import>common.time.xml</import>
+    <!-- ***** Background Panes ***** -->
+    <control>
+      <description>Left Side option background</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>680</posX>
+      <posY>130</posY>
+      <width>500</width>
+      <height>520</height>
+      <texture>pandora_tile.png</texture>
+      <colordiffuse>eeffffff</colordiffuse>
+    </control>
+    <control>
+      <description>Right Side option background</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>100</posX>
+      <posY>130</posY>
+      <width>500</width>
+      <height>520</height>
+      <texture>pandora_tile.png</texture>
+      <colordiffuse>eeffffff</colordiffuse>
+    </control>
+    <!-- ** Server ** -->
+    <control>
+      <description>server</description>
+      <id>24</id>
+      <type>label</type>
+      <posX>130</posX>
+      <posY>170</posY>
+      <height>45</height>
+      <font>mediastream12c</font>
+    </control>
+    <control>
+      <description>Server</description>
+      <type>button</type>
+      <id>8</id>
+      <posX>120</posX>
+      <posY>158</posY>
+      <width>440</width>
+      <height>45</height>
+      <font>mediastream12c</font>
+      <textalign>right</textalign>
+      <textXOff>15</textXOff>
+      <textYOff>10</textYOff>
+      <ondown>9</ondown>
+    </control>
+    <!-- ** Port ** -->
+    <control>
+      <description>port</description>
+      <id>25</id>
+      <type>label</type>
+      <posX>130</posX>
+      <posY>220</posY>
+      <height>45</height>
+      <font>mediastream12c</font>
+    </control>
+    <control>
+      <description>Port</description>
+      <type>button</type>
+      <id>9</id>
+      <width>450</width>
+      <posX>120</posX>
+      <posY>208</posY>
+      <height>45</height>
+      <textalign>right</textalign>
+      <font>mediastream12c</font>
+      <textalign>right</textalign>
+      <textXOff>15</textXOff>
+      <textYOff>10</textYOff>
+      <onup>8</onup>
+      <ondown>13</ondown>
+    </control>
+    <!-- ** Enable WOL ** -->
+    <control>
+      <description>Enable WOL</description>
+      <type>checkbutton</type>
+      <id>13</id>
+      <posX>120</posX>
+      <posY>258</posY>
+      <width>450</width>
+      <height>45</height>
+      <onup>9</onup>
+      <ondown>15</ondown>
+      <onright>17</onright>
+      <font>mediastream12c</font>
+      <disabledcolor>ffffffff</disabledcolor>
+      <textcolorNoFocus>ffffffff</textcolorNoFocus>
+    </control>
+    <!-- ** WOL Timeout ** -->
+    <control>
+      <description>WOL Timeout</description>
+      <type>spinbutton</type>
+      <id>15</id>
+      <width>450</width>
+      <posX>120</posX>
+      <posY>308</posY>
+      <onup>13</onup>
+      <ondown>7</ondown>
+      <onright>18</onright>
+      <showrange>no</showrange>
+      <reverse>yes</reverse>
+      <height>45</height>
+      <textXOff>15</textXOff>
+      <textYOff>10</textYOff>
+      <spinYOff>10</spinYOff>
+      <spinXOff>20</spinXOff>
+      <textureFocus>hiddenmenu_button_fo.png</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <font>mediastream12c</font>
+      <spinalign>right</spinalign>
+      <spinvalign>bottom</spinvalign>
+      <spinWidth>16</spinWidth>
+      <spinHeight>16</spinHeight>
+      <spinColor>ffffffff</spinColor>
+      <disabledcolor>60ffffff</disabledcolor>
+      <textureUp>arrowupnf.png</textureUp>
+      <textureUpFocus>arrowupfo.png</textureUpFocus>
+      <textureDown>arrowdownnf.png</textureDown>
+      <textureDownFocus>arrowdownfo.png</textureDownFocus>
+    </control>
+    <!-- *** Test Connection to Server *** -->
+    <control Style="settingsmainbutton">
+      <description>test connection</description>
+      <type>button</type>
+      <id>7</id>
+      <width>450</width>
+      <posX>120</posX>
+      <posY>358</posY>
+      <onup>15</onup>
+      <ondown>12</ondown>
+      <height>45</height>
+      <textXOff>15</textXOff>
+      <textYOff>0</textYOff>
+      <textalign>center</textalign>
+      <font>mediastream12c</font>
+    </control>
+    <!-- Streaming Options -->
+    <control>
+      <type>checkbutton</type>
+      <description>Auto Select Streaming Type</description>
+      <type>checkbutton</type>
+      <id>12</id>
+      <posX>120</posX>
+      <posY>458</posY>
+      <height>45</height>
+      <width>440</width>
+      <font>mediastream12c</font>
+      <onup>7</onup>
+      <ondown>11</ondown>
+      <onright>20</onright>
+    </control>
+    <control>
+      <description>Use RTSP for playing Live TV</description>
+      <type>checkbutton</type>
+      <id>11</id>
+      <posX>120</posX>
+      <posY>508</posY>
+      <width>440</width>
+      <height>45</height>
+      <font>mediastream12c</font>
+      <onup>12</onup>
+      <ondown>10</ondown>
+      <onright>20</onright>
+    </control>
+    <control>
+      <description>Use RTSP for playing Recordings</description>
+      <type>checkbutton</type>
+      <id>10</id>
+      <posX>120</posX>
+      <posY>558</posY>
+      <width>440</width>
+      <height>45</height>
+      <font>mediastream12c</font>
+      <onup>11</onup>
+      <onright>20</onright>
+    </control>
+    <!-- ******************************** -->
+    <!-- *** Right Hand Pand Controls *** -->
+    <!-- ******************************** -->
+    <control>
+      <description>sleep in home</description>
+      <type>checkbutton</type>
+      <id>14</id>
+      <width>440</width>
+      <posX>710</posX>
+      <posY>158</posY>
+      <ondown>16</ondown>
+      <onleft>8</onleft>
+      <height>45</height>
+      <font>mediastream12c</font>
+    </control>
+    <control>
+      <description>auto fullscreen</description>
+      <type>checkbutton</type>
+      <id>16</id>
+      <width>440</width>
+      <posX>710</posX>
+      <posY>208</posY>
+      <onup>14</onup>
+      <ondown>17</ondown>
+      <onleft>9</onleft>
+      <height>45</height>
+      <font>mediastream12c</font>
+    </control>
+    <control>
+      <description>show channel nr</description>
+      <type>checkbutton</type>
+      <id>17</id>
+      <width>440</width>
+      <posX>710</posX>
+      <posY>258</posY>
+      <onup>16</onup>
+      <ondown>18</ondown>
+      <onleft>13</onleft>
+      <height>45</height>
+      <font>mediastream12c</font>
+    </control>
+    <control>
+      <description>hide all channels group</description>
+      <type>checkbutton</type>
+      <id>18</id>
+      <width>440</width>
+      <posX>710</posX>
+      <posY>308</posY>
+      <onup>17</onup>
+      <ondown>22</ondown>
+      <height>45</height>
+      <font>mediastream12c</font>
+    </control>
+    <control>
+      <description>rec notification</description>
+      <type>checkbutton</type>
+      <id>22</id>
+      <width>440</width>
+      <posX>710</posX>
+      <posY>358</posY>
+      <onup>18</onup>
+      <ondown>20</ondown>
+      <onleft>7</onleft>
+      <height>45</height>
+      <font>mediastream12c</font>
+    </control>
+    <control>
+      <description>dvb subs</description>
+      <type>checkbutton</type>
+      <id>20</id>
+      <width>440</width>
+      <posX>710</posX>
+      <posY>458</posY>
+      <onup>22</onup>
+      <ondown>21</ondown>
+      <onleft>12</onleft>
+      <height>45</height>
+      <font>mediastream12c</font>
+    </control>
+    <control>
+      <description>teletext subs</description>
+      <type>checkbutton</type>
+      <id>21</id>
+      <width>440</width>
+      <posX>710</posX>
+      <posY>508</posY>
+      <onup>20</onup>
+      <ondown>19</ondown>
+      <onleft>12</onleft>
+      <height>45</height>
+      <font>mediastream12c</font>
+    </control>
+    <control>
+      <description>AC3</description>
+      <type>checkbutton</type>
+      <id>19</id>
+      <width>440</width>
+      <posX>710</posX>
+      <posY>558</posY>
+      <onup>21</onup>
+      <onleft>12</onleft>
+      <height>45</height>
+      <font>mediastream12c</font>
+    </control>
+    <!-- Info Text -->
+    <control>
+      <description>info</description>
+      <id>23</id>
+      <type>fadelabel</type>
+      <posX>0</posX>
+      <posY>680</posY>
+      <width>1280</width>
+      <align>center</align>
+      <textcolor>FFB2D4F5</textcolor>
+      <font>mediastream14c</font>
+    </control>
+  </controls>
+</window>
+<!--Checksum:239de848dc94e43273e68a7c4890f6a3-->

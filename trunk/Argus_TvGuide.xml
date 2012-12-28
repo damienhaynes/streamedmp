@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>600</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#currentmodule:TV/GUIDE</define>
+  <controls>
+    <import>common.time.xml</import>
+    <control>
+      <description>BG</description>
+      <type>image</type>
+      <id>0</id>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_my tv.png</texture>
+    </control>
+    <control>
+      <type>image</type>
+      <posY>0</posY>
+      <posX>0</posX>
+      <height>720</height>
+      <width>1280</width>
+      <texture>tvguidebg.png</texture>
+    </control>
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="600">WindowOpen</animation>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#currentmodule</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="fade" time="400">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>431</posX>
+      <posY>11</posY>
+      <width>456</width>
+      <height>36</height>
+      <texture>tvtitlebg.png</texture>
+      <visible>!string.equals(#TV.Guide.ChangeGroup,)|control.isvisible(32)</visible>
+      <animation effect="fade" time="300" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Guide Group Label</description>
+      <id>0</id>
+      <posX>852</posX>
+      <posY>13</posY>
+      <width>340</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <label>#TV.Guide.ChangeGroup</label>
+      <visible>!string.equals(#TV.Guide.ChangeGroup,)</visible>
+      <animation effect="fade" time="300" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Single Channel Label</description>
+      <type>label</type>
+      <id>32</id>
+      <posX>852</posX>
+      <posY>13</posY>
+      <width>300</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <animation effect="fade" time="300" delay="300">Visible</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">Visible</animation>
+    </control>
+    <control>
+      <description>Single Channel Image</description>
+      <type>image</type>
+      <id>33</id>
+      <posX>305</posX>
+      <posY>69</posY>
+      <width>45</width>
+      <height>45</height>
+      <keepaspectratio>yes</keepaspectratio>
+      <zoom>no</zoom>
+      <centered>yes</centered>
+      <texture>defaultVideoBig.png</texture>
+      <animation effect="slide" start="1280,0" end="0,0" tween="circle" time="1700">Visible</animation>
+      <animation effect="fade" time="300">Visible</animation>
+    </control>
+    <control>
+      <description>Time Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>6</posX>
+      <posY>10</posY>
+      <width>132</width>
+      <height>32</height>
+      <texture>clockbackground.png</texture>
+    </control>
+    <control>
+      <description>Date</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>1230</posX>
+      <posY>18</posY>
+      <label>#date</label>
+      <align>right</align>
+      <font>mediastream11tc</font>
+    </control>
+    <control>
+      <description>TVGUIDE Panel</description>
+      <type>image</type>
+      <id>2</id>
+      <posX>20</posX>
+      <posY>115</posY>
+      <width>1240</width>
+      <height>450</height>
+      <colordiffuse>ffffffff</colordiffuse>
+      <texture>-</texture>
+    </control>
+    <!-- Timeheader background must be dedfined before Timeheader label template -->
+    <!-- b/c Timeheader is on the background and will be rendered first -->
+    <control>
+      <description>time header background image template</description>
+      <type>image</type>
+      <id>90</id>
+      <posX>237</posX>
+      <posY>70</posY>
+      <width>163</width>
+      <height>34</height>
+      <texture>button_small_settings_nofocus.png</texture>
+    </control>
+    <control>
+      <description>time header label template</description>
+      <type>label</type>
+      <id>40</id>
+      <posX>305</posX>
+      <posY>70</posY>
+      <font>mediastream11tc</font>
+    </control>
+    <control>
+      <description>day spin control</description>
+      <type>spincontrol</type>
+      <id>6</id>
+      <width>35</width>
+      <height>35</height>
+      <posX>49</posX>
+      <posY>65</posY>
+      <showrange>no</showrange>
+      <orientation>horizontal</orientation>
+      <align>center</align>
+      <onleft>6</onleft>
+      <onright>8</onright>
+      <textureUp>arrow_round_right_nofocus.png</textureUp>
+      <textureDown>arrow_round_left_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_right_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
+    </control>
+    <control>
+      <description>time interval spin control</description>
+      <type>spincontrol</type>
+      <id>8</id>
+      <width>35</width>
+      <height>35</height>
+      <posX>215</posX>
+      <posY>65</posY>
+      <showrange>no</showrange>
+      <orientation>horizontal</orientation>
+      <align>center</align>
+      <textureUp>arrow_round_right_nofocus.png</textureUp>
+      <textureDown>arrow_round_left_nofocus.png</textureDown>
+      <textureUpFocus>arrow_round_right_focus.png</textureUpFocus>
+      <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
+      <onleft>6</onleft>
+      <onright>8</onright>
+    </control>
+    <import tag="TVGuideChannelTemplate">mytvguide.common.10rows.channeltemplate.xml</import>
+    <control>
+      <description>Current program time</description>
+      <type>label</type>
+      <id>14</id>
+      <posX>240</posX>
+      <posY>585</posY>
+      <width>190</width>
+      <label>#TV.Guide.Time</label>
+      <font>mediastream11tc</font>
+    </control>
+    <control>
+      <description>Current program title</description>
+      <type>fadelabel</type>
+      <id>13</id>
+      <posX>470</posX>
+      <posY>585</posY>
+      <width>560</width>
+      <label>#TV.Guide.Title</label>
+      <font>mediastream11tc</font>
+    </control>
+    <control>
+      <description>Current program genre</description>
+      <type>fadelabel</type>
+      <id>27</id>
+      <posX>1270</posX>
+      <posY>585</posY>
+      <width>350</width>
+      <label>#TV.Guide.Genre</label>
+      <align>right</align>
+      <font>mediastream11tc</font>
+    </control>
+    <control>
+      <description>Description</description>
+      <type>textboxscrollup</type>
+      <id>15</id>
+      <posX>240</posX>
+      <posY>610</posY>
+      <width>1020</width>
+      <height>100</height>
+      <seperator>________________________________________________________________________________________________________________</seperator>
+      <label>#TV.Guide.Description</label>
+      <font>mediastream11</font>
+      <textcolor>FFFFFFFF</textcolor>
+    </control>
+    <control>
+      <description>vertical timeline</description>
+      <type>image</type>
+      <id>25</id>
+      <posX>55</posX>
+      <posY>97</posY>
+      <height>475</height>
+      <colordiffuse>c0ffffff</colordiffuse>
+      <texture>tvguide_slider.png</texture>
+    </control>
+    <control>
+      <description>TvGroup button</description>
+      <type>button</type>
+      <id>100</id>
+      <posX>15</posX>
+      <posY>120</posY>
+      <width>30</width>
+      <height>435</height>
+      <textureFocus>small_vbutton_focus.png</textureFocus>
+      <textureNoFocus>tvguide_button_light_middle.png</textureNoFocus>
+      <onleft>60</onleft>
+      <onright>6</onright>
+      <onup>6</onup>
+      <ondown>6</ondown>
+      <animation effect="zoom" start="100,100" end="100,100" time="0">focus</animation>
+      <animation effect="zoom" start="100,100" end="100,100" time="0">unfocus</animation>
+    </control>
+    <control>
+      <description>TvGroup button label</description>
+      <type>label</type>
+      <id>61</id>
+      <posX>40</posX>
+      <posY>125</posY>
+      <label>#TV.Guide.ChangeGroup</label>
+      <font>mediastream12c</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="rotate" end="-90" time="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>TV background</description>
+      <type>image</type>
+      <id>98</id>
+      <posX>10</posX>
+      <posY>580</posY>
+      <width>220</width>
+      <height>130</height>
+      <texture>tv_frame.png</texture>
+      <visible>Player.HasVideo</visible>
+    </control>
+    <control>
+      <description>video preview window</description>
+      <type>videowindow</type>
+      <id>99</id>
+      <posX>20</posX>
+      <posY>595</posY>
+      <width>200</width>
+      <height>105</height>
+      <action>18</action>
+      <textureFocus>tv_green_border.png</textureFocus>
+      <visible>Player.HasVideo</visible>
+    </control>
+    <control>
+      <description>record pin</description>
+      <type>image</type>
+      <id>31</id>
+      <posX>445</posX>
+      <posY>587</posY>
+      <width>45</width>
+      <height>17</height>
+      <texture>tvguide_record_button.png</texture>
+      <keepaspectratio>yes</keepaspectratio>
+      <visible>no</visible>
+    </control>
+  </controls>
+</window>
+<!--Checksum:42522997bf4b38fb5814fec909332b6b-->
