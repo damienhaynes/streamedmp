@@ -231,6 +231,18 @@ namespace StreamedMPConfig
       skinFile = GUIGraphicsContext.Skin + @"\4TR_Upcoming.xml";
       Helper.SetSkinDefine(skinFile, define, value);
 
+      skinFile = GUIGraphicsContext.Skin + @"\Argus_ProgramInfo2.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+
+      skinFile = GUIGraphicsContext.Skin + @"\Argus_RecordedTv2.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+
+      skinFile = GUIGraphicsContext.Skin + @"\Argus_TvGuideSearch2.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+
+      skinFile = GUIGraphicsContext.Skin + @"\Argus_UpcomingTv.xml";
+      Helper.SetSkinDefine(skinFile, define, value);
+
       skinFile = GUIGraphicsContext.Skin + @"\mytvprogram.xml";
       Helper.SetSkinDefine(skinFile, define, value);
 
@@ -264,6 +276,11 @@ namespace StreamedMPConfig
       // 4TR TVGuide
       skinFile = GUIGraphicsContext.Skin + @"\4TR_TvGuide.xml";
       Helper.SetSkinImport(skinFile, "TVGuideChannelTemplate", string.Format("mytvguide.common.{0}rows.channeltemplate.xml", (int)TVGuideRowSize));
+
+      // ARGUS TVGuide
+      skinFile = GUIGraphicsContext.Skin + @"\Argus_TvGuide.xml";
+      Helper.SetSkinImport(skinFile, "TVGuideChannelTemplate", string.Format("mytvguide.common.{0}rows.channeltemplate.xml", (int)TVGuideRowSize));
+
 
       smcLog.WriteLog("Setting TVMiniGuide Size", LogLevel.Info);
 
