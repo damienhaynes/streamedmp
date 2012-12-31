@@ -83,6 +83,12 @@
 #define STREAMEDMP_SKIN_4TRRECORDEDTV		        INSTALLDIR^SKIN_NAME^"4TR_RecordedTv.xml"
 #define STREAMEDMP_SKIN_4TRTVGUIDESEARCH		    INSTALLDIR^SKIN_NAME^"4TR_TvGuideSearch.xml"
 #define STREAMEDMP_SKIN_4TRUPCOMING			        INSTALLDIR^SKIN_NAME^"4TR_Upcoming.xml"
+     
+#define STREAMEDMP_SKIN_ARGUSTVGUIDE			    INSTALLDIR^SKIN_NAME^"Argus_TvGuide.xml"
+#define STREAMEDMP_SKIN_ARGUSPROGRAMINFO		    INSTALLDIR^SKIN_NAME^"Argus_ProgramInfo2.xml"
+#define STREAMEDMP_SKIN_ARGUSRECORDEDTV		        INSTALLDIR^SKIN_NAME^"Argus_RecordedTv2.xml"
+#define STREAMEDMP_SKIN_ARGUSTVGUIDESEARCH		    INSTALLDIR^SKIN_NAME^"Argus_TvGuideSearch2.xml"
+#define STREAMEDMP_SKIN_ARGUSUPCOMING			    INSTALLDIR^SKIN_NAME^"Argus_UpcomingTv.xml"
 
 #define STREAMEDMP_SKIN_MYTVPROGRAM			        INSTALLDIR^SKIN_NAME^"mytvprogram.xml"
 #define STREAMEDMP_SKIN_MYTVRECORDEDINFO	        INSTALLDIR^SKIN_NAME^"mytvRecordedInfo.xml"
@@ -93,18 +99,18 @@
 #define STREAMEDMP_SKIN_VIDEOOSD					INSTALLDIR^SKIN_NAME^"videoOSD.xml"
 
 // Version Defines
-#define MEDIAPORTAL_MINNOWARN_VERSION				"1.2.100.0" 	// 1.3 Alpha
-#define MEDIAPORTAL_MIN_VERSION						"1.2.100.0"		// 1.3 Alpha
+#define MEDIAPORTAL_MINNOWARN_VERSION				"1.2.200.0" 	// 1.3 Beta
+#define MEDIAPORTAL_MIN_VERSION						"1.2.200.0"		// 1.3 Beta
                            
-#define TVSERIES_MIN_VERSION						"3.3.3.1972"
-#define MOVINGPICTURES_MIN_VERSION					"1.3.1.1350"
-#define FANARTHANDLER_MIN_VERSION					"3.0.6.0"
-#define LATESTMEDIAHANDLER_MIN_VERSION				"1.5.3.5"
+#define TVSERIES_MIN_VERSION						"3.4.0.1994"
+#define MOVINGPICTURES_MIN_VERSION					"1.4.2.1430"
+#define FANARTHANDLER_MIN_VERSION					"3.0.9.0"
+#define LATESTMEDIAHANDLER_MIN_VERSION				"1.5.3.6"
 #define MYLYRICS_MIN_VERSION						"1.7.0.67"
 #define GLOBALSEARCH_MIN_VERSION					"1.7.5.55"
 #define INFOSERVICE_MIN_VERSION						"1.7.1.245"
-#define TRAKT_MIN_VERSION							"2.0.1.0"    
-#define WEATHER_MIN_VERSION							"0.6.5.0"
+#define TRAKT_MIN_VERSION							"2.3.0.0"    
+#define WEATHER_MIN_VERSION							"1.0.1.0"
 
 
 // XML Path Defines
@@ -2425,6 +2431,9 @@ begin
 	sFile = STREAMEDMP_SKIN_4TRTVGUIDE;
 	SetXMLProperty(sFile, TVGUIDE_ROWS_PATH, "mytvguide.common."+g_sTVGuideSize+"rows.channeltemplate.xml");
 			
+	sFile = STREAMEDMP_SKIN_ARGUSTVGUIDE;
+	SetXMLProperty(sFile, TVGUIDE_ROWS_PATH, "mytvguide.common."+g_sTVGuideSize+"rows.channeltemplate.xml");
+	
 	// Enable/Disable Random Fanart in MyTV sections	
 	szDefine = "#useRandomTVSeriesFanart";
 	SetSkinDefine(STREAMEDMP_SKIN_4TRACTIVE, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
@@ -2432,6 +2441,12 @@ begin
 	SetSkinDefine(STREAMEDMP_SKIN_4TRRECORDEDTV, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
 	SetSkinDefine(STREAMEDMP_SKIN_4TRTVGUIDESEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
 	SetSkinDefine(STREAMEDMP_SKIN_4TRUPCOMING, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	   
+	SetSkinDefine(STREAMEDMP_SKIN_ARGUSPROGRAMINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));		
+	SetSkinDefine(STREAMEDMP_SKIN_ARGUSRECORDEDTV, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_ARGUSTVGUIDESEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
+	SetSkinDefine(STREAMEDMP_SKIN_ARGUSUPCOMING, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));
+	
 	SetSkinDefine(STREAMEDMP_SKIN_MYTVPROGRAM, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
 	SetSkinDefine(STREAMEDMP_SKIN_MYTVRECORDEDINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
 	SetSkinDefine(STREAMEDMP_SKIN_MYTVRECORDEDTV, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	

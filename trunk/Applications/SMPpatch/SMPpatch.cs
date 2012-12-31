@@ -385,7 +385,7 @@ namespace SMPpatch
       {
         // check filesize...we cant do modified date as embedded resource
         // streams and writes a new file
-        if (pf.patchSize.CompareTo(pf.installedSize) <= 0)
+        if (pf.patchSize.CompareTo(pf.installedSize) == 0)
           item.ImageIndex = 0;
         else
           item.ImageIndex = 1;
