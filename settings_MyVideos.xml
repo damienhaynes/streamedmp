@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-  <id>1016</id>
-  <defaultcontrol>2</defaultcontrol>
+  <id>703</id>
+  <defaultcontrol>42</defaultcontrol>
   <allowoverlay>no</allowoverlay>
 	<rememberLastFocusedControl>yes</rememberLastFocusedControl>
-  <define>#header.label:100008</define>
+  <define>#header.label:#(L(5))->#(L(100703))</define>
   <define>#header.hover:hover_settings.png</define>
-  <define>#defaultcontrol:2</define>
-  <define>#defaultcontrol.onright:9992</define>
+	<define>#defaultcontrol:42</define>
+  <define>#defaultcontrol.onright:9995</define>
   <controls>
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
@@ -21,52 +21,68 @@
       <height>500</height>
       <layout>StackLayout</layout>
       <control Style="settingsmainbutton">
-        <description>General MP Settings</description>
+        <description>Playlist</description>
         <type>button</type>
-        <id>2</id>
-        <label>300080</label>
+        <id>42</id>
+        <label>851</label>
         <textXOff>35</textXOff>
-				<onup>7</onup>
+				<onup>18</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      <control Style="settingsmainbutton">
-        <description>Startup settings</description>
-        <type>button</type>
-        <id>3</id>
-        <label>300081</label>
-        <textXOff>35</textXOff>
-        <onright>#defaultcontrol.onright</onright>
-      </control>
-      <control Style="settingsmainbutton">
-        <description>Resume settings</description>
-        <type>button</type>
-        <id>4</id>
-        <label>300082</label>
+      <control Style="settingsmaincheckbutton">
+        <description>Subtitles On/Off</description>
+        <type>checkbutton</type>
+        <id>31</id>
+        <label>1196</label>
+				<onleft>31</onleft>
         <textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
-        <description>Volume settings</description>
+        <description>Play all</description>
         <type>button</type>
-        <id>5</id>
-        <label>101007</label>
+        <id>34</id>
+        <label>300192</label>
         <textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
-        <description>RefreshRate settings</description>
+        <description>Share folders</description>
         <type>button</type>
-        <id>6</id>
-        <label>300083</label>
+        <id>40</id>
+        <label>300071</label>
+        <textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Database</description>
+        <type>button</type>
+        <id>41</id>
+        <label>300161</label>
         <textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
 			<control Style="settingsmainbutton">
-        <description>Autoplay</description>
+        <description>Extensions</description>
         <type>button</type>
-        <id>7</id>
-        <label>713</label>
-        <ondown>2</ondown>
+        <id>35</id>
+        <label>300162</label>
+				<textXOff>35</textXOff>
+				<onright>#defaultcontrol.onright</onright>
+      </control>
+			<control Style="settingsmainbutton">
+        <description>Video</description>
+        <type>button</type>
+        <id>24</id>
+        <label>2134</label>
+				<textXOff>35</textXOff>
+				<onright>#defaultcontrol.onright</onright>
+      </control>
+			<control Style="settingsmainbutton">
+        <description>Audio</description>
+        <type>button</type>
+        <id>25</id>
+        <label>2135</label>
 				<textXOff>35</textXOff>
 				<onright>#defaultcontrol.onright</onright>
       </control>

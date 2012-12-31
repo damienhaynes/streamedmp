@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>1010</id>
+  <defaultcontrol>14</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:#(L(5))->#(L(100703))->#(L(300161))</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#defaultcontrol:14</define>
+  <define>#defaultcontrol.onright:9995</define>
+  <controls>
+    <import>common.settings.wide.xml</import>
+    <import>common.time.xml</import>
+		<control>
+			<type>image</type>
+			<id>0</id>
+			<posX>240</posX>
+			<posY>60</posY>
+			<width>720</width>
+			<height>230</height>
+			<texture>SettingsFrame.png</texture>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+		</control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>255</posX>
+      <posY>95</posY>
+      <height>500</height>
+			<dimColor>ffFFFFFF</dimColor>
+      <layout>StackLayout</layout>
+      <control Style="skinbutton">
+        <description>Scan database</description>
+        <type>button</type>
+        <id>14</id>
+        <label>300164</label>
+				<width>350</width>
+        <onright>10</onright>
+				<onup>18</onup>
+				<font>mediastream10tc</font>
+      </control>
+      <control Style="skinbutton">
+        <description>Reset database</description>
+        <type>button</type>
+        <id>15</id>
+        <label>300182</label>
+				<width>350</width>
+        <onright>10</onright>
+				<font>mediastream10tc</font>
+      </control>
+      <control Style="skinbutton">
+        <description>Default Grabber</description>
+        <type>button</type>
+        <id>2</id>
+        <label>300036</label>
+				<width>350</width>
+        <onright>10</onright>
+				<font>mediastream10tc</font>
+      </control>
+			<control Style="skinbutton">
+        <description>Update Grabbers</description>
+        <type>button</type>
+        <id>3</id>
+        <label>1262</label>
+				<width>350</width>
+        <ondown>4</ondown>
+        <onright>10</onright>
+				<font>mediastream10tc</font>
+      </control>
+    </control>
+		
+		<control Style="smallTitleB">
+			<description>Folders Label</description>
+      <label>300071</label>
+      <type>label</type>
+      <posX>730</posX>
+      <posY>90</posY>
+      <width>170</width>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+		<control>
+      <description>Share folders list</description>
+      <type>listcontrol</type>
+      <id>10</id>
+      <posX>600</posX>
+      <posY>120</posY>
+      <height>160</height>
+      <width>355</width>
+      <onleft>14</onleft>
+			<font>mediastream11c</font>
+			<font2>mediastream11c</font2>
+			<textXOff>15</textXOff>
+			<textXOff2>350</textXOff2>
+			<textYOff>0</textYOff>
+			<textYOff2>0</textYOff2>
+			<spinPosX>2500</spinPosX>
+			<textureHeight>25</textureHeight>
+			<onright>#defaultcontrol.onright</onright>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+		<control>
+      <type>group</type>
+      <description>Options</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>295</posY>
+      <width>766</width>
+      <height>500</height>
+			<dimColor>ffFFFFFF</dimColor>
+      <layout>StackLayout</layout>
+			<control Style="settingsmaincheckbutton">
+				<description>Automatch button</description>
+        <type>checkbutton</type>
+        <id>4</id>
+        <label>300195</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
+				<onup>3</onup>
+				<onleft>4</onleft>
+				<onup>3</onup>
+				<onright>#defaultcontrol.onright</onright>
+			</control>
+			<control Style="settingsmaincheckbutton">
+				<description>Use fanart</description>
+        <type>checkbutton</type>
+        <id>5</id>
+        <label>300196</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
+				<onright>6</onright>
+				<onup>4</onup>
+				<onleft>6</onleft>
+			</control>
+			<control Style="settingsmainbutton">
+				<description>Actors Fetch size</description>
+        <type>button</type>
+        <id>7</id>
+        <label>300211</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
+				<onleft>7</onleft>
+				<onup>5</onup>
+				<onright>#defaultcontrol.onright</onright>
+			</control>
+			<control Style="settingsmaincheckbutton">
+				<description>Folder name for title</description>
+        <type>checkbutton</type>
+        <id>8</id>
+        <label>300198</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
+				<onright>#defaultcontrol.onright</onright>
+				<onup>7</onup>
+				<onleft>8</onleft>
+			</control>
+			<control Style="settingsmaincheckbutton">
+				<description>Prefer video filename for search</description>
+        <type>checkbutton</type>
+        <id>9</id>
+        <label>300199</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
+				<onright>#defaultcontrol.onright</onright>
+				<onup>8</onup>
+				<onleft>9</onleft>
+			</control>
+			<control Style="settingsmaincheckbutton">
+				<description>Skip existing</description>
+        <type>checkbutton</type>
+        <id>11</id>
+        <label>300200</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
+				<onright>#defaultcontrol.onright</onright>
+				<onup>9</onup>
+				<onleft>11</onleft>
+			</control>
+			<control Style="settingsmaincheckbutton">
+				<description>Refresh existing</description>
+        <type>checkbutton</type>
+        <id>12</id>
+        <label>300201</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
+				<onright>#defaultcontrol.onright</onright>
+				<onup>11</onup>
+				<onleft>12</onleft>
+			</control>
+			<control Style="settingsmaincheckbutton">
+				<description>Strip prefixes button</description>
+        <type>checkbutton</type>
+        <id>13</id>
+        <label>300202</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
+				<onright>#defaultcontrol.onright</onright>
+				<onup>12</onup>
+				<onleft>13</onleft>
+			</control>
+			<control Style="settingsmaincheckbutton">
+				<description>Use sort title</description>
+        <type>checkbutton</type>
+        <id>16</id>
+        <label>300225</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
+				<onright>#defaultcontrol.onright</onright>
+				<onup>13</onup>
+				<onleft>16</onleft>
+			</control>
+			<control Style="settingsmaincheckbutton">
+				<description>Use internal nfo scraper</description>
+        <type>checkbutton</type>
+        <id>18</id>
+        <label>300226</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
+				<onright>#defaultcontrol.onright</onright>
+				<onleft>18</onleft>
+				<onup>16</onup>
+				<ondown>14</ondown>
+			</control>
+		</control>
+		
+		<control>
+      <description>Fanart Spinbutton</description>
+      <type>spincontrol</type>
+      <id>6</id>
+      <posX>880</posX>
+      <posY>350</posY>
+      <font>mediastream11c</font>
+      <onleft>5</onleft>
+      <onright>#defaultcontrol.onright</onright>
+      <ondown>7</ondown>
+      <align>right</align>
+      <buddycontrolid>5</buddycontrolid>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>Prefixes</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>910</posX>
+      <posY>596</posY>
+      <width>420</width>
+			<align>right</align>
+      <font>mediastream11c</font>
+      <label>#prefixes</label>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+  </controls>
+</window>
+<!--Checksum:ec8dc32594c1cddd848007d6b4563968-->

@@ -20,9 +20,9 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>798</posX>
+      <posX>831</posX>
       <posY>0</posY>
-      <width>256</width>
+      <width>222</width>
       <height>720</height>
       <texture>homebladesub.png</texture>
       <animation effect="slide" time="300" start="-1054,0">windowopen</animation>
@@ -48,21 +48,10 @@
       <animation effect="slide" time="100" start="-846,0">windowopen</animation>
     </control>
     <control>
-      <description>right overlay</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>1045</posX>
-      <posY>0</posY>
-      <width>235</width>
-      <height>720</height>
-      <texture>homerightoverlay.png</texture>
-      <visible>!window.istopmost(14)+!window.istopmost(31)+!window.istopmost(12)</visible>
-    </control>
-    <control>
       <type>image</type>
       <id>0</id>
       <posX>878</posX>
-      <posY>167</posY>
+      <posY>80</posY>
       <width>161</width>
       <height>31</height>
       <texture>settingslogo.png</texture>
@@ -73,7 +62,7 @@
       <type>image</type>
       <id>0</id>
       <posX>1000</posX>
-      <posY>206</posY>
+      <posY>126</posY>
       <width>32</width>
       <height>32</height>
       <texture>isupdate.png</texture>
@@ -85,7 +74,7 @@
       <description>group element</description>
       <animation effect="fade" time="200" delay="300">windowopen</animation>
       <posX>834</posX>
-      <posY>201</posY>
+      <posY>121</posY>
       <width>211</width>
       <height>379</height>
       <layout>StackLayout(0, Vertical, true)</layout>
@@ -103,56 +92,63 @@
         <type>button</type>
         <id>9992</id>
         <label>128</label>
-        <hyperlink>705</hyperlink>
+        <hyperlink>1016</hyperlink>
         <onleft>#defaultcontrol</onleft>
       </control>
       <control Style="settingsbutton">
-        <description>Screen</description>
+        <description>GUI</description>
         <type>button</type>
         <id>9993</id>
-        <label>6023</label>
-        <hyperlink>9</hyperlink>
+        <label>101021</label>
+        <hyperlink>1021</hyperlink>
         <onleft>#defaultcontrol</onleft>
       </control>
       <control Style="settingsbutton">
-        <description>TV</description>
+        <description>My TV</description>
         <type>button</type>
         <id>9994</id>
         <label>605</label>
         <hyperlink>700</hyperlink>
         <onleft>#defaultcontrol</onleft>
-        <visible>plugin.isenabled(TV)</visible>
       </control>
       <control Style="settingsbutton">
-        <description>My Pictures</description>
+        <description>My Videos</description>
         <type>button</type>
         <id>9995</id>
-        <label>1</label>
-        <hyperlink>12</hyperlink>
-        <onleft>#defaultcontrol</onleft>
-      </control>
-      <control Style="settingsbutton">
-        <description>Movies</description>
-        <type>button</type>
-        <id>9996</id>
         <label>3</label>
         <hyperlink>703</hyperlink>
         <onleft>#defaultcontrol</onleft>
       </control>
       <control Style="settingsbutton">
-        <description>My DVD</description>
+        <description>My Music</description>
+        <type>button</type>
+        <id>9996</id>
+        <label>2</label>
+        <hyperlink>14</hyperlink>
+        <onleft>#defaultcontrol</onleft>
+      </control>
+      <control Style="settingsbutton">
+        <description>My Pictures</description>
         <type>button</type>
         <id>9997</id>
+        <label>1</label>
+        <hyperlink>12</hyperlink>
+        <onleft>#defaultcontrol</onleft>
+      </control>
+      <control Style="settingsbutton">
+        <description>DVD</description>
+        <type>button</type>
+        <id>9998</id>
         <label>1027</label>
         <hyperlink>704</hyperlink>
         <onleft>#defaultcontrol</onleft>
       </control>
-      <control Style="settingsbutton">
-        <description>My Music</description>
+			<control Style="settingsbutton">
+        <description>Blu-ray</description>
         <type>button</type>
-        <id>9998</id>
-        <label>2</label>
-        <hyperlink>14</hyperlink>
+        <id>9991</id>
+        <label>300217</label>
+        <hyperlink>1024</hyperlink>
         <onleft>#defaultcontrol</onleft>
         <ondown>10001</ondown>
       </control>
@@ -163,7 +159,7 @@
         <label>9100</label>
         <onleft>#defaultcontrol</onleft>
         <hyperlink>9000</hyperlink>
-        <onup>9998</onup>
+        <onup>9991</onup>
         <ondown>10000</ondown>
         <visible>plugin.isenabled(MiniDisplay)</visible>
       </control>
@@ -185,6 +181,7 @@
       <id>0</id>
       <posX>250</posX>
       <posY>25</posY>
+			<width>540</width>
       <label>#header.label</label>
       <font>mediastream16c</font>
       <textcolor>FFFFFFFF</textcolor>

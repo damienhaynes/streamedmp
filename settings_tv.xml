@@ -3,18 +3,18 @@
   <id>700</id>
   <defaultcontrol>24</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:6014</define>
+  <define>#header.label:#(L(5))->TV</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:24</define>
   <define>#defaultcontrol.onright:9994</define>
   <controls>
-    <import>common.settings.xml</import>
+    <import>common.settings.wide.xml</import>
     <import>common.time.xml</import>
     <control>
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>251</posX>
+      <posX>216</posX>
       <posY>85</posY>
       <width>595</width>
       <height>500</height>
@@ -24,7 +24,9 @@
         <type>button</type>
         <id>24</id>
         <label>6000</label>
+				<textXOff>35</textXOff>
         <onup>17</onup>
+				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -32,6 +34,8 @@
         <type>button</type>
         <id>35</id>
         <label>6036</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -39,6 +43,8 @@
         <description>Audio Codecs</description>
         <id>25</id>
         <label>6001</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -46,6 +52,8 @@
         <description>LATM AAC Audio Codecs</description>
         <id>36</id>
         <label>6039</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -53,6 +61,8 @@
         <type>button</type>
         <id>33</id>
         <label>6002</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -60,6 +70,8 @@
         <type>button</type>
         <id>27</id>
         <label>6003</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -67,6 +79,8 @@
         <type>button</type>
         <id>28</id>
         <label>6004</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -74,6 +88,8 @@
         <type>button</type>
         <id>30</id>
         <label>6006</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
 			<control Style="settingsmaincheckbutton">
@@ -81,6 +97,10 @@
         <type>checkbutton</type>
         <id>40</id>
         <label>1246</label>
+				<textXOff>35</textXOff>
+				<onright>#defaultcontrol.onright</onright>
+				<onleft>40</onleft>
+				<width>766</width>
         <selected>#(skin.hassetting('#skin.tvguide.usecolorsforbuttons'))</selected>
         <onclick>#(skin.togglesetting('#skin.tvguide.usecolorsforbuttons'))</onclick>
       </control>
@@ -89,6 +109,10 @@
         <type>checkbutton</type>
         <id>41</id>
         <label>1247</label>
+				<textXOff>35</textXOff>
+				<onleft>41</onleft>
+				<width>766</width>
+				<onright>#defaultcontrol.onright</onright>
         <selected>#(skin.hassetting('#skin.tvguide.usecolorsforgenre'))</selected>
         <onclick>#(skin.togglesetting('#skin.tvguide.usecolorsforgenre'))</onclick>
       </control>
@@ -97,6 +121,10 @@
         <type>checkbutton</type>
         <id>42</id>
         <label>1248</label>
+				<textXOff>35</textXOff>
+				<onleft>42</onleft>
+				<width>766</width>
+				<onright>#defaultcontrol.onright</onright>
         <selected>#(skin.hassetting('#skin.tvguide.useborderhighlight'))</selected>
         <onclick>#(skin.togglesetting('#skin.tvguide.useborderhighlight'))</onclick>
       </control>
@@ -105,6 +133,10 @@
         <type>checkbutton</type>
         <id>43</id>
         <label>1249</label>
+				<textXOff>35</textXOff>
+				<onleft>43</onleft>
+				<width>766</width>
+				<onright>#defaultcontrol.onright</onright>
         <selected>#(skin.hassetting('#skin.tvguide.showgenrekey'))</selected>
         <onclick>#(skin.togglesetting('#skin.tvguide.showgenrekey'))</onclick>
       </control>
@@ -113,6 +145,8 @@
         <type>button</type>
         <id>34</id>
         <label>4TR #TV.Settings.ChannelManagerName</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
         <hyperlink>49856</hyperlink>
         <visible>plugin.isenabled(For The Record TV)</visible>
@@ -122,6 +156,8 @@
         <type>button</type>
         <id>31</id>
         <label>#TV.Settings.4TRClientSettingsName</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
         <hyperlink>49857</hyperlink>
         <visible>plugin.isenabled(For The Record TV)</visible>
@@ -131,6 +167,8 @@
         <type>button</type>
         <id>32</id>
         <label>#TV.Settings.4TRServerSettingsName</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
         <hyperlink>49855</hyperlink>
         <visible>plugin.isenabled(For The Record TV)</visible>

@@ -1,13 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>704</id>
-  <defaultcontrol>21</defaultcontrol>
+  <defaultcontrol>22</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:6015</define>
+  <define>#header.label:#(L(5))->#(L(446))</define>
   <define>#header.hover:hover_settings.png</define>
-  <define>#selecteditem:6015</define>
-  <define>#defaultcontrol:21</define>
-  <define>#defaultcontrol.onright:9997</define>
+  <define>#defaultcontrol:22</define>
+  <define>#defaultcontrol.onright:9998</define>
   <controls>
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
@@ -15,75 +14,55 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>251</posX>
+      <posX>216</posX>
       <posY>150</posY>
       <width>595</width>
       <height>500</height>
       <layout>StackLayout</layout>
-      <control Style="settingsmainbutton">
-        <description>DVD Navigators</description>
-        <type>button</type>
-        <id>21</id>
-        <label>1198</label>
-        <onup>17</onup>
-        <onright>#defaultcontrol.onright</onright>
-      </control>
-      <control Style="settingsmainbutton">
-        <description>Video Codecs</description>
-        <type>button</type>
-        <id>24</id>
-        <label>6000</label>
-        <onup>17</onup>
-        <onright>#defaultcontrol.onright</onright>
-      </control>
-      <control Style="settingsmainbutton">
-        <description>Audio Codecs</description>
-        <type>button</type>
-        <id>25</id>
-        <label>6001</label>
-        <onright>#defaultcontrol.onright</onright>
-      </control>
-      <control Style="settingsmainbutton">
-        <description>Audio Renderer</description>
-        <type>button</type>
-        <id>27</id>
-        <label>6002</label>
-        <onright>#defaultcontrol.onright</onright>
-      </control>
-      <control Style="settingsmainbutton">
-        <description>Apect Ratio</description>
-        <type>button</type>
-        <id>28</id>
-        <label>6004</label>
-        <onright>#defaultcontrol.onright</onright>
-      </control>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>Enable Subtitles</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>22</id>
         <label>1196</label>
+        <onup>25</onup>
+				<textXOff>35</textXOff>
+				<onleft>22</onleft>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      <control Style="settingsmainbutton">
-        <description>Subtitle Language</description>
-        <type>button</type>
-        <id>29</id>
-        <label>1029</label>
+      <control Style="settingsmaincheckbutton">
+        <description>Enable Closed Caption</description>
+        <type>checkbutton</type>
+        <id>31</id>
+        <label>300079</label>
+				<textXOff>35</textXOff>
+				<onleft>31</onleft>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      <control Style="settingsmainbutton">
-        <description>Audio Language</description>
-        <type>button</type>
-        <id>30</id>
-        <label>492</label>
-        <onright>#defaultcontrol.onright</onright>
-      </control>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>Turn Off DXVA</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>23</id>
         <label>1197</label>
-        <ondown>21</ondown>
+				<textXOff>35</textXOff>
+				<onleft>23</onleft>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Video</description>
+        <type>button</type>
+        <id>24</id>
+        <label>291</label>
+				<textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Audio</description>
+        <type>button</type>
+        <id>25</id>
+        <label>292</label>
+				<textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+				<ondown>22</ondown>
       </control>
     </control>
   </controls>

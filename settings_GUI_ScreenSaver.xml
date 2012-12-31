@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>1020</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:#(L(5))->#(L(101021))->#(L(102900))</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#defaultcontrol:2</define>
+  <define>#defaultcontrol.onright:9993</define>
+  <controls>
+    <import>common.settings.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>150</posY>
+      <width>595</width>
+      <height>500</height>
+			<dimColor>ffFFFFFF</dimColor>
+      <layout>StackLayout</layout>
+      <control Style="settingsmaincheckbutton">
+        <description>Enable screen saver</description>
+				<type>checkbutton</type>
+				<id>2</id>
+				<label>300133</label>
+        <textXOff>35</textXOff>
+				<onup>5</onup>
+				<ondown>3</ondown>
+				<onleft>2</onleft>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+		</control>
+		
+		<control Style="settingsmaintexturefo">
+      <id>0</id>
+      <type>image</type>
+      <posY>192</posY>
+      <visible>control.hasfocus(3)</visible>
+    </control>
+    <control Style="settingsmaintexturenf">
+      <id>0</id>
+      <type>image</type>
+      <posY>192</posY>
+      <visible>!control.hasfocus(3)</visible>
+    </control>
+		<control>
+      <description>Delay label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>250</posX>
+      <posY>200</posY>
+			<width>350</width>
+      <label>#(L(355))</label>
+			<font>mediastream12c</font>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>Delay</description>
+      <type>spincontrol</type>
+      <id>3</id>
+      <posY>205</posY>
+      <align>right</align>
+      <onup>2</onup>
+			<onleft>3</onleft>
+      <ondown>4</ondown>
+			<posX>770</posX>
+			<font>mediastream12c</font>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+		
+		<control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>233</posY>
+      <width>595</width>
+      <height>500</height>
+			<dimColor>ffFFFFFF</dimColor>
+      <layout>StackLayout</layout>
+      <control Style="settingsmaincheckbutton">
+        <description>BurnIn</description>
+				<type>checkbutton</type>
+				<id>4</id>
+        <label>300134</label>
+        <textXOff>35</textXOff>
+				<onup>3</onup>
+				<onleft>4</onleft>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Reduce framerate</description>
+				<type>checkbutton</type>
+				<id>5</id>
+        <label>300135</label>
+        <textXOff>35</textXOff>
+				<ondown>2</ondown>
+				<onleft>5</onleft>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+    </control>
+		
+  </controls>
+</window>
+<!--Checksum:b2e3e60c6fafc5e69b3d98db9fc5d4ed-->

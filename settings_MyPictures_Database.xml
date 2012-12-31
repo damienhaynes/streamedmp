@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>1012</id>
+  <defaultcontrol>3</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:#(L(5))->#(L(100012))->#(L(300161))</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#defaultcontrol:3</define>
+  <define>#defaultcontrol.onright:9997</define>
+  <controls>
+    <import>common.settings.wide.xml</import>
+    <import>common.time.xml</import>
+		<control>
+			<type>image</type>
+			<id>0</id>
+			<posX>240</posX>
+			<posY>60</posY>
+			<width>720</width>
+			<height>230</height>
+			<texture>SettingsFrame.png</texture>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+		</control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>255</posX>
+      <posY>95</posY>
+      <height>500</height>
+			<dimColor>ffFFFFFF</dimColor>
+      <layout>StackLayout</layout>
+      <control Style="skinbutton">
+        <description>Scan database</description>
+        <type>button</type>
+        <id>3</id>
+        <label>300164</label>
+				<width>350</width>
+        <onright>2</onright>
+				<onup>4</onup>
+				<font>mediastream10tc</font>
+      </control>
+      <control Style="skinbutton">
+        <description>Reset database</description>
+        <type>button</type>
+        <id>4</id>
+        <label>300182</label>
+				<width>350</width>
+        <onright>2</onright>
+				<ondown>3</ondown>
+				<font>mediastream10tc</font>
+      </control>
+    </control>
+		
+		<control Style="smallTitleB">
+			<description>Folders Label</description>
+      <label>300071</label>
+      <type>label</type>
+      <posX>730</posX>
+      <posY>90</posY>
+      <width>170</width>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+		<control>
+      <description>Share folders list</description>
+      <type>listcontrol</type>
+      <id>2</id>
+      <posX>600</posX>
+      <posY>120</posY>
+      <height>160</height>
+      <width>355</width>
+      <onleft>3</onleft>
+			<font>mediastream11c</font>
+			<font2>mediastream11c</font2>
+			<textXOff>15</textXOff>
+			<textXOff2>350</textXOff2>
+			<textYOff>0</textYOff>
+			<textYOff2>0</textYOff2>
+			<spinPosX>2500</spinPosX>
+			<textureHeight>25</textureHeight>
+			<onright>#defaultcontrol.onright</onright>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+		
+  </controls>
+</window>
+<!--Checksum:ec8dc32594c1cddd848007d6b4563968-->
