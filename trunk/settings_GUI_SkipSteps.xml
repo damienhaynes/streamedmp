@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>708</id>
+  <defaultcontrol>19</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:#(L(5))->#(L(101021))->#(L(6024))</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#defaultcontrol:19</define>
+  <define>#defaultcontrol.onright:9993</define>
+  <controls>
+    <import>common.settings.wide.xml</import>
+    <import>common.time.xml</import>
+		<control>
+			<type>image</type>
+			<id>0</id>
+			<posX>240</posX>
+			<posY>80</posY>
+			<width>720</width>
+			<height>320</height>
+			<texture>SettingsFrame.png</texture>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+		</control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>255</posX>
+      <posY>140</posY>
+      <height>500</height>
+			<dimColor>ffFFFFFF</dimColor>
+      <layout>StackLayout</layout>
+      <control Style="skinbutton">
+        <description>add button</description>
+        <type>button</type>
+        <id>19</id>
+        <label>200039</label>
+        <onright>2</onright>
+				<onup>25</onup>
+				<font>mediastream10tc</font>
+      </control>
+      <control Style="skinbutton">
+        <description>remove button</description>
+        <type>button</type>
+        <id>20</id>
+        <label>200040</label>
+        <onright>2</onright>
+				<font>mediastream10tc</font>
+      </control>
+      <control Style="skinbutton">
+        <description>reset button</description>
+        <type>button</type>
+        <id>18</id>
+        <label>886</label>
+        <ondown>22</ondown>
+        <onright>2</onright>
+				<font>mediastream10tc</font>
+      </control>
+    </control>
+		
+    <control Style="smallTitleB">
+      <type>label</type>
+      <description>Skip Steps Seconds</description>
+      <id>1</id>
+      <posX>540</posX>
+      <posY>92</posY>
+      <label>#(string.rtrim(L(9997),':'))</label>
+			<width>130</width>
+      <font>mediastream10tc</font>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+		<control>
+      <type>group</type>
+      <description>Seconds Steps</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>550</posX>
+      <posY>140</posY>
+      <width>250</width>
+			<dimColor>ffFFFFFF</dimColor>
+      <layout>StackLayout(1,Vertical,True)</layout>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 1</description>
+				<type>checkmark</type>
+				<id>2</id>
+				<label> 5</label>
+				<onleft>19</onleft>
+				<onright>6</onright>
+				<onup>5</onup>
+			</control>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 2</description>
+				<type>checkmark</type>
+				<id>3</id>
+				<label> 15</label>
+				<onleft>19</onleft>
+				<onright>7</onright>
+			</control>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 3</description>
+				<type>checkmark</type>
+				<id>4</id>
+				<label> 30</label>
+				<onleft>19</onleft>
+				<onright>8</onright>
+			</control>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 4</description>
+				<type>checkmark</type>
+				<id>5</id>
+				<label> 45</label>
+				<onleft>19</onleft>
+				<onright>9</onright>
+				<ondown>2</ondown>
+			</control>
+		</control>
+
+    <control Style="smallTitleB">
+      <type>label</type>
+      <description>Skip Steps Minutes</description>
+      <id>1</id>
+      <posX>680</posX>
+      <posY>92</posY>
+      <label>#(string.rtrim(L(9998),':'))</label>
+			<width>130</width>
+      <font>mediastream10tc</font>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+		<control>
+      <type>group</type>
+      <description>Minutes Steps</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>690</posX>
+      <posY>140</posY>
+      <width>250</width>
+			<dimColor>ffFFFFFF</dimColor>
+      <layout>StackLayout(1,Vertical,True)</layout>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 5</description>
+				<type>checkmark</type>
+				<id>6</id>
+				<label> 1</label>
+				<onleft>2</onleft>
+				<onright>14</onright>
+				<onup>13</onup>
+			</control>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 6</description>
+				<type>checkmark</type>
+				<id>7</id>
+				<label> 3</label>
+				<onleft>3</onleft>
+				<onright>15</onright>
+			</control>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 7</description>
+				<type>checkmark</type>
+				<id>8</id>
+				<label> 5</label>
+				<onleft>4</onleft>
+				<onright>16</onright>
+			</control>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 8</description>
+				<type>checkmark</type>
+				<id>9</id>
+				<label> 7</label>
+				<onleft>5</onleft>
+				<onright>17</onright>
+			</control>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 9</description>
+				<type>checkmark</type>
+				<id>10</id>
+				<label> 10</label>
+				<onleft>5</onleft>
+				<onright>17</onright>
+			</control>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 10</description>
+				<type>checkmark</type>
+				<id>11</id>
+				<label> 15</label>
+				<onleft>5</onleft>
+				<onright>17</onright>
+			</control>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 11</description>
+				<type>checkmark</type>
+				<id>12</id>
+				<label> 30</label>
+				<onleft>5</onleft>
+				<onright>17</onright>
+			</control>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 12</description>
+				<type>checkmark</type>
+				<id>13</id>
+				<label> 45</label>
+				<onleft>5</onleft>
+				<onright>17</onright>
+				<ondown>6</ondown>
+			</control>
+		</control>
+		
+    <control Style="smallTitleB">
+      <type>label</type>
+      <description>Skip Steps Hours</description>
+      <id>1</id>
+      <posX>820</posX>
+      <posY>92</posY>
+      <label>#(string.rtrim(L(9999),':'))</label>
+			<width>120</width>
+      <font>mediastream10tc</font>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+		<control>
+      <type>group</type>
+      <description>Hours Steps</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>830</posX>
+      <posY>140</posY>
+      <width>250</width>
+			<dimColor>ffFFFFFF</dimColor>
+      <layout>StackLayout(1,Vertical,True)</layout>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 13</description>
+				<type>checkmark</type>
+				<id>14</id>
+				<label> 1</label>
+				<onup>17</onup>
+				<onleft>6</onleft>
+				<onright>#defaultcontrol.onright</onright>
+			</control>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 14</description>
+				<type>checkmark</type>
+				<id>15</id>
+				<label> 1.5</label>
+				<onleft>7</onleft>
+				<onright>#defaultcontrol.onright</onright>
+			</control>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 15</description>
+				<type>checkmark</type>
+				<id>16</id>
+				<label> 2</label>
+				<onleft>8</onleft>
+				<onright>#defaultcontrol.onright</onright>
+			</control>
+			<control Style="settingsmaincheckmark2">
+				<description>Step 16</description>
+				<type>checkmark</type>
+				<id>17</id>
+				<label> 3</label>
+				<onup>16</onup>
+				<ondown>14</ondown>
+				<onleft>9</onleft>
+				<onright>#defaultcontrol.onright</onright>
+			</control>
+		</control>
+`		
+		<control>
+			<description>Current Steps</description>
+			<type>label</type>
+			<id>1</id>
+			<posX>530</posX>
+			<posY>369</posY>
+			<label>143</label>
+			<align>right</align>
+			<font>mediastream10tc</font>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+		</control>
+		<control>
+			<description>Current config dynamic</description>
+			<type>label</type>
+			<id>21</id>
+			<posX>550</posX>
+			<posY>368</posY>
+			<width>390</width>
+			<label>15,30,60,300</label>
+			<font>mediastream11c</font>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+		</control>
+	
+		<control>
+      <type>group</type>
+      <description>Options</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>425</posY>
+      <width>766</width>
+      <height>500</height>
+			<dimColor>ffFFFFFF</dimColor>
+      <layout>StackLayout</layout>
+			<control Style="settingsmainbutton">
+        <description>Timout Heading</description>
+        <type>button</type>
+        <id>0</id>
+        <font>mediastream12tc</font>
+				<label>300139</label>
+				<textXOff>35</textXOff>
+      </control>
+			<control Style="settingsmainbutton">
+				<description>Timeout button</description>
+				<type>button</type>
+				<id>22</id>
+				<label>300140</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
+				<onup>18</onup>
+				<ondown>23</ondown>
+				<onright>#defaultcontrol.onright</onright>
+			</control>
+			<control Style="settingsmainbutton">
+        <description>Skip Type Heading</description>
+        <type>button</type>
+        <id>0</id>
+        <font>mediastream12tc</font>
+				<label>300141</label>
+				<textXOff>35</textXOff>
+      </control>
+			<control Style="settingsmaincheckbutton">
+				<description>skip type relative button</description>
+				<type>checkbutton</type>
+				<id>23</id>
+				<label>300142</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
+				<onup>22</onup>
+				<ondown>24</ondown>
+				<onright>#defaultcontrol.onright</onright>
+				<onleft>23</onleft>
+			</control>
+			<control Style="settingsmaincheckbutton">
+				<description>skip type constant button</description>
+				<type>checkbutton</type>
+				<id>24</id>
+				<label>300143</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
+				<onup>23</onup>
+				<ondown>25</ondown>
+				<onleft>24</onleft>
+				<onright>#defaultcontrol.onright</onright>
+			</control>
+			<control Style="settingsmainbutton">
+				<description>Skip value button</description>
+				<type>button</type>
+				<id>25</id>
+				<label>300144</label>
+				<textXOff>35</textXOff>
+				<width>766</width>
+				<onup>24</onup>
+				<onright>#defaultcontrol.onright</onright>
+				<onleft>25</onleft>
+				<ondown>19</ondown>
+			</control>
+		</control>
+		
+		<control>
+			<type>label</type>
+			<description>timeout value label</description>
+			<id>1</id>
+			<label>#timeoutValue</label>
+			<align>right</align>
+      <font>mediastream12c</font>
+			<posX>955</posX>
+      <posY>475</posY>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+		</control>
+		<control>
+			<type>label</type>
+			<description>Skip value label</description>
+			<id>1</id>
+			<label>#skipValue</label>
+			<align>right</align>
+			<font>mediastream12c</font>
+			<posX>955</posX>
+      <posY>640</posY>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+		</control>
+			
+  </controls>
+</window>
+<!--Checksum:ec8dc32594c1cddd848007d6b4563968-->

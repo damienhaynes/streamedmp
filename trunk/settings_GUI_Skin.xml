@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>705</id>
+  <defaultcontrol>10</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:#(L(5))->#(L(101021))->#(L(300120))</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#defaultcontrol:10</define>
+  <define>#defaultcontrol.onright:9993</define>
+  <controls>
+    <import>common.settings.xml</import>
+    <import>common.time.xml</import>
+		<control>
+      <description>Skin Preview</description>
+      <type>image</type>
+      <id>20</id>
+      <posY>80</posY>
+      <posX>224</posX>
+      <width>600</width>
+      <height>300</height>
+      <align>center</align>
+      <centered>yes</centered>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture />
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>401</posY>
+      <width>595</width>
+      <height>500</height>
+      <layout>StackLayout</layout>
+      <control Style="settingsmainbutton">
+        <description>Skin</description>
+        <type>button</type>
+        <id>10</id>
+        <label>166</label>
+        <onup>14</onup>
+        <textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>theme</description>
+        <type>menubutton</type>
+        <id>15</id>
+        <mode>dialoglist</mode>
+        <dialogTitle>90</dialogTitle>
+        <valueTextInButton>yes</valueTextInButton>
+        <valuePrefixText>94</valuePrefixText>
+        <textXOff>35</textXOff>
+        <onclick>#(skin.settheme(#selectedlabel15,15))</onclick>
+        <binding>#skin.currenttheme</binding>
+        <subitems>
+          <subitem>#skin.themes</subitem>
+        </subitems>
+				<onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Language</description>
+        <type>button</type>
+        <id>11</id>
+        <textXOff>35</textXOff>
+        <label>248</label>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Prefix My</description>
+        <type>checkbutton</type>
+        <id>14</id>
+        <label>300137</label>
+				<textXOff>35</textXOff>
+        <ondown>10</ondown>
+				<onleft>14</onleft>
+				<onright>#defaultcontrol.onright</onright>
+      </control>
+    </control>
+  </controls>
+</window>

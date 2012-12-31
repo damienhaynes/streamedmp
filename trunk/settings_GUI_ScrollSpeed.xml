@@ -3,7 +3,7 @@
   <id>31</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:673</define>
+  <define>#header.label:#(L(5))->#(L(101021))->#(L(131))->#(L(673))</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9993</define>
@@ -11,33 +11,51 @@
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
     <control Style="settingsmaintexturefo">
+			<description>Scroll Speed horizontal</description>
       <type>image</type>
       <posY>150</posY>
       <visible>control.hasfocus(2)</visible>
     </control>
     <control Style="settingsmaintexturenf">
+			<description>Scroll Speed horizontal</description>
       <type>image</type>
       <posY>150</posY>
       <visible>!control.hasfocus(2)</visible>
     </control>
     <control Style="settingsmaintexturefo">
+			<description>Scroll Speed vertical</description>
       <type>image</type>
       <posY>192</posY>
       <visible>control.hasfocus(4)</visible>
     </control>
     <control Style="settingsmaintexturenf">
+			<description>Scroll Speed vertical</description>
       <type>image</type>
       <posY>192</posY>
       <visible>!control.hasfocus(4)</visible>
     </control>
     <control Style="settingsmaintexturefo">
+			<description>List Loop</description>
       <type>image</type>
       <posY>234</posY>
+      <visible>control.hasfocus(5)</visible>
+    </control>
+    <control Style="settingsmaintexturenf">
+			<description>List Loop</description>
+      <type>image</type>
+      <posY>234</posY>
+      <visible>!control.hasfocus(5)</visible>
+    </control>
+		<control Style="settingsmaintexturefo">
+			<description>Maximum FPS</description>
+      <type>image</type>
+      <posY>276</posY>
       <visible>control.hasfocus(3)</visible>
     </control>
     <control Style="settingsmaintexturenf">
+			<description>Maximum FPS</description>
       <type>image</type>
-      <posY>234</posY>
+      <posY>276</posY>
       <visible>!control.hasfocus(3)</visible>
     </control>
     <control>
@@ -57,12 +75,11 @@
       <id>2</id>
       <posX>754</posX>
       <posY>164</posY>
-      <onup>17</onup>
+      <onup>3</onup>
       <ondown>4</ondown>
       <onleft>2</onleft>
       <onright>#defaultcontrol.onright</onright>
       <font>mediastream12c</font>
-      <wrapString>v</wrapString>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
@@ -83,8 +100,32 @@
       <posX>754</posX>
       <posY>206</posY>
       <onup>2</onup>
-      <ondown>3</ondown>
+      <ondown>5</ondown>
       <onleft>4</onleft>
+      <onright>#defaultcontrol.onright</onright>
+      <font>mediastream12c</font>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+		<control>
+      <description>List Loop Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>251</posX>
+      <posY>243</posY>
+      <label>300136</label>
+      <font>mediastream12c</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <description>List Loop</description>
+      <type>spincontrol</type>
+      <id>5</id>
+      <posX>754</posX>
+      <posY>248</posY>
+      <onup>4</onup>
+      <ondown>3</ondown>
+      <onleft>5</onleft>
       <onright>#defaultcontrol.onright</onright>
       <font>mediastream12c</font>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
@@ -94,7 +135,7 @@
       <type>label</type>
       <id>1</id>
       <posX>251</posX>
-      <posY>243</posY>
+      <posY>285</posY>
       <label>973</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -105,8 +146,8 @@
       <type>spincontrol</type>
       <id>3</id>
       <posX>754</posX>
-      <posY>248</posY>
-      <onup>4</onup>
+      <posY>290</posY>
+      <onup>5</onup>
       <ondown>2</ondown>
       <onleft>3</onleft>
       <onright>#defaultcontrol.onright</onright>
@@ -118,7 +159,7 @@
       <type>label</type>
       <id>1</id>
       <posX>784</posX>
-      <posY>285</posY>
+      <posY>367</posY>
       <label>(#fps)</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -126,24 +167,24 @@
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
-      <description>Example value</description>
+      <description>Example Label</description>
       <type>label</type>
       <id>0</id>
       <posX>251</posX>
       <posY>367</posY>
       <width>533</width>
-      <label>675</label>
-      <font>mediastream10tc</font>
+      <label>#(string.rtrim(L(675),':'))</label>
+      <font>mediastream12tc</font>
       <textcolor>FFFFFFFF</textcolor>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
-      <description>TagLine value</description>
+      <description>Example Horizontal</description>
       <type>fadelabel</type>
       <id>25</id>
       <posX>251</posX>
       <posY>404</posY>
-      <width>450</width>
+      <width>535</width>
       <label>-</label>
       <wrapString>
       </wrapString>
@@ -152,12 +193,12 @@
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
-      <description>Description1</description>
+      <description>Example Vertical</description>
       <type>textboxscrollup</type>
       <id>26</id>
       <posX>251</posX>
       <posY>451</posY>
-      <width>450</width>
+      <width>535</width>
       <height>180</height>
       <label>-</label>
       <font>mediastream11</font>

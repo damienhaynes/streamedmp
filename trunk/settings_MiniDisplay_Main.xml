@@ -3,6 +3,7 @@
   <id>9000</id>
   <defaultcontrol>6</defaultcontrol>
   <allowoverlay>no</allowoverlay>
+	<rememberLastFocusedControl>yes</rememberLastFocusedControl>
   <define>#header.label:109000</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:6</define>
@@ -38,7 +39,7 @@
       <posY>150</posY>
       <width>595</width>
       <height>500</height>
-      <layout>StackLayout</layout>
+      <layout>StackLayout(0, Vertical, true)</layout>
       <control Style="settingsmainbutton">
         <type>button</type>
         <description>Keypad Options</description>

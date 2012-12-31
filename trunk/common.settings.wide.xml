@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-  <id>4</id>
-  <defaultcontrol>12</defaultcontrol>
-  <allowoverlay>no</allowoverlay>
-	<rememberLastFocusedControl>yes</rememberLastFocusedControl>
-  <define>#header.label:5</define>
-  <define>#header.hover:hover_settings.png</define>
-  <define>#selecteditem:#highlightedbutton</define>
   <controls>
     <control>
       <type>image</type>
@@ -27,12 +20,22 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>178</posX>
+      <posX>981</posX>
       <posY>0</posY>
-      <width>256</width>
+      <width>222</width>
       <height>720</height>
       <texture>homebladesub.png</texture>
-      <animation effect="slide" time="200" start="-434,0">windowopen</animation>
+      <animation effect="slide" time="300" start="-1054,0">windowopen</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>209</posX>
+      <posY>0</posY>
+      <width>781</width>
+      <height>720</height>
+      <texture>settingsbg.png</texture>
+      <animation effect="slide" time="200" start="-840,0">windowopen</animation>
     </control>
     <control>
       <type>image</type>
@@ -47,30 +50,30 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>260</posX>
+      <posX>1028</posX>
       <posY>80</posY>
       <width>161</width>
       <height>31</height>
       <texture>settingslogo.png</texture>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="300">windowopen</animation>
     </control>
     <control>
       <description>Update Indicator</description>
       <type>image</type>
       <id>0</id>
-      <posX>378</posX>
+      <posX>1150</posX>
       <posY>126</posY>
       <width>32</width>
       <height>32</height>
       <texture>isupdate.png</texture>
-      <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true	)</visible>
+      <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true)</visible>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <type>group</type>
       <description>group element</description>
-      <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
+      <animation effect="fade" time="200" delay="300">windowopen</animation>
+      <posX>984</posX>
       <posY>121</posY>
       <width>211</width>
       <height>379</height>
@@ -78,100 +81,112 @@
       <control Style="settingsbutton">
         <description>StreamedMP Settings</description>
         <type>button</type>
-        <id>12</id>
-        <onup>20</onup>
-        <label>#StreamedMP.SkinMenu</label>
+        <id>9999</id>
+        <label>Skin</label>
         <hyperlink>196200</hyperlink>
-      </control>
-			<control Style="settingsbutton">
-        <description>General setttings</description>
-        <type>button</type>
-        <id>3</id>
-        <label>128</label>
-        <hyperlink>1016</hyperlink>
+        <onup>10000</onup>
+        <onleft>#defaultcontrol</onleft>
       </control>
       <control Style="settingsbutton">
-        <description>GUI settings</description>
+        <description>General</description>
         <type>button</type>
-        <id>4</id>
+        <id>9992</id>
+        <label>128</label>
+        <hyperlink>1016</hyperlink>
+        <onleft>#defaultcontrol</onleft>
+      </control>
+      <control Style="settingsbutton">
+        <description>GUI</description>
+        <type>button</type>
+        <id>9993</id>
         <label>101021</label>
         <hyperlink>1021</hyperlink>
+        <onleft>#defaultcontrol</onleft>
       </control>
-			<control Style="settingsbutton">
-        <description>TV</description>
+      <control Style="settingsbutton">
+        <description>My TV</description>
         <type>button</type>
-        <id>10</id>
+        <id>9994</id>
         <label>605</label>
         <hyperlink>700</hyperlink>
+        <onleft>#defaultcontrol</onleft>
       </control>
-			<control Style="settingsbutton">
+      <control Style="settingsbutton">
         <description>My Videos</description>
         <type>button</type>
-        <id>8</id>
+        <id>9995</id>
         <label>3</label>
         <hyperlink>703</hyperlink>
+        <onleft>#defaultcontrol</onleft>
       </control>
-			<control Style="settingsbutton">
+      <control Style="settingsbutton">
         <description>My Music</description>
         <type>button</type>
-        <id>6</id>
+        <id>9996</id>
         <label>2</label>
         <hyperlink>14</hyperlink>
+        <onleft>#defaultcontrol</onleft>
       </control>
       <control Style="settingsbutton">
         <description>My Pictures</description>
         <type>button</type>
-        <id>7</id>
+        <id>9997</id>
         <label>1</label>
         <hyperlink>12</hyperlink>
+        <onleft>#defaultcontrol</onleft>
       </control>
       <control Style="settingsbutton">
-        <description>My DVD</description>
+        <description>DVD</description>
         <type>button</type>
-        <id>9</id>
+        <id>9998</id>
         <label>1027</label>
         <hyperlink>704</hyperlink>
-      </control>
-      <control Style="settingsbutton">
-        <description>BluRay</description>
-        <type>button</type>
-        <id>17</id>
-        <label>300217</label>
-        <hyperlink>1024</hyperlink>
+        <onleft>#defaultcontrol</onleft>
       </control>
 			<control Style="settingsbutton">
+        <description>Blu-ray</description>
+        <type>button</type>
+        <id>9991</id>
+        <label>300217</label>
+        <hyperlink>1024</hyperlink>
+        <onleft>#defaultcontrol</onleft>
+        <ondown>10001</ondown>
+      </control>
+      <control Style="settingsbutton">
         <description>MiniDisplay</description>
         <type>button</type>
-        <id>11</id>
+        <id>10001</id>
         <label>9100</label>
+        <onleft>#defaultcontrol</onleft>
         <hyperlink>9000</hyperlink>
+        <onup>9991</onup>
+        <ondown>10000</ondown>
+        <visible>plugin.isenabled(MiniDisplay)</visible>
       </control>
       <control Style="settingsbutton">
         <description>Intelligent Frame Correction</description>
         <type>button</type>
-        <id>13</id>
+        <id>10000</id>
         <label> I.F.C. </label>
+        <onleft>#defaultcontrol</onleft>
         <hyperlink>240782</hyperlink>
+        <onup>10001</onup>
+        <ondown>9999</ondown>
         <visible>plugin.isenabled(Intelligent Frame Correction)</visible>
       </control>
-      <control Style="settingsbutton">
-        <description>Trakt Settings</description>
-        <type>button</type>
-        <id>14</id>
-        <label>Trakt</label>
-        <hyperlink>87271</hyperlink>
-        <visible>plugin.isenabled(Trakt)</visible>
-      </control>
-			<control Style="settingstogglebutton">
-        <description>Settings locked</description>
-        <type>togglebutton</type>
-        <id>20</id>
-        <label>Locked</label>
-				<onup>14</onup>
-        <ondown>12</ondown>
-      </control>
     </control>
-    <import>common.time.xml</import>
+    <control>
+      <description>Settings Title Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>250</posX>
+      <posY>25</posY>
+			<width>640</width>
+      <label>#header.label</label>
+      <font>mediastream16c</font>
+      <textcolor>FFFFFFFF</textcolor>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
   </controls>
 </window>
-<!--Checksum:c6928ebe8d087fe4227c39fc946c34d5-->
+<!--Checksum:1860963d6170b2a4a4c90f95234e0d52-->

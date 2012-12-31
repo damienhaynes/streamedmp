@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>1024</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:#(L(5))->#(L(101024))</define>
+  <define>#header.hover:hover_settings.png</define>
+  <define>#defaultcontrol:2</define>
+  <define>#defaultcontrol.onright:9991</define>
+  <controls>
+    <import>common.settings.xml</import>
+    <import>common.time.xml</import>
+		<control>
+      <description>Bluray regions</description>
+      <type>image</type>
+      <id>20</id>
+      <posY>80</posY>
+      <posX>224</posX>
+      <width>600</width>
+      <height>300</height>
+      <align>center</align>
+      <centered>yes</centered>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>Blu-Ray_regions.png</texture>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>216</posX>
+      <posY>401</posY>
+      <width>595</width>
+      <height>500</height>
+			<dimColor>ffFFFFFF</dimColor>
+      <layout>StackLayout</layout>
+      <control Style="settingsmainbutton">
+        <description>Region</description>
+        <type>button</type>
+        <id>2</id>
+        <label>300218</label>
+        <onup>7</onup>
+				<textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>AudioType</description>
+        <type>button</type>
+        <id>3</id>
+        <label>300219</label>
+				<textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Video</description>
+        <type>button</type>
+        <id>4</id>
+        <label>2134</label>
+				<textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Audio</description>
+        <type>button</type>
+        <id>5</id>
+        <label>2135</label>
+				<textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Subtitles On/Off</description>
+        <type>checkbutton</type>
+        <id>6</id>
+        <label>1196</label>
+				<textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+				<ondown>7</ondown>
+				<onleft>6</onleft>
+      </control>
+    </control>
+		
+		<control>
+      <description>Parental age label</description>
+      <type>label</type>
+      <id>102</id>
+      <posX>251</posX>
+      <posY>618</posY>
+      <width>220</width>
+      <label>300220</label>
+			<font>mediastream12c</font>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>		
+		<control Style="settingsmaintexturefo">
+      <id>0</id>
+      <type>image</type>
+      <posY>611</posY>
+      <visible>control.hasfocus(7)</visible>
+    </control>
+    <control Style="settingsmaintexturenf">
+      <id>0</id>
+      <type>image</type>
+      <posY>611</posY>
+      <visible>!control.hasfocus(7)</visible>
+    </control>
+		<control>
+      <description>Parental age select</description>
+      <type>spincontrol</type>
+      <id>7</id>
+      <posX>770</posX>
+      <posY>622</posY>
+      <onleft>7</onleft>
+      <onright>#defaultcontrol.onright</onright>
+      <onup>6</onup>
+      <ondown>2</ondown>
+			<align>right</align>
+			<font>mediastream12c</font>
+			<onright>#defaultcontrol.onright</onright>
+			<buddycontrolid>102</buddycontrolid>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+		
+  </controls>
+</window>
+<!--Checksum:ecdcb8c43bc0bdaa159f7d8a5f6bcca1-->

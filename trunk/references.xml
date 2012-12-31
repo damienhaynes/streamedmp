@@ -43,9 +43,41 @@
     <textureFocus>settingsbuttonfo.png</textureFocus>
     <colordiffuse>ffFFFFFF</colordiffuse>
   </style>
+	<style Name="settingstogglebutton">
+    <font>mediastream10tc</font>
+    <textXOff>23</textXOff>
+    <textYOff>12</textYOff>
+    <width>211</width>
+    <height>43</height>
+		<textureFocus>settingstogglebutton_fo_on.png</textureFocus>
+		<textureNoFocus>settingstogglebutton_nf_on.png</textureNoFocus>
+		<AltTextureFocus>settingstogglebutton_fo_off.png</AltTextureFocus>
+		<AltTextureNoFocus>settingstogglebutton_nf_off.png</AltTextureNoFocus>
+  </style>
+  <style Name="settingscheckbutton">
+    <width>211</width>
+    <height>43</height>
+    <textXOff>23</textXOff>
+    <textYOff>12</textYOff>
+    <font>mediastream10tc</font>
+    <markWidth>27</markWidth>
+    <markHeight>27</markHeight>
+    <markXOff>15</markXOff>
+    <markalign>right</markalign>
+    <markvalign>middle</markvalign>
+    <textureFocus>settingsbuttonfo.png</textureFocus>
+    <textureNoFocus>settingsbuttonnf.png</textureNoFocus>
+    <textureCheckmark>ledon.png</textureCheckmark>
+    <textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
+    <colordiffuse>ffFFFFFF</colordiffuse>
+    <disabledcolor>ffFFFFFF</disabledcolor>
+    <textcolorNoFocus>ff909090</textcolorNoFocus>
+    <textalign>left</textalign>
+    <textvalign>middle</textvalign>
+  </style>
   <style Name="settingsmainbutton">
     <posX>251</posX>
-    <width>595</width>
+    <width>616</width>
     <height>42</height>
     <textXOff>0</textXOff>
     <textYOff>8</textYOff>
@@ -102,7 +134,7 @@
   </style>
   <style Name="settingsmaincheckbutton">
     <posX>251</posX>
-    <width>590</width>
+    <width>616</width>
     <height>42</height>
     <textXOff>0</textXOff>
     <textYOff>8</textYOff>
@@ -114,12 +146,12 @@
     <markXOff>40</markXOff>
     <markalign>right</markalign>
     <markvalign>middle</markvalign>
-    <textureFocus>hiddenmenu_button_fo.png</textureFocus>
-    <textureNoFocus>-</textureNoFocus>
+    <textureFocus>listbg_fo.png</textureFocus>
+    <textureNoFocus>listbg_nf.png</textureNoFocus>
     <textureCheckmark>ledon.png</textureCheckmark>
     <textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
     <colordiffuse>ffFFFFFF</colordiffuse>
-    <disabledcolor>ffFFFFFF</disabledcolor>
+    <disabledcolor>ff909090</disabledcolor>
     <textcolorNoFocus>ffFFFFFF</textcolorNoFocus>
     <textalign>left</textalign>
     <textvalign>middle</textvalign>
@@ -139,6 +171,7 @@
   <style Name="settingsmaincheckmark2">
     <MarkWidth>21</MarkWidth>
     <MarkHeight>21</MarkHeight>
+    <height>25</height>
     <align>right</align>
     <font>mediastream11tc</font>
     <textcolor>ffFFFFFF</textcolor>
@@ -155,12 +188,30 @@
     <texture>listbg_fo.png</texture>
     <animation effect="fade" time="200" delay="200">windowopen</animation>
   </style>
+  <style Name="settingsmaintexturefo_wide">
+    <id>0</id>
+    <posX>216</posX>
+    <width>766</width>
+    <height>42</height>
+    <keepaspectratio>no</keepaspectratio>
+    <texture>listbg_fo.png</texture>
+    <animation effect="fade" time="200" delay="200">windowopen</animation>
+  </style>
   <style Name="settingsmaintexturenf">
     <id>0</id>
     <posX>216</posX>
     <width>595</width>
     <height>42</height>
     <keepaspectratio>yes</keepaspectratio>
+    <texture>listbg_nf.png</texture>
+    <animation effect="fade" time="200" delay="200">windowopen</animation>
+  </style>
+  <style Name="settingsmaintexturenf_wide">
+    <id>0</id>
+    <posX>216</posX>
+    <width>766</width>
+    <height>42</height>
+    <keepaspectratio>no</keepaspectratio>
     <texture>listbg_nf.png</texture>
     <animation effect="fade" time="200" delay="200">windowopen</animation>
   </style>
@@ -1046,4 +1097,4 @@
     <shadow>no</shadow>
   </control>
 </controls>
-<!--Checksum:7d1ab8fb19771e8f18afb7bbb98725ce-->
+<!--Checksum:47645fd8e1dc6b377420f282b28bf66b-->
