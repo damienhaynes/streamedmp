@@ -24,49 +24,9 @@
       <width>350</width>
       <font>mediastream12c</font>
       <align>right</align>
-      <visible>!string.equals(#currentmodule,)</visible>
-      <label>#currentmodule</label>
+      <label>#(iif(eq('#currentmodule',''),'#header.label','#currentmodule'))</label>
       <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
-    <control>
-      <type>fadelabel</type>
-      <description>Top Title</description>
-      <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
-      <font>mediastream12c</font>
-      <align>right</align>
-      <visible>string.equals(#currentmodule,)</visible>
-      <label>#header.label</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-    </control>
-    <!-- ::::::::: IF YOU NEED TO EXTEND THIS TITLE BAR USE THIS BELOW :::::::::: -->
-    <!--
-    <control>
-      <description>Top Title Extension Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>381</posX>
-      <posY>11</posY>
-      <width>256</width>
-      <height>36</height>
-      <texture>tvtitlebgshort.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-    </control>
-    
-    <control>
-      <type>label</type>
-      <description>Top Title Extension</description>
-      <id>0</id>
-      <posX>617</posX>
-      <posY>13</posY>
-      <font>mediastream12c</font>
-      <align>right</align>
-      <label>LABEL</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-    </control>
-    -->
   </controls>
 </window>
 <!--Checksum:8f1f4d1a24b5023b7a391f4c1d3d9253-->
