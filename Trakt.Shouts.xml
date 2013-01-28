@@ -209,8 +209,8 @@
           <posY>240</posY>
           <height>480</height>
           <width>620</width>
-          <onleft>2</onleft>
-          <onright>2</onright>
+          <onleft>3</onleft>
+          <onright>3</onright>
           <scrollOffset>3</scrollOffset>
           <itemWidth>89</itemWidth>
           <itemHeight>50</itemHeight>
@@ -256,7 +256,7 @@
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
-      <defaultcontrol>2</defaultcontrol>
+      <defaultcontrol>3</defaultcontrol>
       <onexit>50</onexit>
       <dimColor>00ffffff</dimColor>
       <buttonX>1231</buttonX>
@@ -300,18 +300,6 @@
         <animation effect="slide" time="0" end="300,0">hidden</animation>
       </control>
       <control>
-        <id>0</id>
-        <description>JUMP TO</description>
-        <label>1065</label>
-        <type>label</type>
-        <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>280</posY>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-      </control>
-      <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
@@ -322,6 +310,26 @@
         <width>220</width>
         <height>720</height>
         <layout>StackLayout</layout>
+				<control>
+          <description>Next Episode</description>
+          <id>3</id>
+          <type>button</type>
+          <label>209</label>
+          <onleft>50</onleft>
+					<onup>17</onup>
+					<onright>4</onright>
+					<ondown>4</ondown>
+        </control>
+				<control>
+          <description>Previous Episode</description>
+          <id>4</id>
+          <type>button</type>
+          <label>210</label>
+          <onleft>50</onleft>
+					<onup>3</onup>
+					<onright>2</onright>
+					<ondown>2</ondown>
+        </control>
         <control>
           <description>Toggle Hide Spoilers</description>
           <type>checkbutton</type>
@@ -350,40 +358,8 @@
           <textvalign>middle</textvalign>
           <onleft>50</onleft>
           <onright>50</onright>
-          <onup>50</onup>
-        </control>
-        <control>
-          <description>Empty button</description>
-          <type>button</type>
-          <id>0</id>
-          <label>-</label>
-          <visible>false</visible>
-        </control>
-        <control>
-          <description>MovingPictures</description>
-          <id>66610</id>
-          <type>button</type>
-          <label>Moving Pictures</label>
-          <hyperlink>96742</hyperlink>
-          <onleft>50</onleft>
-        </control>
-        <control>
-          <description>My Videos</description>
-          <type>button</type>
-          <id>66611</id>
-          <label>100006</label>
-          <onleft>50</onleft>
-          <hyperlink>6</hyperlink>
-          <ondown>66612</ondown>
-        </control>
-        <control>
-          <description>MP-TVSeries</description>
-          <type>button</type>
-          <id>66612</id>
-          <label>MP-TVSeries</label>
-          <hyperlink>9811</hyperlink>
-          <ondown>2</ondown>
-          <onleft>50</onleft>
+          <onup>4</onup>
+					<ondown>3</ondown>
         </control>
       </control>
     </control>
