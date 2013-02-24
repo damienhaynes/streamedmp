@@ -2,6 +2,22 @@
 <window>
   <controls>
     <!-- List View -->
+		<control>
+      <description>Category Image</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>100</posX>
+      <posY>300</posY>
+      <width>300</width>
+      <height>100</height>
+      <texture flipY="true" diffuse="diffusemirrorwide.png">#OnlineVideos.HeaderImage</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+      <visible>facadeview.list+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)+!string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+[string.equals(#OnlineVideos.state,categories)]</visible>
+    </control>
+		
     <control>
       <description>Thumb</description>
       <type>image</type>
@@ -20,6 +36,7 @@
       <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
       <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
     </control>
+		
     <control>
       <type>label</type>
       <description>Current video length</description>
