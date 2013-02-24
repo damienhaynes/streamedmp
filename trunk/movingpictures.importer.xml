@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <id>96743</id>
+  <defaultcontrol>310</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <disabletopbar>no</disabletopbar>
+  <controls>
+	
+    <control>
+      <description>Default Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>hover_moving pictures.png</texture>
+      <shouldCache>true</shouldCache>
+    </control>
+		<control>
+      <description>Movie Backdrop (Fan Art)</description>
+      <type>image</type>
+      <id>400</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#MovingPictures.Importer.Backdrop</texture>
+      <animation effect="fade" time="300">visible</animation>
+      <animation effect="fade" time="300" delay="300">hidden</animation>
+    </control>
+    <control>
+      <description>Alternate Movie Backdrop</description>
+      <type>image</type>
+      <id>401</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>#MovingPictures.Importer.Backdrop2</texture>
+      <animation effect="fade" time="300">visible</animation>
+      <animation effect="fade" time="300" delay="300">hidden</animation>
+    </control>		
+		<control>
+      <description>Backdrop Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>-2</posX>
+      <posY>-2</posY>
+      <width>1284</width>
+      <height>724</height>
+      <texture>mainoverlay.png</texture>
+    </control>
+		<control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>675</posY>
+      <width>1280</width>
+      <height>47</height>
+      <texture>imagestreamtitle.png</texture>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		
+		<control>
+      <description>Top Title Extension Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>381</posX>
+      <posY>11</posY>
+      <width>486</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="fade" time="150" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
+    </control>
+    <control>
+      <description>Current Filter</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>839</posX>
+      <posY>13</posY>
+      <width>320</width>
+      <align>right</align>
+      <label>#MovingPictures.Importer.ListMode.Label</label>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <wrapString> |  </wrapString>
+      <animation effect="fade" time="150" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-160,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
+    </control>
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
+      <animation effect="fade" time="150" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Plugin Name</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#MovingPictures.Translation.Importer.Label</label>
+      <wrapString> |  </wrapString>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
+      <animation effect="fade" time="150" delay="0">WindowClose</animation>
+    </control>
+		
+		<control>
+      <description>Selected Item</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>40</posX>
+      <posY>688</posY>
+      <width>900</width>
+      <label>#(iif(eq(#MovingPictures.Importer.Status,' '),#selecteditem,#MovingPictures.Importer.Status))</label>
+      <font>mediastream12tc</font>
+      <textcolor>White</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		
+		<control>
+      <type>group</type>
+      <description>group element</description>
+      <posX>636</posX>
+      <posY>225</posY>
+      <layout>StackLayout(0, Horizontal, true)</layout>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+	  	<control>
+				<type>image</type>
+				<id>0</id>
+				<width>13</width>
+				<height>13</height>
+				<visible>string.equals(#MovingPictures.Importer.ListMode.Flag,ALL)</visible>
+				<texture>circle-full.png</texture>
+			</control>
+			<control>
+				<type>image</type>
+				<id>0</id>
+				<width>13</width>
+				<height>13</height>
+				<visible>!string.equals(#MovingPictures.Importer.ListMode.Flag,ALL)</visible>
+				<texture>circle-empty.png</texture>
+			</control>
+				<control>
+				<type>image</type>
+				<id>0</id>
+				<width>13</width>
+				<height>13</height>
+				<visible>string.equals(#MovingPictures.Importer.ListMode.Flag,PENDING)</visible>
+				<texture>circle-full.png</texture>
+			</control>
+			<control>
+				<type>image</type>
+				<id>0</id>
+				<width>13</width>
+				<height>13</height>
+				<visible>!string.equals(#MovingPictures.Importer.ListMode.Flag,PENDING)</visible>
+				<texture>circle-empty.png</texture>			
+			</control>
+			<control>
+				<type>image</type>
+				<id>0</id>
+				<width>13</width>
+				<height>13</height>
+				<keepaspectratio>true</keepaspectratio>
+				<visible>string.equals(#MovingPictures.Importer.ListMode.Flag,COMPLETED)</visible>
+				<texture>circle-full.png</texture>
+			</control>
+			<control>
+				<type>image</type>
+				<id>0</id>
+				<width>13</width>
+				<height>13</height>
+				<visible>!string.equals(#MovingPictures.Importer.ListMode.Flag,COMPLETED)</visible>
+				<texture>circle-empty.png</texture>
+			</control>
+    </control>
+		
+		<control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1013</posX>
+      <posY>684</posY>
+      <width>260</width>
+      <height>30</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1023</posX>
+      <posY>688</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		
+    <control>
+      <description>all files list</description>
+      <type>listcontrol</type>
+			<dimColor>30ffffff</dimColor>
+      <id>310</id>
+			<onright>311</onright>
+			<onleft>310</onleft>
+			<PinIconWidth>35</PinIconWidth>
+			<PinIconHeight>35</PinIconHeight>
+			<PinIconXOff>0</PinIconXOff>
+			<PinIconYOff>3</PinIconYOff>
+      <width>1180</width>
+			<height>470</height>
+			<posX>50</posX>
+			<posY>250</posY>
+			<textXOff>40</textXOff>
+			<textXOff2>1180</textXOff2>
+			<textXOff3>-2000</textXOff3>
+			<!--<textpadding2>400</textpadding2>-->
+			<!-- List Control Popup -->
+			<explicitlyEnableScrollLabel>yes</explicitlyEnableScrollLabel>
+			<!-- Spin Controls -->
+			<spinWidth>50</spinWidth>
+			<spinHeight>37</spinHeight>
+			<spinPosX>1175</spinPosX>
+			<spinPosY>681</spinPosY>
+			<spinAlign>Right</spinAlign>
+			<spinColor>ff006698</spinColor>
+			<textureUp>arrow_round_up_nofocus.png</textureUp>
+			<textureDown>arrow_round_down_nofocus.png</textureDown>
+			<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+			<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+			<visible allowhiddenfocus="true">string.equals(#MovingPictures.Importer.ListMode.Flag,ALL)</visible>
+			<animation effect="fade" time="100">Hidden</animation>
+			<animation effect="fade" delay="100" time="100">Visible</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control>
+      <description>pending List</description>
+      <type>listcontrol</type>
+			<dimColor>30ffffff</dimColor>
+      <id>311</id>
+			<onright>312</onright>
+			<onleft>310</onleft>
+      <PinIconWidth>35</PinIconWidth>
+			<PinIconHeight>35</PinIconHeight>
+			<PinIconXOff>0</PinIconXOff>
+			<PinIconYOff>3</PinIconYOff>
+      <width>1180</width>
+			<height>470</height>
+			<posX>50</posX>
+			<posY>250</posY>
+			<textXOff>40</textXOff>
+			<textXOff2>1180</textXOff2>
+			<textXOff3>-2000</textXOff3>
+			<!--<textpadding2>590</textpadding2>-->
+			<!-- List Control Popup -->
+			<explicitlyEnableScrollLabel>yes</explicitlyEnableScrollLabel>
+			<!-- Spin Controls -->
+			<spinWidth>50</spinWidth>
+			<spinHeight>37</spinHeight>
+			<spinPosX>1175</spinPosX>
+			<spinPosY>681</spinPosY>
+			<spinAlign>Right</spinAlign>
+			<spinColor>ff006698</spinColor>
+			<textureUp>arrow_round_up_nofocus.png</textureUp>
+			<textureDown>arrow_round_down_nofocus.png</textureDown>
+			<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+			<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+			<visible allowhiddenfocus="true">string.equals(#MovingPictures.Importer.ListMode.Flag,PENDING)</visible>
+			<animation effect="fade" time="100">Hidden</animation>
+			<animation effect="fade" delay="100" time="100">Visible</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control>
+      <description>complete List</description>
+      <type>listcontrol</type>
+			<dimColor>30ffffff</dimColor>
+      <id>312</id>
+			<onleft>311</onleft>
+			<onright>312</onright>
+      <PinIconWidth>35</PinIconWidth>
+			<PinIconHeight>35</PinIconHeight>
+			<PinIconXOff>0</PinIconXOff>
+			<PinIconYOff>3</PinIconYOff>
+      <width>1180</width>
+			<height>470</height>
+			<posX>50</posX>
+			<posY>250</posY>
+			<textXOff>40</textXOff>
+			<textXOff2>1180</textXOff2>
+			<textXOff3>-2000</textXOff3>
+			<!--<textpadding2>590</textpadding2>-->
+			<!-- List Control Popup -->
+			<explicitlyEnableScrollLabel>yes</explicitlyEnableScrollLabel>
+			<!-- Spin Controls -->
+			<spinWidth>50</spinWidth>
+			<spinHeight>37</spinHeight>
+			<spinPosX>1175</spinPosX>
+			<spinPosY>681</spinPosY>
+			<spinAlign>Right</spinAlign>
+			<spinColor>ff006698</spinColor>
+			<textureUp>arrow_round_up_nofocus.png</textureUp>
+			<textureDown>arrow_round_down_nofocus.png</textureDown>
+			<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+			<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+			<visible allowhiddenfocus="true">string.equals(#MovingPictures.Importer.ListMode.Flag,COMPLETED)</visible>
+			<animation effect="fade" time="100">Hidden</animation>
+			<animation effect="fade" delay="100" time="100">Visible</animation>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		
+		<control>
+      <description>File Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1113</posX>
+      <posY>10</posY>
+      <width>159</width>
+      <height>28</height>
+      <texture>mediacountbackground.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>File Count Label</description>
+      <type>label</type>
+      <label>507</label>
+      <id>0</id>
+      <posX>1123</posX>
+      <posY>14</posY>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <id>0</id>
+      <posX>1246</posX>
+      <posY>12</posY>
+      <width>350</width>
+      <font>mediastream11c</font>
+      <textcolor>ff006698</textcolor>
+      <align>right</align>
+      <label>#(switch(eq(#MovingPictures.Importer.ListMode.Flag,'ALL'),#MovingPictures.Importer.All.Count,eq(#MovingPictures.Importer.ListMode.Flag,'PENDING'),#MovingPictures.Importer.NeedInput.Count,eq(#MovingPictures.Importer.ListMode.Flag,'COMPLETED'),#MovingPictures.Importer.Done.Count))</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		
+    <import>common.time.xml</import>
+    <import>common.overlays2.xml</import>
+	
+		<control>
+      <description>Left Navigation Indicator</description>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>50</posY>
+      <width>48</width>
+      <height>144</height>
+      <texture>Action_menu_left.png</texture>
+      <visible>Control.HasFocus(311)|Control.HasFocus(312)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control>
+      <description>Right Navigation Indicator</description>
+      <type>image</type>
+      <posX>1232</posX>
+      <posY>50</posY>
+      <width>48</width>
+      <height>144</height>
+      <texture>Action_menu.png</texture>
+      <visible>Control.HasFocus(310)|Control.HasFocus(311)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    
+		<control>
+      <description>Playback Indicator</description>
+      <type>image</type>
+      <id>18</id>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1280</width>
+      <height>720</height>
+      <texture>black.png</texture>
+      <colordiffuse>50fefaff</colordiffuse>
+    </control>
+		
+  </controls>
+</window>
