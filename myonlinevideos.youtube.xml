@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
+    <!-- List View -->
+    <control>
+      <description>Thumbnail</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>28</posX>
+      <posY>254</posY>
+      <height>180</height>
+      <width>250</width>
+      <keepaspectratio>no</keepaspectratio>
+      <zoom>no</zoom>
+      <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+			<visible>facadeview.list+[string.equals(#OnlineVideos.ExtendedVideoInfo,True)+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]</visible>
+    </control>
+		
+		<control>
+      <description>Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>30</posX>
+      <posY>500</posY>
+      <width>610</width>
+      <height>150</height>
+      <seperator>----------------------------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#OnlineVideos.desc</label>
+      <scrollStartDelaySec>12</scrollStartDelaySec>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>facadeview.list+[string.equals(#OnlineVideos.ExtendedVideoInfo,True)+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]</visible>
+    </control>
+		
+		<control>
+      <type>textbox</type>
+      <label>#selecteditem</label>
+      <id>0</id>
+      <posX>300</posX>
+      <posY>250</posY>
+      <width>300</width>
+      <height>100</height>
+      <font>mediastream14tc</font>
+      <textcolor>ffffffff</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>facadeview.list+[string.equals(#OnlineVideos.ExtendedVideoInfo,True)+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+!string.equals(#selecteditem2,)</visible>
+    </control>
+		
+		<control Style="smallTitleB">
+      <id>0</id>
+      <label>#(string.trim(L(173),':'))</label>
+      <type>label</type>
+      <posX>300</posX>
+      <posY>369</posY>
+      <width>140</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>facadeview.list+[string.equals(#OnlineVideos.ExtendedVideoInfo,True)+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+!string.equals(#selecteditem2,)</visible>
+    </control>
+    <control Style="smallTitle">
+      <id>0</id>
+      <label>#OnlineVideos.Details.Rating (#OnlineVideos.Details.NumRaters #(string.trim(L(205),':')))</label>
+      <type>label</type>
+      <posX>449</posX>
+      <posY>370</posY>
+      <width>140</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>facadeview.list+[string.equals(#OnlineVideos.ExtendedVideoInfo,True)+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+!string.equals(#selecteditem2,)</visible>
+    </control>
+		
+		<control Style="smallTitleB">
+      <label>Views</label>
+      <type>label</type>
+      <posX>300</posX>
+      <posY>392</posY>
+      <width>140</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>facadeview.list+[string.equals(#OnlineVideos.ExtendedVideoInfo,True)+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+!string.equals(#OnlineVideos.Details.ViewCount,)</visible>
+    </control>
+    <control Style="smallTitle">
+      <id>0</id>
+      <label>#OnlineVideos.Details.ViewCount</label>
+      <type>label</type>
+      <posX>449</posX>
+      <posY>393</posY>
+      <width>140</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>facadeview.list+[string.equals(#OnlineVideos.ExtendedVideoInfo,True)+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+!string.equals(#OnlineVideos.Details.ViewCount,)</visible>
+    </control>
+		
+		<control Style="smallTitleB">
+      <id>0</id>
+      <label>#OnlineVideos.Translation.Date.Label</label>
+      <type>label</type>
+      <posX>300</posX>
+      <posY>415</posY>
+      <width>140</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>facadeview.list+[string.equals(#OnlineVideos.ExtendedVideoInfo,True)+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+!string.equals(#OnlineVideos.aired,)</visible>
+    </control>
+    <control Style="smallTitle">
+      <id>0</id>
+      <label>#OnlineVideos.aired</label>
+      <type>label</type>
+      <posX>449</posX>
+      <posY>416</posY>
+      <width>180</width>
+      <width>140</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>facadeview.list+[string.equals(#OnlineVideos.ExtendedVideoInfo,True)+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+!string.equals(#OnlineVideos.aired,)</visible>
+    </control>
+		
+  </controls>
+</window>
