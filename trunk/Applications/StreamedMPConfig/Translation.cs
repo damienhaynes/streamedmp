@@ -11,7 +11,7 @@ using MediaPortal.GUI.Library;
 
 namespace StreamedMPConfig
 {
-  class Translation
+  public static class Translation
   {
     #region Private variables
 
@@ -106,10 +106,10 @@ namespace StreamedMPConfig
           return 0; // otherwise we are in an endless loop!
 
         if (e.GetType() == typeof(FileNotFoundException))
-          smcLog.WriteLog(string.Format("Cannot find translation file {0}.  Failing back to English", langPath),LogLevel.Warning);
+          smcLog.WriteLog(string.Format("Cannot find translation file {0}. Falling back to English", langPath),LogLevel.Warning);
         else
         {
-          smcLog.WriteLog(string.Format("Error in translation xml file: {0}. Failing back to English", lang),LogLevel.Error);
+          smcLog.WriteLog(string.Format("Error in translation xml file: {0}. Falling back to English", lang),LogLevel.Error);
           smcLog.WriteLog(e.ToString(),LogLevel.Error);
         }
 
@@ -120,12 +120,12 @@ namespace StreamedMPConfig
         if (stringEntry.NodeType == XmlNodeType.Element)
           try
           {
-            if (stringEntry.Attributes.GetNamedItem("Field").Value.StartsWith("#"))
+            if (stringEntry.Attributes.GetNamedItem("name").Value.StartsWith("#"))
             {
-              FixedTranslations.Add(stringEntry.Attributes.GetNamedItem("Field").Value, stringEntry.InnerText);
+                FixedTranslations.Add(stringEntry.Attributes.GetNamedItem("name").Value, stringEntry.InnerText.NormalizeTranslation());
             }
             else
-              TranslatedStrings.Add(stringEntry.Attributes.GetNamedItem("Field").Value, stringEntry.InnerText);
+                TranslatedStrings.Add(stringEntry.Attributes.GetNamedItem("name").Value, stringEntry.InnerText.NormalizeTranslation());
           }
           catch (Exception ex)
           {
@@ -145,7 +145,7 @@ namespace StreamedMPConfig
         else
         {
           // There is no hard-coded translation so create one
-          smcLog.WriteLog(string.Format("Translation not found for field: {0}.  Using hard-coded English default.", fi.Name),LogLevel.Info);
+          smcLog.WriteLog(string.Format("Translation not found for name: {0}. Using hard-coded English default.", fi.Name),LogLevel.Info);
         }
       }
       return TranslatedStrings.Count;
@@ -180,6 +180,15 @@ namespace StreamedMPConfig
       return input;
     }
 
+    /// <summary>
+    /// Temp workaround to remove unwanted chars from Transifex
+    /// </summary>
+    public static string NormalizeTranslation(this string input)
+    {
+        input = input.Replace("\\'", "'");
+        input = input.Replace("\\\"", "\"");
+        return input;
+    }
     #endregion
 
     #region Translations / Strings
