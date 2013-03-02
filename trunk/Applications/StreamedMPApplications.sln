@@ -41,6 +41,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMPMediaPortalRestart", "SM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMPCheckSum", "SMPCheckSum\SMPCheckSum.csproj", "{96319632-3BE1-4D71-A494-7186A947DFD0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transifex", "Transifex", "{61A1ADDC-7374-400C-BAA5-747ACAF7DE1E}"
+	ProjectSection(SolutionItems) = preProject
+		..\.tx\config = ..\.tx\config
+		..\Transifex\Init_User.bat = ..\Transifex\Init_User.bat
+		..\Transifex\Pull_From_Transifex.bat = ..\Transifex\Pull_From_Transifex.bat
+		..\Transifex\Push_To_Transifex.bat = ..\Transifex\Push_To_Transifex.bat
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
