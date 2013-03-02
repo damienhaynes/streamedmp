@@ -1,20 +1,16 @@
-﻿<?xml version='1.0' encoding='UTF-8'?>
-<!-- StreamedMP translation file -->
-<!-- Croatian (HR) -->
-<!-- Note: English is the fallback for any strings not found in other languages -->
-<!-- Last Updated: 28th January 2011 -->
+<?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <!-- Example user defined translation property                                       -->
-  <!-- Field name must start with a '#'. The entry below creates the skin property     -->
-  <!-- '#StreamedMP.Example.Property' that is set to 'Translated String'     -->
+  <!--Example user defined translation property-->
+  <!--Field name must start with a '#'. The entry below creates the skin property-->
+  <!--'#StreamedMP.Example.Property' that is set to 'Translated String'-->
   <string name="#StreamedMP.Example.Property">Translated String</string>
-  <!-- MediaPortal Localised IDs -> Skin Properties -->
+  <!--MediaPortal Localised IDs -> Skin Properties-->
   <string name="#StreamedMP.Track">435</string>
   <string name="#StreamedMP.Year">436</string>
   <string name="#StreamedMP.Next">790</string>
   <string name="#StreamedMP.RefreshTime">397</string>
   <string name="#StreamedMP.Minutes">3004</string>
-  <!-- Menu Options -->
+  <!--Menu Options-->
   <string name="MusicMenu">Postavke Glazbe</string>
   <string name="VideoMenu">Postavke Videa</string>
   <string name="SkinUpdate">Aktualizacija Teme</string>
@@ -23,12 +19,12 @@
   <string name="TVMenu">Postavke TV-a</string>
   <string name="MiscMenu">POstavke Ostalog</string>
   <string name="SkinSettings">Postavke Teme</string>
-	<string name="SkinMenu">Tema</string>
+  <string name="SkinMenu">Tema</string>
   <string name="SkinInfoText">Info o temi</string>
   <string name="ConfigRequiresRestartLine1">Promjene u konfiguraciji bit će</string>
   <string name="ConfigRequiresRestartLine2">primjenjene nakon ponovnog pokretanja Mediaportala.</string>
   <string name="ConfigRequiresRestartLine3">Želite li odmah ponovno pokrenuti?</string>
-  <!-- Skin Updates / Patching GUI -->
+  <!--Skin Updates / Patching GUI-->
   <string name="UpdateInstall">Nadogradi i instaliraj</string>
   <string name="NoUpdatesAvailable">Trenutno nema dostupnih nadogradnji</string>
   <string name="DownloadingPatch">Skidam nadogradnju: {0}</string>
@@ -41,14 +37,14 @@
   <string name="mupdateline2">MediaPortal i/ili Konfiguriranje</string>
   <string name="mupdateline3">i pokreni:  {0}</string>
   <string name="mupdateline4">koji možeš pronaći na svom dektopu</string>
-  <!-- Plugin Options -->
+  <!--Plugin Options-->
   <string name="MinVideoOSD">Pri pauzi koristi smanjeni Video OSD</string>
   <string name="VideoWallpaperLabel">Video Pozadine</string>
-  <!-- Music Options -->
+  <!--Music Options-->
   <string name="CDCover"> Prkaži omot CD-a samo u Glazbi - Upravo svira</string>
   <string name="ShowEQ">Prikaži garfički EQ u Glazbi - Upravo svira</string>
   <string name="NowPlayingStyles">Stilovi prikaza Sada svira</string>
-  <!-- TVSeries Configuration -->
+  <!--TVSeries Configuration-->
   <string name="FanartStyle">Stil Fanarta</string>
   <string name="WideBanners">Široki baneri</string>
   <string name="WideBannerDefault">Široki baneri: Zadano</string>
@@ -56,12 +52,12 @@
   <string name="WideBanner5x3Grid">Široki baneri: 5x3 mreža</string>
   <string name="WideBanner7x3Grid">Široki baneri: 7x3 mreža</string>
   <string name="WideBanner10x4Grid">Široki baneri: 10x4 mreža</string>
-  <!-- MovingPictures Configuration -->
+  <!--MovingPictures Configuration-->
   <string name="Thumbnails">Sličice</string>
   <string name="ThumbnailDefault">Sličice: Zadano</string>
   <string name="Thumbnail_12x4_8x3_Grid">Sličice: 12x4 Male ikone, 8x3 Velike ikone</string>
   <string name="Thumbnail_12x3_8x2_Grid">Sličice: 12x3 Male ikone, 8x2 Velike ikone + Info</string>
-  <!-- TV Configuration -->
+  <!--TV Configuration-->
   <string name="TVGuideSize">Veličina TV Vodiča</string>
   <string name="TVMiniGuideSize">Veličina TV Mini Vodiča</string>
   <string name="TVGuideEightRows">TV vodič: 8 redova</string>
@@ -73,7 +69,7 @@
   <string name="TVMiniGuideSevenRows">TV Mini vodič: 7 redova</string>
   <string name="TVMiniGuideNineRows">TV Mini vodič: 9 redova</string>
   <string name="EnableRandomTVSeriesFanartInMyTV">Omogući nasumični fanart u TV serijama</string>
-  <!-- Misc Settings -->
+  <!--Misc Settings-->
   <string name="ShowHiddenMenuImage">Prikaži sliku skrivanog menija</string>
   <string name="ShowRoundedPosters">Prikaži sliku zaobljenog postera</string>
   <string name="ShowIconsInArtwork">Prikaži gledano/negledano ikone u omotima</string>
@@ -83,7 +79,7 @@
   <string name="UnfocusedAlphaMenuLists">Nefokusirana Alpha na prikazu s popisima: {0}</string>
   <string name="UnfocusedAlphaMenuThumbs">Nefokusirana Alpha na prikazu sa sličicama: {0}</string>
   <string name="UnfocusedAlphaInvalidLine1">Unesena pogrešna vrijednost, molimo unesite vrijednost</string>
-  <string name="UnfocusedAlphaInvalidLine2">između 0 - 255.</string>  
+  <string name="UnfocusedAlphaInvalidLine2">između 0 - 255.</string>
   <string name="UnfocusedAlphaInvalidLine3">Neprozirnost = 255, Transparentnost = 0</string>
   <string name="UseLargeFonts">Koristi velike fontove</string>
   <string name="RestoreDefaults">Vrati zadano</string>
@@ -95,33 +91,33 @@
   <string name="ListRemoteColor">Udaljeno - boja: {0}</string>
   <string name="ListColorInvalidLine1">Unesen pogrešan kod boje, molimo unesite</string>
   <string name="ListColorInvalidLine2">valjani HEX kod, npr. za crvenu boju je FF0000.</string>
-  <string name="ListColorInvalidLine3">gdje je '255' crvena, '0' zelena, i '0' plava.</string>
+  <string name="ListColorInvalidLine3">gdje je \'255\' crvena, \'0\' zelena, i \'0\' plava.</string>
   <string name="CustomColor">Vlastite boje</string>
-  <!-- General Translations -->
+  <!--General Translations-->
   <string name="Rated">Ocjena</string>
   <string name="Director">Režiser</string>
   <string name="ReleaseDate">Datum izdanja</string>
   <string name="Runtime">Trajanje</string>
   <string name="Votes">Glasovi</string>
   <string name="Trailer">Foršpan</string>
-  <!-- Global Search -->
+  <!--Global Search-->
   <string name="SearchMusic">Pretraži glazbu</string>
   <string name="SearchPhrase">Pretraži izraz</string>
   <string name="SearchHistory">Pretraži povijest</string>
   <string name="SearchFields">Pretraži polja</string>
   <string name="SearchType">Pretraži vrstu</string>
   <string name="CaseSensitive">Osjetljiv unos</string>
-  <!-- Recently Added / Watched -->
+  <!--Recently Added / Watched-->
   <string name="LatestEpisodes">Zadnje epizode</string>
   <string name="LatestMovies">Zadnji filmovi</string>
   <string name="LatestTVRecordings">Zadnje TV snimke</string>
   <string name="LatestMusic">Zadnja glazba</string>
   <string name="RecentlyWatched">Nedavno gledano</string>
   <string name="RecordedOn">Snimljeno sa:</string>
-  <!-- MediaPortal Exit Buttons -->
+  <!--MediaPortal Exit Buttons-->
   <string name="MediaPortalExit">Izađi iz MediaPortala</string>
   <string name="MediaPortalRestart">Ponovno pokreni MediaPortal</string>
   <string name="MediaPortalShutDownMenu">Meni za gašenje</string>
   <string name="MediaPortalRestartMessage">Jeste li sigurni da ponovno želite pokrenuti MediaPortal?</string>
-	<string name="MediaPortalSettings">Postavke Mediaportala</string>
+  <string name="MediaPortalSettings">Postavke Mediaportala</string>
 </resources>
