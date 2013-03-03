@@ -13,8 +13,8 @@
 		<String id="13">Astronomie</String>
 		<String id="14">Kalender</String>
 
-		<String id="20">Menü</String>
-		<String id="21">Ort hinzufügen</String>
+		<String id="20">Ort hinzufügen</String>
+    <String id="21">Ort manuell hinzufügen</String>
 		<String id="22">Wetter-Anbieter Aktuell wechseln</String>
 		<String id="23">Wetter-Anbieter Vorschau wechseln</String>
 		<String id="24">Wetter-Anbieter Stündliche Vorschau wechseln</String>
@@ -23,16 +23,16 @@
 		<String id="27">Tabellenstil wechseln</String>
 		<String id="28">Iconsammlung wechseln</String>
 
-		<String id="30">Anbieter</String>
-		<String id="31">Ort</String>
-		<String id="32">Bilderansicht</String>
-		<String id="33">Wetteransicht</String>
-		<String id="34">Iconsammlung</String>
-		<String id="35">Karte im Browser</String>
-		<String id="36">Tabellenstil</String>
+		<String id="30">Menü</String>
+		<String id="31">Anbieter</String>
+		<String id="32">Ort</String>
+		<String id="33">Bilderansicht</String>
+		<String id="34">Wetteransicht</String>
+		<String id="35">Iconsammlung</String>
+		<String id="36">Karte im Browser</String>
+		<String id="37">Tabellenstil</String>
 
 		<String id="40">Karte im Browser öffnen</String>
-		<String id="41">leer</String>
 
 		<String id="45">Kein freier Eintrag mehr vorhanden.</String>
 		<String id="46">Kein oder ungültiger Schlüssel des Wetteranbieters angegeben.</String>
@@ -208,11 +208,6 @@
 		<String id="236">Abnehmender Halbmond</String>
 		<String id="237">Letztes Viertel</String>
 
-		<String id="240">Woche</String>
-		<String id="241">Tag</String>
-		<String id="242">Jahr</String>
-		<String id="243">Stunde</String>
-
 		<String id="250">Flache Ansicht</String>
 		<String id="251">Filmstrip Ansicht</String>
 		<String id="252">Coverflow Ansicht</String>
@@ -223,10 +218,17 @@
 		<String id="262">Graphische Ansicht</String>
 		<String id="263">Historienansicht</String>
 
+		<String id="270">leer</String>
+		<String id="271">unbegrenzt</String>
+		<String id="272">nicht sichtbar</String>
+
+		<String id="280">Wetter</String>
+
 		<String id="300">°C</String>
 		<String id="301">°F</String>
 		<String id="302">K</String>
 		<String id="303">°R</String>
+		<String id="304">°N</String>
 
 		<String id="310">km/h</String>
 		<String id="311">m/s</String>
@@ -236,7 +238,6 @@
 
 		<String id="320">km</String>
 		<String id="321">mi</String>
-		<String id="322">unbegrenzt</String>
 
 		<String id="330">mbar</String>
 		<String id="331">hPa</String>
@@ -256,6 +257,7 @@
 
 		<String id="350">°</String>
 		<String id="351">%</String>
+		<String id="352">'</String>
 
 		<String id="360">mm</String>
 
@@ -275,15 +277,41 @@
 		<String id="404">Zeitzonen</String>
 		<String id="405">Einheit</String>
 
+		<String id="470">Woche</String>
+		<String id="471">Tag</String>
+		<String id="472">Jahr</String>
+		<String id="473">Stunde</String>
+		<String id="474">Julianisches Datum</String>
+
+		<String id="475">Morgendämmerung</String>
+		<String id="476">Abenddämmerung</String>
+
+		<String id="480">Sonnenaufgang</String>
+		<String id="481">Sonnenuntergang</String>
+		<String id="482">Sonnenkulmination</String>
+		<String id="483">Höhe der Sonne über Horizont</String>
+		<String id="484"></String>
+		<String id="485"></String>
+		<String id="486"></String>
+
+		<String id="490">Mondaufgang</String>
+		<String id="491">Monduntergang</String>
+		<String id="492">Mondkulmination</String>
+		<String id="493">Höhe des Mondes über Horizont</String>
+		<String id="494">Azimut des Mondes</String>
+		<String id="495">Entfernung des Mondes</String>
+		<String id="496">Durchmesser des Mondes</String>
+		<String id="497">Mondphase</String>
+
 		<String id="500">Temperatur</String>
 		<String id="501">Bedingungen</String>
 		<String id="502">Wind</String>
-		<String id="503">Luftfeuchtigkeit</String>
-		<String id="504">Mondphase</String>
-		<String id="505">Sommerzeit</String>
-		<String id="506">Nächste Sommerzeit</String>
-		<String id="507">Sonnenaufgang</String>
-		<String id="508">Sonnenuntergang</String>
+		<String id="503">Windgeschwindigkeit</String>
+		<String id="504">Luftfeuchtigkeit</String>
+		<String id="505">gefühlt</String>
+		<String id="506">Sommerzeit</String>
+		<String id="507">UV-Index</String>
+		<String id="508">Hitze-Index</String>
 		<String id="509">Ort</String>
 		<String id="510">Aktuell</String>
 		<String id="511">Prognose</String>
@@ -298,22 +326,20 @@
 		<String id="520">Höchstwert</String>
 		<String id="521">Wolkenabdeckung</String>
 		<String id="522">Nebelabdeckung</String>
-		<String id="523">gefühlt</String>
-		<String id="524">UV-Index</String>
 
-		<String id="525">Satellit</String>
-		<String id="526">Temperatur</String>
-		<String id="527">UV-Index</String>
-		<String id="528">Wind</String>
-		<String id="529">Niederschlag</String>
-		<String id="530">Sonnenscheindauer</String>
-		<String id="531">Pollenflug</String>
-		<String id="532">Welt</String>
-		<String id="533">WebCam</String>
-		<String id="534">Luftfeuchtigkeit</String>
-		<String id="535">Eigene Karten</String>
+		<String id="530">Satellit</String>
+		<String id="531">Temperatur</String>
+		<String id="532">UV-Index</String>
+		<String id="533">Wind</String>
+		<String id="534">Niederschlag</String>
+		<String id="535">Sonnenscheindauer</String>
+		<String id="536">Pollenflug</String>
+		<String id="537">Welt</String>
+		<String id="538">WebCam</String>
+		<String id="539">Luftfeuchtigkeit</String>
+		<String id="540">Eigene Karten</String>
 
-		<String id="540">Geographische Uhr</String>
+		<String id="545">Geographische Uhr</String>
 
 		<String id="550">Sternenhimmel</String>
 		<String id="551">Tierkreiszeichen</String>
@@ -357,5 +383,8 @@
 
 		<String id="700">Wetterdaten bereitgestellt von</String>
 		<String id="701">kein Wetter-Anbieter</String>
+
+		<String id="710">Aktualisierungszeit</String>
+		<String id="711">Nächste Aktualisierungszeit</String>
 	</Section>
 </Language>
