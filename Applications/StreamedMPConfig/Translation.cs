@@ -302,6 +302,8 @@ namespace StreamedMPConfig
     public static string Scraper = "Scraper";
     public static string TextualMediaInfoLogos = "Textual MediaInfo Logos";
     public static string ShowTaglineInDetailsSummary = "Show Tagline in Details Summary";
+    public static string Locked = "Locked";
+    public static string Views = "Views";
     #endregion
   }
 }
