@@ -12,40 +12,40 @@
       <width>140</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>facadeview.list+[string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+!string.equals(#selecteditem2,)</visible>
+      <visible>facadeview.list+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)+!string.equals(#selecteditem2,)+string.equals(#OnlineVideos.state,videos)+!string.equals(#selecteditem,..)</visible>
     </control>
     <control Style="smallTitle">
       <id>0</id>
-      <label>#OnlineVideos.Details.Rating (#OnlineVideos.Details.NumRaters #(string.trim(L(205),':')))</label>
+      <label>#(iif(eq(#OnlineVideos.Details.Rating,''),'N/A','#OnlineVideos.Details.Rating (#OnlineVideos.Details.NumRaters #StreamedMP.Votes)'))</label>
       <type>label</type>
       <posX>449</posX>
       <posY>370</posY>
       <width>140</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>facadeview.list+[string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+!string.equals(#selecteditem2,)</visible>
+      <visible>facadeview.list+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)+!string.equals(#selecteditem2,)+string.equals(#OnlineVideos.state,videos)+!string.equals(#selecteditem,..)</visible>
     </control>
 		
 		<control Style="smallTitleB">
-      <label>Views</label>
+      <label>#StreamedMP.Views</label>
       <type>label</type>
       <posX>300</posX>
       <posY>392</posY>
       <width>140</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>facadeview.list+[string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+!string.equals(#OnlineVideos.Details.ViewCount,)</visible>
+      <visible>facadeview.list+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)+string.equals(#OnlineVideos.state,videos)+!string.equals(#selecteditem,..)+!string.equals(#selecteditem2,)</visible>
     </control>
     <control Style="smallTitle">
       <id>0</id>
-      <label>#OnlineVideos.Details.ViewCount</label>
+      <label>#(iif(eq(#OnlineVideos.Details.ViewCount,''),'N/A','#OnlineVideos.Details.ViewCount'))</label>
       <type>label</type>
       <posX>449</posX>
       <posY>393</posY>
       <width>140</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>facadeview.list+[string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+!string.equals(#OnlineVideos.Details.ViewCount,)</visible>
+      <visible>facadeview.list+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)+string.equals(#OnlineVideos.state,videos)+!string.equals(#selecteditem,..)+!string.equals(#selecteditem2,)</visible>
     </control>
 		
 		<control Style="smallTitleB">
@@ -57,11 +57,11 @@
       <width>140</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>facadeview.list+[string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+!string.equals(#OnlineVideos.aired,)</visible>
+      <visible>facadeview.list+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)+string.equals(#OnlineVideos.state,videos)+!string.equals(#selecteditem,..)+!string.equals(#selecteditem2,)</visible>
     </control>
     <control Style="smallTitle">
       <id>0</id>
-      <label>#OnlineVideos.aired</label>
+      <label>#(iif(eq(#OnlineVideos.aired,''),'N/A','#OnlineVideos.aired'))</label>
       <type>label</type>
       <posX>449</posX>
       <posY>416</posY>
@@ -69,7 +69,7 @@
       <width>140</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>facadeview.list+[string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+!string.equals(#OnlineVideos.aired,)</visible>
+      <visible>facadeview.list+string.equals(#OnlineVideos.selectedSiteUtil,YouTube)+string.equals(#OnlineVideos.state,videos)+!string.equals(#selecteditem,..)+!string.equals(#selecteditem2,)</visible>
     </control>
 		
   </controls>
