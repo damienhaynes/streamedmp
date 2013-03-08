@@ -1302,7 +1302,29 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<hyperlink>" + menuItems[k].hyperlink + "</hyperlink>");
         if (menuItems[k].hyperlinkParameter != "false")
-          rawXML.AppendLine("<hyperlinkParameter>" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+        {
+            switch (menuItems[k].hyperlink)
+            {
+                case onlineVideosSkinID:
+                    if (!IsOnlineVideosGroup(menuItems[k].hyperlink))
+                    {
+                        string search = string.IsNullOrEmpty(menuItems[k].hyperlinkParameterSearch) ? string.Empty : "|search:" + menuItems[k].hyperlinkParameterSearch;
+                        string category = string.IsNullOrEmpty(menuItems[k].hyperlinkParameterCategory) ? string.Empty : "|category:" + menuItems[k].hyperlinkParameterCategory;
+                        rawXML.AppendLine("<hyperlinkParameter>site:" + menuItems[k].hyperlinkParameter + category + search + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
+                    }
+                    else
+                    {
+                        rawXML.AppendLine("<hyperlinkParameter>group:" + menuItems[k].hyperlinkParameter.Substring(7) + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
+                    }
+                    break;
+                case movingPicturesSkinID:
+                    rawXML.AppendLine("<hyperlinkParameter>categoryid:" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+                    break;
+                default:
+                    rawXML.AppendLine("<hyperlinkParameter>" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+                    break;
+            }
+        }
         rawXML.AppendLine("<textureFocus>-</textureFocus>");
         rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
         rawXML.AppendLine("<hover>-</hover>");
@@ -1459,7 +1481,29 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<hyperlink>" + menuItems[k].hyperlink + "</hyperlink>");
         if (menuItems[k].hyperlinkParameter != "false")
-          rawXML.AppendLine("<hyperlinkParameter>" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+        {
+            switch (menuItems[k].hyperlink)
+            {
+                case onlineVideosSkinID:
+                    if (!IsOnlineVideosGroup(menuItems[k].hyperlink))
+                    {
+                        string search = string.IsNullOrEmpty(menuItems[k].hyperlinkParameterSearch) ? string.Empty : "|search:" + menuItems[k].hyperlinkParameterSearch;
+                        string category = string.IsNullOrEmpty(menuItems[k].hyperlinkParameterCategory) ? string.Empty : "|category:" + menuItems[k].hyperlinkParameterCategory;
+                        rawXML.AppendLine("<hyperlinkParameter>site:" + menuItems[k].hyperlinkParameter + category + search + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
+                    }
+                    else
+                    {
+                        rawXML.AppendLine("<hyperlinkParameter>group:" + menuItems[k].hyperlinkParameter.Substring(7) + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
+                    }
+                    break;
+                case movingPicturesSkinID:
+                    rawXML.AppendLine("<hyperlinkParameter>categoryid:" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+                    break;
+                default:
+                    rawXML.AppendLine("<hyperlinkParameter>" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+                    break;
+            }
+        }
         rawXML.AppendLine("<textureFocus>-</textureFocus>");
         rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
         rawXML.AppendLine("<hover>-</hover>");
@@ -1630,7 +1674,29 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<height>72</height>");
         rawXML.AppendLine("<hyperlink>" + menuItems[k].hyperlink + "</hyperlink>");
         if (menuItems[k].hyperlinkParameter != "false")
-          rawXML.AppendLine("<hyperlinkParameter>" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+        {
+            switch (menuItems[k].hyperlink)
+            {
+                case onlineVideosSkinID:
+                    if (!IsOnlineVideosGroup(menuItems[k].hyperlink))
+                    {
+                        string search = string.IsNullOrEmpty(menuItems[k].hyperlinkParameterSearch) ? string.Empty : "|search:" + menuItems[k].hyperlinkParameterSearch;
+                        string category = string.IsNullOrEmpty(menuItems[k].hyperlinkParameterCategory) ? string.Empty : "|category:" + menuItems[k].hyperlinkParameterCategory;
+                        rawXML.AppendLine("<hyperlinkParameter>site:" + menuItems[k].hyperlinkParameter + category + search + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
+                    }
+                    else
+                    {
+                        rawXML.AppendLine("<hyperlinkParameter>group:" + menuItems[k].hyperlinkParameter.Substring(7) + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
+                    }
+                    break;
+                case movingPicturesSkinID:
+                    rawXML.AppendLine("<hyperlinkParameter>categoryid:" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+                    break;
+                default:
+                    rawXML.AppendLine("<hyperlinkParameter>" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+                    break;
+            }
+        }
         rawXML.AppendLine("<textureFocus>-</textureFocus>");
         rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
         rawXML.AppendLine("<hover>-</hover>");
