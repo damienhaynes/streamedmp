@@ -142,7 +142,7 @@ namespace StreamedMPEditor
               }
               break;
             case movingPicturesSkinID:
-              localxml +=  "<hyperlinkParameter>categoryid:" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "</hyperlinkParameter>";
+              localxml += "<hyperlinkParameter>categoryid:" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "</hyperlinkParameter>";
               break;
             default:
               localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "</hyperlinkParameter>";
