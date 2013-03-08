@@ -304,6 +304,8 @@ namespace StreamedMPConfig
     public static string ShowTaglineInDetailsSummary = "Show Tagline in Details Summary";
     public static string Locked = "Locked";
     public static string Views = "Views";
+    public static string DSTStart = "Daylight Start";
+    public static string DSTEnd = "Daylight End";
     #endregion
   }
 }
