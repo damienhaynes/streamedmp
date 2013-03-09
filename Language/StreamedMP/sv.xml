@@ -3,7 +3,7 @@
   <!--Example user defined translation property-->
   <!--Field name must start with a '#'. The entry below creates the skin property-->
   <!--'#StreamedMP.Example.Property' that is set to 'Translated String'-->
-  <string name="#StreamedMP.Example.Property">Translated String</string>
+  <string name="#StreamedMP.Example.Property">Översatt sträng</string>
   <!--MediaPortal Localised IDs -> Skin Properties-->
   <string name="#StreamedMP.Track">435</string>
   <string name="#StreamedMP.Year">436</string>
@@ -28,7 +28,7 @@
   <string name="UpdateInstall">Uppdatera och installera</string>
   <string name="NoUpdatesAvailable">Inga patchar finns för närvarande</string>
   <string name="DownloadingPatch">Laddar ner patch: {0}</string>
-  <string name="DownloadingProgress">Nedladdat {0}KB av {1}KB ({2}%)</string>
+  <string name="DownloadingProgress">Nedladdat {0} KB av {1} KB  ({2} %)</string>
   <string name="NumPatchesInstalled">Patch-filer installerade: {0}</string>
   <string name="PatchUpdateComplete">Uppdatering till skin-version: {0} färdig</string>
   <string name="UpdateAvailableHeading">Uppdatering tillgänglig - Ändringslogg</string>
@@ -57,6 +57,7 @@
   <string name="ThumbnailDefault">Tumnagelbilder: grundinställning</string>
   <string name="Thumbnail_12x4_8x3_Grid">Tumnagelbilder: 12x4 Små Ikoner, 8x3 Stora Ikoner</string>
   <string name="Thumbnail_12x3_8x2_Grid">Tumnagelbilder: 12x3 Små Ikoner, 8x2 Stora Ikoner + Info</string>
+  <string name="ShowTaglineInDetailsSummary">Visa \"Tagline\" i detaljvyn</string>
   <!--TV Configuration-->
   <string name="TVGuideSize">TV-Guide - storlek</string>
   <string name="TVMiniGuideSize">TV Mini-Guide - Storlek</string>
@@ -66,8 +67,8 @@
   <string name="TVGuideSixteenRows">TV-Guide: 16 Rader</string>
   <string name="TVMiniGuideThreeRows">TV Mini-Guide: 3 Rader</string>
   <string name="TVMiniGuideFiveRows">TV Mini-Guide: 5 Rader</string>
-  <string name="TVMiniGuideSevenRows">TV Mini Guide: 7 Rows</string>
-  <string name="TVMiniGuideNineRows">TV Mini Guide: 9 Rows</string>
+  <string name="TVMiniGuideSevenRows">TV Mini Guide: 7 Rader</string>
+  <string name="TVMiniGuideNineRows">TV Mini Guide: 9 Rader</string>
   <string name="EnableRandomTVSeriesFanartInMyTV">Slå på slumpmässig Fanart för TV-serier</string>
   <!--Misc Settings-->
   <string name="ShowHiddenMenuImage">Visa dold menybild</string>
@@ -93,13 +94,18 @@
   <string name="ListColorInvalidLine2">giltigt HEX-värde exempelvis. RÖD som blir FF0000.</string>
   <string name="ListColorInvalidLine3">innehållande \'255\' av röd, \'0\'  av grön och \'0\' av blå.</string>
   <string name="CustomColor">Egeninställd färg</string>
+  <string name="ShowListScrollingPopup">Visa popup för begynnelsebokstav i listbläddring</string>
+  <string name="Scraper">Scraper</string>
+  <string name="TextualMediaInfoLogos">MediaInfo-loggor med text</string>
   <!--General Translations-->
-  <string name="Rated">Ratad</string>
+  <string name="Rated">Betyg</string>
   <string name="Director">Regissör</string>
   <string name="ReleaseDate">Utkomstdatum</string>
   <string name="Runtime">Speltid</string>
   <string name="Votes">Röster</string>
   <string name="Trailer">Trailer</string>
+  <string name="Views">Vyer</string>
+  <string name="Locked">Låst</string>
   <!--Global Search-->
   <string name="SearchMusic">Sök Musik</string>
   <string name="SearchPhrase">Sökning för denna fras</string>
@@ -112,6 +118,7 @@
   <string name="LatestMovies">Senaste filmerna</string>
   <string name="LatestTVRecordings">Senaste TV-inspelningarna</string>
   <string name="LatestMusic">Senaste Musik</string>
+  <string name="LatestMusicVideos">Senaste Musikvideor</string>
   <string name="RecentlyWatched">Nyligen visat</string>
   <string name="RecordedOn">Inspelat:</string>
   <!--MediaPortal Exit Buttons-->
