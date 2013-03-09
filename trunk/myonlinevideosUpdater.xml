@@ -233,31 +233,33 @@
       <label>#OnlineVideos.Translation.Creator.Label</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
+			<visible>!string.equals(#OnlineVideos.owner,)</visible>
     </control>
 		<control Style="smallTitle">
       <id>1</id>
-      <label>#(iif(eq(#OnlineVideos.owner,''),'N/A',#OnlineVideos.owner))</label>
+      <label>#OnlineVideos.owner</label>
       <type>label</type>
       <posX>250</posX>
       <posY>341</posY>
       <width>200</width>
 			<animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
+			<visible>!string.equals(#OnlineVideos.owner,)</visible>
     </control>
 		<control Style="smallTitleB">
       <type>label</type>
-      <description>Language</description>
+      <description>Language / Status</description>
       <id>1</id>
       <posX>28</posX>
       <posY>363</posY>
       <width>200</width>
-      <label>#OnlineVideos.Translation.Language.Label</label>
+      <label>#(iif(eq(#itemtype,#OnlineVideos.Translation.Reports.Label),'#OnlineVideos.Translation.State.Label',#OnlineVideos.Translation.Language.Label))</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
 		<control Style="smallTitle">
       <id>1</id>
-      <label>#(iif(eq(#selecteditem2,''),'N/A',#selecteditem2))</label>
+      <label>#selecteditem2</label>
       <type>label</type>
       <posX>250</posX>
       <posY>364</posY>
