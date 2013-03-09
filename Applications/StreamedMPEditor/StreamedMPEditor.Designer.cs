@@ -1661,7 +1661,7 @@
             this.wrapString.Size = new System.Drawing.Size(226, 17);
             this.wrapString.TabIndex = 13;
             this.wrapString.Text = "Enable text wrap (RSS and Twitter tickers)\r\n";
-            this.toolTip1.SetToolTip(this.wrapString, "This enables the text wrap feature avaiable in  MP 1.1 Beta+ If MP 1.1 or greater" +
+            this.toolTip1.SetToolTip(this.wrapString, "This enables the text wrap feature available in  MP 1.1 Beta+ If MP 1.1 or greater" +
         " is not installed this option will be disabled.\r\n");
             this.wrapString.UseVisualStyleBackColor = true;
             // 

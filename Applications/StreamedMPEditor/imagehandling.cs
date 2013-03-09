@@ -126,7 +126,7 @@ namespace StreamedMPEditor
         //Create numbe of files label
         newBGCount.Location = new Point(xPos, (yPos + 82));
         newBGCount.Size = new Size(160, 15);
-        newBGCount.Text = "Images Avaiable: " + (totalImages).ToString();
+        newBGCount.Text = "Images Available: " + (totalImages).ToString();
         //newBGCount.Font = new Font(newBGCount.Font, FontStyle.Bold);
         bgCount[pBoxElement] = newBGCount;
         defaultBackgrounds.Controls.Add(bgCount[pBoxElement]);
