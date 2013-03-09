@@ -284,10 +284,10 @@
         <visible>[string.equals(#WorldWeather.View,Condition)|string.equals(#WorldWeather.View,Calendar)]+!string.equals(#WorldWeather.LocationMoonPhase,)</visible>
       </control>
       <control>
-        <description>Day Light End Label</description>
+        <description>Daylight Saving Starts</description>
         <type>label</type>
         <id>0</id>
-        <label>#WorldWeather.TranslationDaylight</label>
+        <label>#StreamedMP.DSTStarts</label>
         <width>180</width>
         <height>25</height>
         <font>mediastream11c</font>
@@ -295,10 +295,10 @@
         <visible>[string.equals(#WorldWeather.View,Condition)|string.equals(#WorldWeather.View,Calendar)]+!string.equals(#WorldWeather.LocationDaylightStart,)</visible>
       </control>
       <control>
-        <description>Day Light Start Label</description>
+        <description>Daylight Saving Ends</description>
         <type>label</type>
         <id>0</id>
-        <label>#WorldWeather.TranslationNextDaylight</label>
+        <label>#StreamedMP.DSTEnds</label>
         <width>180</width>
         <height>25</height>
         <font>mediastream11c</font>
