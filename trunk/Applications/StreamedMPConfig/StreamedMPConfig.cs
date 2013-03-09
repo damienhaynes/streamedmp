@@ -187,11 +187,14 @@ namespace StreamedMPConfig
       GUIControl.SetControlLabel(GetID, (int)SkinControlIDs.MovPicsConfig, Translation.MovingPicturesMenu);
       GUIControl.SetControlLabel(GetID, (int)SkinControlIDs.TVConfig, Translation.TVMenu);
       GUIControl.SetControlLabel(GetID, (int)SkinControlIDs.SkinInfoScreen, Translation.SkinInfoText);
+
+      base.OnPageLoad();
     }
 
     protected override void OnPageDestroy(int new_windowId)
     {      
       smcLog.WriteLog("Shutdown of StreamedMPconfig complete", LogLevel.Info);
+      base.OnPageDestroy(GetID);
     }
 
     protected override void OnClicked(int controlId, GUIControl control, Action.ActionType actionType)
