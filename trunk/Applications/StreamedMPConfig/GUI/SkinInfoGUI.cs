@@ -62,11 +62,13 @@ namespace StreamedMPConfig
     {
       GUILabelControl.SetControlLabel(GetID, (int)GUIControls.versionLabel, updateCheck.SkinVersion().ToString());
       GUILabelControl.SetControlLabel(GetID, (int)GUIControls.actualScreenRes, "(" + Screen.PrimaryScreen.Bounds.Width.ToString() + "x" + Screen.PrimaryScreen.Bounds.Height.ToString() + ")");
+
+      base.OnPageLoad();
     }
 
     protected override void OnPageDestroy(int new_windowId)
     {
-
+        base.OnPageDestroy(GetID);
     }
     #endregion
   }

@@ -180,6 +180,8 @@ namespace StreamedMPConfig
       GUIControl.SelectControl(GetID, (int)nowPlayingStyle + (int)GUIControls.Default);
       StreamedMPConfig.SetProperty("#StreamedMP.NowPlayingPreview", "npstyle" + ((int)nowPlayingStyle).ToString());
       currentStyle = nowPlayingStyle;
+
+      base.OnPageLoad();
     }
 
     protected override void OnPageDestroy(int new_windowId)
@@ -201,6 +203,8 @@ namespace StreamedMPConfig
       SetProperties();
 
       GUIWindowManager.OnResize();
+
+      base.OnPageDestroy(GetID);
     }
     #endregion
   }

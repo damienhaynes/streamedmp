@@ -706,6 +706,8 @@ namespace StreamedMPConfig
       RemoteColorTemp = MiscConfigGUI.RemoteColor;
 
       TextualLogosTemp = MiscConfigGUI.TextualLogos;
+
+      base.OnPageLoad();
     }
 
     protected override void OnPageDestroy(int newWindowId)
@@ -718,6 +720,8 @@ namespace StreamedMPConfig
 
       // Save Settings
       settings.Save(settings.cXMLSectionMisc);
+
+      base.OnPageDestroy(GetID);
     }
 
     protected override void OnClicked(int controlId, GUIControl control, Action.ActionType actionType)

@@ -48,9 +48,6 @@ namespace StreamedMPConfig
       {
         return (int)StreamedMPConfig.SMPScreenID.SMPVideoSettings;
       }
-      set
-      {
-      }
     }
 
     public override bool Init()
@@ -62,7 +59,9 @@ namespace StreamedMPConfig
     {
       settings.Load(settings.cXMLSectionVideo);  
       cmc_MinOSD.Selected = !FullVideoOSD;
-      cmc_MinOSD.Label = Translation.MinVideoOSD;      
+      cmc_MinOSD.Label = Translation.MinVideoOSD;
+
+      base.OnPageLoad();
     }
 
     protected override void OnPageDestroy(int new_windowId)
@@ -70,6 +69,8 @@ namespace StreamedMPConfig
       FullVideoOSD = !cmc_MinOSD.Selected;
       SetProperties();
       settings.Save(settings.cXMLSectionVideo);
+
+      base.OnPageDestroy(GetID);
     }
     #endregion
   }
