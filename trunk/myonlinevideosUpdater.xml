@@ -125,7 +125,7 @@
     <control>
       <description>Items Translation</description>
       <type>label</type>
-      <label>507</label>
+      <label>#itemtype</label>
       <id>0</id>
       <width>90</width>
       <posX>1077</posX>
@@ -171,9 +171,10 @@
       <textXOff>15</textXOff>
       <textYOff>5</textYOff>
       <textXOff2>0</textXOff2>
-      <textYOff2>7</textYOff2>
-      <textXOff3>580</textXOff3>
+      <textYOff2>-2000</textYOff2>
+      <textXOff3>740</textXOff3>
       <textYOff3>10</textYOff3>
+			<textalign3>right</textalign3>
       <font3>mediastream10</font3>
       <font2>mediastream10</font2>
       <keepaspectratio>yes</keepaspectratio>
@@ -207,38 +208,75 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-    <control>
-      <type>fadelabel</type>
+		<control>
+      <description>Logo</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>28</posX>
+      <posY>248</posY>
+      <width>105</width>
+      <height>60</height>
+      <zoom>no</zoom>
+      <keepaspectratio>yes</keepaspectratio>
+      <texture>#OnlineVideos.HeaderImage</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+			<visible>string.equals(#selectedthumb,)</visible>
+    </control>
+    <control Style="smallTitleB">
+      <type>label</type>
       <description>Owner</description>
       <id>1</id>
       <posX>28</posX>
       <posY>340</posY>
-      <width>475</width>
-      <label>#OnlineVideos.Translation.Creator.Label : #OnlineVideos.owner</label>
-      <font>mediastream11tc</font>
-      <textcolor>ff006698</textcolor>
-      <align>left</align>
+      <width>200</width>
+      <label>#OnlineVideos.Translation.Creator.Label</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
-      <visible>!string.equals(#OnlineVideos.owner,)</visible>
+    </control>
+		<control Style="smallTitle">
+      <id>1</id>
+      <label>#(iif(eq(#OnlineVideos.owner,''),'N/A',#OnlineVideos.owner))</label>
+      <type>label</type>
+      <posX>250</posX>
+      <posY>341</posY>
+      <width>200</width>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control Style="smallTitleB">
+      <type>label</type>
+      <description>Language</description>
+      <id>1</id>
+      <posX>28</posX>
+      <posY>363</posY>
+      <width>200</width>
+      <label>#OnlineVideos.Translation.Language.Label</label>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		<control Style="smallTitle">
+      <id>1</id>
+      <label>#(iif(eq(#selecteditem2,''),'N/A',#selecteditem2))</label>
+      <type>label</type>
+      <posX>250</posX>
+      <posY>364</posY>
+      <width>200</width>
+			<animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <type>textboxscrollup</type>
       <description>Description</description>
       <id>1</id>
       <posX>28</posX>
-      <posY>362</posY>
+      <posY>400</posY>
       <width>475</width>
       <height>298</height>
-      <seperator>---------------------------------------------------------------------------------------</seperator>
       <font>mediastream12</font>
       <label>#OnlineVideos.desc</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
     </control>
     <!-- *** HIDDEN MENU *** -->
     <control>
