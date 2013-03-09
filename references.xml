@@ -43,16 +43,16 @@
     <textureFocus>settingsbuttonfo.png</textureFocus>
     <colordiffuse>ffFFFFFF</colordiffuse>
   </style>
-	<style Name="settingstogglebutton">
+  <style Name="settingstogglebutton">
     <font>mediastream10tc</font>
     <textXOff>23</textXOff>
     <textYOff>12</textYOff>
     <width>211</width>
     <height>43</height>
-		<textureFocus>settingstogglebutton_fo_on.png</textureFocus>
-		<textureNoFocus>settingstogglebutton_nf_on.png</textureNoFocus>
-		<AltTextureFocus>settingstogglebutton_fo_off.png</AltTextureFocus>
-		<AltTextureNoFocus>settingstogglebutton_nf_off.png</AltTextureNoFocus>
+    <textureFocus>settingstogglebutton_fo_on.png</textureFocus>
+    <textureNoFocus>settingstogglebutton_nf_on.png</textureNoFocus>
+    <AltTextureFocus>settingstogglebutton_fo_off.png</AltTextureFocus>
+    <AltTextureNoFocus>settingstogglebutton_nf_off.png</AltTextureNoFocus>
   </style>
   <style Name="settingscheckbutton">
     <width>211</width>
@@ -124,6 +124,9 @@
     <textXOff2>10</textXOff2>
     <textYOff2>8</textYOff2>
     <font>mediastream12c</font>
+    <textpadding>50</textpadding>
+    <scrollStartDelaySec>2</scrollStartDelaySec>
+    <scrollWrapString> | </scrollWrapString>
     <textureFocus>listbg_togglebutton_on_fo.png</textureFocus>
     <AltTextureFocus>listbg_togglebutton_off_fo.png</AltTextureFocus>
     <textureNoFocus>listbg_togglebutton_on_nf.png</textureNoFocus>
@@ -146,6 +149,9 @@
     <markXOff>40</markXOff>
     <markalign>right</markalign>
     <markvalign>middle</markvalign>
+		<textpadding>50</textpadding>
+    <scrollStartDelaySec>2</scrollStartDelaySec>
+    <scrollWrapString> | </scrollWrapString>
     <textureFocus>listbg_fo.png</textureFocus>
     <textureNoFocus>listbg_nf.png</textureNoFocus>
     <textureCheckmark>ledon.png</textureCheckmark>
@@ -294,7 +300,7 @@
     <id>0</id>
     <posX>300</posX>
     <posY>80</posY>
-    <seperator>⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</seperator>
+    <seperator>------------------------------------------------------------------------</seperator>
   </control>
   <control>
     <description>default textarea</description>
@@ -318,7 +324,7 @@
     <font>font12</font>
     <textcolor>ffffffff</textcolor>
     <colordiffuse>ffffffff</colordiffuse>
-    <seperator>⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</seperator>
+    <seperator>------------------------------------------------------------------------</seperator>
   </control>
   <control>
     <description>default menubutton</description>
@@ -1097,4 +1103,4 @@
     <shadow>no</shadow>
   </control>
 </controls>
-<!--Checksum:47645fd8e1dc6b377420f282b28bf66b-->
+<!--Checksum:173b3483f1c56be7d9de63f3f2558e52-->
