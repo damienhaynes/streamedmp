@@ -260,6 +260,8 @@ namespace StreamedMPConfig
         dlg.DoModal(GUIWindowManager.ActiveWindow);
         GUIWindowManager.ShowPreviousWindow();
       }
+
+      base.OnPageLoad();
     }
 
     protected override void OnClicked(int controlId, GUIControl control, MediaPortal.GUI.Library.Action.ActionType actionType)
