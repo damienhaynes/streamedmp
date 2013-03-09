@@ -61,10 +61,10 @@
       <id>1</id>
       <posX>28</posX>
       <posY>248</posY>
-      <width>105</width>
-      <height>35</height>
-      <texture>#header.image</texture>
-      <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)</visible>
+      <width>250</width>
+      <height>83</height>
+      <texture>#OnlineVideos.HeaderImage</texture>
+      <visible>facadeview.list+!control.isvisible(51)+string.equals(#selectedthumb,)+string.equals(#OnlineVideos.state,videos)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)]</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
