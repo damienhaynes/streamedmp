@@ -25,7 +25,7 @@
         <id>24</id>
         <label>6000</label>
 				<textXOff>35</textXOff>
-        <onup>17</onup>
+        <onup>32</onup>
 				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
@@ -139,39 +139,43 @@
 				<onright>#defaultcontrol.onright</onright>
         <selected>#(skin.hassetting('#skin.tvguide.showgenrekey'))</selected>
         <onclick>#(skin.togglesetting('#skin.tvguide.showgenrekey'))</onclick>
+				<ondown>34</ondown>
       </control>
       <control Style="settingsmainbutton">
-        <description>ChannelManager</description>
+        <description>Argus Channel Manager</description>
         <type>button</type>
         <id>34</id>
-        <label>4TR #TV.Settings.ChannelManagerName</label>
+        <label>Argus #TV.Settings.ChannelManagerName</label>
 				<textXOff>35</textXOff>
 				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
         <hyperlink>49856</hyperlink>
-        <visible>plugin.isenabled(For The Record TV)</visible>
+        <visible>plugin.isenabled(Argus TV)</visible>
+				<ondown>31</ondown>
       </control>
       <control Style="settingsmainbutton">
-        <description>4TRClientSettings</description>
+        <description>Argus Client Settings</description>
         <type>button</type>
         <id>31</id>
-        <label>#TV.Settings.4TRClientSettingsName</label>
+        <label>#TV.Settings.ArgusClientSettingsName</label>
 				<textXOff>35</textXOff>
 				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
         <hyperlink>49857</hyperlink>
-        <visible>plugin.isenabled(For The Record TV)</visible>
+        <visible>plugin.isenabled(Argus TV)</visible>
+				<ondown>32</ondown>
       </control>
       <control Style="settingsmainbutton">
-        <description>4TRServerSettings</description>
+        <description>Argus Server Settings</description>
         <type>button</type>
         <id>32</id>
-        <label>#TV.Settings.4TRServerSettingsName</label>
+        <label>#TV.Settings.ArgusServerSettingsName</label>
 				<textXOff>35</textXOff>
 				<width>766</width>
         <onright>#defaultcontrol.onright</onright>
         <hyperlink>49855</hyperlink>
-        <visible>plugin.isenabled(For The Record TV)</visible>
+        <visible>plugin.isenabled(Argus TV)</visible>
+				<ondown>24</ondown>
       </control>
     </control>
   </controls>
