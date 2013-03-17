@@ -262,8 +262,10 @@ prototype VOID		SaveTVLogoSelections();
 prototype VOID		UpdateTVSeriesLogoRules();
 prototype VOID		UpdateMyFilmsLogoRules();
 prototype VOID		CreateMPSectionEntry(STRING, STRING, STRING, STRING);
-prototype VOID		BackupImages();           
+prototype VOID		BackupImages();
+prototype VOID		BackupMPSkinSettings();           
 prototype VOID		RestoreImages();                             
+prototype VOID		RestoreMPSkinSettings();
                                        
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -780,7 +782,10 @@ Dlg_SdStartCopy:
     CleanVirtualStoreDir();
  	
  	// Backup Custom Images
- 	BackupImages();
+ 	BackupImages();        
+ 	
+ 	// Backup MediaPortal SkinSettings
+ 	BackupMPSkinSettings();
  	
     return 0;
 end;
@@ -935,6 +940,7 @@ begin
 	   
 	// Major Upgrade Tasks
 	RestoreImages();
+	RestoreMPSkinSettings();
    	MajorUpgradeCleanup();
     
 	Disable(STATUSEX);
@@ -2853,7 +2859,7 @@ begin
     // Cleanup Virtual Store
     CleanVirtualStoreDir();
     
-    // Finially set default skin back to DefaultWide if we are still using StreamedMP    
+    // Finially set default skin back to DefaultWide if we are not using StreamedMP anymore   
     sFile = g_sConfigDir^"MediaPortal.xml";
     GetMPXMLProperty(sFile, "skin", "name", sValue);
     if sValue = SKIN_NAME then
@@ -3562,7 +3568,27 @@ begin
 	
 	Enable(LOGGING);
 end;
-     
+   
+function void BackupMPSkinSettings()
+	STRING szSrcFile, szTargetPath;
+begin
+    
+    // only backup if we are upgrading
+    if (g_bMajorUpgrade = FALSE) then
+    	return;
+    endif;
+    
+    Disable(LOGGING);
+    
+	// backup skin settings   
+    szSrcFile = INSTALLDIR ^ SKIN_NAME ^ "SkinSettings.xml";
+    szTargetPath = FOLDER_TEMP ^ SKIN_NAME;
+        
+    XCopyFile ( szSrcFile, szTargetPath, COMP_NORMAL ); 
+ 	
+	Enable(LOGGING);
+end;
+  
 function void RestoreImages()
 	STRING szSrcFile, szTargetPath;
 begin
@@ -3591,4 +3617,26 @@ begin
 	endif;
 	
 	Enable(LOGGING);
-end;     
+end;    
+
+function void RestoreMPSkinSettings()
+	STRING szSrcFile, szTargetPath;
+begin
+    // only restore if we are upgrading
+    if (g_bMajorUpgrade = FALSE) then
+    	return;
+    endif;
+        
+    Disable(LOGGING);
+    
+	// restore skin settings   
+	szSrcFile = FOLDER_TEMP ^ SKIN_NAME ^ "SkinSettings.xml";
+    szTargetPath = INSTALLDIR ^ SKIN_NAME;
+        
+    XCopyFile ( szSrcFile, szTargetPath, COMP_NORMAL ); 
+     
+    // delete Backup Folder
+    DeleteDir(INSTALLDIR ^ SKIN_NAME + "_Image_Backup", ALLCONTENTS);
+      
+	Enable(LOGGING);
+end; 
