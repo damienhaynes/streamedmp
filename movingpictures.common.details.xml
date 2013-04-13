@@ -386,7 +386,7 @@
       <posY>450</posY>
       <align>left</align>
       <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,0)+!control.hasfocus(667)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>

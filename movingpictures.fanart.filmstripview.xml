@@ -38,7 +38,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>2</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
-      <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
