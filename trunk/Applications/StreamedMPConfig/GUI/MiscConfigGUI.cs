@@ -25,6 +25,7 @@ namespace StreamedMPConfig
       ListColors = 9,
       ListControlScrollPopup = 10,
       TextualLogos = 11,
+      MyVideoWatchedProgress = 12
     }  
     #endregion
 
@@ -75,6 +76,9 @@ namespace StreamedMPConfig
 
     [SkinControl((int)GUIControls.TextualLogos)]
     protected GUIToggleButtonControl btnTextualLogos = null;
+
+    [SkinControl((int)GUIControls.MyVideoWatchedProgress)]
+    protected GUIToggleButtonControl btnMyVideoWatchedProgress = null;
     #endregion
 
     #region Constructor
@@ -98,6 +102,7 @@ namespace StreamedMPConfig
     public static bool UseLargeFonts { get; set; }
     public static bool ShowListScrollingPopup { get; set; }
     public static bool TextualLogos { get; set; }
+    public static bool MyVideoWatchedProgress { get; set; }
     #endregion
 
     #region Public Methods
@@ -117,6 +122,9 @@ namespace StreamedMPConfig
 
       // Logo Style
       StreamedMPConfig.SetProperty("#StreamedMP.MediaInfo.Type", TextualLogos ? "Textual" : "Graphical");
+
+      // My Video Watched Progress Indicators on Facade
+      StreamedMPConfig.SetProperty("#StreamedMP.ShowProgressIndicators", MyVideoWatchedProgress.ToString().ToLowerInvariant());
     }
 
     public static void SetColors()
@@ -527,6 +535,10 @@ namespace StreamedMPConfig
       btnTextualLogos.Selected = TextualLogos;
       btnTextualLogos.Label = Translation.TextualMediaInfoLogos;
 
+      // MyVideos Facade Watched Progress
+      btnMyVideoWatchedProgress.Selected = MyVideoWatchedProgress;
+      btnMyVideoWatchedProgress.Label = Translation.MyVideoWatchedProgress;
+
       // Unfocused Alpha Settings
       btnUnfocusedAlpha.Label = string.Format("{0} ...", Translation.UnfocusedAlpha);
 
@@ -542,6 +554,7 @@ namespace StreamedMPConfig
       EnablePlayMostRecents = btnPlayRecents.Selected;
       ShowListScrollingPopup = btnListControlScrollPopup.Selected;
       TextualLogos = btnTextualLogos.Selected;
+      MyVideoWatchedProgress = btnMyVideoWatchedProgress.Selected;
 
       // Update BasicHome RecentlyAdded with new setting
       if (FilterWatchedInRecentlyAdded != btnFilterWatchedRecents.Selected)

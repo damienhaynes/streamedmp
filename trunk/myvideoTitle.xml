@@ -6,6 +6,8 @@
   <define>#header.label:#view</define>
   <define>#header.hover:hover_my videos.png</define>
   <define>#useSelectedFanart:Yes</define>
+	<define evaluateNow="true">#listX1Off:#(iif(#StreamedMP.ShowProgressIndicators, -30, -60))</define>
+	<define evaluateNow="true">#listX3Off:#(iif(#StreamedMP.ShowProgressIndicators, 0, 2000))</define>
   <controls>
     <import>myvideos.selected.fanart.xml</import>
     <control>
