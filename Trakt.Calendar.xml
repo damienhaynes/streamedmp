@@ -522,7 +522,18 @@
       <width>100</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>!string.equals(#Trakt.Episode.FirstAiredLocalizedDayOfWeek,)</visible>
+      <visible>!string.equals(#Trakt.Episode.FirstAiredLocalizedDayOfWeek,)+!string.equals(#Trakt.Episode.FirstAiredLocalizedDayOfWeek,N/A)</visible>
+    </control>
+		<control Style="smallTitle">
+      <id>0</id>
+      <label>#Trakt.Show.AirDay</label>
+      <type>label</type>
+      <posX>560</posX>
+      <posY>393</posY>
+      <width>100</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>string.equals(#Trakt.Episode.FirstAiredLocalizedDayOfWeek,)</visible>
     </control>
     <control Style="smallTitleB">
       <id>0</id>
@@ -545,7 +556,19 @@
       <width>100</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>!string.equals(#Trakt.Show.AirTimeLocalized,)</visible>
+      <visible>!string.equals(#Trakt.Show.AirTimeLocalized,)+!string.equals(#Trakt.Show.AirTimeLocalized,N/A)</visible>
+    </control>
+		<control Style="smallTitle">
+      <id>0</id>
+      <label>#Trakt.Show.AirTime</label>
+      <type>label</type>
+      <posX>560</posX>
+      <posY>416</posY>
+      <width>180</width>
+      <width>100</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>string.equals(#Trakt.Show.AirTimeLocalized,N/A)</visible>
     </control>
     <control Style="smallTitleB">
       <label>#Trakt.Translation.Certification.Label</label>
