@@ -297,7 +297,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>305</posY>
+        <posY>330</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -325,6 +325,13 @@
           <description>Start Date</description>
           <type>button</type>
           <id>3</id>
+          <label>-</label>
+          <onleft>50</onleft>
+        </control>
+				<control>
+          <description>Hide Watchlisted</description>
+          <type>checkbutton</type>
+          <id>4</id>
           <label>-</label>
           <onleft>50</onleft>
         </control>
@@ -508,14 +515,14 @@
     </control>
     <control Style="smallTitle">
       <id>0</id>
-      <label>#Trakt.Show.AirDay</label>
+      <label>#Trakt.Episode.FirstAiredLocalizedDayOfWeek</label>
       <type>label</type>
       <posX>560</posX>
       <posY>393</posY>
       <width>100</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>!string.equals(#Trakt.Show.AirDay,)</visible>
+      <visible>!string.equals(#Trakt.Episode.FirstAiredLocalizedDayOfWeek,)</visible>
     </control>
     <control Style="smallTitleB">
       <id>0</id>
@@ -530,7 +537,7 @@
     </control>
     <control Style="smallTitle">
       <id>0</id>
-      <label>#Trakt.Show.AirTime</label>
+      <label>#Trakt.Show.AirTimeLocalized</label>
       <type>label</type>
       <posX>560</posX>
       <posY>416</posY>
@@ -538,7 +545,7 @@
       <width>100</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>!string.equals(#Trakt.Show.AirTime,)</visible>
+      <visible>!string.equals(#Trakt.Show.AirTimeLocalized,)</visible>
     </control>
     <control Style="smallTitleB">
       <label>#Trakt.Translation.Certification.Label</label>
