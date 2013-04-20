@@ -306,6 +306,7 @@ namespace StreamedMPConfig
     public static string Views = "Views";
     public static string DSTStart = "Daylight Start";
     public static string DSTEnd = "Daylight End";
+    public static string MyVideoWatchedProgress = "Show Progress Indicators in My Videos List";
     #endregion
   }
 }
