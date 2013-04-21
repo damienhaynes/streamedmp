@@ -16,7 +16,7 @@
       <id>1</id>
       <posX>381</posX>
       <posY>11</posY>
-      <width>486</width>
+      <width>546</width>
       <height>36</height>
       <texture>tvtitlebg.png</texture>
       <visible>!string.equals(#OnlineVideos.state,sites)</visible>
@@ -42,13 +42,14 @@
       <description>Extension label</description>
       <type>fadelabel</type>
       <id>1</id>
-      <posX>839</posX>
+      <posX>899</posX>
       <posY>13</posY>
-      <width>320</width>
+      <width>380</width>
       <align>right</align>
       <label>#header.Extension.label</label>
       <font>mediastream12c</font>
       <align>right</align>
+			<scrollStartDelaySec>3600</scrollStartDelaySec>
       <visible>!string.equals(#OnlineVideos.state,sites)</visible>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
       <animation effect="fade" time="230" delay="0">WindowClose</animation>
