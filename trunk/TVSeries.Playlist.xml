@@ -113,7 +113,7 @@
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
-      <dimColor>00ffffff</dimColor>
+      <dimColor>ffffffff</dimColor>
       <buttonX>1232</buttonX>
       <buttonY>50</buttonY>
       <buttonwidth>48</buttonwidth>
@@ -215,14 +215,14 @@
         </control>
         <control>
           <description>Repeat on/off button</description>
-          <type>togglebutton</type>
+          <type>checkbutton</type>
           <id>30</id>
           <label>486</label>
           <onleft>50</onleft>
         </control>
         <control>
           <description>AutoPlay on/off button</description>
-          <type>togglebutton</type>
+          <type>checkbutton</type>
           <id>40</id>
           <label>Auto Play</label>
           <onleft>50</onleft>
@@ -608,6 +608,7 @@
       <type>label</type>
       <posX>541</posX>
       <posY>386</posY>
+			<width>180</width>
       <textcolor>#shadow.light</textcolor>
       <visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10002)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -619,6 +620,7 @@
       <type>label</type>
       <posX>540</posX>
       <posY>385</posY>
+			<width>180</width>
       <visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10002)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -669,6 +671,7 @@
       <type>label</type>
       <posX>541</posX>
       <posY>409</posY>
+			<width>180</width>
       <textcolor>#shadow.light</textcolor>
       <visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+control.isvisible(5557)+control.isvisible(5558)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -689,6 +692,7 @@
       <type>label</type>
       <posX>541</posX>
       <posY>409</posY>
+			<width>180</width>
       <textcolor>#shadow.light</textcolor>
       <visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+control.isvisible(5557)+!control.isvisible(5558)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -699,6 +703,7 @@
       <type>label</type>
       <posX>540</posX>
       <posY>408</posY>
+			<width>180</width>
       <visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+control.isvisible(5557)+!control.isvisible(5558)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -749,7 +754,7 @@
       <type>label</type>
       <posX>541</posX>
       <posY>432</posY>
-      <width>200</width>
+      <width>180</width>
       <textcolor>#shadow.light</textcolor>
       <visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10004)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -760,7 +765,7 @@
       <type>label</type>
       <posX>540</posX>
       <posY>431</posY>
-      <width>200</width>
+      <width>180</width>
       <visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10004)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -791,7 +796,7 @@
       <type>label</type>
       <posX>541</posX>
       <posY>455</posY>
-      <width>200</width>
+      <width>180</width>
       <textcolor>#shadow.light</textcolor>
       <visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10005)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -802,7 +807,7 @@
       <type>label</type>
       <posX>540</posX>
       <posY>454</posY>
-      <width>200</width>
+      <width>180</width>
       <visible>[facadeview.list|facadeview.playlist|facadeview.filmstrip]+Control.HasText(10005)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
