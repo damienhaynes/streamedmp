@@ -30,7 +30,7 @@
         <description>Search Phrase Button</description>
         <type>button</type>
         <id>2</id>
-        <label>#StreamedMP.SearchPhrase</label>
+        <label>#GlobalSearch.Translation.SearchPhrase.Label</label>
         <onup>17</onup>
         <ondown>7</ondown>
         <onright>50</onright>
@@ -41,7 +41,7 @@
         <description>Search History Button</description>
         <type>button</type>
         <id>7</id>
-        <label>#StreamedMP.SearchHistory</label>
+        <label>#GlobalSearch.Translation.SearchHistory.Label</label>
         <onup>2</onup>
         <ondown>6</ondown>
         <onright>50</onright>
@@ -52,7 +52,7 @@
         <description>Search Fields Button</description>
         <type>button</type>
         <id>6</id>
-        <label>#StreamedMP.SearchFields</label>
+        <label>#GlobalSearch.Translation.SearchFields.Label</label>
         <onup>7</onup>
         <ondown>10</ondown>
         <onright>50</onright>
@@ -63,18 +63,29 @@
         <description>Search Type Button</description>
         <type>button</type>
         <id>10</id>
-        <label>#StreamedMP.SearchType</label>
+        <label>#GlobalSearch.Translation.SearchType.Label</label>
         <onup>6</onup>
         <ondown>3</ondown>
         <onright>50</onright>
         <onleft>10</onleft>
         <width>300</width>
       </control>
-      <control Style="skintogglebutton">
+      <control>
         <description>Case Sensitivity Button</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>3</id>
-        <label>#StreamedMP.CaseSensitive</label>
+				<textcolor>ffffffff</textcolor>
+				<textcolorNoFocus>bfffffff</textcolorNoFocus>
+				<font>mediastream12tc</font>
+				<textYOff>8</textYOff>
+				<textXOff>20</textXOff>
+				<width>280</width>
+				<height>40</height>
+				<textureFocus>tv_button_focus.png</textureFocus>
+				<textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+				<textureCheckmark>ledon.png</textureCheckmark>
+				<textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
+        <label>#GlobalSearch.Translation.CaseSensitive.Label</label>
         <onup>10</onup>
         <ondown>97</ondown>
         <onright>50</onright>
