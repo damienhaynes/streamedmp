@@ -30,7 +30,7 @@ namespace StreamedMPConfig
 
     #region Skin Controls
     [SkinControl((int)GUIControls.Style)]
-    protected GUIToggleButtonControl btnStyle = null;
+    protected GUICheckButton btnStyle = null;
 
     [SkinControl((int)GUIControls.WideBannerMod)]
     protected GUIButtonControl btnWideBannerMod = null;

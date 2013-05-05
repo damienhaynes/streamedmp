@@ -44,7 +44,7 @@ namespace StreamedMPConfig
     protected GUIButtonControl btnTVMiniGuideSize = null;
 
     [SkinControl((int)GUIControls.TVRandomTVSeresFanart)]
-    protected GUIToggleButtonControl btnTVRandomTVSeresFanart = null;
+    protected GUICheckButton btnTVRandomTVSeresFanart = null;
     #endregion
 
     #region Constructor

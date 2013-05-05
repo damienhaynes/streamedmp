@@ -16,17 +16,18 @@
       <animation effect="fade" time="200" delay="200">windowopen</animation>
       <posX>251</posX>
       <posY>159</posY>
-      <width>595</width>
+      <width>590</width>
       <height>500</height>
       <layout>StackLayout</layout>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>MovingPictures Default/Fanart Style</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>2</id>
         <onleft>2</onleft>
         <onright>#defaultcontrol.onright</onright>
         <onup>4</onup>
         <ondown>3</ondown>
+				<width>590</width>
       </control>
       <control Style="settingsmainbutton">
         <description>MovingPictures Thumbnail Mod</description>
@@ -37,14 +38,15 @@
         <onup>2</onup>
         <ondown>4</ondown>
       </control>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>MovingPictures Tagline in Details Summary</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>4</id>
         <onleft>2</onleft>
         <onright>#defaultcontrol.onright</onright>
         <onup>3</onup>
         <ondown>2</ondown>
+				<width>590</width>
       </control>
     </control>
   </controls>
