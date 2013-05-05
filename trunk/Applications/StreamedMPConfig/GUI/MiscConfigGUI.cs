@@ -48,22 +48,22 @@ namespace StreamedMPConfig
 
     #region Skin Controls
     [SkinControl((int)GUIControls.HiddenMenuImage)]
-    protected GUIToggleButtonControl btnHiddenMenuImage = null;
+    protected GUICheckButton btnHiddenMenuImage = null;
 
     [SkinControl((int)GUIControls.RoundedImages)]
-    protected GUIToggleButtonControl btnRoundedImages = null;
+    protected GUICheckButton btnRoundedImages = null;
 
     [SkinControl((int)GUIControls.IconsInArtwork)]
-    protected GUIToggleButtonControl btnIconsInArtwork = null;
+    protected GUICheckButton btnIconsInArtwork = null;
 
     [SkinControl((int)GUIControls.PlayRecents)]
-    protected GUIToggleButtonControl btnPlayRecents = null;
+    protected GUICheckButton btnPlayRecents = null;
 
     [SkinControl((int)GUIControls.FilterWatchedRecents)]
-    protected GUIToggleButtonControl btnFilterWatchedRecents = null;
+    protected GUICheckButton btnFilterWatchedRecents = null;
 
     [SkinControl((int)GUIControls.LargeFontSize)]
-    protected GUIToggleButtonControl btnLargeFontSize = null;
+    protected GUICheckButton btnLargeFontSize = null;
 
     [SkinControl((int)GUIControls.UnfocusedAlpha)]
     protected GUIButtonControl btnUnfocusedAlpha = null;
@@ -72,13 +72,13 @@ namespace StreamedMPConfig
     protected GUIButtonControl btnListColors = null;
 
     [SkinControl((int)GUIControls.ListControlScrollPopup)]
-    protected GUIToggleButtonControl btnListControlScrollPopup = null;
+    protected GUICheckButton btnListControlScrollPopup = null;
 
     [SkinControl((int)GUIControls.TextualLogos)]
-    protected GUIToggleButtonControl btnTextualLogos = null;
+    protected GUICheckButton btnTextualLogos = null;
 
     [SkinControl((int)GUIControls.MyVideoWatchedProgress)]
-    protected GUIToggleButtonControl btnMyVideoWatchedProgress = null;
+    protected GUICheckButton btnMyVideoWatchedProgress = null;
     #endregion
 
     #region Constructor

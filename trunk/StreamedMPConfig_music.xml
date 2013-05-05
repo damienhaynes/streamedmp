@@ -14,28 +14,30 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>251</posX>
+      <posX>240</posX>
       <posY>90</posY>
-      <width>595</width>
       <height>500</height>
+			<width>600</width>
       <layout>StackLayout</layout>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>CD Cover Obly in Now Playing</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>2</id>
         <onleft>2</onleft>
         <onright>#defaultcontrol.onright</onright>
         <onup>4</onup>
         <ondown>3</ondown>
+				<width>600</width>
       </control>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>Display default EQ Graphic</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>3</id>
         <onleft>3</onleft>
         <onright>#defaultcontrol.onright</onright>
         <onup>2</onup>
         <ondown>4</ondown>
+				<width>600</width>
       </control>
     </control>
     <control>

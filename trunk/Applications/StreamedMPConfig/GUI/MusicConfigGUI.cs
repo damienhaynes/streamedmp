@@ -43,8 +43,8 @@ namespace StreamedMPConfig
       WindowNoMask
     }
 
-    [SkinControl((int)GUIControls.MusicCDCover)] protected GUIToggleButtonControl MusicCDCover = null;
-    [SkinControl((int)GUIControls.MusicGFXeq)] protected GUIToggleButtonControl MusicGFXeq = null;
+    [SkinControl((int)GUIControls.MusicCDCover)] protected GUICheckButton MusicCDCover = null;
+    [SkinControl((int)GUIControls.MusicGFXeq)] protected GUICheckButton MusicGFXeq = null;
 
     [SkinControl((int)GUIControls.Default)] protected GUICheckMarkControl defaultStyle = null;
     [SkinControl((int)GUIControls.FullscreenStyle1)] protected GUICheckMarkControl fullscreenStyle1 = null;
