@@ -167,7 +167,7 @@
       </control>
       <control>
         <description>Wait until tasks finished</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>9</id>
         <label>Wait until tasks finished</label>
         <onup>8</onup>
@@ -181,16 +181,14 @@
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>30</textXOff>
-        <textureFocus>tv_button_focus_ledon.png</textureFocus>
-        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
-        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
-        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
       <control>
         <description>Volume Reduction</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>10</id>
         <label>Volume Reduction</label>
         <onup>9</onup>
@@ -204,10 +202,8 @@
         <height>40</height>
         <textYOff>8</textYOff>
         <textXOff>30</textXOff>
-        <textureFocus>tv_button_focus_ledon.png</textureFocus>
-        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
-        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
-        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
+        <textureFocus>tv_button_focus.png</textureFocus>
+        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
