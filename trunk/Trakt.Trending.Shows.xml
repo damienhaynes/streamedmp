@@ -359,12 +359,24 @@
       </control>
       <control>
         <id>0</id>
+        <description>Filters</description>
+        <label>#Trakt.Translation.Filters.Label</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1040</posX>
+        <posY>305</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="300,0">visible</animation>
+        <animation effect="slide" time="0" end="300,0">hidden</animation>
+      </control>
+			<control>
+        <id>0</id>
         <description>JUMP TO</description>
         <label>1065</label>
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>305</posY>
+        <posY>445</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -396,6 +408,41 @@
           <label>-</label>
         </control>
         <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+				<control>
+          <description>Hide Watched</description>
+          <type>checkbutton</type>
+          <id>9</id>
+          <label>#Trakt.Translation.HideWatched.Label</label>
+					<onleft>50</onleft>
+        </control>
+				<control>
+          <description>Hide Watchlisted</description>
+          <type>checkbutton</type>
+          <id>10</id>
+          <label>#Trakt.Translation.HideWatchlisted.Label</label>
+					<onleft>50</onleft>
+        </control>
+				<control>
+          <description>Hide Collected</description>
+          <type>checkbutton</type>
+          <id>11</id>
+          <label>#Trakt.Translation.HideCollected.Label</label>
+					<onleft>50</onleft>
+        </control>
+				<control>
+          <description>Hide Rated</description>
+          <type>checkbutton</type>
+          <id>12</id>
+          <label>#Trakt.Translation.HideRated.Label</label>
+					<onleft>50</onleft>
+        </control>
+				<control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
