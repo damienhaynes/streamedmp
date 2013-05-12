@@ -93,6 +93,7 @@
   <string name="Error">Trakt klaida</string>
   <string name="ErrorCalendar">Klaida gaunant kalendorių</string>
   <!--F-->
+  <string name="Filters">Filtrai</string>
   <string name="FirstAired">Pirma kartą rodytas</string>
   <string name="Friend">Draugas</string>
   <string name="Friends">Draugai</string>
@@ -166,6 +167,7 @@
   <string name="Hated">Nekenčiami</string>
   <string name="HideTVShowsInWatchlist">Slėpti TV laidas žiūrimų sąraše</string>
   <string name="HideCollected">Slėpti kolekcionuojamus</string>
+  <string name="HideRated">Slėpti įvertintus</string>
   <string name="HideWatched">Slėpti žiūrėtus</string>
   <string name="HideWatchlisted">Slėpti žiūrėtųjų sąraše</string>
   <string name="HideSpoilers">Slėpti išnašas</string>
@@ -231,7 +233,9 @@
   <string name="NoRelatedShows">Nerasta su {0} susijusių laidų!</string>
   <string name="No">Ne</string>
   <!--O-->
+  <string name="Off">Išjungta</string>
   <string name="OK">OK</string>
+  <string name="On">Įjungta</string>
   <string name="Overview">Apžvalga</string>
   <!--P-->
   <string name="Password">Slaptažodis</string>
@@ -295,8 +299,8 @@
   <string name="SendFriendRequest">Siųsti draugo užklausą {0}?</string>
   <string name="SelectLists">Pasirinkti sąrašus</string>
   <string name="SelectUser">Pasirinkti vartotoją</string>
-  <string name="Series">Serijos</string>
-  <string name="SeriesPlural">Serijos</string>
+  <string name="Series">Serialai</string>
+  <string name="SeriesPlural">Serialai</string>
   <string name="Settings">Nustatymai</string>
   <string name="Shout">Šaukimas</string>
   <string name="Shouts">Šaukimai</string>
@@ -331,6 +335,8 @@
   <string name="SettingSyncRatingsDescription">Įjungti šį nustatymą kad vyktų dvipusis įvertinimų apsikeitimas sinchronizuojant biblioteką. Jei įrašas buvo įvertintas lokaliai ar kitoje pusėje, tuomet jis nebus užrašytas ant viršaus kad išvengti  suapvalinimo klaidų. Rekomenduojama, kad online įrašai būtų įvertinti naudojant išplėstinius vertinimus iki bus įjungtas šis nustatymas.</string>
   <string name="SettingShowRateDialogOnWatchedName">Rodyti vertinimo dialogą žiūrėtuosiuose</string>
   <string name="SettingShowRateDialogOnWatchedDescription">Įjungti šį nustatymą, kad rodyti Trakt dialogą po to, kai filmas ar epizodas baigtas ir laikomas peržiūrėtu. Trakt vertinimo dialogas nebus rodomas jei įrašas jau buvo įvertintas.</string>
+  <string name="SettingShowRateDialogInPlaylistsName">Rodyti Vertinimo dialogą grojaraščiuose</string>
+  <string name="SettingShowRateDialogInPlaylistsDescription">Įjungus Trakt vertinimo dialogą išjunkite šį nustatymą jeigu norite nerodyti jo grojaraščio vaizde.</string>
   <string name="SettingActivityPollIntervalName">Prietaisų skydo veiklos užklausimų intervalas</string>
   <string name="SettingActivityPollIntervalDescription">Nustatyti laikotarpį (sekundėmis), kada Trakt bendruomenės/draugų veikla bus atnaujinta prietaisų skyde.</string>
   <string name="SettingTrendingPollIntervalName">Prietaisų skydo Naujausių užklausų intervalas</string>
@@ -339,6 +345,12 @@
   <string name="SettingDashboardLoadDelayDescription">Šis nustatymas kontroliuoja, kaip ilgai (milisekundėmis) prietaisų skydas pradeda užkrauti duomenis po vartotojo sąsajos paleidimo. Stipriai sumažinus šią vertę gali kilti problemų užkraunant langą.</string>
   <string name="SettingEnableJumpToForTVShowsName">Įjungti TV laidų \"Peršokti į\"  funkciją</string>
   <string name="SettingEnableJumpToForTVShowsDescription">Įjungti šį nustatymą, kad vartotojai galėtų Peršokti tiesiai į TV Serialų įskiepį kai paspaudžia Enter arba OK ant Trakt Laidos. Kai išjungta rodys Sezono informaciją iš Trakt.tv.</string>
+  <string name="SettingRememberLastSelectedActivityName">Prisiminti paskutinį pasirinktą veiksmą darbastalyje</string>
+  <string name="SettingRememberLastSelectedActivityDescription">Įjungus šį nustatymą bus pakartotinai pasirinktas vėliausias veiksmas Trakt darbastaliui atnaujinant, jei išjungta - atnaujinant bus naudojamas pirmasis įrašas .</string>
+  <string name="SettingDefaultTVShowTrailerSiteName">Numatytas TV laidų anonsų puslapis</string>
+  <string name="SettingDefaultTVShowTrailerSiteDescription">Pasirinkite numatytąjį TV laidų anonsų puslapį, kuris bus naudojamas automatinei paieškai. Jei naudojamas YouTube, bus naudojami papildomi paieškos parametrai kaip sezono ir epizodo numeriai.</string>
+  <string name="SettingDefaultMovieTrailerSiteName">Numatytas filmų anonsų puslapis</string>
+  <string name="SettingDefaultMovieTrailerSiteDescription">Pasirinkite numatytąjį filmų anonsų puslapį, kuris bus naudojamas automatinei paieškai.</string>
   <string name="StartYear">Pradėti: {0}</string>
   <string name="SortBy">Rūšiuoti pagal: {0}</string>
   <string name="SortSeasonsAscending">Rūšiuoti Sezonus didėjančia tvarka</string>
@@ -356,6 +368,8 @@
   <string name="TVShows">TV Laidos</string>
   <string name="Tagline">Antraštė</string>
   <string name="Title">Antraštė</string>
+  <string name="Today">Šiandien</string>
+  <string name="Tomorrow">Rytoj</string>
   <string name="Trailer">Anonsas</string>
   <string name="Trailers">Anonsai...</string>
   <!--U-->
@@ -389,4 +403,5 @@
   <!--Y-->
   <string name="Year">Metai</string>
   <string name="Yes">Taip</string>
+  <string name="Yesterday">Vakar</string>
 </resources>

@@ -47,7 +47,7 @@
   <string name="CalendarMyShows">Mijn series</string>
   <string name="CalendarPremieres">Premières</string>
   <string name="CalendarAllShows">Alle series</string>
-  <string name="Certification">Certificaat</string>
+  <string name="Certification">Classificatie</string>
   <string name="ChangeView">Wijzig weergave</string>
   <string name="ChangeLayout">Wijzig lay-out</string>
   <string name="Create">Creëren</string>
@@ -93,7 +93,8 @@
   <string name="Error">Trakt fout</string>
   <string name="ErrorCalendar">Fout tijdens het ophalen van kalender</string>
   <!--F-->
-  <string name="FirstAired">Eerst uitgezonden</string>
+  <string name="Filters">Filters</string>
+  <string name="FirstAired">Eerste uitzending</string>
   <string name="Friend">Vriend</string>
   <string name="Friends">Vrienden</string>
   <string name="FriendActivity">Vriend activiteit</string>
@@ -108,7 +109,7 @@
   <string name="GenreItem">Genre: {0}</string>
   <string name="GenreAction">Actie</string>
   <string name="GenreAdventure">Avontuur</string>
-  <string name="GenreAll">Alle</string>
+  <string name="GenreAll">Alles</string>
   <string name="GenreAnimation">Animatie</string>
   <string name="GenreChildren">Kinderen</string>
   <string name="GenreComedy">Humor</string>
@@ -166,6 +167,7 @@
   <string name="Hated">Gehaat</string>
   <string name="HideTVShowsInWatchlist">Verberg TV serie in kijk lijst</string>
   <string name="HideCollected">Verberg verzameld</string>
+  <string name="HideRated">Gewaardeerde verbergen</string>
   <string name="HideWatched">Verberg bekeken</string>
   <string name="HideWatchlisted">Verberg kijklijst</string>
   <string name="HideSpoilers">Verberg spoilers</string>
@@ -200,7 +202,7 @@
   <string name="MultiSelectDialog">Multi-Select dialoog</string>
   <!--N-->
   <string name="Name">Naam</string>
-  <string name="Network">Netwerk</string>
+  <string name="Network">Kanaal</string>
   <string name="NextEpisode">Volgende aflevering</string>
   <string name="NextWeek">Volgende week</string>
   <string name="NoActivities">Geen activiteit gevonden</string>
@@ -231,7 +233,9 @@
   <string name="NoRelatedShows">Geen gerelateerde series gevonden voor {0}!</string>
   <string name="No">Nee</string>
   <!--O-->
-  <string name="OK">Oké</string>
+  <string name="Off">Uit</string>
+  <string name="OK">OK</string>
+  <string name="On">Aan</string>
   <string name="Overview">Overzicht</string>
   <!--P-->
   <string name="Password">Wachtwoord</string>
@@ -241,8 +245,8 @@
   <string name="PersonWatching">1 persoon kijkt</string>
   <string name="PeopleWatching">{0} mensen kijken</string>
   <string name="PlayTrailer">Trailer afspelen</string>
-  <string name="Plugin">Plugin</string>
-  <string name="Plugins">Plugins</string>
+  <string name="Plugin">Plug-in</string>
+  <string name="Plugins">Plug-ins</string>
   <string name="Public">Openbaar</string>
   <string name="PreviousEpisode">Vorige aflevering</string>
   <string name="Private">Privé</string>
@@ -251,9 +255,9 @@
   <string name="PrivacyFriends">Alleen vrienden kunnen deze lijst bekijken</string>
   <string name="PrivacyPrivate">Alleen jij kan deze lijst bekijken</string>
   <!--R-->
-  <string name="Rate">Beoordeel</string>
-  <string name="Rated">Beoordeeld</string>
-  <string name="Rating">Beoordeling</string>
+  <string name="Rate">Waardeer</string>
+  <string name="Rated">Gewaardeerd</string>
+  <string name="Rating">Waardering</string>
   <string name="RateMovie">Beoordeel films</string>
   <string name="RateShow">Beoordeel serie</string>
   <string name="RateEpisode">Beoordeel aflevering</string>
@@ -275,7 +279,7 @@
   <string name="RelatedMovies">Gerelateerde films</string>
   <string name="RelatedShows">Gerelateerde series</string>
   <string name="Released">Uitgekomen</string>
-  <string name="ReleaseDate">Datum uitgekomen</string>
+  <string name="ReleaseDate">Release datum</string>
   <string name="RemoveFromLibrary">Verwijder uit bibliotheek</string>
   <string name="RemoveFromWatchList">Verwijder uit kijk lijst</string>
   <string name="RemoveShowFromWatchList">Verwijder serie uit kijk lijst</string>
@@ -285,7 +289,7 @@
   <string name="Replies">Reacties</string>
   <string name="Runtime">Speelduur</string>
   <!--S-->
-  <string name="Score">Beoordeling</string>
+  <string name="Score">Score</string>
   <string name="Scrobble">Scrobbel</string>
   <string name="SearchWithMpNZB">Zoek NZB</string>
   <string name="SearchTorrent">Zoek torrent</string>
@@ -295,8 +299,8 @@
   <string name="SendFriendRequest">Zend vriend verzoek naar {0}?</string>
   <string name="SelectLists">Selecteer lijst</string>
   <string name="SelectUser">Selecteer gebruiker</string>
-  <string name="Series">Series</string>
-  <string name="SeriesPlural">Series</string>
+  <string name="Series">Serie</string>
+  <string name="SeriesPlural">Serie</string>
   <string name="Settings">Instellingen</string>
   <string name="Shout">Stem</string>
   <string name="Shouts">Stemmen</string>
@@ -313,23 +317,50 @@
   <string name="ShowRateDialogOnWatched">Waarderingsdialoog weergeven voor bekeken item</string>
   <string name="ShowSeasonInfo">Seizoen informatie...</string>
   <string name="ShowWatched">Serie bekeken</string>
-  <string name="SettingPluginEnabledName">Plugin ingeschakeld</string>
+  <string name="SettingPluginEnabledName">Plug-in ingeschakeld</string>
   <string name="SettingPluginEnabledDescription">Schakel deze instelling in/uit om Trakt te laden bij het opstarten van MediaPortal</string>
-  <string name="SettingListedHomeName">Toon in Home scherm</string>
+  <string name="SettingListedHomeName">Weergeven in hoofdmenu</string>
   <string name="SettingListedHomeDescription">Schakel deze instelling in om de Trakt plugin te laten verschijnen in het Home scherm.</string>
-  <string name="SettingListedPluginsName">Toon in mijn plugins</string>
+  <string name="SettingListedPluginsName">Weergeven in plug-in menu</string>
   <string name="SettingListedPluginsDescription">Schakel deze setting in om de Trakt plugin te laten verschijnen in het mijn plugins.</string>
   <string name="SettingSyncTimerName">Bibliotheek synchronisatie periode</string>
   <string name="SettingSyncTimerDescription">Stel de periode in (in aantal uren) tussen elke bibliotheek synchronisatie. Standaard is dit 24 uur.</string>
   <string name="SettingSyncStartDelayName">Bibliotheek synchronisatie start vertraging</string>
   <string name="SettingSyncStartDelayDescription">Vertraging (in aantal seconden) voor dat de bibliotheek synchronisatie begint bij het opstarten van MediaPortal. Standaard is dit 0 seconden.</string>
   <string name="SettingWebRequestCacheName">Web aanvraag cache tijd</string>
+  <string name="SettingWebRequestCacheDescription">Stel de periode in (in minuten) hoe lang webdata wordt bewaard voor de schermen zoals de Kalender, Trending en Aanbevelingen. Standaard is 15 minuten.</string>
   <string name="SettingWebRequestTimeoutName">Web aanvraag Time-out</string>
+  <string name="SettingWebRequestTimeoutDescription">Stel de periode in (in seconden) voordat een webaanvraag wordt geannuleerd. Standaard is 30 seconden</string>
+  <string name="SettingSyncRatingsName">Waarderingen synchroniseren</string>
+  <string name="SettingSyncRatingsDescription">Schakel deze instelling in voor 2-weg synchronisatie van waarderingen tijdens het synchroniseren van de bibliotheek. Wanneer een item lokaal of op afstand is gewaardeerd dan wordt deze niet overschreven om afrondingsfouten te voorkomen. Het wordt aanbevolen om items online te waarderen via geavanceerd waarderen voordat deze instelling wordt ingeschakeld.</string>
+  <string name="SettingShowRateDialogOnWatchedName">Waarderings dialoog weergeven wanneer bekeken</string>
+  <string name="SettingShowRateDialogOnWatchedDescription">Schakel deze instelling in om het Trakt waarderingsdialoog weer te geven nadat een film of aflevering volledig is bekeken. Het Trakt waarderingsdialoog zal niet worden weergegeven wanneer een item al is beoordeeld.</string>
+  <string name="SettingShowRateDialogInPlaylistsName">Waarderingsvenster weergeven in afspeellijsten</string>
+  <string name="SettingShowRateDialogInPlaylistsDescription">Wanneer het Trakt waarderingsvenster is ingeschakeld, schakel dan deze instelling uit als je het niet wilt weergeven in het afspeellijst scherm.</string>
+  <string name="SettingActivityPollIntervalName">Dashboard activiteiten peilingsinterval</string>
+  <string name="SettingActivityPollIntervalDescription">Stel de interval (in seconden) in voor wanneer de activeit van de Trakt leden/vrienden wordt bijgewerkt op het dashboard.</string>
+  <string name="SettingTrendingPollIntervalName">Dashboard trending peilingsinterval</string>
+  <string name="SettingTrendingPollIntervalDescription">Stel de interval (in minuten) in voor wanneer de Trakt shows en films worden bijgewerkt op het dashboard.</string>
+  <string name="SettingDashboardLoadDelayName">Dashboard laadvertraging</string>
+  <string name="SettingDashboardLoadDelayDescription">Deze instelling is voor het instellen van de duur in miliseconden voordat het dashboard start met het laden van gegevens nadat het scherm is geopend. Het wijzigen van deze instelling naar een te lage waarde kan fouten veroorzaken tijdens het laden van het scherm.</string>
+  <string name="SettingEnableJumpToForTVShowsName">TVSerie spring naar optie inschakelen</string>
+  <string name="SettingEnableJumpToForTVShowsDescription">Schakel deze instelling in om direct naar de TVSeries plugin te springen wanneer op Enter of OK wordt gedrukt bij een Trakt TV serie. Wanneer uitgeschakeld, wordt seizoensinformatie weergegeven van trakt.tv.</string>
+  <string name="SettingRememberLastSelectedActivityName">Herinner de laatst geselecteerde activiteit op het dashboard</string>
+  <string name="SettingRememberLastSelectedActivityDescription">Schakel deze instelling in om de laatst geselecteerde activiteit te herselecteren wanneer het Trakt dashboard wordt herladen. Wanneer uitgeschakeld, zal altijd het eerste item worden geselecteerd tijdens het herladen.</string>
+  <string name="SettingDefaultTVShowTrailerSiteName">Standaard TV-serie trailer website</string>
+  <string name="SettingDefaultTVShowTrailerSiteDescription">Kies de standaard TV-show trailer website voor wanneer er een automatische trailer zoekactie wordt uitgevoerd b.v. door op afspelen te drukken voor een TV-show of aflevering. Wanneer gebruik wordt gemaakt van YouTube, dan worden extra zoek parameters gebruikt voor het zoeken naar afleveringen zoals seizoen en aflevering.</string>
+  <string name="SettingDefaultMovieTrailerSiteName">Standaard film trailer website</string>
+  <string name="SettingDefaultMovieTrailerSiteDescription">Kies de standaard film trailer website voor wanneer er een automatische trailer zoekactie wordt uitgevoerd b.v. door op afspelen te drukken voor een film.</string>
+  <string name="StartYear">Start: {0}</string>
+  <string name="SortBy">Sorteer op: {0}</string>
+  <string name="SortSeasonsAscending">Sorteer seizoenen oplopend</string>
+  <string name="SortSeasonsDescending">Sorteer seizoenen aflopend</string>
   <string name="Specials">Extra\'s</string>
   <!--T-->
   <string name="Timeout">Time-out</string>
-  <string name="Trending">Populair</string>
+  <string name="Trending">Veel bekeken</string>
   <string name="TrendingShows">Populaire series</string>
+  <string name="TrendingShowsAndMovies">Trending series en films</string>
   <string name="TrendingMovies">Populaire films</string>
   <string name="TrendingMoviePeople">Er kijken {0} mensen naar {1} films op dit moment!</string>
   <string name="TrendingTVShowsPeople">Er kijken {0} mensen naar {1}  series op dit moment!</string>
@@ -337,6 +368,8 @@
   <string name="TVShows">TV series</string>
   <string name="Tagline">Label</string>
   <string name="Title">Titel</string>
+  <string name="Today">Vandaag</string>
+  <string name="Tomorrow">Morgen</string>
   <string name="Trailer">Trailer</string>
   <string name="Trailers">Trailers...</string>
   <!--U-->
@@ -346,6 +379,7 @@
   <string name="Users">Gebruikers</string>
   <string name="Username">Gebruikersnaam</string>
   <string name="UnAuthorized">Authenticatie mislukt, controlleer gebruikersnaam en wachtwoord.</string>
+  <string name="UnRate">Beoordeling intrekken</string>
   <string name="UpdatingCategories">Categorieën updaten</string>
   <string name="UpdatingFilters">Filters updaten</string>
   <string name="UnableToPlayTrailer">Afspelen trailer niet mogelijk</string>
@@ -369,4 +403,5 @@
   <!--Y-->
   <string name="Year">Jaar</string>
   <string name="Yes">Ja</string>
+  <string name="Yesterday">Gisteren</string>
 </resources>
