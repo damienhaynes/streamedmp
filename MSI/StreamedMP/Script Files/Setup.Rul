@@ -102,15 +102,15 @@
 #define MEDIAPORTAL_MINNOWARN_VERSION				"1.2.200.0" 	// 1.3 Beta
 #define MEDIAPORTAL_MIN_VERSION						"1.2.200.0"		// 1.3 Beta
                            
-#define TVSERIES_MIN_VERSION						"3.4.2.2018"
+#define TVSERIES_MIN_VERSION						"3.5.0.2028"
 #define MOVINGPICTURES_MIN_VERSION					"1.5.1.1487"
 #define FANARTHANDLER_MIN_VERSION					"3.0.9.0"
 #define LATESTMEDIAHANDLER_MIN_VERSION				"1.6.0.9"
 #define MYLYRICS_MIN_VERSION						"1.7.0.67"
-#define GLOBALSEARCH_MIN_VERSION					"1.7.6.62"
+#define GLOBALSEARCH_MIN_VERSION					"1.8.0.68"
 #define INFOSERVICE_MIN_VERSION						"1.7.1.245"
-#define TRAKT_MIN_VERSION							"2.7.0.0"    
-#define WEATHER_MIN_VERSION							"1.1.1.0"
+#define TRAKT_MIN_VERSION							"2.9.0.0"    
+#define WEATHER_MIN_VERSION							"1.2.2.0"
 
 
 // XML Path Defines
@@ -3635,8 +3635,5 @@ begin
         
     XCopyFile ( szSrcFile, szTargetPath, COMP_NORMAL ); 
      
-    // delete Backup Folder
-    DeleteDir(INSTALLDIR ^ SKIN_NAME + "_Image_Backup", ALLCONTENTS);
-      
 	Enable(LOGGING);
 end; 
