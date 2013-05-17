@@ -234,49 +234,27 @@
       <posX>20</posX>
       <posY>638</posY>
       <layout>StackLayout</layout>
-      <control>
+      <control Style="skincheckbutton">
         <description>Biography</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>3</id>
         <label>1011</label>
         <onup>4</onup>
         <ondown>4</ondown>
         <onleft>24</onleft>
         <onright>24</onright>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <width>270</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <textureFocus>tv_button_focus_ledon.png</textureFocus>
-        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
-        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
-        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-      <control>
+      <control Style="skincheckbutton">
         <description>Movies</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>4</id>
         <label>342</label>
         <onleft>24</onleft>
         <onup>3</onup>
         <ondown>3</ondown>
         <onright>24</onright>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <width>270</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <textureFocus>tv_button_focus_ledon.png</textureFocus>
-        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
-        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
-        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>

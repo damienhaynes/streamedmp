@@ -233,43 +233,61 @@
       <posY>560</posY>
       <width>200</width>
       <height>52</height>
-      <control>
+      <control Style="settingsosdcheckbutton">
         <description>Play</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>213</id>
+        <posX>58</posX>
+        <posY>650</posY>
+				<width>60</width>
+        <height>60</height>
+				<markHeight>60</markHeight>
+				<markWidth>60</markWidth>
+				<textureCheckmark>osdplayfo.png</textureCheckmark>
+				<textureCheckmarkNoFocus>osdplaynf.png</textureCheckmarkNoFocus>
+				<textureFocus>osdplayfo.png</textureFocus>
+				<textureNoFocus>osdplaynf.png</textureNoFocus>
+        <onleft>218</onleft>
+        <onright>214</onright>
+        <onup>218</onup>
+        <ondown>218</ondown>
+        <visible>player.playing</visible>
+        <animation effect="fade" time="250">Visible</animation>
+        <animation effect="fade" time="250">windowopen</animation>
+      </control>
+			<control Style="settingsosdcheckbutton">
+        <description>Pause</description>
+        <type>checkbutton</type>
+        <id>214</id>
         <posX>58</posX>
         <posY>650</posY>
         <width>60</width>
         <height>60</height>
-        <AltTextureFocus>osdpausefo.png</AltTextureFocus>
-        <AltTextureNoFocus>osdpausenf.png</AltTextureNoFocus>
-        <textureFocus>osdplayfo.png</textureFocus>
-        <textureNoFocus>osdplaynf.png</textureNoFocus>
-        <label>-</label>
-        <font>-</font>
-        <onleft>218</onleft>
+				<markHeight>60</markHeight>
+				<markWidth>60</markWidth>
+				<textureCheckmark>osdpausefo.png</textureCheckmark>
+				<textureCheckmarkNoFocus>osdpausenf.png</textureCheckmarkNoFocus>
+				<textureFocus>osdpausefo.png</textureFocus>
+				<textureNoFocus>osdpausenf.png</textureNoFocus>
+        <onleft>213</onleft>
         <onright>218</onright>
         <onup>218</onup>
         <ondown>218</ondown>
-        <visible>yes</visible>
+        <visible>player.paused</visible>
         <animation effect="fade" time="250">Visible</animation>
         <animation effect="fade" time="250">windowopen</animation>
       </control>
-      <control>
+      <control Style="settingsosdcheckbutton">
         <description>Subtitles</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>218</id>
         <posX>1115</posX>
         <posY>510</posY>
-        <width>40</width>
-        <height>40</height>
-        <AltTextureFocus>osdvizfo.png</AltTextureFocus>
-        <AltTextureNoFocus>osdviznf.png</AltTextureNoFocus>
-        <textureFocus>osdvizfo.png</textureFocus>
-        <textureNoFocus>osdviznf.png</textureNoFocus>
-        <label>-</label>
-        <font>-</font>
-        <onleft>213</onleft>
+				<textureFocus>osdvizfo.png</textureFocus>
+				<textureNoFocus>osdviznf no_focus.png</textureNoFocus>
+				<textureCheckmark>osdvizfo.png</textureCheckmark>
+				<textureCheckmarkNoFocus>osdviznf.png</textureCheckmarkNoFocus>
+        <onleft>214</onleft>
         <onright>220</onright>
         <onup>213</onup>
         <ondown>213</ondown>
@@ -277,20 +295,16 @@
         <animation effect="fade" time="250">Visible</animation>
         <animation effect="fade" time="250">windowopen</animation>
       </control>
-      <control>
+      <control Style="settingsosdcheckbutton">
         <description>Video Menu</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>220</id>
         <posX>1165</posX>
         <posY>510</posY>
-        <width>40</width>
-        <height>40</height>
-        <AltTextureFocus>osdvideofo.png</AltTextureFocus>
-        <AltTextureNoFocus>osdvideonf.png</AltTextureNoFocus>
-        <textureFocus>osdvideofo.png</textureFocus>
-        <textureNoFocus>osdvideonf.png</textureNoFocus>
-        <label>-</label>
-        <font>-</font>
+				<textureFocus>osdvideofo.png</textureFocus>
+				<textureNoFocus>osdvideonf.png</textureNoFocus>
+				<textureCheckmark>osdvideofo.png</textureCheckmark>
+				<textureCheckmarkNoFocus>osdvideonf.png</textureCheckmarkNoFocus>
         <onleft>218</onleft>
         <onright>221</onright>
         <onup>213</onup>
@@ -299,20 +313,16 @@
         <animation effect="fade" time="250">Visible</animation>
         <animation effect="fade" time="250">windowopen</animation>
       </control>
-      <control>
+      <control Style="settingsosdcheckbutton">
         <description>Audio Menu</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>221</id>
         <posX>1215</posX>
         <posY>510</posY>
-        <width>40</width>
-        <height>40</height>
-        <AltTextureFocus>osdaudiofo.png</AltTextureFocus>
-        <AltTextureNoFocus>osdaudionf.png</AltTextureNoFocus>
-        <textureFocus>osdaudiofo.png</textureFocus>
-        <textureNoFocus>osdaudionf.png</textureNoFocus>
-        <label>-</label>
-        <font>-</font>
+				<textureFocus>osdaudiofo.png</textureFocus>
+				<textureNoFocus>osdaudionf.png</textureNoFocus>
+				<textureCheckmark>osdaudiofo.png</textureCheckmark>
+				<textureCheckmarkNoFocus>osdaudionf.png</textureCheckmarkNoFocus>
         <onleft>220</onleft>
         <onright>218</onright>
         <onup>213</onup>

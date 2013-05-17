@@ -6,6 +6,8 @@
   <allowoverlay>no</allowoverlay>
   <define>#header.label:136</define>
   <define>#header.hover:hover_my videos.png</define>
+  <define evaluateNow="true">#listX1Off:#(iif(#StreamedMP.ShowProgressIndicators, -30, -60))</define>
+  <define evaluateNow="true">#listX3Off:#(iif(#StreamedMP.ShowProgressIndicators, 0, 2000))</define>
   <controls>
     <control>
       <type>image</type>
@@ -186,7 +188,7 @@
         </control>
         <control>
           <description>Repeat on/off button</description>
-          <type>togglebutton</type>
+          <type>checkbutton</type>
           <id>30</id>
           <label>486</label>
           <onleft>50</onleft>
