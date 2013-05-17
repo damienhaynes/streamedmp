@@ -161,25 +161,47 @@
       <posY>560</posY>
       <width>200</width>
       <height>52</height>
-      <control>
-        <description>Play/Pause</description>
-        <type>togglebutton</type>
+      <control Style="settingsosdcheckbutton">
+        <description>Play</description>
+        <type>checkbutton</type>
         <id>213</id>
+        <posX>58</posX>
+        <posY>650</posY>
+				<width>60</width>
+        <height>60</height>
+				<markHeight>60</markHeight>
+				<markWidth>60</markWidth>
+				<textureCheckmark>osdplayfo.png</textureCheckmark>
+				<textureCheckmarkNoFocus>osdplaynf.png</textureCheckmarkNoFocus>
+				<textureFocus>osdplayfo.png</textureFocus>
+				<textureNoFocus>osdplaynf.png</textureNoFocus>
+        <onleft>213</onleft>
+        <onright>213</onright>
+        <onup>213</onup>
+        <ondown>213</ondown>
+        <visible>player.playing</visible>
+        <animation effect="fade" time="250">Visible</animation>
+        <animation effect="fade" time="250">windowopen</animation>
+      </control>
+			<control Style="settingsosdcheckbutton">
+        <description>Pause</description>
+        <type>checkbutton</type>
+        <id>214</id>
         <posX>58</posX>
         <posY>650</posY>
         <width>60</width>
         <height>60</height>
-        <AltTextureFocus>osdpausefo.png</AltTextureFocus>
-        <AltTextureNoFocus>osdpausenf.png</AltTextureNoFocus>
-        <textureFocus>osdplayfo.png</textureFocus>
-        <textureNoFocus>osdplaynf.png</textureNoFocus>
-        <label>-</label>
-        <font>-</font>
-        <onleft>218</onleft>
-        <onright>218</onright>
-        <onup>218</onup>
-        <ondown>218</ondown>
-        <visible>yes</visible>
+				<markHeight>60</markHeight>
+				<markWidth>60</markWidth>
+				<textureCheckmark>osdpausefo.png</textureCheckmark>
+				<textureCheckmarkNoFocus>osdpausenf.png</textureCheckmarkNoFocus>
+				<textureFocus>osdpausefo.png</textureFocus>
+				<textureNoFocus>osdpausenf.png</textureNoFocus>
+        <onleft>214</onleft>
+        <onright>214</onright>
+        <onup>214</onup>
+        <ondown>214</ondown>
+        <visible>player.paused</visible>
         <animation effect="fade" time="250">Visible</animation>
         <animation effect="fade" time="250">windowopen</animation>
       </control>

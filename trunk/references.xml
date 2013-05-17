@@ -43,17 +43,6 @@
     <textureFocus>settingsbuttonfo.png</textureFocus>
     <colordiffuse>ffFFFFFF</colordiffuse>
   </style>
-  <style Name="settingstogglebutton">
-    <font>mediastream10tc</font>
-    <textXOff>23</textXOff>
-    <textYOff>12</textYOff>
-    <width>211</width>
-    <height>43</height>
-    <textureFocus>settingstogglebutton_fo_on.png</textureFocus>
-    <textureNoFocus>settingstogglebutton_nf_on.png</textureNoFocus>
-    <AltTextureFocus>settingstogglebutton_fo_off.png</AltTextureFocus>
-    <AltTextureNoFocus>settingstogglebutton_nf_off.png</AltTextureNoFocus>
-  </style>
   <style Name="settingscheckbutton">
     <width>211</width>
     <height>43</height>
@@ -74,6 +63,26 @@
     <textcolorNoFocus>ff909090</textcolorNoFocus>
     <textalign>left</textalign>
     <textvalign>middle</textvalign>
+  </style>
+	<style Name="settingsosdcheckbutton">
+    <width>40</width>
+		<height>40</height>
+		<markHeight>40</markHeight>
+		<markWidth>40</markWidth>
+		<markalign>right</markalign>
+		<markXOff>5</markXOff>
+		<markYOff>5</markYOff>
+		<label>-</label>
+  </style>
+	<style Name="settingsosdlargecheckbutton">
+    <width>52</width>
+		<height>52</height>
+		<markHeight>52</markHeight>
+		<markWidth>52</markWidth>
+		<markalign>right</markalign>
+		<markXOff>5</markXOff>
+		<markYOff>5</markYOff>
+		<label>-</label>
   </style>
   <style Name="settingsmainbutton">
     <posX>251</posX>
@@ -102,20 +111,7 @@
     <textureFocus>tv_button_focus.png</textureFocus>
     <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
   </style>
-  <style Name="skintogglebutton">
-    <textcolor>ffffffff</textcolor>
-    <textcolorNoFocus>bfffffff</textcolorNoFocus>
-    <font>mediastream12tc</font>
-    <textYOff>8</textYOff>
-    <textXOff>20</textXOff>
-    <width>280</width>
-    <height>40</height>
-    <textureFocus>tv_button_focus_ledon.png</textureFocus>
-    <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
-    <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
-    <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
-  </style>
-	<style Name="skincheckbutton">
+  <style Name="skincheckbutton">
     <textcolor>ffffffff</textcolor>
     <textcolorNoFocus>bfffffff</textcolorNoFocus>
     <font>mediastream12tc</font>
@@ -127,26 +123,6 @@
     <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
     <textureCheckmark>ledon.png</textureCheckmark>
     <textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
-  </style>
-  <style Name="settingsmaintogglebutton">
-    <posX>251</posX>
-    <width>595</width>
-    <height>42</height>
-    <textXOff>0</textXOff>
-    <textYOff>8</textYOff>
-    <textXOff2>10</textXOff2>
-    <textYOff2>8</textYOff2>
-    <font>mediastream12c</font>
-    <textpadding>50</textpadding>
-    <scrollStartDelaySec>2</scrollStartDelaySec>
-    <scrollWrapString> | </scrollWrapString>
-    <textureFocus>listbg_togglebutton_on_fo.png</textureFocus>
-    <AltTextureFocus>listbg_togglebutton_off_fo.png</AltTextureFocus>
-    <textureNoFocus>listbg_togglebutton_on_nf.png</textureNoFocus>
-    <AltTextureNoFocus>listbg_togglebutton_off_nf.png</AltTextureNoFocus>
-    <colordiffuse>ffFFFFFF</colordiffuse>
-    <disabledcolor>ffFFFFFF</disabledcolor>
-    <textcolorNoFocus>ffFFFFFF</textcolorNoFocus>
   </style>
   <style Name="settingsmaincheckbutton">
     <posX>251</posX>
@@ -407,27 +383,6 @@
     <textcolor>ffffffff</textcolor>
     <colordiffuse>ffffffff</colordiffuse>
     <disabledcolor>30ffffff</disabledcolor>
-  </control>
-  <control>
-    <description>default togglebutton</description>
-    <type>togglebutton</type>
-    <id>4</id>
-    <posX>0</posX>
-    <posY>0</posY>
-    <width>220</width>
-    <height>28</height>
-    <textXOff>11</textXOff>
-    <textYOff>5</textYOff>
-    <textureFocus>hiddenmenu_togglebutton_on.png</textureFocus>
-    <textureNoFocus>hiddenmenu_togglebutton_nof_on.png</textureNoFocus>
-    <AltTextureFocus>hiddenmenu_togglebutton_off.png</AltTextureFocus>
-    <AltTextureNoFocus>hiddenmenu_togglebutton_nof_off.png</AltTextureNoFocus>
-    <label>-</label>
-    <font>mediastream10c</font>
-    <textcolor>ffffffff</textcolor>
-    <colordiffuse>ffffffff</colordiffuse>
-    <disabledcolor>30ffffff</disabledcolor>
-    <textcolorNoFocus>ff909090</textcolorNoFocus>
   </control>
   <control>
     <description>default select button</description>
@@ -1118,4 +1073,4 @@
     <shadow>no</shadow>
   </control>
 </controls>
-<!--Checksum:b3d63cc79989872f7ca696bd375d8c3e-->
+<!--Checksum:b72fa09269843a29cdc977d725e8251a-->

@@ -79,49 +79,29 @@
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-      <control>
+      <control Style="skincheckbutton">
         <description>Art Button</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>10</id>
         <label>Get Cover Art</label>
         <onup>4</onup>
         <ondown>19</ondown>
         <onright>10</onright>
         <onleft>10</onleft>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
         <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <textureFocus>tv_button_focus_ledon.png</textureFocus>
-        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
-        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
-        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>
-      <control>
+      <control Style="skincheckbutton">
         <description>Eject Button</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>19</id>
         <label>Eject</label>
         <onup>10</onup>
         <ondown>9</ondown>
         <onright>19</onright>
         <onleft>19</onleft>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
         <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <textureFocus>tv_button_focus_ledon.png</textureFocus>
-        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
-        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
-        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
       </control>

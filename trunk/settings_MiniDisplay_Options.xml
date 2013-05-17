@@ -14,73 +14,82 @@
       <description>buttons</description>
       <type>group</type>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>251</posX>
+      <posX>216</posX>
       <posY>150</posY>
       <width>595</width>
       <height>500</height>
       <layout>StackLayout(0, Vertical, true)</layout>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>Volume Display</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>30</id>
         <label>9121</label>
         <onup>17</onup>
+				<textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>Progress display</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>31</id>
         <label>9122</label>
+				<textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>Disk Icon</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>32</id>
         <label>9123</label>
+				<textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>Media Status</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>33</id>
         <label>9124</label>
+				<textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>CD/DVD Status</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>34</id>
         <label>9125</label>
+				<textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>Use Custom Font</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>35</id>
         <label>9126</label>
+				<textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>Use Large Icons</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>36</id>
         <label>9127</label>
+				<textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>Use Custom Large Icons</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>37</id>
         <label>9128</label>
+				<textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
-      <control Style="settingsmaintogglebutton">
+      <control Style="settingsmaincheckbutton">
         <description>Invert Large Icons</description>
-        <type>togglebutton</type>
+        <type>checkbutton</type>
         <id>38</id>
         <label>9129</label>
+				<textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -88,6 +97,7 @@
         <type>button</type>
         <id>39</id>
         <label>9130</label>
+				<textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -95,6 +105,7 @@
         <type>button</type>
         <id>40</id>
         <label>9131</label>
+				<textXOff>35</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
     </control>
