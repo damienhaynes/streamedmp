@@ -26,7 +26,7 @@
         <id>42</id>
         <label>851</label>
         <textXOff>35</textXOff>
-				<onup>18</onup>
+				<onup>46</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmaincheckbutton">
@@ -85,6 +85,31 @@
         <label>2135</label>
 				<textXOff>35</textXOff>
 				<onright>#defaultcontrol.onright</onright>
+      </control>
+			<control Style="settingsmaincheckbutton">
+        <description>Auto Decoder Settings On/Off</description>
+        <type>checkbutton</type>
+        <id>44</id>
+        <label>1321</label>
+        <textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Force Source Splitter On/Off</description>
+        <type>checkbutton</type>
+        <id>45</id>
+        <label>1322</label>
+        <textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Use Movie Codec TS On/Off</description>
+        <type>checkbutton</type>
+        <id>46</id>
+        <label>1323</label>
+        <textXOff>35</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+        <ondown>42</ondown>
       </control>
     </control>
   </controls>
