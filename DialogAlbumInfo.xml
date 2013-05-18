@@ -1,314 +1,299 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<!--version="1.0" encoding="utf-8" standalone="yes"-->
 <window>
   <id>2001</id>
   <defaultcontrol>5</defaultcontrol>
   <allowoverlay>no</allowoverlay>
+  <disabletopbar>no</disabletopbar>
+  <define>#header.hover:hover_my music.png</define>
+  <define>#header.BG.overlay:mainoverlay.png</define>
+  <define>#header.BG.colordiffuse:ffffffff</define>
+  <define>#header.label:483</define>
+  <define>#useSelectedFanart:Yes</define>
+  <define>#usePlayFanart:Yes</define>
   <controls>
+    <import>mymusic.selected.fanart.xml</import>
     <control>
+      <id>1</id>
+      <description>Overlay Image</description>
       <type>image</type>
-      <id>0</id>
-      <width>1280</width>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1281</width>
       <height>720</height>
-      <texture>black.png</texture>
-      <colordiffuse>90ffffff</colordiffuse>
-      <animation effect="fade" time="200">windowopen</animation>
-      <animation effect="fade" time="200">windowclose</animation>
+      <texture>#header.BG.overlay</texture>
     </control>
     <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>100</posX>
-      <posY>230</posY>
-      <width>1080</width>
-      <height>37</height>
-      <texture>dialogmenutop.png</texture>
-    </control>
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>100</posX>
-      <posY>267</posY>
-      <width>1080</width>
-      <height>403</height>
-      <texture>dialogmenumiddle.png</texture>
-    </control>
-    <control>
-      <type>image</type>
-      <id>0</id>
-      <posX>100</posX>
-      <posY>670</posY>
-      <width>1080</width>
-      <height>12</height>
-      <texture>dialogmenubottom.png</texture>
-    </control>
-    <control>
-      <type>image</type>
       <id>1</id>
-      <posX>106</posX>
-      <posY>25</posY>
-      <texture>info_logo.png</texture>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <posX>77</posX>
+      <posY>11</posY>
+      <width>437</width>
+      <height>35</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="fade" time="150">WindowClose</animation>
+    </control>
+    <control>
+      <id>1</id>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <posX>493</posX>
+      <posY>13</posY>
+      <width>350</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <visible>yes</visible>
+      <label>#header.label</label>
+      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="fade" time="150">WindowClose</animation>
+    </control>
+		<import>common.time.xml</import>
+    <control>
+      <description>Default Cover Art</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>31</posX>
+      <posY>254</posY>
+      <width>257</width>
+      <height>257</height>
+      <texture>defaultArtistBig.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Album value</description>
+      <description>Cover Art</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>31</posX>
+      <posY>254</posY>
+      <width>257</width>
+      <height>257</height>
+      <texture>#AlbumInfo.Thumb</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Cover Art Glass Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>31</posX>
+      <posY>254</posY>
+      <width>228</width>
+      <height>177</height>
+      <texture>glassoverlay2.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Album Title</description>
       <type>label</type>
-      <id>20</id>
-      <posX>350</posX>
-      <posY>230</posY>
-      <label>-</label>
+      <id>0</id>
+      <posX>308</posX>
+      <posY>251</posY>
+      <width>950</width>
       <font>mediastream16tc</font>
-      <width>600</width>
-      <textcolor>FFFFFFFF</textcolor>
+      <label>#AlbumInfo.Title</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-    <control>
-      <description>Artist</description>
+    
+    <control Style="smallTitleB">
+      <description>Year Label</description>
+      <id>0</id>
       <type>label</type>
-      <id>1</id>
-      <posX>850</posX>
-      <posY>280</posY>
-      <label>171</label>
-      <font>mediastream11</font>
+      <label>#(string.rtrim(L(201),':'))</label>
+      <posX>310</posX>
+      <posY>550</posY>
+      <width>140</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <textcolor>ff006699</textcolor>
     </control>
-    <control>
-      <description>Date of Release</description>
+    <control Style="smallTitle">
+      <description>Year</description>
+      <id>1</id>
       <type>label</type>
-      <id>1</id>
-      <posX>850</posX>
-      <posY>310</posY>
-      <label>201</label>
-      <font>mediastream11</font>
+      <label>#(iif(neq(#AlbumInfo.Year,''),'#AlbumInfo.Year','N/A'))</label>
+      <posX>470</posX>
+      <posY>551</posY>
+      <width>750</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <textcolor>ff006699</textcolor>
     </control>
-    <control>
+		
+    <control Style="smallTitleB">
+      <description>Rating Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#(string.rtrim(L(173),':'))</label>
+      <posX>310</posX>
+      <posY>572</posY>
+      <width>140</width>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
       <description>Rating</description>
-      <type>label</type>
       <id>1</id>
-      <posX>850</posX>
-      <posY>340</posY>
-      <label>173</label>
-      <font>mediastream11</font>
+      <type>label</type>
+      <label>#(iif(neq(#AlbumInfo.Rating,''),#AlbumInfo.Rating,'N/A'))</label>
+      <posX>470</posX>
+      <posY>573</posY>
+      <width>750</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <textcolor>ff006699</textcolor>
     </control>
-    <control>
-      <description>Genre</description>
+		
+    <control Style="smallTitleB">
+      <description>Genre Label</description>
+      <id>0</id>
       <type>label</type>
-      <id>1</id>
-      <posX>850</posX>
-      <posY>370</posY>
-      <label>174</label>
-      <font>mediastream11</font>
+      <label>#(L(669))</label>
+      <posX>310</posX>
+      <posY>594</posY>
+      <width>140</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <textcolor>ff006699</textcolor>
+    </control>
+    <control Style="smallTitle">
+      <description>Genre</description>
+      <id>1</id>
+      <type>label</type>
+      <label>#(iif(neq(#AlbumInfo.Genre,''),#AlbumInfo.Genre,'N/A'))</label>
+      <posX>470</posX>
+      <posY>595</posY>
+      <width>750</width>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+		
+    <control Style="smallTitleB">
+      <description>Tones Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#(string.rtrim(L(175),':'))</label>
+      <posX>310</posX>
+      <posY>616</posY>
+      <width>140</width>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Tones</description>
-      <type>label</type>
       <id>1</id>
-      <posX>850</posX>
-      <posY>430</posY>
-      <label>175</label>
-      <font>mediastream11</font>
+      <type>fadelabel</type>
+      <label>#(iif(neq(#AlbumInfo.Tones,''),#AlbumInfo.Tones,'N/A'))</label>
+      <posX>470</posX>
+      <posY>617</posY>
+      <width>750</width>
+      <font>mediastream9c</font>
+			<scrollStartDelaySec>15</scrollStartDelaySec>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <textcolor>ff006699</textcolor>
+    </control>
+		
+		<control Style="smallTitleB">
+      <description>Styles Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#(string.rtrim(L(176),':'))</label>
+      <posX>310</posX>
+      <posY>638</posY>
+      <width>140</width>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
       <description>Styles</description>
-      <type>label</type>
       <id>1</id>
-      <posX>850</posX>
-      <posY>400</posY>
-      <label>176</label>
-      <font>mediastream11</font>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <textcolor>ff006699</textcolor>
-    </control>
-    <control>
-      <description>Artist value</description>
-      <type>label</type>
-      <id>21</id>
-      <posX>925</posX>
-      <posY>280</posY>
-      <label>-</label>
-      <font>mediastream11</font>
-      <textcolor>FFFFFFFF</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Date of Release value</description>
-      <type>label</type>
-      <id>22</id>
-      <posX>925</posX>
-      <posY>310</posY>
-      <label>-</label>
-      <font>mediastream11</font>
-      <textcolor>FFFFFFFF</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Rating value</description>
-      <type>label</type>
-      <id>23</id>
-      <posX>925</posX>
-      <posY>340</posY>
-      <label>-</label>
-      <font>mediastream11</font>
-      <textcolor>FFFFFFFF</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Genre value</description>
-      <type>label</type>
-      <id>24</id>
-      <posX>925</posX>
-      <posY>370</posY>
-      <label>-</label>
-      <font>mediastream11</font>
-      <textcolor>FFFFFFFF</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Tones value</description>
       <type>fadelabel</type>
-      <id>25</id>
-      <posX>925</posX>
-      <posY>430</posY>
-      <width>210</width>
-      <label>-</label>
+      <label>#(iif(neq(#AlbumInfo.Styles,''),#AlbumInfo.Styles,'N/A'))</label>
+      <posX>470</posX>
+      <posY>639</posY>
+      <width>750</width>
+      <font>mediastream9c</font>
+			<scrollStartDelaySec>15</scrollStartDelaySec>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+				
+		<control>
+      <description>Review</description>
+      <type>textboxscrollup</type>
+      <id>1</id>
+      <posX>308</posX>
+      <posY>290</posY>
+      <width>950</width>
+      <height>215</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
-      <textcolor>FFFFFFFF</textcolor>
+      <label>#AlbumInfo.Review</label>
+			<scrollStartDelaySec>15</scrollStartDelaySec>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
+			<visible>!skin.hassetting(#AlbumInfo.ShowTracks)</visible>
     </control>
-    <control>
-      <description>Styles value</description>
-      <type>fadelabel</type>
-      <id>26</id>
-      <posX>925</posX>
-      <posY>400</posY>
-      <width>200</width>
-      <label>-</label>
+		<control>
+      <description>Tracks</description>
+      <type>textboxscrollup</type>
+      <id>1</id>
+      <posX>308</posX>
+      <posY>290</posY>
+      <width>950</width>
+      <height>215</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
-      <textcolor>FFFFFFFF</textcolor>
+      <label>#AlbumInfo.Tracks</label>
+			<scrollStartDelaySec>15</scrollStartDelaySec>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
+			<visible>skin.hassetting(#AlbumInfo.ShowTracks)</visible>
     </control>
+		
     <control>
-      <description>Album Art</description>
-      <type>image</type>
-      <id>3</id>
-      <posX>120</posX>
-      <posY>280</posY>
-      <width>220</width>
-      <height>220</height>
-      <texture>-</texture>
-      <colorkey>FFFF00FF</colorkey>
-      <colordiffuse>FFFFFFFF</colordiffuse>
-      <keepaspectratio>yes</keepaspectratio>
+      <type>group</type>
+      <description>Button Group</description>
+      <posX>22</posX>
+      <posY>580</posY>
+      <layout>StackLayout(0, Vertical, true)</layout>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
+      <control Style="skinbutton">
+				<description>Review/Tracks</description>
+				<type>button</type>
+				<id>5</id>
+				<label>#(L(183))/#(L(182))</label>
+				<width>270</width>
+				<onleft>5</onleft>
+				<onright>5</onright>
+				<onup>6</onup>
+				<ondown>6</ondown>
+				<onclick>#(skin.togglesetting('#AlbumInfo.ShowTracks'))</onclick>
+				<animation effect="fade" time="250">WindowOpen</animation>
+				<animation effect="fade" time="250">WindowClose</animation>
+			</control>
+			<control Style="skinbutton">
+				<description>Refresh</description>
+				<type>button</type>
+				<id>6</id>
+				<label>184</label>
+				<width>270</width>
+				<onleft>6</onleft>
+				<onright>6</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+				<animation effect="fade" time="250">WindowOpen</animation>
+				<animation effect="fade" time="250">WindowClose</animation>
+			</control>
     </control>
-    <control>
-      <description>Page Count Background</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>915</posX>
-      <posY>648</posY>
-      <width>260</width>
-      <height>30</height>
-      <texture>mediacountbg_Spin.png</texture>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Page Count Label</description>
-      <type>label</type>
-      <label>30009</label>
-      <id>0</id>
-      <posX>925</posX>
-      <posY>652</posY>
-      <font>mediastream12tc</font>
-      <textcolor>ff909090</textcolor>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>textarea</description>
-      <type>textbox</type>
-      <id>4</id>
-      <posY>280</posY>
-      <posX>350</posX>
-      <width>450</width>
-      <height>400</height>
-      <onleft>5</onleft>
-      <onright>5</onright>
-      <onup>5</onup>
-      <ondown>5</ondown>
-      <spinWidth>37</spinWidth>
-      <spinHeight>37</spinHeight>
-      <spinPosX>1050</spinPosX>
-      <spinPosY>645</spinPosY>
-      <spinAlign>right</spinAlign>
-      <textureUp>arrow_round_up_nofocus.png</textureUp>
-      <textureDown>arrow_round_down_nofocus.png</textureDown>
-      <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-      <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Tracks/Review</description>
-      <type>button</type>
-      <id>5</id>
-      <posX>120</posX>
-      <posY>530</posY>
-      <width>160</width>
-      <font>mediastream10tc</font>
-      <label>182</label>
-      <onleft>4</onleft>
-      <textureFocus>tv_buttonfocus.png</textureFocus>
-      <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-      <onright>4</onright>
-      <onup>6</onup>
-      <ondown>6</ondown>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
-    <control>
-      <description>Refresh</description>
-      <type>button</type>
-      <id>6</id>
-      <posX>120</posX>
-      <posY>570</posY>
-      <width>160</width>
-      <label>184</label>
-      <textureFocus>tv_buttonfocus.png</textureFocus>
-      <textureNoFocus>tv_buttonnofocus.png</textureNoFocus>
-      <font>mediastream10tc</font>
-      <onleft>4</onleft>
-      <onright>4</onright>
-      <onup>5</onup>
-      <ondown>5</ondown>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-    </control>
+    <import>common.overlays2.xml</import>
   </controls>
 </window>
-<!--Checksum:ee2013fbfd672d7eb28106fc14d19f1f-->
