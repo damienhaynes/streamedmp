@@ -90,7 +90,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>180</posY>
+        <posY>176</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -102,7 +102,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1040</posX>
-        <posY>237</posY>
+        <posY>232</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="300,0">visible</animation>
         <animation effect="slide" time="0" end="300,0">hidden</animation>
@@ -230,23 +230,26 @@
           <label>Music Settings</label>
           <onleft>50</onleft>
           <hyperlink>14</hyperlink>
+					<ondown>90478</ondown>
         </control>
         <control>
           <description>My Lyrics</description>
           <type>button</type>
-          <id>16</id>
+          <id>90478</id>
           <label>Lyrics</label>
           <onleft>50</onleft>
           <hyperlink>90478</hyperlink>
+					<ondown>30885</ondown>
           <visible>plugin.isenabled(My Lyrics)</visible>
         </control>
         <control>
           <description>Music Search</description>
           <type>button</type>
-          <id>14</id>
+          <id>30885</id>
           <onleft>50</onleft>
           <label>137</label>
           <hyperlink>30885</hyperlink>
+					<ondown>28</ondown>
           <visible>plugin.isenabled(Search music)</visible>
         </control>
         <control>
@@ -262,6 +265,7 @@
           <id>28</id>
           <label>33001</label>
           <onleft>50</onleft>
+					<ondown>27</ondown>
           <visible>plugin.isenabled(Audioscrobbler)</visible>
         </control>
         <control>
@@ -270,6 +274,7 @@
           <id>27</id>
           <label>33000</label>
           <onleft>50</onleft>
+					<ondown>29</ondown>
           <visible>plugin.isenabled(Audioscrobbler)</visible>
         </control>
         <control>
@@ -278,17 +283,8 @@
           <id>29</id>
           <label>Scrobbler: </label>
           <onleft>50</onleft>
+					<ondown>2</ondown>
           <visible>plugin.isenabled(Audioscrobbler)</visible>
-        </control>
-        <control>
-          <description>Empty button</description>
-          <type>button</type>
-          <id>1700</id>
-          <label>-</label>
-          <visible allowhiddenfocus="true">false</visible>
-          <ondown>2</ondown>
-          <onleft>2</onleft>
-          <onright>2</onright>
         </control>
       </control>
     </control>
