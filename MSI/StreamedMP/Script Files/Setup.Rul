@@ -266,6 +266,8 @@ prototype VOID		BackupImages();
 prototype VOID		BackupMPSkinSettings();           
 prototype VOID		RestoreImages();                             
 prototype VOID		RestoreMPSkinSettings();
+prototype BOOL		CheckEditorDependencies();
+prototype BOOL		IsFileExists(STRING); 
                                        
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -725,6 +727,8 @@ Dlg_SdFeatureTree:
     endif;
     // Save TV Logo Selections
     SaveTVLogoSelections();
+    // Check Editor Dependencies
+    if !CheckEditorDependencies() goto Dlg_SdFeatureTree;
          
 Dlg_SelectTVSeries:
 	nResult = ShowSelectTVSeries(FALSE);
@@ -855,6 +859,7 @@ Dlg_SdFeatureTree:
 			ReadTVLogoDefaults();
 		endif;
 		SaveTVLogoSelections();
+		if !CheckEditorDependencies() goto Dlg_SdFeatureTree;
 	endif;
 
 
@@ -2501,6 +2506,15 @@ begin
 	
 end;             
 
+function BOOL IsFileExists(szFile)
+begin
+	if (Is(FILE_EXISTS, szFile)) then
+		return TRUE;
+	else
+		return FALSE;
+	endif;
+end;
+
 function NUMBER	GetFileVersion(svVersionNumber,sType)
 	STRING svValue,szFileName;	
 begin
@@ -2616,7 +2630,26 @@ begin
 	endif;
                           
 end;*/
+                 
+// StreamedMP BasicHome Edtior depends on MovingPictures and it's libraries
+// so enforce installation of plugin, it can be disabled but must be installed
+// note: we only check movingpictures, assumption is that cornerstone exists.
+function BOOL CheckEditorDependencies()
+	STRING szFile, szMessage;
+begin
+	szFile = g_sPluginsDir^"windows\\MovingPictures.dll";
 
+	if (!IsFileExists(szFile) && !FeatureIsItemSelected(MEDIA,"Plugins\\MovingPictures") && FeatureIsItemSelected(MEDIA,"Plugins\\MenuEditor")) then    
+    	szMessage = "StreamedMP depends on MovingPictures and it's libraries. Ensure this is selected if you also install the BasicHome editor, " +
+    				"if your local version is newer it will not be overwritten. If you don't use the MovingPictures plugin, you can disable " +
+    				"it from the MediaPortal plugin configuration dialog.";
+    	
+    	MessageBox(szMessage, WARNING);
+	   	return FALSE;                                    	   			
+	endif;
+	return TRUE;
+end;          
+          
 function NUMBER CheckPluginVersions(szQuestion)
 	STRING svVersion1, svVersion2;
 	STRING szMsg;
@@ -2631,7 +2664,7 @@ begin
 			svVersion1 = TVSERIES_MIN_VERSION;
 	    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
 	    		szQuestion = "Your current version of TV-Series plugin v" + svVersion2 + 
-	    					" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+	    					" is not supported by StreamedMP. Its recommended that you select this feature to upgrade to v" +
 	    					svVersion1;
 	    		nReturn=nReturn-1;
 	    		
@@ -2648,7 +2681,7 @@ begin
 		    		szQuestion = szQuestion + "\n\n";
 		    	endif;
 		    	szQuestion = szQuestion + "Your current version of Moving Pictures plugin v" + svVersion2 + 
-		    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+		    				" is not supported by StreamedMP. Its recommended that you select this feature to upgrade to v" +
 		    				svVersion1;
 		        nReturn = nReturn - 1;
 	    	endif;
@@ -2664,7 +2697,7 @@ begin
 		    		szQuestion = szQuestion + "\n\n";
 		    	endif;
 		    	szQuestion = szQuestion + "Your current version of My Lyrics plugin v" + svVersion2 + 
-		    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+		    				" is not supported by StreamedMP. Its recommended that you select this feature to upgrade to v" +
 		    				svVersion1;
 		        nReturn = nReturn - 1;
 	    	endif;
@@ -2680,7 +2713,7 @@ begin
 		    		szQuestion = szQuestion + "\n\n";
 		    	endif;
 		    	szQuestion = szQuestion + "Your current version of InfoService plugin v" + svVersion2 + 
-		    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+		    				" is not supported by StreamedMP. Its recommended that you select this feature to upgrade to v" +
 		    				svVersion1;
 		        nReturn = nReturn - 1;
 	    	endif;
@@ -2696,7 +2729,7 @@ begin
 		    		szQuestion = szQuestion + "\n\n";
 		    	endif;
 		    	szQuestion = szQuestion + "Your current version of Trakt plugin v" + svVersion2 + 
-		    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+		    				" is not supported by StreamedMP. Its recommended that you select this feature to upgrade to v" +
 		    				svVersion1;
 		        nReturn = nReturn - 1;
 	    	endif;
@@ -2712,7 +2745,7 @@ begin
 		    		szQuestion = szQuestion + "\n\n";
 		    	endif;
 		    	szQuestion = szQuestion + "Your current version of World Weather plugin v" + svVersion2 + 
-		    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+		    				" is not supported by StreamedMP. Its recommended that you select this feature to upgrade to v" +
 		    				svVersion1;
 		        nReturn = nReturn - 1;
 	    	endif;
@@ -2728,7 +2761,7 @@ begin
 		    		szQuestion = szQuestion + "\n\n";
 		    	endif;
 		    	szQuestion = szQuestion + "Your current version of Global Search plugin v" + svVersion2 + 
-		    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+		    				" is not supported by StreamedMP. Its recommended that you select this feature to upgrade to v" +
 		    				svVersion1;
 		        nReturn = nReturn - 1;
 	    	endif;
@@ -2744,7 +2777,7 @@ begin
 		    		szQuestion = szQuestion + "\n\n";
 		    	endif;
 		    	szQuestion = szQuestion + "Your current version of Fanart Handler plugin v" + svVersion2 + 
-		    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+		    				" is not supported by StreamedMP. Its recommended that you select this feature to upgrade to v" +
 		    				svVersion1;
 		        nReturn = nReturn - 1;
 	    	endif;
@@ -2760,7 +2793,7 @@ begin
 		    		szQuestion = szQuestion + "\n\n";
 		    	endif;
 		    	szQuestion = szQuestion + "Your current version of Latest Media Handler plugin v" + svVersion2 + 
-		    				" is not supported by Streamed MP. Its recommended that you select this feature to upgrade to v" +
+		    				" is not supported by StreamedMP. Its recommended that you select this feature to upgrade to v" +
 		    				svVersion1;
 		        nReturn = nReturn - 1;
 	    	endif;
