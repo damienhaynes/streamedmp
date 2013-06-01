@@ -7,8 +7,8 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#header.hover</texture>
       <colordiffuse>#header.BG.colordiffuse</colordiffuse>
       <animation effect="fade" time="300">WindowOpen</animation>
@@ -19,38 +19,38 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1281</width>
-      <height>720</height>
+      <width>1921</width>
+      <height>1080</height>
       <texture>#header.BG.overlay</texture>
     </control>
     <control>
       <id>1</id>
       <description>Top Title Background</description>
       <type>image</type>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <control>
       <id>1</id>
       <type>fadelabel</type>
       <description>Top Title</description>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>#header.label</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:ff7e38e71b5c8f55744a719df819216b-->
+<!--Checksum:6210efd427965b88614808cc652b873f-->

@@ -3,10 +3,10 @@
   <id>12</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-	<rememberLastFocusedControl>yes</rememberLastFocusedControl>
-  <define>#header.label:#(L(5))->#(L(100012))</define>
+  <rememberLastFocusedControl>yes</rememberLastFocusedControl>
+  <define>#header.label:#(L(5))-&gt;#(L(100012))</define>
   <define>#header.hover:hover_settings.png</define>
-	<define>#defaultcontrol:2</define>
+  <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9997</define>
   <controls>
     <import>common.settings.xml</import>
@@ -15,18 +15,18 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>150</posY>
-      <width>595</width>
-      <height>500</height>
+      <posX>324</posX>
+      <posY>225</posY>
+      <width>892</width>
+      <height>750</height>
       <layout>StackLayout</layout>
       <control Style="settingsmainbutton">
         <description>Slideshow</description>
         <type>button</type>
         <id>2</id>
         <label>129</label>
-        <textXOff>35</textXOff>
-				<onup>3</onup>
+        <textXOff>52</textXOff>
+        <onup>3</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmaincheckbutton">
@@ -34,7 +34,7 @@
         <type>button</type>
         <id>4</id>
         <label>300071</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -42,7 +42,7 @@
         <type>button</type>
         <id>5</id>
         <label>300161</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -50,11 +50,11 @@
         <type>button</type>
         <id>3</id>
         <label>300162</label>
-        <textXOff>35</textXOff>
-				<ondown>2</ondown>
+        <textXOff>52</textXOff>
+        <ondown>2</ondown>
         <onright>#defaultcontrol.onright</onright>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:b2e3e60c6fafc5e69b3d98db9fc5d4ed-->
+<!--Checksum:28b397f657c2e750618b0227ecfb81e7-->

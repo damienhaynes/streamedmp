@@ -5,41 +5,41 @@
       <description>Top Title Extension Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>281</posX>
-      <posY>11</posY>
-      <width>390</width>
-      <height>35</height>
+      <posX>421</posX>
+      <posY>16</posY>
+      <width>585</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
-      <animation effect="slide" start="-314,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
+      <animation effect="slide" start="-471,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
       <visible>[control.isvisible(50)|control.isvisible(51)]+control.isvisible(17)+!control.isvisible(9001)</visible>
     </control>
     <control>
       <description>Current Filter</description>
       <type>label</type>
       <id>0</id>
-      <posX>655</posX>
-      <posY>13</posY>
-      <width>240</width>
+      <posX>982</posX>
+      <posY>19</posY>
+      <width>360</width>
       <align>right</align>
       <label>#MovingPictures.Filter.Combined</label>
       <font>mediastream12c</font>
       <align>right</align>
       <wrapString> |  </wrapString>
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
-      <animation effect="slide" start="-40,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
+      <animation effect="slide" start="-60,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
       <visible>[control.isvisible(50)|control.isvisible(51)]+control.isvisible(17)+!control.isvisible(9001)</visible>
     </control>
     <control>
       <description>Top Title Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>335</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>502</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-314,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
+      <animation effect="slide" start="-471,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
       <visible>[control.isvisible(50)|control.isvisible(51)]+!control.isvisible(9001)</visible>
     </control>
@@ -47,15 +47,15 @@
       <description>Plugin Name / Current Category</description>
       <type>label</type>
       <id>0</id>
-      <posX>398</posX>
-      <posY>13</posY>
-      <width>260</width>
+      <posX>597</posX>
+      <posY>19</posY>
+      <width>390</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>#MovingPictures.CurrentNode.name</label>
       <wrapString> |  </wrapString>
-      <animation effect="slide" start="-150,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
+      <animation effect="slide" start="-225,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
       <visible>[control.isvisible(50)|control.isvisible(51)]+!control.isvisible(9001)</visible>
     </control>
@@ -63,14 +63,14 @@
       <description>Working Animation</description>
       <type>animation</type>
       <id>13</id>
-      <posX>561</posX>
-      <posY>250</posY>
-      <width>157</width>
-      <height>24</height>
+      <posX>841</posX>
+      <posY>375</posY>
+      <width>235</width>
+      <height>36</height>
       <textures>common.waiting.1.png;common.waiting.2.png;common.waiting.3.png;common.waiting.4.png;common.waiting.5.png;common.waiting.6.png;common.waiting.7.png;common.waiting.8.png;common.waiting.7.png;common.waiting.6.png;common.waiting.5.png;common.waiting.4.png;common.waiting.3.png;common.waiting.2.png</textures>
       <Duration>0:0:03</Duration>
       <keepaspectratio>yes</keepaspectratio>
     </control>
   </controls>
 </window>
-<!--Checksum:5f7b6fd9d2a6dbe694810b575f74249d-->
+<!--Checksum:010b7bb1eb032aff558bec835e5fc610-->

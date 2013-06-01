@@ -12,10 +12,10 @@
     <control>
       <type>group</type>
       <description>group element</description>
-      <animation effect="slide" time="10" end="-300,0">WindowClose</animation>
-      <animation effect="slide" time="10" start="-300,0">WindowOpen</animation>
-      <posX>20</posX>
-      <posY>80</posY>
+      <animation effect="slide" time="10" end="-450,0">WindowClose</animation>
+      <animation effect="slide" time="10" start="-450,0">WindowOpen</animation>
+      <posX>30</posX>
+      <posY>120</posY>
       <layout>StackLayout</layout>
       <control>
         <type>button</type>
@@ -31,17 +31,17 @@
       <type>fadelabel</type>
       <description>Current program title</description>
       <id>27</id>
-      <posX>310</posX>
-      <posY>590</posY>
-      <width>600</width>
+      <posX>465</posX>
+      <posY>885</posY>
+      <width>900</width>
       <label>-</label>
     </control>
     <control>
       <type>label</type>
       <description>Current program time</description>
       <id>26</id>
-      <posX>310</posX>
-      <posY>620</posY>
+      <posX>465</posX>
+      <posY>930</posY>
       <font>font13</font>
       <textcolor>ffa9d0f7</textcolor>
       <label>-</label>
@@ -50,10 +50,10 @@
       <type>textboxscrollup</type>
       <description>Description1</description>
       <id>25</id>
-      <posX>310</posX>
-      <posY>650</posY>
-      <width>650</width>
-      <height>94</height>
+      <posX>465</posX>
+      <posY>975</posY>
+      <width>975</width>
+      <height>141</height>
       <font>font12</font>
       <label>#TV.RecordedTV.Description</label>
     </control>
@@ -61,8 +61,8 @@
       <type>label</type>
       <description>genre</description>
       <id>24</id>
-      <posX>1346</posX>
-      <posY>620</posY>
+      <posX>2019</posX>
+      <posY>930</posY>
       <align>right</align>
       <font>font13</font>
       <textcolor>ffa9d0f7</textcolor>
@@ -72,20 +72,20 @@
       <description>TV background</description>
       <type>image</type>
       <id>300</id>
-      <posX>17</posX>
-      <posY>615</posY>
-      <width>180</width>
-      <height>113</height>
+      <posX>25</posX>
+      <posY>922</posY>
+      <width>270</width>
+      <height>169</height>
       <texture>video_overlay_background.png</texture>
     </control>
     <control>
       <description>TV preview window</description>
       <type>videowindow</type>
       <id>99</id>
-      <posX>25</posX>
-      <posY>623</posY>
-      <width>160</width>
-      <height>90</height>
+      <posX>37</posX>
+      <posY>934</posY>
+      <width>240</width>
+      <height>135</height>
       <action>18</action>
       <onup>5</onup>
       <textureFocus>tv_green_border.png</textureFocus>
@@ -95,8 +95,8 @@
       <description>Current program title</description>
       <id>13</id>
       <posX>1</posX>
-      <posY>630</posY>
-      <width>600</width>
+      <posY>945</posY>
+      <width>900</width>
       <label>-</label>
       <font>font13</font>
     </control>
@@ -105,7 +105,7 @@
       <description>Current program time</description>
       <id>14</id>
       <posX>1</posX>
-      <posY>605</posY>
+      <posY>907</posY>
       <font>font12</font>
       <textcolor>ffa9d0f7</textcolor>
       <label>-</label>
@@ -114,10 +114,10 @@
       <type>textboxscrollup</type>
       <description>Description1</description>
       <id>15</id>
-      <posX>310</posX>
-      <posY>650</posY>
-      <width>650</width>
-      <height>94</height>
+      <posX>465</posX>
+      <posY>975</posY>
+      <width>975</width>
+      <height>141</height>
       <label>-</label>
       <font>font12</font>
     </control>
@@ -125,8 +125,8 @@
       <type>label</type>
       <description>genre</description>
       <id>17</id>
-      <posX>1346</posX>
-      <posY>620</posY>
+      <posX>2019</posX>
+      <posY>930</posY>
       <align>right</align>
       <font>font13</font>
       <textcolor>ffa9d0f7</textcolor>
@@ -134,4 +134,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:0daa86440403cc3be41e9de6ae410ec3-->
+<!--Checksum:4e3bf7e47863eed3619d85f76140e914-->

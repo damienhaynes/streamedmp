@@ -14,10 +14,10 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>240</posX>
-      <posY>90</posY>
-      <height>500</height>
-			<width>600</width>
+      <posX>360</posX>
+      <posY>135</posY>
+      <height>750</height>
+      <width>900</width>
       <layout>StackLayout</layout>
       <control Style="settingsmaincheckbutton">
         <description>CD Cover Obly in Now Playing</description>
@@ -27,7 +27,7 @@
         <onright>#defaultcontrol.onright</onright>
         <onup>4</onup>
         <ondown>3</ondown>
-				<width>600</width>
+        <width>900</width>
       </control>
       <control Style="settingsmaincheckbutton">
         <description>Display default EQ Graphic</description>
@@ -37,32 +37,32 @@
         <onright>#defaultcontrol.onright</onright>
         <onup>2</onup>
         <ondown>4</ondown>
-				<width>600</width>
+        <width>900</width>
       </control>
     </control>
     <control>
       <description>Now Playing Option BG</description>
       <type>image</type>
       <id>0</id>
-      <posX>214</posX>
-      <posY>195</posY>
-      <width>617</width>
-      <height>365</height>
+      <posX>321</posX>
+      <posY>292</posY>
+      <width>925</width>
+      <height>547</height>
       <texture>subsearchbg.png</texture>
       <colordiffuse>99ffffff</colordiffuse>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>Now Playing Preview Boarder</description>
       <type>image</type>
       <id>0</id>
-      <posX>225</posX>
-      <posY>260</posY>
-      <width>411</width>
-      <height>235</height>
+      <posX>337</posX>
+      <posY>390</posY>
+      <width>616</width>
+      <height>352</height>
       <texture>previewmask.png</texture>
       <colordiffuse>99ffffff</colordiffuse>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>NowPlaying Style0</description>
@@ -72,11 +72,11 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>3</onup>
       <ondown>5</ondown>
-      <width>150</width>
+      <width>225</width>
       <font>mediastream10c</font>
-      <posX>650</posX>
-      <posY>270</posY>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>975</posX>
+      <posY>405</posY>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>NowPlaying Style1</description>
@@ -86,11 +86,11 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>4</onup>
       <ondown>6</ondown>
-      <width>150</width>
-      <posX>650</posX>
-      <posY>295</posY>
+      <width>225</width>
+      <posX>975</posX>
+      <posY>442</posY>
       <font>mediastream10c</font>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>NowPlaying Style2</description>
@@ -100,11 +100,11 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>5</onup>
       <ondown>7</ondown>
-      <width>150</width>
-      <posX>650</posX>
-      <posY>320</posY>
+      <width>225</width>
+      <posX>975</posX>
+      <posY>480</posY>
       <font>mediastream10c</font>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>NowPlaying Style3</description>
@@ -114,11 +114,11 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>6</onup>
       <ondown>8</ondown>
-      <width>150</width>
+      <width>225</width>
       <font>mediastream10c</font>
-      <posX>650</posX>
-      <posY>345</posY>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>975</posX>
+      <posY>517</posY>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>NowPlaying Style4</description>
@@ -128,11 +128,11 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>7</onup>
       <ondown>9</ondown>
-      <width>150</width>
+      <width>225</width>
       <font>mediastream10c</font>
-      <posX>650</posX>
-      <posY>370</posY>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>975</posX>
+      <posY>555</posY>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>NowPlaying Style5</description>
@@ -142,11 +142,11 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>8</onup>
       <ondown>10</ondown>
-      <width>150</width>
+      <width>225</width>
       <font>mediastream10c</font>
-      <posX>650</posX>
-      <posY>395</posY>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>975</posX>
+      <posY>592</posY>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>NowPlaying Style6</description>
@@ -156,11 +156,11 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>9</onup>
       <ondown>11</ondown>
-      <width>150</width>
+      <width>225</width>
       <font>mediastream10c</font>
-      <posX>650</posX>
-      <posY>420</posY>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>975</posX>
+      <posY>630</posY>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>NowPlaying Style7</description>
@@ -170,11 +170,11 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>10</onup>
       <ondown>12</ondown>
-      <width>150</width>
+      <width>225</width>
       <font>mediastream10c</font>
-      <posX>650</posX>
-      <posY>445</posY>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>975</posX>
+      <posY>667</posY>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>NowPlying Style8</description>
@@ -184,32 +184,32 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>11</onup>
       <ondown>4</ondown>
-      <width>150</width>
+      <width>225</width>
       <font>mediastream10c</font>
-      <posX>650</posX>
-      <posY>470</posY>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>975</posX>
+      <posY>705</posY>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <type>label</type>
-      <posX>520</posX>
-      <posY>230</posY>
+      <posX>780</posX>
+      <posY>345</posY>
       <label>#StreamedMP.NowPlayingStyles</label>
       <font>mediastream14c</font>
       <align>center</align>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>Now Playing Preview</description>
       <id>0</id>
       <type>image</type>
-      <posX>230</posX>
-      <posY>265</posY>
-      <width>400</width>
-      <height>225</height>
+      <posX>345</posX>
+      <posY>397</posY>
+      <width>600</width>
+      <height>337</height>
       <texture>#StreamedMP.NowPlayingPreview.jpg</texture>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:2acec332badc4efc3372bb8c6dc82ceb-->
+<!--Checksum:e24aac7f8f72b13d37e6e90962f0a65c-->

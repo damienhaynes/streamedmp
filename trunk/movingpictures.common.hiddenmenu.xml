@@ -4,10 +4,10 @@
     <control>
       <description>Hidden Menu Indicator</description>
       <type>image</type>
-      <posX>1232</posX>
-      <posY>50</posY>
-      <width>48</width>
-      <height>144</height>
+      <posX>1848</posX>
+      <posY>75</posY>
+      <width>72</width>
+      <height>216</height>
       <texture>#StreamedMP.ActionMenu.Image</texture>
       <visible>!control.isvisible(51)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -18,33 +18,33 @@
       <defaultcontrol>3</defaultcontrol>
       <onexit>50</onexit>
       <dimColor>00ffffff</dimColor>
-      <buttonX>1231</buttonX>
-      <buttonY>55</buttonY>
-      <buttonwidth>49</buttonwidth>
-      <buttonheight>253</buttonheight>
+      <buttonX>1846</buttonX>
+      <buttonY>82</buttonY>
+      <buttonwidth>73</buttonwidth>
+      <buttonheight>379</buttonheight>
       <control>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
         <visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <description>Dummy Button (for Mouse)</description>
         <label>-</label>
         <type>button</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>Views Menu</description>
@@ -52,11 +52,11 @@
         <label>499</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>201</posY>
+        <posX>1560</posX>
+        <posY>301</posY>
         <visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>Settings</description>
@@ -64,11 +64,11 @@
         <label>897</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>400</posY>
+        <posX>1560</posX>
+        <posY>600</posY>
         <visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
@@ -76,35 +76,35 @@
         <type>label</type>
         <label>1065</label>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>485</posY>
+        <posX>1560</posX>
+        <posY>727</posY>
         <visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <description>Sort Direction</description>
         <type>image</type>
-        <width>16</width>
-        <height>16</height>
-        <posX>1240</posX>
-        <posY>261</posY>
+        <width>24</width>
+        <height>24</height>
+        <posX>1860</posX>
+        <posY>391</posY>
         <texture>movingpictures_Sort#MovingPictures.Sort.Direction.png</texture>
         <visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>225</posY>
-        <width>220</width>
-        <height>720</height>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+        <posX>1560</posX>
+        <posY>337</posY>
+        <width>330</width>
+        <height>1080</height>
         <layout>StackLayout(0, Vertical, true)</layout>
         <control>
           <description>Change Layout</description>
@@ -114,7 +114,7 @@
           <onleft>50</onleft>
           <onright>3</onright>
           <onup>21</onup>
-					<ondown>14</ondown>
+          <ondown>14</ondown>
         </control>
         <control>
           <description>Sort Menu</description>
@@ -123,8 +123,8 @@
           <label>#MovingPictures.Translation.SortBy.Label: #MovingPictures.Sort.Field</label>
           <onleft>50</onleft>
           <onright>14</onright>
-					<ondown>4</ondown>
-					<onup>3</onup>
+          <ondown>4</ondown>
+          <onup>3</onup>
         </control>
         <control>
           <description>Filters Menu</description>
@@ -133,8 +133,8 @@
           <label>#MovingPictures.Translation.FilterBy.Label ...</label>
           <onleft>50</onleft>
           <onright>4</onright>
-					<onup>14</onup>
-					<ondown>19</ondown>
+          <onup>14</onup>
+          <ondown>19</ondown>
         </control>
         <control>
           <description>Search</description>
@@ -142,20 +142,20 @@
           <id>19</id>
           <label>#MovingPictures.Translation.Search.Label ...</label>
           <onleft>50</onleft>
-					<onup>4</onup>
+          <onup>4</onup>
           <onright>19</onright>
-					<ondown>999</ondown>
+          <ondown>999</ondown>
         </control>
-				<control>
+        <control>
           <description>Importer</description>
           <type>button</type>
           <id>999</id>
           <label>#MovingPictures.Translation.Importer.Label ...</label>
-					<hyperlink>96743</hyperlink>
+          <hyperlink>96743</hyperlink>
           <onleft>50</onleft>
-					<onup>19</onup>
+          <onup>19</onup>
           <onright>19</onright>
-					<ondown>15</ondown>
+          <ondown>15</ondown>
         </control>
         <control>
           <description>Parental Controls</description>
@@ -165,7 +165,7 @@
           <onleft>50</onleft>
           <scrollStartDelaySec>1</scrollStartDelaySec>
           <scrollWrapString> | </scrollWrapString>
-					<onup>999</onup>
+          <onup>999</onup>
           <ondown>66610</ondown>
         </control>
         <control>
@@ -263,4 +263,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:c4984b37d1a707d0f56b5377d51c2d52-->
+<!--Checksum:a0a332c26b3b6ddfaacb4099ecdb8590-->

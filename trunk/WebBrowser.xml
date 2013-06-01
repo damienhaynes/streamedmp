@@ -9,18 +9,18 @@
       <description>background image</description>
       <type>image</type>
       <id>1</id>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>WebBrowser/background.png</texture>
     </control>
     <control>
       <description>Back button</description>
       <type>button</type>
       <id>2</id>
-      <posX>10</posX>
-      <posY>18</posY>
-      <width>54</width>
-      <height>31</height>
+      <posX>15</posX>
+      <posY>27</posY>
+      <width>81</width>
+      <height>46</height>
       <label>-</label>
       <textureFocus>WebBrowser/back_focus.png</textureFocus>
       <textureNoFocus>WebBrowser/back_nofocus.png</textureNoFocus>
@@ -33,10 +33,10 @@
       <description>Forward button</description>
       <type>button</type>
       <id>3</id>
-      <posX>70</posX>
-      <posY>18</posY>
-      <width>54</width>
-      <height>31</height>
+      <posX>105</posX>
+      <posY>27</posY>
+      <width>81</width>
+      <height>46</height>
       <label>-</label>
       <textureFocus>WebBrowser/forward_focus.png</textureFocus>
       <textureNoFocus>WebBrowser/forward_nofocus.png</textureNoFocus>
@@ -49,33 +49,33 @@
       <description>Favicon</description>
       <type>image</type>
       <id>1</id>
-      <posX>140</posX>
-      <posY>20</posY>
-      <width>26</width>
-      <height>26</height>
+      <posX>210</posX>
+      <posY>30</posY>
+      <width>39</width>
+      <height>38</height>
       <texture>#webbrowser.icon</texture>
     </control>
     <control>
       <description>URL label</description>
       <type>label</type>
       <id>1</id>
-      <posX>170</posX>
-      <posY>23</posY>
-      <width>800</width>
+      <posX>255</posX>
+      <posY>34</posY>
+      <width>1200</width>
       <label>#webbrowser.link</label>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff000000</shadowColor>
     </control>
     <control>
       <description>Open URL button</description>
       <type>button</type>
       <id>8</id>
-      <posX>1120</posX>
-      <posY>18</posY>
-      <width>31</width>
-      <height>31</height>
+      <posX>1680</posX>
+      <posY>27</posY>
+      <width>46</width>
+      <height>46</height>
       <label>-</label>
       <textureFocus>WebBrowser/open_focus.png</textureFocus>
       <textureNoFocus>WebBrowser/open_nofocus.png</textureNoFocus>
@@ -88,10 +88,10 @@
       <description>Home button</description>
       <type>button</type>
       <id>6</id>
-      <posX>1155</posX>
-      <posY>18</posY>
-      <width>31</width>
-      <height>31</height>
+      <posX>1732</posX>
+      <posY>27</posY>
+      <width>46</width>
+      <height>46</height>
       <label>-</label>
       <textureFocus>WebBrowser/home_focus.png</textureFocus>
       <textureNoFocus>WebBrowser/home_nofocus.png</textureNoFocus>
@@ -104,10 +104,10 @@
       <description>Refresh button</description>
       <type>button</type>
       <id>4</id>
-      <posX>1190</posX>
-      <posY>18</posY>
-      <width>31</width>
-      <height>31</height>
+      <posX>1785</posX>
+      <posY>27</posY>
+      <width>46</width>
+      <height>46</height>
       <label>-</label>
       <textureFocus>WebBrowser/refresh_focus.png</textureFocus>
       <textureNoFocus>WebBrowser/refresh_nofocus.png</textureNoFocus>
@@ -120,10 +120,10 @@
       <description>Stop button</description>
       <type>button</type>
       <id>5</id>
-      <posX>1225</posX>
-      <posY>18</posY>
-      <width>31</width>
-      <height>31</height>
+      <posX>1837</posX>
+      <posY>27</posY>
+      <width>46</width>
+      <height>46</height>
       <label>-</label>
       <textureFocus>WebBrowser/stop_focus.png</textureFocus>
       <textureNoFocus>WebBrowser/stop_nofocus.png</textureNoFocus>
@@ -136,9 +136,9 @@
       <description>Status label</description>
       <type>label</type>
       <id>1</id>
-      <posX>5</posX>
-      <posY>695</posY>
-      <width>1000</width>
+      <posX>7</posX>
+      <posY>1042</posY>
+      <width>1500</width>
       <align>left</align>
       <label>#(L(126)) | #webbrowser.status</label>
       <font>mediastream9c</font>
@@ -151,9 +151,9 @@
       <description>Zoom Value label</description>
       <type>label</type>
       <id>1</id>
-      <posX>1265</posX>
-      <posY>695</posY>
-      <width>425</width>
+      <posX>1897</posX>
+      <posY>1042</posY>
+      <width>637</width>
       <align>right</align>
       <label>#(L(216)) | #webbrowser.zoom%</label>
       <font>mediastream9c</font>
@@ -167,9 +167,9 @@
       <description>Zoom Value label</description>
       <type>label</type>
       <id>1</id>
-      <posX>1265</posX>
-      <posY>695</posY>
-      <width>425</width>
+      <posX>1897</posX>
+      <posY>1042</posY>
+      <width>637</width>
       <align>right</align>
       <label>#(L(216)) | 100%</label>
       <font>mediastream9c</font>
@@ -181,4 +181,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:074eab52ff53ebba3010c9da2f6f0775-->
+<!--Checksum:f3ad46f863d356d38c6a25f312c0df19-->

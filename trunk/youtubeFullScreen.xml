@@ -11,25 +11,25 @@
       <dimColor>ffffffff</dimColor>
       <visible>string.equals(#Youtube.fm.FullScreen.ShowTitle,true)</visible>
       <animation effect="fade" time="300" delay="300">VisibleChange</animation>
-      <animation effect="slide" start="600,0" end="0,0" tween="quadratic" time="500" delay="100">VisibleChange</animation>
+      <animation effect="slide" start="900,0" end="0,0" tween="quadratic" time="500" delay="100">VisibleChange</animation>
       <control>
         <description>background</description>
         <type>image</type>
         <id>0</id>
-        <posX>765</posX>
-        <posY>540</posY>
-        <width>519</width>
-        <height>152</height>
+        <posX>1147</posX>
+        <posY>810</posY>
+        <width>778</width>
+        <height>228</height>
         <texture>dialogprogressbg.png</texture>
       </control>
       <control>
         <description>music logo</description>
         <type>image</type>
         <id>0</id>
-        <posX>783</posX>
-        <posY>558</posY>
-        <width>114</width>
-        <height>114</height>
+        <posX>1174</posX>
+        <posY>837</posY>
+        <width>171</width>
+        <height>171</height>
         <keepaspectratio>yes</keepaspectratio>
         <centered>yes</centered>
         <zoom>no</zoom>
@@ -39,10 +39,10 @@
         <description>Artist Thumb</description>
         <type>image</type>
         <id>0</id>
-        <posX>783</posX>
-        <posY>558</posY>
-        <width>114</width>
-        <height>114</height>
+        <posX>1174</posX>
+        <posY>837</posY>
+        <width>171</width>
+        <height>171</height>
         <keepaspectratio>no</keepaspectratio>
         <centered>yes</centered>
         <zoom>yes</zoom>
@@ -52,10 +52,10 @@
         <description>Artist Name</description>
         <id>0</id>
         <type>fadelabel</type>
-        <width>340</width>
-        <height>40</height>
-        <posX>908</posX>
-        <posY>563</posY>
+        <width>510</width>
+        <height>60</height>
+        <posX>1362</posX>
+        <posY>844</posY>
         <textcolor>FFFFFFFF</textcolor>
         <font>mediastream12tc</font>
         <scrollStartDelaySec>2</scrollStartDelaySec>
@@ -66,10 +66,10 @@
         <description>Track Name</description>
         <id>0</id>
         <type>fadelabel</type>
-        <width>340</width>
-        <height>40</height>
-        <posX>908</posX>
-        <posY>584</posY>
+        <width>510</width>
+        <height>60</height>
+        <posX>1362</posX>
+        <posY>876</posY>
         <textcolor>FFFFFFFF</textcolor>
         <font>mediastream10tc</font>
         <scrollStartDelaySec>2</scrollStartDelaySec>
@@ -80,10 +80,10 @@
         <description>play time / duration label</description>
         <type>fadelabel</type>
         <id>0</id>
-        <width>340</width>
-        <height>40</height>
-        <posX>908</posX>
-        <posY>621</posY>
+        <width>510</width>
+        <height>60</height>
+        <posX>1362</posX>
+        <posY>931</posY>
         <align>left</align>
         <label>#currentplaytime / #duration</label>
         <textcolor>FFFFFFFF</textcolor>
@@ -93,10 +93,10 @@
         <description>next song label</description>
         <type>fadelabel</type>
         <id>0</id>
-        <width>42</width>
-        <height>40</height>
-        <posX>908</posX>
-        <posY>647</posY>
+        <width>63</width>
+        <height>60</height>
+        <posX>1362</posX>
+        <posY>970</posY>
         <label>Next</label>
         <textcolor>FF025984</textcolor>
         <font>mediastream10</font>
@@ -107,10 +107,10 @@
         <description>next song info label</description>
         <type>fadelabel</type>
         <id>0</id>
-        <posX>945</posX>
-        <posY>647</posY>
-        <width>300</width>
-        <height>40</height>
+        <posX>1417</posX>
+        <posY>970</posY>
+        <width>450</width>
+        <height>60</height>
         <label>: #Youtube.fm.Next.Video.Title by #Youtube.fm.Next.Artist.Name</label>
         <textcolor>white</textcolor>
         <align>left</align>
@@ -124,10 +124,10 @@
       <description>dummy to fix images disappearing on more than 2x seeking (MP BUG)</description>
       <type>image</type>
       <id>0</id>
-      <posX>2000</posX>
-      <posY>2000</posY>
-      <width>10</width>
-      <height>10</height>
+      <posX>3000</posX>
+      <posY>3000</posY>
+      <width>15</width>
+      <height>15</height>
       <texture>-</texture>
       <visible>player.forwarding|player.rewinding</visible>
     </control>
@@ -136,9 +136,9 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>523</posY>
-      <width>1280</width>
-      <height>197</height>
+      <posY>784</posY>
+      <width>1920</width>
+      <height>295</height>
       <texture>osdbackground.png</texture>
       <visible>[window.ispauseosdvisible|player.forwarding|player.rewinding]+!window.isosdvisible+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
@@ -147,9 +147,9 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>650</posY>
-      <width>1280</width>
-      <height>197</height>
+      <posY>975</posY>
+      <width>1920</width>
+      <height>295</height>
       <texture>osdbackground.png</texture>
       <visible>[window.ispauseosdvisible|player.forwarding|player.rewinding]+!window.isosdvisible+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
@@ -158,9 +158,9 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>613</posY>
-      <width>1280</width>
-      <height>197</height>
+      <posY>919</posY>
+      <width>1920</width>
+      <height>295</height>
       <texture>osdbackground.png</texture>
       <visible>[control.isvisible(10)|control.isvisible(11)|control.isvisible(12)]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
@@ -169,19 +169,19 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>650</posY>
-      <width>1280</width>
-      <height>197</height>
+      <posY>975</posY>
+      <width>1920</width>
+      <height>295</height>
       <texture>osdbackground.png</texture>
       <visible>[control.isvisible(10)|control.isvisible(11)|control.isvisible(12)]+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <type>image</type>
       <id>502</id>
-      <posX>1100</posX>
-      <posY>12</posY>
-      <width>81</width>
-      <height>30</height>
+      <posX>1650</posX>
+      <posY>18</posY>
+      <width>121</width>
+      <height>45</height>
       <texture>video.action.forbidden.png</texture>
       <colordiffuse>White</colordiffuse>
       <visible>no</visible>
@@ -191,10 +191,10 @@
       <type>image</type>
       <id>0</id>
       <texture>#Youtube.fm.NowPlaying.Artist.Image</texture>
-      <posX>16</posX>
-      <posY>554</posY>
-      <width>160</width>
-      <height>160</height>
+      <posX>24</posX>
+      <posY>831</posY>
+      <width>240</width>
+      <height>240</height>
       <align>left</align>
       <centered>yes</centered>
       <zoom>no</zoom>
@@ -205,9 +205,9 @@
       <description>Title</description>
       <id>0</id>
       <type>fadelabel</type>
-      <width>700</width>
-      <posX>195</posX>
-      <posY>585</posY>
+      <width>1050</width>
+      <posX>292</posX>
+      <posY>877</posY>
       <font>mediastream12tc</font>
       <label>#Play.Current.Title</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -217,9 +217,9 @@
       <description>Title</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>195</posX>
-      <posY>585</posY>
-      <width>480</width>
+      <posX>292</posX>
+      <posY>877</posY>
+      <width>720</width>
       <font>mediastream12tc</font>
       <label>#Play.Current.Title</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -229,10 +229,10 @@
       <description>Plot</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>690</posX>
-      <posY>557</posY>
-      <width>550</width>
-      <height>96</height>
+      <posX>1035</posX>
+      <posY>835</posY>
+      <width>825</width>
+      <height>144</height>
       <seperator>------------------------------------</seperator>
       <label>#Play.Current.Plot</label>
       <font>mediastream11</font>
@@ -243,4 +243,4 @@
     <import>common.progressbar.xml</import>
   </controls>
 </window>
-<!--Checksum:3d6a610553ef7c006925c52e6af7ac54-->
+<!--Checksum:e71d7fd4b4f7992b27c44adc73f89776-->

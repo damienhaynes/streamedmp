@@ -15,8 +15,8 @@
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>560</posX>
-      <posY>602</posY>
+      <posX>840</posX>
+      <posY>903</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>control.isvisible(3)</visible>
@@ -26,10 +26,10 @@
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>550</posX>
-      <posY>598</posY>
-      <width>260</width>
-      <height>30</height>
+      <posX>825</posX>
+      <posY>897</posY>
+      <width>390</width>
+      <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>control.isvisible(3)</visible>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
@@ -37,10 +37,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>220</posX>
-      <posY>60</posY>
-      <width>610</width>
-      <height>590</height>
+      <posX>330</posX>
+      <posY>90</posY>
+      <width>915</width>
+      <height>885</height>
       <texture>changelogbg.png</texture>
       <visible>control.isvisible(3)</visible>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
@@ -49,71 +49,71 @@
       <description>Changelog Shadow</description>
       <type>label</type>
       <id>0</id>
-      <posX>527</posX>
-      <posY>86</posY>
+      <posX>790</posX>
+      <posY>129</posY>
       <textcolor>ff102020</textcolor>
       <font>mediastream14tc</font>
       <label>#StreamedMP.UpdateAvailableHeading</label>
       <align>center</align>
       <visible>control.isvisible(3)</visible>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>ChangeLog Header</description>
       <type>label</type>
       <id>0</id>
-      <posX>527</posX>
-      <posY>84</posY>
+      <posX>790</posX>
+      <posY>126</posY>
       <textcolor>ff006699</textcolor>
       <font>mediastream14tc</font>
       <label>#StreamedMP.UpdateAvailableHeading</label>
       <align>center</align>
       <visible>control.isvisible(3)</visible>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>List of Revsions/Patches Shadow</description>
       <type>label</type>
       <id>0</id>
-      <posX>527</posX>
-      <posY>116</posY>
+      <posX>790</posX>
+      <posY>174</posY>
       <textcolor>ff102020</textcolor>
       <font>mediastream10tc</font>
       <label>#StreamedMP.Revisions</label>
       <align>center</align>
       <visible>control.isvisible(3)</visible>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>List of Revsions/Patches</description>
       <type>label</type>
       <id>0</id>
-      <posX>525</posX>
-      <posY>114</posY>
+      <posX>787</posX>
+      <posY>171</posY>
       <textcolor>ff006699</textcolor>
       <font>mediastream10tc</font>
       <label>#StreamedMP.Revisions</label>
       <align>center</align>
       <visible>control.isvisible(3)</visible>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
     <control>
       <description>textarea</description>
       <type>textbox</type>
       <id>2</id>
-      <posY>150</posY>
-      <posX>245</posX>
-      <width>570</width>
-      <height>450</height>
+      <posY>225</posY>
+      <posX>367</posX>
+      <width>855</width>
+      <height>675</height>
       <onup>3</onup>
       <ondown>3</ondown>
       <onleft>3</onleft>
       <font>mediastream10</font>
       <onright>#defaultcontrol.onright</onright>
-      <spinWidth>50</spinWidth>
-      <spinHeight>37</spinHeight>
-      <spinPosX>684</spinPosX>
-      <spinPosY>595</spinPosY>
+      <spinWidth>75</spinWidth>
+      <spinHeight>55</spinHeight>
+      <spinPosX>1026</spinPosX>
+      <spinPosY>892</spinPosY>
       <spinAlign>right</spinAlign>
       <spinColor>ff006698</spinColor>
       <textureUp>arrow_round_up_nofocus.png</textureUp>
@@ -127,9 +127,9 @@
       <type>button</type>
       <id>3</id>
       <label>-</label>
-      <posX>240</posX>
-      <posY>600</posY>
-      <width>260</width>
+      <posX>360</posX>
+      <posY>900</posY>
+      <width>390</width>
       <onup>2</onup>
       <onright>2</onright>
       <ondown>2</ondown>
@@ -145,4 +145,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:e09abd416a4eca474ac8f8454b9b211f-->
+<!--Checksum:834290e3488f93e268e88397b6a48dc2-->

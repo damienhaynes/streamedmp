@@ -14,20 +14,20 @@
         <description>Update Background</description>
         <type>image</type>
         <id>0</id>
-        <posX>6</posX>
-        <posY>10</posY>
-        <width>187</width>
-        <height>32</height>
+        <posX>9</posX>
+        <posY>15</posY>
+        <width>280</width>
+        <height>48</height>
         <texture>mediacountbg.png</texture>
       </control>
       <control>
         <description>Update Indicator</description>
         <type>image</type>
         <id>0</id>
-        <posX>141</posX>
-        <posY>12</posY>
-        <width>25</width>
-        <height>25</height>
+        <posX>211</posX>
+        <posY>18</posY>
+        <width>37</width>
+        <height>37</height>
         <texture>isupdate.png</texture>
         <animation effect="zoom" start="101,101" end="108,108" time="1000" easing="inout" pulse="true" reversible="false" condition="true">Conditional</animation>
       </control>
@@ -36,10 +36,10 @@
       <description>Time Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>6</posX>
-      <posY>10</posY>
-      <width>132</width>
-      <height>32</height>
+      <posX>9</posX>
+      <posY>15</posY>
+      <width>198</width>
+      <height>48</height>
       <texture>clockbackground.png</texture>
       <animation effect="fade" time="200" delay="100">WindowOpen</animation>
     </control>
@@ -47,10 +47,10 @@
       <description>Time Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>6</posX>
-      <posY>10</posY>
-      <width>132</width>
-      <height>32</height>
+      <posX>9</posX>
+      <posY>15</posY>
+      <width>198</width>
+      <height>48</height>
       <texture>clockbackground.png</texture>
       <colordiffuse>ffd52020</colordiffuse>
       <visible>!string.equals(#SleepControl.Text,)+plugin.isenabled(Sleep Control)</visible>
@@ -61,9 +61,9 @@
       <description>Time</description>
       <type>label</type>
       <id>0</id>
-      <posX>47</posX>
-      <posY>12</posY>
-      <width>120</width>
+      <posX>70</posX>
+      <posY>18</posY>
+      <width>180</width>
       <textcolor>ffffffff</textcolor>
       <font>mediastream12c</font>
       <label>#time</label>
@@ -72,4 +72,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:056e86ceb3d2fbae8d04b3a47dd3ca23-->
+<!--Checksum:3e0cd55c41eed4480426ab8d6e4ada71-->

@@ -15,8 +15,8 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>hover_my lyrics.png</texture>
     </control>
     <import>mymusic.autofanart.xml</import>
@@ -27,9 +27,9 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <type>image</type>
       <posX>0</posX>
-      <posY>65</posY>
-      <width>1280</width>
-      <height>516</height>
+      <posY>97</posY>
+      <width>1920</width>
+      <height>774</height>
       <colordiffuse>60ffffff</colordiffuse>
       <texture>black.png</texture>
     </control>
@@ -41,36 +41,36 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1281</width>
-      <height>720</height>
+      <width>1921</width>
+      <height>1080</height>
       <texture>tvguidebg.png</texture>
     </control>
     <control>
       <id>1</id>
       <description>Top Title Background</description>
       <type>image</type>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <control>
       <id>1</id>
       <type>fadelabel</type>
       <description>Top Title</description>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>#header.label</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <import>common.time.xml</import>
@@ -78,50 +78,50 @@
       <description>Top Title Extension Background</description>
       <type>image</type>
       <id>1</id>
-      <posX>381</posX>
-      <posY>11</posY>
-      <width>386</width>
-      <height>36</height>
+      <posX>571</posX>
+      <posY>16</posY>
+      <width>579</width>
+      <height>54</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
       <animation effect="fade" time="300" delay="0">WindowClose</animation>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
     </control>
     <control>
       <id>1</id>
       <description>Top Title Background</description>
       <type>image</type>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
       <description>Top Title Extension</description>
       <id>2</id>
-      <posX>739</posX>
-      <posY>13</posY>
-      <width>320</width>
+      <posX>1108</posX>
+      <posY>19</posY>
+      <width>480</width>
       <font>mediastream12c</font>
       <align>right</align>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
       <animation effect="fade" time="230" delay="0">WindowClose</animation>
-      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>628</posX>
-      <posY>544</posY>
-      <width>260</width>
-      <height>32</height>
+      <posX>942</posX>
+      <posY>816</posY>
+      <width>390</width>
+      <height>48</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>yes</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -133,8 +133,8 @@
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>638</posX>
-      <posY>549</posY>
+      <posX>957</posX>
+      <posY>823</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>yes</visible>
@@ -146,10 +146,10 @@
       <type>textbox</type>
       <description>The Lyric area</description>
       <id>20</id>
-      <posX>110</posX>
-      <posY>115</posY>
-      <width>760</width>
-      <height>490</height>
+      <posX>165</posX>
+      <posY>172</posY>
+      <width>1140</width>
+      <height>735</height>
       <onleft>2</onleft>
       <onright>2</onright>
       <onup>2</onup>
@@ -158,25 +158,25 @@
       <seperator>----------------------------------------------------------------------------------------------</seperator>
       <text>6</text>
       <font>mediastream11</font>
-      <spinPosX>755</spinPosX>
-      <spinPosY>542</spinPosY>
+      <spinPosX>1132</spinPosX>
+      <spinPosY>813</spinPosY>
       <spinColor>ff006698</spinColor>
       <spinAlign>Right</spinAlign>
       <textureUp>arrow_round_up_nofocus.png</textureUp>
       <textureDown>arrow_round_down_nofocus.png</textureDown>
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
       <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-      <spinWidth>50</spinWidth>
-      <spinHeight>37</spinHeight>
+      <spinWidth>75</spinWidth>
+      <spinHeight>55</spinHeight>
     </control>
     <control>
       <type>textboxscrollup</type>
       <description>The Lyric area</description>
       <id>1020</id>
-      <posX>110</posX>
-      <posY>115</posY>
-      <width>760</width>
-      <height>450</height>
+      <posX>165</posX>
+      <posY>172</posY>
+      <width>1140</width>
+      <height>675</height>
       <onleft>2</onleft>
       <onright>2</onright>
       <onup>2</onup>
@@ -185,23 +185,23 @@
       <seperator>----------------------------------------------------------------------------------------------</seperator>
       <text>6</text>
       <font>mediastream11</font>
-      <spinPosX>755</spinPosX>
-      <spinPosY>542</spinPosY>
+      <spinPosX>1132</spinPosX>
+      <spinPosY>813</spinPosY>
       <spinColor>ff006698</spinColor>
       <spinAlign>Right</spinAlign>
       <textureUp>arrow_round_up_nofocus.png</textureUp>
       <textureDown>arrow_round_down_nofocus.png</textureDown>
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
       <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-      <spinWidth>50</spinWidth>
-      <spinHeight>37</spinHeight>
+      <spinWidth>75</spinWidth>
+      <spinHeight>55</spinHeight>
     </control>
     <control>
       <type>label</type>
       <description>LrcPick status</description>
       <id>1011</id>
-      <posX>900</posX>
-      <posY>46</posY>
+      <posX>1350</posX>
+      <posY>69</posY>
       <label>
       </label>
       <textcolor>ffdddddd</textcolor>
@@ -210,8 +210,8 @@
       <type>label</type>
       <description>Status</description>
       <id>11</id>
-      <posX>110</posX>
-      <posY>120</posY>
+      <posX>165</posX>
+      <posY>180</posY>
       <label>No media playing</label>
       <font>mediastream12tc</font>
       <textcolor>FFffffff</textcolor>
@@ -220,10 +220,10 @@
       <type>image</type>
       <description>menu background image</description>
       <id>34</id>
-      <posX>30</posX>
-      <posY>570</posY>
-      <width>1225</width>
-      <height>160</height>
+      <posX>45</posX>
+      <posY>855</posY>
+      <width>1837</width>
+      <height>240</height>
       <texture>-</texture>
       <animation effect="fade" time="150">WindowOpen</animation>
       <visible>no</visible>
@@ -232,10 +232,10 @@
       <type>fadelabel</type>
       <description>track label shadow</description>
       <id>33</id>
-      <posX>112</posX>
-      <posY>672</posY>
-      <width>600</width>
-      <height>28</height>
+      <posX>168</posX>
+      <posY>1008</posY>
+      <width>900</width>
+      <height>42</height>
       <label>#Play.Current.Track | #Play.Current.Year</label>
       <font>mediastream12c</font>
       <textcolor>ff222222</textcolor>
@@ -246,10 +246,10 @@
       <type>fadelabel</type>
       <description>track label</description>
       <id>33</id>
-      <posX>110</posX>
-      <posY>670</posY>
-      <width>600</width>
-      <height>28</height>
+      <posX>165</posX>
+      <posY>1005</posY>
+      <width>900</width>
+      <height>42</height>
       <label>#Play.Current.Track | #Play.Current.Year</label>
       <font>mediastream12c</font>
       <visible>!string.equals(#Play.Current.Track,)</visible>
@@ -259,10 +259,10 @@
       <type>fadelabel</type>
       <description>Current Artist label shadow</description>
       <id>32</id>
-      <posX>112</posX>
-      <posY>636</posY>
-      <width>600</width>
-      <height>26</height>
+      <posX>168</posX>
+      <posY>954</posY>
+      <width>900</width>
+      <height>38</height>
       <label>#Play.Current.Artist</label>
       <font>mediastream12tc</font>
       <textcolor>ff222222</textcolor>
@@ -272,10 +272,10 @@
       <type>fadelabel</type>
       <description>Current Artist label</description>
       <id>32</id>
-      <posX>110</posX>
-      <posY>634</posY>
-      <width>600</width>
-      <height>26</height>
+      <posX>165</posX>
+      <posY>951</posY>
+      <width>900</width>
+      <height>38</height>
       <label>#Play.Current.Artist</label>
       <font>mediastream12tc</font>
       <animation effect="fade" time="150">WindowOpen</animation>
@@ -284,10 +284,10 @@
       <type>fadelabel</type>
       <description>Current title label shadow</description>
       <id>30</id>
-      <posX>112</posX>
-      <posY>592</posY>
-      <width>600</width>
-      <height>26</height>
+      <posX>168</posX>
+      <posY>888</posY>
+      <width>900</width>
+      <height>38</height>
       <label>#Play.Current.Title</label>
       <font>mediastream16tc</font>
       <textcolor>ff222222</textcolor>
@@ -297,10 +297,10 @@
       <type>fadelabel</type>
       <description>Current title label</description>
       <id>30</id>
-      <posX>110</posX>
-      <posY>590</posY>
-      <width>600</width>
-      <height>26</height>
+      <posX>165</posX>
+      <posY>885</posY>
+      <width>900</width>
+      <height>38</height>
       <label>#Play.Current.Title</label>
       <font>mediastream16tc</font>
       <animation effect="fade" time="150">WindowOpen</animation>
@@ -309,10 +309,10 @@
       <type>image</type>
       <description>Album Art Image</description>
       <id>112</id>
-      <posX>908</posX>
-      <posY>122</posY>
-      <width>350</width>
-      <height>350</height>
+      <posX>1362</posX>
+      <posY>183</posY>
+      <width>525</width>
+      <height>525</height>
       <texture>-</texture>
       <centered>yes</centered>
       <zoom>yes</zoom>
@@ -323,10 +323,10 @@
       <type>image</type>
       <description>Glass Overlay</description>
       <id>31</id>
-      <posX>896</posX>
-      <posY>102</posY>
-      <width>373</width>
-      <height>390</height>
+      <posX>1344</posX>
+      <posY>153</posY>
+      <width>559</width>
+      <height>585</height>
       <texture>tvseries_focusframe.png</texture>
       <colordiffuse>90ffffff</colordiffuse>
       <visible>control.hasthumb(112)</visible>
@@ -337,9 +337,9 @@
       <type>fadelabel</type>
       <description>album label</description>
       <id>0</id>
-      <posX>908</posX>
-      <posY>90</posY>
-      <width>340</width>
+      <posX>1362</posX>
+      <posY>135</posY>
+      <width>510</width>
       <label>#Play.Current.Album</label>
       <font>mediastream12tc</font>
       <align>left</align>
@@ -349,10 +349,10 @@
     <control>
       <type>image</type>
       <id>117</id>
-      <posX>941</posX>
-      <posY>500</posY>
-      <width>280</width>
-      <height>21</height>
+      <posX>1411</posX>
+      <posY>750</posY>
+      <width>420</width>
+      <height>31</height>
       <texture>osdprogressbackv.png</texture>
       <keepaspectratio>no</keepaspectratio>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -363,9 +363,9 @@
       <type>progress</type>
       <description>track progress</description>
       <id>118</id>
-      <posX>930</posX>
-      <posY>502</posY>
-      <width>300</width>
+      <posX>1395</posX>
+      <posY>753</posY>
+      <width>450</width>
       <label>#percentage</label>
       <visible>player.hasmedia+!string.equals(#duration,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -375,8 +375,8 @@
       <type>label</type>
       <description>track progress label</description>
       <id>24</id>
-      <posX>895</posX>
-      <posY>497</posY>
+      <posX>1342</posX>
+      <posY>745</posY>
       <label>#currentplaytime</label>
       <font>mediastream12c</font>
       <align>left</align>
@@ -389,8 +389,8 @@
       <type>label</type>
       <description>track duration label</description>
       <id>25</id>
-      <posX>1268</posX>
-      <posY>497</posY>
+      <posX>1902</posX>
+      <posY>745</posY>
       <label>#duration</label>
       <font>mediastream12c</font>
       <align>right</align>
@@ -403,8 +403,8 @@
       <type>label</type>
       <description>up next label shadow</description>
       <id>20</id>
-      <posX>1111</posX>
-      <posY>595</posY>
+      <posX>1666</posX>
+      <posY>892</posY>
       <label>4541</label>
       <font>mediastream12tc</font>
       <align>right</align>
@@ -417,8 +417,8 @@
       <type>label</type>
       <description>up next label</description>
       <id>20</id>
-      <posX>1109</posX>
-      <posY>593</posY>
+      <posX>1663</posX>
+      <posY>889</posY>
       <label>4541</label>
       <font>mediastream12tc</font>
       <align>right</align>
@@ -431,9 +431,9 @@
       <type>fadelabel</type>
       <description>next artist label shadow</description>
       <id>123</id>
-      <posX>1107</posX>
-      <posY>636</posY>
-      <width>500</width>
+      <posX>1660</posX>
+      <posY>954</posY>
+      <width>750</width>
       <label>#Play.Next.Artist</label>
       <font>mediastream12tc</font>
       <align>right</align>
@@ -445,9 +445,9 @@
       <type>fadelabel</type>
       <description>next artist label</description>
       <id>123</id>
-      <posX>1105</posX>
-      <posY>634</posY>
-      <width>500</width>
+      <posX>1657</posX>
+      <posY>951</posY>
+      <width>750</width>
       <label>#Play.Next.Artist</label>
       <font>mediastream12tc</font>
       <align>right</align>
@@ -459,9 +459,9 @@
       <type>fadelabel</type>
       <description>next track label shadow</description>
       <id>121</id>
-      <posX>1109</posX>
-      <posY>672</posY>
-      <width>300</width>
+      <posX>1663</posX>
+      <posY>1008</posY>
+      <width>450</width>
       <label>#Play.Next.Title</label>
       <font>mediastream12c</font>
       <align>right</align>
@@ -473,9 +473,9 @@
       <type>fadelabel</type>
       <description>next track label</description>
       <id>121</id>
-      <posX>1108</posX>
-      <posY>670</posY>
-      <width>300</width>
+      <posX>1662</posX>
+      <posY>1005</posY>
+      <width>450</width>
       <label>#Play.Next.Title</label>
       <font>mediastream12c</font>
       <align>right</align>
@@ -486,10 +486,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>1135</posX>
-      <posY>593</posY>
-      <width>100</width>
-      <height>100</height>
+      <posX>1702</posX>
+      <posY>889</posY>
+      <width>150</width>
+      <height>150</height>
       <texture>#Play.Next.Thumb</texture>
       <centered>yes</centered>
       <zoom>yes</zoom>
@@ -501,10 +501,10 @@
       <type>image</type>
       <description>next playing background</description>
       <id>0</id>
-      <posX>1132</posX>
-      <posY>588</posY>
-      <width>105</width>
-      <height>110</height>
+      <posX>1698</posX>
+      <posY>882</posY>
+      <width>157</width>
+      <height>165</height>
       <texture>tvseries_focusframe.png</texture>
       <visible>player.hasmedia+!string.equals(#Play.Next.Title,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -514,9 +514,9 @@
       <type>label</type>
       <description>line 0</description>
       <id>400</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>120</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>180</posY>
       <colordiffuse>80ffffff</colordiffuse>
       <label>line 0</label>
       <font>font12</font>
@@ -527,9 +527,9 @@
       <type>label</type>
       <description>line 0</description>
       <id>500</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>120</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>180</posY>
       <label>line 0</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -539,9 +539,9 @@
       <type>label</type>
       <description>line 1</description>
       <id>401</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>152</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>228</posY>
       <label>line 1</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -550,9 +550,9 @@
       <type>label</type>
       <description>line 1</description>
       <id>501</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>152</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>228</posY>
       <label>line 1</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -561,9 +561,9 @@
       <type>label</type>
       <description>line 2</description>
       <id>402</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>184</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>276</posY>
       <label>line 2</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -572,9 +572,9 @@
       <type>label</type>
       <description>line 2</description>
       <id>502</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>184</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>276</posY>
       <label>line 2</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -583,9 +583,9 @@
       <type>label</type>
       <description>line 3</description>
       <id>403</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>216</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>324</posY>
       <label>line 3</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -594,9 +594,9 @@
       <type>label</type>
       <description>line 3</description>
       <id>503</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>216</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>324</posY>
       <label>line 3</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -605,9 +605,9 @@
       <type>label</type>
       <description>line 4</description>
       <id>404</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>248</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>372</posY>
       <label>line 4</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -616,9 +616,9 @@
       <type>label</type>
       <description>line 4</description>
       <id>504</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>248</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>372</posY>
       <label>line 4</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -627,9 +627,9 @@
       <type>label</type>
       <description>line 5</description>
       <id>405</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>280</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>420</posY>
       <label>line 5</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -638,9 +638,9 @@
       <type>label</type>
       <description>line 5</description>
       <id>505</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>280</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>420</posY>
       <label>line 5</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -649,9 +649,9 @@
       <type>label</type>
       <description>line 6</description>
       <id>406</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>312</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>468</posY>
       <label>line 6</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -660,9 +660,9 @@
       <type>label</type>
       <description>line 6</description>
       <id>506</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>312</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>468</posY>
       <label>line 6</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -671,9 +671,9 @@
       <type>label</type>
       <description>line 7</description>
       <id>407</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>344</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>516</posY>
       <label>line 7</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -682,9 +682,9 @@
       <type>label</type>
       <description>line 7</description>
       <id>507</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>344</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>516</posY>
       <label>line 7</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -693,9 +693,9 @@
       <type>label</type>
       <description>line 8</description>
       <id>408</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>376</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>564</posY>
       <label>line 8</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -704,9 +704,9 @@
       <type>label</type>
       <description>line 8</description>
       <id>508</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>376</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>564</posY>
       <label>line 8</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -715,9 +715,9 @@
       <type>label</type>
       <description>line 9</description>
       <id>409</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>408</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>612</posY>
       <label>line 9</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -726,9 +726,9 @@
       <type>label</type>
       <description>line 9</description>
       <id>509</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>408</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>612</posY>
       <label>line 9</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -737,9 +737,9 @@
       <type>label</type>
       <description>line 10</description>
       <id>410</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>440</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>660</posY>
       <label>line 10</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -748,9 +748,9 @@
       <type>label</type>
       <description>line 10</description>
       <id>510</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>440</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>660</posY>
       <label>line 10</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -759,9 +759,9 @@
       <type>label</type>
       <description>line 11</description>
       <id>411</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>472</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>708</posY>
       <label>line 11</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -770,9 +770,9 @@
       <type>label</type>
       <description>line 11</description>
       <id>511</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>472</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>708</posY>
       <label>line 11</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -781,9 +781,9 @@
       <type>label</type>
       <description>line 12</description>
       <id>412</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>504</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>756</posY>
       <label>line 12</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -792,9 +792,9 @@
       <type>label</type>
       <description>line 12</description>
       <id>512</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>504</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>756</posY>
       <label>line 12</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -803,9 +803,9 @@
       <type>label</type>
       <description>line 0</description>
       <id>300</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>120</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>180</posY>
       <colordiffuse>80ffffff</colordiffuse>
       <label>line 0</label>
       <font>font12</font>
@@ -816,9 +816,9 @@
       <type>label</type>
       <description>line 0</description>
       <id>200</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>120</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>180</posY>
       <label>line 0</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -828,9 +828,9 @@
       <type>label</type>
       <description>line 1</description>
       <id>301</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>152</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>228</posY>
       <label>line 1</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -839,9 +839,9 @@
       <type>label</type>
       <description>line 1</description>
       <id>201</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>152</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>228</posY>
       <label>line 1</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -850,9 +850,9 @@
       <type>label</type>
       <description>line 2</description>
       <id>302</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>184</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>276</posY>
       <label>line 2</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -861,9 +861,9 @@
       <type>label</type>
       <description>line 2</description>
       <id>202</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>184</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>276</posY>
       <label>line 2</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -872,9 +872,9 @@
       <type>label</type>
       <description>line 3</description>
       <id>303</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>216</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>324</posY>
       <label>line 3</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -883,9 +883,9 @@
       <type>label</type>
       <description>line 3</description>
       <id>203</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>216</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>324</posY>
       <label>line 3</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -894,9 +894,9 @@
       <type>label</type>
       <description>line 4</description>
       <id>304</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>248</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>372</posY>
       <label>line 4</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -905,9 +905,9 @@
       <type>label</type>
       <description>line 4</description>
       <id>204</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>248</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>372</posY>
       <label>line 4</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -916,9 +916,9 @@
       <type>label</type>
       <description>line 5</description>
       <id>305</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>280</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>420</posY>
       <label>line 5</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -927,9 +927,9 @@
       <type>label</type>
       <description>line 5</description>
       <id>205</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>280</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>420</posY>
       <label>line 5</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -938,9 +938,9 @@
       <type>label</type>
       <description>line 6</description>
       <id>306</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>312</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>468</posY>
       <label>line 6</label>
       <font>font12</font>
       <textcolor>80ffffff</textcolor>
@@ -949,9 +949,9 @@
       <type>label</type>
       <description>line 6</description>
       <id>206</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>312</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>468</posY>
       <label>line 6</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -960,9 +960,9 @@
       <type>label</type>
       <description>line 7</description>
       <id>307</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>344</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>516</posY>
       <font>font12</font>
       <label>line 7</label>
       <textcolor>80ffffff</textcolor>
@@ -971,9 +971,9 @@
       <type>label</type>
       <description>line 7</description>
       <id>207</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>344</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>516</posY>
       <font>font12</font>
       <label>line 7</label>
       <textcolor>ffffffff</textcolor>
@@ -982,9 +982,9 @@
       <type>label</type>
       <description>line 8</description>
       <id>308</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>376</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>564</posY>
       <font>font12</font>
       <label>line 8</label>
       <textcolor>80ffffff</textcolor>
@@ -993,9 +993,9 @@
       <type>label</type>
       <description>line 8</description>
       <id>208</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>376</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>564</posY>
       <font>font12</font>
       <label>line 8</label>
       <textcolor>ffffffff</textcolor>
@@ -1004,9 +1004,9 @@
       <type>label</type>
       <description>line 9</description>
       <id>309</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>408</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>612</posY>
       <font>font12</font>
       <label>line 9</label>
       <textcolor>80ffffff</textcolor>
@@ -1015,9 +1015,9 @@
       <type>label</type>
       <description>line 9</description>
       <id>209</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>408</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>612</posY>
       <font>font12</font>
       <label>line 9</label>
       <textcolor>ffffffff</textcolor>
@@ -1026,9 +1026,9 @@
       <type>label</type>
       <description>line 10</description>
       <id>310</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>440</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>660</posY>
       <font>font12</font>
       <label>line 10</label>
       <textcolor>80ffffff</textcolor>
@@ -1037,9 +1037,9 @@
       <type>label</type>
       <description>line 10</description>
       <id>210</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>440</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>660</posY>
       <font>font12</font>
       <label>line 10</label>
       <textcolor>ffffffff</textcolor>
@@ -1048,9 +1048,9 @@
       <type>label</type>
       <description>line 11</description>
       <id>311</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>472</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>708</posY>
       <font>font12</font>
       <label>line 11</label>
       <textcolor>80ffffff</textcolor>
@@ -1059,9 +1059,9 @@
       <type>label</type>
       <description>line 11</description>
       <id>211</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>472</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>708</posY>
       <font>font12</font>
       <label>line 11</label>
       <textcolor>ffffffff</textcolor>
@@ -1070,9 +1070,9 @@
       <type>label</type>
       <description>line 12</description>
       <id>312</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>504</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>756</posY>
       <font>font12</font>
       <label>line 12</label>
       <textcolor>80ffffff</textcolor>
@@ -1081,9 +1081,9 @@
       <type>label</type>
       <description>line 12</description>
       <id>212</id>
-      <width>1160</width>
-      <posX>112</posX>
-      <posY>504</posY>
+      <width>1740</width>
+      <posX>168</posX>
+      <posY>756</posY>
       <label>line 12</label>
       <font>font12</font>
       <textcolor>ffffffff</textcolor>
@@ -1092,9 +1092,9 @@
       <type>label</type>
       <description>time 0</description>
       <id>600</id>
-      <width>100</width>
-      <posX>16</posX>
-      <posY>124</posY>
+      <width>150</width>
+      <posX>24</posX>
+      <posY>186</posY>
       <label>(xx:xx:xx)</label>
       <font>mediastream10</font>
       <textcolor>80ffffff</textcolor>
@@ -1103,9 +1103,9 @@
       <type>label</type>
       <description>time 1</description>
       <id>601</id>
-      <width>100</width>
-      <posX>16</posX>
-      <posY>156</posY>
+      <width>150</width>
+      <posX>24</posX>
+      <posY>234</posY>
       <label>(xx:xx:xx)</label>
       <font>mediastream10</font>
       <textcolor>80ffffff</textcolor>
@@ -1114,9 +1114,9 @@
       <type>label</type>
       <description>time 2</description>
       <id>602</id>
-      <width>100</width>
-      <posX>16</posX>
-      <posY>188</posY>
+      <width>150</width>
+      <posX>24</posX>
+      <posY>282</posY>
       <label>(xx:xx:xx)</label>
       <font>mediastream10</font>
       <textcolor>80ffffff</textcolor>
@@ -1125,9 +1125,9 @@
       <type>label</type>
       <description>time 3</description>
       <id>603</id>
-      <width>100</width>
-      <posX>16</posX>
-      <posY>220</posY>
+      <width>150</width>
+      <posX>24</posX>
+      <posY>330</posY>
       <label>(xx:xx:xx)</label>
       <font>mediastream10</font>
       <textcolor>80ffffff</textcolor>
@@ -1136,9 +1136,9 @@
       <type>label</type>
       <description>time 4</description>
       <id>604</id>
-      <width>100</width>
-      <posX>16</posX>
-      <posY>252</posY>
+      <width>150</width>
+      <posX>24</posX>
+      <posY>378</posY>
       <label>(xx:xx:xx)</label>
       <font>mediastream10</font>
       <textcolor>80ffffff</textcolor>
@@ -1147,9 +1147,9 @@
       <type>label</type>
       <description>time 5</description>
       <id>605</id>
-      <width>100</width>
-      <posX>16</posX>
-      <posY>284</posY>
+      <width>150</width>
+      <posX>24</posX>
+      <posY>426</posY>
       <label>(xx:xx:xx)</label>
       <font>mediastream10</font>
       <textcolor>80ffffff</textcolor>
@@ -1158,9 +1158,9 @@
       <type>label</type>
       <description>time 6</description>
       <id>606</id>
-      <width>100</width>
-      <posX>16</posX>
-      <posY>316</posY>
+      <width>150</width>
+      <posX>24</posX>
+      <posY>474</posY>
       <label>(xx:xx:xx)</label>
       <font>mediastream10</font>
       <textcolor>80ffffff</textcolor>
@@ -1169,9 +1169,9 @@
       <type>label</type>
       <description>time 7</description>
       <id>607</id>
-      <width>100</width>
-      <posX>16</posX>
-      <posY>348</posY>
+      <width>150</width>
+      <posX>24</posX>
+      <posY>522</posY>
       <label>(xx:xx:xx)</label>
       <font>mediastream10</font>
       <textcolor>80ffffff</textcolor>
@@ -1180,9 +1180,9 @@
       <type>label</type>
       <description>time 8</description>
       <id>608</id>
-      <width>100</width>
-      <posX>16</posX>
-      <posY>380</posY>
+      <width>150</width>
+      <posX>24</posX>
+      <posY>570</posY>
       <label>(xx:xx:xx)</label>
       <font>mediastream10</font>
       <textcolor>80ffffff</textcolor>
@@ -1191,9 +1191,9 @@
       <type>label</type>
       <description>time 9</description>
       <id>609</id>
-      <width>100</width>
-      <posX>16</posX>
-      <posY>412</posY>
+      <width>150</width>
+      <posX>24</posX>
+      <posY>618</posY>
       <label>(xx:xx:xx)</label>
       <font>mediastream10</font>
       <textcolor>80ffffff</textcolor>
@@ -1202,9 +1202,9 @@
       <type>label</type>
       <description>time 10</description>
       <id>610</id>
-      <width>100</width>
-      <posX>16</posX>
-      <posY>444</posY>
+      <width>150</width>
+      <posX>24</posX>
+      <posY>666</posY>
       <label>(xx:xx:xx)</label>
       <font>mediastream10</font>
       <textcolor>80ffffff</textcolor>
@@ -1213,9 +1213,9 @@
       <type>label</type>
       <description>time 11</description>
       <id>611</id>
-      <width>100</width>
-      <posX>16</posX>
-      <posY>476</posY>
+      <width>150</width>
+      <posX>24</posX>
+      <posY>714</posY>
       <label>(xx:xx:xx)</label>
       <font>mediastream10</font>
       <textcolor>80ffffff</textcolor>
@@ -1224,9 +1224,9 @@
       <type>label</type>
       <description>time 12</description>
       <id>612</id>
-      <width>100</width>
-      <posX>16</posX>
-      <posY>508</posY>
+      <width>150</width>
+      <posX>24</posX>
+      <posY>762</posY>
       <label>(xx:xx:xx)</label>
       <font>mediastream10</font>
       <textcolor>80ffffff</textcolor>
@@ -1241,4 +1241,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:6e322a833cf5dc8d1887f9c1176c74dc-->
+<!--Checksum:b2a0fd2a8f205c8cf9f6699211ed9f9c-->

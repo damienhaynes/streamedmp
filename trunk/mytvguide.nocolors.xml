@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
-		<control>
+    <control>
       <description>TvGroup button</description>
       <type>button3part</type>
       <id>100</id>
-      <posX>15</posX>
-      <posY>120</posY>
-      <width>30</width>
-      <height>435</height>
+      <posX>22</posX>
+      <posY>180</posY>
+      <width>45</width>
+      <height>652</height>
       <textureFocusedLeft>small_vbutton_lr_colorize.png</textureFocusedLeft>
       <textureNonFocusedLeft>small_vbutton_lr_colorize.png</textureNonFocusedLeft>
       <textureFocusedMid>small_vbutton_focus.png</textureFocusedMid>
@@ -25,16 +25,17 @@
       <animation effect="zoom" start="100,100" end="100,100" time="0">focus</animation>
       <animation effect="zoom" start="100,100" end="100,100" time="0">unfocus</animation>
     </control>
-		<control>
+    <control>
       <description>Current program genre</description>
       <type>label</type>
       <id>0</id>
-      <posX>1250</posX>
-      <posY>690</posY>
-      <width>1200</width>
+      <posX>1875</posX>
+      <posY>1035</posY>
+      <width>1800</width>
       <label>#TV.Guide.Genre</label>
       <align>right</align>
       <font>mediastream11tc</font>
     </control>
   </controls>
 </window>
+<!--Checksum:0b6ca7e677111736c61435f5a7631d8b-->

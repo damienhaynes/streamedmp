@@ -15,10 +15,10 @@
       <description>Default Cover Art</description>
       <type>image</type>
       <id>0</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>257</width>
-      <height>380</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>385</width>
+      <height>570</height>
       <texture>defaultdvdcover.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -27,10 +27,10 @@
       <description>Actor Thumb</description>
       <type>image</type>
       <id>21</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>257</width>
-      <height>380</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>385</width>
+      <height>570</height>
       <texture>#thumb</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -39,10 +39,10 @@
       <description>Movie Poster Thumb</description>
       <type>image</type>
       <id>25</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>257</width>
-      <height>380</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>385</width>
+      <height>570</height>
       <texture>#Actor.MovieImage</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -51,10 +51,10 @@
       <description>Cover Art Glass Overlay</description>
       <type>image</type>
       <id>0</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>228</width>
-      <height>177</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>342</width>
+      <height>265</height>
       <texture>glassoverlay2.png</texture>
       <visible>true</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -64,14 +64,14 @@
       <description>Actor Name</description>
       <type>label</type>
       <id>0</id>
-      <posX>308</posX>
-      <posY>251</posY>
-      <width>900</width>
+      <posX>462</posX>
+      <posY>376</posY>
+      <width>1350</width>
       <font>mediastream16tc</font>
       <label>#Actor.Name</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>!control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -81,14 +81,14 @@
       <description>Movie title</description>
       <type>label</type>
       <id>0</id>
-      <posX>308</posX>
-      <posY>251</posY>
-      <width>900</width>
+      <posX>462</posX>
+      <posY>376</posY>
+      <width>1350</width>
       <font>mediastream16tc</font>
       <label>#Actor.MovieTitle</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -99,13 +99,13 @@
       <type>label</type>
       <label>#Actor.DateOfBirth / #Actor.PlaceOfBirth</label>
       <id>0</id>
-      <posX>309</posX>
-      <posY>282</posY>
-      <width>900</width>
+      <posX>463</posX>
+      <posY>423</posY>
+      <width>1350</width>
       <font>mediastream11tc</font>
       <textcolor>ff909090</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>3</shadowDistance>
+      <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <visible>!control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -116,13 +116,13 @@
       <type>fadelabel</type>
       <label>#Actor.MovieExtraDetails</label>
       <id>0</id>
-      <posX>309</posX>
-      <posY>282</posY>
-      <width>900</width>
+      <posX>463</posX>
+      <posY>423</posY>
+      <width>1350</width>
       <font>mediastream11tc</font>
       <textcolor>ff909090</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>3</shadowDistance>
+      <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <visible>control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -132,10 +132,10 @@
       <description>Biography</description>
       <type>textboxscrollup</type>
       <id>20</id>
-      <posX>308</posX>
-      <posY>315</posY>
-      <width>900</width>
-      <height>320</height>
+      <posX>462</posX>
+      <posY>472</posY>
+      <width>1350</width>
+      <height>480</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -148,10 +148,10 @@
       <description>Movie Summary</description>
       <type>textboxscrollup</type>
       <id>26</id>
-      <posX>308</posX>
-      <posY>318</posY>
-      <width>430</width>
-      <height>290</height>
+      <posX>462</posX>
+      <posY>477</posY>
+      <width>645</width>
+      <height>435</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -164,26 +164,26 @@
       <type>textbox</type>
       <id>22</id>
       <onleft>3</onleft>
-      <posX>-1308</posX>
-      <posY>315</posY>
-      <width>430</width>
-      <height>340</height>
+      <posX>-1963</posX>
+      <posY>472</posY>
+      <width>645</width>
+      <height>510</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#Actor.Movies</label>
-      <spinWidth>25</spinWidth>
-      <spinHeight>25</spinHeight>
-      <spinPosX>-1680</spinPosX>
+      <spinWidth>37</spinWidth>
+      <spinHeight>37</spinHeight>
+      <spinPosX>-2520</spinPosX>
     </control>
     <control>
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1013</posX>
-      <posY>684</posY>
-      <width>260</width>
-      <height>30</height>
+      <posX>1519</posX>
+      <posY>1026</posY>
+      <width>390</width>
+      <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -194,8 +194,8 @@
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1023</posX>
-      <posY>688</posY>
+      <posX>1534</posX>
+      <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>control.isvisible(24)</visible>
@@ -208,17 +208,17 @@
       <id>24</id>
       <onleft>4</onleft>
       <onright>4</onright>
-      <posX>760</posX>
-      <posY>310</posY>
-      <height>410</height>
+      <posX>1140</posX>
+      <posY>465</posY>
+      <height>615</height>
       <dimColor>50ffffff</dimColor>
       <explicitlyEnableScrollLabel>no</explicitlyEnableScrollLabel>
-      <IconXOff>-1389</IconXOff>
+      <IconXOff>-2084</IconXOff>
       <!-- Spin Controls -->
-      <spinWidth>50</spinWidth>
-      <spinHeight>37</spinHeight>
-      <spinPosX>1175</spinPosX>
-      <spinPosY>681</spinPosY>
+      <spinWidth>75</spinWidth>
+      <spinHeight>55</spinHeight>
+      <spinPosX>1762</spinPosX>
+      <spinPosY>1021</spinPosY>
       <spinAlign>Right</spinAlign>
       <spinColor>ff006698</spinColor>
       <textureUp>arrow_round_up_nofocus.png</textureUp>
@@ -231,8 +231,8 @@
     <control>
       <type>group</type>
       <description>Button Group</description>
-      <posX>20</posX>
-      <posY>638</posY>
+      <posX>30</posX>
+      <posY>957</posY>
       <layout>StackLayout</layout>
       <control Style="skincheckbutton">
         <description>Biography</description>
@@ -262,4 +262,4 @@
     <import>common.overlays2.xml</import>
   </controls>
 </window>
-<!--Checksum:ddd027902a64d745fe2b0f9431d76082-->
+<!--Checksum:eaf5e9a78ba3c4101075ff5081826950-->

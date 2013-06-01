@@ -3,17 +3,17 @@
   <define>#shadow.dark:ff111111</define>
   <define>#shadow.light:ff222222</define>
   <skin>
-    <width>1280</width>
-    <height>720</height>
+    <width>1920</width>
+    <height>1080</height>
     <version>1.4.0.0</version>
   </skin>
   <style Name="leftmenubutton">
-    <width>200</width>
-    <height>30</height>
-    <textXOff>15</textXOff>
-    <textYOff>3</textYOff>
-    <textXOff2>15</textXOff2>
-    <textYOff2>3</textYOff2>
+    <width>300</width>
+    <height>45</height>
+    <textXOff>22</textXOff>
+    <textYOff>4</textYOff>
+    <textXOff2>22</textXOff2>
+    <textYOff2>4</textYOff2>
     <font>mediastream11c</font>
     <texturebg>dialogbigbuttonfo.png</texturebg>
     <textureFocus>dialogbigbuttonfo.png</textureFocus>
@@ -24,8 +24,8 @@
     <textcolorNoFocus>ff909090</textcolorNoFocus>
   </style>
   <style Name="submenubutton">
-    <width>320</width>
-    <height>50</height>
+    <width>480</width>
+    <height>75</height>
     <textYOff>0</textYOff>
     <font>mediastream14c</font>
     <textalign>center</textalign>
@@ -34,24 +34,24 @@
     <colordiffuse>ffFFFFFF</colordiffuse>
   </style>
   <style Name="settingsbutton">
-    <width>211</width>
-    <height>43</height>
-    <textXOff>23</textXOff>
-    <textYOff>12</textYOff>
+    <width>316</width>
+    <height>64</height>
+    <textXOff>34</textXOff>
+    <textYOff>18</textYOff>
     <font>mediastream10tc</font>
     <textureNoFocus>settingsbuttonnf.png</textureNoFocus>
     <textureFocus>settingsbuttonfo.png</textureFocus>
     <colordiffuse>ffFFFFFF</colordiffuse>
   </style>
   <style Name="settingscheckbutton">
-    <width>211</width>
-    <height>43</height>
-    <textXOff>23</textXOff>
-    <textYOff>12</textYOff>
+    <width>316</width>
+    <height>64</height>
+    <textXOff>34</textXOff>
+    <textYOff>18</textYOff>
     <font>mediastream10tc</font>
-    <markWidth>27</markWidth>
-    <markHeight>27</markHeight>
-    <markXOff>15</markXOff>
+    <markWidth>40</markWidth>
+    <markHeight>40</markHeight>
+    <markXOff>22</markXOff>
     <markalign>right</markalign>
     <markvalign>middle</markvalign>
     <textureFocus>settingsbuttonfo.png</textureFocus>
@@ -64,34 +64,34 @@
     <textalign>left</textalign>
     <textvalign>middle</textvalign>
   </style>
-	<style Name="settingsosdcheckbutton">
-    <width>40</width>
-		<height>40</height>
-		<markHeight>40</markHeight>
-		<markWidth>40</markWidth>
-		<markalign>right</markalign>
-		<markXOff>5</markXOff>
-		<markYOff>5</markYOff>
-		<label>-</label>
+  <style Name="settingsosdcheckbutton">
+    <width>60</width>
+    <height>60</height>
+    <markHeight>60</markHeight>
+    <markWidth>60</markWidth>
+    <markalign>right</markalign>
+    <markXOff>7</markXOff>
+    <markYOff>5</markYOff>
+    <label>-</label>
   </style>
-	<style Name="settingsosdlargecheckbutton">
-    <width>52</width>
-		<height>52</height>
-		<markHeight>52</markHeight>
-		<markWidth>52</markWidth>
-		<markalign>right</markalign>
-		<markXOff>5</markXOff>
-		<markYOff>5</markYOff>
-		<label>-</label>
+  <style Name="settingsosdlargecheckbutton">
+    <width>78</width>
+    <height>77</height>
+    <markHeight>77</markHeight>
+    <markWidth>78</markWidth>
+    <markalign>right</markalign>
+    <markXOff>7</markXOff>
+    <markYOff>5</markYOff>
+    <label>-</label>
   </style>
   <style Name="settingsmainbutton">
-    <posX>251</posX>
-    <width>616</width>
-    <height>42</height>
+    <posX>376</posX>
+    <width>924</width>
+    <height>63</height>
     <textXOff>0</textXOff>
-    <textYOff>8</textYOff>
-    <textXOff2>10</textXOff2>
-    <textYOff2>8</textYOff2>
+    <textYOff>12</textYOff>
+    <textXOff2>15</textXOff2>
+    <textYOff2>12</textYOff2>
     <font>mediastream12c</font>
     <texturebg>listbg_fo.png</texturebg>
     <textureNoFocus>listbg_nf.png</textureNoFocus>
@@ -104,10 +104,10 @@
     <textcolor>ffffffff</textcolor>
     <textcolorNoFocus>bfffffff</textcolorNoFocus>
     <font>mediastream12tc</font>
-    <textYOff>8</textYOff>
-    <textXOff>20</textXOff>
-    <width>280</width>
-    <height>40</height>
+    <textYOff>12</textYOff>
+    <textXOff>30</textXOff>
+    <width>420</width>
+    <height>60</height>
     <textureFocus>tv_button_focus.png</textureFocus>
     <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
   </style>
@@ -115,27 +115,27 @@
     <textcolor>ffffffff</textcolor>
     <textcolorNoFocus>bfffffff</textcolorNoFocus>
     <font>mediastream12tc</font>
-    <textYOff>8</textYOff>
-    <textXOff>20</textXOff>
-    <width>280</width>
-    <height>40</height>
+    <textYOff>12</textYOff>
+    <textXOff>30</textXOff>
+    <width>420</width>
+    <height>60</height>
     <textureFocus>tv_button_focus.png</textureFocus>
     <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
     <textureCheckmark>ledon.png</textureCheckmark>
     <textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
   </style>
   <style Name="settingsmaincheckbutton">
-    <posX>251</posX>
-    <width>616</width>
-    <height>42</height>
+    <posX>376</posX>
+    <width>924</width>
+    <height>63</height>
     <textXOff>0</textXOff>
-    <textYOff>8</textYOff>
-    <textXOff2>10</textXOff2>
-    <textYOff2>8</textYOff2>
+    <textYOff>12</textYOff>
+    <textXOff2>15</textXOff2>
+    <textYOff2>12</textYOff2>
     <font>mediastream12c</font>
-    <markWidth>27</markWidth>
-    <markHeight>27</markHeight>
-    <markXOff>40</markXOff>
+    <markWidth>40</markWidth>
+    <markHeight>40</markHeight>
+    <markXOff>60</markXOff>
     <markalign>right</markalign>
     <markvalign>middle</markvalign>
     <textpadding>50</textpadding>
@@ -152,11 +152,11 @@
     <textvalign>middle</textvalign>
   </style>
   <style Name="settingsmaincheckmark">
-    <posX>251</posX>
-    <width>595</width>
-    <height>42</height>
-    <MarkWidth>26</MarkWidth>
-    <MarkHeight>26</MarkHeight>
+    <posX>376</posX>
+    <width>892</width>
+    <height>63</height>
+    <MarkWidth>39</MarkWidth>
+    <MarkHeight>38</MarkHeight>
     <align>right</align>
     <font>mediastream12c</font>
     <textcolor>ffFFFFFF</textcolor>
@@ -164,9 +164,9 @@
     <textcolorNoFocus>ffFFFFFF</textcolorNoFocus>
   </style>
   <style Name="settingsmaincheckmark2">
-    <MarkWidth>21</MarkWidth>
-    <MarkHeight>21</MarkHeight>
-    <height>25</height>
+    <MarkWidth>31</MarkWidth>
+    <MarkHeight>31</MarkHeight>
+    <height>37</height>
     <align>right</align>
     <font>mediastream11tc</font>
     <textcolor>ffFFFFFF</textcolor>
@@ -176,74 +176,74 @@
   </style>
   <style Name="settingsmaintexturefo">
     <id>0</id>
-    <posX>216</posX>
-    <width>595</width>
-    <height>42</height>
+    <posX>324</posX>
+    <width>892</width>
+    <height>63</height>
     <keepaspectratio>yes</keepaspectratio>
     <texture>listbg_fo.png</texture>
     <animation effect="fade" time="200" delay="200">windowopen</animation>
   </style>
   <style Name="settingsmaintexturefo_wide">
     <id>0</id>
-    <posX>216</posX>
-    <width>766</width>
-    <height>42</height>
+    <posX>324</posX>
+    <width>1149</width>
+    <height>63</height>
     <keepaspectratio>no</keepaspectratio>
     <texture>listbg_fo.png</texture>
     <animation effect="fade" time="200" delay="200">windowopen</animation>
   </style>
   <style Name="settingsmaintexturenf">
     <id>0</id>
-    <posX>216</posX>
-    <width>595</width>
-    <height>42</height>
+    <posX>324</posX>
+    <width>892</width>
+    <height>63</height>
     <keepaspectratio>yes</keepaspectratio>
     <texture>listbg_nf.png</texture>
     <animation effect="fade" time="200" delay="200">windowopen</animation>
   </style>
   <style Name="settingsmaintexturenf_wide">
     <id>0</id>
-    <posX>216</posX>
-    <width>766</width>
-    <height>42</height>
+    <posX>324</posX>
+    <width>1149</width>
+    <height>63</height>
     <keepaspectratio>no</keepaspectratio>
     <texture>listbg_nf.png</texture>
     <animation effect="fade" time="200" delay="200">windowopen</animation>
   </style>
   <style Name="smallTitleB">
     <id>0</id>
-    <width>300</width>
+    <width>450</width>
     <font>mediastream10tc</font>
     <textcolor>ff006699</textcolor>
     <shadowAngle>45</shadowAngle>
-    <shadowDistance>2</shadowDistance>
+    <shadowDistance>3</shadowDistance>
     <shadowColor>ff111111</shadowColor>
   </style>
   <style Name="smallTitle">
     <id>0</id>
-    <width>220</width>
+    <width>330</width>
     <font>mediastream9c</font>
     <textcolor>ffffffff</textcolor>
     <shadowAngle>45</shadowAngle>
-    <shadowDistance>2</shadowDistance>
+    <shadowDistance>3</shadowDistance>
     <shadowColor>ff222222</shadowColor>
   </style>
   <style Name="TVSeriesTitle">
     <id>0</id>
-    <width>200</width>
+    <width>300</width>
     <font>mediastream11tc</font>
     <textcolor>ff909090</textcolor>
     <shadowAngle>45</shadowAngle>
-    <shadowDistance>2</shadowDistance>
+    <shadowDistance>3</shadowDistance>
     <shadowColor>ff111111</shadowColor>
   </style>
   <style Name="TVSeriesLabel">
     <id>0</id>
-    <width>380</width>
+    <width>570</width>
     <font>mediastream11tc</font>
     <textcolor>ffffffff</textcolor>
     <shadowAngle>45</shadowAngle>
-    <shadowDistance>2</shadowDistance>
+    <shadowDistance>3</shadowDistance>
     <shadowColor>ff222222</shadowColor>
   </style>
   <control>
@@ -264,8 +264,8 @@
     <description>default label</description>
     <type>label</type>
     <id>1</id>
-    <posX>35</posX>
-    <posY>35</posY>
+    <posX>52</posX>
+    <posY>52</posY>
     <label>6</label>
     <font>mediastream10tc</font>
     <textcolor>ffffffff</textcolor>
@@ -275,9 +275,9 @@
     <description>default fadelabel</description>
     <type>fadelabel</type>
     <id>0</id>
-    <posX>35</posX>
-    <posY>35</posY>
-    <width>500</width>
+    <posX>52</posX>
+    <posY>52</posY>
+    <width>750</width>
     <align>left</align>
     <font>mediastream10tc</font>
     <textcolor>ffffffff</textcolor>
@@ -287,22 +287,22 @@
     <description>default textarea</description>
     <type>textboxscrollup</type>
     <id>0</id>
-    <posX>300</posX>
-    <posY>80</posY>
+    <posX>450</posX>
+    <posY>120</posY>
     <seperator>------------------------------------------------------------------------</seperator>
   </control>
   <control>
     <description>default textarea</description>
     <type>textbox</type>
     <id>0</id>
-    <posX>300</posX>
-    <posY>80</posY>
-    <width>1055</width>
-    <height>612</height>
-    <spinWidth>37</spinWidth>
-    <spinHeight>37</spinHeight>
-    <spinPosX>-150</spinPosX>
-    <spinPosY>-150</spinPosY>
+    <posX>450</posX>
+    <posY>120</posY>
+    <width>1582</width>
+    <height>918</height>
+    <spinWidth>55</spinWidth>
+    <spinHeight>55</spinHeight>
+    <spinPosX>-225</spinPosX>
+    <spinPosY>-225</spinPosY>
     <spinAlign>Right</spinAlign>
     <spinColor>ffffffff</spinColor>
     <textureUp>-</textureUp>
@@ -320,13 +320,13 @@
     <type>menubutton</type>
     <id>0</id>
     <mode>spinlist</mode>
-    <width>220</width>
-    <height>28</height>
-    <textXOff>10</textXOff>
-    <textYOff>4</textYOff>
+    <width>330</width>
+    <height>42</height>
+    <textXOff>15</textXOff>
+    <textYOff>6</textYOff>
     <textureFocus>hiddenmenu_button_fo.png</textureFocus>
-    <spinWidth>24</spinWidth>
-    <spinHeight>24</spinHeight>
+    <spinWidth>36</spinWidth>
+    <spinHeight>36</spinHeight>
     <spinXOff>13</spinXOff>
     <spinTextXOff>7</spinTextXOff>
     <spinTextYOff>2</spinTextYOff>
@@ -351,13 +351,13 @@
     <id>1</id>
     <posX>0</posX>
     <posY>0</posY>
-    <width>220</width>
-    <height>28</height>
+    <width>330</width>
+    <height>42</height>
     <textureFocus>hiddenmenu_button_fo.png</textureFocus>
-    <height>28</height>
-    <width>220</width>
-    <textXOff>11</textXOff>
-    <textYOff>5</textYOff>
+    <height>42</height>
+    <width>330</width>
+    <textXOff>16</textXOff>
+    <textYOff>7</textYOff>
     <textureNoFocus>-</textureNoFocus>
     <font>mediastream10c</font>
     <textcolor>ffffffff</textcolor>
@@ -371,12 +371,12 @@
     <description>default updownbutton</description>
     <type>updownbutton</type>
     <id>1</id>
-    <posX>20</posX>
-    <posY>80</posY>
-    <width>215</width>
-    <height>48</height>
-    <textXOff>16</textXOff>
-    <textYOff>8</textYOff>
+    <posX>30</posX>
+    <posY>120</posY>
+    <width>322</width>
+    <height>72</height>
+    <textXOff>24</textXOff>
+    <textYOff>12</textYOff>
     <textureFocus>menu_list_focus.png</textureFocus>
     <textureNoFocus>menu_list_nofocus.png</textureNoFocus>
     <font>mediastream10c</font>
@@ -390,13 +390,13 @@
     <id>6</id>
     <posX>0</posX>
     <posY>0</posY>
-    <width>220</width>
-    <height>28</height>
+    <width>330</width>
+    <height>42</height>
     <label>457</label>
-    <textXOff>11</textXOff>
-    <textYOff>5</textYOff>
-    <textXOff2>25</textXOff2>
-    <textYOff2>6</textYOff2>
+    <textXOff>16</textXOff>
+    <textYOff>7</textYOff>
+    <textXOff2>37</textXOff2>
+    <textYOff2>9</textYOff2>
     <textureFocus>-</textureFocus>
     <textureNoFocus>-</textureNoFocus>
     <texturebg>hiddenmenu_button_fo.png</texturebg>
@@ -413,14 +413,14 @@
   <control>
     <description>default check button</description>
     <type>checkbutton</type>
-    <width>220</width>
-    <height>28</height>
-    <textXOff>11</textXOff>
-    <textYOff>5</textYOff>
+    <width>330</width>
+    <height>42</height>
+    <textXOff>16</textXOff>
+    <textYOff>7</textYOff>
     <label>-</label>
-    <markWidth>27</markWidth>
-    <markHeight>27</markHeight>
-    <markXOff>15</markXOff>
+    <markWidth>40</markWidth>
+    <markHeight>40</markHeight>
+    <markXOff>22</markXOff>
     <markalign>right</markalign>
     <markvalign>middle</markvalign>
     <textureFocus>hiddenmenu_button_fo.png</textureFocus>
@@ -440,21 +440,21 @@
     <description>playlist item button</description>
     <type>playlistbutton</type>
     <id>0</id>
-    <posX>177</posX>
-    <posY>125</posY>
-    <width>755</width>
-    <height>45</height>
-    <textXOff>17</textXOff>
-    <textYOff>6</textYOff>
-    <upBtnWidth>44</upBtnWidth>
-    <downBtnWidth>44</downBtnWidth>
-    <deleteBtnWidth>49</deleteBtnWidth>
-    <upBtnHeight>40</upBtnHeight>
-    <downBtnHeight>40</downBtnHeight>
-    <deleteBtnHeight>40</deleteBtnHeight>
-    <upBtnXOffset>613</upBtnXOffset>
-    <downBtnXOffset>659</downBtnXOffset>
-    <deleteBtnXOffset>705</deleteBtnXOffset>
+    <posX>265</posX>
+    <posY>187</posY>
+    <width>1132</width>
+    <height>67</height>
+    <textXOff>25</textXOff>
+    <textYOff>9</textYOff>
+    <upBtnWidth>66</upBtnWidth>
+    <downBtnWidth>66</downBtnWidth>
+    <deleteBtnWidth>73</deleteBtnWidth>
+    <upBtnHeight>60</upBtnHeight>
+    <downBtnHeight>60</downBtnHeight>
+    <deleteBtnHeight>60</deleteBtnHeight>
+    <upBtnXOffset>919</upBtnXOffset>
+    <downBtnXOffset>988</downBtnXOffset>
+    <deleteBtnXOffset>1057</deleteBtnXOffset>
     <upBtnYOffset>0</upBtnYOffset>
     <downBtnYOffset>0</downBtnYOffset>
     <deleteBtnYOffset>0</deleteBtnYOffset>
@@ -493,20 +493,20 @@
     <id>3</id>
     <posX>0</posX>
     <posY>0</posY>
-    <width>220</width>
-    <height>28</height>
-    <textXOff>11</textXOff>
-    <textYOff>5</textYOff>
+    <width>330</width>
+    <height>42</height>
+    <textXOff>16</textXOff>
+    <textYOff>7</textYOff>
     <textureFocus>hiddenmenu_button_fo.png</textureFocus>
     <textureNoFocus>-</textureNoFocus>
     <textureAscending>arrowupnf.png</textureAscending>
     <textureAscendingFocused>arrowupfo.png</textureAscendingFocused>
     <textureDescending>arrowdownnf.png</textureDescending>
     <textureDescendingFocused>arrowdownfo.png</textureDescendingFocused>
-    <offsetSortButtonX>205</offsetSortButtonX>
-    <offsetSortButtonY>8</offsetSortButtonY>
-    <offsetSortButtonWidth>16</offsetSortButtonWidth>
-    <offsetSortButtonHeight>16</offsetSortButtonHeight>
+    <offsetSortButtonX>307</offsetSortButtonX>
+    <offsetSortButtonY>12</offsetSortButtonY>
+    <offsetSortButtonWidth>24</offsetSortButtonWidth>
+    <offsetSortButtonHeight>24</offsetSortButtonHeight>
     <font>mediastream10c</font>
     <textcolor>ffffffff</textcolor>
     <colordiffuse>ffffffff</colordiffuse>
@@ -517,13 +517,13 @@
     <description>default check button</description>
     <type>checkbutton</type>
     <id>3</id>
-    <width>220</width>
-    <height>28</height>
-    <textXOff>11</textXOff>
-    <textYOff>5</textYOff>
-    <markWidth>27</markWidth>
-    <markHeight>27</markHeight>
-    <markXOff>15</markXOff>
+    <width>330</width>
+    <height>42</height>
+    <textXOff>16</textXOff>
+    <textYOff>7</textYOff>
+    <markWidth>40</markWidth>
+    <markHeight>40</markHeight>
+    <markXOff>22</markXOff>
     <markalign>right</markalign>
     <markvalign>middle</markvalign>
     <textureFocus>hiddenmenu_button_fo.png</textureFocus>
@@ -545,21 +545,21 @@
     <description>playlist item button</description>
     <type>playlistbutton</type>
     <id>5</id>
-    <posX>189</posX>
-    <posY>133</posY>
-    <width>566</width>
-    <height>48</height>
-    <textXOff>16</textXOff>
-    <textYOff>8</textYOff>
-    <upBtnWidth>33</upBtnWidth>
-    <downBtnWidth>33</downBtnWidth>
-    <deleteBtnWidth>37</deleteBtnWidth>
-    <upBtnHeight>42</upBtnHeight>
-    <downBtnHeight>42</downBtnHeight>
-    <deleteBtnHeight>42</deleteBtnHeight>
-    <upBtnXOffset>654</upBtnXOffset>
-    <downBtnXOffset>703</downBtnXOffset>
-    <deleteBtnXOffset>753</deleteBtnXOffset>
+    <posX>283</posX>
+    <posY>199</posY>
+    <width>849</width>
+    <height>72</height>
+    <textXOff>24</textXOff>
+    <textYOff>12</textYOff>
+    <upBtnWidth>49</upBtnWidth>
+    <downBtnWidth>49</downBtnWidth>
+    <deleteBtnWidth>55</deleteBtnWidth>
+    <upBtnHeight>63</upBtnHeight>
+    <downBtnHeight>63</downBtnHeight>
+    <deleteBtnHeight>63</deleteBtnHeight>
+    <upBtnXOffset>981</upBtnXOffset>
+    <downBtnXOffset>1054</downBtnXOffset>
+    <deleteBtnXOffset>1129</deleteBtnXOffset>
     <upBtnYOffset>0</upBtnYOffset>
     <downBtnYOffset>0</downBtnYOffset>
     <deleteBtnYOffset>0</deleteBtnYOffset>
@@ -580,14 +580,14 @@
     <description>default listcontrol</description>
     <type>listcontrol</type>
     <id>10</id>
-    <posX>685</posX>
-    <posY>275</posY>
-    <width>595</width>
-    <height>400</height>
-    <spinWidth>16</spinWidth>
-    <spinHeight>16</spinHeight>
-    <spinPosX>1249</spinPosX>
-    <spinPosY>690</spinPosY>
+    <posX>1027</posX>
+    <posY>412</posY>
+    <width>892</width>
+    <height>600</height>
+    <spinWidth>24</spinWidth>
+    <spinHeight>24</spinHeight>
+    <spinPosX>1873</spinPosX>
+    <spinPosY>1035</spinPosY>
     <spinAlign>Right</spinAlign>
     <spinColor>ff006698</spinColor>
     <spinCanFocus>no</spinCanFocus>
@@ -597,7 +597,7 @@
     <textureDownFocus>-</textureDownFocus>
     <textureFocus>listbg_fo.png</textureFocus>
     <textureNoFocus>listbg_nf.png</textureNoFocus>
-    <textureHeight>42</textureHeight>
+    <textureHeight>63</textureHeight>
     <image>-</image>
     <font>mediastream12c</font>
     <font2>mediastream10c</font2>
@@ -617,12 +617,12 @@
     <bdDvdDirectoryColor2>FFffffff</bdDvdDirectoryColor2>
     <bdDvdDirectoryColor3>FFffffff</bdDvdDirectoryColor3>
     <unfocusedAlpha applyToAll="true">100</unfocusedAlpha>
-    <textXOff>-30</textXOff>
-    <textYOff>7</textYOff>
-    <textXOff2>570</textXOff2>
-    <textYOff2>7</textYOff2>
-    <IconXOff>1000</IconXOff>
-    <IconYOff>1000</IconYOff>
+    <textXOff>-45</textXOff>
+    <textYOff>10</textYOff>
+    <textXOff2>855</textXOff2>
+    <textYOff2>10</textYOff2>
+    <IconXOff>1500</IconXOff>
+    <IconYOff>1500</IconYOff>
     <itemWidth>0</itemWidth>
     <itemHeight>0</itemHeight>
     <spaceBetweenItems>0</spaceBetweenItems>
@@ -634,14 +634,14 @@
     <description>default checklistcontrol</description>
     <type>checklistcontrol</type>
     <id>10</id>
-    <posX>251</posX>
-    <posY>200</posY>
-    <width>1055</width>
-    <height>612</height>
-    <spinWidth>37</spinWidth>
-    <spinHeight>37</spinHeight>
-    <spinPosX>1278</spinPosX>
-    <spinPosY>610</spinPosY>
+    <posX>376</posX>
+    <posY>300</posY>
+    <width>1582</width>
+    <height>918</height>
+    <spinWidth>55</spinWidth>
+    <spinHeight>55</spinHeight>
+    <spinPosX>1917</spinPosX>
+    <spinPosY>915</spinPosY>
     <spinAlign>Right</spinAlign>
     <spinColor>ffffffff</spinColor>
     <textureUp>page_up_nofocus.png</textureUp>
@@ -650,7 +650,7 @@
     <textureDownFocus>page_down_focus.png</textureDownFocus>
     <textureFocus>listbg_fo.png</textureFocus>
     <textureNoFocus>listbg_nf.png</textureNoFocus>
-    <textureHeight>42</textureHeight>
+    <textureHeight>63</textureHeight>
     <image>-</image>
     <font>mediastream12c</font>
     <font>mediastream10c</font>
@@ -668,18 +668,18 @@
     <bdDvdDirectoryColor3>FFffffff</bdDvdDirectoryColor3>
     <textureCheckmark>ledon.png</textureCheckmark>
     <textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
-    <MarkWidth>26</MarkWidth>
-    <MarkHeight>26</MarkHeight>
+    <MarkWidth>39</MarkWidth>
+    <MarkHeight>38</MarkHeight>
     <MarkOffsetX>0</MarkOffsetX>
     <MarkOffsetY>0</MarkOffsetY>
-    <textXOff>10</textXOff>
-    <textYOff>6</textYOff>
-    <textXOff2>1040</textXOff2>
-    <textYOff2>6</textYOff2>
-    <IconXOff>10</IconXOff>
-    <IconYOff>10</IconYOff>
-    <itemWidth>24</itemWidth>
-    <itemHeight>24</itemHeight>
+    <textXOff>15</textXOff>
+    <textYOff>9</textYOff>
+    <textXOff2>1560</textXOff2>
+    <textYOff2>9</textYOff2>
+    <IconXOff>15</IconXOff>
+    <IconYOff>15</IconYOff>
+    <itemWidth>36</itemWidth>
+    <itemHeight>36</itemHeight>
     <spaceBetweenItems>0</spaceBetweenItems>
     <folderPrefix />
     <folderSuffix />
@@ -688,14 +688,14 @@
     <description>default up/downlistcontrol</description>
     <type>updownlistcontrol</type>
     <id>10</id>
-    <posX>620</posX>
-    <posY>240</posY>
-    <height>450</height>
-    <width>660</width>
-    <spinWidth>16</spinWidth>
-    <spinHeight>16</spinHeight>
-    <spinPosX>1249</spinPosX>
-    <spinPosY>692</spinPosY>
+    <posX>930</posX>
+    <posY>360</posY>
+    <height>675</height>
+    <width>990</width>
+    <spinWidth>24</spinWidth>
+    <spinHeight>24</spinHeight>
+    <spinPosX>1873</spinPosX>
+    <spinPosY>1038</spinPosY>
     <spinAlign>Right</spinAlign>
     <spinColor>ff006698</spinColor>
     <spinCanFocus>no</spinCanFocus>
@@ -705,7 +705,7 @@
     <textureDownFocus>arrowdownfo.png</textureDownFocus>
     <textureFocus>listbg_fo.png</textureFocus>
     <textureNoFocus>listbg_nf.png</textureNoFocus>
-    <textureHeight>44</textureHeight>
+    <textureHeight>66</textureHeight>
     <image>folder_focus.png</image>
     <font>mediastream12</font>
     <shadedColor>20ffffff</shadedColor>
@@ -716,19 +716,19 @@
     <colordiffuse>ffffffff</colordiffuse>
     <remoteColor>ffFFA075</remoteColor>
     <downloadColor>ff80ff80</downloadColor>
-    <textXOff>50</textXOff>
-    <textYOff>5</textYOff>
-    <textXOff2>650</textXOff2>
-    <textYOff2>4</textYOff2>
-    <IconXOff>3</IconXOff>
-    <IconYOff>2</IconYOff>
-    <PinIconWidth>48</PinIconWidth>
-    <PinIconHeight>20</PinIconHeight>
-    <PinIconXOff>47</PinIconXOff>
-    <PinIconYOff>13</PinIconYOff>
+    <textXOff>75</textXOff>
+    <textYOff>7</textYOff>
+    <textXOff2>975</textXOff2>
+    <textYOff2>6</textYOff2>
+    <IconXOff>4</IconXOff>
+    <IconYOff>3</IconYOff>
+    <PinIconWidth>72</PinIconWidth>
+    <PinIconHeight>30</PinIconHeight>
+    <PinIconXOff>70</PinIconXOff>
+    <PinIconYOff>19</PinIconYOff>
     <suffix>|</suffix>
-    <itemWidth>40</itemWidth>
-    <itemHeight>40</itemHeight>
+    <itemWidth>60</itemWidth>
+    <itemHeight>60</itemHeight>
     <spaceBetweenItems>0</spaceBetweenItems>
     <keepaspectratio>yes</keepaspectratio>
     <folderPrefix />
@@ -738,21 +738,21 @@
     <description>default playlist item listcontrol</description>
     <type>playlistcontrol</type>
     <id>10</id>
-    <posX>685</posX>
-    <posY>275</posY>
-    <width>595</width>
-    <height>400</height>
-    <spinWidth>16</spinWidth>
-    <spinHeight>16</spinHeight>
-    <spinPosX>1220</spinPosX>
-    <spinPosY>679</spinPosY>
+    <posX>1027</posX>
+    <posY>412</posY>
+    <width>892</width>
+    <height>600</height>
+    <spinWidth>24</spinWidth>
+    <spinHeight>24</spinHeight>
+    <spinPosX>1830</spinPosX>
+    <spinPosY>1018</spinPosY>
     <spinAlign>Right</spinAlign>
     <spinColor>ff999999</spinColor>
     <textureUp>-</textureUp>
     <textureDown>-</textureDown>
     <textureUpFocus>-</textureUpFocus>
     <textureDownFocus>-</textureDownFocus>
-    <textureHeight>42</textureHeight>
+    <textureHeight>63</textureHeight>
     <image>defaultFolder.png</image>
     <font>mediastream12c</font>
     <font2>mediastream10c</font2>
@@ -770,26 +770,26 @@
     <remoteColor>FFFFA075</remoteColor>
     <downloadColor>ff80ff80</downloadColor>
     <unfocusedAlpha>100</unfocusedAlpha>
-    <textXOff>-30</textXOff>
-    <textYOff>7</textYOff>
-    <textXOff2>475</textXOff2>
-    <textYOff2>10</textYOff2>
-    <IconXOff>1000</IconXOff>
-    <IconYOff>1000</IconYOff>
+    <textXOff>-45</textXOff>
+    <textYOff>10</textYOff>
+    <textXOff2>712</textXOff2>
+    <textYOff2>15</textYOff2>
+    <IconXOff>1500</IconXOff>
+    <IconYOff>1500</IconYOff>
     <itemWidth>0</itemWidth>
     <itemHeight>0</itemHeight>
     <suffix>|</suffix>
     <spaceBetweenItems>0</spaceBetweenItems>
     <scrollOffset>3</scrollOffset>
-    <upBtnWidth>18</upBtnWidth>
-    <downBtnWidth>18</downBtnWidth>
-    <deleteBtnWidth>18</deleteBtnWidth>
-    <upBtnHeight>42</upBtnHeight>
-    <downBtnHeight>42</downBtnHeight>
-    <deleteBtnHeight>42</deleteBtnHeight>
-    <upBtnXOffset>509</upBtnXOffset>
-    <downBtnXOffset>527</downBtnXOffset>
-    <deleteBtnXOffset>545</deleteBtnXOffset>
+    <upBtnWidth>27</upBtnWidth>
+    <downBtnWidth>27</downBtnWidth>
+    <deleteBtnWidth>27</deleteBtnWidth>
+    <upBtnHeight>63</upBtnHeight>
+    <downBtnHeight>63</downBtnHeight>
+    <deleteBtnHeight>63</deleteBtnHeight>
+    <upBtnXOffset>763</upBtnXOffset>
+    <downBtnXOffset>790</downBtnXOffset>
+    <deleteBtnXOffset>817</deleteBtnXOffset>
     <upBtnYOffset>0</upBtnYOffset>
     <downBtnYOffset>0</downBtnYOffset>
     <deleteBtnYOffset>0</deleteBtnYOffset>
@@ -807,14 +807,14 @@
     <description>default thumbnail panel</description>
     <type>thumbnailpanel</type>
     <id>11</id>
-    <posX>30</posX>
-    <posY>250</posY>
-    <width>620</width>
-    <height>450</height>
-    <spinWidth>16</spinWidth>
-    <spinHeight>16</spinHeight>
-    <spinPosX>40</spinPosX>
-    <spinPosY>693</spinPosY>
+    <posX>45</posX>
+    <posY>375</posY>
+    <width>930</width>
+    <height>675</height>
+    <spinWidth>24</spinWidth>
+    <spinHeight>24</spinHeight>
+    <spinPosX>60</spinPosX>
+    <spinPosY>1039</spinPosY>
     <spinAlign>left</spinAlign>
     <spinColor>ffffffff</spinColor>
     <spinCanFocus>no</spinCanFocus>
@@ -822,14 +822,14 @@
     <textureDown>arrowdownnf.png</textureDown>
     <textureUpFocus>arrowupfo.png</textureUpFocus>
     <textureDownFocus>arrowdownfo.png</textureDownFocus>
-    <itemWidth>115</itemWidth>
-    <itemHeight>110</itemHeight>
-    <textureWidth>100</textureWidth>
-    <textureHeight>100</textureHeight>
-    <thumbWidth>96</thumbWidth>
-    <thumbHeight>96</thumbHeight>
-    <thumbPosX>2</thumbPosX>
-    <thumbPosY>2</thumbPosY>
+    <itemWidth>172</itemWidth>
+    <itemHeight>165</itemHeight>
+    <textureWidth>150</textureWidth>
+    <textureHeight>150</textureHeight>
+    <thumbWidth>144</thumbWidth>
+    <thumbHeight>144</thumbHeight>
+    <thumbPosX>3</thumbPosX>
+    <thumbPosY>3</thumbPosY>
     <imageFolder>thumbborder2.png</imageFolder>
     <imageFolderFocus>thumbborder2.png</imageFolderFocus>
     <font>mediastream11</font>
@@ -843,18 +843,18 @@
     <bdDvdDirectoryColor3>FFffffff</bdDvdDirectoryColor3>
     <unfocusedAlpha>200</unfocusedAlpha>
     <suffix>|</suffix>
-    <itemWidthBig>150</itemWidthBig>
-    <itemHeightBig>145</itemHeightBig>
-    <textureWidthBig>120</textureWidthBig>
-    <textureHeightBig>120</textureHeightBig>
-    <thumbWidthBig>114</thumbWidthBig>
-    <thumbHeightBig>114</thumbHeightBig>
-    <thumbPosXBig>3</thumbPosXBig>
-    <thumbPosYBig>3</thumbPosYBig>
+    <itemWidthBig>225</itemWidthBig>
+    <itemHeightBig>217</itemHeightBig>
+    <textureWidthBig>180</textureWidthBig>
+    <textureHeightBig>180</textureHeightBig>
+    <thumbWidthBig>171</thumbWidthBig>
+    <thumbHeightBig>171</thumbHeightBig>
+    <thumbPosXBig>4</thumbPosXBig>
+    <thumbPosYBig>4</thumbPosYBig>
     <thumbZoom>no</thumbZoom>
     <enableFocusZoom>no</enableFocusZoom>
     <textXOff>0</textXOff>
-    <textYOff>1500</textYOff>
+    <textYOff>2250</textYOff>
     <folderPrefix />
     <folderSuffix />
   </control>
@@ -862,31 +862,31 @@
     <description>default filmstrip</description>
     <type>filmstrip</type>
     <id>11</id>
-    <posX>750</posX>
-    <posY>210</posY>
-    <width>700</width>
-    <height>133</height>
-    <spinWidth>37</spinWidth>
-    <spinHeight>37</spinHeight>
-    <spinPosX>306</spinPosX>
-    <spinPosY>640</spinPosY>
+    <posX>1125</posX>
+    <posY>315</posY>
+    <width>1050</width>
+    <height>199</height>
+    <spinWidth>55</spinWidth>
+    <spinHeight>55</spinHeight>
+    <spinPosX>459</spinPosX>
+    <spinPosY>960</spinPosY>
     <spinColor>ffffffff</spinColor>
     <textureUp>arrow_round_right_nofocus.png</textureUp>
     <textureDown>arrow_round_left_nofocus.png</textureDown>
     <textureUpFocus>arrow_round_right_focus.png</textureUpFocus>
     <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
-    <thumbWidth>188</thumbWidth>
-    <thumbHeight>188</thumbHeight>
-    <thumbPosX>15</thumbPosX>
-    <thumbPosY>8</thumbPosY>
+    <thumbWidth>282</thumbWidth>
+    <thumbHeight>282</thumbHeight>
+    <thumbPosX>22</thumbPosX>
+    <thumbPosY>12</thumbPosY>
     <imageFolder>Coverback.png</imageFolder>
     <imageFolderFocus>Coverback.png</imageFolderFocus>
     <frame>Frame.png</frame>
     <frameFocus>Frame.png</frameFocus>
-    <itemWidth>120</itemWidth>
-    <itemHeight>391</itemHeight>
-    <textureWidth>203</textureWidth>
-    <textureHeight>391</textureHeight>
+    <itemWidth>180</itemWidth>
+    <itemHeight>586</itemHeight>
+    <textureWidth>304</textureWidth>
+    <textureHeight>586</textureHeight>
     <font>font12</font>
     <selectedColor>00ffffff</selectedColor>
     <textcolor>00ffffff</textcolor>
@@ -897,32 +897,32 @@
     <bdDvdDirectoryColor2>FFffffff</bdDvdDirectoryColor2>
     <bdDvdDirectoryColor3>FFffffff</bdDvdDirectoryColor3>
     <suffix>|</suffix>
-    <textureWidthBig>150</textureWidthBig>
-    <textureHeightBig>150</textureHeightBig>
-    <itemWidthBig>180</itemWidthBig>
-    <itemHeightBig>180</itemHeightBig>
-    <thumbWidthBig>112</thumbWidthBig>
-    <thumbHeightBig>112</thumbHeightBig>
-    <thumbPosXBig>22</thumbPosXBig>
-    <thumbPosYBig>16</thumbPosYBig>
+    <textureWidthBig>225</textureWidthBig>
+    <textureHeightBig>225</textureHeightBig>
+    <itemWidthBig>270</itemWidthBig>
+    <itemHeightBig>270</itemHeightBig>
+    <thumbWidthBig>168</thumbWidthBig>
+    <thumbHeightBig>168</thumbHeightBig>
+    <thumbPosXBig>33</thumbPosXBig>
+    <thumbPosYBig>24</thumbPosYBig>
     <background>-</background>
-    <backgroundx>400</backgroundx>
-    <backgroundy>126</backgroundy>
-    <backgroundwidth>312</backgroundwidth>
-    <backgroundheight>555</backgroundheight>
+    <backgroundx>600</backgroundx>
+    <backgroundy>189</backgroundy>
+    <backgroundwidth>468</backgroundwidth>
+    <backgroundheight>832</backgroundheight>
     <backgrounddiffuse>ffffffff</backgrounddiffuse>
     <InfoImage>-</InfoImage>
-    <InfoImagex>444</InfoImagex>
-    <InfoImagey>140</InfoImagey>
-    <InfoImagewidth>250</InfoImagewidth>
-    <InfoImageheight>250</InfoImageheight>
+    <InfoImagex>666</InfoImagex>
+    <InfoImagey>210</InfoImagey>
+    <InfoImagewidth>375</InfoImagewidth>
+    <InfoImageheight>375</InfoImageheight>
     <InfoImagediffuse>20ffffff</InfoImagediffuse>
     <keepaspectratio>no</keepaspectratio>
     <enableFocusZoom>no</enableFocusZoom>
     <dimColor>60ffffff</dimColor>
     <textXOff>0</textXOff>
     <spinAlign>Right</spinAlign>
-    <textYOff>1500</textYOff>
+    <textYOff>2250</textYOff>
     <folderPrefix />
     <folderSuffix />
   </control>
@@ -933,40 +933,40 @@
     <dimColor>90ffffff</dimColor>
     <id>50</id>
     <posX>0</posX>
-    <posY>240</posY>
-    <width>1280</width>
-    <height>720</height>
+    <posY>360</posY>
+    <width>1920</width>
+    <height>1080</height>
     <onup>2</onup>
     <onright>50</onright>
     <selectedCard>0</selectedCard>
-    <cardWidth>250</cardWidth>
-    <cardHeight>375</cardHeight>
+    <cardWidth>375</cardWidth>
+    <cardHeight>562</cardHeight>
     <angle>45</angle>
-    <sideShift>220</sideShift>
-    <sideGap>100</sideGap>
-    <sideDepth>250</sideDepth>
+    <sideShift>330</sideShift>
+    <sideGap>150</sideGap>
+    <sideDepth>375</sideDepth>
     <offsetY>0</offsetY>
     <selectedOffsetY>0</selectedOffsetY>
     <speed>4</speed>
-    <backgroundHeight>250</backgroundHeight>
-    <backgroundWidth>1280</backgroundWidth>
+    <backgroundHeight>375</backgroundHeight>
+    <backgroundWidth>1920</backgroundWidth>
     <backgroundX>0</backgroundX>
-    <backgroundY>470</backgroundY>
+    <backgroundY>705</backgroundY>
     <backgroundDiffuse>FF000000</backgroundDiffuse>
     <background>filmstrip_overlay.png</background>
     <showBackground>yes</showBackground>
-    <foregroundHeight>724</foregroundHeight>
-    <foregroundWidth>1284</foregroundWidth>
-    <foregroundX>-2</foregroundX>
-    <foregroundY>-2</foregroundY>
+    <foregroundHeight>1086</foregroundHeight>
+    <foregroundWidth>1926</foregroundWidth>
+    <foregroundX>-3</foregroundX>
+    <foregroundY>-3</foregroundY>
     <foregroundDiffuse>FF000000</foregroundDiffuse>
     <foreground>-</foreground>
     <showForeground>no</showForeground>
     <showFrame>yes</showFrame>
     <frame>coverflow.poster.square.glass.png</frame>
     <frameFocus>coverflow.poster.square.glass.png</frameFocus>
-    <frameWidth>250</frameWidth>
-    <frameHeight>375</frameHeight>
+    <frameWidth>375</frameWidth>
+    <frameHeight>562</frameHeight>
     <spinSpeed>8</spinSpeed>
     <unfocusedAlpha>FF</unfocusedAlpha>
     <folderPrefix>[</folderPrefix>
@@ -984,15 +984,15 @@
     <bdDvdDirectoryColor2>FFffffff</bdDvdDirectoryColor2>
     <bdDvdDirectoryColor3>FFffffff</bdDvdDirectoryColor3>
     <shadowAngle>45</shadowAngle>
-    <shadowDistance>2</shadowDistance>
+    <shadowDistance>3</shadowDistance>
     <shadowColor>FF222222</shadowColor>
-    <label1YOff>395</label1YOff>
-    <label2YOff>420</label2YOff>
+    <label1YOff>592</label1YOff>
+    <label2YOff>630</label2YOff>
     <pageSize>5</pageSize>
     <scrollbarBackground>bar_hor.png</scrollbarBackground>
     <scrollbarLeft>mouse_left_horizontal.png</scrollbarLeft>
     <scrollbarRight>mouse_right_horizontal.png</scrollbarRight>
-    <scrollbarYOff>462</scrollbarYOff>
+    <scrollbarYOff>693</scrollbarYOff>
     <showScrollbar>no</showScrollbar>
     <keepaspectratio>no</keepaspectratio>
     <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_square_mask.png" />
@@ -1005,9 +1005,9 @@
     <description>default progress control</description>
     <type>progress</type>
     <id>20</id>
-    <posX>189</posX>
-    <posY>433</posY>
-    <height>20</height>
+    <posX>283</posX>
+    <posY>649</posY>
+    <height>30</height>
     <texturebg>-</texturebg>
     <lefttexture>osdprogressleft.png</lefttexture>
     <midtexture>osdprogressmid.png</midtexture>
@@ -1018,8 +1018,8 @@
     <description>default horizontal scrollbar control</description>
     <type>hscrollbar</type>
     <id>20</id>
-    <posX>189</posX>
-    <posY>433</posY>
+    <posX>283</posX>
+    <posY>649</posY>
     <texturebg>bar_hor.png</texturebg>
     <lefttexture>mouse_left_horizontal.png</lefttexture>
     <righttexture>mouse_right_horizontal.png</righttexture>
@@ -1029,8 +1029,8 @@
     <description>default vertical scrollbar control</description>
     <type>vscrollbar</type>
     <id>20</id>
-    <posX>189</posX>
-    <posY>33</posY>
+    <posX>283</posX>
+    <posY>49</posY>
     <scrollbarbg>bar_vert.png</scrollbarbg>
     <scrollbartop>mouse_left_vertical.png</scrollbartop>
     <scrollbarbottom>mouse_right_vertical.png</scrollbarbottom>
@@ -1040,10 +1040,10 @@
     <description>default spin control</description>
     <type>spincontrol</type>
     <id>2</id>
-    <posX>626</posX>
-    <posY>168</posY>
-    <width>16</width>
-    <height>16</height>
+    <posX>939</posX>
+    <posY>252</posY>
+    <width>24</width>
+    <height>24</height>
     <textureUp>arrowupnf.png</textureUp>
     <textureUpFocus>arrowupfo.png</textureUpFocus>
     <textureDown>arrowdownnf.png</textureDown>
@@ -1059,18 +1059,18 @@
     <description>default checkmark</description>
     <type>checkmark</type>
     <id>4</id>
-    <posX>394</posX>
-    <posY>221</posY>
+    <posX>591</posX>
+    <posY>331</posY>
     <label>167</label>
     <font>mediastream10tc</font>
     <textcolor>ffffffff</textcolor>
     <disabledcolor>60ffffff</disabledcolor>
     <textureCheckmark>ledon.png</textureCheckmark>
     <textureCheckmarkNoFocus>ledoff.png</textureCheckmarkNoFocus>
-    <MarkWidth>27</MarkWidth>
-    <MarkHeight>27</MarkHeight>
+    <MarkWidth>40</MarkWidth>
+    <MarkHeight>40</MarkHeight>
     <align>right</align>
     <shadow>no</shadow>
   </control>
 </controls>
-<!--Checksum:b72fa09269843a29cdc977d725e8251a-->
+<!--Checksum:a56726ba9fe8f590bf259d0fa3ba1b23-->

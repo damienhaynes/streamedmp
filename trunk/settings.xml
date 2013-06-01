@@ -3,7 +3,7 @@
   <id>4</id>
   <defaultcontrol>12</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-	<rememberLastFocusedControl>yes</rememberLastFocusedControl>
+  <rememberLastFocusedControl>yes</rememberLastFocusedControl>
   <define>#header.label:5</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#selecteditem:#highlightedbutton</define>
@@ -12,45 +12,45 @@
       <type>image</type>
       <description>BG</description>
       <id>0</id>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#header.hover</texture>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>178</posX>
+      <posX>267</posX>
       <posY>0</posY>
-      <width>256</width>
-      <height>720</height>
+      <width>384</width>
+      <height>1080</height>
       <texture>homebladesub.png</texture>
-      <animation effect="slide" time="200" start="-434,0">windowopen</animation>
+      <animation effect="slide" time="200" start="-651,0">windowopen</animation>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>-620</posX>
+      <posX>-930</posX>
       <posY>0</posY>
-      <width>846</width>
-      <height>720</height>
+      <width>1269</width>
+      <height>1080</height>
       <texture>homebladeleft.png</texture>
-      <animation effect="slide" time="100" start="-846,0">windowopen</animation>
+      <animation effect="slide" time="100" start="-1269,0">windowopen</animation>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>260</posX>
-      <posY>80</posY>
-      <width>161</width>
-      <height>31</height>
+      <posX>390</posX>
+      <posY>120</posY>
+      <width>241</width>
+      <height>46</height>
       <texture>settingslogo.png</texture>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
@@ -58,10 +58,10 @@
       <description>Update Indicator</description>
       <type>image</type>
       <id>0</id>
-      <posX>378</posX>
-      <posY>126</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>567</posX>
+      <posY>189</posY>
+      <width>48</width>
+      <height>48</height>
       <texture>isupdate.png</texture>
       <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true	)</visible>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
@@ -70,10 +70,10 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>121</posY>
-      <width>211</width>
-      <height>379</height>
+      <posX>324</posX>
+      <posY>181</posY>
+      <width>316</width>
+      <height>568</height>
       <layout>StackLayout(0, Vertical, true)</layout>
       <control Style="settingsbutton">
         <description>StreamedMP Settings</description>
@@ -83,7 +83,7 @@
         <label>#StreamedMP.SkinMenu</label>
         <hyperlink>196200</hyperlink>
       </control>
-			<control Style="settingsbutton">
+      <control Style="settingsbutton">
         <description>General setttings</description>
         <type>button</type>
         <id>3</id>
@@ -97,21 +97,21 @@
         <label>101021</label>
         <hyperlink>1021</hyperlink>
       </control>
-			<control Style="settingsbutton">
+      <control Style="settingsbutton">
         <description>TV</description>
         <type>button</type>
         <id>10</id>
         <label>605</label>
         <hyperlink>700</hyperlink>
       </control>
-			<control Style="settingsbutton">
+      <control Style="settingsbutton">
         <description>My Videos</description>
         <type>button</type>
         <id>8</id>
         <label>3</label>
         <hyperlink>703</hyperlink>
       </control>
-			<control Style="settingsbutton">
+      <control Style="settingsbutton">
         <description>My Music</description>
         <type>button</type>
         <id>6</id>
@@ -139,7 +139,7 @@
         <label>300217</label>
         <hyperlink>1024</hyperlink>
       </control>
-			<control Style="settingsbutton">
+      <control Style="settingsbutton">
         <description>MiniDisplay</description>
         <type>button</type>
         <id>11</id>
@@ -162,16 +162,16 @@
         <hyperlink>87271</hyperlink>
         <visible>plugin.isenabled(Trakt)</visible>
       </control>
-			<control Style="settingscheckbutton">
+      <control Style="settingscheckbutton">
         <description>Settings locked</description>
         <type>checkbutton</type>
         <id>20</id>
         <label>#StreamedMP.Locked</label>
-				<onup>14</onup>
+        <onup>14</onup>
         <ondown>12</ondown>
       </control>
     </control>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:c6928ebe8d087fe4227c39fc946c34d5-->
+<!--Checksum:a668c847ec82f10626915e055ee5ca15-->

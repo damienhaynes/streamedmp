@@ -5,55 +5,55 @@
       <description>Sub Menu Background (audio)</description>
       <type>image</type>
       <id>305</id>
-      <posX>865</posX>
+      <posX>1297</posX>
       <posY>0</posY>
-      <width>415</width>
-      <height>720</height>
+      <width>622</width>
+      <height>1080</height>
       <texture>osdmenubg.png</texture>
       <visible>control.isvisible(500)</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <animation effect="slide" start="1950,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>Menu Title Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>908</posX>
-      <posY>18</posY>
+      <posX>1362</posX>
+      <posY>27</posY>
       <label>200082</label>
       <!-- no string available for this one? -->
       <font>mediastream16c</font>
       <textcolor>FFFFFFFF</textcolor>
       <visible>control.isvisible(500)</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <animation effect="slide" start="1950,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>your label</description>
       <type>label</type>
       <id>1</id>
-      <posX>908</posX>
-      <posY>65</posY>
+      <posX>1362</posX>
+      <posY>97</posY>
       <label>Delay Not Possible/need FFDShow</label>
       <font>mediastream10c</font>
       <visible>string.equals(#VideoOSD.AudioVideoDelayPossible, false)</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <animation effect="slide" start="1950,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>A/v Delay label</description>
       <type>label</type>
       <id>550</id>
-      <posX>908</posX>
-      <posY>50</posY>
+      <posX>1362</posX>
+      <posY>75</posY>
       <label>297</label>
       <font>mediastream10tc</font>
       <visible>no</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <animation effect="slide" start="1950,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>A/V Delay Slider</description>
       <type>slider</type>
       <id>500</id>
-      <posX>908</posX>
-      <posY>89</posY>
+      <posX>1362</posX>
+      <posY>133</posY>
       <spintype>float</spintype>
       <textureSliderBar>sliderbackground.png</textureSliderBar>
       <textureSliderNib>slidernibnf.png</textureSliderNib>
@@ -63,26 +63,26 @@
       <onleft>501</onleft>
       <onright>501</onright>
       <visible>no</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <animation effect="slide" start="1950,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>Audio Stream List Control</description>
       <type>listcontrol</type>
       <id>501</id>
-      <posX>908</posX>
-      <posY>154</posY>
-      <width>350</width>
-      <height>500</height>
+      <posX>1362</posX>
+      <posY>231</posY>
+      <width>525</width>
+      <height>750</height>
       <textXOff>0</textXOff>
       <onleft>501</onleft>
       <onright>501</onright>
       <onup>500</onup>
       <ondown>500</ondown>
       <visible>no</visible>
-      <spinPosX>1300</spinPosX>
-      <spinPosY>515</spinPosY>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <spinPosX>1950</spinPosX>
+      <spinPosY>772</spinPosY>
+      <animation effect="slide" start="1950,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:a650e974f443caedaea5bb81e72cf64f-->
+<!--Checksum:9235ab1f05caf08933a4a1f7dbac1985-->

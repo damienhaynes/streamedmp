@@ -11,8 +11,8 @@
       <id>100</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>hover_my mpnzb.png</texture>
     </control>
     <control>
@@ -21,28 +21,28 @@
       <id>101</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>mainoverlay.png</texture>
     </control>
     <control>
       <description>Backdrop Overlay</description>
       <type>image</type>
       <id>101</id>
-      <posX>20</posX>
-      <posY>240</posY>
-      <width>280</width>
-      <height>250</height>
+      <posX>30</posX>
+      <posY>360</posY>
+      <width>420</width>
+      <height>375</height>
       <texture>mpinfo_filmbox.png</texture>
     </control>
     <control>
       <description>Backdrop Overlay</description>
       <type>image</type>
       <id>101</id>
-      <posX>20</posX>
-      <posY>485</posY>
-      <width>280</width>
-      <height>180</height>
+      <posX>30</posX>
+      <posY>727</posY>
+      <width>420</width>
+      <height>270</height>
       <texture>mpinfo_filmbox.png</texture>
     </control>
     <control>
@@ -50,19 +50,19 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
     </control>
     <control>
       <description>Selecteditem</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>20</posX>
-      <posY>687</posY>
-      <width>940</width>
-      <height>47</height>
+      <posX>30</posX>
+      <posY>1030</posY>
+      <width>1410</width>
+      <height>70</height>
       <label>#selecteditem</label>
       <font>mediastream12tc</font>
     </control>
@@ -70,8 +70,8 @@
       <description>Refresh</description>
       <type>button</type>
       <id>1</id>
-      <posX>60</posX>
-      <posY>250</posY>
+      <posX>90</posX>
+      <posY>375</posY>
       <label>Refresh</label>
       <onright>50</onright>
       <ondown>2</ondown>
@@ -80,8 +80,8 @@
       <description>Feeds</description>
       <type>button</type>
       <id>2</id>
-      <posX>60</posX>
-      <posY>280</posY>
+      <posX>90</posX>
+      <posY>420</posY>
       <label>Feeds</label>
       <onright>50</onright>
       <onup>1</onup>
@@ -91,8 +91,8 @@
       <description>Groups</description>
       <type>button</type>
       <id>3</id>
-      <posX>60</posX>
-      <posY>310</posY>
+      <posX>90</posX>
+      <posY>465</posY>
       <label>Groups</label>
       <onright>50</onright>
       <onup>2</onup>
@@ -102,8 +102,8 @@
       <description>Search</description>
       <type>button</type>
       <id>4</id>
-      <posX>60</posX>
-      <posY>340</posY>
+      <posX>90</posX>
+      <posY>510</posY>
       <label>Search</label>
       <onright>50</onright>
       <onup>3</onup>
@@ -113,8 +113,8 @@
       <description>Job Queue</description>
       <type>button</type>
       <id>5</id>
-      <posX>60</posX>
-      <posY>380</posY>
+      <posX>90</posX>
+      <posY>570</posY>
       <label>Job Queue</label>
       <onright>50</onright>
       <onup>4</onup>
@@ -124,8 +124,8 @@
       <description>History</description>
       <type>button</type>
       <id>7</id>
-      <posX>60</posX>
-      <posY>410</posY>
+      <posX>90</posX>
+      <posY>615</posY>
       <label>History</label>
       <onright>50</onright>
       <onup>5</onup>
@@ -135,8 +135,8 @@
       <description>Pause Queue</description>
       <type>checkbutton</type>
       <id>6</id>
-      <posX>60</posX>
-      <posY>440</posY>
+      <posX>90</posX>
+      <posY>660</posY>
       <label>Pause Queue</label>
       <onright>50</onright>
       <onup>7</onup>
@@ -146,8 +146,8 @@
       <description>Paused</description>
       <type>label</type>
       <id>6</id>
-      <posX>120</posX>
-      <posY>500</posY>
+      <posX>180</posX>
+      <posY>750</posY>
       <label>Paused:</label>
       <align>Right</align>
       <textcolor>FF006699</textcolor>
@@ -156,8 +156,8 @@
       <description>Paused</description>
       <type>label</type>
       <id>7</id>
-      <posX>127</posX>
-      <posY>500</posY>
+      <posX>190</posX>
+      <posY>750</posY>
       <label>#Paused</label>
       <align>Left</align>
       <textcolor>ffffffff</textcolor>
@@ -166,8 +166,8 @@
       <description>Speed</description>
       <type>label</type>
       <id>8</id>
-      <posX>120</posX>
-      <posY>520</posY>
+      <posX>180</posX>
+      <posY>780</posY>
       <label>Speed:</label>
       <align>Right</align>
       <textcolor>FF006699</textcolor>
@@ -176,8 +176,8 @@
       <description>Speed</description>
       <type>label</type>
       <id>9</id>
-      <posX>127</posX>
-      <posY>520</posY>
+      <posX>190</posX>
+      <posY>780</posY>
       <label>#KBps</label>
       <align>Left</align>
       <textcolor>ffffffff</textcolor>
@@ -186,8 +186,8 @@
       <description>Queued</description>
       <type>label</type>
       <id>10</id>
-      <posX>120</posX>
-      <posY>540</posY>
+      <posX>180</posX>
+      <posY>810</posY>
       <label>Queued:</label>
       <align>Right</align>
       <textcolor>FF006699</textcolor>
@@ -196,8 +196,8 @@
       <description>Queued</description>
       <type>label</type>
       <id>11</id>
-      <posX>127</posX>
-      <posY>540</posY>
+      <posX>190</posX>
+      <posY>810</posY>
       <label>#MBStatus</label>
       <align>Left</align>
       <textcolor>ffffffff</textcolor>
@@ -206,8 +206,8 @@
       <description>Job Count</description>
       <type>label</type>
       <id>12</id>
-      <posX>120</posX>
-      <posY>560</posY>
+      <posX>180</posX>
+      <posY>840</posY>
       <label>Count:</label>
       <align>Right</align>
       <textcolor>FF006699</textcolor>
@@ -216,8 +216,8 @@
       <description>Job Count</description>
       <type>label</type>
       <id>13</id>
-      <posX>127</posX>
-      <posY>560</posY>
+      <posX>190</posX>
+      <posY>840</posY>
       <label>#JobCount</label>
       <align>Left</align>
       <textcolor>ffffffff</textcolor>
@@ -226,8 +226,8 @@
       <description>Disk Space 1</description>
       <type>label</type>
       <id>14</id>
-      <posX>120</posX>
-      <posY>580</posY>
+      <posX>180</posX>
+      <posY>870</posY>
       <label>D/L DIR:</label>
       <align>Right</align>
       <textcolor>FF006699</textcolor>
@@ -236,8 +236,8 @@
       <description>Disk Space 1</description>
       <type>label</type>
       <id>15</id>
-      <posX>127</posX>
-      <posY>580</posY>
+      <posX>190</posX>
+      <posY>870</posY>
       <label>#DiskSpace1</label>
       <align>Left</align>
       <textcolor>ffffffff</textcolor>
@@ -246,8 +246,8 @@
       <description>Disk Space 2</description>
       <type>label</type>
       <id>16</id>
-      <posX>120</posX>
-      <posY>600</posY>
+      <posX>180</posX>
+      <posY>900</posY>
       <label>Temp DIR:</label>
       <align>Right</align>
       <textcolor>FF006699</textcolor>
@@ -256,8 +256,8 @@
       <description>Disk Space 2</description>
       <type>label</type>
       <id>17</id>
-      <posX>127</posX>
-      <posY>600</posY>
+      <posX>190</posX>
+      <posY>900</posY>
       <label>#DiskSpace2</label>
       <align>Left</align>
       <textcolor>ffffffff</textcolor>
@@ -266,8 +266,8 @@
       <description>Time Left</description>
       <type>label</type>
       <id>18</id>
-      <posX>120</posX>
-      <posY>620</posY>
+      <posX>180</posX>
+      <posY>930</posY>
       <label>ETA:</label>
       <align>Right</align>
       <textcolor>FF006699</textcolor>
@@ -276,8 +276,8 @@
       <description>Time Left</description>
       <type>label</type>
       <id>19</id>
-      <posX>127</posX>
-      <posY>620</posY>
+      <posX>190</posX>
+      <posY>930</posY>
       <label>#TimeLeft</label>
       <align>Left</align>
       <textcolor>ffffffff</textcolor>
@@ -286,42 +286,42 @@
       <description>listcontrol</description>
       <type>listcontrol</type>
       <id>50</id>
-      <posX>350</posX>
-      <posY>250</posY>
+      <posX>525</posX>
+      <posY>375</posY>
       <onleft>2</onleft>
       <onright>2</onright>
-      <width>650</width>
-      <height>430</height>
+      <width>975</width>
+      <height>645</height>
       <onleft>2</onleft>
-      <spinPosX>1175</spinPosX>
-      <spinPosY>681</spinPosY>
+      <spinPosX>1762</spinPosX>
+      <spinPosY>1021</spinPosY>
       <spinAlign>Right</spinAlign>
       <textureUp>arrow_round_up_nofocus.png</textureUp>
       <textureDown>arrow_round_down_nofocus.png</textureDown>
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
       <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-      <spinWidth>50</spinWidth>
-      <spinHeight>37</spinHeight>
-      <textXOff2>850</textXOff2>
+      <spinWidth>75</spinWidth>
+      <spinHeight>55</spinHeight>
+      <textXOff2>1275</textXOff2>
     </control>
     <control>
       <description>Top Title Background</description>
       <type>image</type>
       <id>97</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     <control>
       <type>fadelabel</type>
       <description>Top Title</description>
       <id>98</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
@@ -331,40 +331,40 @@
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1013</posX>
-      <posY>683</posY>
-      <width>260</width>
-      <height>32</height>
+      <posX>1519</posX>
+      <posY>1024</posY>
+      <width>390</width>
+      <height>48</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>yes</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Page Count Label</description>
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1023</posX>
-      <posY>688</posY>
+      <posX>1534</posX>
+      <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>yes</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Item Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1100</posX>
-      <posY>12</posY>
-      <width>172</width>
-      <height>27</height>
+      <posX>1650</posX>
+      <posY>18</posY>
+      <width>258</width>
+      <height>40</height>
       <texture>mediacountbackground.png</texture>
       <visible>control.isvisible(50)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -374,8 +374,8 @@
       <description>Status</description>
       <type>label</type>
       <id>52</id>
-      <posX>1246</posX>
-      <posY>14</posY>
+      <posX>1869</posX>
+      <posY>21</posY>
       <label>#Status</label>
       <align>right</align>
       <textcolor>ffffffff</textcolor>
@@ -388,4 +388,4 @@
     <import>common.overlays.xml</import>
   </controls>
 </window>
-<!--Checksum:dcedf238b039ae4731341d24c5efa5b2-->
+<!--Checksum:5a7f14936ac8791d27057186d2aa6a35-->

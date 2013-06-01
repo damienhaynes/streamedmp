@@ -8,10 +8,10 @@ This file should contain the details view
       <description>Current Track Star Rating</description>
       <type>imagelist</type>
       <id>1337</id>
-      <posX>753</posX>
-      <posY>512</posY>
-      <textureWidth>32</textureWidth>
-      <textureHeight>32</textureHeight>
+      <posX>1129</posX>
+      <posY>768</posY>
+      <textureWidth>48</textureWidth>
+      <textureHeight>48</textureHeight>
       <subitems>
         <subitem>white-star-outline.png</subitem>
         <subitem>white-star-filled.png</subitem>
@@ -26,10 +26,10 @@ This file should contain the details view
       <type>fadelabel</type>
       <description>Artist label</description>
       <id>0</id>
-      <posX>23</posX>
-      <posY>395</posY>
-      <width>410</width>
-      <height>26</height>
+      <posX>34</posX>
+      <posY>592</posY>
+      <width>615</width>
+      <height>38</height>
       <label>#Play.Current.Artist</label>
       <font>mediastream16tc</font>
       <scrollStartDelaySec>30</scrollStartDelaySec>
@@ -38,10 +38,10 @@ This file should contain the details view
       <type>fadelabel</type>
       <description>Title label</description>
       <id>0</id>
-      <posX>23</posX>
-      <posY>428</posY>
-      <width>410</width>
-      <height>26</height>
+      <posX>34</posX>
+      <posY>642</posY>
+      <width>615</width>
+      <height>38</height>
       <label>#Play.Current.Title</label>
       <font>mediastream14tc</font>
       <scrollStartDelaySec>30</scrollStartDelaySec>
@@ -50,10 +50,10 @@ This file should contain the details view
       <type>fadelabel</type>
       <description>album label</description>
       <id>0</id>
-      <posX>23</posX>
-      <posY>460</posY>
-      <width>420</width>
-      <height>26</height>
+      <posX>34</posX>
+      <posY>690</posY>
+      <width>630</width>
+      <height>38</height>
       <label>#Play.Current.Album</label>
       <font>mediastream12c</font>
       <scrollStartDelaySec>30</scrollStartDelaySec>
@@ -62,10 +62,10 @@ This file should contain the details view
       <type>label</type>
       <description>Translation "Track"</description>
       <id>0</id>
-      <posX>23</posX>
-      <posY>485</posY>
-      <width>90</width>
-      <height>26</height>
+      <posX>34</posX>
+      <posY>727</posY>
+      <width>135</width>
+      <height>38</height>
       <label>435</label>
       <font>mediastream12c</font>
       <visible>!string.equals(#Play.Current.Track,)</visible>
@@ -74,10 +74,10 @@ This file should contain the details view
       <type>fadelabel</type>
       <description>track label</description>
       <id>0</id>
-      <posX>93</posX>
-      <posY>485</posY>
-      <width>755</width>
-      <height>26</height>
+      <posX>139</posX>
+      <posY>727</posY>
+      <width>1132</width>
+      <height>38</height>
       <label>#Play.Current.Track   |</label>
       <font>mediastream12c</font>
       <visible>!string.equals(#Play.Current.Track,)</visible>
@@ -86,10 +86,10 @@ This file should contain the details view
       <type>label</type>
       <description>Translation "Year"</description>
       <id>0</id>
-      <posX>145</posX>
-      <posY>485</posY>
-      <width>90</width>
-      <height>26</height>
+      <posX>217</posX>
+      <posY>727</posY>
+      <width>135</width>
+      <height>38</height>
       <label>201</label>
       <font>mediastream12c</font>
       <visible>!string.equals(#Play.Current.Year,)</visible>
@@ -98,10 +98,10 @@ This file should contain the details view
       <type>fadelabel</type>
       <description>year label</description>
       <id>0</id>
-      <posX>205</posX>
-      <posY>485</posY>
-      <width>755</width>
-      <height>26</height>
+      <posX>307</posX>
+      <posY>727</posY>
+      <width>1132</width>
+      <height>38</height>
       <label>#Play.Current.Year</label>
       <font>mediastream12c</font>
     </control>
@@ -110,9 +110,9 @@ This file should contain the details view
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>510</posY>
-      <width>390</width>
-      <height>3</height>
+      <posY>765</posY>
+      <width>585</width>
+      <height>4</height>
       <texture>seperator.png</texture>
     </control>
     <control>
@@ -120,18 +120,18 @@ This file should contain the details view
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>586</posY>
-      <height>3</height>
-      <width>390</width>
+      <posY>879</posY>
+      <height>4</height>
+      <width>585</width>
       <texture>seperator.png</texture>
     </control>
     <control>
       <type>image</type>
       <id>117</id>
-      <posX>20</posX>
-      <posY>680</posY>
-      <width>300</width>
-      <height>12</height>
+      <posX>30</posX>
+      <posY>1020</posY>
+      <width>450</width>
+      <height>18</height>
       <texture>osd_progress_background_medium.png</texture>
       <visible>Player.HasMedia</visible>
     </control>
@@ -139,10 +139,10 @@ This file should contain the details view
       <description>progressbar background</description>
       <type>image</type>
       <id>0</id>
-      <posX>20</posX>
-      <posY>680</posY>
-      <width>380</width>
-      <height>28</height>
+      <posX>30</posX>
+      <posY>1020</posY>
+      <width>570</width>
+      <height>42</height>
       <texture>osdprogressbackv.png</texture>
       <colordiffuse>ffFFFFFF</colordiffuse>
     </control>
@@ -150,10 +150,10 @@ This file should contain the details view
       <type>progress</type>
       <description>track progress</description>
       <id>118</id>
-      <posX>12</posX>
-      <posY>684</posY>
-      <width>380</width>
-      <height>23</height>
+      <posX>18</posX>
+      <posY>1026</posY>
+      <width>570</width>
+      <height>34</height>
       <label>#percentage</label>
       <texturebg>-</texturebg>
       <lefttexture>osdprogressleft.png</lefttexture>
@@ -165,8 +165,8 @@ This file should contain the details view
       <type>label</type>
       <description>track progress label</description>
       <id>0</id>
-      <posX>390</posX>
-      <posY>650</posY>
+      <posX>585</posX>
+      <posY>975</posY>
       <label>#currentplaytime / #duration</label>
       <font>font18</font>
       <align>right</align>
@@ -176,28 +176,28 @@ This file should contain the details view
       <description>seperator</description>
       <type>image</type>
       <id>0</id>
-      <posX>450</posX>
-      <posY>546</posY>
-      <width>800</width>
-      <height>3</height>
+      <posX>675</posX>
+      <posY>819</posY>
+      <width>1200</width>
+      <height>4</height>
       <texture>seperator.png</texture>
     </control>
     <control>
       <description>seperator</description>
       <type>image</type>
       <id>0</id>
-      <posX>450</posX>
-      <posY>586</posY>
-      <width>800</width>
-      <height>3</height>
+      <posX>675</posX>
+      <posY>879</posY>
+      <width>1200</width>
+      <height>4</height>
       <texture>seperator.png</texture>
     </control>
     <control>
       <type>label</type>
       <description>up next label</description>
       <id>20</id>
-      <posX>100</posX>
-      <posY>518</posY>
+      <posX>150</posX>
+      <posY>777</posY>
       <align>left</align>
       <label>4541</label>
       <font>mediastream11tc</font>
@@ -207,9 +207,9 @@ This file should contain the details view
       <type>fadelabel</type>
       <description>next artist label</description>
       <id>123</id>
-      <posX>100</posX>
-      <posY>540</posY>
-      <width>300</width>
+      <posX>150</posX>
+      <posY>810</posY>
+      <width>450</width>
       <align>left</align>
       <label>#Play.Next.Title</label>
       <font>mediastream12</font>
@@ -220,9 +220,9 @@ This file should contain the details view
       <type>fadelabel</type>
       <description>next artist label</description>
       <id>123</id>
-      <posX>100</posX>
-      <posY>565</posY>
-      <width>300</width>
+      <posX>150</posX>
+      <posY>847</posY>
+      <width>450</width>
       <align>left</align>
       <label>#Play.Next.Artist</label>
       <font>mediastream12</font>
@@ -233,10 +233,10 @@ This file should contain the details view
       <description>music logo</description>
       <type>image</type>
       <id>0</id>
-      <posX>23</posX>
-      <posY>518</posY>
-      <width>65</width>
-      <height>65</height>
+      <posX>34</posX>
+      <posY>777</posY>
+      <width>97</width>
+      <height>97</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>missing_coverart.png</texture>
     </control>
@@ -244,10 +244,10 @@ This file should contain the details view
       <description>music logo</description>
       <type>image</type>
       <id>600</id>
-      <posX>23</posX>
-      <posY>518</posY>
-      <width>65</width>
-      <height>65</height>
+      <posX>34</posX>
+      <posY>777</posY>
+      <width>97</width>
+      <height>97</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#Play.Next.Thumb</texture>
     </control>
@@ -256,9 +256,9 @@ This file should contain the details view
       <type>fadelabel</type>
       <description>top album tracks label</description>
       <id>29</id>
-      <posX>450</posX>
-      <posY>593</posY>
-      <width>400</width>
+      <posX>675</posX>
+      <posY>889</posY>
+      <width>600</width>
       <label>33030</label>
       <font>mediastream12tc</font>
     </control>
@@ -269,25 +269,25 @@ This file should contain the details view
       <onup>1141</onup>
       <onright>155</onright>
       <ondown>155</ondown>
-      <posX>430</posX>
-      <posY>620</posY>
-      <width>310</width>
-      <height>210</height>
-      <textXOff>8</textXOff>
+      <posX>645</posX>
+      <posY>930</posY>
+      <width>465</width>
+      <height>315</height>
+      <textXOff>12</textXOff>
       <textYOff>1</textYOff>
-      <IconXOff>10</IconXOff>
+      <IconXOff>15</IconXOff>
       <spinColor>-</spinColor>
       <font>mediastream11c</font>
-      <textureHeight>32</textureHeight>
+      <textureHeight>48</textureHeight>
       <image>-</image>
     </control>
     <control>
       <type>fadelabel</type>
       <description>tags label</description>
       <id>28</id>
-      <posX>837</posX>
-      <posY>593</posY>
-      <width>430</width>
+      <posX>1255</posX>
+      <posY>889</posY>
+      <width>645</width>
       <label>Best Tracks For Tag</label>
       <font>mediastream12tc</font>
       <scrollStartDelaySec>60</scrollStartDelaySec>
@@ -299,28 +299,28 @@ This file should contain the details view
       <onup>1141</onup>
       <onleft>166</onleft>
       <onright>166</onright>
-      <posX>820</posX>
-      <posY>620</posY>
-      <width>420</width>
-      <height>210</height>
-      <textXOff>8</textXOff>
+      <posX>1230</posX>
+      <posY>930</posY>
+      <width>630</width>
+      <height>315</height>
+      <textXOff>12</textXOff>
       <textYOff>1</textYOff>
-      <IconXOff>10</IconXOff>
+      <IconXOff>15</IconXOff>
       <spinColor>-</spinColor>
       <font>mediastream11c</font>
-      <textureHeight>32</textureHeight>
+      <textureHeight>48</textureHeight>
       <image>-</image>
     </control>
     <control>
       <description>unknown rating1</description>
       <type>imagelist</type>
       <id>77</id>
-      <posX>740</posX>
-      <posY>625</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureWidth>18</textureWidth>
-      <textureHeight>17</textureHeight>
+      <posX>1110</posX>
+      <posY>937</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureWidth>27</textureWidth>
+      <textureHeight>25</textureHeight>
       <subitems>
         <subitem>white-star-outline.png</subitem>
         <subitem>white-star-filled.png</subitem>
@@ -335,12 +335,12 @@ This file should contain the details view
       <description>unknown rating2</description>
       <type>imagelist</type>
       <id>78</id>
-      <posX>740</posX>
-      <posY>659</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureWidth>18</textureWidth>
-      <textureHeight>17</textureHeight>
+      <posX>1110</posX>
+      <posY>988</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureWidth>27</textureWidth>
+      <textureHeight>25</textureHeight>
       <subitems>
         <subitem>white-star-outline.png</subitem>
         <subitem>white-star-filled.png</subitem>
@@ -355,12 +355,12 @@ This file should contain the details view
       <description>unknown rating3</description>
       <type>imagelist</type>
       <id>79</id>
-      <posX>740</posX>
-      <posY>690</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureWidth>18</textureWidth>
-      <textureHeight>17</textureHeight>
+      <posX>1110</posX>
+      <posY>1035</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureWidth>27</textureWidth>
+      <textureHeight>25</textureHeight>
       <subitems>
         <subitem>white-star-outline.png</subitem>
         <subitem>white-star-filled.png</subitem>
@@ -375,12 +375,12 @@ This file should contain the details view
       <description>existent rating1</description>
       <type>imagelist</type>
       <id>80</id>
-      <posX>740</posX>
-      <posY>625</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureWidth>18</textureWidth>
-      <textureHeight>17</textureHeight>
+      <posX>1110</posX>
+      <posY>937</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureWidth>27</textureWidth>
+      <textureHeight>25</textureHeight>
       <subitems>
         <subitem>white-star-outline.png</subitem>
         <subitem>white-star-filled.png</subitem>
@@ -395,12 +395,12 @@ This file should contain the details view
       <description>existent rating2</description>
       <type>imagelist</type>
       <id>81</id>
-      <posX>740</posX>
-      <posY>659</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureWidth>18</textureWidth>
-      <textureHeight>17</textureHeight>
+      <posX>1110</posX>
+      <posY>988</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureWidth>27</textureWidth>
+      <textureHeight>25</textureHeight>
       <subitems>
         <subitem>white-star-outline.png</subitem>
         <subitem>white-star-filled.png</subitem>
@@ -415,12 +415,12 @@ This file should contain the details view
       <description>existent rating3</description>
       <type>imagelist</type>
       <id>82</id>
-      <posX>740</posX>
-      <posY>690</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureWidth>18</textureWidth>
-      <textureHeight>17</textureHeight>
+      <posX>1110</posX>
+      <posY>1035</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureWidth>27</textureWidth>
+      <textureHeight>25</textureHeight>
       <subitems>
         <subitem>white-star-outline.png</subitem>
         <subitem>white-star-filled.png</subitem>
@@ -435,12 +435,12 @@ This file should contain the details view
       <description>known rating1</description>
       <type>imagelist</type>
       <id>83</id>
-      <posX>740</posX>
-      <posY>625</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureWidth>18</textureWidth>
-      <textureHeight>17</textureHeight>
+      <posX>1110</posX>
+      <posY>937</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureWidth>27</textureWidth>
+      <textureHeight>25</textureHeight>
       <subitems>
         <subitem>white-star-outline.png</subitem>
         <subitem>white-star-filled.png</subitem>
@@ -455,12 +455,12 @@ This file should contain the details view
       <description>known rating2</description>
       <type>imagelist</type>
       <id>84</id>
-      <posX>740</posX>
-      <posY>659</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureWidth>18</textureWidth>
-      <textureHeight>17</textureHeight>
+      <posX>1110</posX>
+      <posY>988</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureWidth>27</textureWidth>
+      <textureHeight>25</textureHeight>
       <subitems>
         <subitem>white-star-outline.png</subitem>
         <subitem>white-star-filled.png</subitem>
@@ -475,12 +475,12 @@ This file should contain the details view
       <description>known rating3</description>
       <type>imagelist</type>
       <id>85</id>
-      <posX>450</posX>
-      <posY>740</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureWidth>18</textureWidth>
-      <textureHeight>17</textureHeight>
+      <posX>675</posX>
+      <posY>1110</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureWidth>27</textureWidth>
+      <textureHeight>25</textureHeight>
       <subitems>
         <subitem>white-star-outline.png</subitem>
         <subitem>white-star-filled.png</subitem>
@@ -495,12 +495,12 @@ This file should contain the details view
       <description>famous rating1</description>
       <type>imagelist</type>
       <id>87</id>
-      <posX>740</posX>
-      <posY>623</posY>
-      <width>130</width>
-      <height>24</height>
-      <textureWidth>18</textureWidth>
-      <textureHeight>17</textureHeight>
+      <posX>1110</posX>
+      <posY>934</posY>
+      <width>195</width>
+      <height>36</height>
+      <textureWidth>27</textureWidth>
+      <textureHeight>25</textureHeight>
       <subitems>
         <subitem>white-star-outline.png</subitem>
         <subitem>white-star-filled.png</subitem>
@@ -515,12 +515,12 @@ This file should contain the details view
       <description>famous rating2</description>
       <type>imagelist</type>
       <id>88</id>
-      <posX>740</posX>
-      <posY>656</posY>
-      <width>130</width>
-      <height>24</height>
-      <textureWidth>18</textureWidth>
-      <textureHeight>17</textureHeight>
+      <posX>1110</posX>
+      <posY>984</posY>
+      <width>195</width>
+      <height>36</height>
+      <textureWidth>27</textureWidth>
+      <textureHeight>25</textureHeight>
       <subitems>
         <subitem>white-star-outline.png</subitem>
         <subitem>white-star-filled.png</subitem>
@@ -535,12 +535,12 @@ This file should contain the details view
       <description>famous rating3</description>
       <type>imagelist</type>
       <id>89</id>
-      <posX>740</posX>
-      <posY>690</posY>
-      <width>130</width>
-      <height>24</height>
-      <textureWidth>18</textureWidth>
-      <textureHeight>17</textureHeight>
+      <posX>1110</posX>
+      <posY>1035</posY>
+      <width>195</width>
+      <height>36</height>
+      <textureWidth>27</textureWidth>
+      <textureHeight>25</textureHeight>
       <subitems>
         <subitem>white-star-outline.png</subitem>
         <subitem>white-star-filled.png</subitem>
@@ -554,10 +554,10 @@ This file should contain the details view
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>440</posX>
-      <posY>555</posY>
-      <width>80</width>
-      <height>36</height>
+      <posX>660</posX>
+      <posY>832</posY>
+      <width>120</width>
+      <height>54</height>
       <layout>StackLayout(0,Horizontal)</layout>
       <control>
         <description>Playlist Button</description>
@@ -571,15 +571,15 @@ This file should contain the details view
         <font>mediastream11c</font>
         <textureFocus>dialogbigbuttonfo.png</textureFocus>
         <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
-        <width>195</width>
-        <height>24</height>
+        <width>292</width>
+        <height>36</height>
         <textalign>center</textalign>
         <textYOff>0</textYOff>
         <disabledcolor>ffffffff</disabledcolor>
         <textcolorNoFocus>ffffffff</textcolorNoFocus>
         <hyperlink>500</hyperlink>
         <shadowAngle>45</shadowAngle>
-        <shadowDistance>4</shadowDistance>
+        <shadowDistance>6</shadowDistance>
         <shadowColor>ff000000</shadowColor>
       </control>
       <control>
@@ -594,8 +594,8 @@ This file should contain the details view
         <font>mediastream11c</font>
         <textureFocus>dialogbigbuttonfo.png</textureFocus>
         <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
-        <width>195</width>
-        <height>24</height>
+        <width>292</width>
+        <height>36</height>
         <textalign>center</textalign>
         <textYOff>0</textYOff>
         <disabledcolor>ffffffff</disabledcolor>
@@ -603,7 +603,7 @@ This file should contain the details view
         <hyperlink>30885</hyperlink>
         <visible>plugin.isenabled(Search music)</visible>
         <shadowAngle>45</shadowAngle>
-        <shadowDistance>4</shadowDistance>
+        <shadowDistance>6</shadowDistance>
         <shadowColor>ff000000</shadowColor>
       </control>
       <control>
@@ -618,8 +618,8 @@ This file should contain the details view
         <font>mediastream11c</font>
         <textureFocus>dialogbigbuttonfo.png</textureFocus>
         <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
-        <width>195</width>
-        <height>24</height>
+        <width>292</width>
+        <height>36</height>
         <textalign>center</textalign>
         <textYOff>0</textYOff>
         <disabledcolor>ffffffff</disabledcolor>
@@ -627,7 +627,7 @@ This file should contain the details view
         <hyperlink>90478</hyperlink>
         <visible>plugin.isenabled(My Lyrics)</visible>
         <shadowAngle>45</shadowAngle>
-        <shadowDistance>4</shadowDistance>
+        <shadowDistance>6</shadowDistance>
         <shadowColor>ff000000</shadowColor>
       </control>
       <control>
@@ -642,18 +642,18 @@ This file should contain the details view
         <font>mediastream12c</font>
         <textureFocus>dialogbigbuttonfo.png</textureFocus>
         <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
-        <width>210</width>
-        <height>26</height>
+        <width>315</width>
+        <height>38</height>
         <textalign>center</textalign>
         <textYOff>0</textYOff>
         <disabledcolor>ffffffff</disabledcolor>
         <textcolorNoFocus>ffffffff</textcolorNoFocus>
         <hyperlink>504</hyperlink>
         <shadowAngle>45</shadowAngle>
-        <shadowDistance>4</shadowDistance>
+        <shadowDistance>6</shadowDistance>
         <shadowColor>ff000000</shadowColor>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:984e2afe58743e03b373913da7d96ed2-->
+<!--Checksum:98aa49af6766301ee111c79839a27b19-->

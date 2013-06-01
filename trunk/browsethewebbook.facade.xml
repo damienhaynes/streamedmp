@@ -5,45 +5,45 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
       <visible>yes</visible>
     </control>
-		<control>
+    <control>
       <description>Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1065</posX>
-      <posY>13</posY>
-      <width>202</width>
-      <height>28</height>
+      <posX>1597</posX>
+      <posY>19</posY>
+      <width>303</width>
+      <height>42</height>
       <texture>mediacountbackground.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Count Label</description>
       <type>label</type>
       <label>#(L(507))</label>
       <id>0</id>
-      <width>135</width>
-      <posX>1078</posX>
-      <posY>16</posY>
+      <width>202</width>
+      <posX>1617</posX>
+      <posY>24</posY>
       <align>left</align>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		<control>
+    <control>
       <description>Series Episode Count</description>
       <type>label</type>
       <label>#itemcount</label>
       <id>0</id>
-      <posX>1238</posX>
-      <posY>14</posY>
+      <posX>1857</posX>
+      <posY>21</posY>
       <font>mediastream11c</font>
       <align>right</align>
       <textcolor>ff006698</textcolor>
@@ -54,39 +54,39 @@
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1013</posX>
-      <posY>684</posY>
-      <width>260</width>
-      <height>30</height>
+      <posX>1519</posX>
+      <posY>1026</posY>
+      <width>390</width>
+      <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>yes</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Page Count Label</description>
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1023</posX>
-      <posY>688</posY>
+      <posX>1534</posX>
+      <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>yes</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Selected Bookmark</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>28</posX>
-      <posY>684</posY>
-      <width>950</width>
+      <posX>42</posX>
+      <posY>1026</posY>
+      <width>1425</width>
       <font>mediastream16tc</font>
       <textcolor>ff909090</textcolor>
       <label>#selecteditem</label>
@@ -99,8 +99,8 @@
       <type>group</type>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <control>
         <description>composite control consisting of a list control and a thumbnail panel</description>
         <type>facadeview</type>
@@ -109,67 +109,67 @@
           <description>listcontrol</description>
           <type>listcontrol</type>
           <id>50</id>
-          <posX>620</posX>
-          <posY>240</posY>
-          <height>480</height>
-          <width>660</width>
+          <posX>930</posX>
+          <posY>360</posY>
+          <height>720</height>
+          <width>990</width>
           <onleft>2</onleft>
           <onright>2</onright>
           <scrollOffset>2</scrollOffset>
-          <PinIconWidth>15</PinIconWidth>
-          <PinIconHeight>15</PinIconHeight>
-          <PinIconXOff>57</PinIconXOff>
-          <PinIconYOff>13</PinIconYOff>
-          <itemWidth>50</itemWidth>
-          <itemHeight>32</itemHeight>
-          <!--<textureHeight>50</textureHeight>-->
-          <IconXOff>12</IconXOff>
-          <IconYOff>4</IconYOff>
-          <textXOff>25</textXOff>
-          <textYOff>5</textYOff>
+          <PinIconWidth>22</PinIconWidth>
+          <PinIconHeight>22</PinIconHeight>
+          <PinIconXOff>85</PinIconXOff>
+          <PinIconYOff>19</PinIconYOff>
+          <itemWidth>75</itemWidth>
+          <itemHeight>48</itemHeight>
+          <!--<textureHeight>75</textureHeight>-->
+          <IconXOff>18</IconXOff>
+          <IconYOff>6</IconYOff>
+          <textXOff>37</textXOff>
+          <textYOff>7</textYOff>
           <textXOff2>0</textXOff2>
-          <textYOff2>5</textYOff2>
+          <textYOff2>7</textYOff2>
           <font2>mediastream11</font2>
           <keepaspectratio>no</keepaspectratio>
           <!--<unfocusedAlpha>0xFF</unfocusedAlpha>-->
-          <spinPosX>1175</spinPosX>
-          <spinPosY>681</spinPosY>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
           <spinAlign>Right</spinAlign>
           <textureUp>arrow_round_up_nofocus.png</textureUp>
           <textureDown>arrow_round_down_nofocus.png</textureDown>
           <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
           <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
           <suffix>|</suffix>
         </control>
         <control>
           <description>Thumbnail Panel</description>
           <type>thumbnailpanel</type>
           <id>50</id>
-          <posX>28</posX>
-          <posY>240</posY>
-          <height>480</height>
-          <width>1252</width>
+          <posX>42</posX>
+          <posY>360</posY>
+          <height>720</height>
+          <width>1878</width>
           <scrollOffset>0</scrollOffset>
           <onleft>2</onleft>
           <onright>2</onright>
-          <itemWidth>110</itemWidth>
-          <itemHeight>130</itemHeight>
-          <textureWidth>100</textureWidth>
-          <textureHeight>100</textureHeight>
-          <thumbWidth>94</thumbWidth>
-          <thumbHeight>94</thumbHeight>
-          <thumbPosX>3</thumbPosX>
-          <thumbPosY>3</thumbPosY>
-          <itemWidthBig>200</itemWidthBig>
-          <itemHeightBig>220</itemHeightBig>
-          <textureWidthBig>180</textureWidthBig>
-          <textureHeightBig>180</textureHeightBig>
-          <thumbWidthBig>170</thumbWidthBig>
-          <thumbHeightBig>170</thumbHeightBig>
-          <thumbPosXBig>5</thumbPosXBig>
-          <thumbPosYBig>5</thumbPosYBig>
+          <itemWidth>165</itemWidth>
+          <itemHeight>195</itemHeight>
+          <textureWidth>150</textureWidth>
+          <textureHeight>150</textureHeight>
+          <thumbWidth>141</thumbWidth>
+          <thumbHeight>141</thumbHeight>
+          <thumbPosX>4</thumbPosX>
+          <thumbPosY>4</thumbPosY>
+          <itemWidthBig>300</itemWidthBig>
+          <itemHeightBig>330</itemHeightBig>
+          <textureWidthBig>270</textureWidthBig>
+          <textureHeightBig>270</textureHeightBig>
+          <thumbWidthBig>255</thumbWidthBig>
+          <thumbHeightBig>255</thumbHeightBig>
+          <thumbPosXBig>7</thumbPosXBig>
+          <thumbPosYBig>7</thumbPosYBig>
           <zoomXPixels>0</zoomXPixels>
           <zoomYPixels>0</zoomYPixels>
           <thumbZoom>no</thumbZoom>
@@ -179,14 +179,14 @@
           <renderFocusText>yes</renderFocusText>
           <renderUnfocusText>yes</renderUnfocusText>
           <textYOff>0</textYOff>
-          <spinPosX>1175</spinPosX>
-          <spinPosY>681</spinPosY>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
           <textureUp>arrow_round_up_nofocus.png</textureUp>
           <textureDown>arrow_round_down_nofocus.png</textureDown>
           <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
           <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
           <spinAlign>Right</spinAlign>
           <spinColor>ff006698</spinColor>
           <spinCanFocus>no</spinCanFocus>
@@ -198,3 +198,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:bf6158cca2b3425e42aaf29a1e3e3599-->

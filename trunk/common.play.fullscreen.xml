@@ -4,21 +4,21 @@
     <control>
       <type>image</type>
       <id>500</id>
-      <posX>590</posX>
-      <posY>75</posY>
-      <width>99</width>
-      <height>44</height>
+      <posX>885</posX>
+      <posY>112</posY>
+      <width>148</width>
+      <height>66</height>
       <texture>volume.states.mute.png</texture>
       <visible>no</visible>
     </control>
     <control>
       <type>volumebar</type>
       <id>501</id>
-      <posX>640</posX>
-      <posY>59</posY>
+      <posX>960</posX>
+      <posY>88</posY>
       <align>center</align>
-      <height>24</height>
-      <width>208</width>
+      <height>36</height>
+      <width>312</width>
       <imageHeight>3</imageHeight>
       <texture>volume.states.png</texture>
       <colordiffuse>White</colordiffuse>
@@ -28,10 +28,10 @@
       <description>Time Background normal OSD</description>
       <type>image</type>
       <id>0</id>
-      <posX>6</posX>
-      <posY>10</posY>
-      <width>132</width>
-      <height>32</height>
+      <posX>9</posX>
+      <posY>15</posY>
+      <width>198</width>
+      <height>48</height>
       <texture>clockbackground.png</texture>
       <animation effect="fade" time="200" delay="100">WindowOpen</animation>
       <visible>!window.isosdvisible+[window.ispauseosdvisible|control.isvisible(10)|control.isvisible(11)|control.isvisible(12)|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
@@ -40,9 +40,9 @@
       <description>Time</description>
       <type>label</type>
       <id>233</id>
-      <posX>47</posX>
-      <posY>12</posY>
-      <width>120</width>
+      <posX>70</posX>
+      <posY>18</posY>
+      <width>180</width>
       <textcolor>ffffffff</textcolor>
       <font>mediastream12c</font>
       <label>#time</label>
@@ -55,9 +55,9 @@
       <type>label</type>
       <id>10</id>
       <posX>0</posX>
-      <posY>695</posY>
-      <width>1280</width>
-      <height>25</height>
+      <posY>1042</posY>
+      <width>1920</width>
+      <height>37</height>
       <align>center</align>
       <visible>no</visible>
       <label>-</label>
@@ -68,9 +68,9 @@
       <type>label</type>
       <id>11</id>
       <posX>0</posX>
-      <posY>695</posY>
-      <width>1280</width>
-      <height>25</height>
+      <posY>1042</posY>
+      <width>1920</width>
+      <height>37</height>
       <label>-</label>
       <font>mediastream12tc</font>
       <visible>no</visible>
@@ -80,9 +80,9 @@
       <type>label</type>
       <id>12</id>
       <posX>0</posX>
-      <posY>695</posY>
-      <width>1280</width>
-      <height>25</height>
+      <posY>1042</posY>
+      <width>1920</width>
+      <height>37</height>
       <align>center</align>
       <visible>no</visible>
       <label>-</label>
@@ -90,4 +90,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:ada2d52287434e6e07853bf29489af63-->
+<!--Checksum:4f0075424bcdedb228baaf52bc8e8b1f-->

@@ -59,35 +59,35 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#header.hover</texture>
     </control>
     <import>common.time.xml</import>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>30</posX>
-      <posY>80</posY>
-      <width>1220</width>
-      <height>600</height>
+      <posX>45</posX>
+      <posY>120</posY>
+      <width>1830</width>
+      <height>900</height>
       <texture>subsearchbg.png</texture>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>940</posX>
-      <posY>93</posY>
-      <width>300</width>
-      <height>75</height>
+      <posX>1410</posX>
+      <posY>139</posY>
+      <width>450</width>
+      <height>112</height>
       <texture>streamedmp-logo-2.png</texture>
     </control>
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>-100</posX>
-      <posY>-100</posY>
-      <width>50</width>
+      <posX>-150</posX>
+      <posY>-150</posY>
+      <width>75</width>
       <layout>StackLayout</layout>
       <control>
         <type>button</type>
@@ -95,7 +95,7 @@
         <id>2</id>
         <action>10</action>
         <label>Back</label>
-        <width>100</width>
+        <width>150</width>
       </control>
     </control>
     <!-- Header -->
@@ -103,8 +103,8 @@
       <description>auth txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>240</posX>
-      <posY>100</posY>
+      <posX>360</posX>
+      <posY>150</posY>
       <label>Author:</label>
       <textcolor>ffa9d0f7</textcolor>
       <align>right</align>
@@ -113,16 +113,16 @@
       <description>auth value</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>100</posY>
+      <posX>375</posX>
+      <posY>150</posY>
       <label>StreamedMP Team</label>
     </control>
     <control>
       <description>vers txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>240</posX>
-      <posY>125</posY>
+      <posX>360</posX>
+      <posY>187</posY>
       <label>Version:</label>
       <textcolor>ffa9d0f7</textcolor>
       <align>right</align>
@@ -131,16 +131,16 @@
       <description>vers value</description>
       <type>label</type>
       <id>3</id>
-      <posX>250</posX>
-      <posY>125</posY>
+      <posX>375</posX>
+      <posY>187</posY>
       <label>-</label>
     </control>
     <control>
       <description>Resolution text</description>
       <type>label</type>
       <id>1</id>
-      <posX>240</posX>
-      <posY>150</posY>
+      <posX>360</posX>
+      <posY>225</posY>
       <label>Design Resolution:</label>
       <textcolor>ffa9d0f7</textcolor>
       <align>right</align>
@@ -149,16 +149,16 @@
       <description>Resolution value</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>150</posY>
+      <posX>375</posX>
+      <posY>225</posY>
       <label>[16:9]  (1280x720)</label>
     </control>
     <control>
       <description>Actual Resolution text</description>
       <type>label</type>
       <id>1</id>
-      <posX>550</posX>
-      <posY>150</posY>
+      <posX>825</posX>
+      <posY>225</posY>
       <label>Physical:</label>
       <textcolor>ffa9d0f7</textcolor>
       <align>right</align>
@@ -167,8 +167,8 @@
       <description>Resolution value</description>
       <type>label</type>
       <id>4</id>
-      <posX>560</posX>
-      <posY>150</posY>
+      <posX>840</posX>
+      <posY>225</posY>
       <label>-</label>
     </control>
     <!-- Skin Description -->
@@ -176,8 +176,8 @@
       <description>desc txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>240</posX>
-      <posY>190</posY>
+      <posX>360</posX>
+      <posY>285</posY>
       <label>Description:</label>
       <textcolor>ffa9d0f7</textcolor>
       <align>right</align>
@@ -186,10 +186,10 @@
       <description>Skin Description - Line 1</description>
       <type>label</type>
       <id>0</id>
-      <posX>250</posX>
-      <posY>187</posY>
-      <width>970</width>
-      <height>170</height>
+      <posX>375</posX>
+      <posY>280</posY>
+      <width>1455</width>
+      <height>255</height>
       <font>mediastream10</font>
       <label>Streamed MP is a port of Team Razorfishes skin Mediastream created for XBMC, over to the popular open source HTPC Application</label>
     </control>
@@ -197,10 +197,10 @@
       <description>Skin Description - Line 2</description>
       <type>label</type>
       <id>0</id>
-      <posX>250</posX>
-      <posY>207</posY>
-      <width>970</width>
-      <height>170</height>
+      <posX>375</posX>
+      <posY>310</posY>
+      <width>1455</width>
+      <height>255</height>
       <font>mediastream10</font>
       <label>MediaPortal. StreamedMP is a close port, however there are some new views/layouts included with the skin that will keep the fanart fans</label>
     </control>
@@ -208,10 +208,10 @@
       <description>Skin Description - Line 3</description>
       <type>label</type>
       <id>0</id>
-      <posX>250</posX>
-      <posY>227</posY>
-      <width>970</width>
-      <height>170</height>
+      <posX>375</posX>
+      <posY>340</posY>
+      <width>1455</width>
+      <height>255</height>
       <font>mediastream10</font>
       <label>happy. This skin has also been designed with ease of use in mind, with a custom menu generator included to make creating menus suited</label>
     </control>
@@ -219,10 +219,10 @@
       <description>Skin Description - Line 4</description>
       <type>label</type>
       <id>0</id>
-      <posX>250</posX>
-      <posY>247</posY>
-      <width>970</width>
-      <height>170</height>
+      <posX>375</posX>
+      <posY>370</posY>
+      <width>1455</width>
+      <height>255</height>
       <font>mediastream10</font>
       <label>to your setup extremely easy. All of this is wrapped up in a nice installer that installs the latest stable version of several plugins including</label>
     </control>
@@ -230,10 +230,10 @@
       <description>Skin Description - Line 5</description>
       <type>label</type>
       <id>0</id>
-      <posX>250</posX>
-      <posY>267</posY>
-      <width>960</width>
-      <height>170</height>
+      <posX>375</posX>
+      <posY>400</posY>
+      <width>1440</width>
+      <height>255</height>
       <font>mediastream10</font>
       <label>the the two very popular plugins MP TV-Series and Moving-Pictures.</label>
     </control>
@@ -242,8 +242,8 @@
       <description>plug txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>240</posX>
-      <posY>330</posY>
+      <posX>360</posX>
+      <posY>495</posY>
       <label>Supported Plugins:</label>
       <textcolor>ffa9d0f7</textcolor>
       <align>right</align>
@@ -253,384 +253,384 @@
       <description>plug value line 1</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>330</posY>
+      <posX>375</posX>
+      <posY>495</posY>
       <label>#plugin1</label>
     </control>
     <control>
       <description>plug value line 1</description>
       <type>label</type>
       <id>1</id>
-      <posX>490</posX>
-      <posY>330</posY>
+      <posX>735</posX>
+      <posY>495</posY>
       <label>#plugin2</label>
     </control>
     <control>
       <description>plug value line 1</description>
       <type>label</type>
       <id>1</id>
-      <posX>710</posX>
-      <posY>330</posY>
+      <posX>1065</posX>
+      <posY>495</posY>
       <label>#plugin3</label>
     </control>
     <control>
       <description>plug value line 1</description>
       <type>label</type>
       <id>1</id>
-      <posX>930</posX>
-      <posY>330</posY>
+      <posX>1395</posX>
+      <posY>495</posY>
       <label>#plugin4</label>
     </control>
     <control>
       <description>plug value line 2</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>350</posY>
+      <posX>375</posX>
+      <posY>525</posY>
       <label>#plugin5</label>
     </control>
     <control>
       <description>plug value line 2</description>
       <type>label</type>
       <id>1</id>
-      <posX>490</posX>
-      <posY>350</posY>
+      <posX>735</posX>
+      <posY>525</posY>
       <label>#plugin6</label>
     </control>
     <control>
       <description>plug value line 2</description>
       <type>label</type>
       <id>1</id>
-      <posX>710</posX>
-      <posY>350</posY>
+      <posX>1065</posX>
+      <posY>525</posY>
       <label>#plugin7</label>
     </control>
     <control>
       <description>plug value line 2</description>
       <type>label</type>
       <id>1</id>
-      <posX>930</posX>
-      <posY>350</posY>
+      <posX>1395</posX>
+      <posY>525</posY>
       <label>#plugin8</label>
     </control>
     <control>
       <description>plug value line 3</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>370</posY>
+      <posX>375</posX>
+      <posY>555</posY>
       <label>#plugin9</label>
     </control>
     <control>
       <description>plug value line 3</description>
       <type>label</type>
       <id>1</id>
-      <posX>490</posX>
-      <posY>370</posY>
+      <posX>735</posX>
+      <posY>555</posY>
       <label>#plugin10</label>
     </control>
     <control>
       <description>plug value line 3</description>
       <type>label</type>
       <id>1</id>
-      <posX>710</posX>
-      <posY>370</posY>
+      <posX>1065</posX>
+      <posY>555</posY>
       <label>#plugin11</label>
     </control>
     <control>
       <description>plug value line 3</description>
       <type>label</type>
       <id>1</id>
-      <posX>930</posX>
-      <posY>370</posY>
+      <posX>1395</posX>
+      <posY>555</posY>
       <label>#plugin12</label>
     </control>
     <control>
       <description>plug value line 4</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>390</posY>
+      <posX>375</posX>
+      <posY>585</posY>
       <label>#plugin13</label>
     </control>
     <control>
       <description>plug value line 4</description>
       <type>label</type>
       <id>1</id>
-      <posX>490</posX>
-      <posY>390</posY>
+      <posX>735</posX>
+      <posY>585</posY>
       <label>#plugin14</label>
     </control>
     <control>
       <description>plug value line 4</description>
       <type>label</type>
       <id>1</id>
-      <posX>710</posX>
-      <posY>390</posY>
+      <posX>1065</posX>
+      <posY>585</posY>
       <label>#plugin15</label>
     </control>
     <control>
       <description>plug value line 4</description>
       <type>label</type>
       <id>1</id>
-      <posX>930</posX>
-      <posY>390</posY>
+      <posX>1395</posX>
+      <posY>585</posY>
       <label>#plugin16</label>
     </control>
     <control>
       <description>plug value line 5</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>410</posY>
+      <posX>375</posX>
+      <posY>615</posY>
       <label>#plugin17</label>
     </control>
     <control>
       <description>plug value line 5</description>
       <type>label</type>
       <id>1</id>
-      <posX>490</posX>
-      <posY>410</posY>
+      <posX>735</posX>
+      <posY>615</posY>
       <label>#plugin18</label>
     </control>
     <control>
       <description>plug value line 5</description>
       <type>label</type>
       <id>1</id>
-      <posX>710</posX>
-      <posY>410</posY>
+      <posX>1065</posX>
+      <posY>615</posY>
       <label>#plugin19</label>
     </control>
     <control>
       <description>plug value line 5</description>
       <type>label</type>
       <id>1</id>
-      <posX>930</posX>
-      <posY>410</posY>
+      <posX>1395</posX>
+      <posY>615</posY>
       <label>#plugin20</label>
     </control>
     <control>
       <description>plug value line 6</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>430</posY>
+      <posX>375</posX>
+      <posY>645</posY>
       <label>#plugin21</label>
     </control>
     <control>
       <description>plug value line 6</description>
       <type>label</type>
       <id>1</id>
-      <posX>490</posX>
-      <posY>430</posY>
+      <posX>735</posX>
+      <posY>645</posY>
       <label>#plugin22</label>
     </control>
     <control>
       <description>plug value line 6</description>
       <type>label</type>
       <id>1</id>
-      <posX>710</posX>
-      <posY>430</posY>
+      <posX>1065</posX>
+      <posY>645</posY>
       <label>#plugin23</label>
     </control>
     <control>
       <description>plug value line 6</description>
       <type>label</type>
       <id>1</id>
-      <posX>930</posX>
-      <posY>430</posY>
+      <posX>1395</posX>
+      <posY>645</posY>
       <label>#plugin24</label>
     </control>
     <control>
       <description>plug value line 7</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>450</posY>
+      <posX>375</posX>
+      <posY>675</posY>
       <label>#plugin25</label>
     </control>
     <control>
       <description>plug value line 7</description>
       <type>label</type>
       <id>1</id>
-      <posX>490</posX>
-      <posY>450</posY>
+      <posX>735</posX>
+      <posY>675</posY>
       <label>#plugin26</label>
     </control>
     <control>
       <description>plug value line 7</description>
       <type>label</type>
       <id>1</id>
-      <posX>710</posX>
-      <posY>450</posY>
+      <posX>1065</posX>
+      <posY>675</posY>
       <label>#plugin27</label>
     </control>
     <control>
       <description>plug value line 7</description>
       <type>label</type>
       <id>1</id>
-      <posX>930</posX>
-      <posY>450</posY>
+      <posX>1395</posX>
+      <posY>675</posY>
       <label>#plugin28</label>
     </control>
     <control>
       <description>plug value line 8</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>470</posY>
+      <posX>375</posX>
+      <posY>705</posY>
       <label>#plugin29</label>
     </control>
     <control>
       <description>plug value line 8</description>
       <type>label</type>
       <id>1</id>
-      <posX>490</posX>
-      <posY>470</posY>
+      <posX>735</posX>
+      <posY>705</posY>
       <label>#plugin30</label>
     </control>
     <control>
       <description>plug value line 8</description>
       <type>label</type>
       <id>1</id>
-      <posX>710</posX>
-      <posY>470</posY>
+      <posX>1065</posX>
+      <posY>705</posY>
       <label>#plugin31</label>
     </control>
     <control>
       <description>plug value line 8</description>
       <type>label</type>
       <id>1</id>
-      <posX>930</posX>
-      <posY>470</posY>
+      <posX>1395</posX>
+      <posY>705</posY>
       <label>#plugin32</label>
     </control>
     <control>
       <description>plug value line 9</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>490</posY>
+      <posX>375</posX>
+      <posY>735</posY>
       <label>#plugin33</label>
     </control>
     <control>
       <description>plug value line 9</description>
       <type>label</type>
       <id>1</id>
-      <posX>490</posX>
-      <posY>490</posY>
+      <posX>735</posX>
+      <posY>735</posY>
       <label>#plugin34</label>
     </control>
     <control>
       <description>plug value line 9</description>
       <type>label</type>
       <id>1</id>
-      <posX>710</posX>
-      <posY>490</posY>
+      <posX>1065</posX>
+      <posY>735</posY>
       <label>#plugin35</label>
     </control>
     <control>
       <description>plug value line 9</description>
       <type>label</type>
       <id>1</id>
-      <posX>930</posX>
-      <posY>490</posY>
+      <posX>1395</posX>
+      <posY>735</posY>
       <label>#plugin36</label>
     </control>
     <control>
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>510</posY>
+      <posX>375</posX>
+      <posY>765</posY>
       <label>#plugin37</label>
     </control>
     <control>
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
-      <posX>490</posX>
-      <posY>510</posY>
+      <posX>735</posX>
+      <posY>765</posY>
       <label>#plugin38</label>
     </control>
     <control>
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
-      <posX>710</posX>
-      <posY>510</posY>
+      <posX>1065</posX>
+      <posY>765</posY>
       <label>#plugin39</label>
     </control>
     <control>
       <description>plug value line 10</description>
       <type>label</type>
       <id>1</id>
-      <posX>930</posX>
-      <posY>510</posY>
+      <posX>1395</posX>
+      <posY>765</posY>
       <label>#plugin40</label>
     </control>
     <control>
       <description>plug value line 11</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>530</posY>
+      <posX>375</posX>
+      <posY>795</posY>
       <label>#plugin41</label>
     </control>
     <control>
       <description>plug value line 11</description>
       <type>label</type>
       <id>1</id>
-      <posX>490</posX>
-      <posY>530</posY>
+      <posX>735</posX>
+      <posY>795</posY>
       <label>#plugin42</label>
     </control>
     <control>
       <description>plug value line 11</description>
       <type>label</type>
       <id>1</id>
-      <posX>710</posX>
-      <posY>530</posY>
+      <posX>1065</posX>
+      <posY>795</posY>
       <label>#plugin43</label>
     </control>
     <control>
       <description>plug value line 11</description>
       <type>label</type>
       <id>1</id>
-      <posX>930</posX>
-      <posY>530</posY>
+      <posX>1395</posX>
+      <posY>795</posY>
       <label>#plugin44</label>
     </control>
     <control>
       <description>plug value line 12</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>550</posY>
+      <posX>375</posX>
+      <posY>825</posY>
       <label>#plugin45</label>
     </control>
     <control>
       <description>plug value line 12</description>
       <type>label</type>
       <id>1</id>
-      <posX>490</posX>
-      <posY>550</posY>
+      <posX>735</posX>
+      <posY>825</posY>
       <label>#plugin46</label>
     </control>
     <control>
       <description>plug value line 12</description>
       <type>label</type>
       <id>1</id>
-      <posX>710</posX>
-      <posY>550</posY>
+      <posX>1065</posX>
+      <posY>825</posY>
       <label>#plugin47</label>
     </control>
     <control>
       <description>plug value line 12</description>
       <type>label</type>
       <id>1</id>
-      <posX>930</posX>
-      <posY>550</posY>
+      <posX>1395</posX>
+      <posY>825</posY>
       <label>#plugin48</label>
     </control>
     <!-- History Link -->
@@ -638,8 +638,8 @@
       <description>hist txt</description>
       <type>label</type>
       <id>1</id>
-      <posX>250</posX>
-      <posY>590</posY>
+      <posX>375</posX>
+      <posY>885</posY>
       <label>History:</label>
       <textcolor>ffa9d0f7</textcolor>
       <align>right</align>
@@ -649,11 +649,11 @@
       <description>desc value line 1</description>
       <type>label</type>
       <id>1</id>
-      <posX>260</posX>
-      <posY>590</posY>
+      <posX>390</posX>
+      <posY>885</posY>
       <label>*** Add a link here ***</label>
       <visible>no</visible>
     </control>
   </controls>
 </window>
-<!--Checksum:45a5f86e7f07e1d8d419a2bd8f5dc07a-->
+<!--Checksum:7232a3b9fa48c3b307aeb0e575701491-->

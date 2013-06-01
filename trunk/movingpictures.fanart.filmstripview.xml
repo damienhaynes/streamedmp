@@ -5,10 +5,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>665</posX>
-      <posY>405</posY>
-      <width>616</width>
-      <height>280</height>
+      <posX>997</posX>
+      <posY>607</posY>
+      <width>924</width>
+      <height>420</height>
       <texture>mpinfo_filmbox.png</texture>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -16,10 +16,10 @@
     <control>
       <type>image</type>
       <id>101</id>
-      <posX>725</posX>
-      <posY>452</posY>
-      <width>115</width>
-      <height>22</height>
+      <posX>1087</posX>
+      <posY>678</posY>
+      <width>172</width>
+      <height>33</height>
       <align>left</align>
       <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
       <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
@@ -29,14 +29,14 @@
       <description>Rating</description>
       <type>label</type>
       <id>0</id>
-      <posX>850</posX>
-      <posY>453</posY>
-      <width>245</width>
+      <posX>1275</posX>
+      <posY>679</posY>
+      <width>367</width>
       <textcolor>ffFFFFFF</textcolor>
       <font>mediastream10</font>
       <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -44,22 +44,22 @@
     <control>
       <description>Watched Filtering Indicator - Watched</description>
       <type>image</type>
-      <posX>686</posX>
-      <posY>453</posY>
+      <posX>1029</posX>
+      <posY>679</posY>
       <texture>overlaywatched.png</texture>
-      <width>24</width>
-      <height>24</height>
+      <width>36</width>
+      <height>36</height>
       <visible>control.isvisible(50)+control.isvisible(9)+facadeview.filmstrip</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Watched Filtering Indicator - UnWatched</description>
       <type>image</type>
-      <posX>686</posX>
-      <posY>453</posY>
+      <posX>1029</posX>
+      <posY>679</posY>
       <texture>overlayunwatched.png</texture>
-      <width>24</width>
-      <height>24</height>
+      <width>36</width>
+      <height>36</height>
       <visible>control.isvisible(50)+!control.isvisible(9)+facadeview.filmstrip</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -67,9 +67,9 @@
       <description>Movie Title</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>686</posX>
-      <posY>420</posY>
-      <width>570</width>
+      <posX>1029</posX>
+      <posY>630</posY>
+      <width>855</width>
       <font>mediastream16tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>FFffffff</textcolor>
@@ -79,50 +79,50 @@
     <control Style="smallTitleB">
       <type>label</type>
       <label>#MovingPictures.Translation.Genre.Label</label>
-      <posX>686</posX>
-      <posY>485</posY>
+      <posX>1029</posX>
+      <posY>727</posY>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.genres</label>
-      <posX>825</posX>
-      <posY>485</posY>
-      <width>580</width>
+      <posX>1237</posX>
+      <posY>727</posY>
+      <width>870</width>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
       <label>#MovingPictures.Translation.Year.Label</label>
-      <posX>686</posX>
-      <posY>510</posY>
+      <posX>1029</posX>
+      <posY>765</posY>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.year</label>
-      <posX>825</posX>
-      <posY>510</posY>
+      <posX>1237</posX>
+      <posY>765</posY>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
       <label>#MovingPictures.Translation.Runtime.Label</label>
-      <posX>686</posX>
-      <posY>535</posY>
+      <posX>1029</posX>
+      <posY>802</posY>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.runtime.localized.long</label>
-      <posX>825</posX>
-      <posY>535</posY>
-      <width>580</width>
+      <posX>1237</posX>
+      <posY>802</posY>
+      <width>870</width>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -130,10 +130,10 @@
       <description>Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>686</posX>
-      <posY>560</posY>
-      <width>580</width>
-      <height>120</height>
+      <posX>1029</posX>
+      <posY>840</posY>
+      <width>870</width>
+      <height>180</height>
       <textcolor>ffffff</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -143,4 +143,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:6fdc5afe6da1ce4f0bacd2a70b30725c-->
+<!--Checksum:a7acefdb4e47098f0f418a06f8f45046-->

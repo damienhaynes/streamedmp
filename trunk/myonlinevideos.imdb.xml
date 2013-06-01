@@ -5,10 +5,10 @@
       <description>Trailers Category Image</description>
       <type>image</type>
       <id>0</id>
-      <posX>100</posX>
-      <posY>150</posY>
-      <width>454</width>
-      <height>455</height>
+      <posX>150</posX>
+      <posY>225</posY>
+      <width>681</width>
+      <height>682</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Categories\Trailers.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -18,10 +18,10 @@
       <type>image</type>
       <description>Movie Poster</description>
       <id>25</id>
-      <posX>100</posX>
-      <posY>225</posY>
-      <height>400</height>
-      <width>400</width>
+      <posX>150</posX>
+      <posY>337</posY>
+      <height>600</height>
+      <width>600</width>
       <keepaspectratio>yes</keepaspectratio>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -32,10 +32,10 @@
       <type>image</type>
       <description>Movie Poster (Details)</description>
       <id>26</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>257</width>
-      <height>380</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>385</width>
+      <height>570</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#(iif(neq(#OnlineVideos.Details.Poster,''),#OnlineVideos.Details.Poster,#selectedthumb))</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -46,10 +46,10 @@
       <description>Movie Poster Glass Overlay</description>
       <type>image</type>
       <id>0</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>228</width>
-      <height>177</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>342</width>
+      <height>265</height>
       <texture>glassoverlay2.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -59,9 +59,9 @@
       <description>Movie Title Shadow</description>
       <type>label</type>
       <id>0</id>
-      <posX>309</posX>
-      <posY>252</posY>
-      <width>900</width>
+      <posX>463</posX>
+      <posY>378</posY>
+      <width>1350</width>
       <font>mediastream16tc</font>
       <label>#header.Extension.label</label>
       <textcolor>ff222222</textcolor>
@@ -73,9 +73,9 @@
       <description>Movie Title</description>
       <type>label</type>
       <id>0</id>
-      <posX>308</posX>
-      <posY>251</posY>
-      <width>900</width>
+      <posX>462</posX>
+      <posY>376</posY>
+      <width>1350</width>
       <font>mediastream16tc</font>
       <label>#header.Extension.label</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -87,26 +87,26 @@
       <type>label</type>
       <description>Movie Title (Bottom Section)</description>
       <id>0</id>
-      <posX>25</posX>
-      <posY>684</posY>
-      <width>950</width>
+      <posX>37</posX>
+      <posY>1026</posY>
+      <width>1425</width>
       <font>mediastream16tc</font>
       <label>#header.Extension.label</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="-1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-1200,0">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+!string.equals(#OnlineVideos.IsBuffering,true)</visible>
     </control>
     <control>
       <description>Genres</description>
       <type>label</type>
       <id>0</id>
-      <posX>309</posX>
-      <posY>282</posY>
-      <width>900</width>
+      <posX>463</posX>
+      <posY>423</posY>
+      <width>1350</width>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <font>mediastream11tc</font>
       <textcolor>ff909090</textcolor>
@@ -119,10 +119,10 @@
       <description>Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>308</posX>
-      <posY>315</posY>
-      <width>475</width>
-      <height>155</height>
+      <posX>462</posX>
+      <posY>472</posY>
+      <width>712</width>
+      <height>232</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</seperator>
       <font>mediastream11</font>
@@ -134,10 +134,10 @@
       <description>Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>308</posX>
-      <posY>315</posY>
-      <width>475</width>
-      <height>155</height>
+      <posX>462</posX>
+      <posY>472</posY>
+      <width>712</width>
+      <height>232</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</seperator>
       <font>mediastream11</font>
@@ -149,10 +149,10 @@
       <description>Actors</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>308</posX>
-      <posY>475</posY>
-      <width>475</width>
-      <height>223</height>
+      <posX>462</posX>
+      <posY>712</posY>
+      <width>712</width>
+      <height>334</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅	⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅⋅</seperator>
       <font>mediastream11</font>
@@ -165,11 +165,11 @@
       <id>0</id>
       <type>label</type>
       <label>#StreamedMP.ReleaseDate</label>
-      <posX>310</posX>
-      <posY>557</posY>
-      <width>190</width>
+      <posX>465</posX>
+      <posY>835</posY>
+      <width>285</width>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -180,11 +180,11 @@
       <id>0</id>
       <type>label</type>
       <label>#OnlineVideos.Details.ReleaseDate</label>
-      <posX>540</posX>
-      <posY>558</posY>
-      <width>200</width>
+      <posX>810</posX>
+      <posY>837</posY>
+      <width>300</width>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -195,11 +195,11 @@
       <id>0</id>
       <type>label</type>
       <label>N/A</label>
-      <posX>540</posX>
-      <posY>558</posY>
-      <width>200</width>
+      <posX>810</posX>
+      <posY>837</posY>
+      <width>300</width>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -210,11 +210,11 @@
       <id>0</id>
       <type>label</type>
       <label>#OnlineVideos.Translation.Directors.Label</label>
-      <posX>310</posX>
-      <posY>579</posY>
-      <width>190</width>
+      <posX>465</posX>
+      <posY>868</posY>
+      <width>285</width>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -225,11 +225,11 @@
       <id>0</id>
       <type>label</type>
       <label>#OnlineVideos.Details.Directors</label>
-      <posX>540</posX>
-      <posY>580</posY>
-      <width>200</width>
+      <posX>810</posX>
+      <posY>870</posY>
+      <width>300</width>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -240,11 +240,11 @@
       <id>0</id>
       <type>label</type>
       <label>N/A</label>
-      <posX>540</posX>
-      <posY>580</posY>
-      <width>200</width>
+      <posX>810</posX>
+      <posY>870</posY>
+      <width>300</width>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -254,11 +254,11 @@
       <description>MPAA Label</description>
       <type>label</type>
       <label>MPAA</label>
-      <posX>310</posX>
-      <posY>601</posY>
-      <width>190</width>
+      <posX>465</posX>
+      <posY>901</posY>
+      <width>285</width>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -269,10 +269,10 @@
       <id>0</id>
       <type>label</type>
       <label>#OnlineVideos.Details.Certificate</label>
-      <posX>540</posX>
-      <posY>602</posY>
+      <posX>810</posX>
+      <posY>903</posY>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -283,10 +283,10 @@
       <id>0</id>
       <type>label</type>
       <label>N/A</label>
-      <posX>540</posX>
-      <posY>602</posY>
+      <posX>810</posX>
+      <posY>903</posY>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -294,4 +294,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:456d94361433a00fd10c9589426388c8-->
+<!--Checksum:26e59181367aa5e8a8a639b0adf27619-->

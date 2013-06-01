@@ -3,279 +3,274 @@
   <id>1000</id>
   <defaultcontrol>3</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:#(L(5))->#(L(300071))</define>
+  <define>#header.label:#(L(5))-&gt;#(L(300071))</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:3</define>
   <define>#defaultcontrol.onright:9995</define>
   <controls>
     <import>common.settings.wide.xml</import>
     <import>common.time.xml</import>
-		<control>
-			<type>image</type>
-			<id>0</id>
-			<posX>240</posX>
-			<posY>80</posY>
-			<width>720</width>
-			<height>320</height>
-			<texture>SettingsFrame.png</texture>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
-		</control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>360</posX>
+      <posY>120</posY>
+      <width>1080</width>
+      <height>480</height>
+      <texture>SettingsFrame.png</texture>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
     <control>
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>255</posX>
-      <posY>140</posY>
-      <height>500</height>
-			<dimColor>ffFFFFFF</dimColor>
+      <posX>382</posX>
+      <posY>210</posY>
+      <height>750</height>
+      <dimColor>ffFFFFFF</dimColor>
       <layout>StackLayout(0, Vertical, true)</layout>
       <control Style="skinbutton">
         <description>Add</description>
         <type>button</type>
         <id>3</id>
         <label>300063</label>
-				<width>150</width>
+        <width>225</width>
         <onright>43</onright>
-				<onup>42</onup>
-				<font>mediastream10tc</font>
+        <onup>42</onup>
+        <font>mediastream10tc</font>
       </control>
       <control Style="skinbutton">
         <description>Remove</description>
         <type>button</type>
         <id>4</id>
         <label>300064</label>
-				<width>150</width>
+        <width>225</width>
         <onright>43</onright>
-				<font>mediastream10tc</font>
+        <font>mediastream10tc</font>
       </control>
       <control Style="skinbutton">
         <description>Edit</description>
         <type>button</type>
         <id>5</id>
         <label>2076</label>
-				<width>150</width>
+        <width>225</width>
         <onright>43</onright>
-				<font>mediastream10tc</font>
+        <font>mediastream10tc</font>
       </control>
-			<control Style="skinbutton">
+      <control Style="skinbutton">
         <description>Default</description>
         <type>button</type>
         <id>6</id>
         <label>868</label>
-				<width>150</width>
+        <width>225</width>
         <ondown>40</ondown>
         <onright>43</onright>
-				<font>mediastream10tc</font>
+        <font>mediastream10tc</font>
       </control>
     </control>
-		
-		<control Style="smallTitleB">
-			<description>Folders Label</description>
+    <control Style="smallTitleB">
+      <description>Folders Label</description>
       <label>300071</label>
       <type>label</type>
-      <posX>450</posX>
-      <posY>140</posY>
-      <width>170</width>
+      <posX>675</posX>
+      <posY>210</posY>
+      <width>255</width>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-		<control>
+    <control>
       <description>Share folders list</description>
       <type>listcontrol</type>
       <id>43</id>
-      <posX>410</posX>
-      <posY>180</posY>
-      <height>160</height>
-      <width>165</width>
+      <posX>615</posX>
+      <posY>270</posY>
+      <height>240</height>
+      <width>247</width>
       <onleft>3</onleft>
-			<textXOff>15</textXOff>
-			<textYOff>0</textYOff>
-			<spinPosX>2500</spinPosX>
-			<textureFocus>list_setting_select.png</textureFocus>
-			<textureNoFocus>-</textureNoFocus>
-			<textureHeight>25</textureHeight>
-			<onright>#defaultcontrol.onright</onright>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
-    </control>
-		<control>
-			<description>Separator Line</description>
-			<type>image</type>
-			<id>1</id>
-			<posX>600</posX>
-			<posY>160</posY>
-			<width>1</width>
-			<height>170</height>
-			<texture>vbar1white.png</texture>
-			<colordiffuse>60ffffff</colordiffuse>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
-		</control>
-		
-		<control Style="smallTitleB">
-			<description>Folder Info Label</description>
-      <label>300072</label>
-      <type>label</type>
-      <posX>700</posX>
-      <posY>140</posY>
-      <width>170</width>
+      <textXOff>22</textXOff>
+      <textYOff>0</textYOff>
+      <spinPosX>3750</spinPosX>
+      <textureFocus>list_setting_select.png</textureFocus>
+      <textureNoFocus>-</textureNoFocus>
+      <textureHeight>37</textureHeight>
+      <onright>#defaultcontrol.onright</onright>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-		<control>
+    <control>
+      <description>Separator Line</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>900</posX>
+      <posY>240</posY>
+      <width>1</width>
+      <height>255</height>
+      <texture>vbar1white.png</texture>
+      <colordiffuse>60ffffff</colordiffuse>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Folder Info Label</description>
+      <label>300072</label>
+      <type>label</type>
+      <posX>1050</posX>
+      <posY>210</posY>
+      <width>255</width>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
       <description>Folder Property Label</description>
       <type>group</type>
-      <posX>630</posX>
-      <posY>180</posY>
-			<dimColor>ffFFFFFF</dimColor>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>945</posX>
+      <posY>270</posY>
+      <dimColor>ffFFFFFF</dimColor>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
       <layout>StackLayout(1, Vertical, true)</layout>
       <control Style="smallTitleB">
         <description>Share Name label</description>
         <type>label</type>
         <id>1</id>
-        <width>130</width>
-				<height>25</height>
+        <width>195</width>
+        <height>37</height>
         <label>#(string.rtrim(L(853),':'))</label>
       </control>
       <control Style="smallTitleB">
         <description>Share folder label</description>
         <type>fadelabel</type>
         <id>1</id>
-        <width>130</width>
-				<height>25</height>
+        <width>195</width>
+        <height>37</height>
         <label>#(string.rtrim(L(300073),':'))</label>
       </control>
       <control Style="smallTitleB">
         <description>Default layout label</description>
         <type>label</type>
         <id>1</id>
-        <width>130</width>
-				<height>25</height>
+        <width>195</width>
+        <height>37</height>
         <label>#(string.rtrim(L(300074),':'))</label>
       </control>
       <control Style="smallTitleB">
         <description>Pincode label</description>
         <type>label</type>
         <id>1</id>
-        <width>130</width>
-				<height>25</height>
+        <width>195</width>
+        <height>37</height>
         <label>#(string.rtrim(L(300075),':'))</label>
-				<visible>control.hastext(101)</visible>
+        <visible>control.hastext(101)</visible>
       </control>
-			<control Style="smallTitleB">
+      <control Style="smallTitleB">
         <description>Thumbs</description>
         <type>label</type>
         <id>1</id>
-        <width>130</width>
-				<height>25</height>
+        <width>195</width>
+        <height>37</height>
         <label>#(string.rtrim(L(300222),':'))</label>
       </control>
     </control>
-		
-		<control>
+    <control>
       <description>Folder Property values</description>
       <type>group</type>
-      <posX>780</posX>
-      <posY>181</posY>
-			<dimColor>ffFFFFFF</dimColor>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>1170</posX>
+      <posY>271</posY>
+      <dimColor>ffFFFFFF</dimColor>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
       <layout>StackLayout(1, Vertical, true)</layout>
       <control Style="smallTitle">
         <description>Share Name label</description>
         <type>label</type>
         <id>1</id>
-        <width>155</width>
-				<height>25</height>
+        <width>232</width>
+        <height>37</height>
         <label>#folderName</label>
       </control>
       <control Style="smallTitle">
         <description>Share folder label</description>
         <type>fadelabel</type>
         <id>1</id>
-        <width>155</width>
-				<height>25</height>
+        <width>232</width>
+        <height>37</height>
         <label>#folder</label>
       </control>
       <control Style="smallTitle">
         <description>Default layout label</description>
         <type>label</type>
         <id>1</id>
-        <width>155</width>
-				<height>25</height>
+        <width>232</width>
+        <height>37</height>
         <label>#layout</label>
       </control>
       <control Style="smallTitle">
         <description>Pincode label</description>
         <type>label</type>
         <id>101</id>
-        <width>155</width>
-				<height>25</height>
+        <width>232</width>
+        <height>37</height>
         <label>#pinCode</label>
-				<visible>control.hastext(101)</visible>
+        <visible>control.hastext(101)</visible>
       </control>
-			<control Style="smallTitle">
+      <control Style="smallTitle">
         <description>Thumbs</description>
         <type>label</type>
         <id>1</id>
-        <width>155</width>
-				<height>25</height>
+        <width>232</width>
+        <height>37</height>
         <label>#createThumb</label>
       </control>
     </control>
-		
-		<control>
+    <control>
       <type>group</type>
       <description>Options</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>425</posY>
-      <width>766</width>
-      <height>500</height>
-			<dimColor>ffFFFFFF</dimColor>
+      <posX>324</posX>
+      <posY>637</posY>
+      <width>1149</width>
+      <height>750</height>
+      <dimColor>ffFFFFFF</dimColor>
       <layout>StackLayout</layout>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>Options Heading</description>
         <type>button</type>
         <id>0</id>
         <font>mediastream12tc</font>
-				<label>496</label>
-				<textXOff>35</textXOff>
+        <label>496</label>
+        <textXOff>52</textXOff>
       </control>
-			<control Style="settingsmaincheckbutton">
-				<description>Remeber last folder On/Off</description>
-				<type>checkbutton</type>
-				<id>40</id>
-				<label>300076</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onup>6</onup>
-				<ondown>41</ondown>
-				<onleft>40</onleft>
-				<onright>#defaultcontrol.onright</onright>
-			</control>
-			<control Style="settingsmaincheckbutton">
-				<description>Add  optical drives On/Off</description>
-				<type>checkbutton</type>
-				<id>41</id>
-				<label>300077</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onup>40</onup>
-				<ondown>42</ondown>
-				<onright>#defaultcontrol.onright</onright>
-				<onleft>41</onleft>
-			</control>
-			<control Style="settingsmaincheckbutton">
-				<description>Auto switch removables On/Off</description>
-				<type>checkbutton</type>
-				<id>42</id>
-				<label>300078</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onup>41</onup>
-				<ondown>3</ondown>
-				<onleft>42</onleft>
-				<onright>#defaultcontrol.onright</onright>
-			</control>
-		</control>
-		
+      <control Style="settingsmaincheckbutton">
+        <description>Remeber last folder On/Off</description>
+        <type>checkbutton</type>
+        <id>40</id>
+        <label>300076</label>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onup>6</onup>
+        <ondown>41</ondown>
+        <onleft>40</onleft>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Add  optical drives On/Off</description>
+        <type>checkbutton</type>
+        <id>41</id>
+        <label>300077</label>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onup>40</onup>
+        <ondown>42</ondown>
+        <onright>#defaultcontrol.onright</onright>
+        <onleft>41</onleft>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Auto switch removables On/Off</description>
+        <type>checkbutton</type>
+        <id>42</id>
+        <label>300078</label>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onup>41</onup>
+        <ondown>3</ondown>
+        <onleft>42</onleft>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+    </control>
   </controls>
 </window>
-<!--Checksum:ec8dc32594c1cddd848007d6b4563968-->
+<!--Checksum:db1ea4462b6e1bb4ed10d98c10b45c39-->

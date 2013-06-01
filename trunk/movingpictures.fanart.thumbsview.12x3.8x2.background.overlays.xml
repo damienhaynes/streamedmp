@@ -6,8 +6,8 @@
       <type>image</type>
       <description>hidebackground</description>
       <id>0</id>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>black.png</texture>
       <animation effect="fade" time="400" delay="0">WindowOpen</animation>
       <visible>[facadeview.largeicons|facadeview.smallicons]+control.isvisible(50)</visible>
@@ -16,10 +16,10 @@
       <description>Backdrop Overlay - Thumbs</description>
       <type>image</type>
       <id>0</id>
-      <posX>-2</posX>
-      <posY>-2</posY>
-      <width>1284</width>
-      <height>726</height>
+      <posX>-3</posX>
+      <posY>-3</posY>
+      <width>1926</width>
+      <height>1089</height>
       <texture>movieviewbg.png</texture>
       <visible>[facadeview.largeicons|facadeview.smallicons]+control.isvisible(50)</visible>
     </control>
@@ -29,8 +29,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>fanartoverlay.png</texture>
       <visible>control.isvisible(51)</visible>
     </control>
@@ -40,8 +40,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>fanartoverlay.png</texture>
       <visible>facadeview.list+control.isvisible(50)</visible>
     </control>
@@ -51,8 +51,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>51</height>
+      <width>1920</width>
+      <height>76</height>
       <texture>overlay_topbar.png</texture>
       <visible>[facadeview.filmstrip|facadeview.coverflow]+control.isvisible(50)</visible>
     </control>
@@ -61,12 +61,12 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>400</posY>
-      <width>1280</width>
-      <height>320</height>
+      <posY>600</posY>
+      <width>1920</width>
+      <height>480</height>
       <texture>filmstrip_overlay.png</texture>
       <visible>[facadeview.filmstrip|facadeview.coverflow]+control.isvisible(50)</visible>
     </control>
   </controls>
 </window>
-<!--Checksum:d0c95a352ad05664be357851197424e4-->
+<!--Checksum:c0a8f506ddc6c2229a1ac0f2372ee0f5-->

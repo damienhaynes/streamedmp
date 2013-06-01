@@ -14,8 +14,8 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>hover_my music.png</texture>
     </control>
     <import>mymusic.autofanart.xml</import>
@@ -23,10 +23,10 @@
       <description>Background Overlay</description>
       <type>image</type>
       <id>0</id>
-      <posX>-2</posX>
-      <posY>-2</posY>
-      <width>1284</width>
-      <height>724</height>
+      <posX>-3</posX>
+      <posY>-3</posY>
+      <width>1926</width>
+      <height>1086</height>
       <texture>filmstrip_overlay.png</texture>
     </control>
     <!-- Top Bar Controls -->
@@ -35,56 +35,56 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>51</height>
+      <width>1920</width>
+      <height>76</height>
       <texture>overlay_topbar.png</texture>
     </control>
     <control>
       <description>Plugin Name Background</description>
       <type>image</type>
-      <posX>204</posX>
-      <posY>11</posY>
-      <width>390</width>
-      <height>35</height>
+      <posX>306</posX>
+      <posY>16</posY>
+      <width>585</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
-      <animation effect="slide" start="-314,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
+      <animation effect="slide" start="-471,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
     </control>
     <control>
       <description>Current Station Background</description>
       <type>image</type>
-      <posY>11</posY>
-      <width>335</width>
-      <height>35</height>
+      <posY>16</posY>
+      <width>502</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
-      <animation effect="slide" start="-314,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
+      <animation effect="slide" start="-471,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
     </control>
     <control>
       <description>Plugin Name</description>
       <type>label</type>
-      <posX>321</posX>
-      <posY>13</posY>
-      <width>260</width>
+      <posX>481</posX>
+      <posY>19</posY>
+      <width>390</width>
       <font>mediastream12c</font>
       <align>right</align>
       <label>Pandora</label>
-      <animation effect="slide" start="-150,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
+      <animation effect="slide" start="-225,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Current Station</description>
       <id>0</id>
       <type>fadelabel</type>
-      <posX>578</posX>
-      <posY>13</posY>
-      <width>240</width>
+      <posX>867</posX>
+      <posY>19</posY>
+      <width>360</width>
       <align>right</align>
       <label>#PandoraMusicBox.CurrentStation.Name</label>
       <font>mediastream12c</font>
       <align>right</align>
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
-      <animation effect="slide" start="-40,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
+      <animation effect="slide" start="-60,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
     </control>
     <import>common.time.xml</import>
     <control>
@@ -100,10 +100,10 @@
         <id>6</id>
         <label>
         </label>
-        <posX>130</posX>
-        <posY>474</posY>
-        <width>204</width>
-        <height>245</height>
+        <posX>195</posX>
+        <posY>711</posY>
+        <width>306</width>
+        <height>367</height>
         <onleft>6</onleft>
         <onright>5</onright>
         <ondown>6</ondown>
@@ -118,10 +118,10 @@
         <id>5</id>
         <label>
         </label>
-        <posX>335</posX>
-        <posY>474</posY>
-        <width>204</width>
-        <height>245</height>
+        <posX>502</posX>
+        <posY>711</posY>
+        <width>306</width>
+        <height>367</height>
         <onleft>6</onleft>
         <onright>4</onright>
         <ondown>5</ondown>
@@ -136,10 +136,10 @@
         <id>4</id>
         <label>
         </label>
-        <posX>540</posX>
-        <posY>474</posY>
-        <width>204</width>
-        <height>245</height>
+        <posX>810</posX>
+        <posY>711</posY>
+        <width>306</width>
+        <height>367</height>
         <onleft>5</onleft>
         <onright>3</onright>
         <ondown>4</ondown>
@@ -154,10 +154,10 @@
         <id>3</id>
         <label>
         </label>
-        <posX>745</posX>
-        <posY>474</posY>
-        <width>204</width>
-        <height>245</height>
+        <posX>1117</posX>
+        <posY>711</posY>
+        <width>306</width>
+        <height>367</height>
         <onleft>4</onleft>
         <onright>2</onright>
         <ondown>3</ondown>
@@ -172,10 +172,10 @@
         <id>2</id>
         <label>
         </label>
-        <posX>950</posX>
-        <posY>365</posY>
-        <width>299</width>
-        <height>354</height>
+        <posX>1425</posX>
+        <posY>547</posY>
+        <width>448</width>
+        <height>531</height>
         <onleft>3</onleft>
         <onright>2</onright>
         <ondown>2</ondown>
@@ -187,18 +187,18 @@
       <control>
         <description>Progress background</description>
         <type>image</type>
-        <posX>965</posX>
-        <posY>687</posY>
-        <width>260</width>
-        <height>12</height>
+        <posX>1447</posX>
+        <posY>1030</posY>
+        <width>390</width>
+        <height>18</height>
         <texture>osdprogressback.png</texture>
       </control>
       <control>
         <description>progress bar</description>
         <type>progress</type>
-        <posX>950</posX>
-        <posY>683</posY>
-        <width>288</width>
+        <posX>1425</posX>
+        <posY>1024</posY>
+        <width>432</width>
         <label>#percentage</label>
         <visible>yes</visible>
         <texturebg>-</texturebg>
@@ -211,18 +211,18 @@
         <description>History 4 Image</description>
         <type>image</type>
         <texture>#PandoraMusicBox.History4.ArtworkURL</texture>
-        <posX>140</posX>
-        <posY>524</posY>
-        <width>175</width>
-        <height>175</height>
+        <posX>210</posX>
+        <posY>786</posY>
+        <width>262</width>
+        <height>262</height>
         <visible>!String.Equals(#PandoraMusicBox.History4.IsAdvertisement,True)</visible>
       </control>
       <control>
         <description>History 4 Glass</description>
         <type>image</type>
-        <posX>140</posX>
-        <posY>524</posY>
-        <width>175</width>
+        <posX>210</posX>
+        <posY>786</posY>
+        <width>262</width>
         <texture>glassoverlay2.png</texture>
         <visible>!String.Equals(#PandoraMusicBox.History4.IsAdvertisement,True)+!String.Equals(#PandoraMusicBox.History4.ArtworkURL,)</visible>
       </control>
@@ -230,10 +230,10 @@
         <description>History 4 Image - Advertisement</description>
         <type>image</type>
         <texture>#PandoraMusicBox.History4.ArtworkURL</texture>
-        <posX>140</posX>
-        <posY>524</posY>
-        <width>175</width>
-        <height>175</height>
+        <posX>210</posX>
+        <posY>786</posY>
+        <width>262</width>
+        <height>262</height>
         <keepaspectratio>yes</keepaspectratio>
         <centered>yes</centered>
         <visible>String.Equals(#PandoraMusicBox.History4.IsAdvertisement,True)</visible>
@@ -242,18 +242,18 @@
         <description>History 3 Image</description>
         <type>image</type>
         <texture>#PandoraMusicBox.History3.ArtworkURL</texture>
-        <posX>345</posX>
-        <posY>524</posY>
-        <width>175</width>
-        <height>175</height>
+        <posX>517</posX>
+        <posY>786</posY>
+        <width>262</width>
+        <height>262</height>
         <visible>!String.Equals(#PandoraMusicBox.History3.IsAdvertisement,True)</visible>
       </control>
       <control>
         <description>History 3 Glass</description>
         <type>image</type>
-        <posX>345</posX>
-        <posY>524</posY>
-        <width>175</width>
+        <posX>517</posX>
+        <posY>786</posY>
+        <width>262</width>
         <texture>glassoverlay2.png</texture>
         <visible>!String.Equals(#PandoraMusicBox.History3.IsAdvertisement,True)+!String.Equals(#PandoraMusicBox.History3.ArtworkURL,)</visible>
       </control>
@@ -261,10 +261,10 @@
         <description>History 3 Image - Advertisement</description>
         <type>image</type>
         <texture>#PandoraMusicBox.History3.ArtworkURL</texture>
-        <posX>345</posX>
-        <posY>524</posY>
-        <width>175</width>
-        <height>175</height>
+        <posX>517</posX>
+        <posY>786</posY>
+        <width>262</width>
+        <height>262</height>
         <keepaspectratio>yes</keepaspectratio>
         <centered>yes</centered>
         <visible>String.Equals(#PandoraMusicBox.History3.IsAdvertisement,True)</visible>
@@ -273,18 +273,18 @@
         <description>History 2 Image</description>
         <type>image</type>
         <texture>#PandoraMusicBox.History2.ArtworkURL</texture>
-        <posX>550</posX>
-        <posY>524</posY>
-        <width>175</width>
-        <height>175</height>
+        <posX>825</posX>
+        <posY>786</posY>
+        <width>262</width>
+        <height>262</height>
         <visible>!String.Equals(#PandoraMusicBox.History2.IsAdvertisement,True)</visible>
       </control>
       <control>
         <description>History 2 Glass</description>
         <type>image</type>
-        <posX>550</posX>
-        <posY>524</posY>
-        <width>175</width>
+        <posX>825</posX>
+        <posY>786</posY>
+        <width>262</width>
         <texture>glassoverlay2.png</texture>
         <visible>!String.Equals(#PandoraMusicBox.History2.IsAdvertisement,True)+!String.Equals(#PandoraMusicBox.History2.ArtworkURL,)</visible>
       </control>
@@ -292,10 +292,10 @@
         <description>History 2 Image - Advertisement</description>
         <type>image</type>
         <texture>#PandoraMusicBox.History2.ArtworkURL</texture>
-        <posX>550</posX>
-        <posY>524</posY>
-        <width>175</width>
-        <height>175</height>
+        <posX>825</posX>
+        <posY>786</posY>
+        <width>262</width>
+        <height>262</height>
         <keepaspectratio>yes</keepaspectratio>
         <centered>yes</centered>
         <visible>String.Equals(#PandoraMusicBox.History2.IsAdvertisement,True)</visible>
@@ -304,18 +304,18 @@
         <description>History 1 Image</description>
         <type>image</type>
         <texture>#PandoraMusicBox.History1.ArtworkURL</texture>
-        <posX>755</posX>
-        <posY>524</posY>
-        <width>175</width>
-        <height>175</height>
+        <posX>1132</posX>
+        <posY>786</posY>
+        <width>262</width>
+        <height>262</height>
         <visible>!String.Equals(#PandoraMusicBox.History1.IsAdvertisement,True)</visible>
       </control>
       <control>
         <description>History 1 Glass</description>
         <type>image</type>
-        <posX>755</posX>
-        <posY>524</posY>
-        <width>175</width>
+        <posX>1132</posX>
+        <posY>786</posY>
+        <width>262</width>
         <texture>glassoverlay2.png</texture>
         <visible>!String.Equals(#PandoraMusicBox.History1.IsAdvertisement,True)+!String.Equals(#PandoraMusicBox.History1.ArtworkURL,)</visible>
       </control>
@@ -323,10 +323,10 @@
         <description>History 1 Image - Advertisement</description>
         <type>image</type>
         <texture>#PandoraMusicBox.History1.ArtworkURL</texture>
-        <posX>755</posX>
-        <posY>524</posY>
-        <width>175</width>
-        <height>175</height>
+        <posX>1132</posX>
+        <posY>786</posY>
+        <width>262</width>
+        <height>262</height>
         <keepaspectratio>yes</keepaspectratio>
         <centered>yes</centered>
         <visible>String.Equals(#PandoraMusicBox.History1.IsAdvertisement,True)</visible>
@@ -335,18 +335,18 @@
         <description>Current Song Image</description>
         <type>image</type>
         <texture>#PandoraMusicBox.Current.ArtworkURL</texture>
-        <posX>965</posX>
-        <posY>425</posY>
-        <width>260</width>
-        <height>260</height>
+        <posX>1447</posX>
+        <posY>637</posY>
+        <width>390</width>
+        <height>390</height>
         <visible>!String.Equals(#PandoraMusicBox.Current.IsAdvertisement,True)</visible>
       </control>
       <control>
         <description>Current Song Image Glass</description>
         <type>image</type>
-        <posX>965</posX>
-        <posY>425</posY>
-        <width>260</width>
+        <posX>1447</posX>
+        <posY>637</posY>
+        <width>390</width>
         <texture>glassoverlay2.png</texture>
         <visible>!String.Equals(#PandoraMusicBox.Current.IsAdvertisement,True)</visible>
       </control>
@@ -354,10 +354,10 @@
         <description>Current Song Image - Advertisement</description>
         <type>image</type>
         <texture>#PandoraMusicBox.Current.ArtworkURL</texture>
-        <posX>965</posX>
-        <posY>425</posY>
-        <width>260</width>
-        <height>260</height>
+        <posX>1447</posX>
+        <posY>637</posY>
+        <width>390</width>
+        <height>390</height>
         <keepaspectratio>yes</keepaspectratio>
         <centered>yes</centered>
         <visible>String.Equals(#PandoraMusicBox.Current.IsAdvertisement,True)</visible>
@@ -367,9 +367,9 @@
         <description>History 4 Title</description>
         <type>label</type>
         <label>#PandoraMusicBox.History4.Title</label>
-        <posX>140</posX>
-        <posY>479</posY>
-        <width>180</width>
+        <posX>210</posX>
+        <posY>718</posY>
+        <width>270</width>
         <font>font10</font>
         <visible>!Control.HasFocus(6)</visible>
       </control>
@@ -377,9 +377,9 @@
         <description>History 4 Title Scrolling</description>
         <type>fadelabel</type>
         <label>#PandoraMusicBox.History4.Title</label>
-        <posX>140</posX>
-        <posY>479</posY>
-        <width>180</width>
+        <posX>210</posX>
+        <posY>718</posY>
+        <width>270</width>
         <font>font10</font>
         <visible>Control.HasFocus(6)</visible>
       </control>
@@ -387,9 +387,9 @@
         <description>History 4 Artist</description>
         <type>label</type>
         <label>#PandoraMusicBox.History4.Artist</label>
-        <posX>140</posX>
-        <posY>499</posY>
-        <width>180</width>
+        <posX>210</posX>
+        <posY>748</posY>
+        <width>270</width>
         <font>font10</font>
         <textcolor>ffa9d0f7</textcolor>
         <visible>!Control.HasFocus(6)+!String.Equals(#PandoraMusicBox.History4.IsAdvertisement,True)</visible>
@@ -398,9 +398,9 @@
         <description>History 4 Artist Scrolling</description>
         <type>fadelabel</type>
         <label>#PandoraMusicBox.History4.Artist</label>
-        <posX>140</posX>
-        <posY>499</posY>
-        <width>180</width>
+        <posX>210</posX>
+        <posY>748</posY>
+        <width>270</width>
         <font>font10</font>
         <textcolor>ffa9d0f7</textcolor>
         <visible>Control.HasFocus(6)+!String.Equals(#PandoraMusicBox.History4.IsAdvertisement,True)</visible>
@@ -409,9 +409,9 @@
         <description>History 3 Title</description>
         <type>label</type>
         <label>#PandoraMusicBox.History3.Title</label>
-        <posX>345</posX>
-        <posY>479</posY>
-        <width>180</width>
+        <posX>517</posX>
+        <posY>718</posY>
+        <width>270</width>
         <font>font10</font>
         <visible>!Control.HasFocus(5)</visible>
       </control>
@@ -419,9 +419,9 @@
         <description>History 3 Title Scrolling</description>
         <type>fadelabel</type>
         <label>#PandoraMusicBox.History3.Title</label>
-        <posX>345</posX>
-        <posY>479</posY>
-        <width>180</width>
+        <posX>517</posX>
+        <posY>718</posY>
+        <width>270</width>
         <font>font10</font>
         <visible>Control.HasFocus(5)</visible>
       </control>
@@ -429,9 +429,9 @@
         <description>History 3 Artist</description>
         <type>label</type>
         <label>#PandoraMusicBox.History3.Artist</label>
-        <posX>345</posX>
-        <posY>499</posY>
-        <width>180</width>
+        <posX>517</posX>
+        <posY>748</posY>
+        <width>270</width>
         <font>font10</font>
         <textcolor>ffa9d0f7</textcolor>
         <visible>!Control.HasFocus(5)+!String.Equals(#PandoraMusicBox.History3.IsAdvertisement,True)</visible>
@@ -440,9 +440,9 @@
         <description>History 3 Artist Scrolling</description>
         <type>fadelabel</type>
         <label>#PandoraMusicBox.History3.Artist</label>
-        <posX>345</posX>
-        <posY>499</posY>
-        <width>180</width>
+        <posX>517</posX>
+        <posY>748</posY>
+        <width>270</width>
         <font>font10</font>
         <textcolor>ffa9d0f7</textcolor>
         <visible>Control.HasFocus(5)+!String.Equals(#PandoraMusicBox.History3.IsAdvertisement,True)</visible>
@@ -451,9 +451,9 @@
         <description>History 2 Title</description>
         <type>label</type>
         <label>#PandoraMusicBox.History2.Title</label>
-        <posX>550</posX>
-        <posY>479</posY>
-        <width>180</width>
+        <posX>825</posX>
+        <posY>718</posY>
+        <width>270</width>
         <font>font10</font>
         <visible>!Control.HasFocus(4)</visible>
       </control>
@@ -461,9 +461,9 @@
         <description>History 2 Title Scrolling</description>
         <type>fadelabel</type>
         <label>#PandoraMusicBox.History2.Title</label>
-        <posX>550</posX>
-        <posY>479</posY>
-        <width>180</width>
+        <posX>825</posX>
+        <posY>718</posY>
+        <width>270</width>
         <font>font10</font>
         <visible>Control.HasFocus(4)</visible>
       </control>
@@ -471,9 +471,9 @@
         <description>History 2 Artist</description>
         <type>label</type>
         <label>#PandoraMusicBox.History2.Artist</label>
-        <posX>550</posX>
-        <posY>499</posY>
-        <width>180</width>
+        <posX>825</posX>
+        <posY>748</posY>
+        <width>270</width>
         <font>font10</font>
         <textcolor>ffa9d0f7</textcolor>
         <visible>!Control.HasFocus(4)+!String.Equals(#PandoraMusicBox.History2.IsAdvertisement,True)</visible>
@@ -482,9 +482,9 @@
         <description>History 2 Artist Scrolling</description>
         <type>fadelabel</type>
         <label>#PandoraMusicBox.History2.Artist</label>
-        <posX>550</posX>
-        <posY>499</posY>
-        <width>180</width>
+        <posX>825</posX>
+        <posY>748</posY>
+        <width>270</width>
         <font>font10</font>
         <textcolor>ffa9d0f7</textcolor>
         <visible>Control.HasFocus(4)+!String.Equals(#PandoraMusicBox.History2.IsAdvertisement,True)</visible>
@@ -493,9 +493,9 @@
         <description>History 1 Title</description>
         <type>label</type>
         <label>#PandoraMusicBox.History1.Title</label>
-        <posX>755</posX>
-        <posY>479</posY>
-        <width>180</width>
+        <posX>1132</posX>
+        <posY>718</posY>
+        <width>270</width>
         <font>font10</font>
         <visible>!Control.HasFocus(3)</visible>
       </control>
@@ -503,9 +503,9 @@
         <description>History 1 Title Scrolling</description>
         <type>fadelabel</type>
         <label>#PandoraMusicBox.History1.Title</label>
-        <posX>755</posX>
-        <posY>479</posY>
-        <width>180</width>
+        <posX>1132</posX>
+        <posY>718</posY>
+        <width>270</width>
         <font>font10</font>
         <visible>Control.HasFocus(3)</visible>
       </control>
@@ -513,9 +513,9 @@
         <description>History 1 Artist</description>
         <type>label</type>
         <label>#PandoraMusicBox.History1.Artist</label>
-        <posX>755</posX>
-        <posY>499</posY>
-        <width>180</width>
+        <posX>1132</posX>
+        <posY>748</posY>
+        <width>270</width>
         <font>font10</font>
         <textcolor>ffa9d0f7</textcolor>
         <visible>!Control.HasFocus(3)+!String.Equals(#PandoraMusicBox.History1.IsAdvertisement,True)</visible>
@@ -524,9 +524,9 @@
         <description>History 1 Artist Scrolling</description>
         <type>fadelabel</type>
         <label>#PandoraMusicBox.History1.Artist</label>
-        <posX>755</posX>
-        <posY>499</posY>
-        <width>180</width>
+        <posX>1132</posX>
+        <posY>748</posY>
+        <width>270</width>
         <font>font10</font>
         <textcolor>ffa9d0f7</textcolor>
         <visible>Control.HasFocus(3)+!String.Equals(#PandoraMusicBox.History1.IsAdvertisement,True)</visible>
@@ -535,9 +535,9 @@
         <description>Current Title</description>
         <type>label</type>
         <label>#PandoraMusicBox.Current.Title</label>
-        <posX>965</posX>
-        <posY>370</posY>
-        <width>260</width>
+        <posX>1447</posX>
+        <posY>555</posY>
+        <width>390</width>
         <font>font12</font>
         <visible>!Control.HasFocus(2)</visible>
       </control>
@@ -545,9 +545,9 @@
         <description>Current Title Scrolling</description>
         <type>fadelabel</type>
         <label>#PandoraMusicBox.Current.Title</label>
-        <posX>965</posX>
-        <posY>370</posY>
-        <width>260</width>
+        <posX>1447</posX>
+        <posY>555</posY>
+        <width>390</width>
         <font>font12</font>
         <visible>Control.HasFocus(2)</visible>
       </control>
@@ -555,9 +555,9 @@
         <description>Current Artist</description>
         <type>label</type>
         <label>#PandoraMusicBox.Current.Artist</label>
-        <posX>965</posX>
-        <posY>395</posY>
-        <width>260</width>
+        <posX>1447</posX>
+        <posY>592</posY>
+        <width>390</width>
         <font>font12</font>
         <textcolor>ffa9d0f7</textcolor>
         <visible>!Control.HasFocus(2)+!String.Equals(#PandoraMusicBox.Current.IsAdvertisement,True)</visible>
@@ -566,9 +566,9 @@
         <description>Current Artist Scrolling</description>
         <type>fadelabel</type>
         <label>#PandoraMusicBox.Current.Artist</label>
-        <posX>965</posX>
-        <posY>395</posY>
-        <width>260</width>
+        <posX>1447</posX>
+        <posY>592</posY>
+        <width>390</width>
         <font>font12</font>
         <textcolor>ffa9d0f7</textcolor>
         <visible>Control.HasFocus(2)+!String.Equals(#PandoraMusicBox.Current.IsAdvertisement,True)</visible>
@@ -577,55 +577,55 @@
         <description>History 4 Rating</description>
         <type>image</type>
         <texture>pandora_rating_#PandoraMusicBox.History4.Rating.png</texture>
-        <posX>280</posX>
-        <posY>484</posY>
-        <width>37</width>
-        <height>37</height>
+        <posX>420</posX>
+        <posY>726</posY>
+        <width>55</width>
+        <height>55</height>
       </control>
       <control>
         <description>History 3 Rating</description>
         <type>image</type>
         <texture>pandora_rating_#PandoraMusicBox.History3.Rating.png</texture>
-        <posX>485</posX>
-        <posY>484</posY>
-        <width>37</width>
-        <height>37</height>
+        <posX>727</posX>
+        <posY>726</posY>
+        <width>55</width>
+        <height>55</height>
       </control>
       <control>
         <description>History 2 Rating</description>
         <type>image</type>
         <texture>pandora_rating_#PandoraMusicBox.History2.Rating.png</texture>
-        <posX>690</posX>
-        <posY>484</posY>
-        <width>37</width>
-        <height>37</height>
+        <posX>1035</posX>
+        <posY>726</posY>
+        <width>55</width>
+        <height>55</height>
       </control>
       <control>
         <description>History 1 Rating</description>
         <type>image</type>
         <texture>pandora_rating_#PandoraMusicBox.History1.Rating.png</texture>
-        <posX>895</posX>
-        <posY>484</posY>
-        <width>37</width>
-        <height>37</height>
+        <posX>1342</posX>
+        <posY>726</posY>
+        <width>55</width>
+        <height>55</height>
       </control>
       <control>
         <description>Current Song Rating</description>
         <type>image</type>
         <texture>pandora_rating_#PandoraMusicBox.Current.Rating.png</texture>
-        <posX>1180</posX>
-        <posY>370</posY>
-        <width>51</width>
-        <height>51</height>
+        <posX>1770</posX>
+        <posY>555</posY>
+        <width>76</width>
+        <height>76</height>
       </control>
       <control>
         <description>Pause Indicator</description>
         <type>image</type>
         <texture>pandora_pause.png</texture>
-        <posX>927</posX>
-        <posY>337</posY>
-        <width>48</width>
-        <height>48</height>
+        <posX>1390</posX>
+        <posY>505</posY>
+        <width>72</width>
+        <height>72</height>
         <visible>player.paused</visible>
       </control>
     </control>
@@ -639,10 +639,10 @@
     <control>
       <description>Working Animation</description>
       <type>animation</type>
-      <posX>561</posX>
-      <posY>250</posY>
-      <width>157</width>
-      <height>24</height>
+      <posX>841</posX>
+      <posY>375</posY>
+      <width>235</width>
+      <height>36</height>
       <textures>common.waiting.1.png;common.waiting.2.png;common.waiting.3.png;common.waiting.4.png;common.waiting.5.png;common.waiting.6.png;common.waiting.7.png;common.waiting.8.png;common.waiting.7.png;common.waiting.6.png;common.waiting.5.png;common.waiting.4.png;common.waiting.3.png;common.waiting.2.png</textures>
       <Duration>0:0:03</Duration>
       <keepaspectratio>yes</keepaspectratio>
@@ -650,4 +650,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:afcc6e152e4ca04ab2e15b308ba52295-->
+<!--Checksum:fafd715e2aca9f3ad633ce5b440f9fb8-->

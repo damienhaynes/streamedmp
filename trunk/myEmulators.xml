@@ -8,15 +8,16 @@
   <controls>
     <!--::::::::::::::::::::::::
         :: FANART AND BACKGROUNDS ::
-        :::::::::::::::::::::::::-->
+        :::::::::::::::::::::::::
+		-->
     <control>
       <description>FanArt Background</description>
       <type>multiimage</type>
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <imagepath>emulator</imagepath>
       <timeperimage>30000</timeperimage>
       <fadetime>800</fadetime>
@@ -30,8 +31,8 @@
       <id>1001</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <!--Updated by setup (Ensure ID is unique)-->
       <texture>C:\ProgramData\Team MediaPortal\MediaPortal\thumbs\myEmulators\screenshots\#selecteditem.jpg</texture>
       <keepaspectratio>yes</keepaspectratio>
@@ -44,8 +45,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1281</width>
-      <height>720</height>
+      <width>1921</width>
+      <height>1080</height>
       <texture>fanartoverlay.png</texture>
       <visible>!control.isvisible(1236)</visible>
     </control>
@@ -54,35 +55,36 @@
       <description>My Emulators Title Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
     </control>
     <control>
       <type>fadelabel</type>
       <description>My Emulators Title</description>
       <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>Emulators</label>
     </control>
     <!--:::::::::::
-               :: LIST VIEW ::
-               ::::::::::::-->
+	 :: LIST VIEW ::
+	 ::::::::::::
+		-->
     <control>
       <id>46</id>
       <description>Game poster or flyer</description>
       <type>image</type>
-      <posX>15</posX>
-      <posY>300</posY>
-      <width>242</width>
-      <height>343</height>
+      <posX>22</posX>
+      <posY>450</posY>
+      <width>363</width>
+      <height>514</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
       <visible>facadeview.list+control.isvisible(50)</visible>
     </control>
@@ -90,9 +92,9 @@
       <description>Game Title</description>
       <type>fadelabel</type>
       <id>1</id>
-      <posX>270</posX>
-      <posY>420</posY>
-      <width>500</width>
+      <posX>405</posX>
+      <posY>630</posY>
+      <width>750</width>
       <label>#selecteditem</label>
       <font>mediastream16tc</font>
       <align>left</align>
@@ -102,9 +104,9 @@
       <description>Year Value</description>
       <type>label</type>
       <id>41</id>
-      <posX>270</posX>
-      <posY>450</posY>
-      <width>300</width>
+      <posX>405</posX>
+      <posY>675</posY>
+      <width>450</width>
       <font>mediastream12tc</font>
       <textcolor>ff989898</textcolor>
       <label>#Year</label>
@@ -114,23 +116,23 @@
       <type>label</type>
       <description>Makers name</description>
       <id>43</id>
-      <posX>350</posX>
-      <posY>450</posY>
+      <posX>525</posX>
+      <posY>675</posY>
       <font>mediastream12tc</font>
       <textcolor>ff989898</textcolor>
       <align>left</align>
       <visible>facadeview.list+control.isvisible(50)</visible>
     </control>
     <control>
-      <animation effect="slide" time="400" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="400" end="-450,0">WindowClose</animation>
       <animation effect="fade" time="500">WindowClose</animation>
       <type>textboxscrollup</type>
       <description>Game description</description>
       <id>40</id>
-      <posX>270</posX>
-      <posY>480</posY>
-      <width>500</width>
-      <height>160</height>
+      <posX>405</posX>
+      <posY>720</posY>
+      <width>750</width>
+      <height>240</height>
       <seperator>-------------------------------------------------</seperator>
       <font>mediastream11</font>
       <visible>facadeview.list+control.isvisible(50)</visible>
@@ -139,8 +141,8 @@
       <description>Genre Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>270</posX>
-      <posY>650</posY>
+      <posX>405</posX>
+      <posY>975</posY>
       <textcolor>ff989898</textcolor>
       <font>mediastream12tc</font>
       <label>Genre</label>
@@ -150,9 +152,9 @@
       <description>Genre value</description>
       <type>label</type>
       <id>42</id>
-      <posX>270</posX>
-      <posY>675</posY>
-      <width>500</width>
+      <posX>405</posX>
+      <posY>1012</posY>
+      <width>750</width>
       <font>mediastream11tc</font>
       <textcolor>ff006698</textcolor>
       <align>left</align>
@@ -162,8 +164,8 @@
       <description>Grade Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>570</posX>
-      <posY>650</posY>
+      <posX>855</posX>
+      <posY>975</posY>
       <textcolor>ff989898</textcolor>
       <font>mediastream12tc</font>
       <label>Grade</label>
@@ -177,9 +179,9 @@
       <description>background</description>
       <type>image</type>
       <posX>0</posX>
-      <posY>50</posY>
-      <width>260</width>
-      <height>670</height>
+      <posY>75</posY>
+      <width>390</width>
+      <height>1005</height>
       <texture>hiddenmenu_left.png</texture>
       <visible>facadeview.smallicons+control.isvisible(50)</visible>
     </control>
@@ -187,9 +189,9 @@
       <description>Game Title</description>
       <type>fadelabel</type>
       <id>1</id>
-      <posX>260</posX>
-      <posY>660</posY>
-      <width>760</width>
+      <posX>390</posX>
+      <posY>990</posY>
+      <width>1140</width>
       <label>#selecteditem</label>
       <font>mediastream16tc</font>
       <align>center</align>
@@ -199,23 +201,23 @@
       <id>46</id>
       <description>Game poster or flyer</description>
       <type>image</type>
-      <posX>950</posX>
-      <posY>200</posY>
-      <width>292</width>
-      <height>393</height>
+      <posX>1425</posX>
+      <posY>300</posY>
+      <width>438</width>
+      <height>589</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
       <visible>facadeview.smallicons+control.isvisible(50)</visible>
     </control>
     <control>
-      <animation effect="slide" time="400" end="-300,0">WindowClose</animation>
+      <animation effect="slide" time="400" end="-450,0">WindowClose</animation>
       <animation effect="fade" time="500">WindowClose</animation>
       <type>textboxscrollup</type>
       <description>Game description</description>
       <id>0</id>
-      <posX>270</posX>
-      <posY>480</posY>
-      <width>500</width>
-      <height>160</height>
+      <posX>405</posX>
+      <posY>720</posY>
+      <width>750</width>
+      <height>240</height>
       <seperator>-------------------------------------------------</seperator>
       <font>mediastream11</font>
       <visible>ffacadeview.smallicons+control.isvisible(50)</visible>
@@ -228,9 +230,9 @@
       <description>background</description>
       <type>image</type>
       <posX>0</posX>
-      <posY>50</posY>
-      <width>160</width>
-      <height>670</height>
+      <posY>75</posY>
+      <width>240</width>
+      <height>1005</height>
       <texture>hiddenmenu_left.png</texture>
       <visible>facadeview.largeicons+control.isvisible(50)</visible>
     </control>
@@ -238,10 +240,10 @@
       <id>46</id>
       <description>Game poster or flyer</description>
       <type>image</type>
-      <posX>950</posX>
-      <posY>200</posY>
-      <width>292</width>
-      <height>393</height>
+      <posX>1425</posX>
+      <posY>300</posY>
+      <width>438</width>
+      <height>589</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
       <visible>facadeview.largeicons+control.isvisible(50)</visible>
     </control>
@@ -249,9 +251,9 @@
       <description>Game Title</description>
       <type>fadelabel</type>
       <id>1</id>
-      <posX>160</posX>
-      <posY>655</posY>
-      <width>960</width>
+      <posX>240</posX>
+      <posY>982</posY>
+      <width>1440</width>
       <label>#selecteditem</label>
       <font>mediastream28tc</font>
       <align>center</align>
@@ -265,8 +267,8 @@
       <type>fadelabel</type>
       <id>1</id>
       <posX>0</posX>
-      <posY>655</posY>
-      <width>1280</width>
+      <posY>982</posY>
+      <width>1920</width>
       <label>#selecteditem</label>
       <font>mediastream28tc</font>
       <align>center</align>
@@ -280,37 +282,37 @@
       <description>action menu</description>
       <defaultcontrol>10</defaultcontrol>
       <onexit>50</onexit>
-      <buttonX>1231</buttonX>
-      <buttonY>55</buttonY>
-      <buttonwidth>49</buttonwidth>
-      <buttonheight>153</buttonheight>
+      <buttonX>1846</buttonX>
+      <buttonY>82</buttonY>
+      <buttonwidth>73</buttonwidth>
+      <buttonheight>229</buttonheight>
       <textureFocus>-</textureFocus>
       <textureNoFocus>-</textureNoFocus>
       <dimColor>00ffffff</dimColor>
       <control>
         <description>Menu Background</description>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <description>dummy button</description>
         <label>-</label>
         <type>button</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
@@ -318,22 +320,22 @@
         <label>457</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
+        <posX>1560</posX>
+        <posY>337</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+        <posX>1560</posX>
+        <posY>375</posY>
+        <width>330</width>
+        <height>1080</height>
         <layout>StackLayout</layout>
         <control>
           <type>button</type>
@@ -389,31 +391,31 @@
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1013</posX>
-      <posY>684</posY>
-      <width>260</width>
-      <height>32</height>
+      <posX>1519</posX>
+      <posY>1026</posY>
+      <width>390</width>
+      <height>48</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>facadeview.list</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Page Count Label</description>
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1023</posX>
-      <posY>689</posY>
+      <posX>1534</posX>
+      <posY>1033</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>facadeview.list</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <type>group</type>
@@ -430,83 +432,83 @@
           <description>listcontrol</description>
           <type>listcontrol</type>
           <id>50</id>
-          <posX>850</posX>
-          <posY>420</posY>
-          <height>300</height>
-          <spinPosX>1175</spinPosX>
-          <spinPosY>682</spinPosY>
+          <posX>1275</posX>
+          <posY>630</posY>
+          <height>450</height>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1023</spinPosY>
           <spinAlign>Right</spinAlign>
           <textureUp>arrow_round_up_nofocus.png</textureUp>
           <textureDown>arrow_round_down_nofocus.png</textureDown>
           <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
           <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
         </control>
         <control>
           <description>Thumbnail Panel</description>
           <type>thumbnailpanel</type>
           <id>50</id>
-          <posX>15</posX>
-          <posY>50</posY>
-          <width>210</width>
-          <height>710</height>
-          <itemWidth>50</itemWidth>
-          <itemHeight>70</itemHeight>
-          <textureWidth>195</textureWidth>
-          <textureHeight>115</textureHeight>
-          <thumbWidth>40</thumbWidth>
-          <thumbHeight>60</thumbHeight>
+          <posX>22</posX>
+          <posY>75</posY>
+          <width>315</width>
+          <height>1065</height>
+          <itemWidth>75</itemWidth>
+          <itemHeight>105</itemHeight>
+          <textureWidth>292</textureWidth>
+          <textureHeight>172</textureHeight>
+          <thumbWidth>60</thumbWidth>
+          <thumbHeight>90</thumbHeight>
           <thumbPosX>0</thumbPosX>
-          <thumbPosY>8</thumbPosY>
+          <thumbPosY>12</thumbPosY>
           <thumbZoom>yes</thumbZoom>
           <imageFolder>-</imageFolder>
           <imageFolderFocus>-</imageFolderFocus>
           <font>mediastream10c</font>
           <suffix>|</suffix>
-          <textureWidthBig>105</textureWidthBig>
-          <textureHeightBig>185</textureHeightBig>
-          <itemWidthBig>135</itemWidthBig>
-          <itemHeightBig>160</itemHeightBig>
-          <thumbWidthBig>120</thumbWidthBig>
-          <thumbHeightBig>140</thumbHeightBig>
-          <thumbPosXBig>2</thumbPosXBig>
-          <thumbPosYBig>13</thumbPosYBig>
+          <textureWidthBig>157</textureWidthBig>
+          <textureHeightBig>277</textureHeightBig>
+          <itemWidthBig>202</itemWidthBig>
+          <itemHeightBig>240</itemHeightBig>
+          <thumbWidthBig>180</thumbWidthBig>
+          <thumbHeightBig>210</thumbHeightBig>
+          <thumbPosXBig>3</thumbPosXBig>
+          <thumbPosYBig>19</thumbPosYBig>
           <thumbZoom>no</thumbZoom>
           <enableFocusZoom>yes</enableFocusZoom>
           <scrollOffset>1</scrollOffset>
           <onleft>10</onleft>
-          <spinPosX>25</spinPosX>
-          <spinPosY>682</spinPosY>
+          <spinPosX>37</spinPosX>
+          <spinPosY>1023</spinPosY>
           <spinAlign>Right</spinAlign>
           <textureUp>arrow_round_up_nofocus.png</textureUp>
           <textureDown>arrow_round_down_nofocus.png</textureDown>
           <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
           <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
           <spinColor>00000000</spinColor>
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
         </control>
         <control>
           <description>Filmstrip view</description>
           <type>filmstrip</type>
           <dimColor>90ffffff</dimColor>
           <id>50</id>
-          <posX>60</posX>
-          <posY>330</posY>
+          <posX>90</posX>
+          <posY>495</posY>
           <onup>10</onup>
           <ondown>10</ondown>
           <scrollOffset>4</scrollOffset>
-          <width>1280</width>
-          <height>576</height>
-          <thumbWidth>160</thumbWidth>
-          <thumbHeight>235</thumbHeight>
+          <width>1920</width>
+          <height>864</height>
+          <thumbWidth>240</thumbWidth>
+          <thumbHeight>352</thumbHeight>
           <thumbPosX>0</thumbPosX>
-          <thumbPosY>8</thumbPosY>
-          <itemWidth>180</itemWidth>
-          <itemHeight>251</itemHeight>
-          <textureWidth>173</textureWidth>
-          <textureHeight>251</textureHeight>
+          <thumbPosY>12</thumbPosY>
+          <itemWidth>270</itemWidth>
+          <itemHeight>376</itemHeight>
+          <textureWidth>259</textureWidth>
+          <textureHeight>376</textureHeight>
           <frame flipY="true" diffuse="diffusemirrorwide.png">
           </frame>
           <frameFocus flipY="true" diffuse="diffusemirrorwide.png">
@@ -519,25 +521,25 @@
           <showInfoImage>no</showInfoImage>
           <enableFocusZoom>yes</enableFocusZoom>
           <animation effect="rotatey" start="0" end="-4" center="480,10" tween="back" ease="easeout" time="0" reversible="false">focus</animation>
-          <animation effect="slide" end="-30,0" time="0">unfocus</animation>
+          <animation effect="slide" end="-45,0" time="0">unfocus</animation>
           <thumbAnimation effect="rotatey" start="0" end="4" center="480,10" tween="back" ease="easeout" time="100" reversible="false">focus</thumbAnimation>
           <thumbAnimation effect="zoom" start="100,100" end="140,140" time="0">focus</thumbAnimation>
           <thumbAnimation effect="zoom" start="140,140" end="100,100" time="0">unfocus</thumbAnimation>
-          <thumbAnimation effect="slide" end="-20,0" time="0">focus</thumbAnimation>
-          <thumbAnimation effect="slide" end="0,-14" time="0">focus</thumbAnimation>
+          <thumbAnimation effect="slide" end="-30,0" time="0">focus</thumbAnimation>
+          <thumbAnimation effect="slide" end="0,-21" time="0">focus</thumbAnimation>
           <thumbAnimation effect="slide" end="0,0" time="0">unfocus</thumbAnimation>
           <thumbAnimation effect="rotatex" start="0" end="3" center="720,0" tween="back" ease="easeout" time="0" reversible="false">focus</thumbAnimation>
           <thumbAnimation effect="rotatex" start="3" end="0" center="720,0" tween="back" ease="easeout" time="0" reversible="false">unfocus</thumbAnimation>
-          <spinPosX>575</spinPosX>
-          <spinPosY>685</spinPosY>
+          <spinPosX>862</spinPosX>
+          <spinPosY>1027</spinPosY>
           <spinAlign>center</spinAlign>
           <spinColor>ff006698</spinColor>
           <textureUp>arrow_round_right_nofocus.png</textureUp>
           <textureDown>arrow_round_left_nofocus.png</textureDown>
           <textureUpFocus>arrow_round_right_focus.png</textureUpFocus>
           <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
         </control>
       </control>
     </control>
@@ -549,10 +551,10 @@
       <type>image</type>
       <description>star image 1</description>
       <id>101</id>
-      <posX>570</posX>
-      <posY>675</posY>
-      <width>14</width>
-      <height>14</height>
+      <posX>855</posX>
+      <posY>1012</posY>
+      <width>21</width>
+      <height>21</height>
       <texture>
       </texture>
     </control>
@@ -561,10 +563,10 @@
       <type>image</type>
       <description>star image 2</description>
       <id>102</id>
-      <posX>585</posX>
-      <posY>675</posY>
-      <width>14</width>
-      <height>14</height>
+      <posX>877</posX>
+      <posY>1012</posY>
+      <width>21</width>
+      <height>21</height>
       <texture>
       </texture>
     </control>
@@ -573,10 +575,10 @@
       <type>image</type>
       <description>star image 3</description>
       <id>103</id>
-      <posX>600</posX>
-      <posY>675</posY>
-      <width>14</width>
-      <height>14</height>
+      <posX>900</posX>
+      <posY>1012</posY>
+      <width>21</width>
+      <height>21</height>
       <texture>
       </texture>
     </control>
@@ -585,10 +587,10 @@
       <type>image</type>
       <description>star image 4</description>
       <id>104</id>
-      <posX>615</posX>
-      <posY>675</posY>
-      <width>14</width>
-      <height>14</height>
+      <posX>922</posX>
+      <posY>1012</posY>
+      <width>21</width>
+      <height>21</height>
       <texture>
       </texture>
     </control>
@@ -597,10 +599,10 @@
       <type>image</type>
       <description>star image 5</description>
       <id>105</id>
-      <posX>630</posX>
-      <posY>675</posY>
-      <width>14</width>
-      <height>14</height>
+      <posX>945</posX>
+      <posY>1012</posY>
+      <width>21</width>
+      <height>21</height>
       <texture>
       </texture>
     </control>
@@ -609,10 +611,10 @@
       <type>image</type>
       <description>star image 6</description>
       <id>106</id>
-      <posX>645</posX>
-      <posY>675</posY>
-      <width>14</width>
-      <height>14</height>
+      <posX>967</posX>
+      <posY>1012</posY>
+      <width>21</width>
+      <height>21</height>
       <texture>
       </texture>
     </control>
@@ -621,10 +623,10 @@
       <type>image</type>
       <description>star image 7</description>
       <id>107</id>
-      <posX>660</posX>
-      <posY>675</posY>
-      <width>14</width>
-      <height>14</height>
+      <posX>990</posX>
+      <posY>1012</posY>
+      <width>21</width>
+      <height>21</height>
       <texture>
       </texture>
     </control>
@@ -633,10 +635,10 @@
       <type>image</type>
       <description>star image 8</description>
       <id>108</id>
-      <posX>675</posX>
-      <posY>675</posY>
-      <width>14</width>
-      <height>14</height>
+      <posX>1012</posX>
+      <posY>1012</posY>
+      <width>21</width>
+      <height>21</height>
       <texture>
       </texture>
     </control>
@@ -645,10 +647,10 @@
       <type>image</type>
       <description>star image 9</description>
       <id>109</id>
-      <posX>690</posX>
-      <posY>675</posY>
-      <width>14</width>
-      <height>14</height>
+      <posX>1035</posX>
+      <posY>1012</posY>
+      <width>21</width>
+      <height>21</height>
       <texture>
       </texture>
     </control>
@@ -657,13 +659,13 @@
       <type>image</type>
       <description>star image 10</description>
       <id>110</id>
-      <posX>705</posX>
-      <posY>675</posY>
-      <width>14</width>
-      <height>14</height>
+      <posX>1057</posX>
+      <posY>1012</posY>
+      <width>21</width>
+      <height>21</height>
       <texture>
       </texture>
     </control>
   </controls>
 </window>
-<!--Checksum:d4b11ed3761290dd0e46a6a435edbf45-->
+<!--Checksum:3480216abeb4d48c8329df167c34d420-->

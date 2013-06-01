@@ -8,8 +8,8 @@
       <description>BG</description>
       <type>image</type>
       <id>1</id>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>hover_my weather.png</texture>
     </control>
     <control>
@@ -17,8 +17,8 @@
       <type>image</type>
       <id>1</id>
       <texture>SMPbackgrounds\linkedweather\#WorldWeather.TodayIconNumber.jpg</texture>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <visible>plugin.isenabled(World Weather)</visible>
     </control>
     <control>
@@ -26,9 +26,9 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>-110</posY>
-      <width>1281</width>
-      <height>770</height>
+      <posY>-165</posY>
+      <width>1921</width>
+      <height>1155</height>
       <texture>mainoverlay.png</texture>
       <colordiffuse>99ffffff</colordiffuse>
     </control>
@@ -36,8 +36,8 @@
       <type>group</type>
       <description>group element</description>
       <layout>StackLayout</layout>
-      <posX>40</posX>
-      <posY>140</posY>
+      <posX>60</posX>
+      <posY>210</posY>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="fade" time="250">WindowOpen</animation>
       <control Style="skinbutton">
@@ -46,24 +46,24 @@
         <id>2</id>
         <label>3014</label>
         <onup>17</onup>
-        <width>250</width>
+        <width>375</width>
       </control>
       <control Style="skinbutton">
         <description>Switch To Previous Day</description>
         <type>button</type>
         <id>3</id>
         <label>3014</label>
-        <width>250</width>
+        <width>375</width>
       </control>
     </control>
     <control>
       <description>Location and date label</description>
       <type>fadelabel</type>
       <id>4</id>
-      <posX>300</posX>
-      <posY>150</posY>
+      <posX>450</posX>
+      <posY>225</posY>
       <label>Temp</label>
-      <width>800</width>
+      <width>1200</width>
       <font>mediastream16tc</font>
       <textcolor>White</textcolor>
       <align>center</align>
@@ -75,8 +75,8 @@
       <description>Night label</description>
       <type>label</type>
       <id>17</id>
-      <posX>130</posX>
-      <posY>280</posY>
+      <posX>195</posX>
+      <posY>420</posY>
       <label>Temp</label>
       <font>mediastream14tc</font>
       <textcolor>white</textcolor>
@@ -88,8 +88,8 @@
       <description>Night Current Temp static label</description>
       <type>label</type>
       <id>10</id>
-      <posX>20</posX>
-      <posY>330</posY>
+      <posX>30</posX>
+      <posY>495</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>white</textcolor>
@@ -100,8 +100,8 @@
       <description>Night Current Temp label</description>
       <type>label</type>
       <id>11</id>
-      <posX>150</posX>
-      <posY>330</posY>
+      <posX>225</posX>
+      <posY>495</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -112,8 +112,8 @@
       <description>Night Current Wind static label</description>
       <type>label</type>
       <id>12</id>
-      <posX>20</posX>
-      <posY>360</posY>
+      <posX>30</posX>
+      <posY>540</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -124,8 +124,8 @@
       <description>Night Current Wind label</description>
       <type>label</type>
       <id>13</id>
-      <posX>150</posX>
-      <posY>360</posY>
+      <posX>225</posX>
+      <posY>540</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -136,8 +136,8 @@
       <description>Night Current Preciptation static label</description>
       <type>label</type>
       <id>14</id>
-      <posX>20</posX>
-      <posY>390</posY>
+      <posX>30</posX>
+      <posY>585</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -148,8 +148,8 @@
       <description>Night Current Preciptation label</description>
       <type>label</type>
       <id>15</id>
-      <posX>150</posX>
-      <posY>390</posY>
+      <posX>225</posX>
+      <posY>585</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -160,10 +160,10 @@
       <description>Night current weather icon</description>
       <type>image</type>
       <id>16</id>
-      <posX>70</posX>
-      <posY>430</posY>
-      <width>128</width>
-      <height>128</height>
+      <posX>105</posX>
+      <posY>645</posY>
+      <width>192</width>
+      <height>192</height>
       <texture>-</texture>
       <colorkey>FFFF00FF</colorkey>
       <colordiffuse>FFFFFFFF</colordiffuse>
@@ -174,8 +174,8 @@
       <description>Night Type of weather label</description>
       <type>label</type>
       <id>18</id>
-      <posX>130</posX>
-      <posY>590</posY>
+      <posX>195</posX>
+      <posY>885</posY>
       <label>Temp</label>
       <font>mediastream12tc</font>
       <align>center</align>
@@ -188,8 +188,8 @@
       <description>AM label</description>
       <type>label</type>
       <id>27</id>
-      <posX>440</posX>
-      <posY>280</posY>
+      <posX>660</posX>
+      <posY>420</posY>
       <label>Temp</label>
       <font>mediastream14tc</font>
       <textcolor>white</textcolor>
@@ -201,8 +201,8 @@
       <description>AM Current Temp static label</description>
       <type>label</type>
       <id>20</id>
-      <posX>330</posX>
-      <posY>330</posY>
+      <posX>495</posX>
+      <posY>495</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>white</textcolor>
@@ -213,8 +213,8 @@
       <description>AM Current Temp label</description>
       <type>label</type>
       <id>21</id>
-      <posX>460</posX>
-      <posY>330</posY>
+      <posX>690</posX>
+      <posY>495</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -225,8 +225,8 @@
       <description>AM Current Wind static label</description>
       <type>label</type>
       <id>22</id>
-      <posX>330</posX>
-      <posY>360</posY>
+      <posX>495</posX>
+      <posY>540</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -237,8 +237,8 @@
       <description>AM Current Wind label</description>
       <type>label</type>
       <id>23</id>
-      <posX>460</posX>
-      <posY>360</posY>
+      <posX>690</posX>
+      <posY>540</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -249,8 +249,8 @@
       <description>AM Current Preciptation static label</description>
       <type>label</type>
       <id>24</id>
-      <posX>330</posX>
-      <posY>390</posY>
+      <posX>495</posX>
+      <posY>585</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -261,8 +261,8 @@
       <description>AM Current Preciptation label</description>
       <type>label</type>
       <id>25</id>
-      <posX>460</posX>
-      <posY>390</posY>
+      <posX>690</posX>
+      <posY>585</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -273,10 +273,10 @@
       <description>AM current weather icon</description>
       <type>image</type>
       <id>26</id>
-      <posX>380</posX>
-      <posY>430</posY>
-      <width>128</width>
-      <height>128</height>
+      <posX>570</posX>
+      <posY>645</posY>
+      <width>192</width>
+      <height>192</height>
       <texture>-</texture>
       <colorkey>FFFF00FF</colorkey>
       <colordiffuse>FFFFFFFF</colordiffuse>
@@ -287,8 +287,8 @@
       <description>AM Type of weather label</description>
       <type>label</type>
       <id>28</id>
-      <posX>440</posX>
-      <posY>590</posY>
+      <posX>660</posX>
+      <posY>885</posY>
       <label>Temp</label>
       <font>mediastream12tc</font>
       <align>center</align>
@@ -301,8 +301,8 @@
       <description>PM label</description>
       <type>label</type>
       <id>37</id>
-      <posX>750</posX>
-      <posY>280</posY>
+      <posX>1125</posX>
+      <posY>420</posY>
       <label>Temp</label>
       <font>mediastream14tc</font>
       <textcolor>white</textcolor>
@@ -314,8 +314,8 @@
       <description>PM Current Temp static label</description>
       <type>label</type>
       <id>30</id>
-      <posX>640</posX>
-      <posY>330</posY>
+      <posX>960</posX>
+      <posY>495</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -326,8 +326,8 @@
       <description>PM Current Temp label</description>
       <type>label</type>
       <id>31</id>
-      <posX>770</posX>
-      <posY>330</posY>
+      <posX>1155</posX>
+      <posY>495</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -338,8 +338,8 @@
       <description>PM Current Wind static label</description>
       <type>label</type>
       <id>32</id>
-      <posX>640</posX>
-      <posY>360</posY>
+      <posX>960</posX>
+      <posY>540</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -350,8 +350,8 @@
       <description>PM Current Wind label</description>
       <type>label</type>
       <id>33</id>
-      <posX>770</posX>
-      <posY>360</posY>
+      <posX>1155</posX>
+      <posY>540</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -362,8 +362,8 @@
       <description>PM Current Preciptation static label</description>
       <type>label</type>
       <id>34</id>
-      <posX>640</posX>
-      <posY>390</posY>
+      <posX>960</posX>
+      <posY>585</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -374,8 +374,8 @@
       <description>PM Current Preciptation label</description>
       <type>label</type>
       <id>35</id>
-      <posX>770</posX>
-      <posY>390</posY>
+      <posX>1155</posX>
+      <posY>585</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -386,10 +386,10 @@
       <description>PM current weather icon</description>
       <type>image</type>
       <id>36</id>
-      <posX>690</posX>
-      <posY>430</posY>
-      <width>128</width>
-      <height>128</height>
+      <posX>1035</posX>
+      <posY>645</posY>
+      <width>192</width>
+      <height>192</height>
       <texture>-</texture>
       <colorkey>FFFF00FF</colorkey>
       <colordiffuse>FFFFFFFF</colordiffuse>
@@ -400,8 +400,8 @@
       <description>PM Type of weather label</description>
       <type>label</type>
       <id>38</id>
-      <posX>750</posX>
-      <posY>590</posY>
+      <posX>1125</posX>
+      <posY>885</posY>
       <label>Temp</label>
       <font>mediastream12tc</font>
       <textcolor>90FFFFFF</textcolor>
@@ -414,8 +414,8 @@
       <description>Evening label</description>
       <type>label</type>
       <id>47</id>
-      <posX>1050</posX>
-      <posY>280</posY>
+      <posX>1575</posX>
+      <posY>420</posY>
       <label>Temp</label>
       <font>mediastream14tc</font>
       <textcolor>white</textcolor>
@@ -427,8 +427,8 @@
       <description>Evening Current Temp static label</description>
       <type>label</type>
       <id>40</id>
-      <posX>950</posX>
-      <posY>330</posY>
+      <posX>1425</posX>
+      <posY>495</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -439,8 +439,8 @@
       <description>Evening Current Temp label</description>
       <type>label</type>
       <id>41</id>
-      <posX>1080</posX>
-      <posY>330</posY>
+      <posX>1620</posX>
+      <posY>495</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -451,8 +451,8 @@
       <description>Evening Current Wind static label</description>
       <type>label</type>
       <id>42</id>
-      <posX>950</posX>
-      <posY>360</posY>
+      <posX>1425</posX>
+      <posY>540</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -463,8 +463,8 @@
       <description>Evening Current Wind label</description>
       <type>label</type>
       <id>43</id>
-      <posX>1080</posX>
-      <posY>360</posY>
+      <posX>1620</posX>
+      <posY>540</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -475,8 +475,8 @@
       <description>Evening Current Preciptation static label</description>
       <type>label</type>
       <id>44</id>
-      <posX>950</posX>
-      <posY>390</posY>
+      <posX>1425</posX>
+      <posY>585</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -487,8 +487,8 @@
       <description>Evening Current Preciptation label</description>
       <type>label</type>
       <id>45</id>
-      <posX>1080</posX>
-      <posY>390</posY>
+      <posX>1620</posX>
+      <posY>585</posY>
       <label>Temp</label>
       <font>mediastream10c</font>
       <textcolor>White</textcolor>
@@ -499,10 +499,10 @@
       <description>Evening current weather icon</description>
       <type>image</type>
       <id>46</id>
-      <posX>1000</posX>
-      <posY>430</posY>
-      <width>128</width>
-      <height>128</height>
+      <posX>1500</posX>
+      <posY>645</posY>
+      <width>192</width>
+      <height>192</height>
       <texture>-</texture>
       <colorkey>FFFF00FF</colorkey>
       <colordiffuse>FFFFFFFF</colordiffuse>
@@ -513,8 +513,8 @@
       <description>Evening Type of weather label</description>
       <type>label</type>
       <id>48</id>
-      <posX>1060</posX>
-      <posY>590</posY>
+      <posX>1590</posX>
+      <posY>885</posY>
       <label>Temp</label>
       <font>mediastream12tc</font>
       <textcolor>90FFFFFF</textcolor>
@@ -525,4 +525,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:089e5ffcbddd3a1022a12528a18420df-->
+<!--Checksum:c2cd8149022371c7c0d165cfd1e96671-->

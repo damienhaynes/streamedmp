@@ -12,10 +12,10 @@
     <control>
       <type>image</type>
       <id>1</id>
-      <posX>31</posX>
-      <posY>272</posY>
-      <width>231</width>
-      <height>231</height>
+      <posX>46</posX>
+      <posY>408</posY>
+      <width>346</width>
+      <height>346</height>
       <texture>album_preview_thumb_background.png</texture>
       <visible>facadeview.list</visible>
     </control>
@@ -23,10 +23,10 @@
       <description>Screenshot</description>
       <type>image</type>
       <id>6</id>
-      <posX>45</posX>
-      <posY>285</posY>
-      <width>199</width>
-      <height>199</height>
+      <posX>67</posX>
+      <posY>427</posY>
+      <width>298</width>
+      <height>298</height>
       <texture />
       <align>center</align>
       <keepaspectratio>yes</keepaspectratio>
@@ -36,36 +36,36 @@
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
-      <buttonX>-210</buttonX>
-      <buttonY>64</buttonY>
-      <buttonwidth>385</buttonwidth>
-      <buttonheight>515</buttonheight>
+      <buttonX>-315</buttonX>
+      <buttonY>96</buttonY>
+      <buttonwidth>577</buttonwidth>
+      <buttonheight>772</buttonheight>
       <textureFocus>-</textureFocus>
       <textureNoFocus>-</textureNoFocus>
       <posX>0</posX>
       <posY>0</posY>
-      <width>100</width>
-      <height>568</height>
+      <width>150</width>
+      <height>852</height>
       <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
         <posY>0</posY>
-        <width>220</width>
-        <height>720</height>
+        <width>330</width>
+        <height>1080</height>
         <texture>streamed_submenu_bg.png</texture>
         <colorDiffuse>fffffffff</colorDiffuse>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="-220,0">visible</animation>
-        <animation effect="slide" time="100" end="-220,0">hidden</animation>
+        <animation effect="slide" time="100" start="-330,0">visible</animation>
+        <animation effect="slide" time="100" end="-330,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" end="-280,0">hidden</animation>
-        <animation effect="slide" time="100" start="-280,0">visible</animation>
+        <animation effect="slide" time="100" end="-420,0">hidden</animation>
+        <animation effect="slide" time="100" start="-420,0">visible</animation>
         <posX>0</posX>
-        <posY>80</posY>
+        <posY>120</posY>
         <layout>StackLayout</layout>
         <control>
           <description>View-As</description>
@@ -96,4 +96,4 @@
     <import>common.facade.xml</import>
   </controls>
 </window>
-<!--Checksum:5b88fc6a607f60f1d974a63cb35978fa-->
+<!--Checksum:7fd64295d1dec143adfb16841dcf0241-->

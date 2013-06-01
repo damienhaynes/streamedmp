@@ -10,8 +10,8 @@
       <id>1</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>hover_moving pictures.png</texture>
     </control>
     <control>
@@ -20,18 +20,18 @@
       <id>1</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>mainoverlaydetails.png</texture>
     </control>
     <control>
       <description>Title Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -40,9 +40,9 @@
       <description>Plugin Name</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>493</posX>
-      <posY>14</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>21</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <label>#IMDb.Translation.ScraperOptionsTitle.Label</label>
       <align>right</align>
@@ -53,10 +53,10 @@
       <description>Item Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1065</posX>
-      <posY>13</posY>
-      <width>202</width>
-      <height>28</height>
+      <posX>1597</posX>
+      <posY>19</posY>
+      <width>303</width>
+      <height>42</height>
       <texture>mediacountbg.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -66,9 +66,9 @@
       <type>label</type>
       <label>5</label>
       <id>0</id>
-      <width>90</width>
-      <posX>1077</posX>
-      <posY>17</posY>
+      <width>135</width>
+      <posX>1615</posX>
+      <posY>25</posY>
       <align>left</align>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
@@ -80,8 +80,8 @@
       <type>label</type>
       <label>#itemcount</label>
       <id>0</id>
-      <posX>1240</posX>
-      <posY>16</posY>
+      <posX>1860</posX>
+      <posY>24</posY>
       <font>mediastream10c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
@@ -92,9 +92,9 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -103,9 +103,9 @@
       <description>Selected Label</description>
       <type>fadelabel</type>
       <id>1</id>
-      <posX>40</posX>
-      <posY>684</posY>
-      <width>900</width>
+      <posX>60</posX>
+      <posY>1026</posY>
+      <width>1350</width>
       <label>#selecteditem</label>
       <font>mediastream16tc</font>
       <textcolor>White</textcolor>
@@ -117,9 +117,9 @@
       <description>Refresh Progress Label</description>
       <type>fadelabel</type>
       <id>1</id>
-      <posX>40</posX>
-      <posY>684</posY>
-      <width>900</width>
+      <posX>60</posX>
+      <posY>1026</posY>
+      <width>1350</width>
       <label>#IMDb.Movie.Refresh.Status</label>
       <font>mediastream16tc</font>
       <textcolor>White</textcolor>
@@ -131,10 +131,10 @@
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1013</posX>
-      <posY>684</posY>
-      <width>260</width>
-      <height>30</height>
+      <posX>1519</posX>
+      <posY>1026</posY>
+      <width>390</width>
+      <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>!facadeview.coverflow</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -145,8 +145,8 @@
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1023</posX>
-      <posY>688</posY>
+      <posX>1534</posX>
+      <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>!facadeview.coverflow</visible>
@@ -166,21 +166,21 @@
           <id>50</id>
           <onleft>2</onleft>
           <onright>2</onright>
-          <posX>80</posX>
-          <posY>80</posY>
-          <width>1200</width>
-          <height>400</height>
-          <textXOff2>1140</textXOff2>
+          <posX>120</posX>
+          <posY>120</posY>
+          <width>1800</width>
+          <height>600</height>
+          <textXOff2>1710</textXOff2>
           <remoteColor>FFFFFFFF</remoteColor>
           <unfocusedAlpha>200</unfocusedAlpha>
-          <itemWidth>32</itemWidth>
-          <itemHeight>32</itemHeight>
-          <IconXOff>-30</IconXOff>
-          <IconYOff>4</IconYOff>
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
-          <spinPosX>1175</spinPosX>
-          <spinPosY>681</spinPosY>
+          <itemWidth>48</itemWidth>
+          <itemHeight>48</itemHeight>
+          <IconXOff>-45</IconXOff>
+          <IconYOff>6</IconYOff>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
           <spinAlign>Right</spinAlign>
           <spinColor>ff006698</spinColor>
           <textureUp>arrow_round_up_nofocus.png</textureUp>
@@ -194,10 +194,10 @@
       <description>Chosen Option Description</description>
       <type>textboxscrollup</type>
       <id>500</id>
-      <posX>40</posX>
-      <posY>425</posY>
-      <width>1210</width>
-      <height>245</height>
+      <posX>60</posX>
+      <posY>637</posY>
+      <width>1815</width>
+      <height>367</height>
       <onright>101</onright>
       <onleft>101</onleft>
       <ondown>101</ondown>
@@ -214,36 +214,36 @@
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
-      <buttonX>1232</buttonX>
-      <buttonY>50</buttonY>
-      <buttonwidth>48</buttonwidth>
-      <buttonheight>144</buttonheight>
+      <buttonX>1848</buttonX>
+      <buttonY>75</buttonY>
+      <buttonwidth>72</buttonwidth>
+      <buttonheight>216</buttonheight>
       <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
       <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
       <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <description>Dummy Button (for Mouse)</description>
         <label>-</label>
         <type>button</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>Menu</description>
@@ -251,11 +251,11 @@
         <label>924</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>230</posY>
+        <posX>1560</posX>
+        <posY>345</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>Jump To</description>
@@ -263,22 +263,22 @@
         <label>1065</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>340</posY>
+        <posX>1560</posX>
+        <posY>510</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+        <posX>1560</posX>
+        <posY>375</posY>
+        <width>330</width>
+        <height>1080</height>
         <layout>StackLayout(0, Vertical, true)</layout>
         <control>
           <description>Force IMDb+</description>
@@ -349,4 +349,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:010ee96a79c04ad19af853a711a4541b-->
+<!--Checksum:05ab901c12284133791d87457b2f961a-->

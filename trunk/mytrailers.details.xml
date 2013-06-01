@@ -5,10 +5,10 @@
       <description>Game Trailer Thumb</description>
       <type>image</type>
       <id>60</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>257</width>
-      <height>380</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>385</width>
+      <height>570</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture flipY="true" diffuse="Thumb_Mask.png">#MyTrailers.Video.Image</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -19,10 +19,10 @@
       <description>Movie Trailer Poster</description>
       <type>image</type>
       <id>21</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>257</width>
-      <height>380</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>385</width>
+      <height>570</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture flipY="true" diffuse="Thumb_Mask.png">#MyTrailers.Details.Poster</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -33,10 +33,10 @@
       <description>Movie Trailer Glass Overlay</description>
       <type>image</type>
       <id>0</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>228</width>
-      <height>177</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>342</width>
+      <height>265</height>
       <texture>glassoverlay2.png</texture>
       <visible>!control.isvisible(50)+Control.HasThumb(21)</visible>
     </control>
@@ -44,9 +44,9 @@
       <description>Trailer Title Shadow</description>
       <type>label</type>
       <id>0</id>
-      <posX>309</posX>
-      <posY>252</posY>
-      <width>900</width>
+      <posX>463</posX>
+      <posY>378</posY>
+      <width>1350</width>
       <font>mediastream16tc</font>
       <label>#MyTrailers.Details.Title</label>
       <textcolor>ff222222</textcolor>
@@ -58,9 +58,9 @@
       <description>Trailer Title</description>
       <type>label</type>
       <id>0</id>
-      <posX>308</posX>
-      <posY>251</posY>
-      <width>900</width>
+      <posX>462</posX>
+      <posY>376</posY>
+      <width>1350</width>
       <font>mediastream16tc</font>
       <label>#MyTrailers.Details.Title</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -73,13 +73,13 @@
       <type>label</type>
       <label>#MyTrailers.Details.Genre</label>
       <id>0</id>
-      <posX>309</posX>
-      <posY>282</posY>
-      <width>900</width>
+      <posX>463</posX>
+      <posY>423</posY>
+      <width>1350</width>
       <font>mediastream11tc</font>
       <textcolor>ff909090</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -89,10 +89,10 @@
       <description>Summary/Actors</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>308</posX>
-      <posY>315</posY>
-      <width>475</width>
-      <height>223</height>
+      <posX>462</posX>
+      <posY>472</posY>
+      <width>712</width>
+      <height>334</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -108,10 +108,10 @@
       <description>Summary Only</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>308</posX>
-      <posY>315</posY>
-      <width>475</width>
-      <height>223</height>
+      <posX>462</posX>
+      <posY>472</posY>
+      <width>712</width>
+      <height>334</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -125,10 +125,10 @@
       <description>Actors Only</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>308</posX>
-      <posY>315</posY>
-      <width>475</width>
-      <height>223</height>
+      <posX>462</posX>
+      <posY>472</posY>
+      <width>712</width>
+      <height>334</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -143,11 +143,11 @@
       <id>0</id>
       <type>label</type>
       <label>#StreamedMP.ReleaseDate</label>
-      <posX>310</posX>
-      <posY>557</posY>
-      <width>140</width>
+      <posX>465</posX>
+      <posY>835</posY>
+      <width>210</width>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <visible>!control.isvisible(50)</visible>
     </control>
@@ -156,11 +156,11 @@
       <id>0</id>
       <type>label</type>
       <label>#MyTrailers.Details.ReleaseDate</label>
-      <posX>490</posX>
-      <posY>558</posY>
-      <width>200</width>
+      <posX>735</posX>
+      <posY>837</posY>
+      <width>300</width>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>!control.isvisible(50)</visible>
     </control>
@@ -169,11 +169,11 @@
       <id>0</id>
       <type>label</type>
       <label>#MyTrailers.Details.Label.Director</label>
-      <posX>310</posX>
-      <posY>579</posY>
-      <width>140</width>
+      <posX>465</posX>
+      <posY>868</posY>
+      <width>210</width>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <visible>!control.isvisible(50)</visible>
     </control>
@@ -182,11 +182,11 @@
       <id>0</id>
       <type>label</type>
       <label>#MyTrailers.Details.Director</label>
-      <posX>490</posX>
-      <posY>580</posY>
-      <width>200</width>
+      <posX>735</posX>
+      <posY>870</posY>
+      <width>300</width>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>!control.isvisible(50)</visible>
     </control>
@@ -194,11 +194,11 @@
       <description>Studio Label</description>
       <type>label</type>
       <label>#MyTrailers.Details.Label.Studio</label>
-      <posX>310</posX>
-      <posY>601</posY>
-      <width>140</width>
+      <posX>465</posX>
+      <posY>901</posY>
+      <width>210</width>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <visible>!control.isvisible(50)</visible>
     </control>
@@ -207,10 +207,10 @@
       <id>0</id>
       <type>label</type>
       <label>#MyTrailers.Details.Studio</label>
-      <posX>490</posX>
-      <posY>602</posY>
+      <posX>735</posX>
+      <posY>903</posY>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
       <visible>!control.isvisible(50)</visible>
     </control>
@@ -218,9 +218,9 @@
       <description>Selected Video/Trailer Published Date</description>
       <type>label</type>
       <id>1</id>
-      <posX>1250</posX>
-      <posY>275</posY>
-      <width>420</width>
+      <posX>1875</posX>
+      <posY>412</posY>
+      <width>630</width>
       <label>Published on #MyTrailers.Video.Published</label>
       <font>mediastream10</font>
       <align>right</align>
@@ -233,9 +233,9 @@
       <description>Selected Video Description</description>
       <type>fadelabel</type>
       <id>1</id>
-      <posX>40</posX>
-      <posY>684</posY>
-      <width>930</width>
+      <posX>60</posX>
+      <posY>1026</posY>
+      <width>1395</width>
       <label>#MyTrailers.Video.Description</label>
       <font>mediastream16tc</font>
       <textcolor>White</textcolor>
@@ -247,33 +247,33 @@
       <type>listcontrol</type>
       <description>Trailer List</description>
       <id>4</id>
-      <posX>800</posX>
-      <posY>300</posY>
-      <width>480</width>
-      <height>450</height>
-      <textXOff>9</textXOff>
-      <textYOff>5</textYOff>
+      <posX>1200</posX>
+      <posY>450</posY>
+      <width>720</width>
+      <height>675</height>
+      <textXOff>13</textXOff>
+      <textYOff>7</textYOff>
       <textXOff2>0</textXOff2>
-      <textYOff2>5</textYOff2>
-      <textureHeight>42</textureHeight>
+      <textYOff2>7</textYOff2>
+      <textureHeight>63</textureHeight>
       <onup>4</onup>
       <ondown>4</ondown>
       <onright>4</onright>
       <onleft>4</onleft>
       <onright>4</onright>
       <scrollOffset>4</scrollOffset>
-      <spinPosX>1175</spinPosX>
-      <spinPosY>681</spinPosY>
+      <spinPosX>1762</spinPosX>
+      <spinPosY>1021</spinPosY>
       <spinAlign>Right</spinAlign>
       <spinColor>ff006698</spinColor>
       <textureUp>arrow_round_up_nofocus.png</textureUp>
       <textureDown>arrow_round_down_nofocus.png</textureDown>
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
       <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-      <spinWidth>50</spinWidth>
-      <spinHeight>37</spinHeight>
+      <spinWidth>75</spinWidth>
+      <spinHeight>55</spinHeight>
       <visible>!control.isvisible(50)</visible>
     </control>
   </controls>
 </window>
-<!--Checksum:991b1822e1a0d718af3fee0349459dff-->
+<!--Checksum:f926dae618b1a96fccbc90a7c41792bb-->

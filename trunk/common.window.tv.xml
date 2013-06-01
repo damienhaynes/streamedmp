@@ -7,8 +7,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>hover_my tv.png</texture>
       <animation effect="fade" time="500" start="10">WindowOpen</animation>
       <animation effect="fade" time="500" end="10">WindowClose</animation>
@@ -35,8 +35,8 @@
       <type>image</type>
       <posx>0</posx>
       <posy>0</posy>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#fanarthandler.tvseries.backdrop1.any</texture>
       <visible>control.isvisible(91919297)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80">Visible</animation>
@@ -50,8 +50,8 @@
       <type>image</type>
       <posx>0</posx>
       <posy>0</posy>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#fanarthandler.tvseries.backdrop2.any</texture>
       <visible>control.isvisible(91919298)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80">Visible</animation>
@@ -65,8 +65,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1281</width>
-      <height>720</height>
+      <width>1921</width>
+      <height>1080</height>
       <texture>mainoverlay.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -75,13 +75,13 @@
       <description>Top Title Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
       <animation effect="fade" time="600">WindowOpen</animation>
       <animation effect="fade" time="600">WindowClose</animation>
     </control>
@@ -89,15 +89,15 @@
       <type>fadelabel</type>
       <description>Top Title</description>
       <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>#currentmodule</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="300">WindowClose</animation>
       <animation effect="fade" time="400">WindowOpen</animation>
       <animation effect="fade" time="400">WindowClose</animation>
     </control>
@@ -105,13 +105,13 @@
       <description>Time Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>6</posX>
-      <posY>10</posY>
-      <width>132</width>
-      <height>32</height>
+      <posX>9</posX>
+      <posY>15</posY>
+      <width>198</width>
+      <height>48</height>
       <texture>clockbackground.png</texture>
       <animation effect="fade" time="50">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:0c910822ba60ff2ba5ffb958a0e52619-->
+<!--Checksum:7c9c9085aa74822cf4bda0ee8b8acc50-->

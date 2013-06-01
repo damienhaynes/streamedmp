@@ -4,16 +4,16 @@
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <controls>
-		<settings>
-			<skininterfaceversion>
-				<version>
-					<major>1</major>
-					<minor>0</minor>
-					<build>0</build>
-					<revision>0</revision>
-				</version>
-			</skininterfaceversion>
-		</settings>
+    <settings>
+      <skininterfaceversion>
+        <version>
+          <major>1</major>
+          <minor>0</minor>
+          <build>0</build>
+          <revision>0</revision>
+        </version>
+      </skininterfaceversion>
+    </settings>
     <import>MyFilmsDummy.xml</import>
     <control>
       <description>Default Background</description>
@@ -21,8 +21,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>hover_moving pictures.png</texture>
     </control>
     <control>
@@ -31,8 +31,8 @@
       <id>11</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#myfilms.Fanart</texture>
       <animation effect="fade" time="300">visible</animation>
       <animation effect="fade" time="300" delay="300">hidden</animation>
@@ -43,8 +43,8 @@
       <id>21</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#myfilms.Fanart2</texture>
       <animation effect="fade" time="300">visible</animation>
       <animation effect="fade" time="300" delay="300">hidden</animation>
@@ -61,10 +61,10 @@
       <description>Logos groups 1 + 2 combined logos</description>
       <type>image</type>
       <id>2012</id>
-      <posX>25</posX>
-      <posY>684</posY>
-      <width>900</width>
-      <height>32</height>
+      <posX>37</posX>
+      <posY>1026</posY>
+      <width>1350</width>
+      <height>48</height>
       <texture>#myfilms.logos_id2012</texture>
       <keepaspectratio>yes</keepaspectratio>
       <spaceBetweenItems>2</spaceBetweenItems>
@@ -76,4 +76,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:1284338806a05bc34717235b82dcb010-->
+<!--Checksum:d27aa6190fb42fa2fffa54f912278e31-->

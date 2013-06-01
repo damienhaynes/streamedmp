@@ -3,145 +3,145 @@
   <id>1014</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-	<rememberLastFocusedControl>no</rememberLastFocusedControl>
-  <define>#header.label:#(L(5))->#(L(101014))</define>
+  <rememberLastFocusedControl>no</rememberLastFocusedControl>
+  <define>#header.label:#(L(5))-&gt;#(L(101014))</define>
   <define>#header.hover:hover_settings.png</define>
-	<define>#defaultcontrol:2</define>
+  <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9995</define>
   <controls>
     <import>common.settings.wide.xml</import>
     <import>common.time.xml</import>
-		<control>
-			<type>label</type>
-			<description>Video playlist folder label</description>
-			<id>1</id>
-			<label>#videosPlaylist</label>
-			<align>right</align>
+    <control>
+      <type>label</type>
+      <description>Video playlist folder label</description>
+      <id>1</id>
+      <label>#videosPlaylist</label>
+      <align>right</align>
       <font>mediastream12c</font>
-			<posX>955</posX>
-      <posY>200</posY>
-			<visible>control.isvisible(8)</visible>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
-		</control>
-		<control>
-			<type>label</type>
-			<description>Music playlist folder label</description>
-			<id>1</id>
-			<label>#musicPlaylist</label>
-			<align>right</align>
-			<font>mediastream12c</font>
-			<posX>955</posX>
-      <posY>200</posY>
-			<visible>control.isvisible(2)</visible>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
-		</control>
+      <posX>1432</posX>
+      <posY>300</posY>
+      <visible>control.isvisible(8)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <description>Music playlist folder label</description>
+      <id>1</id>
+      <label>#musicPlaylist</label>
+      <align>right</align>
+      <font>mediastream12c</font>
+      <posX>1432</posX>
+      <posY>300</posY>
+      <visible>control.isvisible(2)</visible>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
     <control>
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>150</posY>      
-      <height>500</height>
+      <posX>324</posX>
+      <posY>225</posY>
+      <height>750</height>
       <layout>StackLayout(0, Vertical, true)</layout>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>Playlist Type Heading</description>
         <type>button</type>
         <id>0</id>
         <font>mediastream12tc</font>
-				<label>#playlisttype</label>
-				<textXOff>35</textXOff>
+        <label>#playlisttype</label>
+        <textXOff>52</textXOff>
       </control>
       <control Style="settingsmainbutton">
         <description>Video Playlist Folder</description>
-				<type>button</type>
-				<id>8</id>
-				<label>851</label>
-				<width>766</width>
-        <textXOff>35</textXOff>
-				<onup>7</onup>
-				<ondown>9</ondown>
+        <type>button</type>
+        <id>8</id>
+        <label>851</label>
+        <width>1149</width>
+        <textXOff>52</textXOff>
+        <onup>7</onup>
+        <ondown>9</ondown>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmaincheckbutton">
         <description>Video Repeat</description>
-				<type>checkbutton</type>
-				<id>9</id>
-				<label>300066</label>
-				<width>766</width>
-        <textXOff>35</textXOff>
-				<ondown>2</ondown>
-				<onup>8</onup>
-				<onleft>9</onleft>
+        <type>checkbutton</type>
+        <id>9</id>
+        <label>300066</label>
+        <width>1149</width>
+        <textXOff>52</textXOff>
+        <ondown>2</ondown>
+        <onup>8</onup>
+        <onleft>9</onleft>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <description>Music Playlist Folder</description>
-				<type>button</type>
-				<id>2</id>
-				<label>851</label>
-				<width>766</width>
-        <textXOff>35</textXOff>
-				<ondown>3</ondown>
-				<onup>9</onup>
+        <type>button</type>
+        <id>2</id>
+        <label>851</label>
+        <width>1149</width>
+        <textXOff>52</textXOff>
+        <ondown>3</ondown>
+        <onup>9</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmaincheckbutton">
         <description>Music Repeat</description>
-				<type>checkbutton</type>
-				<id>3</id>
-				<label>300066</label>
-				<width>766</width>
-        <textXOff>35</textXOff>
-				<ondown>4</ondown>
-				<onleft>3</onleft>
-				<onup>2</onup>
+        <type>checkbutton</type>
+        <id>3</id>
+        <label>300066</label>
+        <width>1149</width>
+        <textXOff>52</textXOff>
+        <ondown>4</ondown>
+        <onleft>3</onleft>
+        <onup>2</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmaincheckbutton">
         <description>Autoshuffle</description>
-				<type>checkbutton</type>
-				<id>4</id>
-				<label>300067</label>
-				<width>766</width>
-        <textXOff>35</textXOff>
-				<ondown>5</ondown>
-				<onup>3</onup>
+        <type>checkbutton</type>
+        <id>4</id>
+        <label>300067</label>
+        <width>1149</width>
+        <textXOff>52</textXOff>
+        <ondown>5</ondown>
+        <onup>3</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmaincheckbutton">
+      <control Style="settingsmaincheckbutton">
         <description>Save current</description>
-				<type>checkbutton</type>
-				<id>5</id>
-				<label>300068</label>
-				<width>766</width>
-				<textXOff>35</textXOff>
-				<ondown>6</ondown>
-				<onup>4</onup>
-				<onright>#defaultcontrol.onright</onright>
+        <type>checkbutton</type>
+        <id>5</id>
+        <label>300068</label>
+        <width>1149</width>
+        <textXOff>52</textXOff>
+        <ondown>6</ondown>
+        <onup>4</onup>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmaincheckbutton">
+      <control Style="settingsmaincheckbutton">
         <description>Load default</description>
-				<type>checkbutton</type>
-				<id>6</id>
-				<label>300069</label>
-				<width>766</width>
-				<textXOff>35</textXOff>
-				<ondown>7</ondown>
-				<onup>5</onup>
-				<onright>#defaultcontrol.onright</onright>
+        <type>checkbutton</type>
+        <id>6</id>
+        <label>300069</label>
+        <width>1149</width>
+        <textXOff>52</textXOff>
+        <ondown>7</ondown>
+        <onup>5</onup>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmaincheckbutton">
+      <control Style="settingsmaincheckbutton">
         <description>Playlist screen</description>
-				<type>checkbutton</type>
-				<id>7</id>
-				<label>300070</label>
-				<width>766</width>
-				<textXOff>35</textXOff>
-				<ondown>8</ondown>
-				<onup>6</onup>
-				<onright>#defaultcontrol.onright</onright>
+        <type>checkbutton</type>
+        <id>7</id>
+        <label>300070</label>
+        <width>1149</width>
+        <textXOff>52</textXOff>
+        <ondown>8</ondown>
+        <onup>6</onup>
+        <onright>#defaultcontrol.onright</onright>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:b2e3e60c6fafc5e69b3d98db9fc5d4ed-->
+<!--Checksum:38cbac5c77c07f0fc39161ca2a34e756-->

@@ -5,58 +5,58 @@
       <description>Weather Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>976</posX>
-      <posY>-3</posY>
-      <width>306</width>
-      <height>75</height>
+      <posX>1464</posX>
+      <posY>-5</posY>
+      <width>459</width>
+      <height>112</height>
       <texture>homeweatheroverlaybg.png</texture>
       <visible>plugin.isenabled(World Weather)+control.hasthumb(43001)</visible>
-      <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>Weather image</description>
       <type>image</type>
       <id>43001</id>
-      <posX>987</posX>
-      <posY>9</posY>
-      <height>53</height>
-      <width>55</width>
+      <posX>1480</posX>
+      <posY>13</posY>
+      <height>79</height>
+      <width>82</width>
       <centered>yes</centered>
       <texture>#WorldWeather.TodayIconImage</texture>
       <visible>plugin.isenabled(World Weather)</visible>
-      <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>condition</description>
       <type>textbox</type>
       <id>0</id>
-      <posX>1048</posX>
-      <posY>15</posY>
-      <width>150</width>
-      <height>50</height>
+      <posX>1572</posX>
+      <posY>22</posY>
+      <width>225</width>
+      <height>75</height>
       <font>mediastream10tc</font>
       <label>#WorldWeather.TodayCondition</label>
       <visible>plugin.isenabled(World Weather)+control.hasthumb(43001)</visible>
-      <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>Temperature</description>
       <type>label</type>
       <id>0</id>
-      <posX>1250</posX>
-      <posY>22</posY>
-      <width>400</width>
-      <height>50</height>
+      <posX>1875</posX>
+      <posY>33</posY>
+      <width>600</width>
+      <height>75</height>
       <align>right</align>
       <font>mediastream14c</font>
       <label>#WorldWeather.TodayTemperature</label>
       <visible>plugin.isenabled(World Weather)+control.hasthumb(43001)</visible>
-      <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:247cc5a99427097705ef2782d3f81cc7-->
+<!--Checksum:02dcb4603fc52fcdaf5e72fb329b3d78-->

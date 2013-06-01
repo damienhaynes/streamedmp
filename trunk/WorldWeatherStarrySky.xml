@@ -7,10 +7,10 @@
       <description>TV Frame</description>
       <type>image</type>
       <id>0</id>
-      <posX>290</posX>
-      <posY>40</posY>
-      <width>690</width>
-      <height>574</height>
+      <posX>435</posX>
+      <posY>60</posY>
+      <width>1035</width>
+      <height>861</height>
       <texture>LCD.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -20,8 +20,8 @@
       <description>Starry Sky label</description>
       <type>label</type>
       <id>0</id>
-      <posX>640</posX>
-      <posY>593</posY>
+      <posX>960</posX>
+      <posY>889</posY>
       <label>#WorldWeather.TranslationStarrySky</label>
       <font>mediastream16tc</font>
       <align>center</align>
@@ -34,10 +34,10 @@
       <description>Starry Sky image</description>
       <type>image</type>
       <id>0</id>
-      <posX>385</posX>
-      <posY>86</posY>
-      <width>494</width>
-      <height>479</height>
+      <posX>577</posX>
+      <posY>129</posY>
+      <width>741</width>
+      <height>718</height>
       <texture>#WorldWeather.ImageStarrySky</texture>
       <visible>string.equals(#WorldWeather.View,Astronomy)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -45,4 +45,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:a19c04ae05b1de16902bd7454052c567-->
+<!--Checksum:09da1ff5995ec5c3ca3abd8182ab8e98-->

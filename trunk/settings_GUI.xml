@@ -3,8 +3,8 @@
   <id>1021</id>
   <defaultcontrol>3</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-	<rememberLastFocusedControl>yes</rememberLastFocusedControl>
-  <define>#header.label:#(L(5))->#(L(101021))</define>
+  <rememberLastFocusedControl>yes</rememberLastFocusedControl>
+  <define>#header.label:#(L(5))-&gt;#(L(101021))</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:3</define>
   <define>#defaultcontrol.onright:9993</define>
@@ -15,18 +15,18 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>150</posY>
-      <width>595</width>
-      <height>500</height>
+      <posX>324</posX>
+      <posY>225</posY>
+      <width>892</width>
+      <height>750</height>
       <layout>StackLayout</layout>
       <control Style="settingsmainbutton">
         <description>Skin</description>
         <type>button</type>
         <id>3</id>
         <label>300120</label>
-        <textXOff>35</textXOff>
-				<onup>18</onup>
+        <textXOff>52</textXOff>
+        <onup>18</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -34,7 +34,7 @@
         <type>button</type>
         <id>2</id>
         <label>101016</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -42,7 +42,7 @@
         <type>button</type>
         <id>4</id>
         <label>131</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -50,7 +50,7 @@
         <type>button</type>
         <id>5</id>
         <label>102900</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -58,44 +58,44 @@
         <type>button</type>
         <id>6</id>
         <label>101005</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>OnScreenDisplay</description>
         <type>button</type>
         <id>7</id>
         <label>300121</label>
-				<textXOff>35</textXOff>
-				<onright>#defaultcontrol.onright</onright>
+        <textXOff>52</textXOff>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>Skip steps</description>
         <type>button</type>
         <id>8</id>
         <label>6024</label>
-				<textXOff>35</textXOff>
-				<onright>#defaultcontrol.onright</onright>
+        <textXOff>52</textXOff>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmaincheckbutton">
+      <control Style="settingsmaincheckbutton">
         <description>File Menu</description>
         <type>checkbutton</type>
         <id>16</id>
         <label>500</label>
-				<textXOff>35</textXOff>
-				<onleft>16</onleft>
-				<onright>#defaultcontrol.onright</onright>
+        <textXOff>52</textXOff>
+        <onleft>16</onleft>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>File menu pin button</description>
         <type>button</type>
         <id>18</id>
         <label>300059</label>
-				<textXOff>35</textXOff>
-				<onright>#defaultcontrol.onright</onright>
-				<ondown>3</ondown>
+        <textXOff>52</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+        <ondown>3</ondown>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:b2e3e60c6fafc5e69b3d98db9fc5d4ed-->
+<!--Checksum:ab405579f03d44e908f9b46ba5e3e36a-->

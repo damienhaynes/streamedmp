@@ -55,10 +55,10 @@ This file should contain the details view
       <description>DEFAULT BACKGROUND WHEN FANART NOT AVAILABLE</description>
       <id>0</id>
       <type>image</type>
-      <posX>445</posX>
+      <posX>667</posX>
       <posY>0</posY>
-      <width>860</width>
-      <height>508</height>
+      <width>1290</width>
+      <height>762</height>
       <texture>SMPBackgrounds\music\default.jpg</texture>
       <visible>[string.equals(#fanarthandler.music.backdrop1.any,)+string.equals(#fanarthandler.music.backdrop2.any,)+string.equals(#fanarthandler.music.backdrop1.play,)+string.equals(#fanarthandler.music.backdrop2.play,)] | !plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
@@ -68,10 +68,10 @@ This file should contain the details view
       <description>FANART Random Image 1</description>
       <id>0</id>
       <type>image</type>
-      <posX>445</posX>
+      <posX>667</posX>
       <posY>0</posY>
-      <width>860</width>
-      <height>508</height>
+      <width>1290</width>
+      <height>762</height>
       <texture>#fanarthandler.music.backdrop1.any</texture>
       <visible>control.isvisible(91919297)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
@@ -81,10 +81,10 @@ This file should contain the details view
       <description>FANART Random Image 2</description>
       <id>0</id>
       <type>image</type>
-      <posX>445</posX>
+      <posX>667</posX>
       <posY>0</posY>
-      <width>860</width>
-      <height>508</height>
+      <width>1290</width>
+      <height>762</height>
       <texture>#fanarthandler.music.backdrop2.any</texture>
       <visible>control.isvisible(91919298)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
@@ -94,10 +94,10 @@ This file should contain the details view
       <description>FANART IMAGE 1</description>
       <id>0</id>
       <type>image</type>
-      <posX>445</posX>
+      <posX>667</posX>
       <posY>0</posY>
-      <width>860</width>
-      <height>508</height>
+      <width>1290</width>
+      <height>762</height>
       <texture>#fanarthandler.music.backdrop1.play</texture>
       <visible>control.isvisible(91919295)+control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
@@ -107,10 +107,10 @@ This file should contain the details view
       <description>FANART IMAGE 2</description>
       <id>0</id>
       <type>image</type>
-      <posX>445</posX>
+      <posX>667</posX>
       <posY>0</posY>
-      <width>860</width>
-      <height>508</height>
+      <width>1290</width>
+      <height>762</height>
       <texture>#fanarthandler.music.backdrop2.play</texture>
       <visible>control.isvisible(91919296)+control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
@@ -120,22 +120,22 @@ This file should contain the details view
       <description>music overlay image</description>
       <type>image</type>
       <id>0</id>
-      <posX>20</posX>
-      <posY>25</posY>
-      <width>375</width>
-      <height>375</height>
+      <posX>30</posX>
+      <posY>37</posY>
+      <width>562</width>
+      <height>562</height>
       <texture>#overlay.album</texture>
     </control>
     <control>
       <description>music overlay image</description>
       <type>image</type>
       <id>0</id>
-      <posX>430</posX>
+      <posX>645</posX>
       <posY>0</posY>
-      <width>850</width>
-      <height>530</height>
+      <width>1275</width>
+      <height>795</height>
       <texture>#overlay.fanart</texture>
     </control>
   </controls>
 </window>
-<!--Checksum:a67d1a2d384d3604a3285d9da21d93c1-->
+<!--Checksum:e07303c6d94ec50bcbd309b19cada8f8-->

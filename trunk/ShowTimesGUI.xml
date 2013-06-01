@@ -14,8 +14,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#default.image</texture>
     </control>
     <control>
@@ -25,8 +25,8 @@
       <posX>0</posX>
       <posY>0</posY>
       <texture>#st_backdrop</texture>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
     </control>
     <!-- Fanart Overlays -->
     <control>
@@ -44,8 +44,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>51</height>
+      <width>1920</width>
+      <height>76</height>
       <texture>overlay_topbar.png</texture>
       <visible>!control.isvisible(24)+facadeview.filmstrip</visible>
     </control>
@@ -55,8 +55,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>filmstrip_overlay.png</texture>
       <visible>control.isvisible(24)|facadeview.filmstrip</visible>
     </control>
@@ -65,10 +65,10 @@
       <description>Top Title Extension Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>381</posX>
-      <posY>11</posY>
-      <width>486</width>
-      <height>35</height>
+      <posX>571</posX>
+      <posY>16</posY>
+      <width>729</width>
+      <height>52</height>
       <texture>tvtitlebgshort.png</texture>
       <visible>!control.isvisible(24)+!string.equals(#st_extra,)+!string.contains(#st_extra,st_extra)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -78,9 +78,9 @@
       <type>fadelabel</type>
       <label>#st_extra</label>
       <id>0</id>
-      <posX>839</posX>
-      <posY>14</posY>
-      <width>320</width>
+      <posX>1258</posX>
+      <posY>21</posY>
+      <width>480</width>
       <align>right</align>
       <font>mediastream12c</font>
       <scrollStartDelaySec>30</scrollStartDelaySec>
@@ -91,26 +91,26 @@
       <description>Top Title Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
       <visible>!control.isvisible(24)</visible>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     <control>
       <type>fadelabel</type>
       <description>Top Title</description>
       <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>#currentmodule</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
       <visible>!control.isvisible(24)</visible>
     </control>
     <!-- ShowTimes Imports -->
@@ -123,4 +123,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:d9a752e860a82f1373352cb63ceeab84-->
+<!--Checksum:430b537d0813403421a7c637ff9c423d-->

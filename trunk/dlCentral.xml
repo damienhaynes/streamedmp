@@ -16,24 +16,24 @@
       <description>Visible when in the main/about view mode.</description>
       <type>label</type>
       <id>101</id>
-      <posX>-50</posX>
-      <posY>-50</posY>
+      <posX>-75</posX>
+      <posY>-75</posY>
       <width>0</width>
     </control>
     <control>
       <description>Visible when in the search mode.</description>
       <type>label</type>
       <id>102</id>
-      <posX>-50</posX>
-      <posY>-50</posY>
+      <posX>-75</posX>
+      <posY>-75</posY>
       <width>0</width>
     </control>
     <control>
       <description>Visible when in the status mode.</description>
       <type>label</type>
       <id>103</id>
-      <posX>-50</posX>
-      <posY>-50</posY>
+      <posX>-75</posX>
+      <posY>-75</posY>
       <width>0</width>
     </control>
     <!-- Backgrounds -->
@@ -43,8 +43,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>hover_my plugins.png</texture>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
@@ -54,8 +54,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#dlCentral.Search.Media.FanArt</texture>
       <animation effect="fade" time="1">WindowClose</animation>
     </control>
@@ -63,10 +63,10 @@
       <description>Fanart Overlay</description>
       <type>image</type>
       <id>0</id>
-      <posX>-2</posX>
+      <posX>-3</posX>
       <posY>0</posY>
-      <width>1284</width>
-      <height>722</height>
+      <width>1926</width>
+      <height>1083</height>
       <texture>mainoverlay.png</texture>
       <visible>!control.isvisible(103)</visible>
     </control>
@@ -76,8 +76,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>51</height>
+      <width>1920</width>
+      <height>76</height>
       <texture>overlay_topbar.png</texture>
       <visible>control.isvisible(103)</visible>
     </control>
@@ -86,13 +86,13 @@
       <description>Top Title Extension Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>431</posX>
-      <posY>11</posY>
-      <width>456</width>
-      <height>36</height>
+      <posX>646</posX>
+      <posY>16</posY>
+      <width>684</width>
+      <height>54</height>
       <texture>tvtitlebg.png</texture>
       <visible>control.isvisible(102)+!string.equals(#dlCentral.Search.SearchType.Type,NONE)</visible>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">Visible</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="300">Visible</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -100,13 +100,13 @@
       <description>Top Title Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">Visible</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">Hidden</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="300">Visible</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="600" delay="0">Hidden</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -114,14 +114,14 @@
       <type>fadelabel</type>
       <description>Top Title</description>
       <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <label>#dlCentral.Header.Label</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">Visible</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">Hidden</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="300">Visible</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="600" delay="0">Hidden</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -136,4 +136,4 @@
     <import>common.overlays.xml</import>
   </controls>
 </window>
-<!--Checksum:d6e02a81b2430936551f976a08c2daff-->
+<!--Checksum:e01bc662fec1bde6c5a5217429b088a6-->

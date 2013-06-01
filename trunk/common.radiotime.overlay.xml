@@ -10,7 +10,7 @@ same location everywhere
       <description>dummy (visible when music is playing)</description>
       <type>label</type>
       <id>3337</id>
-      <posX>2000</posX>
+      <posX>3000</posX>
       <label>#Play.Current.Album</label>
       <visible>player.hasmedia+control.hastext(3337)</visible>
     </control>
@@ -18,7 +18,7 @@ same location everywhere
       <description>dummy (visible when there is a next track)</description>
       <type>label</type>
       <id>3338</id>
-      <posX>1800</posX>
+      <posX>2700</posX>
       <label>#Play.Next.Title</label>
       <visible>player.hasmedia+control.hastext(3338)</visible>
     </control>
@@ -27,9 +27,9 @@ same location everywhere
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>60</posY>
-      <width>512</width>
-      <height>152</height>
+      <posY>90</posY>
+      <width>768</width>
+      <height>228</height>
       <texture>dialogprogressbg.png</texture>
       <visible>player.hasmedia</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
@@ -40,10 +40,10 @@ same location everywhere
       <description>music logo</description>
       <type>image</type>
       <id>0</id>
-      <posX>18</posX>
-      <posY>78</posY>
-      <width>114</width>
-      <height>114</height>
+      <posX>27</posX>
+      <posY>117</posY>
+      <width>171</width>
+      <height>171</height>
       <keepaspectratio>no</keepaspectratio>
       <centered>yes</centered>
       <zoom>yes</zoom>
@@ -56,10 +56,10 @@ same location everywhere
       <description>music logo</description>
       <type>image</type>
       <id>7220</id>
-      <posX>18</posX>
-      <posY>78</posY>
-      <width>114</width>
-      <height>114</height>
+      <posX>27</posX>
+      <posY>117</posY>
+      <width>171</width>
+      <height>171</height>
       <keepaspectratio>no</keepaspectratio>
       <centered>yes</centered>
       <zoom>yes</zoom>
@@ -73,10 +73,10 @@ same location everywhere
       <description>music logo</description>
       <type>image</type>
       <id>7230</id>
-      <posX>18</posX>
-      <posY>78</posY>
-      <width>114</width>
-      <height>114</height>
+      <posX>27</posX>
+      <posY>117</posY>
+      <width>171</width>
+      <height>171</height>
       <keepaspectratio>no</keepaspectratio>
       <centered>yes</centered>
       <zoom>no</zoom>
@@ -89,10 +89,10 @@ same location everywhere
       <description>Music logo Animation</description>
       <type>animation</type>
       <id>7210</id>
-      <posX>18</posX>
-      <posY>78</posY>
-      <width>114</width>
-      <height>114</height>
+      <posX>27</posX>
+      <posY>117</posY>
+      <width>171</width>
+      <height>171</height>
       <!-- Updated by setup (Ensure ID is unique)-->
       <textures>#Play.Current.Thumb;C:\ProgramData\team mediaportal\mediaportal\thumbs\Music\Artists\#Play.Current.ArtistL.jpg</textures>
       <Duration>0:0:45</Duration>
@@ -109,10 +109,10 @@ same location everywhere
       <description>Selectable Button</description>
       <type>button</type>
       <id>1701</id>
-      <posX>13</posX>
-      <posY>73</posY>
-      <width>124</width>
-      <height>124</height>
+      <posX>19</posX>
+      <posY>109</posY>
+      <width>186</width>
+      <height>186</height>
       <textureFocus>thumbborder5.png</textureFocus>
       <textureNoFocus>-</textureNoFocus>
       <!--<action>18</action>-->
@@ -126,10 +126,10 @@ same location everywhere
       <description>artist info label</description>
       <type>fadelabel</type>
       <id>0</id>
-      <width>340</width>
-      <height>40</height>
-      <posX>143</posX>
-      <posY>80</posY>
+      <width>510</width>
+      <height>60</height>
+      <posX>214</posX>
+      <posY>120</posY>
       <label>#Play.Current.Artist</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream12tc</font>
@@ -141,10 +141,10 @@ same location everywhere
       <description>title info label</description>
       <type>fadelabel</type>
       <id>0</id>
-      <width>340</width>
-      <height>40</height>
-      <posX>143</posX>
-      <posY>104</posY>
+      <width>510</width>
+      <height>60</height>
+      <posX>214</posX>
+      <posY>155</posY>
       <label>#Play.Current.Title</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
@@ -156,10 +156,10 @@ same location everywhere
       <description>album info label</description>
       <type>fadelabel</type>
       <id>0</id>
-      <width>340</width>
-      <height>40</height>
-      <posX>143</posX>
-      <posY>123</posY>
+      <width>510</width>
+      <height>60</height>
+      <posX>214</posX>
+      <posY>184</posY>
       <label>#RadioTime.Play.Station</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
@@ -171,10 +171,10 @@ same location everywhere
       <description>play time / duration label</description>
       <type>label</type>
       <id>0</id>
-      <width>340</width>
-      <height>40</height>
-      <posX>143</posX>
-      <posY>141</posY>
+      <width>510</width>
+      <height>60</height>
+      <posX>214</posX>
+      <posY>211</posY>
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
@@ -186,10 +186,10 @@ same location everywhere
       <description>Format</description>
       <type>label</type>
       <id>0</id>
-      <width>300</width>
-      <height>40</height>
-      <posX>143</posX>
-      <posY>167</posY>
+      <width>450</width>
+      <height>60</height>
+      <posX>214</posX>
+      <posY>250</posY>
       <label>Stream Format: #RadioTime.Play.Format</label>
       <visible>player.hasmedia+control.isvisible(3337)</visible>
       <font>mediastream9c</font>
@@ -198,4 +198,4 @@ same location everywhere
     </control>
   </controls>
 </window>
-<!--Checksum:d215248c29583c014cd9762fbd3bb43a-->
+<!--Checksum:a93e47e44c84b6cb91c323348995f551-->

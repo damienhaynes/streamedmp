@@ -9,18 +9,18 @@
       <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
       <animation effect="fade" start="0" end="100" delay="700" time="500" reversible="false">Visible</animation>
       <animation effect="fade" start="0" end="100" time="4000" reversible="false">WindowOpen</animation>
-      <animation effect="slide" end="300,0" time="1500" acceleration="-0.1" reversible="false">Hidden</animation>
-      <animation effect="slide" start="300,0" end="0,0" time="1000" acceleration="-0.1" reversible="false">Visible</animation>
-      <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" end="450,0" time="1500" acceleration="-0.1" reversible="false">Hidden</animation>
+      <animation effect="slide" start="450,0" end="0,0" time="1000" acceleration="-0.1" reversible="false">Visible</animation>
+      <animation effect="slide" start="600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <control>
         <description>Movie 1 BG</description>
-        <posX>976</posX>
-        <posY>50</posY>
+        <posX>1464</posX>
+        <posY>75</posY>
         <type>image</type>
         <id>0</id>
-        <width>306</width>
-        <height>320</height>
+        <width>459</width>
+        <height>480</height>
         <texture>recentsummoverlaybg.png</texture>
         <colordiffuse>EEFFFFFF</colordiffuse>
       </control>
@@ -28,9 +28,9 @@
         <description>Header label</description>
         <type>label</type>
         <id>0</id>
-        <posX>995</posX>
-        <posY>70</posY>
-        <width>258</width>
+        <posX>1492</posX>
+        <posY>105</posY>
+        <width>387</width>
         <label>#StreamedMP.LatestMovies</label>
         <font>mediastream10tc</font>
         <textcolor>White</textcolor>
@@ -39,9 +39,9 @@
         <description>Movie 1 Title</description>
         <type>label</type>
         <id>0</id>
-        <posX>995</posX>
-        <posY>245</posY>
-        <width>258</width>
+        <posX>1492</posX>
+        <posY>367</posY>
+        <width>387</width>
         <label>#StreamedMP.recentlyAdded.movie1.title</label>
         <textcolor>White</textcolor>
         <font>mediastream10tc</font>
@@ -51,9 +51,9 @@
         <description>Movie 1 Runtime</description>
         <type>label</type>
         <id>0</id>
-        <posX>996</posX>
-        <posY>262</posY>
-        <width>257</width>
+        <posX>1494</posX>
+        <posY>393</posY>
+        <width>385</width>
         <label>#StreamedMP.recentlyAdded.movie1.runtime</label>
         <font>mediastream10c</font>
         <textcolor>White</textcolor>
@@ -62,9 +62,9 @@
         <description>Movie 1 Certification</description>
         <type>fadelabel</type>
         <id>0</id>
-        <posX>1180</posX>
-        <posY>262</posY>
-        <width>100</width>
+        <posX>1770</posX>
+        <posY>393</posY>
+        <width>150</width>
         <label>#StreamedMP.recentlyAdded.movie1.certification</label>
         <font>mediastream10c</font>
         <textcolor>White</textcolor>
@@ -76,20 +76,20 @@
         <description>Movie 1 Star Rating Image</description>
         <type>image</type>
         <id>0</id>
-        <posX>1190</posX>
-        <posY>265</posY>
-        <width>70</width>
-        <height>13</height>
+        <posX>1785</posX>
+        <posY>397</posY>
+        <width>105</width>
+        <height>19</height>
         <texture>star#StreamedMP.recentlyAdded.movie1.score.png</texture>
       </control>
       <control>
         <description>Movie 1 thumb/fanart</description>
         <type>image</type>
         <id>0</id>
-        <posX>995</posX>
-        <posY>92</posY>
-        <width>268</width>
-        <height>151</height>
+        <posX>1492</posX>
+        <posY>138</posY>
+        <width>402</width>
+        <height>226</height>
         <keepaspectratio>true</keepaspectratio>
         <texture>#StreamedMP.recentlyAdded.movie1.fanart</texture>
         <shouldCache>true</shouldCache>
@@ -103,17 +103,17 @@
       <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
       <animation effect="fade" start="0" end="100" delay="700" time="500" reversible="false">Visible</animation>
       <animation effect="fade" start="0" end="100" time="4000" reversible="false">WindowOpen</animation>
-      <animation effect="slide" end="300,0" time="1500" acceleration="-0.1" reversible="false">Hidden</animation>
-      <animation effect="slide" start="300,0" end="0,0" time="1000" acceleration="-0.1" reversible="false">Visible</animation>
-      <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" end="450,0" time="1500" acceleration="-0.1" reversible="false">Hidden</animation>
+      <animation effect="slide" start="450,0" end="0,0" time="1000" acceleration="-0.1" reversible="false">Visible</animation>
+      <animation effect="slide" start="600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <control>
         <description>Movie 2 Title</description>
         <type>label</type>
         <id>0</id>
-        <posX>995</posX>
-        <posY>280</posY>
-        <width>258</width>
+        <posX>1492</posX>
+        <posY>420</posY>
+        <width>387</width>
         <label>#StreamedMP.recentlyAdded.movie2.title</label>
         <font>mediastream10tc</font>
         <textcolor>White</textcolor>
@@ -123,9 +123,9 @@
         <description>Movie 2 Runtime</description>
         <type>label</type>
         <id>0</id>
-        <posX>996</posX>
-        <posY>297</posY>
-        <width>257</width>
+        <posX>1494</posX>
+        <posY>445</posY>
+        <width>385</width>
         <label>#StreamedMP.recentlyAdded.movie2.runtime</label>
         <font>mediastream10c</font>
         <textcolor>White</textcolor>
@@ -134,9 +134,9 @@
         <description>Movie 2 Certification</description>
         <type>fadelabel</type>
         <id>0</id>
-        <posX>1180</posX>
-        <posY>297</posY>
-        <width>100</width>
+        <posX>1770</posX>
+        <posY>445</posY>
+        <width>150</width>
         <label>#StreamedMP.recentlyAdded.movie2.certification</label>
         <font>mediastream10c</font>
         <textcolor>White</textcolor>
@@ -148,10 +148,10 @@
         <description>Movie 2 Star Rating Image</description>
         <type>image</type>
         <id>0</id>
-        <posX>1190</posX>
-        <posY>301</posY>
-        <width>70</width>
-        <height>13</height>
+        <posX>1785</posX>
+        <posY>451</posY>
+        <width>105</width>
+        <height>19</height>
         <texture>star#StreamedMP.recentlyAdded.movie2.score.png</texture>
       </control>
     </control>
@@ -163,16 +163,16 @@
       <animation effect="fade" start="100" end="0" time="250" reversible="false">Hidden</animation>
       <animation effect="fade" start="0" end="100" delay="700" time="500" reversible="false">Visible</animation>
       <animation effect="fade" start="0" end="100" time="4000" reversible="false">WindowOpen</animation>
-      <animation effect="slide" end="300,0" time="1500" acceleration="-0.1" reversible="false">Hidden</animation>
-      <animation effect="slide" start="300,0" end="0,0" time="1000" acceleration="-0.1" reversible="false">Visible</animation>
-      <animation effect="slide" start="400,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="400,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" end="450,0" time="1500" acceleration="-0.1" reversible="false">Hidden</animation>
+      <animation effect="slide" start="450,0" end="0,0" time="1000" acceleration="-0.1" reversible="false">Visible</animation>
+      <animation effect="slide" start="600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
       <control>
         <type>label</type>
         <id>0</id>
-        <posX>995</posX>
-        <posY>315</posY>
-        <width>258</width>
+        <posX>1492</posX>
+        <posY>472</posY>
+        <width>387</width>
         <label>#StreamedMP.recentlyAdded.movie3.title</label>
         <textcolor>White</textcolor>
         <font>mediastream10tc</font>
@@ -182,9 +182,9 @@
         <description>Movie 3 Runtime</description>
         <type>label</type>
         <id>0</id>
-        <posX>996</posX>
-        <posY>332</posY>
-        <width>257</width>
+        <posX>1494</posX>
+        <posY>498</posY>
+        <width>385</width>
         <label>#StreamedMP.recentlyAdded.movie3.runtime</label>
         <font>mediastream10c</font>
         <textcolor>White</textcolor>
@@ -193,9 +193,9 @@
         <description>Movie 3 Certification</description>
         <type>fadelabel</type>
         <id>0</id>
-        <posX>1180</posX>
-        <posY>332</posY>
-        <width>100</width>
+        <posX>1770</posX>
+        <posY>498</posY>
+        <width>150</width>
         <label>#StreamedMP.recentlyAdded.movie3.certification</label>
         <font>mediastream10c</font>
         <textcolor>White</textcolor>
@@ -207,13 +207,13 @@
         <description>Movie 3 Star Rating Image</description>
         <type>image</type>
         <id>0</id>
-        <posX>1190</posX>
-        <posY>335</posY>
-        <width>70</width>
-        <height>13</height>
+        <posX>1785</posX>
+        <posY>502</posY>
+        <width>105</width>
+        <height>19</height>
         <texture>star#StreamedMP.recentlyAdded.movie3.score.png</texture>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:9bf657119ca719412c5313393f804b0a-->
+<!--Checksum:ea818326626e1f27a61071f9a80aa86e-->

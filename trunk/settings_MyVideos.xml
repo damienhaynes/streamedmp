@@ -3,10 +3,10 @@
   <id>703</id>
   <defaultcontrol>42</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-	<rememberLastFocusedControl>yes</rememberLastFocusedControl>
-  <define>#header.label:#(L(5))->#(L(100703))</define>
+  <rememberLastFocusedControl>yes</rememberLastFocusedControl>
+  <define>#header.label:#(L(5))-&gt;#(L(100703))</define>
   <define>#header.hover:hover_settings.png</define>
-	<define>#defaultcontrol:42</define>
+  <define>#defaultcontrol:42</define>
   <define>#defaultcontrol.onright:9995</define>
   <controls>
     <import>common.settings.xml</import>
@@ -15,18 +15,18 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>150</posY>
-      <width>595</width>
-      <height>500</height>
+      <posX>324</posX>
+      <posY>225</posY>
+      <width>892</width>
+      <height>750</height>
       <layout>StackLayout</layout>
       <control Style="settingsmainbutton">
         <description>Playlist</description>
         <type>button</type>
         <id>42</id>
         <label>851</label>
-        <textXOff>35</textXOff>
-				<onup>46</onup>
+        <textXOff>52</textXOff>
+        <onup>46</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmaincheckbutton">
@@ -34,8 +34,8 @@
         <type>checkbutton</type>
         <id>31</id>
         <label>1196</label>
-				<onleft>31</onleft>
-        <textXOff>35</textXOff>
+        <onleft>31</onleft>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -43,7 +43,7 @@
         <type>button</type>
         <id>34</id>
         <label>300192</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -51,7 +51,7 @@
         <type>button</type>
         <id>40</id>
         <label>300071</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -59,39 +59,39 @@
         <type>button</type>
         <id>41</id>
         <label>300161</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>Extensions</description>
         <type>button</type>
         <id>35</id>
         <label>300162</label>
-				<textXOff>35</textXOff>
-				<onright>#defaultcontrol.onright</onright>
+        <textXOff>52</textXOff>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>Video</description>
         <type>button</type>
         <id>24</id>
         <label>2134</label>
-				<textXOff>35</textXOff>
-				<onright>#defaultcontrol.onright</onright>
+        <textXOff>52</textXOff>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>Audio</description>
         <type>button</type>
         <id>25</id>
         <label>2135</label>
-				<textXOff>35</textXOff>
-				<onright>#defaultcontrol.onright</onright>
+        <textXOff>52</textXOff>
+        <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmaincheckbutton">
+      <control Style="settingsmaincheckbutton">
         <description>Auto Decoder Settings On/Off</description>
         <type>checkbutton</type>
         <id>44</id>
         <label>1321</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmaincheckbutton">
@@ -99,7 +99,7 @@
         <type>checkbutton</type>
         <id>45</id>
         <label>1322</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmaincheckbutton">
@@ -107,11 +107,11 @@
         <type>checkbutton</type>
         <id>46</id>
         <label>1323</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
         <ondown>42</ondown>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:b2e3e60c6fafc5e69b3d98db9fc5d4ed-->
+<!--Checksum:2fd2b91b0469b31bd96084f0cc9137e1-->

@@ -6,66 +6,66 @@
       <type>image</type>
       <description>BG</description>
       <id>0</id>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#header.hover</texture>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>798</posX>
+      <posX>1197</posX>
       <posY>0</posY>
-      <width>305</width>
-      <height>720</height>
+      <width>457</width>
+      <height>1080</height>
       <texture>homebladesub.png</texture>
-      <animation effect="slide" time="300" start="-1054,0">windowopen</animation>
+      <animation effect="slide" time="300" start="-1581,0">windowopen</animation>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>209</posX>
+      <posX>313</posX>
       <posY>0</posY>
-      <width>631</width>
-      <height>720</height>
+      <width>946</width>
+      <height>1080</height>
       <texture>settingsbg.png</texture>
-      <animation effect="slide" time="200" start="-840,0">windowopen</animation>
+      <animation effect="slide" time="200" start="-1260,0">windowopen</animation>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>-620</posX>
+      <posX>-930</posX>
       <posY>0</posY>
-      <width>846</width>
-      <height>720</height>
+      <width>1269</width>
+      <height>1080</height>
       <texture>homebladeleft.png</texture>
-      <animation effect="slide" time="100" start="-846,0">windowopen</animation>
+      <animation effect="slide" time="100" start="-1269,0">windowopen</animation>
     </control>
     <control>
       <description>right overlay</description>
       <type>image</type>
       <id>0</id>
-      <posX>1045</posX>
+      <posX>1567</posX>
       <posY>0</posY>
-      <width>235</width>
-      <height>720</height>
+      <width>352</width>
+      <height>1080</height>
       <texture>homerightoverlay.png</texture>
       <visible>!window.istopmost(14)+!window.istopmost(31)+!window.istopmost(12)</visible>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>850</posX>
-      <posY>100</posY>
-      <width>100</width>
-      <height>100</height>
+      <posX>1275</posX>
+      <posY>150</posY>
+      <width>150</width>
+      <height>150</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>Logos\Trakt.png</texture>
       <animation effect="fade" time="200" delay="300">windowopen</animation>
@@ -75,17 +75,17 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="300">windowopen</animation>
-      <posX>834</posX>
-      <posY>201</posY>
-      <width>255</width>
-      <height>379</height>
+      <posX>1251</posX>
+      <posY>301</posY>
+      <width>382</width>
+      <height>568</height>
       <layout>StackLayout(0, Vertical, true)</layout>
       <visible>!string.equals(#Trakt.Settings.Account.Dialog.Visible,true)</visible>
       <control Style="settingsbutton">
         <description>Trakt Calendar</description>
         <type>button</type>
         <id>9991</id>
-        <width>255</width>
+        <width>382</width>
         <label>#Trakt.Translation.Calendar.Label</label>
         <hyperlink>87259</hyperlink>
         <onup>9997</onup>
@@ -95,7 +95,7 @@
         <description>Friends</description>
         <type>button</type>
         <id>9992</id>
-        <width>255</width>
+        <width>382</width>
         <label>#Trakt.Translation.Friends.Label</label>
         <hyperlink>87260</hyperlink>
         <onleft>#defaultcontrol</onleft>
@@ -104,7 +104,7 @@
         <description>Recommendations</description>
         <type>button</type>
         <id>9993</id>
-        <width>255</width>
+        <width>382</width>
         <label>#Trakt.Translation.Recommendations.Label</label>
         <hyperlink>87261</hyperlink>
         <onleft>#defaultcontrol</onleft>
@@ -113,7 +113,7 @@
         <description>Trending</description>
         <type>button</type>
         <id>9994</id>
-        <width>255</width>
+        <width>382</width>
         <label>#Trakt.Translation.Trending.Label</label>
         <hyperlink>87264</hyperlink>
         <onleft>#defaultcontrol</onleft>
@@ -122,7 +122,7 @@
         <description>Watch List</description>
         <type>button</type>
         <id>9995</id>
-        <width>255</width>
+        <width>382</width>
         <label>#Trakt.Translation.WatchList.Label</label>
         <hyperlink>87267</hyperlink>
         <onleft>#defaultcontrol</onleft>
@@ -131,7 +131,7 @@
         <description>Lists</description>
         <type>button</type>
         <id>9996</id>
-        <width>255</width>
+        <width>382</width>
         <label>#Trakt.Translation.Lists.Label</label>
         <hyperlink>87275</hyperlink>
         <onleft>#defaultcontrol</onleft>
@@ -140,7 +140,7 @@
         <description>Settings</description>
         <type>button</type>
         <id>9997</id>
-        <width>255</width>
+        <width>382</width>
         <label>#Trakt.Translation.Settings.Label</label>
         <hyperlink>87271</hyperlink>
         <onleft>#defaultcontrol</onleft>
@@ -150,8 +150,8 @@
       <description>Title Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>250</posX>
-      <posY>25</posY>
+      <posX>375</posX>
+      <posY>37</posY>
       <label>#header.label</label>
       <font>mediastream16c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -159,4 +159,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:b6bd5df7b9207f5ddb6355a0f4663971-->
+<!--Checksum:ba391ebe68d3d445ef2de4164f4859b8-->

@@ -6,10 +6,10 @@
       <description>Network Device 0 Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>310</posX>
-      <posY>230</posY>
-      <width>64</width>
-      <height>64</height>
+      <posX>465</posX>
+      <posY>345</posY>
+      <width>96</width>
+      <height>96</height>
       <texture>#PowerControl.NetworkDevice0TypeImage</texture>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
@@ -18,8 +18,8 @@
       <description>Network Device 0 Description</description>
       <type>label</type>
       <id>1</id>
-      <posX>380</posX>
-      <posY>235</posY>
+      <posX>570</posX>
+      <posY>352</posY>
       <label>#PowerControl.NetworkDevice0Type #PowerControl.NetworkDevice0Description</label>
       <font>mediastream12tc</font>
       <animation effect="fade" time="300">WindowOpen</animation>
@@ -29,8 +29,8 @@
       <description>Network Device 0 State</description>
       <type>label</type>
       <id>1</id>
-      <posX>1260</posX>
-      <posY>255</posY>
+      <posX>1890</posX>
+      <posY>382</posY>
       <label>(#PowerControl.NetworkDevice0State)</label>
       <font>mediastream10tc</font>
       <align>right</align>
@@ -41,10 +41,10 @@
       <description>Shutdown button</description>
       <type>button</type>
       <id>10</id>
-      <posX>380</posX>
-      <posY>260</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>570</posX>
+      <posY>390</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_shutdown_focus.png</textureFocus>
       <textureNoFocus>button_shutdown_nofocus.png</textureNoFocus>
       <onleft>2</onleft>
@@ -58,10 +58,10 @@
       <description>Hibernate button</description>
       <type>button</type>
       <id>11</id>
-      <posX>410</posX>
-      <posY>260</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>615</posX>
+      <posY>390</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_hibernate_focus.png</textureFocus>
       <textureNoFocus>button_hibernate_nofocus.png</textureNoFocus>
       <onleft>10</onleft>
@@ -75,10 +75,10 @@
       <description>Standby button</description>
       <type>button</type>
       <id>12</id>
-      <posX>440</posX>
-      <posY>260</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>660</posX>
+      <posY>390</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_standby_focus.png</textureFocus>
       <textureNoFocus>button_standby_nofocus.png</textureNoFocus>
       <onleft>11</onleft>
@@ -92,10 +92,10 @@
       <description>Restart button</description>
       <type>button</type>
       <id>13</id>
-      <posX>470</posX>
-      <posY>260</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>705</posX>
+      <posY>390</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_restart_focus.png</textureFocus>
       <textureNoFocus>button_restart_nofocus.png</textureNoFocus>
       <onleft>12</onleft>
@@ -109,10 +109,10 @@
       <description>Wakeup button</description>
       <type>button</type>
       <id>14</id>
-      <posX>500</posX>
-      <posY>260</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>750</posX>
+      <posY>390</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_wakeup_focus.png</textureFocus>
       <textureNoFocus>button_wakeup_nofocus.png</textureNoFocus>
       <onleft>13</onleft>
@@ -126,25 +126,25 @@
       <description>Network Device 0 Alive</description>
       <type>image</type>
       <id>1</id>
-      <posX>315</posX>
-      <posY>270</posY>&gt;
-		  <texture>#PowerControl.NetworkDevice0AliveImage</texture><width>20</width><height>20</height><animation effect="fade" time="300">WindowOpen</animation><animation effect="fade" time="300">WindowClose</animation></control>
+      <posX>472</posX>
+      <posY>405</posY>&gt;
+		  <texture>#PowerControl.NetworkDevice0AliveImage</texture><width>30</width><height>30</height><animation effect="fade" time="300">WindowOpen</animation><animation effect="fade" time="300">WindowClose</animation></control>
     <control>
       <description>Separator Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>200</posX>
-      <posY>310</posY>&gt;
-		  <texture>seperator.png</texture><width>1050</width><height>3</height><animation effect="fade" time="300">WindowOpen</animation><animation effect="fade" time="300">WindowClose</animation></control>
+      <posX>300</posX>
+      <posY>465</posY>&gt;
+		  <texture>seperator.png</texture><width>1575</width><height>4</height><animation effect="fade" time="300">WindowOpen</animation><animation effect="fade" time="300">WindowClose</animation></control>
     <!-- *** Network Device 1 *** -->
     <control>
       <description>Network Device 1 Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>310</posX>
-      <posY>330</posY>
-      <width>64</width>
-      <height>64</height>
+      <posX>465</posX>
+      <posY>495</posY>
+      <width>96</width>
+      <height>96</height>
       <texture>#PowerControl.NetworkDevice1TypeImage</texture>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
@@ -153,8 +153,8 @@
       <description>Network Device 1 Description</description>
       <type>label</type>
       <id>1</id>
-      <posX>380</posX>
-      <posY>335</posY>
+      <posX>570</posX>
+      <posY>502</posY>
       <label>#PowerControl.NetworkDevice1Type #PowerControl.NetworkDevice1Description</label>
       <font>mediastream12tc</font>
       <animation effect="fade" time="300">WindowOpen</animation>
@@ -164,8 +164,8 @@
       <description>Network Device 1 State</description>
       <type>label</type>
       <id>1</id>
-      <posX>1260</posX>
-      <posY>355</posY>
+      <posX>1890</posX>
+      <posY>532</posY>
       <label>(#PowerControl.NetworkDevice1State)</label>
       <font>mediastream10tc</font>
       <align>right</align>
@@ -176,10 +176,10 @@
       <description>Shutdown button</description>
       <type>button</type>
       <id>20</id>
-      <posX>380</posX>
-      <posY>360</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>570</posX>
+      <posY>540</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_shutdown_focus.png</textureFocus>
       <textureNoFocus>button_shutdown_nofocus.png</textureNoFocus>
       <onleft>2</onleft>
@@ -193,10 +193,10 @@
       <description>Hibernate button</description>
       <type>button</type>
       <id>21</id>
-      <posX>410</posX>
-      <posY>360</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>615</posX>
+      <posY>540</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_hibernate_focus.png</textureFocus>
       <textureNoFocus>button_hibernate_nofocus.png</textureNoFocus>
       <onleft>20</onleft>
@@ -210,10 +210,10 @@
       <description>Standby button</description>
       <type>button</type>
       <id>22</id>
-      <posX>440</posX>
-      <posY>360</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>660</posX>
+      <posY>540</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_standby_focus.png</textureFocus>
       <textureNoFocus>button_standby_nofocus.png</textureNoFocus>
       <onleft>21</onleft>
@@ -227,10 +227,10 @@
       <description>Restart button</description>
       <type>button</type>
       <id>23</id>
-      <posX>470</posX>
-      <posY>360</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>705</posX>
+      <posY>540</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_restart_focus.png</textureFocus>
       <textureNoFocus>button_restart_nofocus.png</textureNoFocus>
       <onleft>22</onleft>
@@ -244,10 +244,10 @@
       <description>Wakeup button</description>
       <type>button</type>
       <id>24</id>
-      <posX>500</posX>
-      <posY>360</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>750</posX>
+      <posY>540</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_wakeup_focus.png</textureFocus>
       <textureNoFocus>button_wakeup_nofocus.png</textureNoFocus>
       <onleft>23</onleft>
@@ -261,11 +261,11 @@
       <description>Network Device 1 Alive</description>
       <type>image</type>
       <id>1</id>
-      <posX>315</posX>
-      <posY>370</posY>
+      <posX>472</posX>
+      <posY>555</posY>
       <texture>#PowerControl.NetworkDevice1AliveImage</texture>
-      <width>20</width>
-      <height>20</height>
+      <width>30</width>
+      <height>30</height>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
@@ -273,18 +273,18 @@
       <description>Separator Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>200</posX>
-      <posY>410</posY>&gt;
-		  <texture>seperator.png</texture><width>1050</width><height>3</height><animation effect="fade" time="300">WindowOpen</animation><animation effect="fade" time="300">WindowClose</animation></control>
+      <posX>300</posX>
+      <posY>615</posY>&gt;
+		  <texture>seperator.png</texture><width>1575</width><height>4</height><animation effect="fade" time="300">WindowOpen</animation><animation effect="fade" time="300">WindowClose</animation></control>
     <!-- *** Network Device 2 *** -->
     <control>
       <description>Network Device 2 Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>310</posX>
-      <posY>430</posY>
-      <width>64</width>
-      <height>64</height>
+      <posX>465</posX>
+      <posY>645</posY>
+      <width>96</width>
+      <height>96</height>
       <texture>#PowerControl.NetworkDevice2TypeImage</texture>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
@@ -293,8 +293,8 @@
       <description>Network Device 2 Description</description>
       <type>label</type>
       <id>1</id>
-      <posX>380</posX>
-      <posY>435</posY>
+      <posX>570</posX>
+      <posY>652</posY>
       <label>#PowerControl.NetworkDevice2Type #PowerControl.NetworkDevice2Description</label>
       <font>mediastream12tc</font>
       <animation effect="fade" time="300">WindowOpen</animation>
@@ -304,8 +304,8 @@
       <description>Network Device 2 State</description>
       <type>label</type>
       <id>1</id>
-      <posX>1260</posX>
-      <posY>455</posY>
+      <posX>1890</posX>
+      <posY>682</posY>
       <label>(#PowerControl.NetworkDevice2State)</label>
       <font>mediastream10tc</font>
       <align>right</align>
@@ -316,10 +316,10 @@
       <description>Shutdown button</description>
       <type>button</type>
       <id>30</id>
-      <posX>380</posX>
-      <posY>460</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>570</posX>
+      <posY>690</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_shutdown_focus.png</textureFocus>
       <textureNoFocus>button_shutdown_nofocus.png</textureNoFocus>
       <onleft>2</onleft>
@@ -333,10 +333,10 @@
       <description>Hibernate button</description>
       <type>button</type>
       <id>31</id>
-      <posX>410</posX>
-      <posY>460</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>615</posX>
+      <posY>690</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_hibernate_focus.png</textureFocus>
       <textureNoFocus>button_hibernate_nofocus.png</textureNoFocus>
       <onleft>30</onleft>
@@ -350,10 +350,10 @@
       <description>Standby button</description>
       <type>button</type>
       <id>32</id>
-      <posX>440</posX>
-      <posY>460</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>660</posX>
+      <posY>690</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_standby_focus.png</textureFocus>
       <textureNoFocus>button_standby_nofocus.png</textureNoFocus>
       <onleft>31</onleft>
@@ -367,10 +367,10 @@
       <description>Restart button</description>
       <type>button</type>
       <id>33</id>
-      <posX>470</posX>
-      <posY>460</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>705</posX>
+      <posY>690</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_restart_focus.png</textureFocus>
       <textureNoFocus>button_restart_nofocus.png</textureNoFocus>
       <onleft>32</onleft>
@@ -384,10 +384,10 @@
       <description>Wakeup button</description>
       <type>button</type>
       <id>34</id>
-      <posX>500</posX>
-      <posY>460</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>750</posX>
+      <posY>690</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_wakeup_focus.png</textureFocus>
       <textureNoFocus>button_wakeup_nofocus.png</textureNoFocus>
       <onleft>33</onleft>
@@ -401,11 +401,11 @@
       <description>Network Device 2 Alive</description>
       <type>image</type>
       <id>1</id>
-      <posX>315</posX>
-      <posY>470</posY>
+      <posX>472</posX>
+      <posY>705</posY>
       <texture>#PowerControl.NetworkDevice2AliveImage</texture>
-      <width>20</width>
-      <height>20</height>
+      <width>30</width>
+      <height>30</height>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
@@ -413,18 +413,18 @@
       <description>Separator Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>200</posX>
-      <posY>510</posY>&gt;
-		  <texture>seperator.png</texture><width>1050</width><height>3</height><animation effect="fade" time="300">WindowOpen</animation><animation effect="fade" time="300">WindowClose</animation></control>
+      <posX>300</posX>
+      <posY>765</posY>&gt;
+		  <texture>seperator.png</texture><width>1575</width><height>4</height><animation effect="fade" time="300">WindowOpen</animation><animation effect="fade" time="300">WindowClose</animation></control>
     <!-- *** Network Device 3 *** -->
     <control>
       <description>Network Device 3 Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>310</posX>
-      <posY>530</posY>
-      <width>64</width>
-      <height>64</height>
+      <posX>465</posX>
+      <posY>795</posY>
+      <width>96</width>
+      <height>96</height>
       <texture>#PowerControl.NetworkDevice3TypeImage</texture>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
@@ -433,8 +433,8 @@
       <description>Network Device 3 Description</description>
       <type>label</type>
       <id>1</id>
-      <posX>380</posX>
-      <posY>535</posY>
+      <posX>570</posX>
+      <posY>802</posY>
       <label>#PowerControl.NetworkDevice3Type #PowerControl.NetworkDevice3Description</label>
       <font>mediastream12tc</font>
       <animation effect="fade" time="300">WindowOpen</animation>
@@ -444,8 +444,8 @@
       <description>Network Device 3 State</description>
       <type>label</type>
       <id>1</id>
-      <posX>1260</posX>
-      <posY>555</posY>
+      <posX>1890</posX>
+      <posY>832</posY>
       <label>(#PowerControl.NetworkDevice3State)</label>
       <font>mediastream10tc</font>
       <align>right</align>
@@ -456,10 +456,10 @@
       <description>Shutdown button</description>
       <type>button</type>
       <id>40</id>
-      <posX>380</posX>
-      <posY>560</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>570</posX>
+      <posY>840</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_shutdown_focus.png</textureFocus>
       <textureNoFocus>button_shutdown_nofocus.png</textureNoFocus>
       <onleft>2</onleft>
@@ -473,10 +473,10 @@
       <description>Hibernate button</description>
       <type>button</type>
       <id>41</id>
-      <posX>410</posX>
-      <posY>560</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>615</posX>
+      <posY>840</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_hibernate_focus.png</textureFocus>
       <textureNoFocus>button_hibernate_nofocus.png</textureNoFocus>
       <onleft>40</onleft>
@@ -490,10 +490,10 @@
       <description>Standby button</description>
       <type>button</type>
       <id>42</id>
-      <posX>440</posX>
-      <posY>560</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>660</posX>
+      <posY>840</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_standby_focus.png</textureFocus>
       <textureNoFocus>button_standby_nofocus.png</textureNoFocus>
       <onleft>41</onleft>
@@ -507,10 +507,10 @@
       <description>Restart button</description>
       <type>button</type>
       <id>43</id>
-      <posX>470</posX>
-      <posY>560</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>705</posX>
+      <posY>840</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_restart_focus.png</textureFocus>
       <textureNoFocus>button_restart_nofocus.png</textureNoFocus>
       <onleft>42</onleft>
@@ -524,10 +524,10 @@
       <description>Wakeup button</description>
       <type>button</type>
       <id>44</id>
-      <posX>500</posX>
-      <posY>560</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>750</posX>
+      <posY>840</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_wakeup_focus.png</textureFocus>
       <textureNoFocus>button_wakeup_nofocus.png</textureNoFocus>
       <onleft>43</onleft>
@@ -541,11 +541,11 @@
       <description>Network Device 3 Alive</description>
       <type>image</type>
       <id>1</id>
-      <posX>315</posX>
-      <posY>570</posY>
+      <posX>472</posX>
+      <posY>855</posY>
       <texture>#PowerControl.NetworkDevice3AliveImage</texture>
-      <width>20</width>
-      <height>20</height>
+      <width>30</width>
+      <height>30</height>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
@@ -553,18 +553,18 @@
       <description>Separator Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>200</posX>
-      <posY>610</posY>&gt;
-		  <texture>seperator.png</texture><width>1050</width><height>3</height><animation effect="fade" time="300">WindowOpen</animation><animation effect="fade" time="300">WindowClose</animation></control>
+      <posX>300</posX>
+      <posY>915</posY>&gt;
+		  <texture>seperator.png</texture><width>1575</width><height>4</height><animation effect="fade" time="300">WindowOpen</animation><animation effect="fade" time="300">WindowClose</animation></control>
     <!-- *** Network Device 4 *** -->
     <control>
       <description>Network Device 4 Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>310</posX>
-      <posY>630</posY>
-      <width>64</width>
-      <height>64</height>
+      <posX>465</posX>
+      <posY>945</posY>
+      <width>96</width>
+      <height>96</height>
       <texture>#PowerControl.NetworkDevice4TypeImage</texture>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
@@ -573,8 +573,8 @@
       <description>Network Device 4 Description</description>
       <type>label</type>
       <id>1</id>
-      <posX>380</posX>
-      <posY>635</posY>
+      <posX>570</posX>
+      <posY>952</posY>
       <label>#PowerControl.NetworkDevice4Type #PowerControl.NetworkDevice4Description</label>
       <font>mediastream12tc</font>
       <animation effect="fade" time="300">WindowOpen</animation>
@@ -584,8 +584,8 @@
       <description>Network Device 4 State</description>
       <type>label</type>
       <id>1</id>
-      <posX>1260</posX>
-      <posY>655</posY>
+      <posX>1890</posX>
+      <posY>982</posY>
       <label>(#PowerControl.NetworkDevice4State)</label>
       <font>mediastream10tc</font>
       <align>right</align>
@@ -596,10 +596,10 @@
       <description>Shutdown button</description>
       <type>button</type>
       <id>50</id>
-      <posX>380</posX>
-      <posY>660</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>570</posX>
+      <posY>990</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_shutdown_focus.png</textureFocus>
       <textureNoFocus>button_shutdown_nofocus.png</textureNoFocus>
       <onleft>2</onleft>
@@ -613,10 +613,10 @@
       <description>Hibernate button</description>
       <type>button</type>
       <id>51</id>
-      <posX>410</posX>
-      <posY>660</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>615</posX>
+      <posY>990</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_hibernate_focus.png</textureFocus>
       <textureNoFocus>button_hibernate_nofocus.png</textureNoFocus>
       <onleft>50</onleft>
@@ -630,10 +630,10 @@
       <description>Standby button</description>
       <type>button</type>
       <id>52</id>
-      <posX>440</posX>
-      <posY>660</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>660</posX>
+      <posY>990</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_standby_focus.png</textureFocus>
       <textureNoFocus>button_standby_nofocus.png</textureNoFocus>
       <onleft>51</onleft>
@@ -647,10 +647,10 @@
       <description>Restart button</description>
       <type>button</type>
       <id>53</id>
-      <posX>470</posX>
-      <posY>660</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>705</posX>
+      <posY>990</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_restart_focus.png</textureFocus>
       <textureNoFocus>button_restart_nofocus.png</textureNoFocus>
       <onleft>52</onleft>
@@ -664,10 +664,10 @@
       <description>Wakeup button</description>
       <type>button</type>
       <id>54</id>
-      <posX>500</posX>
-      <posY>660</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>750</posX>
+      <posY>990</posY>
+      <width>48</width>
+      <height>48</height>
       <textureFocus>button_wakeup_focus.png</textureFocus>
       <textureNoFocus>button_wakeup_nofocus.png</textureNoFocus>
       <onleft>53</onleft>
@@ -681,14 +681,14 @@
       <description>Network Device 4 Alive</description>
       <type>image</type>
       <id>1</id>
-      <posX>315</posX>
-      <posY>670</posY>
+      <posX>472</posX>
+      <posY>1005</posY>
       <texture>#PowerControl.NetworkDevice4AliveImage</texture>
-      <width>20</width>
-      <height>20</height>
+      <width>30</width>
+      <height>30</height>
       <animation effect="fade" time="300">WindowOpen</animation>
       <animation effect="fade" time="300">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:6dc7fd8bb9926eb75d6467f074c02205-->
+<!--Checksum:be52ed9db3259620f3dbdbb982a8208b-->

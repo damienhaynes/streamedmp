@@ -12,10 +12,10 @@
       <description>tele-text rendering image</description>
       <type>image</type>
       <id>500</id>
-      <posX>80</posX>
-      <posY>68</posY>
-      <width>880</width>
-      <height>660</height>
+      <posX>120</posX>
+      <posY>102</posY>
+      <width>1320</width>
+      <height>990</height>
       <texture>button_small_settings_nofocus.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -24,10 +24,10 @@
       <description>tele-text rendering image 2</description>
       <type>image</type>
       <id>501</id>
-      <posX>80</posX>
-      <posY>68</posY>
-      <width>880</width>
-      <height>660</height>
+      <posX>120</posX>
+      <posY>102</posY>
+      <width>1320</width>
+      <height>990</height>
       <texture>button_small_settings_nofocus.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -47,8 +47,8 @@
       <description>template for program title darkarea </description>
       <type>label</type>
       <visible>no</visible>
-      <posX>533</posX>
-      <posY>250</posY>
+      <posX>799</posX>
+      <posY>375</posY>
       <id>27</id>
       <label>-</label>
       <font>mediastream12tc</font>
@@ -62,13 +62,13 @@
       <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
-        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
-        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+        <animation effect="slide" time="100" start="450,0">WindowOpen</animation>
+        <animation effect="slide" time="0" end="450,0">WindowClose</animation>
       </control>
       <control>
         <id>1</id>
@@ -76,10 +76,10 @@
         <label>496</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
-        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
-        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+        <posX>1560</posX>
+        <posY>337</posY>
+        <animation effect="slide" time="100" start="450,0">WindowOpen</animation>
+        <animation effect="slide" time="0" end="450,0">WindowClose</animation>
       </control>
       <control>
         <id>1</id>
@@ -87,50 +87,50 @@
         <label>1065</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>423</posY>
-        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
-        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
+        <posX>1560</posX>
+        <posY>634</posY>
+        <animation effect="slide" time="100" start="450,0">WindowOpen</animation>
+        <animation effect="slide" time="0" end="450,0">WindowClose</animation>
       </control>
       <control>
         <type>group</type>
-        <animation effect="slide" time="100" start="300,0">WindowOpen</animation>
-        <animation effect="slide" time="0" end="300,0">WindowClose</animation>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
+        <animation effect="slide" time="100" start="450,0">WindowOpen</animation>
+        <animation effect="slide" time="0" end="450,0">WindowClose</animation>
+        <posX>1560</posX>
+        <posY>375</posY>
+        <width>330</width>
+        <height>1080</height>
         <layout>StackLayout</layout>
         <control>
           <description>Page100</description>
           <type>button</type>
           <id>502</id>
-          <posX>106</posX>
-          <posY>121</posY>
+          <posX>159</posX>
+          <posY>181</posY>
           <label>590</label>
         </control>
         <control>
           <description>Page200</description>
           <type>button</type>
           <id>503</id>
-          <posX>106</posX>
-          <posY>163</posY>
+          <posX>159</posX>
+          <posY>244</posY>
           <label>591</label>
         </control>
         <control>
           <description>Page300</description>
           <type>button</type>
           <id>504</id>
-          <posX>106</posX>
-          <posY>206</posY>
+          <posX>159</posX>
+          <posY>309</posY>
           <label>592</label>
         </control>
         <control>
           <description>hidden mode</description>
           <type>checkbutton</type>
           <id>505</id>
-          <posX>106</posX>
-          <posY>248</posY>
+          <posX>159</posX>
+          <posY>372</posY>
           <label>593</label>
           <textYOff>1</textYOff>
           <textcolor>ffffffff</textcolor>
@@ -140,8 +140,8 @@
           <description>subpage</description>
           <type>selectbutton</type>
           <id>506</id>
-          <posX>106</posX>
-          <posY>291</posY>
+          <posX>159</posX>
+          <posY>436</posY>
           <label>594</label>
           <subitems>
             <subitem>./1</subitem>
@@ -186,8 +186,8 @@
           <description>Fullscreen</description>
           <type>button</type>
           <id>507</id>
-          <posX>106</posX>
-          <posY>333</posY>
+          <posX>159</posX>
+          <posY>499</posY>
           <label>595</label>
         </control>
         <control>
@@ -210,24 +210,24 @@
                         <description>video rectangle</description>
                         <type>image</type>
                         <id>0</id>
-                        <posX>1015</posX>
-                        <posY>555</posY>
-                        <width>210</width>
-                        <height>135</height>
+                        <posX>1522</posX>
+                        <posY>832</posY>
+                        <width>315</width>
+                        <height>202</height>
                         <texture>tv_frame.png</texture>
                 </control>-->
     <control>
       <description>video preview window</description>
       <type>videowindow</type>
       <id>508</id>
-      <posX>10</posX>
-      <posY>1030</posY>
-      <width>180</width>
-      <height>103</height>
+      <posX>15</posX>
+      <posY>1545</posY>
+      <width>270</width>
+      <height>154</height>
       <action>18</action>
       <textureFocus>tv_blue_border.png</textureFocus>
       <visible>no</visible>
     </control>
   </controls>
 </window>
-<!--Checksum:7baf0561297cd08cf45125c170813a42-->
+<!--Checksum:caf6d4c8cc01836d63aa34e2485b37de-->

@@ -6,10 +6,10 @@
     <control>
       <description>Hidden Menu Indicator</description>
       <type>image</type>
-      <posX>1232</posX>
-      <posY>50</posY>
-      <width>48</width>
-      <height>144</height>
+      <posX>1848</posX>
+      <posY>75</posY>
+      <width>72</width>
+      <height>216</height>
       <texture>#StreamedMP.ActionMenu.Image</texture>
       <visible>control.isvisible(50)+!control.isvisible(24)</visible>
     </control>
@@ -19,34 +19,34 @@
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
       <onleft>50</onleft>
-      <buttonX>1231</buttonX>
-      <buttonY>55</buttonY>
-      <buttonwidth>49</buttonwidth>
-      <buttonheight>253</buttonheight>
+      <buttonX>1846</buttonX>
+      <buttonY>82</buttonY>
+      <buttonwidth>73</buttonwidth>
+      <buttonheight>379</buttonheight>
       <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
         <visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <description>Dummy Button (for Mouse)</description>
         <label>-</label>
         <type>button</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>VIEW MENU</description>
@@ -54,11 +54,11 @@
         <label>499</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
+        <posX>1560</posX>
+        <posY>337</posY>
         <visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>JUMP TO</description>
@@ -66,23 +66,23 @@
         <label>1065</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>335</posY>
+        <posX>1560</posX>
+        <posY>502</posY>
         <visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
-        <posX>1040</posX>
-        <posY>245</posY>
-        <width>220</width>
-        <height>720</height>
+        <posX>1560</posX>
+        <posY>367</posY>
+        <width>330</width>
+        <height>1080</height>
         <onexit>50</onexit>
         <layout>StackLayout(0, Vertical, true)</layout>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
         <visible>!control.hasfocus(50)+control.isvisible(50)+!control.isvisible(24)</visible>
         <control>
           <type>button</type>
@@ -185,7 +185,7 @@
           <type>label</type>
           <description>Next Refresh</description>
           <id>0</id>
-          <width>220</width>
+          <width>330</width>
           <onleft>50</onleft>
           <font>mediastream10</font>
           <label>#showtimes_nextupdate</label>
@@ -194,4 +194,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:08b9dde1e45a03b56b181fdd4036864c-->
+<!--Checksum:8a390ea30b6b45a0ba327416f5945f0b-->

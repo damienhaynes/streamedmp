@@ -12,80 +12,80 @@
     <import>common.time.xml</import>
     <control Style="settingsmaintexturefo">
       <type>image</type>
-      <posY>150</posY>
+      <posY>225</posY>
       <visible>control.hasfocus(18)</visible>
     </control>
     <control Style="settingsmaintexturenf">
       <type>image</type>
-      <posY>150</posY>
+      <posY>225</posY>
       <visible>!control.hasfocus(18)</visible>
     </control>
     <control Style="settingsmaintexturefo">
       <type>image</type>
-      <posY>192</posY>
+      <posY>288</posY>
       <visible>control.hasfocus(2)</visible>
     </control>
     <control Style="settingsmaintexturenf">
       <type>image</type>
-      <posY>192</posY>
+      <posY>288</posY>
       <visible>!control.hasfocus(2)</visible>
     </control>
     <control Style="settingsmaintexturefo">
       <type>image</type>
-      <posY>234</posY>
+      <posY>351</posY>
       <visible>control.hasfocus(3)</visible>
     </control>
     <control Style="settingsmaintexturenf">
       <type>image</type>
-      <posY>234</posY>
+      <posY>351</posY>
       <visible>!control.hasfocus(3)</visible>
     </control>
     <control Style="settingsmaintexturefo">
       <type>image</type>
-      <posY>276</posY>
+      <posY>414</posY>
       <visible>control.hasfocus(4)</visible>
     </control>
     <control Style="settingsmaintexturenf">
       <type>image</type>
-      <posY>276</posY>
+      <posY>414</posY>
       <visible>!control.hasfocus(4)</visible>
     </control>
     <control Style="settingsmaintexturefo">
       <type>image</type>
-      <posY>318</posY>
+      <posY>477</posY>
       <visible>control.hasfocus(5)</visible>
     </control>
     <control Style="settingsmaintexturenf">
       <type>image</type>
-      <posY>318</posY>
+      <posY>477</posY>
       <visible>!control.hasfocus(5)</visible>
     </control>
     <control Style="settingsmaintexturefo">
       <type>image</type>
-      <posY>360</posY>
+      <posY>540</posY>
       <visible>control.hasfocus(6)</visible>
     </control>
     <control Style="settingsmaintexturenf">
       <type>image</type>
-      <posY>360</posY>
+      <posY>540</posY>
       <visible>!control.hasfocus(6)</visible>
     </control>
     <control Style="settingsmaintexturefo">
       <type>image</type>
-      <posY>402</posY>
+      <posY>603</posY>
       <visible>control.hasfocus(7)</visible>
     </control>
     <control Style="settingsmaintexturenf">
       <type>image</type>
-      <posY>402</posY>
+      <posY>603</posY>
       <visible>!control.hasfocus(7)</visible>
     </control>
     <control>
       <id>11</id>
       <description>Scan Interval Label</description>
       <type>label</type>
-      <posX>251</posX>
-      <posY>159</posY>
+      <posX>376</posX>
+      <posY>238</posY>
       <label>Scan Interval</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -101,8 +101,8 @@
       <onup>9</onup>
       <ondown>2</ondown>
       <visible />
-      <posX>754</posX>
-      <posY>164</posY>
+      <posX>1131</posX>
+      <posY>246</posY>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
       <digits>2</digits>
@@ -114,8 +114,8 @@
       <id>12</id>
       <description>Detection Counter Label</description>
       <type>label</type>
-      <posX>251</posX>
-      <posY>201</posY>
+      <posX>376</posX>
+      <posY>301</posY>
       <label>Detection Counter</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -129,8 +129,8 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>18</onup>
       <ondown>3</ondown>
-      <posX>754</posX>
-      <posY>206</posY>
+      <posX>1131</posX>
+      <posY>309</posY>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
       <digits>2</digits>
@@ -143,8 +143,8 @@
       <id>13</id>
       <description>Min Brightness Threshold Label</description>
       <type>label</type>
-      <posX>251</posX>
-      <posY>243</posY>
+      <posX>376</posX>
+      <posY>364</posY>
       <label>Min Brightness Threshold</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -158,8 +158,8 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>2</onup>
       <ondown>4</ondown>
-      <posX>754</posX>
-      <posY>248</posY>
+      <posX>1131</posX>
+      <posY>372</posY>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
       <digits>2</digits>
@@ -172,8 +172,8 @@
       <id>14</id>
       <description>Max Brightness Threshold Label</description>
       <type>label</type>
-      <posX>251</posX>
-      <posY>285</posY>
+      <posX>376</posX>
+      <posY>427</posY>
       <label>Max Brightness Threshold</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -187,8 +187,8 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>3</onup>
       <ondown>5</ondown>
-      <posX>754</posX>
-      <posY>290</posY>
+      <posX>1131</posX>
+      <posY>435</posY>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
       <digits>2</digits>
@@ -201,8 +201,8 @@
       <id>15</id>
       <description>Stabilizer Label</description>
       <type>label</type>
-      <posX>251</posX>
-      <posY>327</posY>
+      <posX>376</posX>
+      <posY>490</posY>
       <label>Stabilizer</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -216,8 +216,8 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>4</onup>
       <ondown>6</ondown>
-      <posX>754</posX>
-      <posY>332</posY>
+      <posX>1131</posX>
+      <posY>498</posY>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
       <digits>2</digits>
@@ -230,8 +230,8 @@
       <id>16</id>
       <description>Single Black Bar Height Label</description>
       <type>label</type>
-      <posX>251</posX>
-      <posY>369</posY>
+      <posX>376</posX>
+      <posY>553</posY>
       <label>Single Black Bar Height</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -245,8 +245,8 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>5</onup>
       <ondown>7</ondown>
-      <posX>754</posX>
-      <posY>374</posY>
+      <posX>1131</posX>
+      <posY>561</posY>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
       <digits>2</digits>
@@ -259,8 +259,8 @@
       <id>17</id>
       <description>Double Black Bar Height Label</description>
       <type>label</type>
-      <posX>251</posX>
-      <posY>411</posY>
+      <posX>376</posX>
+      <posY>616</posY>
       <label>Double Black Bar Height</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -274,8 +274,8 @@
       <onright>#defaultcontrol.onright</onright>
       <onup>6</onup>
       <ondown>8</ondown>
-      <posX>754</posX>
-      <posY>416</posY>
+      <posX>1131</posX>
+      <posY>623</posY>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
       <digits>2</digits>
@@ -292,12 +292,12 @@
       <onleft>8</onleft>
       <onup>7</onup>
       <ondown>18</ondown>
-      <posX>251</posX>
-      <posY>444</posY>
-      <width>555</width>
+      <posX>376</posX>
+      <posY>666</posY>
+      <width>832</width>
       <label>Verbose Logging</label>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:a59fb960d86c5effa4795bd2bc88c451-->
+<!--Checksum:697f6fe7f7d86816498e71e4ad23f9f6-->

@@ -5,13 +5,13 @@
       <description>Sub Menu Background (volume)</description>
       <type>image</type>
       <id>300</id>
-      <posX>48</posX>
-      <posY>49</posY>
-      <width>285</width>
-      <height>500</height>
+      <posX>72</posX>
+      <posY>73</posY>
+      <width>427</width>
+      <height>750</height>
       <texture>osd_dialog.png</texture>
       <visible>no</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <animation effect="slide" start="1950,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>Sub Menu Nib</description>
@@ -19,14 +19,14 @@
       <id>350</id>
       <texture>-</texture>
       <visible>no</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <animation effect="slide" start="1950,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
     <control>
       <description>Volume Slider</description>
       <type>slider</type>
       <id>400</id>
-      <posX>773</posX>
-      <posY>89</posY>
+      <posX>1159</posX>
+      <posY>133</posY>
       <textureSliderBar>osdprogressbackv.png</textureSliderBar>
       <textureSliderNib>osdprogressmidvnf.png</textureSliderNib>
       <textureSliderNibFocus>osdprogressmidv.png</textureSliderNibFocus>
@@ -35,8 +35,8 @@
       <onleft>400</onleft>
       <onright>400</onright>
       <visible>no</visible>
-      <animation effect="slide" start="1300,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
+      <animation effect="slide" start="1950,0" end="0,0" tween="quadratic" time="300" delay="0">visible</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:917fdce9c194b2de48457ff7ac6b7b5c-->
+<!--Checksum:b11a987093ed0654428fc1fb4bb297bd-->

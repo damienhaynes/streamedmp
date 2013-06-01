@@ -6,20 +6,20 @@
       <description>720p, 1080i, 1080p</description>
       <type>image</type>
       <id>9997</id>
-      <posX>190</posX>
-      <posY>650</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>285</posX>
+      <posY>975</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#Play.Current.VideoResolution.png</texture>
     </control>
     <control>
       <description>SD/HD Fullscreen/Widescreen</description>
       <type>image</type>
       <id>0</id>
-      <posX>190</posX>
-      <posY>650</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>285</posX>
+      <posY>975</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#Play.Current.VideoResolution #Play.Current.AspectRatio.png</texture>
       <visible>!Control.HasThumb(9997)</visible>
     </control>
@@ -28,10 +28,10 @@
       <description>Video Codecs</description>
       <type>image</type>
       <id>0</id>
-      <posX>290</posX>
-      <posY>650</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>435</posX>
+      <posY>975</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#Play.Current.VideoCodec.Texture.png</texture>
     </control>
     <!-- Audio Channels / Codecs -->
@@ -39,20 +39,20 @@
       <description>Audio Channels / Codecs</description>
       <type>image</type>
       <id>9998</id>
-      <posX>390</posX>
-      <posY>650</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>585</posX>
+      <posY>975</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#Play.Current.AudioCodec.Texture #Play.Current.AudioChannels.png</texture>
     </control>
     <control>
       <description>Audio Codecs - Unknown number of channels</description>
       <type>image</type>
       <id>9998</id>
-      <posX>390</posX>
-      <posY>650</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>585</posX>
+      <posY>975</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#Play.Current.AudioCodec.Texture.png</texture>
       <visible>!Control.HasThumb(9998)</visible>
     </control>
@@ -61,13 +61,13 @@
       <description>Subtitles</description>
       <type>image</type>
       <id>0</id>
-      <posX>490</posX>
-      <posY>650</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>735</posX>
+      <posY>975</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\Subtitles.png</texture>
       <visible>string.equals(#Play.Current.HasSubtitles,true)</visible>
     </control>
   </controls>
 </window>
-<!--Checksum:8d1b68ab9d5e37bc6b21ec464ac1a8ea-->
+<!--Checksum:da965419b3c16b23e66f9c6647ff622c-->

@@ -3,7 +3,7 @@
   <id>1017</id>
   <defaultcontrol>20</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:#(L(100008))->#(L(300082))</define>
+  <define>#header.label:#(L(100008))-&gt;#(L(300082))</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:17</define>
   <define>#defaultcontrol.onright:9992</define>
@@ -14,18 +14,18 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>85</posY>
-      <width>766</width>
-      <height>500</height>
+      <posX>324</posX>
+      <posY>127</posY>
+      <width>1149</width>
+      <height>750</height>
       <layout>StackLayout</layout>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>Resume Settings Heading</description>
         <type>button</type>
         <id>0</id>
         <font>mediastream12tc</font>
-				<label>#(L(300082)) #(L(5))</label>
-				<textXOff>35</textXOff>
+        <label>#(L(300082)) #(L(5))</label>
+        <textXOff>52</textXOff>
       </control>
       <control Style="settingsmaincheckbutton">
         <description>Turn off monitor blank screen</description>
@@ -33,109 +33,109 @@
         <id>20</id>
         <label>300095</label>
         <onup>32</onup>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onleft>20</onleft>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onleft>20</onleft>
         <onright>#defaultcontrol.onright</onright>
-				<ondown>21</ondown>
+        <ondown>21</ondown>
       </control>
-			<control Style="settingsmaincheckbutton">
+      <control Style="settingsmaincheckbutton">
         <description>Show last module</description>
         <type>checkbutton</type>
         <id>21</id>
         <label>300100</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onup>20</onup>
-				<onleft>21</onleft>
-				<onright>#defaultcontrol.onright</onright>
-				<ondown>22</ondown>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onup>20</onup>
+        <onleft>21</onleft>
+        <onright>#defaultcontrol.onright</onright>
+        <ondown>22</ondown>
       </control>
-			<control Style="settingsmaincheckbutton">
+      <control Style="settingsmaincheckbutton">
         <description>Stop playback in removal of audio renderer</description>
         <type>checkbutton</type>
         <id>22</id>
         <label>300230</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onleft>22</onleft>
-				<onright>#defaultcontrol.onright</onright>
-				<ondown>24</ondown>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onleft>22</onleft>
+        <onright>#defaultcontrol.onright</onright>
+        <ondown>24</ondown>
       </control>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>Display Device Heading</description>
         <type>button</type>
         <id>0</id>
         <font>mediastream12tc</font>
-				<label>Display Device</label>
-				<textXOff>35</textXOff>
+        <label>Display Device</label>
+        <textXOff>52</textXOff>
       </control>
-			<control Style="settingsmainbutton">
-				<description>Screen button</description>
-				<type>button</type>
-				<id>24</id>
-				<label>#defScreen</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
-				<onup>22</onup>
-				<ondown>30</ondown>
-			</control>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
+        <description>Screen button</description>
+        <type>button</type>
+        <id>24</id>
+        <label>#defScreen</label>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>22</onup>
+        <ondown>30</ondown>
+      </control>
+      <control Style="settingsmainbutton">
         <description>Delay Heading</description>
         <type>button</type>
         <id>0</id>
         <font>mediastream12tc</font>
-				<label>#(L(303)) #(L(5))</label>
-				<textXOff>35</textXOff>
+        <label>#(L(303)) #(L(5))</label>
+        <textXOff>52</textXOff>
       </control>
-			<control Style="settingsmainbutton">
-				<description>Delay button</description>
-				<type>button</type>
-				<id>30</id>
-				<label>300102</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
-				<onup>24</onup>
-				<ondown>31</ondown>
-			</control>
-			<control Style="settingsmaincheckbutton">
-				<description>Delay on MP start</description>
-				<type>checkbutton</type>
-				<id>31</id>
-				<label>300103</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onleft>31</onleft>
-				<onright>#defaultcontrol.onright</onright>
-				<onup>30</onup>
-				<ondown>32</ondown>
-			</control>
-			<control Style="settingsmaincheckbutton">
-				<description>Delay on MP resume</description>
-				<type>checkbutton</type>
-				<id>32</id>
-				<label>300104</label>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
-				<onup>31</onup>
-				<onleft>32</onleft>
-				<ondown>17</ondown>
-				<textXOff>35</textXOff>
-			</control>
+      <control Style="settingsmainbutton">
+        <description>Delay button</description>
+        <type>button</type>
+        <id>30</id>
+        <label>300102</label>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>24</onup>
+        <ondown>31</ondown>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Delay on MP start</description>
+        <type>checkbutton</type>
+        <id>31</id>
+        <label>300103</label>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onleft>31</onleft>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>30</onup>
+        <ondown>32</ondown>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Delay on MP resume</description>
+        <type>checkbutton</type>
+        <id>32</id>
+        <label>300104</label>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>31</onup>
+        <onleft>32</onleft>
+        <ondown>17</ondown>
+        <textXOff>52</textXOff>
+      </control>
     </control>
     <control>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
-			<description>Delay label</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <description>Delay label</description>
       <type>label</type>
       <id>1</id>
-      <posX>935</posX>
-      <posY>385</posY>
+      <posX>1402</posX>
+      <posY>577</posY>
       <label>#delayStartup</label>
       <align>right</align>
       <font>mediastream12c</font>
     </control>
   </controls>
 </window>
-<!--Checksum:b2e3e60c6fafc5e69b3d98db9fc5d4ed-->
+<!--Checksum:5015c9a0a337efdbbdb42557281d4fca-->

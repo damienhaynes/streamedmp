@@ -13,8 +13,8 @@
       <id>1</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#header.hover</texture>
     </control>
     <control>
@@ -22,9 +22,9 @@
       <type>image</type>
       <id>1</id>
       <posX>0</posX>
-      <posY>100</posY>
-      <width>1280</width>
-      <height>320</height>
+      <posY>150</posY>
+      <width>1920</width>
+      <height>480</height>
       <texture>black.png</texture>
       <colordiffuse>f0ffffff</colordiffuse>
     </control>
@@ -34,8 +34,8 @@
       <id>1</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>60</height>
+      <width>1920</width>
+      <height>90</height>
       <texture>overlay_topbar.png</texture>
       <colordiffuse>c9ffffff</colordiffuse>
     </control>
@@ -44,9 +44,9 @@
       <type>image</type>
       <id>1</id>
       <posX>0</posX>
-      <posY>430</posY>
-      <width>1280</width>
-      <height>290</height>
+      <posY>645</posY>
+      <width>1920</width>
+      <height>435</height>
       <texture>osdbackground1.png</texture>
       <colordiffuse>f9ffffff</colordiffuse>
     </control>
@@ -55,9 +55,9 @@
       <type>image</type>
       <id>1</id>
       <posX>0</posX>
-      <posY>88</posY>
-      <width>1280</width>
-      <height>336</height>
+      <posY>132</posY>
+      <width>1920</width>
+      <height>504</height>
       <texture>4trmanschedbg.png</texture>
       <colordiffuse>f9ffffff</colordiffuse>
     </control>
@@ -65,28 +65,28 @@
       <id>1</id>
       <description>Top Title Background</description>
       <type>image</type>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <control>
       <id>1</id>
       <type>fadelabel</type>
       <description>Top Title</description>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>#header.label</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <import>common.time.xml</import>
@@ -96,8 +96,8 @@
       <description>group element</description>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <posX>40</posX>
-      <posY>121</posY>
+      <posX>60</posX>
+      <posY>181</posY>
       <control>
         <description>Record</description>
         <type>button</type>
@@ -106,10 +106,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <height>40</height>
-        <width>300</width>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <height>60</height>
+        <width>450</width>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
@@ -129,10 +129,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <height>40</height>
-        <width>300</width>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <height>60</height>
+        <width>450</width>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
@@ -152,10 +152,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <height>40</height>
-        <width>300</width>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <height>60</height>
+        <width>450</width>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
@@ -175,10 +175,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <height>40</height>
-        <width>300</width>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <height>60</height>
+        <width>450</width>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
@@ -198,10 +198,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <height>40</height>
-        <width>300</width>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <height>60</height>
+        <width>450</width>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
@@ -218,8 +218,8 @@
       <description>Group</description>
       <type>label</type>
       <id>0</id>
-      <posX>550</posX>
-      <posY>121</posY>
+      <posX>825</posX>
+      <posY>181</posY>
       <label>971</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -230,8 +230,8 @@
       <description>Group Select</description>
       <type>spincontrol</type>
       <id>12</id>
-      <posX>590</posX>
-      <posY>171</posY>
+      <posX>885</posX>
+      <posY>256</posY>
       <showrange>no</showrange>
       <digits>6</digits>
       <orientation>vertical</orientation>
@@ -248,8 +248,8 @@
       <description>Channel</description>
       <type>label</type>
       <id>0</id>
-      <posX>900</posX>
-      <posY>121</posY>
+      <posX>1350</posX>
+      <posY>181</posY>
       <label>602</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -260,8 +260,8 @@
       <description>Channel Select</description>
       <type>spincontrol</type>
       <id>13</id>
-      <posX>965</posX>
-      <posY>171</posY>
+      <posX>1447</posX>
+      <posY>256</posY>
       <showrange>no</showrange>
       <digits>6</digits>
       <orientation>vertical</orientation>
@@ -278,8 +278,8 @@
       <description>Day Select</description>
       <type>spincontrol</type>
       <id>16</id>
-      <posX>510</posX>
-      <posY>271</posY>
+      <posX>765</posX>
+      <posY>406</posY>
       <showrange>no</showrange>
       <digits>3</digits>
       <orientation>vertical</orientation>
@@ -296,8 +296,8 @@
       <description>Month Select</description>
       <type>spincontrol</type>
       <id>17</id>
-      <posX>590</posX>
-      <posY>271</posY>
+      <posX>885</posX>
+      <posY>406</posY>
       <showrange>no</showrange>
       <digits>3</digits>
       <orientation>vertical</orientation>
@@ -314,8 +314,8 @@
       <description>Year Select</description>
       <type>spincontrol</type>
       <id>18</id>
-      <posX>670</posX>
-      <posY>271</posY>
+      <posX>1005</posX>
+      <posY>406</posY>
       <showrange>no</showrange>
       <digits>3</digits>
       <orientation>vertical</orientation>
@@ -332,8 +332,8 @@
       <description>Hours Select</description>
       <type>spincontrol</type>
       <id>15</id>
-      <posX>820</posX>
-      <posY>271</posY>
+      <posX>1230</posX>
+      <posY>406</posY>
       <showrange>no</showrange>
       <digits>2</digits>
       <orientation>vertical</orientation>
@@ -350,8 +350,8 @@
       <description>Minutes Select</description>
       <type>spincontrol</type>
       <id>14</id>
-      <posX>900</posX>
-      <posY>271</posY>
+      <posX>1350</posX>
+      <posY>406</posY>
       <showrange>no</showrange>
       <digits>2</digits>
       <orientation>vertical</orientation>
@@ -368,8 +368,8 @@
       <description>Duration Hours</description>
       <type>spincontrol</type>
       <id>20</id>
-      <posX>1050</posX>
-      <posY>271</posY>
+      <posX>1575</posX>
+      <posY>406</posY>
       <showrange>no</showrange>
       <digits>2</digits>
       <orientation>vertical</orientation>
@@ -386,8 +386,8 @@
       <description>Duration Minutes</description>
       <type>spincontrol</type>
       <id>19</id>
-      <posX>1130</posX>
-      <posY>271</posY>
+      <posX>1695</posX>
+      <posY>406</posY>
       <showrange>no</showrange>
       <digits>2</digits>
       <orientation>vertical</orientation>
@@ -404,9 +404,9 @@
       <description>monday</description>
       <type>checkbutton</type>
       <id>3</id>
-      <posX>450</posX>
-      <posY>361</posY>
-      <width>90</width>
+      <posX>675</posX>
+      <posY>541</posY>
+      <width>135</width>
       <label>657</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
@@ -423,9 +423,9 @@
       <description>tuesday</description>
       <type>checkbutton</type>
       <id>4</id>
-      <posX>553</posX>
-      <posY>361</posY>
-      <width>90</width>
+      <posX>829</posX>
+      <posY>541</posY>
+      <width>135</width>
       <label>658</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
@@ -442,9 +442,9 @@
       <description>wednesday</description>
       <type>checkbutton</type>
       <id>5</id>
-      <posX>656</posX>
-      <posY>361</posY>
-      <width>90</width>
+      <posX>983</posX>
+      <posY>541</posY>
+      <width>135</width>
       <label>659</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
@@ -461,9 +461,9 @@
       <description>thursday</description>
       <type>checkbutton</type>
       <id>6</id>
-      <posX>769</posX>
-      <posY>361</posY>
-      <width>90</width>
+      <posX>1153</posX>
+      <posY>541</posY>
+      <width>135</width>
       <label>660</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
@@ -481,9 +481,9 @@
       <description>friday</description>
       <type>checkbutton</type>
       <id>7</id>
-      <posX>862</posX>
-      <posY>361</posY>
-      <width>90</width>
+      <posX>1293</posX>
+      <posY>541</posY>
+      <width>135</width>
       <label>661</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
@@ -501,9 +501,9 @@
       <description>saturday</description>
       <type>checkbutton</type>
       <id>8</id>
-      <posX>965</posX>
-      <posY>361</posY>
-      <width>90</width>
+      <posX>1447</posX>
+      <posY>541</posY>
+      <width>135</width>
       <label>662</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
@@ -521,9 +521,9 @@
       <description>sunday</description>
       <type>checkbutton</type>
       <id>9</id>
-      <posX>1068</posX>
-      <posY>361</posY>
-      <width>90</width>
+      <posX>1602</posX>
+      <posY>541</posY>
+      <width>135</width>
       <label>663</label>
       <font>mediastream11</font>
       <textcolor>White</textcolor>
@@ -542,8 +542,8 @@
       <description>Scheduled recordings</description>
       <type>label</type>
       <id>27</id>
-      <posX>38</posX>
-      <posY>433</posY>
+      <posX>57</posX>
+      <posY>649</posY>
       <label>646</label>
       <align>left</align>
       <font>mediastream12tc</font>
@@ -555,24 +555,24 @@
       <description>upcoming episodes listcontrol</description>
       <type>listcontrol</type>
       <id>26</id>
-      <posX>40</posX>
-      <posY>470</posY>
-      <width>1060</width>
-      <height>260</height>
+      <posX>60</posX>
+      <posY>705</posY>
+      <width>1590</width>
+      <height>390</height>
       <scrollOffset>2</scrollOffset>
-      <PinIconWidth>20</PinIconWidth>
-      <PinIconHeight>20</PinIconHeight>
-      <PinIconXOff>72</PinIconXOff>
-      <PinIconYOff>22</PinIconYOff>
-      <itemWidth>60</itemWidth>
-      <itemHeight>60</itemHeight>
-      <IconXOff>5</IconXOff>
-      <IconYOff>2</IconYOff>
-      <textXOff>40</textXOff>
-      <textXOff2>950</textXOff2>
-      <textXOff3>110</textXOff3>
-      <textYOff2>37</textYOff2>
-      <textureHeight>64</textureHeight>
+      <PinIconWidth>30</PinIconWidth>
+      <PinIconHeight>30</PinIconHeight>
+      <PinIconXOff>108</PinIconXOff>
+      <PinIconYOff>33</PinIconYOff>
+      <itemWidth>90</itemWidth>
+      <itemHeight>90</itemHeight>
+      <IconXOff>7</IconXOff>
+      <IconYOff>3</IconYOff>
+      <textXOff>60</textXOff>
+      <textXOff2>1425</textXOff2>
+      <textXOff3>165</textXOff3>
+      <textYOff2>55</textYOff2>
+      <textureHeight>96</textureHeight>
       <font2>mediastream10c</font2>
       <keepaspectratio>yes</keepaspectratio>
       <onleft>2</onleft>
@@ -582,10 +582,10 @@
       <textureDown>arrow_round_down_nofocus.png</textureDown>
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
       <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-      <spinPosX>1165</spinPosX>
-      <spinPosY>683</spinPosY>
-      <spinWidth>50</spinWidth>
-      <spinHeight>37</spinHeight>
+      <spinPosX>1747</spinPosX>
+      <spinPosY>1024</spinPosY>
+      <spinWidth>75</spinWidth>
+      <spinHeight>55</spinHeight>
       <spinAlign>Right</spinAlign>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -594,38 +594,38 @@
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1003</posX>
-      <posY>684</posY>
-      <width>260</width>
-      <height>32</height>
+      <posX>1504</posX>
+      <posY>1026</posY>
+      <width>390</width>
+      <height>48</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>control.isvisible(26)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Page Count Label</description>
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1013</posX>
-      <posY>689</posY>
+      <posX>1519</posX>
+      <posY>1033</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>control.isvisible(26)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Date Header Label</description>
       <type>label</type>
       <id>23</id>
-      <posX>550</posX>
-      <posY>221</posY>
+      <posX>825</posX>
+      <posY>331</posY>
       <label>636</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -636,8 +636,8 @@
       <description>Start Time Header Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>845</posX>
-      <posY>221</posY>
+      <posX>1267</posX>
+      <posY>331</posY>
       <label>635</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -648,8 +648,8 @@
       <description>Duration Header Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>1040</posX>
-      <posY>221</posY>
+      <posX>1560</posX>
+      <posY>331</posY>
       <label>180</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -660,8 +660,8 @@
       <description>Select Days Header Label</description>
       <type>label</type>
       <id>24</id>
-      <posX>560</posX>
-      <posY>321</posY>
+      <posX>840</posX>
+      <posY>481</posY>
       <label>3015</label>
       <font>mediastream12c</font>
       <textcolor>FFFFFFFF</textcolor>
@@ -670,4 +670,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:e81e3ce900d55d70708ad5374f15bd98-->
+<!--Checksum:66f024fb682b582d266312a23ed479cf-->

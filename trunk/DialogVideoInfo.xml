@@ -18,46 +18,46 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1281</width>
-      <height>720</height>
+      <width>1921</width>
+      <height>1080</height>
       <texture>#header.BG.overlay</texture>
     </control>
     <control>
       <id>1</id>
       <description>Top Title Background</description>
       <type>image</type>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <control>
       <id>1</id>
       <type>fadelabel</type>
       <description>Top Title</description>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>#header.label</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <control>
       <description>Disc Select Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1000</posX>
-      <posY>10</posY>
-      <width>260</width>
-      <height>30</height>
+      <posX>1500</posX>
+      <posY>15</posY>
+      <width>390</width>
+      <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -65,10 +65,10 @@
       <description>Disc Select</description>
       <type>spincontrol</type>
       <id>11</id>
-      <posX>1163</posX>
-      <posY>6</posY>
-      <width>50</width>
-      <height>37</height>
+      <posX>1744</posX>
+      <posY>9</posY>
+      <width>75</width>
+      <height>55</height>
       <onup>11</onup>
       <ondown>2</ondown>
       <onleft>11</onleft>
@@ -88,8 +88,8 @@
       <description>Disc Select Label</description>
       <type>label</type>
       <id>100</id>
-      <posX>1010</posX>
-      <posY>15</posY>
+      <posX>1515</posX>
+      <posY>22</posY>
       <label>#(string.rtrim(L(427),':'))</label>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
@@ -100,10 +100,10 @@
       <description>Default Cover Art</description>
       <type>image</type>
       <id>0</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>257</width>
-      <height>380</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>385</width>
+      <height>570</height>
       <texture>defaultdvdcover.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -112,10 +112,10 @@
       <description>Cover Art</description>
       <type>image</type>
       <id>21</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>257</width>
-      <height>380</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>385</width>
+      <height>570</height>
       <texture>#thumb</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -124,10 +124,10 @@
       <description>Cover Art Glass Overlay</description>
       <type>image</type>
       <id>0</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>228</width>
-      <height>177</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>342</width>
+      <height>265</height>
       <texture>glassoverlay2.png</texture>
       <visible>Control.HasThumb(21)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -137,10 +137,10 @@
       <description>Watched Icon Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>256</posX>
-      <posY>284</posY>
-      <width>32</width>
-      <height>39</height>
+      <posX>384</posX>
+      <posY>426</posY>
+      <width>48</width>
+      <height>58</height>
       <texture>#StreamedMP.Icons.Background</texture>
       <visible>Control.HasThumb(21)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -149,10 +149,10 @@
       <description>Watched Icon</description>
       <type>image</type>
       <id>0</id>
-      <posX>263</posX>
-      <posY>287</posY>
-      <width>24</width>
-      <height>24</height>
+      <posX>394</posX>
+      <posY>430</posY>
+      <width>36</width>
+      <height>36</height>
       <texture>#StreamedMP.Icons.Watched</texture>
       <visible>Control.HasThumb(21)+string.equals(#iswatched,yes)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -161,10 +161,10 @@
       <description>Un-Watched Icon</description>
       <type>image</type>
       <id>0</id>
-      <posX>263</posX>
-      <posY>287</posY>
-      <width>24</width>
-      <height>24</height>
+      <posX>394</posX>
+      <posY>430</posY>
+      <width>36</width>
+      <height>36</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
       <visible>Control.HasThumb(21)+string.equals(#iswatched,no)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -173,10 +173,10 @@
       <description>Cycle Cover Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>28</posX>
-      <posY>645</posY>
-      <width>260</width>
-      <height>30</height>
+      <posX>42</posX>
+      <posY>967</posY>
+      <width>390</width>
+      <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -184,10 +184,10 @@
       <description>Cycle Cover Art</description>
       <type>spincontrol</type>
       <id>10</id>
-      <posX>191</posX>
-      <posY>641</posY>
-      <width>50</width>
-      <height>37</height>
+      <posX>286</posX>
+      <posY>961</posY>
+      <width>75</width>
+      <height>55</height>
       <onup>6</onup>
       <ondown>10</ondown>
       <onleft>10</onleft>
@@ -205,8 +205,8 @@
       <description>Cycle Cover Label</description>
       <type>label</type>
       <id>30</id>
-      <posX>38</posX>
-      <posY>650</posY>
+      <posX>57</posX>
+      <posY>975</posY>
       <label>#(string.rtrim(L(734),':'))</label>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
@@ -217,14 +217,14 @@
       <description>Movie Title</description>
       <type>label</type>
       <id>0</id>
-      <posX>308</posX>
-      <posY>251</posY>
-      <width>550</width>
+      <posX>462</posX>
+      <posY>376</posY>
+      <width>825</width>
       <font>mediastream16tc</font>
       <label>#title</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -234,13 +234,13 @@
       <type>label</type>
       <label>#genre</label>
       <id>0</id>
-      <posX>309</posX>
-      <posY>282</posY>
-      <width>550</width>
+      <posX>463</posX>
+      <posY>423</posY>
+      <width>825</width>
       <font>mediastream11tc</font>
       <textcolor>ff909090</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>3</shadowDistance>
+      <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -249,10 +249,10 @@
       <description>Rating Stars</description>
       <type>imagelist</type>
       <id>101</id>
-      <posX>309</posX>
-      <posY>305</posY>
-      <textureWidth>23</textureWidth>
-      <textureHeight>22</textureHeight>
+      <posX>463</posX>
+      <posY>457</posY>
+      <textureWidth>34</textureWidth>
+      <textureHeight>33</textureHeight>
       <subitems>
         <subitem>starwhitehollow.png</subitem>
         <subitem>starwhite.png</subitem>
@@ -269,9 +269,9 @@
       <id>0</id>
       <type>label</type>
       <label>#rating / 10 (#votes votes)</label>
-      <posX>430</posX>
-      <posY>306</posY>
-      <width>400</width>
+      <posX>645</posX>
+      <posY>459</posY>
+      <width>600</width>
       <font>mediastream10</font>
       <visible>!string.equals(#rating,0)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -281,10 +281,10 @@
       <description>Summary</description>
       <type>textboxscrollup</type>
       <id>20</id>
-      <posX>308</posX>
-      <posY>338</posY>
-      <width>510</width>
-      <height>190</height>
+      <posX>462</posX>
+      <posY>507</posY>
+      <width>765</width>
+      <height>285</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -296,10 +296,10 @@
       <description>Cast</description>
       <type>textbox</type>
       <id>22</id>
-      <posX>-2308</posX>
-      <posY>338</posY>
-      <width>430</width>
-      <height>190</height>
+      <posX>-3462</posX>
+      <posY>507</posY>
+      <width>645</width>
+      <height>285</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -311,20 +311,20 @@
       <type>listcontrol</type>
       <description>Cast List</description>
       <id>24</id>
-      <posX>440</posX>
-      <posY>338</posY>
-      <width>440</width>
-      <height>250</height>
-      <textXOff>9</textXOff>
-      <textYOff>5</textYOff>
-      <textXOff2>-1000</textXOff2>
-      <textYOff2>-55</textYOff2>
-      <textXOff3>-2000</textXOff3>
-      <textureHeight>42</textureHeight>
+      <posX>660</posX>
+      <posY>507</posY>
+      <width>660</width>
+      <height>375</height>
+      <textXOff>13</textXOff>
+      <textYOff>7</textYOff>
+      <textXOff2>-1500</textXOff2>
+      <textYOff2>-83</textYOff2>
+      <textXOff3>-3000</textXOff3>
+      <textureHeight>63</textureHeight>
       <onright>4</onright>
       <onleft>4</onleft>
       <scrollOffset>1</scrollOffset>
-      <spinPosX>2175</spinPosX>
+      <spinPosX>3262</spinPosX>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -332,10 +332,10 @@
       <description>Selected Actor Image</description>
       <type>image</type>
       <id>25</id>
-      <posX>300</posX>
-      <posY>338</posY>
-      <width>150</width>
-      <height>210</height>
+      <posX>450</posX>
+      <posY>507</posY>
+      <width>225</width>
+      <height>315</height>
       <texture>#actorThumb</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -344,10 +344,10 @@
       <description>Review</description>
       <type>textboxscrollup</type>
       <id>23</id>
-      <posX>308</posX>
-      <posY>338</posY>
-      <width>430</width>
-      <height>190</height>
+      <posX>462</posX>
+      <posY>507</posY>
+      <width>645</width>
+      <height>285</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -360,9 +360,9 @@
       <id>0</id>
       <type>label</type>
       <label>#(string.rtrim(L(299),':'))</label>
-      <posX>310</posX>
-      <posY>550</posY>
-      <width>140</width>
+      <posX>465</posX>
+      <posY>825</posY>
+      <width>210</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -371,9 +371,9 @@
       <id>1000</id>
       <type>label</type>
       <label>#(iif(neq(#runtime,''),'#runtime','N/A'))</label>
-      <posX>470</posX>
-      <posY>551</posY>
-      <width>200</width>
+      <posX>705</posX>
+      <posY>826</posY>
+      <width>300</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -382,9 +382,9 @@
       <id>0</id>
       <type>label</type>
       <label>#(string.rtrim(L(199),':'))</label>
-      <posX>310</posX>
-      <posY>572</posY>
-      <width>140</width>
+      <posX>465</posX>
+      <posY>858</posY>
+      <width>210</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -393,9 +393,9 @@
       <id>1001</id>
       <type>label</type>
       <label>#(iif(neq(#director,''),#director,'N/A'))</label>
-      <posX>470</posX>
-      <posY>573</posY>
-      <width>200</width>
+      <posX>705</posX>
+      <posY>859</posY>
+      <width>300</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -404,9 +404,9 @@
       <id>0</id>
       <type>label</type>
       <label>#(string.rtrim(L(201),':'))</label>
-      <posX>310</posX>
-      <posY>594</posY>
-      <width>140</width>
+      <posX>465</posX>
+      <posY>891</posY>
+      <width>210</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -415,9 +415,9 @@
       <id>1002</id>
       <type>label</type>
       <label>#(iif(neq(#year,''),#year,'N/A'))</label>
-      <posX>470</posX>
-      <posY>595</posY>
-      <width>200</width>
+      <posX>705</posX>
+      <posY>892</posY>
+      <width>300</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -426,9 +426,9 @@
       <id>0</id>
       <type>label</type>
       <label>#(string.rtrim(L(173),':'))</label>
-      <posX>310</posX>
-      <posY>616</posY>
-      <width>140</width>
+      <posX>465</posX>
+      <posY>924</posY>
+      <width>210</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -437,9 +437,9 @@
       <id>1003</id>
       <type>textbox</type>
       <label>#(iif(neq(#mpaarating,''),#mpaarating,'N/A'))</label>
-      <posX>470</posX>
-      <posY>617</posY>
-      <width>350</width>
+      <posX>705</posX>
+      <posY>925</posY>
+      <width>525</width>
       <font>mediastream9c</font>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -447,8 +447,8 @@
     <control>
       <type>group</type>
       <description>Button Group</description>
-      <posX>900</posX>
-      <posY>230</posY>
+      <posX>1350</posX>
+      <posY>345</posY>
       <layout>StackLayout(0, Vertical, true)</layout>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -462,10 +462,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <height>40</height>
-        <width>300</width>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <height>60</height>
+        <width>450</width>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
       </control>
@@ -473,14 +473,14 @@
         <description>Plot</description>
         <type>checkbutton</type>
         <id>3</id>
-				<width>300</width>
+        <width>450</width>
         <label>207</label>
       </control>
       <control Style="skincheckbutton">
         <description>Cast</description>
         <type>checkbutton</type>
         <id>4</id>
-				<width>300</width>
+        <width>450</width>
         <label>206</label>
         <onleft>24</onleft>
       </control>
@@ -488,7 +488,7 @@
         <description>Review</description>
         <type>checkbutton</type>
         <id>7</id>
-				<width>300</width>
+        <width>450</width>
         <label>183</label>
         <onleft>10</onleft>
       </control>
@@ -501,10 +501,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <width>450</width>
+        <height>60</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
       </control>
@@ -517,10 +517,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <width>450</width>
+        <height>60</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
       </control>
@@ -531,7 +531,7 @@
         <label>1010</label>
         <onleft>10</onleft>
         <ondown>4755</ondown>
-        <width>300</width>
+        <width>450</width>
       </control>
       <control>
         <description>Trailer</description>
@@ -546,10 +546,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <width>450</width>
+        <height>60</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <visible>plugin.isenabled(OnlineVideos)</visible>
@@ -565,10 +565,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <width>450</width>
+        <height>60</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <visible>plugin.isenabled(Trakt)</visible>
@@ -578,4 +578,4 @@
     <import>common.overlays2.xml</import>
   </controls>
 </window>
-<!--Checksum:a18b116dacf35dd0e1e902fba7a85dff-->
+<!--Checksum:a52985f17b3a802f598f5792e628b577-->

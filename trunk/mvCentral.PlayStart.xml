@@ -15,34 +15,34 @@
       <dimColor>ffffffff</dimColor>
       <visible>!window.isosdvisible+!window.ispauseosdvisible+string.equals(#mvCentral.Play.Started,true)</visible>
       <animation effect="fade" time="300" delay="300">VisibleChange</animation>
-      <animation effect="slide" start="600,0" end="0,0" tween="quadratic" time="500" delay="100">VisibleChange</animation>
+      <animation effect="slide" start="900,0" end="0,0" tween="quadratic" time="500" delay="100">VisibleChange</animation>
       <control>
         <description>background</description>
         <type>image</type>
         <id>0</id>
-        <posX>700</posX>
-        <posY>530</posY>
-        <width>585</width>
-        <height>192</height>
+        <posX>1050</posX>
+        <posY>795</posY>
+        <width>877</width>
+        <height>288</height>
         <texture>mpinfo_filmbox.old.png</texture>
       </control>
       <control>
         <description>Artist Thumb</description>
         <type>image</type>
         <id>0</id>
-        <posX>732</posX>
-        <posY>555</posY>
-        <width>150</width>
-        <height>150</height>
+        <posX>1098</posX>
+        <posY>832</posY>
+        <width>225</width>
+        <height>225</height>
         <texture>#Play.Current.Thumb</texture>
       </control>
       <control>
         <description>Atrtist Name</description>
         <id>0</id>
         <type>fadelabel</type>
-        <posX>900</posX>
-        <posY>550</posY>
-        <width>300</width>
+        <posX>1350</posX>
+        <posY>825</posY>
+        <width>450</width>
         <font>mediastream11tc</font>
         <label>#Play.Current.mvArtist</label>
       </control>
@@ -50,9 +50,9 @@
         <description>Track Name</description>
         <id>0</id>
         <type>fadelabel</type>
-        <posX>900</posX>
-        <posY>570</posY>
-        <width>300</width>
+        <posX>1350</posX>
+        <posY>855</posY>
+        <width>450</width>
         <font>mediastream10tc</font>
         <label>#Play.Current.mvVideo</label>
         <textcolor>ff909090</textcolor>
@@ -61,9 +61,9 @@
         <description>Genre</description>
         <id>0</id>
         <type>fadelabel</type>
-        <posX>900</posX>
-        <posY>590</posY>
-        <width>300</width>
+        <posX>1350</posX>
+        <posY>885</posY>
+        <width>450</width>
         <font>mediastream10tc</font>
         <label>#Play.Current.Genre </label>
         <textcolor>ff909090</textcolor>
@@ -72,9 +72,9 @@
         <description>Runtime</description>
         <id>0</id>
         <type>fadelabel</type>
-        <posX>900</posX>
-        <posY>620</posY>
-        <width>300</width>
+        <posX>1350</posX>
+        <posY>930</posY>
+        <width>450</width>
         <font>mediastream10tc</font>
         <label>#Play.Current.Runtime </label>
         <textcolor>ff909090</textcolor>
@@ -83,11 +83,11 @@
         <description>Album Star Rating Image</description>
         <type>image</type>
         <id>0</id>
-        <posX>900</posX>
-        <posY>645</posY>
-        <width>300</width>
-        <width>94</width>
-        <height>18</height>
+        <posX>1350</posX>
+        <posY>967</posY>
+        <width>450</width>
+        <width>141</width>
+        <height>27</height>
         <texture>star#Play.Current.Rating.png</texture>
       </control>
       <!-- Video Codecs -->
@@ -95,20 +95,20 @@
         <description>SD/HD Fullscreen/Widescreen</description>
         <type>image</type>
         <id>0</id>
-        <posX>900</posX>
-        <posY>675</posY>
-        <width>100</width>
-        <height>32</height>
+        <posX>1350</posX>
+        <posY>1012</posY>
+        <width>150</width>
+        <height>48</height>
         <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#Play.Current.VideoResolution #Play.Current.AspectRatio.png</texture>
       </control>
       <control>
         <description>Video Codecs</description>
         <type>image</type>
         <id>0</id>
-        <posX>1020</posX>
-        <posY>675</posY>
-        <width>100</width>
-        <height>32</height>
+        <posX>1530</posX>
+        <posY>1012</posY>
+        <width>150</width>
+        <height>48</height>
         <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#Play.Current.VideoCodec.Texture.png</texture>
       </control>
       <!-- Audio Channels / Codecs-->
@@ -116,13 +116,13 @@
         <description>Audio Codecs / Channels</description>
         <type>image</type>
         <id>0</id>
-        <posX>1140</posX>
-        <posY>675</posY>
-        <width>100</width>
-        <height>32</height>
+        <posX>1710</posX>
+        <posY>1012</posY>
+        <width>150</width>
+        <height>48</height>
         <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#Play.Current.AudioCodec.Texture #Play.Current.AudioChannels.png</texture>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:c76f77157211cb3f9fee10a253972511-->
+<!--Checksum:84251a8825d836ae7e306ed9aa7e618a-->

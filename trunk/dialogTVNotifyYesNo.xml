@@ -7,8 +7,8 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>black.png</texture>
       <colordiffuse>90ffffff</colordiffuse>
       <animation effect="fade" time="200">windowopen</animation>
@@ -17,10 +17,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>375</posX>
-      <posY>228</posY>
-      <width>532</width>
-      <height>23</height>
+      <posX>562</posX>
+      <posY>342</posY>
+      <width>798</width>
+      <height>34</height>
       <texture>dialogtop.png</texture>
       <colordiffuse>eeffffff</colordiffuse>
       <animation effect="fade" time="200">windowopen</animation>
@@ -29,10 +29,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>375</posX>
-      <posY>251</posY>
-      <width>532</width>
-      <height>180</height>
+      <posX>562</posX>
+      <posY>376</posY>
+      <width>798</width>
+      <height>270</height>
       <texture>dialogmiddle.png</texture>
       <colordiffuse>eeffffff</colordiffuse>
       <animation effect="fade" time="200">windowopen</animation>
@@ -41,10 +41,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>375</posX>
-      <posY>430</posY>
-      <width>532</width>
-      <height>23</height>
+      <posX>562</posX>
+      <posY>645</posY>
+      <width>798</width>
+      <height>34</height>
       <texture>dialogbottom.png</texture>
       <colordiffuse>eeffffff</colordiffuse>
       <animation effect="fade" time="200">windowopen</animation>
@@ -54,9 +54,9 @@
       <description>dialog Heading</description>
       <type>label</type>
       <id>1</id>
-      <posX>405</posX>
-      <posY>250</posY>
-      <width>470</width>
+      <posX>607</posX>
+      <posY>375</posY>
+      <width>705</width>
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
@@ -68,10 +68,10 @@
       <description>dialog line 1</description>
       <type>label</type>
       <id>2</id>
-      <posX>475</posX>
-      <posY>275</posY>
+      <posX>712</posX>
+      <posY>412</posY>
       <label>-</label>
-      <width>400</width>
+      <width>600</width>
       <font>mediastream11c</font>
       <textcolor>White</textcolor>
       <animation effect="fade" time="200">windowopen</animation>
@@ -81,10 +81,10 @@
       <description>dialog line 2</description>
       <type>label</type>
       <id>3</id>
-      <posX>475</posX>
-      <posY>300</posY>
+      <posX>712</posX>
+      <posY>450</posY>
       <label>-</label>
-      <width>400</width>
+      <width>600</width>
       <font>mediastream11c</font>
       <textcolor>White</textcolor>
       <animation effect="fade" time="200">windowopen</animation>
@@ -94,10 +94,10 @@
       <description>dialog line 3</description>
       <type>label</type>
       <id>4</id>
-      <posX>475</posX>
-      <posY>325</posY>
+      <posX>712</posX>
+      <posY>487</posY>
       <label>-</label>
-      <width>400</width>
+      <width>600</width>
       <font>mediastream11c</font>
       <textcolor>White</textcolor>
       <animation effect="fade" time="200">windowopen</animation>
@@ -107,10 +107,10 @@
       <description>dialog line 4</description>
       <type>label</type>
       <id>5</id>
-      <posX>475</posX>
-      <posY>350</posY>
+      <posX>712</posX>
+      <posY>525</posY>
       <label>-</label>
-      <width>400</width>
+      <width>600</width>
       <font>mediastream11c</font>
       <textcolor>White</textcolor>
       <animation effect="fade" time="200">windowopen</animation>
@@ -120,10 +120,10 @@
       <description>tv logo</description>
       <type>image</type>
       <id>12</id>
-      <posX>400</posX>
-      <posY>285</posY>
-      <width>50</width>
-      <height>50</height>
+      <posX>600</posX>
+      <posY>427</posY>
+      <width>75</width>
+      <height>75</height>
       <texture>-</texture>
       <colorkey>FFFF00FF</colorkey>
       <colordiffuse>FFFFFFFF</colordiffuse>
@@ -140,9 +140,9 @@
       <font>mediastream11tc</font>
       <textureFocus>dialogbigbuttonfo.png</textureFocus>
       <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
-      <width>128</width>
-      <posX>510</posX>
-      <posY>390</posY>
+      <width>192</width>
+      <posX>765</posX>
+      <posY>585</posY>
       <textXOff>1</textXOff>
       <textYOff>1</textYOff>
       <textalign>center</textalign>
@@ -161,9 +161,9 @@
       <font>mediastream11tc</font>
       <textureFocus>dialogbigbuttonfo.png</textureFocus>
       <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
-      <width>128</width>
-      <posX>638</posX>
-      <posY>390</posY>
+      <width>192</width>
+      <posX>957</posX>
+      <posY>585</posY>
       <textXOff>1</textXOff>
       <textYOff>1</textYOff>
       <textalign>center</textalign>
@@ -176,4 +176,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:c2bd534136bb4f4a0d5a1e24f19310f2-->
+<!--Checksum:5f1305c31fc95a164ff0c065c443eb81-->

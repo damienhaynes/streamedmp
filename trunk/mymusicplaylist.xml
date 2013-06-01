@@ -16,8 +16,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1281</width>
-      <height>720</height>
+      <width>1921</width>
+      <height>1080</height>
       <texture>mainoverlay.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -25,10 +25,10 @@
     <control>
       <id>0</id>
       <type>image</type>
-      <posX>90</posX>
-      <posY>250</posY>
-      <width>348</width>
-      <height>348</height>
+      <posX>135</posX>
+      <posY>375</posY>
+      <width>522</width>
+      <height>522</height>
       <texture>defaultAlbum.png</texture>
       <visible>!control.hasthumb(204)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -37,10 +37,10 @@
     <control>
       <id>204</id>
       <type>image</type>
-      <posX>90</posX>
-      <posY>250</posY>
-      <width>348</width>
-      <height>348</height>
+      <posX>135</posX>
+      <posY>375</posY>
+      <width>522</width>
+      <height>522</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -50,10 +50,10 @@
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
-      <buttonX>1232</buttonX>
-      <buttonY>50</buttonY>
-      <buttonwidth>48</buttonwidth>
-      <buttonheight>144</buttonheight>
+      <buttonX>1848</buttonX>
+      <buttonY>75</buttonY>
+      <buttonwidth>72</buttonwidth>
+      <buttonheight>216</buttonheight>
       <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
       <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
       <dimColor>00ffffff</dimColor>
@@ -61,27 +61,27 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <control>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>Dummy Button (for Mouse)</description>
         <id>0</id>
         <label>-</label>
         <type>button</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>label OPTIONS</description>
@@ -89,11 +89,11 @@
         <label>496</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>176</posY>
+        <posX>1560</posX>
+        <posY>264</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>label PLAYLIST</description>
@@ -101,11 +101,11 @@
         <label>136</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>232</posY>
+        <posX>1560</posX>
+        <posY>348</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>label JUMP TO</description>
@@ -113,33 +113,33 @@
         <label>1065</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>399</posY>
+        <posX>1560</posX>
+        <posY>598</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <label>SCROBBLER</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>568</posY>
+        <posX>1560</posX>
+        <posY>852</posY>
         <visible>!Control.HasFocus(50)+plugin.isenabled(Audioscrobbler)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>200</posY>
-        <width>220</width>
-        <height>720</height>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+        <posX>1560</posX>
+        <posY>300</posY>
+        <width>330</width>
+        <height>1080</height>
         <layout>StackLayout(0, Vertical, true)</layout>
         <control>
           <description>View-As</description>
@@ -230,7 +230,7 @@
           <label>Music Settings</label>
           <onleft>50</onleft>
           <hyperlink>14</hyperlink>
-					<ondown>90478</ondown>
+          <ondown>90478</ondown>
         </control>
         <control>
           <description>My Lyrics</description>
@@ -239,7 +239,7 @@
           <label>Lyrics</label>
           <onleft>50</onleft>
           <hyperlink>90478</hyperlink>
-					<ondown>30885</ondown>
+          <ondown>30885</ondown>
           <visible>plugin.isenabled(My Lyrics)</visible>
         </control>
         <control>
@@ -249,7 +249,7 @@
           <onleft>50</onleft>
           <label>137</label>
           <hyperlink>30885</hyperlink>
-					<ondown>28</ondown>
+          <ondown>28</ondown>
           <visible>plugin.isenabled(Search music)</visible>
         </control>
         <control>
@@ -265,7 +265,7 @@
           <id>28</id>
           <label>33001</label>
           <onleft>50</onleft>
-					<ondown>27</ondown>
+          <ondown>27</ondown>
           <visible>plugin.isenabled(Audioscrobbler)</visible>
         </control>
         <control>
@@ -274,7 +274,7 @@
           <id>27</id>
           <label>33000</label>
           <onleft>50</onleft>
-					<ondown>29</ondown>
+          <ondown>29</ondown>
           <visible>plugin.isenabled(Audioscrobbler)</visible>
         </control>
         <control>
@@ -283,7 +283,7 @@
           <id>29</id>
           <label>Scrobbler: </label>
           <onleft>50</onleft>
-					<ondown>2</ondown>
+          <ondown>2</ondown>
           <visible>plugin.isenabled(Audioscrobbler)</visible>
         </control>
       </control>
@@ -294,4 +294,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:e4f1694735cfc1911e428f494716fc96-->
+<!--Checksum:ddee4705d3bb7ddf54646968b5ee4072-->

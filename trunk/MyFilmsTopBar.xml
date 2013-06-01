@@ -5,24 +5,24 @@
       <description>Top Title Extension Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>381</posX>
-      <posY>11</posY>
-      <width>486</width>
-      <height>35</height>
+      <posX>571</posX>
+      <posY>16</posY>
+      <width>729</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
       <visible>!control.hasfocus(10099)</visible>
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
       <animation effect="fade" time="150" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="150" delay="0">Hidden</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="150" delay="0">Hidden</animation>
     </control>
     <control>
       <description>Current Filter</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>839</posX>
-      <posY>13</posY>
-      <width>320</width>
+      <posX>1258</posX>
+      <posY>19</posY>
+      <width>480</width>
       <align>right</align>
       <label>#myfilms.view #myfilms.select</label>
       <font>mediastream12c</font>
@@ -31,20 +31,20 @@
       <visible>!control.hasfocus(10099)</visible>
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
       <animation effect="fade" time="150" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="-160,0" end="0,0" tween="bounce" time="350" delay="200">Visible</animation>
-      <animation effect="slide" start="-160,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
+      <animation effect="slide" start="-240,0" end="0,0" tween="bounce" time="350" delay="200">Visible</animation>
+      <animation effect="slide" start="-240,0" end="0,0" tween="quadratic" time="150" delay="150">Visible</animation>
     </control>
     <control>
       <description>Top Title Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
       <visible>!control.hasfocus(10099)</visible>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
       <animation effect="fade" time="150" delay="0">WindowOpen</animation>
     </control>
@@ -52,16 +52,16 @@
       <description>Plugin Name</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>#myfilms.config.pluginname / #myfilms.config.currentconfig</label>
       <wrapString> |  </wrapString>
       <visible>!control.hasfocus(10099)</visible>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="150" delay="0">Visible</animation>
       <animation effect="fade" time="150" delay="0">WindowClose</animation>
       <animation effect="fade" time="150" delay="0">WindowOpen</animation>
     </control>
@@ -69,10 +69,10 @@
       <description>Working Animation</description>
       <type>animation</type>
       <id>2080</id>
-      <posX>890</posX>
-      <posY>15</posY>
-      <width>157</width>
-      <height>24</height>
+      <posX>1335</posX>
+      <posY>22</posY>
+      <width>235</width>
+      <height>36</height>
       <textures>common.waiting.1.png;common.waiting.2.png;common.waiting.3.png;common.waiting.4.png;common.waiting.5.png;common.waiting.6.png;common.waiting.7.png;common.waiting.8.png;common.waiting.7.png;common.waiting.6.png;common.waiting.5.png;common.waiting.4.png;common.waiting.3.png;common.waiting.2.png</textures>
       <Duration>0:0:03</Duration>
       <keepaspectratio>yes</keepaspectratio>
@@ -80,4 +80,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:31eb1ddb364a80161850917315bd66b9-->
+<!--Checksum:b4d9acce2879ffd3197363b0c7e5652d-->

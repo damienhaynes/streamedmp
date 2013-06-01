@@ -5,31 +5,31 @@
       <description>Scrolling Popup</description>
       <type>image</type>
       <id>1</id>
-      <posX>595</posX>
-      <posY>634</posY>
-      <height>90</height>
-      <width>90</width>
+      <posX>892</posX>
+      <posY>951</posY>
+      <height>135</height>
+      <width>135</width>
       <texture>popup.png</texture>
       <visible>facadeview.list+[string.contains(#scrolling.up,yes)|string.contains(#scrolling.down,yes)]+string.contains(#StreamedMP.ListScrollPopup,yes)+!string.equals(#selecteditem.scrolllabel,)</visible>
-      <animation effect="slide" start="0,50" end="0,0" delay="250" time="150" reversible="true">visiblechange</animation>
+      <animation effect="slide" start="0,75" end="0,0" delay="250" time="150" reversible="true">visiblechange</animation>
     </control>
     <control>
       <description>Scrolling Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>640</posX>
-      <posY>680</posY>
+      <posX>960</posX>
+      <posY>1020</posY>
       <label>#selecteditem.scrolllabel</label>
       <font>mediastream28tc</font>
       <align>center</align>
       <valign>middle</valign>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>3</shadowDistance>
+      <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.list+[string.contains(#scrolling.up,yes)|string.contains(#scrolling.down,yes)]+string.contains(#StreamedMP.ListScrollPopup,yes)</visible>
-      <animation effect="slide" start="0,50" end="0,0" delay="250" time="150" reversible="true">visiblechange</animation>
+      <animation effect="slide" start="0,75" end="0,0" delay="250" time="150" reversible="true">visiblechange</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:42173eccda20a6ad39b984e20450766e-->
+<!--Checksum:7d11c05a398ad3f32a174f8a719ef780-->

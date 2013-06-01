@@ -13,70 +13,70 @@
       <type>image</type>
       <description>BG</description>
       <id>0</id>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#header.hover</texture>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>18</posX>
+      <posX>27</posX>
       <posY>0</posY>
-      <width>300</width>
-      <height>720</height>
+      <width>450</width>
+      <height>1080</height>
       <texture>homebladesub.png</texture>
-      <animation effect="slide" time="200" start="-434,0">windowopen</animation>
-      <animation effect="slide" time="200" end="-434,0">windowclose</animation>
+      <animation effect="slide" time="200" start="-651,0">windowopen</animation>
+      <animation effect="slide" time="200" end="-651,0">windowclose</animation>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>-780</posX>
+      <posX>-1170</posX>
       <posY>0</posY>
-      <width>846</width>
-      <height>720</height>
+      <width>1269</width>
+      <height>1080</height>
       <texture>homebladeleft.png</texture>
-      <animation effect="slide" time="100" start="-846,0">windowopen</animation>
-      <animation effect="slide" time="100" end="-846,0">windowclose</animation>
+      <animation effect="slide" time="100" start="-1269,0">windowopen</animation>
+      <animation effect="slide" time="100" end="-1269,0">windowclose</animation>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>70</posX>
-      <posY>100</posY>
-      <width>100</width>
-      <height>100</height>
+      <posX>105</posX>
+      <posY>150</posY>
+      <width>150</width>
+      <height>150</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>logos\trakt.png</texture>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
       <animation effect="fade" time="200" delay="200">windowclose</animation>
-      <animation effect="slide" time="100" start="-846,0">windowopen</animation>
-      <animation effect="slide" time="100" end="-846,0">windowclose</animation>
+      <animation effect="slide" time="100" start="-1269,0">windowopen</animation>
+      <animation effect="slide" time="100" end="-1269,0">windowclose</animation>
     </control>
     <control>
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
       <animation effect="fade" time="200" delay="200">windowclose</animation>
-      <animation effect="slide" time="100" start="-846,0">windowopen</animation>
-      <animation effect="slide" time="100" end="-846,0">windowclose</animation>
-      <posX>56</posX>
-      <posY>201</posY>
-      <width>255</width>
-      <height>379</height>
+      <animation effect="slide" time="100" start="-1269,0">windowopen</animation>
+      <animation effect="slide" time="100" end="-1269,0">windowclose</animation>
+      <posX>84</posX>
+      <posY>301</posY>
+      <width>382</width>
+      <height>568</height>
       <layout>StackLayout(0, Vertical, true)</layout>
       <control Style="settingsbutton">
         <description>Calendar</description>
         <type>button</type>
-        <width>255</width>
+        <width>382</width>
         <id>10</id>
         <label>#Trakt.Translation.Calendar.Label</label>
         <hyperlink>87259</hyperlink>
@@ -85,7 +85,7 @@
       <control Style="settingsbutton">
         <description>Friends</description>
         <type>button</type>
-        <width>255</width>
+        <width>382</width>
         <id>11</id>
         <hyperlink>87260</hyperlink>
         <label>#Trakt.Translation.Friends.Label</label>
@@ -93,7 +93,7 @@
       <control Style="settingsbutton">
         <description>Recommendations</description>
         <type>button</type>
-        <width>255</width>
+        <width>382</width>
         <id>12</id>
         <hyperlink>87261</hyperlink>
         <label>#Trakt.Translation.Recommendations.Label</label>
@@ -101,7 +101,7 @@
       <control Style="settingsbutton">
         <description>Trending</description>
         <type>button</type>
-        <width>255</width>
+        <width>382</width>
         <id>13</id>
         <hyperlink>87264</hyperlink>
         <label>#Trakt.Translation.Trending.Label</label>
@@ -109,7 +109,7 @@
       <control Style="settingsbutton">
         <description>Watch List</description>
         <type>button</type>
-        <width>255</width>
+        <width>382</width>
         <id>14</id>
         <hyperlink>87267</hyperlink>
         <label>#Trakt.Translation.WatchList.Label</label>
@@ -117,7 +117,7 @@
       <control Style="settingsbutton">
         <description>Lists</description>
         <type>button</type>
-        <width>255</width>
+        <width>382</width>
         <id>15</id>
         <hyperlink>87275</hyperlink>
         <label>#Trakt.Translation.Lists.Label</label>
@@ -125,7 +125,7 @@
       <control Style="settingsbutton">
         <description>Settings</description>
         <type>button</type>
-        <width>255</width>
+        <width>382</width>
         <id>16</id>
         <label>#Trakt.Translation.Settings.Label</label>
         <hyperlink>87271</hyperlink>
@@ -134,7 +134,7 @@
       <control Style="settingsbutton">
         <description>MPEIUPDATE:a9c3845a_8718_4712_85cc_26f56520bb9a</description>
         <type>button</type>
-        <width>255</width>
+        <width>382</width>
         <id>98</id>
         <label>#MPEI.Translation.Update.Label</label>
         <ondown>10</ondown>
@@ -146,19 +146,19 @@
       <description>Update Indicator</description>
       <type>image</type>
       <id>0</id>
-      <posX>420</posX>
-      <posY>510</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>630</posX>
+      <posY>765</posY>
+      <width>48</width>
+      <height>48</height>
       <texture>isupdate.png</texture>
       <visible>string.equals(#mpei.a9c3845a_8718_4712_85cc_26f56520bb9a.haveupdate, true)</visible>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
       <animation effect="fade" time="200" delay="200">windowclose</animation>
-      <animation effect="slide" time="100" start="-846,0">windowopen</animation>
-      <animation effect="slide" time="100" end="-846,0">windowclose</animation>
+      <animation effect="slide" time="100" start="-1269,0">windowopen</animation>
+      <animation effect="slide" time="100" end="-1269,0">windowclose</animation>
     </control>
     <import>Trakt.Dashboard.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:2125b5253251c5f770fff206225b11cc-->
+<!--Checksum:46a217ed1e1a57f90638b79a16960056-->

@@ -6,10 +6,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>285</posX>
-      <posY>240</posY>
-      <width>205</width>
-      <height>20</height>
+      <posX>427</posX>
+      <posY>360</posY>
+      <width>307</width>
+      <height>30</height>
       <texture>osdprogressbackv.png</texture>
       <keepaspectratio>no</keepaspectratio>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
@@ -19,9 +19,9 @@
       <type>progress</type>
       <description>progress</description>
       <id>1</id>
-      <posX>273</posX>
-      <posY>242</posY>
-      <width>225</width>
+      <posX>409</posX>
+      <posY>363</posY>
+      <width>337</width>
       <label>#HTPCInfo.ProcessorUsage</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.starts(#HTPCInfo.ProcessorUsage,#)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -30,8 +30,8 @@
       <description>Processor Gauge Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>240</posY>
+      <posX>97</posX>
+      <posY>360</posY>
       <label>#HTPCInfo.TranslationProcessor</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -40,9 +40,9 @@
       <description>Processor Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>260</posY>
-      <width>190</width>
+      <posX>97</posX>
+      <posY>390</posY>
+      <width>285</width>
       <label>#HTPCInfo.TranslationProcessorUsage</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -51,8 +51,8 @@
       <description>Processor Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>285</posX>
-      <posY>260</posY>
+      <posX>427</posX>
+      <posY>390</posY>
       <label>#HTPCInfo.ProcessorUsage%</label>
       <font>mediastream10</font>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
@@ -62,9 +62,9 @@
       <description>Processor Core Count Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>280</posY>
-      <width>190</width>
+      <posX>97</posX>
+      <posY>420</posY>
+      <width>285</width>
       <label>#HTPCInfo.TranslationProcessorCore</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -73,8 +73,8 @@
       <description>Processor Core Count</description>
       <type>label</type>
       <id>1</id>
-      <posX>285</posX>
-      <posY>280</posY>
+      <posX>427</posX>
+      <posY>420</posY>
       <label>#HTPCInfo.ProcessorCoresx #HTPCInfo.ProcessorManufacturer</label>
       <font>mediastream10</font>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
@@ -84,8 +84,8 @@
       <description>Processor Usage Gauge Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>300</posY>
+      <posX>97</posX>
+      <posY>450</posY>
       <label>Type</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -94,8 +94,8 @@
       <description>Processor Core Count</description>
       <type>label</type>
       <id>1</id>
-      <posX>285</posX>
-      <posY>300</posY>
+      <posX>427</posX>
+      <posY>450</posY>
       <label>#HTPCInfo.ProcessorDescription</label>
       <font>mediastream10</font>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
@@ -105,10 +105,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>855</posX>
-      <posY>240</posY>
-      <width>205</width>
-      <height>20</height>
+      <posX>1282</posX>
+      <posY>360</posY>
+      <width>307</width>
+      <height>30</height>
       <texture>osdprogressbackv.png</texture>
       <keepaspectratio>no</keepaspectratio>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
@@ -118,9 +118,9 @@
       <type>progress</type>
       <description>progress</description>
       <id>1</id>
-      <posX>843</posX>
-      <posY>242</posY>
-      <width>225</width>
+      <posX>1264</posX>
+      <posY>363</posY>
+      <width>337</width>
       <label>#HTPCInfo.MemoryPercentUsed</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -129,11 +129,11 @@
       <description>Memory Gauge Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>665</posX>
-      <posY>240</posY>
-      <width>120</width>
-      <label>#HTPCInfo.TranslationMemory</label>
+      <posX>997</posX>
+      <posY>360</posY>
       <width>180</width>
+      <label>#HTPCInfo.TranslationMemory</label>
+      <width>270</width>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
@@ -141,9 +141,9 @@
       <description>Memory Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>665</posX>
-      <posY>260</posY>
-      <width>180</width>
+      <posX>997</posX>
+      <posY>390</posY>
+      <width>270</width>
       <label>#HTPCInfo.TranslationMemoryUsage</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -152,8 +152,8 @@
       <description>Memory Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>855</posX>
-      <posY>260</posY>
+      <posX>1282</posX>
+      <posY>390</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.MemoryPercentUsed% (#HTPCInfo.MemoryAvailable)</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
@@ -163,10 +163,10 @@
       <description>Pagefile Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>665</posX>
-      <posY>280</posY>
+      <posX>997</posX>
+      <posY>420</posY>
       <label>#HTPCInfo.TranslationMemoryPagefileUsage</label>
-      <width>180</width>
+      <width>270</width>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
@@ -174,8 +174,8 @@
       <description>Pagefile Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>855</posX>
-      <posY>280</posY>
+      <posX>1282</posX>
+      <posY>420</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.PagefileUsed%</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
@@ -185,10 +185,10 @@
       <description>Memory Size Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>665</posX>
-      <posY>300</posY>
+      <posX>997</posX>
+      <posY>450</posY>
       <label>#HTPCInfo.TranslationMemorySize</label>
-      <width>180</width>
+      <width>270</width>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
@@ -196,8 +196,8 @@
       <description>Memory Size</description>
       <type>label</type>
       <id>1</id>
-      <posX>855</posX>
-      <posY>300</posY>
+      <posX>1282</posX>
+      <posY>450</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.MemoryPhysical</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
@@ -208,8 +208,8 @@
       <description>Drives Gauge Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>340</posY>
+      <posX>97</posX>
+      <posY>510</posY>
       <label>#HTPCInfo.TranslationDrive</label>
       <font>mediastream14tc</font>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
@@ -219,10 +219,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>62</posX>
-      <posY>413</posY>
-      <width>205</width>
-      <height>20</height>
+      <posX>93</posX>
+      <posY>619</posY>
+      <width>307</width>
+      <height>30</height>
       <texture>osdprogressbackv.png</texture>
       <keepaspectratio>no</keepaspectratio>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
@@ -232,9 +232,9 @@
       <type>progress</type>
       <description>progress</description>
       <id>1</id>
-      <posX>50</posX>
-      <posY>415</posY>
-      <width>225</width>
+      <posX>75</posX>
+      <posY>622</posY>
+      <width>337</width>
       <label>#HTPCInfo.Drive1PercentUsedSpace</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -243,8 +243,8 @@
       <description>Drive 1 Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>375</posY>
+      <posX>97</posX>
+      <posY>562</posY>
       <label>#HTPCInfo.Drive1Name</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -253,8 +253,8 @@
       <description>Drive 1 Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>395</posY>
+      <posX>97</posX>
+      <posY>592</posY>
       <label>#HTPCInfo.Drive1PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.Drive1FreeSpace #HTPCInfo.TranslationFree)</label>
       <font>mediastream10</font>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
@@ -264,10 +264,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>450</posX>
-      <posY>413</posY>
-      <width>205</width>
-      <height>20</height>
+      <posX>675</posX>
+      <posY>619</posY>
+      <width>307</width>
+      <height>30</height>
       <texture>osdprogressbackv.png</texture>
       <keepaspectratio>no</keepaspectratio>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
@@ -277,9 +277,9 @@
       <type>progress</type>
       <description>progress</description>
       <id>1</id>
-      <posX>438</posX>
-      <posY>415</posY>
-      <width>225</width>
+      <posX>657</posX>
+      <posY>622</posY>
+      <width>337</width>
       <label>#HTPCInfo.Drive2PercentUsedSpace</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -288,8 +288,8 @@
       <description>Drive 2 Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>450</posX>
-      <posY>375</posY>
+      <posX>675</posX>
+      <posY>562</posY>
       <label>#HTPCInfo.Drive2Name</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -298,8 +298,8 @@
       <description>Drive 2 Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>450</posX>
-      <posY>395</posY>
+      <posX>675</posX>
+      <posY>592</posY>
       <label>#HTPCInfo.Drive2PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.Drive2FreeSpace #HTPCInfo.TranslationFree)</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -310,8 +310,8 @@
       <description>Drives Gauge Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>450</posY>
+      <posX>97</posX>
+      <posY>675</posY>
       <label>#HTPCInfo.TranslationNetwork</label>
       <font>mediastream14tc</font>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive1Name,)</visible>
@@ -321,10 +321,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>62</posX>
-      <posY>523</posY>
-      <width>205</width>
-      <height>20</height>
+      <posX>93</posX>
+      <posY>784</posY>
+      <width>307</width>
+      <height>30</height>
       <texture>osdprogressbackv.png</texture>
       <keepaspectratio>no</keepaspectratio>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive1Name,)</visible>
@@ -334,9 +334,9 @@
       <type>progress</type>
       <description>progress</description>
       <id>1</id>
-      <posX>50</posX>
-      <posY>525</posY>
-      <width>225</width>
+      <posX>75</posX>
+      <posY>787</posY>
+      <width>337</width>
       <label>#HTPCInfo.SharedDrive1PercentUsedSpace</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive1Name,)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -345,8 +345,8 @@
       <description>SharedDrive 1 Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>485</posY>
+      <posX>97</posX>
+      <posY>727</posY>
       <label>#HTPCInfo.SharedDrive1Name</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -355,8 +355,8 @@
       <description>SharedDrive1 Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>505</posY>
+      <posX>97</posX>
+      <posY>757</posY>
       <label>#HTPCInfo.SharedDrive1PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.SharedDrive1FreeSpace #HTPCInfo.TranslationFree)</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive1Name,)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -366,10 +366,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>450</posX>
-      <posY>523</posY>
-      <width>205</width>
-      <height>20</height>
+      <posX>675</posX>
+      <posY>784</posY>
+      <width>307</width>
+      <height>30</height>
       <texture>osdprogressbackv.png</texture>
       <keepaspectratio>no</keepaspectratio>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive2Name,)</visible>
@@ -379,9 +379,9 @@
       <type>progress</type>
       <description>progress</description>
       <id>1</id>
-      <posX>438</posX>
-      <posY>525</posY>
-      <width>225</width>
+      <posX>657</posX>
+      <posY>787</posY>
+      <width>337</width>
       <label>#HTPCInfo.SharedDrive2PercentUsedSpace</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive2Name,)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -390,8 +390,8 @@
       <description>Drive 2 Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>450</posX>
-      <posY>485</posY>
+      <posX>675</posX>
+      <posY>727</posY>
       <label>#HTPCInfo.SharedDrive2Name</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -400,8 +400,8 @@
       <description>Drive 2 Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>450</posX>
-      <posY>505</posY>
+      <posX>675</posX>
+      <posY>757</posY>
       <label>#HTPCInfo.SharedDrive2PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.SharedDrive2FreeSpace #HTPCInfo.TranslationFree)</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive2Name,)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -411,10 +411,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>855</posX>
-      <posY>523</posY>
-      <width>205</width>
-      <height>20</height>
+      <posX>1282</posX>
+      <posY>784</posY>
+      <width>307</width>
+      <height>30</height>
       <texture>osdprogressbackv.png</texture>
       <keepaspectratio>no</keepaspectratio>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive3Name,)</visible>
@@ -424,9 +424,9 @@
       <type>progress</type>
       <description>progress</description>
       <id>123</id>
-      <posX>843</posX>
-      <posY>525</posY>
-      <width>225</width>
+      <posX>1264</posX>
+      <posY>787</posY>
+      <width>337</width>
       <label>#HTPCInfo.SharedDrive3PercentUsedSpace</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive3Name,)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -435,8 +435,8 @@
       <description>SharedDrive3 Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>855</posX>
-      <posY>485</posY>
+      <posX>1282</posX>
+      <posY>727</posY>
       <label>#HTPCInfo.SharedDrive3Name</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -445,8 +445,8 @@
       <description>SharedDrive3 Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>855</posX>
-      <posY>505</posY>
+      <posX>1282</posX>
+      <posY>757</posY>
       <label>#HTPCInfo.SharedDrive3PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.SharedDrive3FreeSpace #HTPCInfo.TranslationFree)</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive3Name,)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -456,10 +456,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>62</posX>
-      <posY>623</posY>
-      <width>205</width>
-      <height>20</height>
+      <posX>93</posX>
+      <posY>934</posY>
+      <width>307</width>
+      <height>30</height>
       <texture>osdprogressbackv.png</texture>
       <keepaspectratio>no</keepaspectratio>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive4Name,)</visible>
@@ -469,9 +469,9 @@
       <type>progress</type>
       <description>progress</description>
       <id>1</id>
-      <posX>50</posX>
-      <posY>625</posY>
-      <width>225</width>
+      <posX>75</posX>
+      <posY>937</posY>
+      <width>337</width>
       <label>#HTPCInfo.SharedDrive4PercentUsedSpace</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive4Name,)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -480,8 +480,8 @@
       <description>SharedDrive 4 Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>585</posY>
+      <posX>97</posX>
+      <posY>877</posY>
       <label>#HTPCInfo.SharedDrive4Name</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -490,8 +490,8 @@
       <description>SharedDrive4 Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>605</posY>
+      <posX>97</posX>
+      <posY>907</posY>
       <label>#HTPCInfo.SharedDrive4PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.SharedDrive4FreeSpace #HTPCInfo.TranslationFree)</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive4Name,)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -501,10 +501,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>450</posX>
-      <posY>623</posY>
-      <width>205</width>
-      <height>20</height>
+      <posX>675</posX>
+      <posY>934</posY>
+      <width>307</width>
+      <height>30</height>
       <texture>osdprogressbackv.png</texture>
       <keepaspectratio>no</keepaspectratio>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive5Name,)</visible>
@@ -514,9 +514,9 @@
       <type>progress</type>
       <description>progress</description>
       <id>1</id>
-      <posX>438</posX>
-      <posY>625</posY>
-      <width>225</width>
+      <posX>657</posX>
+      <posY>937</posY>
+      <width>337</width>
       <label>#HTPCInfo.SharedDrive5PercentUsedSpace</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive5Name,)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -525,8 +525,8 @@
       <description>Drive 5 Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>450</posX>
-      <posY>585</posY>
+      <posX>675</posX>
+      <posY>877</posY>
       <label>#HTPCInfo.SharedDrive5Name</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -535,8 +535,8 @@
       <description>Drive 5 Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>450</posX>
-      <posY>605</posY>
+      <posX>675</posX>
+      <posY>907</posY>
       <label>#HTPCInfo.SharedDrive5PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.SharedDrive5FreeSpace #HTPCInfo.TranslationFree)</label>
       <visible>string.equals(#HTPCInfo.SectionView, Summary)+!string.equals(#HTPCInfo.SharedDrive5Name,)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -544,4 +544,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:6f88fafb4c66331ca5be37b6445b1383-->
+<!--Checksum:d7816c209e3ccaad227a3dd9e48d77af-->

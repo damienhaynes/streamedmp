@@ -4,10 +4,10 @@
     <control>
       <description>Hidden Menu Indicator</description>
       <type>image</type>
-      <posX>1232</posX>
-      <posY>50</posY>
-      <width>48</width>
-      <height>144</height>
+      <posX>1848</posX>
+      <posY>75</posY>
+      <width>72</width>
+      <height>216</height>
       <texture>#StreamedMP.ActionMenu.Image</texture>
       <visible>control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -18,33 +18,33 @@
       <defaultcontrol>3</defaultcontrol>
       <onexit>50</onexit>
       <dimColor>00ffffff</dimColor>
-      <buttonX>1231</buttonX>
-      <buttonY>55</buttonY>
-      <buttonwidth>49</buttonwidth>
-      <buttonheight>253</buttonheight>
+      <buttonX>1846</buttonX>
+      <buttonY>82</buttonY>
+      <buttonwidth>73</buttonwidth>
+      <buttonheight>379</buttonheight>
       <control>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
         <visible>!control.hasfocus(50)+control.isvisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <description>Dummy Button (for Mouse)</description>
         <label>-</label>
         <type>button</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <visible>!control.hasfocus(50)+control.isvisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>Views Menu</description>
@@ -52,11 +52,11 @@
         <label>499</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>200</posY>
+        <posX>1560</posX>
+        <posY>300</posY>
         <visible>!control.hasfocus(50)+control.isvisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>Settings</description>
@@ -64,11 +64,11 @@
         <label>897</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>425</posY>
+        <posX>1560</posX>
+        <posY>637</posY>
         <visible>!control.hasfocus(50)+control.isvisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
@@ -76,28 +76,28 @@
         <type>label</type>
         <label>1065</label>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>480</posY>
+        <posX>1560</posX>
+        <posY>720</posY>
         <visible>!control.hasfocus(50)+control.isvisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!control.hasfocus(50)+control.isvisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>225</posY>
-        <width>220</width>
-        <height>720</height>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+        <posX>1560</posX>
+        <posY>337</posY>
+        <width>330</width>
+        <height>1080</height>
         <layout>StackLayout(0, Vertical, true)</layout>
         <control>
           <type>button</type>
           <description>Layout</description>
           <id>2</id>
-          <width>260</width>
+          <width>390</width>
           <onleft>50</onleft>
           <onup>17</onup>
           <ondown>3</ondown>
@@ -106,8 +106,8 @@
         <control>
           <type>sortbutton</type>
           <id>3</id>
-          <width>260</width>
-          <offsetSortButtonX>205</offsetSortButtonX>
+          <width>390</width>
+          <offsetSortButtonX>307</offsetSortButtonX>
           <onleft>50</onleft>
           <onup>2</onup>
           <ondown>5</ondown>
@@ -118,7 +118,7 @@
           <type>button</type>
           <description>Switch view</description>
           <id>5</id>
-          <width>260</width>
+          <width>390</width>
           <onleft>50</onleft>
           <onup>3</onup>
           <ondown>4</ondown>
@@ -128,7 +128,7 @@
           <type>button</type>
           <description>Search</description>
           <id>4</id>
-          <width>260</width>
+          <width>390</width>
           <onleft>50</onleft>
           <onup>5</onup>
           <ondown>6</ondown>
@@ -138,7 +138,7 @@
           <type>button</type>
           <description>Options</description>
           <id>6</id>
-          <width>260</width>
+          <width>390</width>
           <onleft>50</onleft>
           <onup>4</onup>
           <ondown>7</ondown>
@@ -148,12 +148,12 @@
           <type>button</type>
           <description>Global Filter Options</description>
           <id>7</id>
-          <width>260</width>
+          <width>390</width>
           <onleft>50</onleft>
           <onup>6</onup>
           <ondown>8</ondown>
         </control>
-				<control>
+        <control>
           <description>Global Updates</description>
           <type>button</type>
           <id>8</id>
@@ -257,4 +257,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:4f97af7279a256041f67731a7c5670b5-->
+<!--Checksum:6365090be4059c7570854095533b4a29-->

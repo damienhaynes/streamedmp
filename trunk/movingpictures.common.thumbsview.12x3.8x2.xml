@@ -5,9 +5,9 @@
       <description>Movie  Title</description>
       <type>label</type>
       <id>0</id>
-      <posX>25</posX>
-      <posY>515</posY>
-      <width>900</width>
+      <posX>37</posX>
+      <posY>772</posY>
+      <width>1350</width>
       <font>mediastream16tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -18,10 +18,10 @@
       <description>Movie Description</description>
       <type>textboxscrollup</type>
       <id>631</id>
-      <posX>25</posX>
-      <posY>549</posY>
-      <width>640</width>
-      <height>125</height>
+      <posX>37</posX>
+      <posY>823</posY>
+      <width>960</width>
+      <height>187</height>
       <seperator>----------------------------------------</seperator>
       <textcolor>ffffffff</textcolor>
       <font>mediastream11</font>
@@ -33,9 +33,9 @@
     <control Style="smallTitleB">
       <label>#MovingPictures.Translation.Genres.Label</label>
       <type>label</type>
-      <posX>720</posX>
-      <posY>556</posY>
-      <width>190</width>
+      <posX>1080</posX>
+      <posY>834</posY>
+      <width>285</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -43,27 +43,27 @@
       <label>#MovingPictures.SelectedMovie.genres</label>
       <id>10049</id>
       <type>label</type>
-      <posX>930</posX>
-      <posY>557</posY>
-      <width>310</width>
+      <posX>1395</posX>
+      <posY>835</posY>
+      <width>465</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <label>N/A</label>
       <type>label</type>
-      <posX>930</posX>
-      <posY>557</posY>
-      <width>310</width>
+      <posX>1395</posX>
+      <posY>835</posY>
+      <width>465</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(10049)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <label>#MovingPictures.Translation.Certification.Label</label>
       <type>label</type>
-      <posX>720</posX>
-      <posY>586</posY>
-      <width>190</width>
+      <posX>1080</posX>
+      <posY>879</posY>
+      <width>285</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -71,27 +71,27 @@
       <id>1004</id>
       <label>#MovingPictures.SelectedMovie.certification</label>
       <type>label</type>
-      <posX>930</posX>
-      <posY>587</posY>
-      <width>310</width>
+      <posX>1395</posX>
+      <posY>880</posY>
+      <width>465</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <label>N/A</label>
       <type>label</type>
-      <posX>930</posX>
-      <posY>587</posY>
-      <width>310</width>
+      <posX>1395</posX>
+      <posY>880</posY>
+      <width>465</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1004)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <label>#MovingPictures.Translation.Runtime.Label</label>
       <type>label</type>
-      <posX>720</posX>
-      <posY>616</posY>
-      <width>190</width>
+      <posX>1080</posX>
+      <posY>924</posY>
+      <width>285</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -99,27 +99,27 @@
       <id>1005</id>
       <label>#MovingPictures.SelectedMovie.extra.runtime.en.pretty</label>
       <type>label</type>
-      <posX>930</posX>
-      <posY>617</posY>
-      <width>310</width>
+      <posX>1395</posX>
+      <posY>925</posY>
+      <width>465</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <label>N/A</label>
       <type>label</type>
-      <posX>930</posX>
-      <posY>617</posY>
-      <width>310</width>
+      <posX>1395</posX>
+      <posY>925</posY>
+      <width>465</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1005)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <label>#MovingPictures.Translation.Year.Label</label>
       <type>label</type>
-      <posX>720</posX>
-      <posY>646</posY>
-      <width>190</width>
+      <posX>1080</posX>
+      <posY>969</posY>
+      <width>285</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -127,27 +127,27 @@
       <id>1006</id>
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.year</label>
-      <posX>930</posX>
-      <posY>647</posY>
-      <width>310</width>
+      <posX>1395</posX>
+      <posY>970</posY>
+      <width>465</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <type>label</type>
       <label>N/A</label>
-      <posX>930</posX>
-      <posY>647</posY>
-      <width>310</width>
+      <posX>1395</posX>
+      <posY>970</posY>
+      <width>465</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!Control.HasText(1006)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <label>#MovingPictures.Translation.Rated.Label</label>
       <type>label</type>
-      <posX>720</posX>
-      <posY>676</posY>
-      <width>190</width>
+      <posX>1080</posX>
+      <posY>1014</posY>
+      <width>285</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -155,12 +155,12 @@
       <id>0</id>
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
-      <posX>930</posX>
-      <posY>677</posY>
-      <width>310</width>
+      <posX>1395</posX>
+      <posY>1015</posY>
+      <width>465</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:98cf3c469b8d7b0f87327cacbd46100b-->
+<!--Checksum:ce92abe14dd704efc8d75684e0a36029-->

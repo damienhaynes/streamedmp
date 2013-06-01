@@ -7,23 +7,23 @@
       <dimColor>FFFFFFFF</dimColor>
       <animation effect="fade" time="200">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="200" start="1200,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
+      <animation effect="slide" time="200" start="1800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1800,0">WindowClose</animation>
       <control>
         <type>image</type>
         <id>0</id>
-        <posX>310</posX>
+        <posX>465</posX>
         <posY>0</posY>
-        <width>970</width>
-        <height>720</height>
+        <width>1455</width>
+        <height>1080</height>
         <texture>weatherframe2b.png</texture>
       </control>
       <control>
         <type>label</type>
         <id>0</id>
-        <posX>340</posX>
-        <posY>30</posY>
-        <width>840</width>
+        <posX>510</posX>
+        <posY>45</posY>
+        <width>1260</width>
         <font>mediastream14tc</font>
         <label>#Trakt.Activity.Description</label>
       </control>
@@ -34,32 +34,32 @@
         <control>
           <type>listcontrol</type>
           <id>98300</id>
-          <posX>320</posX>
-          <posY>65</posY>
-          <height>300</height>
-          <width>920</width>
+          <posX>480</posX>
+          <posY>97</posY>
+          <height>450</height>
+          <width>1380</width>
           <onleft>#activityOnLeft</onleft>
           <onright>#activityOnLeft</onright>
           <scrollOffset>2</scrollOffset>
-          <itemWidth>32</itemWidth>
-          <itemHeight>32</itemHeight>
-          <IconXOff>25</IconXOff>
-          <IconYOff>4</IconYOff>
-          <PinIconXOff>900</PinIconXOff>
+          <itemWidth>48</itemWidth>
+          <itemHeight>48</itemHeight>
+          <IconXOff>37</IconXOff>
+          <IconYOff>6</IconYOff>
+          <PinIconXOff>1350</PinIconXOff>
           <PinIconYOff>0</PinIconYOff>
-          <PinIconWidth>32</PinIconWidth>
-          <PinIconHeight>32</PinIconHeight>
-          <textXOff>25</textXOff>
-          <textYOff>5</textYOff>
+          <PinIconWidth>48</PinIconWidth>
+          <PinIconHeight>48</PinIconHeight>
+          <textXOff>37</textXOff>
+          <textYOff>7</textYOff>
           <textXOff2>0</textXOff2>
-          <textYOff2>5</textYOff2>
-          <textXOff3>75</textXOff3>
-          <textYOff3>10</textYOff3>
+          <textYOff2>7</textYOff2>
+          <textXOff3>112</textXOff3>
+          <textYOff3>15</textYOff3>
           <font>mediastream12c</font>
           <font2>mediastream10c</font2>
           <font3>mediastream12tc</font3>
           <keepaspectratio>yes</keepaspectratio>
-          <spinPosX>2000</spinPosX>
+          <spinPosX>3000</spinPosX>
           <suffix>|</suffix>
         </control>
       </control>
@@ -67,9 +67,9 @@
         <description>Trending Label</description>
         <type>label</type>
         <id>0</id>
-        <posX>340</posX>
-        <posY>325</posY>
-        <width>840</width>
+        <posX>510</posX>
+        <posY>487</posY>
+        <width>1260</width>
         <font>mediastream14tc</font>
         <label>#Trakt.Translation.TrendingShowsAndMovies.Label</label>
       </control>
@@ -83,19 +83,19 @@
           <id>98301</id>
           <onup>98300</onup>
           <onleft>#activityOnLeft</onleft>
-          <posX>340</posX>
-          <posY>350</posY>
-          <width>520</width>
-          <height>220</height>
+          <posX>510</posX>
+          <posY>525</posY>
+          <width>780</width>
+          <height>330</height>
           <scrollOffset>0</scrollOffset>
-          <itemWidth>128</itemWidth>
-          <itemHeight>156</itemHeight>
-          <textureWidth>120</textureWidth>
-          <textureHeight>170</textureHeight>
-          <thumbWidth>106</thumbWidth>
-          <thumbHeight>156</thumbHeight>
-          <thumbPosX>7</thumbPosX>
-          <thumbPosY>7</thumbPosY>
+          <itemWidth>192</itemWidth>
+          <itemHeight>234</itemHeight>
+          <textureWidth>180</textureWidth>
+          <textureHeight>255</textureHeight>
+          <thumbWidth>159</thumbWidth>
+          <thumbHeight>234</thumbHeight>
+          <thumbPosX>10</thumbPosX>
+          <thumbPosY>10</thumbPosY>
           <InfoImage>
           </InfoImage>
           <imageFolder>imagebg.png</imageFolder>
@@ -107,7 +107,7 @@
           <showFolder>yes</showFolder>
           <showBackGround>no</showBackGround>
           <showInfoImage>no</showInfoImage>
-          <spinPosX>2000</spinPosX>
+          <spinPosX>3000</spinPosX>
           <spinCanFocus>no</spinCanFocus>
         </control>
       </control>
@@ -115,9 +115,9 @@
         <description>Show #1 Title</description>
         <type>label</type>
         <id>0</id>
-        <posX>860</posX>
-        <posY>365</posY>
-        <width>210</width>
+        <posX>1290</posX>
+        <posY>547</posY>
+        <width>315</width>
         <font>font12</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Show.0.Title</label>
@@ -126,9 +126,9 @@
         <description>Show #2 Title</description>
         <type>label</type>
         <id>0</id>
-        <posX>860</posX>
-        <posY>400</posY>
-        <width>210</width>
+        <posX>1290</posX>
+        <posY>600</posY>
+        <width>315</width>
         <font>font12</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Show.1.Title</label>
@@ -137,9 +137,9 @@
         <description>Show #3 Title</description>
         <type>label</type>
         <id>0</id>
-        <posX>860</posX>
-        <posY>435</posY>
-        <width>210</width>
+        <posX>1290</posX>
+        <posY>652</posY>
+        <width>315</width>
         <font>font12</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Show.2.Title</label>
@@ -148,9 +148,9 @@
         <description>Show #4 Title</description>
         <type>label</type>
         <id>0</id>
-        <posX>860</posX>
-        <posY>470</posY>
-        <width>210</width>
+        <posX>1290</posX>
+        <posY>705</posY>
+        <width>315</width>
         <font>font12</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Show.3.Title</label>
@@ -159,49 +159,49 @@
         <description>Show #1 Rating Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1090</posX>
-        <posY>365</posY>
-        <width>24</width>
-        <height>24</height>
+        <posX>1635</posX>
+        <posY>547</posY>
+        <width>36</width>
+        <height>36</height>
         <texture>#Trakt.Show.0.Ratings.Icon.png</texture>
       </control>
       <control>
         <description>Show #2 Rating Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1090</posX>
-        <posY>400</posY>
-        <width>24</width>
-        <height>24</height>
+        <posX>1635</posX>
+        <posY>600</posY>
+        <width>36</width>
+        <height>36</height>
         <texture>#Trakt.Show.1.Ratings.Icon.png</texture>
       </control>
       <control>
         <description>Show #3 Rating Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1090</posX>
-        <posY>435</posY>
-        <width>24</width>
-        <height>24</height>
+        <posX>1635</posX>
+        <posY>652</posY>
+        <width>36</width>
+        <height>36</height>
         <texture>#Trakt.Show.2.Ratings.Icon.png</texture>
       </control>
       <control>
         <description>Show #4 Rating Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1090</posX>
-        <posY>470</posY>
-        <width>24</width>
-        <height>24</height>
+        <posX>1635</posX>
+        <posY>705</posY>
+        <width>36</width>
+        <height>36</height>
         <texture>#Trakt.Show.3.Ratings.Icon.png</texture>
       </control>
       <control>
         <description>Show #1 Rating</description>
         <type>label</type>
         <id>0</id>
-        <posX>1125</posX>
-        <posY>365</posY>
-        <width>840</width>
+        <posX>1687</posX>
+        <posY>547</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Show.0.Ratings.Percentage%</label>
@@ -210,9 +210,9 @@
         <description>Show #2 Rating</description>
         <type>label</type>
         <id>0</id>
-        <posX>1125</posX>
-        <posY>400</posY>
-        <width>840</width>
+        <posX>1687</posX>
+        <posY>600</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Show.1.Ratings.Percentage%</label>
@@ -221,9 +221,9 @@
         <description>Show #3 Rating</description>
         <type>label</type>
         <id>0</id>
-        <posX>1125</posX>
-        <posY>435</posY>
-        <width>840</width>
+        <posX>1687</posX>
+        <posY>652</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Show.2.Ratings.Percentage%</label>
@@ -232,9 +232,9 @@
         <description>Show #4 Rating</description>
         <type>label</type>
         <id>0</id>
-        <posX>1125</posX>
-        <posY>470</posY>
-        <width>840</width>
+        <posX>1687</posX>
+        <posY>705</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Show.3.Ratings.Percentage%</label>
@@ -243,49 +243,49 @@
         <description>Show #1 Watching Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1190</posX>
-        <posY>360</posY>
-        <width>32</width>
-        <height>32</height>
+        <posX>1785</posX>
+        <posY>540</posY>
+        <width>48</width>
+        <height>48</height>
         <texture>traktActivityWatching.png</texture>
       </control>
       <control>
         <description>Show #2 Watching Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1190</posX>
-        <posY>395</posY>
-        <width>32</width>
-        <height>32</height>
+        <posX>1785</posX>
+        <posY>592</posY>
+        <width>48</width>
+        <height>48</height>
         <texture>traktActivityWatching.png</texture>
       </control>
       <control>
         <description>Show #3 Watching Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1190</posX>
-        <posY>430</posY>
-        <width>32</width>
-        <height>32</height>
+        <posX>1785</posX>
+        <posY>645</posY>
+        <width>48</width>
+        <height>48</height>
         <texture>traktActivityWatching.png</texture>
       </control>
       <control>
         <description>Show #4 Watching Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1190</posX>
-        <posY>465</posY>
-        <width>32</width>
-        <height>32</height>
+        <posX>1785</posX>
+        <posY>697</posY>
+        <width>48</width>
+        <height>48</height>
         <texture>traktActivityWatching.png</texture>
       </control>
       <control>
         <description>Show #1 People Watching</description>
         <type>label</type>
         <id>0</id>
-        <posX>1225</posX>
-        <posY>365</posY>
-        <width>840</width>
+        <posX>1837</posX>
+        <posY>547</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Show.0.Watchers</label>
@@ -294,9 +294,9 @@
         <description>Show #2 People Watching</description>
         <type>label</type>
         <id>0</id>
-        <posX>1225</posX>
-        <posY>400</posY>
-        <width>840</width>
+        <posX>1837</posX>
+        <posY>600</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Show.1.Watchers</label>
@@ -305,9 +305,9 @@
         <description>Show #3 People Watching</description>
         <type>label</type>
         <id>0</id>
-        <posX>1225</posX>
-        <posY>435</posY>
-        <width>840</width>
+        <posX>1837</posX>
+        <posY>652</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Show.2.Watchers</label>
@@ -316,9 +316,9 @@
         <description>Show #4 People Watching</description>
         <type>label</type>
         <id>0</id>
-        <posX>1225</posX>
-        <posY>470</posY>
-        <width>840</width>
+        <posX>1837</posX>
+        <posY>705</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Show.3.Watchers</label>
@@ -327,9 +327,9 @@
         <description>Separator Line</description>
         <type>image</type>
         <id>1</id>
-        <posX>860</posX>
-        <posY>525</posY>
-        <width>395</width>
+        <posX>1290</posX>
+        <posY>787</posY>
+        <width>592</width>
         <height>1</height>
         <texture>hbar1white.png</texture>
         <colordiffuse>60ffffff</colordiffuse>
@@ -345,19 +345,19 @@
           <onup>98301</onup>
           <onleft>#activityOnLeft</onleft>
           <ondown>98301</ondown>
-          <posX>340</posX>
-          <posY>520</posY>
-          <width>520</width>
-          <height>220</height>
+          <posX>510</posX>
+          <posY>780</posY>
+          <width>780</width>
+          <height>330</height>
           <scrollOffset>0</scrollOffset>
-          <itemWidth>128</itemWidth>
-          <itemHeight>156</itemHeight>
-          <textureWidth>120</textureWidth>
-          <textureHeight>170</textureHeight>
-          <thumbWidth>106</thumbWidth>
-          <thumbHeight>156</thumbHeight>
-          <thumbPosX>7</thumbPosX>
-          <thumbPosY>7</thumbPosY>
+          <itemWidth>192</itemWidth>
+          <itemHeight>234</itemHeight>
+          <textureWidth>180</textureWidth>
+          <textureHeight>255</textureHeight>
+          <thumbWidth>159</thumbWidth>
+          <thumbHeight>234</thumbHeight>
+          <thumbPosX>10</thumbPosX>
+          <thumbPosY>10</thumbPosY>
           <InfoImage>
           </InfoImage>
           <imageFolder>imagebg.png</imageFolder>
@@ -368,7 +368,7 @@
           <showFolder>yes</showFolder>
           <showBackGround>no</showBackGround>
           <showInfoImage>no</showInfoImage>
-          <spinPosX>2000</spinPosX>
+          <spinPosX>3000</spinPosX>
           <spinCanFocus>no</spinCanFocus>
         </control>
       </control>
@@ -376,9 +376,9 @@
         <description>Movie #1 Title</description>
         <type>label</type>
         <id>0</id>
-        <posX>860</posX>
-        <posY>545</posY>
-        <width>210</width>
+        <posX>1290</posX>
+        <posY>817</posY>
+        <width>315</width>
         <font>font12</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Movie.0.Title</label>
@@ -387,9 +387,9 @@
         <description>Movie #2 Title</description>
         <type>label</type>
         <id>0</id>
-        <posX>860</posX>
-        <posY>580</posY>
-        <width>210</width>
+        <posX>1290</posX>
+        <posY>870</posY>
+        <width>315</width>
         <font>font12</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Movie.1.Title</label>
@@ -398,9 +398,9 @@
         <description>Movie #3 Title</description>
         <type>label</type>
         <id>0</id>
-        <posX>860</posX>
-        <posY>615</posY>
-        <width>210</width>
+        <posX>1290</posX>
+        <posY>922</posY>
+        <width>315</width>
         <font>font12</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Movie.2.Title</label>
@@ -409,9 +409,9 @@
         <description>Movie #4 Title</description>
         <type>label</type>
         <id>0</id>
-        <posX>860</posX>
-        <posY>650</posY>
-        <width>210</width>
+        <posX>1290</posX>
+        <posY>975</posY>
+        <width>315</width>
         <font>font12</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Movie.3.Title</label>
@@ -420,49 +420,49 @@
         <description>Movie #1 Rating Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1090</posX>
-        <posY>545</posY>
-        <width>24</width>
-        <height>24</height>
+        <posX>1635</posX>
+        <posY>817</posY>
+        <width>36</width>
+        <height>36</height>
         <texture>#Trakt.Movie.0.Ratings.Icon.png</texture>
       </control>
       <control>
         <description>Movie #2 Rating Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1090</posX>
-        <posY>580</posY>
-        <width>24</width>
-        <height>24</height>
+        <posX>1635</posX>
+        <posY>870</posY>
+        <width>36</width>
+        <height>36</height>
         <texture>#Trakt.Movie.1.Ratings.Icon.png</texture>
       </control>
       <control>
         <description>Movie #3 Rating Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1090</posX>
-        <posY>615</posY>
-        <width>24</width>
-        <height>24</height>
+        <posX>1635</posX>
+        <posY>922</posY>
+        <width>36</width>
+        <height>36</height>
         <texture>#Trakt.Movie.2.Ratings.Icon.png</texture>
       </control>
       <control>
         <description>Movie #4 Rating Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1090</posX>
-        <posY>650</posY>
-        <width>24</width>
-        <height>24</height>
+        <posX>1635</posX>
+        <posY>975</posY>
+        <width>36</width>
+        <height>36</height>
         <texture>#Trakt.Movie.3.Ratings.Icon.png</texture>
       </control>
       <control>
         <description>Movie #1 Rating</description>
         <type>label</type>
         <id>0</id>
-        <posX>1125</posX>
-        <posY>545</posY>
-        <width>840</width>
+        <posX>1687</posX>
+        <posY>817</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Movie.0.Ratings.Percentage%</label>
@@ -471,9 +471,9 @@
         <description>Movie #2 Rating</description>
         <type>label</type>
         <id>0</id>
-        <posX>1125</posX>
-        <posY>580</posY>
-        <width>840</width>
+        <posX>1687</posX>
+        <posY>870</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Movie.1.Ratings.Percentage%</label>
@@ -482,9 +482,9 @@
         <description>Movie #3 Rating</description>
         <type>label</type>
         <id>0</id>
-        <posX>1125</posX>
-        <posY>615</posY>
-        <width>840</width>
+        <posX>1687</posX>
+        <posY>922</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Movie.2.Ratings.Percentage%</label>
@@ -493,9 +493,9 @@
         <description>Movie #4 Rating</description>
         <type>label</type>
         <id>0</id>
-        <posX>1125</posX>
-        <posY>650</posY>
-        <width>840</width>
+        <posX>1687</posX>
+        <posY>975</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Movie.3.Ratings.Percentage%</label>
@@ -504,49 +504,49 @@
         <description>Movie #1 Watching Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1190</posX>
-        <posY>540</posY>
-        <width>32</width>
-        <height>32</height>
+        <posX>1785</posX>
+        <posY>810</posY>
+        <width>48</width>
+        <height>48</height>
         <texture>traktActivityWatching.png</texture>
       </control>
       <control>
         <description>Movie #2 Watching Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1190</posX>
-        <posY>575</posY>
-        <width>32</width>
-        <height>32</height>
+        <posX>1785</posX>
+        <posY>862</posY>
+        <width>48</width>
+        <height>48</height>
         <texture>traktActivityWatching.png</texture>
       </control>
       <control>
         <description>Movie #3 Watching Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1190</posX>
-        <posY>610</posY>
-        <width>32</width>
-        <height>32</height>
+        <posX>1785</posX>
+        <posY>915</posY>
+        <width>48</width>
+        <height>48</height>
         <texture>traktActivityWatching.png</texture>
       </control>
       <control>
         <description>Movie #4 Watching Icon</description>
         <type>image</type>
         <id>0</id>
-        <posX>1190</posX>
-        <posY>645</posY>
-        <width>32</width>
-        <height>32</height>
+        <posX>1785</posX>
+        <posY>967</posY>
+        <width>48</width>
+        <height>48</height>
         <texture>traktActivityWatching.png</texture>
       </control>
       <control>
         <description>Movie #1 People Watching</description>
         <type>label</type>
         <id>0</id>
-        <posX>1225</posX>
-        <posY>545</posY>
-        <width>840</width>
+        <posX>1837</posX>
+        <posY>817</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Movie.0.Watchers</label>
@@ -555,9 +555,9 @@
         <description>Movie #2 People Watching</description>
         <type>label</type>
         <id>0</id>
-        <posX>1225</posX>
-        <posY>580</posY>
-        <width>840</width>
+        <posX>1837</posX>
+        <posY>870</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Movie.1.Watchers</label>
@@ -566,9 +566,9 @@
         <description>Movie #3 People Watching</description>
         <type>label</type>
         <id>0</id>
-        <posX>1225</posX>
-        <posY>615</posY>
-        <width>840</width>
+        <posX>1837</posX>
+        <posY>922</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Movie.2.Watchers</label>
@@ -577,9 +577,9 @@
         <description>Movie #4 People Watching</description>
         <type>label</type>
         <id>0</id>
-        <posX>1225</posX>
-        <posY>650</posY>
-        <width>840</width>
+        <posX>1837</posX>
+        <posY>975</posY>
+        <width>1260</width>
         <font>mediastream11c</font>
         <textcolor>ffffffff</textcolor>
         <label>#Trakt.Movie.3.Watchers</label>
@@ -588,10 +588,10 @@
         <description>Update Animation</description>
         <type>animation</type>
         <id>98299</id>
-        <posX>1220</posX>
-        <posY>25</posY>
-        <width>36</width>
-        <height>36</height>
+        <posX>1830</posX>
+        <posY>37</posY>
+        <width>54</width>
+        <height>54</height>
         <textures>common.waiting2.1.png;common.waiting2.2.png;common.waiting2.3.png;common.waiting2.4.png;common.waiting2.5.png;common.waiting2.6.png;common.waiting2.7.png;common.waiting2.8.png</textures>
         <Duration>0:0:01.5</Duration>
         <keepaspectratio>yes</keepaspectratio>
@@ -599,4 +599,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:9e42956134f6dcd2080fa88fe979b977-->
+<!--Checksum:efe958cbb3d25c78666a60eb553d1727-->

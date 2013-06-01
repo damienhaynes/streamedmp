@@ -12,9 +12,9 @@
       <id>0</id>
       <type>image</type>
       <posX>0</posX>
-      <posY>450</posY>
-      <width>1275</width>
-      <height>290</height>
+      <posY>675</posY>
+      <width>1912</width>
+      <height>435</height>
       <texture>last.fm.background.png</texture>
       <colordiffuse>FAFFFFFF</colordiffuse>
       <animation effect="Fade" time="400">WindowOpen</animation>
@@ -24,10 +24,10 @@
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>1006</posX>
-      <posY>485</posY>
-      <width>480</width>
-      <height>720</height>
+      <posX>1509</posX>
+      <posY>727</posY>
+      <width>720</width>
+      <height>1080</height>
       <layout>StackLayout</layout>
       <control>
         <description>start a stream</description>
@@ -114,10 +114,10 @@
       <type>image</type>
       <description>artist art image</description>
       <id>112</id>
-      <posX>27</posX>
-      <posY>561</posY>
-      <width>140</width>
-      <height>140</height>
+      <posX>40</posX>
+      <posY>841</posY>
+      <width>210</width>
+      <height>210</height>
       <keepaspectratio>no</keepaspectratio>
       <texture>#Play.Current.ArtistThumb</texture>
       <visible>Player.HasAudio</visible>
@@ -126,10 +126,10 @@
       <id>0</id>
       <description>album art overlay</description>
       <type>image</type>
-      <posX>22</posX>
-      <posY>556</posY>
-      <width>150</width>
-      <height>150</height>
+      <posX>33</posX>
+      <posY>834</posY>
+      <width>225</width>
+      <height>225</height>
       <texture>mayacdborder.png</texture>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
@@ -138,10 +138,10 @@
       <type>fadelabel</type>
       <description>ARTIST label</description>
       <id>0</id>
-      <posX>25</posX>
-      <posY>485</posY>
-      <width>700</width>
-      <height>26</height>
+      <posX>37</posX>
+      <posY>727</posY>
+      <width>1050</width>
+      <height>38</height>
       <label>#Play.Current.Artist</label>
       <font>mediastream14tc</font>
     </control>
@@ -149,10 +149,10 @@
       <type>fadelabel</type>
       <description>TRACK TITLE label</description>
       <id>0</id>
-      <posX>25</posX>
-      <posY>510</posY>
-      <width>660</width>
-      <height>26</height>
+      <posX>37</posX>
+      <posY>765</posY>
+      <width>990</width>
+      <height>38</height>
       <label>#Play.Current.Title</label>
       <font>mediastream12tc</font>
     </control>
@@ -160,10 +160,10 @@
       <type>fadelabel</type>
       <description>ALBUM label</description>
       <id>0</id>
-      <posX>25</posX>
-      <posY>530</posY>
-      <width>660</width>
-      <height>26</height>
+      <posX>37</posX>
+      <posY>795</posY>
+      <width>990</width>
+      <height>38</height>
       <label>#Play.Current.Album</label>
       <font>mediastream12c</font>
     </control>
@@ -171,10 +171,10 @@
       <type>label</type>
       <description>CURRENT STREAM label</description>
       <id>0</id>
-      <posX>975</posX>
-      <posY>485</posY>
-      <width>400</width>
-      <height>26</height>
+      <posX>1462</posX>
+      <posY>727</posY>
+      <width>600</width>
+      <height>38</height>
       <align>right</align>
       <label>#Play.Current.Lastfm.CurrentStream</label>
       <font>mediastream11</font>
@@ -183,10 +183,10 @@
       <type>label</type>
       <description>PLAYTIME DURATION label</description>
       <id>0</id>
-      <posX>975</posX>
-      <posY>685</posY>
-      <width>160</width>
-      <height>26</height>
+      <posX>1462</posX>
+      <posY>1027</posY>
+      <width>240</width>
+      <height>38</height>
       <align>right</align>
       <label>#currentplaytime / #trackduration</label>
       <visible>Player.HasAudio</visible>
@@ -197,8 +197,8 @@
       <type>label</type>
       <description>similar hint</description>
       <id>443</id>
-      <posX>230</posX>
-      <posY>555</posY>
+      <posX>345</posX>
+      <posY>832</posY>
       <label>34039</label>
       <font>mediastream10tc</font>
       <align>left</align>
@@ -211,9 +211,9 @@
       <type>textbox</type>
       <description>Similar artists box</description>
       <id>444</id>
-      <posX>230</posX>
-      <posY>570</posY>
-      <width>800</width>
+      <posX>345</posX>
+      <posY>855</posY>
+      <width>1200</width>
       <font>mediastream12</font>
       <label>#Play.Current.Lastfm.SimilarArtists</label>
       <visible>control.hasfocus(1143)</visible>
@@ -222,8 +222,8 @@
       <type>label</type>
       <description>tag hint</description>
       <id>332</id>
-      <posX>230</posX>
-      <posY>620</posY>
+      <posX>345</posX>
+      <posY>930</posY>
       <label>34041</label>
       <font>mediastream10tc</font>
       <align>left</align>
@@ -236,9 +236,9 @@
       <type>textbox</type>
       <description>Track tags box</description>
       <id>333</id>
-      <posX>230</posX>
-      <posY>635</posY>
-      <width>800</width>
+      <posX>345</posX>
+      <posY>952</posY>
+      <width>1200</width>
       <font>mediastream11</font>
       <label>#Play.Current.Lastfm.TrackTags</label>
       <visible>control.hasfocus(1143)</visible>
@@ -247,35 +247,35 @@
       <type>listcontrol</type>
       <description>current playlist control</description>
       <id>123</id>
-      <posX>200</posX>
-      <posY>552</posY>
-      <height>356</height>
-      <width>600</width>
+      <posX>300</posX>
+      <posY>828</posY>
+      <height>534</height>
+      <width>900</width>
       <onright>10</onright>
       <onleft>10</onleft>
       <font>mediastream11c</font>
       <font2>mediastream11c</font2>
       <font3>mediastream11c</font3>
       <!--<textcolor2>80ffffff</textcolor2>-->
-      <textXOff>5</textXOff>
-      <textXOff2>75</textXOff2>
-      <textXOff3>222</textXOff3>
-      <textYOff>5</textYOff>
-      <textYOff2>22</textYOff2>
-      <textYOff3>22</textYOff3>
+      <textXOff>7</textXOff>
+      <textXOff2>112</textXOff2>
+      <textXOff3>333</textXOff3>
+      <textYOff>7</textYOff>
+      <textYOff2>33</textYOff2>
+      <textYOff3>33</textYOff3>
       <IconXOff>0</IconXOff>
-      <IconYOff>5</IconYOff>
+      <IconYOff>7</IconYOff>
       <onright>10</onright>
       <textureFocus>listbg_fo.png</textureFocus>
       <textureNoFocus>listbg_nf.png</textureNoFocus>
       <keepaspectratio>no</keepaspectratio>
-      <textureHeight>30</textureHeight>
-      <itemHeight>25</itemHeight>
-      <itemWidth>25</itemWidth>
+      <textureHeight>45</textureHeight>
+      <itemHeight>37</itemHeight>
+      <itemWidth>37</itemWidth>
       <spaceBetweenItems>0</spaceBetweenItems>
       <visible allowhiddenfocus="True">player.hasmedia+!control.hasfocus(1143)</visible>
     </control>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:122bb18027e31eb93ab087bb8214b456-->
+<!--Checksum:be5fb8ce37f2348d0f3661d46f168da3-->

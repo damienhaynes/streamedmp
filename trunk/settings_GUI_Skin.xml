@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>705</id>
   <defaultcontrol>10</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:#(L(5))->#(L(101021))->#(L(300120))</define>
+  <define>#header.label:#(L(5))-&gt;#(L(101021))-&gt;#(L(300120))</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:10</define>
   <define>#defaultcontrol.onright:9993</define>
   <controls>
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-		<control>
+    <control>
       <description>Skin Preview</description>
       <type>image</type>
       <id>20</id>
-      <posY>80</posY>
-      <posX>224</posX>
-      <width>600</width>
-      <height>300</height>
+      <posY>120</posY>
+      <posX>336</posX>
+      <width>900</width>
+      <height>450</height>
       <align>center</align>
       <centered>yes</centered>
       <keepaspectratio>yes</keepaspectratio>
@@ -28,10 +28,10 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>401</posY>
-      <width>595</width>
-      <height>500</height>
+      <posX>324</posX>
+      <posY>601</posY>
+      <width>892</width>
+      <height>750</height>
       <layout>StackLayout</layout>
       <control Style="settingsmainbutton">
         <description>Skin</description>
@@ -39,7 +39,7 @@
         <id>10</id>
         <label>166</label>
         <onup>14</onup>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -50,19 +50,19 @@
         <dialogTitle>90</dialogTitle>
         <valueTextInButton>yes</valueTextInButton>
         <valuePrefixText>94</valuePrefixText>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onclick>#(skin.settheme(#selectedlabel15,15))</onclick>
         <binding>#skin.currenttheme</binding>
         <subitems>
           <subitem>#skin.themes</subitem>
         </subitems>
-				<onright>#defaultcontrol.onright</onright>
+        <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
         <description>Language</description>
         <type>button</type>
         <id>11</id>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <label>248</label>
         <onright>#defaultcontrol.onright</onright>
       </control>
@@ -71,11 +71,12 @@
         <type>checkbutton</type>
         <id>14</id>
         <label>300137</label>
-				<textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <ondown>10</ondown>
-				<onleft>14</onleft>
-				<onright>#defaultcontrol.onright</onright>
+        <onleft>14</onleft>
+        <onright>#defaultcontrol.onright</onright>
       </control>
     </control>
   </controls>
 </window>
+<!--Checksum:cbbeb1f968ed4997fb4f34305d81a5f2-->
