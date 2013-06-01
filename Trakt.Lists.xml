@@ -13,8 +13,8 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#header.hover</texture>
       <colordiffuse>#header.BG.colordiffuse</colordiffuse>
       <animation effect="fade" time="300">WindowOpen</animation>
@@ -25,18 +25,18 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1281</width>
-      <height>720</height>
+      <width>1921</width>
+      <height>1080</height>
       <texture>#header.BG.overlay</texture>
     </control>
     <control>
       <description>Top Title Extension Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>381</posX>
-      <posY>11</posY>
-      <width>386</width>
-      <height>35</height>
+      <posX>571</posX>
+      <posY>16</posY>
+      <width>579</width>
+      <height>52</height>
       <texture>tvtitlebgshort.png</texture>
       <animation effect="fade" time="100" delay="0">visiblechange</animation>
       <animation effect="fade" time="150">WindowOpen</animation>
@@ -46,9 +46,9 @@
       <description>Current User</description>
       <type>label</type>
       <id>0</id>
-      <posX>739</posX>
-      <posY>14</posY>
-      <width>220</width>
+      <posX>1108</posX>
+      <posY>21</posY>
+      <width>330</width>
       <font>mediastream12c</font>
       <label>#Trakt.Lists.CurrentUser</label>
       <align>right</align>
@@ -60,10 +60,10 @@
       <description>Title Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -72,9 +72,9 @@
       <description>Current View</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>493</posX>
-      <posY>14</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>21</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <label>#Trakt.Translation.Lists.Label</label>
       <align>right</align>
@@ -85,9 +85,9 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
       <visible>!facadeview.filmstrip</visible>
       <animation effect="fade" time="150">WindowOpen</animation>
@@ -98,84 +98,84 @@
       <description>Item Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1045</posX>
-      <posY>13</posY>
-      <width>222</width>
-      <height>28</height>
+      <posX>1567</posX>
+      <posY>19</posY>
+      <width>333</width>
+      <height>42</height>
       <texture>mediacountbg.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Item Count Label</description>
       <type>label</type>
       <label>#Trakt.Translation.Lists.Label</label>
       <id>0</id>
-      <width>135</width>
-      <posX>1057</posX>
-      <posY>17</posY>
+      <width>202</width>
+      <posX>1585</posX>
+      <posY>25</posY>
       <align>left</align>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Item Count</description>
       <type>label</type>
       <label>#itemcount</label>
       <id>0</id>
-      <posX>1238</posX>
-      <posY>15</posY>
+      <posX>1857</posX>
+      <posY>22</posY>
       <font>mediastream11c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1013</posX>
-      <posY>684</posY>
-      <width>260</width>
-      <height>30</height>
+      <posX>1519</posX>
+      <posY>1026</posY>
+      <width>390</width>
+      <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>!facadeview.filmstrip</visible>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Page Count Label</description>
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1023</posX>
-      <posY>688</posY>
+      <posX>1534</posX>
+      <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>!facadeview.filmstrip</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Selected item Label</description>
       <type>fadelabel</type>
       <id>1</id>
-      <posX>25</posX>
-      <posY>684</posY>
-      <width>950</width>
+      <posX>37</posX>
+      <posY>1026</posY>
+      <width>1425</width>
       <font>mediastream16tc</font>
       <label>#selecteditem</label>
       <visible>!facadeview.filmstrip</visible>
@@ -187,8 +187,8 @@
       <type>group</type>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1800,0">WindowClose</animation>
       <control>
         <type>facadeview</type>
         <id>50</id>
@@ -197,37 +197,37 @@
           <description>listcontrol</description>
           <type>listcontrol</type>
           <id>50</id>
-          <posX>700</posX>
-          <posY>240</posY>
-          <height>480</height>
-          <width>580</width>
+          <posX>1050</posX>
+          <posY>360</posY>
+          <height>720</height>
+          <width>870</width>
           <onleft>50</onleft>
           <onright>50</onright>
           <scrollOffset>5</scrollOffset>
-          <itemWidth>32</itemWidth>
-          <itemHeight>32</itemHeight>
-          <IconXOff>25</IconXOff>
-          <IconYOff>4</IconYOff>
-          <textXOff>25</textXOff>
-          <textYOff>5</textYOff>
+          <itemWidth>48</itemWidth>
+          <itemHeight>48</itemHeight>
+          <IconXOff>37</IconXOff>
+          <IconYOff>6</IconYOff>
+          <textXOff>37</textXOff>
+          <textYOff>7</textYOff>
           <textXOff2>0</textXOff2>
-          <textYOff2>5</textYOff2>
-          <textXOff3>75</textXOff3>
-          <textYOff3>10</textYOff3>
+          <textYOff2>7</textYOff2>
+          <textXOff3>112</textXOff3>
+          <textYOff3>15</textYOff3>
           <font>mediastream12c</font>
           <font2>mediastream10c</font2>
           <font3>mediastream12tc</font3>
           <keepaspectratio>yes</keepaspectratio>
-          <spinPosX>1175</spinPosX>
-          <spinPosY>681</spinPosY>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
           <spinAlign>Right</spinAlign>
           <spinColor>ff006698</spinColor>
           <textureUp>arrow_round_up_nofocus.png</textureUp>
           <textureDown>arrow_round_down_nofocus.png</textureDown>
           <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
           <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
           <suffix>|</suffix>
         </control>
       </control>
@@ -236,14 +236,14 @@
       <description>Name</description>
       <type>label</type>
       <id>0</id>
-      <posX>40</posX>
-      <posY>240</posY>
-      <width>500</width>
+      <posX>60</posX>
+      <posY>360</posY>
+      <width>750</width>
       <font>mediastream14tc</font>
       <label>#Trakt.List.Name</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>!string.equals(#Trakt.List.Name,N/A)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -254,13 +254,13 @@
       <type>label</type>
       <label>#selecteditem2</label>
       <id>0</id>
-      <posX>40</posX>
-      <posY>265</posY>
-      <width>500</width>
+      <posX>60</posX>
+      <posY>397</posY>
+      <width>750</width>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>3</shadowDistance>
+      <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <visible>!string.equals(#selectedItem2,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -270,10 +270,10 @@
       <description>List Description</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>40</posX>
-      <posY>300</posY>
-      <width>650</width>
-      <height>380</height>
+      <posX>60</posX>
+      <posY>450</posY>
+      <width>975</width>
+      <height>570</height>
       <font>mediastream11</font>
       <label>#Trakt.List.Description</label>
       <scrollStartDelaySec>12</scrollStartDelaySec>
@@ -285,4 +285,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:7a143fb9704466e8e4a876d3bfc4db1c-->
+<!--Checksum:b9a021c2cfccad070e2e1eb8edcb998d-->

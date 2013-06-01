@@ -57,8 +57,8 @@
       <type>image</type>
       <posx>0</posx>
       <posy>0</posy>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>mvcSmartDJ.jpg</texture>
       <!-- <visible>[string.equals(#fanarthandler.music.backdrop1.selected,)+string.equals(#fanarthandler.music.backdrop2.selected,)+!control.isvisible(91919294)] | !plugin.isenabled(Fanart Handler)</visible> -->
       <visible>!control.isvisible(91919293) | !plugin.isenabled(Fanart Handler)</visible>
@@ -71,8 +71,8 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#fanarthandler.music.backdrop1.selected </texture>
       <visible>control.isvisible(91919291)+control.isvisible(91919293)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
@@ -84,8 +84,8 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#fanarthandler.music.backdrop2.selected</texture>
       <visible>control.isvisible(91919292)+control.isvisible(91919293)+!control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
@@ -97,8 +97,8 @@
       <type>image</type>
       <posx>0</posx>
       <posy>0</posy>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#fanarthandler.music.backdrop1.play</texture>
       <visible>control.isvisible(91919295)+control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
@@ -110,8 +110,8 @@
       <type>image</type>
       <posx>0</posx>
       <posy>0</posy>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#fanarthandler.music.backdrop2.play</texture>
       <visible>control.isvisible(91919296)+control.isvisible(91919294)+plugin.isenabled(Fanart Handler)</visible>
       <animation effect="fade" start="10" end="100" time="1000" delay="80" reversible="false">Visible</animation>
@@ -119,4 +119,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:fb76aa124f40f22f7a59cedd640747ba-->
+<!--Checksum:c63e1c7e4b03473d216d024d16c045bc-->

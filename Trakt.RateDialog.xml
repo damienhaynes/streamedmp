@@ -9,7 +9,7 @@
       <description>UnRate (invisible)</description>
       <type>button</type>
       <id>99</id>
-      <posX>-1000</posX>
+      <posX>-1500</posX>
       <posY>0</posY>
       <onup>100</onup>
       <textureFocus>-</textureFocus>
@@ -20,10 +20,10 @@
       <description>Love</description>
       <type>button</type>
       <id>100</id>
-      <posX>540</posX>
-      <posY>330</posY>
-      <width>50</width>
-      <height>36</height>
+      <posX>810</posX>
+      <posY>495</posY>
+      <width>75</width>
+      <height>54</height>
       <onup>101</onup>
       <textureFocus>rate.love.on.png</textureFocus>
       <textureNoFocus>rate.love.off.png</textureNoFocus>
@@ -34,10 +34,10 @@
       <description>Hate</description>
       <type>button</type>
       <id>101</id>
-      <posX>600</posX>
-      <posY>330</posY>
-      <width>50</width>
-      <height>36</height>
+      <posX>900</posX>
+      <posY>495</posY>
+      <width>75</width>
+      <height>54</height>
       <onup>1001</onup>
       <textureFocus>rate.hate.on.png</textureFocus>
       <textureNoFocus>rate.hate.off.png</textureNoFocus>
@@ -48,25 +48,24 @@
       <description>Rating Description</description>
       <type>label</type>
       <id>10</id>
-      <posX>660</posX>
-      <posY>338</posY>
-      <width>250</width>
+      <posX>990</posX>
+      <posY>507</posY>
+      <width>375</width>
       <animation effect="fade" time="200">windowopen</animation>
       <animation effect="fade" time="200">windowclose</animation>
     </control>
-		
     <!-- 10 Heart Dialog -->
     <control>
       <description>1 Heart</description>
       <type>checkmark</type>
       <id>1001</id>
-      <posX>440</posX>
-      <posY>362</posY>
-      <width>32</width>
-      <height>30</height>
+      <posX>660</posX>
+      <posY>543</posY>
+      <width>48</width>
+      <height>45</height>
       <onup>1002</onup>
-			<textureCheckmark>heart-1.png</textureCheckmark>
-			<textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
+      <textureCheckmark>heart-1.png</textureCheckmark>
+      <textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
       <animation effect="fade" time="200">windowopen</animation>
       <animation effect="fade" time="200">windowclose</animation>
     </control>
@@ -74,13 +73,13 @@
       <description>2 Heart</description>
       <type>checkmark</type>
       <id>1002</id>
-      <posX>480</posX>
-      <posY>362</posY>
-      <width>32</width>
-      <height>30</height>
+      <posX>720</posX>
+      <posY>543</posY>
+      <width>48</width>
+      <height>45</height>
       <onup>1003</onup>
-			<textureCheckmark>heart-2.png</textureCheckmark>
-			<textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
+      <textureCheckmark>heart-2.png</textureCheckmark>
+      <textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
       <animation effect="fade" time="200">windowopen</animation>
       <animation effect="fade" time="200">windowclose</animation>
     </control>
@@ -88,13 +87,13 @@
       <description>3 Heart</description>
       <type>checkmark</type>
       <id>1003</id>
-      <posX>520</posX>
-      <posY>362</posY>
-      <width>32</width>
-      <height>30</height>
+      <posX>780</posX>
+      <posY>543</posY>
+      <width>48</width>
+      <height>45</height>
       <onup>1004</onup>
-			<textureCheckmark>heart-3.png</textureCheckmark>
-			<textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
+      <textureCheckmark>heart-3.png</textureCheckmark>
+      <textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
       <animation effect="fade" time="200">windowopen</animation>
       <animation effect="fade" time="200">windowclose</animation>
     </control>
@@ -102,13 +101,13 @@
       <description>4 Heart</description>
       <type>checkmark</type>
       <id>1004</id>
-      <posX>560</posX>
-      <posY>362</posY>
-      <width>32</width>
-      <height>30</height>
+      <posX>840</posX>
+      <posY>543</posY>
+      <width>48</width>
+      <height>45</height>
       <onup>1005</onup>
-			<textureCheckmark>heart-4.png</textureCheckmark>
-			<textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
+      <textureCheckmark>heart-4.png</textureCheckmark>
+      <textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
       <animation effect="fade" time="200">windowopen</animation>
       <animation effect="fade" time="200">windowclose</animation>
     </control>
@@ -116,13 +115,13 @@
       <description>5 Heart</description>
       <type>checkmark</type>
       <id>1005</id>
-      <posX>600</posX>
-      <posY>362</posY>
-      <width>32</width>
-      <height>30</height>
+      <posX>900</posX>
+      <posY>543</posY>
+      <width>48</width>
+      <height>45</height>
       <onup>1006</onup>
-			<textureCheckmark>heart-5.png</textureCheckmark>
-			<textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
+      <textureCheckmark>heart-5.png</textureCheckmark>
+      <textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
       <animation effect="fade" time="200">windowopen</animation>
       <animation effect="fade" time="200">windowclose</animation>
     </control>
@@ -130,13 +129,13 @@
       <description>6 Heart</description>
       <type>checkmark</type>
       <id>1006</id>
-      <posX>640</posX>
-      <posY>362</posY>
-      <width>32</width>
-      <height>30</height>
+      <posX>960</posX>
+      <posY>543</posY>
+      <width>48</width>
+      <height>45</height>
       <onup>1007</onup>
-			<textureCheckmark>heart-6.png</textureCheckmark>
-			<textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
+      <textureCheckmark>heart-6.png</textureCheckmark>
+      <textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
       <animation effect="fade" time="200">windowopen</animation>
       <animation effect="fade" time="200">windowclose</animation>
     </control>
@@ -144,13 +143,13 @@
       <description>7 Heart</description>
       <type>checkmark</type>
       <id>1007</id>
-      <posX>680</posX>
-      <posY>362</posY>
-      <width>32</width>
-      <height>30</height>
+      <posX>1020</posX>
+      <posY>543</posY>
+      <width>48</width>
+      <height>45</height>
       <onup>1008</onup>
-			<textureCheckmark>heart-7.png</textureCheckmark>
-			<textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
+      <textureCheckmark>heart-7.png</textureCheckmark>
+      <textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
       <animation effect="fade" time="200">windowopen</animation>
       <animation effect="fade" time="200">windowclose</animation>
     </control>
@@ -158,13 +157,13 @@
       <description>8 Heart</description>
       <type>checkmark</type>
       <id>1008</id>
-      <posX>720</posX>
-      <posY>362</posY>
-      <width>32</width>
-      <height>30</height>
+      <posX>1080</posX>
+      <posY>543</posY>
+      <width>48</width>
+      <height>45</height>
       <onup>1009</onup>
-			<textureCheckmark>heart-8.png</textureCheckmark>
-			<textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
+      <textureCheckmark>heart-8.png</textureCheckmark>
+      <textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
       <animation effect="fade" time="200">windowopen</animation>
       <animation effect="fade" time="200">windowclose</animation>
     </control>
@@ -172,13 +171,13 @@
       <description>9 Heart</description>
       <type>checkmark</type>
       <id>1009</id>
-      <posX>760</posX>
-      <posY>362</posY>
-      <width>32</width>
-      <height>30</height>
+      <posX>1140</posX>
+      <posY>543</posY>
+      <width>48</width>
+      <height>45</height>
       <onup>1010</onup>
-			<textureCheckmark>heart-9.png</textureCheckmark>
-			<textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
+      <textureCheckmark>heart-9.png</textureCheckmark>
+      <textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
       <animation effect="fade" time="200">windowopen</animation>
       <animation effect="fade" time="200">windowclose</animation>
     </control>
@@ -186,27 +185,26 @@
       <description>10 Heart</description>
       <type>checkmark</type>
       <id>1010</id>
-      <posX>800</posX>
-      <posY>362</posY>
-      <width>32</width>
-      <height>30</height>
-			<textureCheckmark>heart-10.png</textureCheckmark>
-			<textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
+      <posX>1200</posX>
+      <posY>543</posY>
+      <width>48</width>
+      <height>45</height>
+      <textureCheckmark>heart-10.png</textureCheckmark>
+      <textureCheckmarkNoFocus>heart-off.png</textureCheckmarkNoFocus>
       <animation effect="fade" time="200">windowopen</animation>
       <animation effect="fade" time="200">windowclose</animation>
     </control>
-		
     <control Style="smallTitle">
       <description>Rating Description</description>
       <type>label</type>
       <id>11</id>
-      <posX>825</posX>
-      <posY>400</posY>
-      <width>200</width>
+      <posX>1237</posX>
+      <posY>600</posY>
+      <width>300</width>
       <align>right</align>
       <animation effect="fade" time="200">windowopen</animation>
       <animation effect="fade" time="200">windowclose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:d4d00f6df946cb1bf26d27c82d0157d2-->
+<!--Checksum:9c6b4594812d7227e36e8a020285879d-->

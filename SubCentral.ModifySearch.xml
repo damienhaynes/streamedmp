@@ -10,10 +10,10 @@
       <description>Subcentral Search dialog</description>
       <type>image</type>
       <id>0</id>
-      <posX>175</posX>
-      <posY>140</posY>
-      <width>930</width>
-      <height>360</height>
+      <posX>262</posX>
+      <posY>210</posY>
+      <width>1395</width>
+      <height>540</height>
       <texture>subsearchbg.png</texture>
       <colordiffuse>ddffffff</colordiffuse>
       <visible>control.isvisible(103)</visible>
@@ -21,10 +21,10 @@
     <control>
       <type>label</type>
       <id>0</id>
-      <posX>1250</posX>
-      <posY>14</posY>
+      <posX>1875</posX>
+      <posY>21</posY>
       <label>#SubCentral.Translation.Movie.Label</label>
-      <width>200</width>
+      <width>300</width>
       <font>mediastream12tc</font>
       <align>right</align>
       <textcolor>ffffffff</textcolor>
@@ -33,10 +33,10 @@
     <control>
       <type>label</type>
       <id>0</id>
-      <posX>1250</posX>
-      <posY>14</posY>
+      <posX>1875</posX>
+      <posY>21</posY>
       <label>#SubCentral.Translation.TVShow.Label</label>
-      <width>200</width>
+      <width>300</width>
       <font>mediastream12tc</font>
       <align>right</align>
       <textcolor>ffffffff</textcolor>
@@ -45,10 +45,10 @@
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>195</posX>
-      <posY>447</posY>
-      <width>900</width>
-      <height>80</height>
+      <posX>292</posX>
+      <posY>670</posY>
+      <width>1350</width>
+      <height>120</height>
       <layout>StackLayout(0,Horizontal)</layout>
       <dimColor>0xddffffff</dimColor>
       <visible>control.isvisible(103)</visible>
@@ -64,10 +64,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <width>200</width>
-        <height>40</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
+        <width>300</width>
+        <height>60</height>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
@@ -85,10 +85,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <width>200</width>
-        <height>40</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
+        <width>300</width>
+        <height>60</height>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
@@ -106,10 +106,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <height>40</height>
-        <width>200</width>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
+        <height>60</height>
+        <width>300</width>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
@@ -119,10 +119,10 @@
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>195</posX>
-      <posY>154</posY>
-      <width>300</width>
-      <height>80</height>
+      <posX>292</posX>
+      <posY>231</posY>
+      <width>450</width>
+      <height>120</height>
       <dimColor>0xddffffff</dimColor>
       <layout>StackLayout(0,Horizontal)</layout>
       <visible>control.isvisible(103)</visible>
@@ -138,9 +138,9 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <height>40</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
+        <height>60</height>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
@@ -158,9 +158,9 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <height>40</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
+        <height>60</height>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
@@ -170,10 +170,10 @@
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>875</posX>
-      <posY>395</posY>
-      <width>340</width>
-      <height>80</height>
+      <posX>1312</posX>
+      <posY>592</posY>
+      <width>510</width>
+      <height>120</height>
       <dimColor>0xddffffff</dimColor>
       <layout>StackLayout</layout>
       <visible>control.isvisible(103)</visible>
@@ -189,9 +189,9 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
-        <height>40</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
+        <height>60</height>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
@@ -201,8 +201,8 @@
     <control>
       <type>label</type>
       <id>0</id>
-      <posX>205</posX>
-      <posY>220</posY>
+      <posX>307</posX>
+      <posY>330</posY>
       <label>#SubCentral.Translation.Title.Label</label>
       <font>mediastream14tc</font>
       <textcolor>ff006699</textcolor>
@@ -214,18 +214,18 @@
       <type>button</type>
       <id>222</id>
       <label>#SubCentral.ManualSearch.Media.Title</label>
-      <posX>365</posX>
-      <posY>220</posY>
+      <posX>547</posX>
+      <posY>330</posY>
       <onleft>222</onleft>
       <onright>214</onright>
       <onup>216</onup>
       <ondown>223</ondown>
-      <textXOff>15</textXOff>
+      <textXOff>22</textXOff>
       <textYOff>0</textYOff>
       <font>mediastream14tc</font>
       <textalign>left</textalign>
-      <height>30</height>
-      <width>600</width>
+      <height>45</height>
+      <width>900</width>
       <scrollWrapString> | </scrollWrapString>
       <visible>control.isvisible(103)</visible>
       <animation effect="fade" time="250">Visible</animation>
@@ -233,8 +233,8 @@
     <control>
       <type>label</type>
       <id>0</id>
-      <posX>205</posX>
-      <posY>260</posY>
+      <posX>307</posX>
+      <posY>390</posY>
       <label>#SubCentral.Translation.Year.Label</label>
       <font>mediastream14tc</font>
       <textcolor>ff006699</textcolor>
@@ -246,26 +246,26 @@
       <type>button</type>
       <id>223</id>
       <label>#SubCentral.ManualSearch.Media.Year</label>
-      <posX>365</posX>
-      <posY>260</posY>
+      <posX>547</posX>
+      <posY>390</posY>
       <onleft>223</onleft>
       <onright>214</onright>
       <onup>222</onup>
       <ondown>221</ondown>
-      <textXOff>15</textXOff>
+      <textXOff>22</textXOff>
       <textYOff>0</textYOff>
       <font>mediastream14tc</font>
       <textalign>left</textalign>
-      <height>30</height>
-      <width>600</width>
+      <height>45</height>
+      <width>900</width>
       <visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,MOVIE)</visible>
       <animation effect="fade" time="250">Visible</animation>
     </control>
     <control>
       <type>label</type>
       <id>0</id>
-      <posX>205</posX>
-      <posY>300</posY>
+      <posX>307</posX>
+      <posY>450</posY>
       <label>#SubCentral.Translation.IMDbID.Label</label>
       <font>mediastream14tc</font>
       <textcolor>ff006699</textcolor>
@@ -277,26 +277,26 @@
       <type>button</type>
       <id>221</id>
       <label>#SubCentral.ManualSearch.Media.IMDb.ID.Complete</label>
-      <posX>365</posX>
-      <posY>300</posY>
+      <posX>547</posX>
+      <posY>450</posY>
       <onleft>225</onleft>
       <onright>214</onright>
       <onup>223</onup>
       <ondown>224</ondown>
-      <textXOff>15</textXOff>
+      <textXOff>22</textXOff>
       <textYOff>0</textYOff>
       <font>mediastream14tc</font>
       <textalign>left</textalign>
-      <height>30</height>
-      <width>600</width>
+      <height>45</height>
+      <width>900</width>
       <visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,MOVIE)</visible>
       <animation effect="fade" time="250">Visible</animation>
     </control>
     <control>
       <type>label</type>
       <id>0</id>
-      <posX>205</posX>
-      <posY>260</posY>
+      <posX>307</posX>
+      <posY>390</posY>
       <label>#SubCentral.Translation.Season.Label</label>
       <font>mediastream14tc</font>
       <textcolor>ff006699</textcolor>
@@ -308,18 +308,18 @@
       <type>button</type>
       <id>224</id>
       <label>#SubCentral.ManualSearch.Media.Season</label>
-      <posX>365</posX>
-      <posY>260</posY>
+      <posX>547</posX>
+      <posY>390</posY>
       <onleft>224</onleft>
       <onright>214</onright>
       <onup>221</onup>
       <ondown>225</ondown>
-      <textXOff>15</textXOff>
+      <textXOff>22</textXOff>
       <textYOff>0</textYOff>
       <font>mediastream14tc</font>
       <textalign>left</textalign>
-      <height>30</height>
-      <width>600</width>
+      <height>45</height>
+      <width>900</width>
       <scrollWrapString>
       </scrollWrapString>
       <visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
@@ -328,8 +328,8 @@
     <control>
       <type>label</type>
       <id>0</id>
-      <posX>205</posX>
-      <posY>300</posY>
+      <posX>307</posX>
+      <posY>450</posY>
       <label>#SubCentral.Translation.Episode.Label</label>
       <font>mediastream14tc</font>
       <textcolor>ff006699</textcolor>
@@ -341,18 +341,18 @@
       <type>button</type>
       <id>225</id>
       <label>#SubCentral.ManualSearch.Media.Episode</label>
-      <posX>365</posX>
-      <posY>300</posY>
+      <posX>547</posX>
+      <posY>450</posY>
       <onleft>221</onleft>
       <onright>214</onright>
       <onup>224</onup>
       <ondown>226</ondown>
-      <textXOff>15</textXOff>
+      <textXOff>22</textXOff>
       <textYOff>0</textYOff>
       <font>mediastream14tc</font>
       <textalign>left</textalign>
-      <height>30</height>
-      <width>600</width>
+      <height>45</height>
+      <width>900</width>
       <scrollWrapString>
       </scrollWrapString>
       <visible>control.isvisible(103)+String.Equals(#SubCentral.ModifySearch.SearchType.Type,TVSHOW)</visible>
@@ -364,8 +364,8 @@
       <id>226</id>
       <label>#SubCentral.Translation.AbsoluteNumbering.Label</label>
       <font>mediastream12tc</font>
-      <posX>200</posX>
-      <posY>405</posY>
+      <posX>300</posX>
+      <posY>607</posY>
       <onup>225</onup>
       <ondown>214</ondown>
       <onleft>225</onleft>
@@ -377,9 +377,9 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
       <visible>control.isvisible(103)</visible>
       <animation effect="fade" time="250">Visible</animation>
@@ -388,9 +388,9 @@
       <description>Media File(s)</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>40</posX>
-      <posY>684</posY>
-      <width>1200</width>
+      <posX>60</posX>
+      <posY>1026</posY>
+      <width>1800</width>
       <label>#SubCentral.ManualSearch.Files.AllNames</label>
       <font>mediastream16tc</font>
       <textcolor>White</textcolor>
@@ -399,4 +399,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:e9866f74e732dd6b179104fd3f68b2a8-->
+<!--Checksum:3de80c69ac12533e8299374c049605bd-->

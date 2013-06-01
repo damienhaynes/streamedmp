@@ -8,9 +8,9 @@ This file should contain the thumbs view
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
@@ -20,14 +20,14 @@ This file should contain the thumbs view
       <description>Movie Title</description>
       <type>label</type>
       <id>0</id>
-      <posX>20</posX>
-      <posY>240</posY>
-      <width>500</width>
+      <posX>30</posX>
+      <posY>360</posY>
+      <width>750</width>
       <font>mediastream14tc</font>
       <label>#MovingPictures.SelectedMovie.title</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -37,13 +37,13 @@ This file should contain the thumbs view
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.genres</label>
       <id>0</id>
-      <posX>20</posX>
-      <posY>265</posY>
-      <width>500</width>
+      <posX>30</posX>
+      <posY>397</posY>
+      <width>750</width>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>3</shadowDistance>
+      <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -52,10 +52,10 @@ This file should contain the thumbs view
     <control>
       <type>image</type>
       <id>1001</id>
-      <posX>20</posX>
-      <posY>287</posY>
-      <width>115</width>
-      <height>22</height>
+      <posX>30</posX>
+      <posY>430</posY>
+      <width>172</width>
+      <height>33</height>
       <align>left</align>
       <texture>star#MovingPictures.SelectedMovie.score.rounded.png</texture>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)</visible>
@@ -64,12 +64,12 @@ This file should contain the thumbs view
     <control>
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
-      <posX>150</posX>
-      <posY>288</posY>
-      <width>360</width>
+      <posX>225</posX>
+      <posY>432</posY>
+      <width>540</width>
       <font>mediastream10</font>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -78,10 +78,10 @@ This file should contain the thumbs view
       <description>Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>20</posX>
-      <posY>320</posY>
-      <width>500</width>
-      <height>215</height>
+      <posX>30</posX>
+      <posY>480</posY>
+      <width>750</width>
+      <height>322</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -94,9 +94,9 @@ This file should contain the thumbs view
       <id>0</id>
       <type>label</type>
       <label>#MovingPictures.Translation.Certification.Label</label>
-      <posX>20</posX>
-      <posY>551</posY>
-      <width>140</width>
+      <posX>30</posX>
+      <posY>826</posY>
+      <width>210</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -105,9 +105,9 @@ This file should contain the thumbs view
       <id>1004</id>
       <type>label</type>
       <label>#(iif(neq(#MovingPictures.SelectedMovie.certification,''),#MovingPictures.SelectedMovie.certification,'N/A'))</label>
-      <posX>180</posX>
-      <posY>552</posY>
-      <width>200</width>
+      <posX>270</posX>
+      <posY>828</posY>
+      <width>300</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -116,9 +116,9 @@ This file should contain the thumbs view
       <id>0</id>
       <type>label</type>
       <label>#MovingPictures.Translation.Runtime.Label</label>
-      <posX>20</posX>
-      <posY>573</posY>
-      <width>140</width>
+      <posX>30</posX>
+      <posY>859</posY>
+      <width>210</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -127,9 +127,9 @@ This file should contain the thumbs view
       <id>1005</id>
       <type>label</type>
       <label>#(iif(neq(#MovingPictures.SelectedMovie.extra.runtime.en.pretty,''),#MovingPictures.SelectedMovie.extra.runtime.en.pretty,'N/A'))</label>
-      <posX>180</posX>
-      <posY>574</posY>
-      <width>200</width>
+      <posX>270</posX>
+      <posY>861</posY>
+      <width>300</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -137,9 +137,9 @@ This file should contain the thumbs view
       <description>Year Label</description>
       <type>label</type>
       <label>#MovingPictures.Translation.Year.Label</label>
-      <posX>20</posX>
-      <posY>595</posY>
-      <width>140</width>
+      <posX>30</posX>
+      <posY>892</posY>
+      <width>210</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -148,11 +148,11 @@ This file should contain the thumbs view
       <id>1006</id>
       <type>label</type>
       <label>#(iif(neq(#MovingPictures.SelectedMovie.year,''),#MovingPictures.SelectedMovie.year,'N/A'))</label>
-      <posX>180</posX>
-      <posY>596</posY>
+      <posX>270</posX>
+      <posY>893</posY>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:5389958664a5a3a638b61c4d49619775-->
+<!--Checksum:479ccb7615ba26beaef148f2031c83d8-->

@@ -5,9 +5,9 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
@@ -17,14 +17,14 @@
       <description>Movie Title</description>
       <type>label</type>
       <id>0</id>
-      <posX>20</posX>
-      <posY>240</posY>
-      <width>500</width>
+      <posX>30</posX>
+      <posY>360</posY>
+      <width>750</width>
       <font>mediastream14tc</font>
       <label>#selecteditem</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -35,13 +35,13 @@
       <type>label</type>
       <label>#myfilms.db.category.value</label>
       <id>0</id>
-      <posX>20</posX>
-      <posY>265</posY>
-      <width>500</width>
+      <posX>30</posX>
+      <posY>397</posY>
+      <width>750</width>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>3</shadowDistance>
+      <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -52,12 +52,12 @@
       <description>Star Rating Image</description>
       <type>imagelist</type>
       <id>0</id>
-      <width>115</width>
-      <height>22</height>
-      <posX>20</posX>
-      <posY>287</posY>
-      <textureWidth>24</textureWidth>
-      <textureHeight>24</textureHeight>
+      <width>172</width>
+      <height>33</height>
+      <posX>30</posX>
+      <posY>430</posY>
+      <textureWidth>36</textureWidth>
+      <textureHeight>36</textureHeight>
       <subitems>
         <subitem>starwhitehollow.png</subitem>
         <subitem>starwhite.png</subitem>
@@ -73,12 +73,12 @@
     <control>
       <type>label</type>
       <label>#(string.format('{0:0.0} / 10', cflt(#myfilms.db.rating.value)))</label>
-      <posX>150</posX>
-      <posY>288</posY>
-      <width>360</width>
+      <posX>225</posX>
+      <posY>432</posY>
+      <width>540</width>
       <font>mediastream10</font>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#myfilms.db.rating.value,)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -88,10 +88,10 @@
       <description>Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>20</posX>
-      <posY>320</posY>
-      <width>500</width>
-      <height>215</height>
+      <posX>30</posX>
+      <posY>480</posY>
+      <width>750</width>
+      <height>322</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -105,9 +105,9 @@
       <id>0</id>
       <type>label</type>
       <label>#myfilms.user.item2.label</label>
-      <posX>20</posX>
-      <posY>551</posY>
-      <width>140</width>
+      <posX>30</posX>
+      <posY>826</posY>
+      <width>210</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -117,9 +117,9 @@
       <id>0</id>
       <type>label</type>
       <label>#myfilms.user.item2.value</label>
-      <posX>180</posX>
-      <posY>552</posY>
-      <width>200</width>
+      <posX>270</posX>
+      <posY>828</posY>
+      <width>300</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -129,9 +129,9 @@
       <id>0</id>
       <type>label</type>
       <label>#myfilms.user.item3.label</label>
-      <posX>20</posX>
-      <posY>573</posY>
-      <width>140</width>
+      <posX>30</posX>
+      <posY>859</posY>
+      <width>210</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -141,9 +141,9 @@
       <id>0</id>
       <type>label</type>
       <label>#myfilms.user.item3.value</label>
-      <posX>180</posX>
-      <posY>574</posY>
-      <width>200</width>
+      <posX>270</posX>
+      <posY>861</posY>
+      <width>300</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -152,9 +152,9 @@
       <description>User Item 5 Label</description>
       <type>label</type>
       <label>#myfilms.user.item5.label</label>
-      <posX>20</posX>
-      <posY>595</posY>
-      <width>140</width>
+      <posX>30</posX>
+      <posY>892</posY>
+      <width>210</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -164,12 +164,12 @@
       <id>0</id>
       <type>label</type>
       <label>#myfilms.user.item5.value</label>
-      <posX>180</posX>
-      <posY>596</posY>
+      <posX>270</posX>
+      <posY>893</posY>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:80e643c0567ad9368134b5bf5e616324-->
+<!--Checksum:f31458657a784a479253a7608f91b4a4-->

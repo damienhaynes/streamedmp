@@ -23,9 +23,9 @@
       <type>image</type>
       <id>1</id>
       <posX>0</posX>
-      <posY>523</posY>
-      <width>1280</width>
-      <height>197</height>
+      <posY>784</posY>
+      <width>1920</width>
+      <height>295</height>
       <texture>osdbackground1.png</texture>
       <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
@@ -34,9 +34,9 @@
       <type>image</type>
       <id>1</id>
       <posX>0</posX>
-      <posY>650</posY>
-      <width>1280</width>
-      <height>197</height>
+      <posY>975</posY>
+      <width>1920</width>
+      <height>295</height>
       <texture>osdbackground.png</texture>
       <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
@@ -44,10 +44,10 @@
       <description>Thumb border</description>
       <id>1</id>
       <type>image</type>
-      <posX>6</posX>
-      <posY>470</posY>
-      <width>170</width>
-      <height>170</height>
+      <posX>9</posX>
+      <posY>705</posY>
+      <width>255</width>
+      <height>255</height>
       <texture>imagebg.png</texture>
       <centered>yes</centered>
       <keepaspectratio>yes</keepaspectratio>
@@ -57,10 +57,10 @@
       <description>Thumb background</description>
       <type>image</type>
       <id>1</id>
-      <posX>16</posX>
-      <posY>480</posY>
-      <width>150</width>
-      <height>150</height>
+      <posX>24</posX>
+      <posY>720</posY>
+      <width>225</width>
+      <height>225</height>
       <texture>logo_BG.png</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
@@ -70,10 +70,10 @@
       <description>Current Logo</description>
       <type>image</type>
       <id>1</id>
-      <posX>16</posX>
-      <posY>480</posY>
-      <width>150</width>
-      <height>150</height>
+      <posX>24</posX>
+      <posY>720</posY>
+      <width>225</width>
+      <height>225</height>
       <texture>#Play.Current.Thumb</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
@@ -83,8 +83,8 @@
       <description>Current Date</description>
       <type>label</type>
       <id>1</id>
-      <posX>1255</posX>
-      <posY>533</posY>
+      <posX>1882</posX>
+      <posY>799</posY>
       <label>#date</label>
       <align>right</align>
       <font>mediastream10</font>
@@ -95,10 +95,10 @@
       <description>Title</description>
       <id>14</id>
       <type>label</type>
-      <width>900</width>
-      <height>25</height>
-      <posX>195</posX>
-      <posY>535</posY>
+      <width>1350</width>
+      <height>37</height>
+      <posX>292</posX>
+      <posY>802</posY>
       <font>mediastream16tc</font>
       <label>#Play.Current.Title</label>
       <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
@@ -107,10 +107,10 @@
       <description>Year</description>
       <id>36</id>
       <type>textbox</type>
-      <width>900</width>
-      <height>25</height>
-      <posX>195</posX>
-      <posY>563</posY>
+      <width>1350</width>
+      <height>37</height>
+      <posX>292</posX>
+      <posY>844</posY>
       <label>#Play.Current.Year</label>
       <font>mediastream14tc</font>
       <textcolor>ff888888</textcolor>
@@ -120,10 +120,10 @@
       <description>Plot</description>
       <type>textboxscrollup</type>
       <id>38</id>
-      <posX>230</posX>
-      <posY>590</posY>
-      <width>820</width>
-      <height>79</height>
+      <posX>345</posX>
+      <posY>885</posY>
+      <width>1230</width>
+      <height>118</height>
       <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
       <label>#Play.Current.Plot</label>
       <font>mediastream12</font>
@@ -133,10 +133,10 @@
       <description>Progress Bar Background</description>
       <type>image</type>
       <id>1</id>
-      <posX>190</posX>
-      <posY>676</posY>
-      <width>912</width>
-      <height>20</height>
+      <posX>285</posX>
+      <posY>1014</posY>
+      <width>1368</width>
+      <height>30</height>
       <texture>osdprogressback.png</texture>
       <keepaspectratio>no</keepaspectratio>
       <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]</visible>
@@ -145,10 +145,10 @@
       <description>Progress Bar</description>
       <type>progress</type>
       <id>1</id>
-      <posX>183</posX>
-      <posY>676</posY>
-      <width>928</width>
-      <height>20</height>
+      <posX>274</posX>
+      <posY>1014</posY>
+      <width>1392</width>
+      <height>30</height>
       <lefttexture>osdprogressleft_e.png</lefttexture>
       <midtexture>osdprogressmid_e.png</midtexture>
       <righttexture>-</righttexture>
@@ -159,10 +159,10 @@
       <description>Buffer Progress Bar</description>
       <type>tvprogress</type>
       <id>101</id>
-      <posX>183</posX>
-      <posY>676</posY>
-      <width>918</width>
-      <height>20</height>
+      <posX>274</posX>
+      <posY>1014</posY>
+      <width>1377</width>
+      <height>30</height>
       <toptexture>osd_progress_indicatorTV.png</toptexture>
       <TextureOffsetY>21</TextureOffsetY>
       <bottomtexture>-</bottomtexture>
@@ -189,14 +189,14 @@
       <description>Start Time Info</description>
       <type>label</type>
       <id>0</id>
-      <posX>195</posX>
-      <posY>695</posY>
+      <posX>292</posX>
+      <posY>1042</posY>
       <label>#currentplaytime</label>
       <align>left</align>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>3</shadowDistance>
+      <shadowDistance>4</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]</visible>
     </control>
@@ -204,14 +204,14 @@
       <description>End Time Info</description>
       <type>label</type>
       <id>0</id>
-      <posX>1093</posX>
-      <posY>695</posY>
+      <posX>1639</posX>
+      <posY>1042</posY>
       <label>#currentremaining</label>
       <align>right</align>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>3</shadowDistance>
+      <shadowDistance>4</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]</visible>
     </control>
@@ -219,10 +219,10 @@
       <description>pause image</description>
       <type>image</type>
       <id>16</id>
-      <posX>58</posX>
-      <posY>650</posY>
-      <width>60</width>
-      <height>60</height>
+      <posX>87</posX>
+      <posY>975</posY>
+      <width>90</width>
+      <height>90</height>
       <texture>-</texture>
       <visible>no</visible>
     </control>
@@ -230,4 +230,4 @@
     <import>common.player.xml</import>
   </controls>
 </window>
-<!--Checksum:66ea2492bf57b5796d8aef6bcbe0ee57-->
+<!--Checksum:f9fd7667c2e0bbdfe629b0f148a2d5bd-->

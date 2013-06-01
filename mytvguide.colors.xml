@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
-		<control>
+    <control>
       <description>TvGroup button</description>
       <type>button3part</type>
       <id>100</id>
-      <posX>15</posX>
-      <posY>120</posY>
-      <width>30</width>
-      <height>437</height>
+      <posX>22</posX>
+      <posY>180</posY>
+      <width>45</width>
+      <height>655</height>
       <textureFocusedLeft overlay="tvguide_arrow_left_colorize_overlay.png">tvguide_arrow_left_colorize.png</textureFocusedLeft>
       <textureNonFocusedLeft overlay="tvguide_arrow_left_colorize_overlay.png">tvguide_arrow_left_colorize.png</textureNonFocusedLeft>
       <textureFocusedMid overlay="tvguide_button_middle_colorize_overlay.png">tvguide_button_middle_colorize.png</textureFocusedMid>
@@ -78,7 +78,7 @@
       <iconOffsetX>10</iconOffsetX>
       <iconOffsetY>0</iconOffsetY>
       <iconInlineLabel1>no</iconInlineLabel1>
-			<visible>skin.hassetting(#skin.tvguide.usecolorsforgenre)</visible>
+      <visible>skin.hassetting(#skin.tvguide.usecolorsforgenre)</visible>
     </control>
     <control>
       <description>template for program record button</description>
@@ -96,7 +96,7 @@
       <iconOffsetX>10</iconOffsetX>
       <iconOffsetY>0</iconOffsetY>
       <iconInlineLabel1>no</iconInlineLabel1>
-			<visible>skin.hassetting(#skin.tvguide.usecolorsforgenre)</visible>
+      <visible>skin.hassetting(#skin.tvguide.usecolorsforgenre)</visible>
     </control>
     <control>
       <description>template for program partial record button</description>
@@ -114,16 +114,16 @@
       <iconOffsetX>10</iconOffsetX>
       <iconOffsetY>0</iconOffsetY>
       <iconInlineLabel1>no</iconInlineLabel1>
-			<visible>skin.hassetting(#skin.tvguide.usecolorsforgenre)</visible>
+      <visible>skin.hassetting(#skin.tvguide.usecolorsforgenre)</visible>
     </control>
     <control>
       <description>Template for genre key color</description>
       <type>image</type>
       <id>110</id>
-      <posX>240</posX>
-      <posY>692</posY>
-      <width>32</width>
-      <height>18</height>
+      <posX>360</posX>
+      <posY>1038</posY>
+      <width>48</width>
+      <height>27</height>
       <texture overlay="tvguide_button_middle_colorize_overlay.png">tvguide_button_middle_colorize.png</texture>
       <visible>skin.hassetting(#skin.tvguide.showgenrekey)</visible>
     </control>
@@ -131,18 +131,18 @@
       <description>Template for genre key name</description>
       <type>fadelabel</type>
       <id>111</id>
-      <posY>690</posY>
+      <posY>1035</posY>
       <textcolor>FFffffff</textcolor>
       <font>mediastream10tc</font>
       <visible>skin.hassetting(#skin.tvguide.showgenrekey)</visible>
     </control>
-		<control>
+    <control>
       <description>Current program genre</description>
       <type>label</type>
       <id>0</id>
-      <posX>1250</posX>
-      <posY>690</posY>
-      <width>1200</width>
+      <posX>1875</posX>
+      <posY>1035</posY>
+      <width>1800</width>
       <label>#TV.Guide.Genre</label>
       <align>right</align>
       <font>mediastream11tc</font>
@@ -150,3 +150,4 @@
     </control>
   </controls>
 </window>
+<!--Checksum:51030aa2123044dcde5ef9ecd55cfd8f-->

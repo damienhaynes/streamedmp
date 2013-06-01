@@ -5,10 +5,10 @@
       <description>UnWatched BG Logo</description>
       <type>image</type>
       <id>0</id>
-      <posX>130</posX>
-      <posY>642</posY>
-      <width>25</width>
-      <height>25</height>
+      <posX>195</posX>
+      <posY>963</posY>
+      <width>37</width>
+      <height>37</height>
       <texture>youtube.fm_unwatched.png</texture>
       <visible>!facadeview.smallicons+[Control.HasFocus(50)+string.equals(#Youtube.fm.Curent.Video.IsWatched, false )]+!string.equals(#Youtube.fm.Curent.Video.Title,)+!string.equals(#selecteditem,..)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -18,10 +18,10 @@
       <description>Watched Logo</description>
       <type>image</type>
       <id>0</id>
-      <posX>130</posX>
-      <posY>642</posY>
-      <width>25</width>
-      <height>25</height>
+      <posX>195</posX>
+      <posY>963</posY>
+      <width>37</width>
+      <height>37</height>
       <texture>youtube.fm_watched.png</texture>
       <visible>!facadeview.smallicons+[Control.HasFocus(50)+!string.equals(#Youtube.fm.Curent.Video.IsWatched, false )]</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -31,10 +31,10 @@
       <description>HD Logo</description>
       <type>image</type>
       <id>0</id>
-      <posX>20</posX>
-      <posY>640</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>30</posX>
+      <posY>960</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\HD Widescreen.png</texture>
       <visible>!facadeview.smallicons+[Control.HasFocus(50)+!string.equals(#Youtube.fm.Curent.Video.IsHD, false )]+!string.equals(#Youtube.fm.Curent.Video.Title,)+!string.equals(#selecteditem,..)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -44,10 +44,10 @@
       <description>SD Logo</description>
       <type>image</type>
       <id>0</id>
-      <posX>20</posX>
-      <posY>640</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>30</posX>
+      <posY>960</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\SD Fullscreen.png</texture>
       <visible>!facadeview.smallicons+[Control.HasFocus(50)+string.equals(#Youtube.fm.Curent.Video.IsHD, false )]+!string.equals(#Youtube.fm.Curent.Video.Title,)+!string.equals(#selecteditem,..)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -57,10 +57,10 @@
       <description>IsDownloaded Logo</description>
       <type>image</type>
       <id>0</id>
-      <posX>170</posX>
-      <posY>640</posY>
-      <width>50</width>
-      <height>29</height>
+      <posX>255</posX>
+      <posY>960</posY>
+      <width>75</width>
+      <height>43</height>
       <texture>youtube.fm_isdownloaded.png</texture>
       <visible>!facadeview.smallicons+!string.equals(#Youtube.fm.Curent.Video.Title,)+[Control.HasFocus(50)+!string.equals(#Youtube.fm.Curent.Video.IsDownloaded, false )]+!string.equals(#selecteditem,..)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -68,4 +68,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:cc97cb2f8c5444be95160357d2f99369-->
+<!--Checksum:ca2f68753ba2ca96b1ea9248564c5973-->

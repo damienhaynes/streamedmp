@@ -5,10 +5,10 @@
       <description>VideoCard Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>20</posX>
-      <posY>230</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>30</posX>
+      <posY>345</posY>
+      <width>48</width>
+      <height>48</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_videocard.png</texture>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -18,10 +18,10 @@
       <description>Keyboard Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>20</posX>
-      <posY>370</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>30</posX>
+      <posY>555</posY>
+      <width>48</width>
+      <height>48</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_keyboard.png</texture>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -31,10 +31,10 @@
       <description>Pointer Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>20</posX>
-      <posY>440</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>30</posX>
+      <posY>660</posY>
+      <width>48</width>
+      <height>48</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_pointer.png</texture>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -44,10 +44,10 @@
       <description>Soundcard Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>20</posX>
-      <posY>490</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>30</posX>
+      <posY>735</posY>
+      <width>48</width>
+      <height>48</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_soundcard.png</texture>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -57,10 +57,10 @@
       <description>Network Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>20</posX>
-      <posY>540</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>30</posX>
+      <posY>810</posY>
+      <width>48</width>
+      <height>48</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_networkcard.png</texture>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -70,10 +70,10 @@
       <description>Devices Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>550</posX>
-      <posY>230</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>825</posX>
+      <posY>345</posY>
+      <width>48</width>
+      <height>48</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_device.png</texture>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -83,10 +83,10 @@
       <description>Codecs Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>550</posX>
-      <posY>310</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>825</posX>
+      <posY>465</posY>
+      <width>48</width>
+      <height>48</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>htpcinfo_codec.png</texture>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -97,8 +97,8 @@
       <description>Graphic Device Name</description>
       <type>label</type>
       <id>1</id>
-      <posX>70</posX>
-      <posY>230</posY>
+      <posX>105</posX>
+      <posY>345</posY>
       <label>#HTPCInfo.TranslationDisplayDevice (#HTPCInfo.DisplayDeviceCount):</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -107,8 +107,8 @@
       <description>Keyboard Device Name</description>
       <type>label</type>
       <id>1</id>
-      <posX>70</posX>
-      <posY>370</posY>
+      <posX>105</posX>
+      <posY>555</posY>
       <label>#HTPCInfo.TranslationKeyboardDevice (#HTPCInfo.KeyboardDeviceCount):</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -117,8 +117,8 @@
       <description>Pointing Device Name</description>
       <type>label</type>
       <id>1</id>
-      <posX>70</posX>
-      <posY>430</posY>
+      <posX>105</posX>
+      <posY>645</posY>
       <label>#HTPCInfo.TranslationPointingDevice (#HTPCInfo.PointingDeviceCount):</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -127,8 +127,8 @@
       <description>Sound Device Name</description>
       <type>label</type>
       <id>1</id>
-      <posX>70</posX>
-      <posY>490</posY>
+      <posX>105</posX>
+      <posY>735</posY>
       <label>#HTPCInfo.TranslationSoundDevice (#HTPCInfo.SoundDeviceCount):</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -137,8 +137,8 @@
       <description>Network Device Name</description>
       <type>label</type>
       <id>1</id>
-      <posX>70</posX>
-      <posY>550</posY>
+      <posX>105</posX>
+      <posY>825</posY>
       <label>#HTPCInfo.TranslationNetworkDevice (#HTPCInfo.NetworkDeviceCount):</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -148,8 +148,8 @@
       <description>Drive Device Name</description>
       <type>label</type>
       <id>1</id>
-      <posX>600</posX>
-      <posY>230</posY>
+      <posX>900</posX>
+      <posY>345</posY>
       <label>#HTPCInfo.TranslationDriveDevice (#HTPCInfo.DriveCount):</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -158,8 +158,8 @@
       <description>Codecs</description>
       <type>label</type>
       <id>1</id>
-      <posX>600</posX>
-      <posY>310</posY>
+      <posX>900</posX>
+      <posY>465</posY>
       <label>#HTPCInfo.TranslationCodec (#HTPCInfo.CodecCount):</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -169,8 +169,8 @@
       <description>Graphic Device Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>70</posX>
-      <posY>250</posY>
+      <posX>105</posX>
+      <posY>375</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.DisplayDevice1Description (#HTPCInfo.TranslationDriverVersion #HTPCInfo.DisplayDevice1DriverVersion)</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -180,8 +180,8 @@
       <description>Graphic Device Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>70</posX>
-      <posY>270</posY>
+      <posX>105</posX>
+      <posY>405</posY>
       <font>mediastream10</font>
       <label>VSYNC: #HTPCInfo.DisplayDevice1MinimumRefreshRate / #HTPCInfo.DisplayDevice1MaximumRefreshRate</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -191,8 +191,8 @@
       <description>Graphic Device Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>70</posX>
-      <posY>290</posY>
+      <posX>105</posX>
+      <posY>435</posY>
       <font>mediastream10</font>
       <label>#(L(169)) #HTPCInfo.DisplayDevice1Resolution</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -202,8 +202,8 @@
       <description>Graphic Device Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>70</posX>
-      <posY>310</posY>
+      <posX>105</posX>
+      <posY>465</posY>
       <font>mediastream10</font>
       <label>VRAM: #HTPCInfo.DisplayDevice1MemoryPhysical</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -213,8 +213,8 @@
       <description>Graphic Device Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>70</posX>
-      <posY>330</posY>
+      <posX>105</posX>
+      <posY>495</posY>
       <font>mediastream10</font>
       <label>#(L(989)): #HTPCInfo.DisplayDeviceCurrentFrameCount (#(L(973)): #HTPCInfo.DisplayDeviceMaximumFrameCount)</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -225,8 +225,8 @@
       <description>Keyboard Device Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>70</posX>
-      <posY>390</posY>
+      <posX>105</posX>
+      <posY>585</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.KeyboardDevice1Name</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -237,8 +237,8 @@
       <description>Pointing Device Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>70</posX>
-      <posY>450</posY>
+      <posX>105</posX>
+      <posY>675</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.PointingDevice1Name (#HTPCInfo.PointingDevice1Manufacturer)</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -249,7 +249,7 @@
     <description>Pointing Device Value</description>
     <type>label</type>
     <id>1</id>
-    <height>20</height>
+    <height>30</height>
     <font>mediastream10</font>
     <label>#HTPCInfo.PointingDevice2Name (#HTPCInfo.PointingDevice2Manufacturer)</label>
     </control>
@@ -257,7 +257,7 @@
     <description>Pointing Device Value</description>
     <type>label</type>
     <id>1</id>
-    <height>20</height>
+    <height>30</height>
     <font>mediastream10</font>
     <label>#HTPCInfo.PointingDevice3Name (#HTPCInfo.PointingDevice3Manufacturer)</label>
     </control>
@@ -265,7 +265,7 @@
     <description>Pointing Device Value</description>
     <type>label</type>
     <id>1</id>
-    <height>40</height>
+    <height>60</height>
     <font>mediastream10</font>
     <label>#HTPCInfo.PointingDevice4Name (#HTPCInfo.PointingDevice4Manufacturer)</label>
     </control>
@@ -275,8 +275,8 @@
       <description>Sound Device Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>70</posX>
-      <posY>510</posY>
+      <posX>105</posX>
+      <posY>765</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.SoundDevice1Name (#HTPCInfo.SoundDevice1Manufacturer)</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -287,7 +287,7 @@
     <description>Sound Device Value</description>
     <type>label</type>
     <id>1</id>
-    <height>20</height>
+    <height>30</height>
     <font>mediastream10</font>
     <label>#HTPCInfo.SoundDevice2Name (#HTPCInfo.SoundDevice2Manufacturer)</label>
     </control>
@@ -295,7 +295,7 @@
     <description>Sound Device Value</description>
     <type>label</type>
     <id>1</id>
-    <height>40</height>
+    <height>60</height>
     <font>mediastream10</font>
     <label>#HTPCInfo.SoundDevice3Name (#HTPCInfo.SoundDevice3Manufacturer)</label>
     </control>
@@ -305,8 +305,8 @@
       <description>Network Device Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>70</posX>
-      <posY>570</posY>
+      <posX>105</posX>
+      <posY>855</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.NetworkDevice8Description (#HTPCInfo.NetworkDevice8Manufacturer) #HTPCInfo.NetworkDevice8Type</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -318,8 +318,8 @@
       <description>Drive Device Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>600</posX>
-      <posY>250</posY>
+      <posX>900</posX>
+      <posY>375</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.Drive1Model, #HTPCInfo.Drive1InterfaceType, #HTPCInfo.Drive1Type, #HTPCInfo.Drive1PartitionCount #HTPCInfo.TranslationDrivePartition</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -329,8 +329,8 @@
       <description>Drive Device Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>600</posX>
-      <posY>270</posY>
+      <posX>900</posX>
+      <posY>405</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.Drive2Model, #HTPCInfo.Drive2InterfaceType, #HTPCInfo.Drive2Type, #HTPCInfo.Drive2PartitionCount #HTPCInfo.TranslationDrivePartition</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -340,8 +340,8 @@
       <description>Codec Value</description>
       <type>label</type>
       <id>1</id>
-      <posX>600</posX>
-      <posY>330</posY>
+      <posX>900</posX>
+      <posY>495</posY>
       <font>mediastream10</font>
       <label>#HTPCInfo.Codec10Description (#HTPCInfo.Codec10Version)</label>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -349,4 +349,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:02fb5c9e902e725ecf1054d4142c6de1-->
+<!--Checksum:c542223b605c18a597f5e0e6dd06eaee-->

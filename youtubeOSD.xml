@@ -10,18 +10,18 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>473</posY>
-      <width>1280</width>
-      <height>247</height>
+      <posY>709</posY>
+      <width>1920</width>
+      <height>370</height>
       <texture>osdbackground1.png</texture>
     </control>
     <control>
       <description>Logo border</description>
       <type>image</type>
-      <posX>6</posX>
-      <posY>440</posY>
-      <width>170</width>
-      <height>170</height>
+      <posX>9</posX>
+      <posY>660</posY>
+      <width>255</width>
+      <height>255</height>
       <texture>imagebg.png</texture>
       <centered>yes</centered>
       <keepaspectratio>yes</keepaspectratio>
@@ -30,10 +30,10 @@
       <description>Background</description>
       <type>image</type>
       <id>1</id>
-      <posX>16</posX>
-      <posY>450</posY>
-      <width>150</width>
-      <height>150</height>
+      <posX>24</posX>
+      <posY>675</posY>
+      <width>225</width>
+      <height>225</height>
       <texture>logo_BG.png</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
@@ -42,10 +42,10 @@
       <description>Artist Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>16</posX>
-      <posY>450</posY>
-      <width>150</width>
-      <height>150</height>
+      <posX>24</posX>
+      <posY>675</posY>
+      <width>225</width>
+      <height>225</height>
       <texture>#Youtube.fm.NowPlaying.Artist.Image</texture>
       <keepaspectratio>no</keepaspectratio>
       <centered>yes</centered>
@@ -54,8 +54,8 @@
       <description>Date</description>
       <type>label</type>
       <id>1</id>
-      <posX>1255</posX>
-      <posY>483</posY>
+      <posX>1882</posX>
+      <posY>724</posY>
       <label>#date</label>
       <align>right</align>
       <font>mediastream10</font>
@@ -65,10 +65,10 @@
       <description>Current Artist</description>
       <id>35</id>
       <type>label</type>
-      <width>900</width>
-      <height>25</height>
-      <posX>195</posX>
-      <posY>485</posY>
+      <width>1350</width>
+      <height>37</height>
+      <posX>292</posX>
+      <posY>727</posY>
       <font>mediastream16tc</font>
       <label>#Youtube.fm.NowPlaying.Artist.Name</label>
     </control>
@@ -76,10 +76,10 @@
       <description>Current Title Playing</description>
       <id>36</id>
       <type>textbox</type>
-      <width>900</width>
-      <height>25</height>
-      <posX>195</posX>
-      <posY>513</posY>
+      <width>1350</width>
+      <height>37</height>
+      <posX>292</posX>
+      <posY>769</posY>
       <font>mediastream14tc</font>
       <label>#Youtube.fm.NowPlaying.Video.Title</label>
       <textcolor>ff888888</textcolor>
@@ -88,10 +88,10 @@
       <description>Plot</description>
       <type>textboxscrollup</type>
       <id>38</id>
-      <posX>230</posX>
-      <posY>540</posY>
-      <width>820</width>
-      <height>90</height>
+      <posX>345</posX>
+      <posY>810</posY>
+      <width>1230</width>
+      <height>135</height>
       <seperator>--------------------------------------------------------------------------------------------</seperator>
       <label>#Play.Current.Plot</label>
       <font>mediastream12</font>
@@ -100,10 +100,10 @@
       <description>Playing Next</description>
       <id>0</id>
       <type>label</type>
-      <width>900</width>
-      <height>24</height>
-      <posX>195</posX>
-      <posY>655</posY>
+      <width>1350</width>
+      <height>36</height>
+      <posX>292</posX>
+      <posY>982</posY>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
       <label>#StreamedMP.Next #Youtube.fm.Next.Artist.Name - #Youtube.fm.Next.Video.Title</label>
@@ -113,10 +113,10 @@
       <description>Progress Bar Background</description>
       <type>image</type>
       <id>1</id>
-      <posX>190</posX>
-      <posY>676</posY>
-      <width>912</width>
-      <height>20</height>
+      <posX>285</posX>
+      <posY>1014</posY>
+      <width>1368</width>
+      <height>30</height>
       <texture>osdprogressback.png</texture>
       <keepaspectratio>no</keepaspectratio>
     </control>
@@ -124,10 +124,10 @@
       <description>Progress Bar</description>
       <type>progress</type>
       <id>1</id>
-      <posX>183</posX>
-      <posY>676</posY>
-      <width>928</width>
-      <height>20</height>
+      <posX>274</posX>
+      <posY>1014</posY>
+      <width>1392</width>
+      <height>30</height>
       <lefttexture>osdprogressleft_e.png</lefttexture>
       <midtexture>osdprogressmid_e.png</midtexture>
       <righttexture>-</righttexture>
@@ -137,8 +137,8 @@
     <control>
       <description>Start Time Info</description>
       <type>label</type>
-      <posX>195</posX>
-      <posY>695</posY>
+      <posX>292</posX>
+      <posY>1042</posY>
       <label>#currentplaytime</label>
       <align>left</align>
       <font>mediastream12tc</font>
@@ -147,8 +147,8 @@
     <control>
       <description>End Time Info</description>
       <type>label</type>
-      <posX>1093</posX>
-      <posY>695</posY>
+      <posX>1639</posX>
+      <posY>1042</posY>
       <label>#currentremaining</label>
       <align>right</align>
       <font>mediastream12tc</font>
@@ -157,24 +157,24 @@
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>1027</posX>
-      <posY>560</posY>
-      <width>200</width>
-      <height>52</height>
+      <posX>1540</posX>
+      <posY>840</posY>
+      <width>300</width>
+      <height>77</height>
       <control Style="settingsosdcheckbutton">
         <description>Play</description>
         <type>checkbutton</type>
         <id>213</id>
-        <posX>58</posX>
-        <posY>650</posY>
-				<width>60</width>
-        <height>60</height>
-				<markHeight>60</markHeight>
-				<markWidth>60</markWidth>
-				<textureCheckmark>osdplayfo.png</textureCheckmark>
-				<textureCheckmarkNoFocus>osdplaynf.png</textureCheckmarkNoFocus>
-				<textureFocus>osdplayfo.png</textureFocus>
-				<textureNoFocus>osdplaynf.png</textureNoFocus>
+        <posX>87</posX>
+        <posY>975</posY>
+        <width>90</width>
+        <height>90</height>
+        <markHeight>90</markHeight>
+        <markWidth>90</markWidth>
+        <textureCheckmark>osdplayfo.png</textureCheckmark>
+        <textureCheckmarkNoFocus>osdplaynf.png</textureCheckmarkNoFocus>
+        <textureFocus>osdplayfo.png</textureFocus>
+        <textureNoFocus>osdplaynf.png</textureNoFocus>
         <onleft>213</onleft>
         <onright>213</onright>
         <onup>213</onup>
@@ -183,20 +183,20 @@
         <animation effect="fade" time="250">Visible</animation>
         <animation effect="fade" time="250">windowopen</animation>
       </control>
-			<control Style="settingsosdcheckbutton">
+      <control Style="settingsosdcheckbutton">
         <description>Pause</description>
         <type>checkbutton</type>
         <id>214</id>
-        <posX>58</posX>
-        <posY>650</posY>
-        <width>60</width>
-        <height>60</height>
-				<markHeight>60</markHeight>
-				<markWidth>60</markWidth>
-				<textureCheckmark>osdpausefo.png</textureCheckmark>
-				<textureCheckmarkNoFocus>osdpausenf.png</textureCheckmarkNoFocus>
-				<textureFocus>osdpausefo.png</textureFocus>
-				<textureNoFocus>osdpausenf.png</textureNoFocus>
+        <posX>87</posX>
+        <posY>975</posY>
+        <width>90</width>
+        <height>90</height>
+        <markHeight>90</markHeight>
+        <markWidth>90</markWidth>
+        <textureCheckmark>osdpausefo.png</textureCheckmark>
+        <textureCheckmarkNoFocus>osdpausenf.png</textureCheckmarkNoFocus>
+        <textureFocus>osdpausefo.png</textureFocus>
+        <textureNoFocus>osdpausenf.png</textureNoFocus>
         <onleft>214</onleft>
         <onright>214</onright>
         <onup>214</onup>
@@ -209,4 +209,4 @@
     <import>common.player.xml</import>
   </controls>
 </window>
-<!--Checksum:2e7b6c0f4c88a25fddb1459193c6e002-->
+<!--Checksum:0140cd3d43e227c3dbc3063a739ba8be-->

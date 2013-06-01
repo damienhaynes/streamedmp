@@ -7,8 +7,8 @@
     <control>
       <type>image</type>
       <id>1</id>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>black.png</texture>
       <colordiffuse>90ffffff</colordiffuse>
       <animation effect="fade" time="200">windowopen</animation>
@@ -16,159 +16,159 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>195</posX>
-      <posY>96</posY>
-      <width>888</width>
-      <height>37</height>
+      <posX>292</posX>
+      <posY>144</posY>
+      <width>1332</width>
+      <height>55</height>
       <texture>dialogmenutop.png</texture>
       <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
-      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+      <animation effect="slide" time="300" start="-1050,-1050">windowopen</animation>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>195</posX>
-      <posY>133</posY>
-      <width>888</width>
-      <height>477</height>
+      <posX>292</posX>
+      <posY>199</posY>
+      <width>1332</width>
+      <height>715</height>
       <texture>dialogmenumiddle.png</texture>
       <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
-      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+      <animation effect="slide" time="300" start="-1050,-1050">windowopen</animation>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>195</posX>
-      <posY>611</posY>
-      <width>888</width>
-      <height>12</height>
+      <posX>292</posX>
+      <posY>916</posY>
+      <width>1332</width>
+      <height>18</height>
       <texture>dialogmenubottom.png</texture>
       <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
-      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+      <animation effect="slide" time="300" start="-1050,-1050">windowopen</animation>
     </control>
     <control>
       <description>GFX-Heading "menu" text label</description>
       <type>label</type>
       <id>5</id>
-      <posX>195</posX>
-      <posY>116</posY>
-      <width>888</width>
+      <posX>292</posX>
+      <posY>174</posY>
+      <width>1332</width>
       <label>924</label>
       <font>mediastream12tc</font>
       <textcolor>White</textcolor>
       <align>center</align>
       <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
-      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+      <animation effect="slide" time="300" start="-1050,-1050">windowopen</animation>
     </control>
     <control>
       <description>Heading text label</description>
       <type>label</type>
       <id>4</id>
-      <posX>195</posX>
-      <posY>150</posY>
-      <width>888</width>
+      <posX>292</posX>
+      <posY>225</posY>
+      <width>1332</width>
       <font>mediastream11c</font>
       <align>center</align>
       <textcolor>FF025984</textcolor>
       <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
-      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+      <animation effect="slide" time="300" start="-1050,-1050">windowopen</animation>
     </control>
     <control>
       <description>options listcontrol</description>
       <type>listcontrol</type>
       <id>3</id>
-      <posX>284</posX>
-      <posY>196</posY>
-      <width>711</width>
-      <height>290</height>
-      <textXOff>50</textXOff>
-      <textXOff2>650</textXOff2>
-      <textXOff3>158</textXOff3>
-      <textYOff2>45</textYOff2>
-      <textYOff3>47</textYOff3>
+      <posX>426</posX>
+      <posY>294</posY>
+      <width>1066</width>
+      <height>435</height>
+      <textXOff>75</textXOff>
+      <textXOff2>975</textXOff2>
+      <textXOff3>237</textXOff3>
+      <textYOff2>67</textYOff2>
+      <textYOff3>70</textYOff3>
       <font>font14</font>
       <font2>mediastream10c</font2>
       <font3>mediastream10c</font3>
       <spaceBetweenItems>0</spaceBetweenItems>
-      <textureHeight>74</textureHeight>
+      <textureHeight>111</textureHeight>
       <scrollOffset>1</scrollOffset>
-      <spinPosX>990</spinPosX>
-      <spinPosY>420</spinPosY>
+      <spinPosX>1485</spinPosX>
+      <spinPosY>630</spinPosY>
       <spinAlign>Right</spinAlign>
       <spinColor>ff006698</spinColor>
       <textureUp>arrow_round_up_nofocus.png</textureUp>
       <textureDown>arrow_round_down_nofocus.png</textureDown>
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
       <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-      <spinWidth>37</spinWidth>
-      <spinHeight>37</spinHeight>
+      <spinWidth>55</spinWidth>
+      <spinHeight>55</spinHeight>
       <ondown>11</ondown>
       <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
-      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+      <animation effect="slide" time="300" start="-1050,-1050">windowopen</animation>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>225</posX>
-      <posY>463</posY>
-      <width>828</width>
-      <height>14</height>
+      <posX>337</posX>
+      <posY>694</posY>
+      <width>1242</width>
+      <height>21</height>
       <texture>imagestreamtitle.png</texture>
       <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
-      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+      <animation effect="slide" time="300" start="-1050,-1050">windowopen</animation>
     </control>
     <control>
       <description>Skip new Recording</description>
       <type>button</type>
       <id>11</id>
-      <posX>302</posX>
-      <posY>487</posY>
-      <width>557</width>
+      <posX>453</posX>
+      <posY>730</posY>
+      <width>835</width>
       <label>1110</label>
       <onup>3</onup>
       <ondown>12</ondown>
       <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
-      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+      <animation effect="slide" time="300" start="-1050,-1050">windowopen</animation>
     </control>
     <control>
       <description>Skip conflicting Recording</description>
       <type>button</type>
       <id>12</id>
-      <posX>302</posX>
-      <posY>517</posY>
-      <width>557</width>
+      <posX>453</posX>
+      <posY>775</posY>
+      <width>835</width>
       <label>1111</label>
       <onup>11</onup>
       <ondown>13</ondown>
       <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
-      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+      <animation effect="slide" time="300" start="-1050,-1050">windowopen</animation>
     </control>
     <control>
       <description>Keep Conflict</description>
       <type>button</type>
       <id>13</id>
-      <posX>302</posX>
-      <posY>547</posY>
-      <width>557</width>
+      <posX>453</posX>
+      <posY>820</posY>
+      <width>835</width>
       <label>1112</label>
       <onup>12</onup>
       <ondown>14</ondown>
       <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
-      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+      <animation effect="slide" time="300" start="-1050,-1050">windowopen</animation>
     </control>
     <control>
       <description>Skip conflicting Episode</description>
       <type>button</type>
       <id>14</id>
-      <posX>302</posX>
-      <posY>577</posY>
-      <width>557</width>
+      <posX>453</posX>
+      <posY>865</posY>
+      <width>835</width>
       <label>1113</label>
       <onup>13</onup>
       <ondown>3</ondown>
       <animation effect="zoom" start="10,10" end="100,100" center="640,360" time="300">WindowOpen</animation>
-      <animation effect="slide" time="300" start="-700,-700">windowopen</animation>
+      <animation effect="slide" time="300" start="-1050,-1050">windowopen</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:2b71c5f778fbf147ad9d365f598bd60d-->
+<!--Checksum:b90bd5c398fcbadc5763469286446e41-->

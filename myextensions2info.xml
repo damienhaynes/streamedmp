@@ -14,8 +14,8 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#header.hover</texture>
       <colordiffuse>#header.BG.colordiffuse</colordiffuse>
     </control>
@@ -25,36 +25,36 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1281</width>
-      <height>720</height>
+      <width>1921</width>
+      <height>1080</height>
       <texture>#header.BG.overlay</texture>
     </control>
     <control>
       <id>1</id>
       <description>Top Title Background</description>
       <type>image</type>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <control>
       <id>1</id>
       <type>fadelabel</type>
       <description>Top Title</description>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>#header.label</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <import>common.time.xml</import>
@@ -62,8 +62,8 @@
     <control>
       <description>Action Buttons</description>
       <type>group</type>
-      <posX>30</posX>
-      <posY>250</posY>
+      <posX>45</posX>
+      <posY>375</posY>
       <layout>StackLayout(0, Vertical, true)</layout>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
@@ -72,8 +72,8 @@
         <type>button</type>
         <id>2</id>
         <label>#MPEI.Translation.Install.Label</label>
-        <width>240</width>
-        <height>40</height>
+        <width>360</width>
+        <height>60</height>
         <onup>17</onup>
         <ondown>3</ondown>
         <onright>2</onright>
@@ -81,8 +81,8 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <visible>!string.equals(#MPE.Selected.isinstalled,true)</visible>
@@ -92,8 +92,8 @@
         <type>button</type>
         <id>3</id>
         <label>#MPEI.Translation.Uninstall.Label</label>
-        <width>240</width>
-        <height>40</height>
+        <width>360</width>
+        <height>60</height>
         <onup>2</onup>
         <ondown>4</ondown>
         <onright>3</onright>
@@ -101,8 +101,8 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <visible>string.equals(#MPE.Selected.isinstalled,true)</visible>
@@ -112,8 +112,8 @@
         <type>button</type>
         <id>4</id>
         <label>#MPEI.Translation.Update.Label</label>
-        <width>240</width>
-        <height>40</height>
+        <width>360</width>
+        <height>60</height>
         <onup>3</onup>
         <ondown>5</ondown>
         <onright>4</onright>
@@ -121,8 +121,8 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <visible>string.equals(#MPE.Selected.haveupdate,true)+string.equals(#MPE.Selected.isinstalled,true)</visible>
@@ -132,8 +132,8 @@
         <type>button</type>
         <id>5</id>
         <label>#MPEI.Translation.Disable.Label</label>
-        <width>240</width>
-        <height>40</height>
+        <width>360</width>
+        <height>60</height>
         <onup>4</onup>
         <ondown>6</ondown>
         <onright>5</onright>
@@ -141,8 +141,8 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <visible>string.equals(#MPE.Selected.IsEnabled,true)+string.equals(#MPE.Selected.isinstalled,true)</visible>
@@ -152,8 +152,8 @@
         <type>button</type>
         <id>6</id>
         <label>#MPEI.Translation.Enable.Label</label>
-        <width>240</width>
-        <height>40</height>
+        <width>360</width>
+        <height>60</height>
         <onup>5</onup>
         <ondown>7</ondown>
         <onright>6</onright>
@@ -161,8 +161,8 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <visible>string.equals(#MPE.Selected.IsDisabled,true)+string.equals(#MPE.Selected.isinstalled,true)</visible>
@@ -172,8 +172,8 @@
         <type>button</type>
         <id>7</id>
         <label>#MPEI.Translation.Settings.Label</label>
-        <width>240</width>
-        <height>40</height>
+        <width>360</width>
+        <height>60</height>
         <onup>6</onup>
         <ondown>8</ondown>
         <onright>7</onright>
@@ -181,8 +181,8 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <visible>string.equals(#MPE.Selected.HaveSettings,true)+string.equals(#MPE.Selected.isinstalled,true)</visible>
@@ -199,10 +199,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <width>240</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <width>360</width>
+        <height>60</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <visible>!string.equals(#MPE.View.Name,#MPEI.Translation.MPOnlineExtensions.Label)</visible>
@@ -219,10 +219,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <width>240</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <width>360</width>
+        <height>60</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <visible>string.equals(#MPE.Selected.HaveScreenShots,true)</visible>
@@ -232,10 +232,10 @@
     <control>
       <description>Plugin Icon</description>
       <type>image</type>
-      <posX>1080</posX>
-      <posY>250</posY>
-      <width>150</width>
-      <height>150</height>
+      <posX>1620</posX>
+      <posY>375</posY>
+      <width>225</width>
+      <height>225</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#MPE.Selected.Icon</texture>
       <animation effect="Fade" time="250">WindowOpen</animation>
@@ -243,92 +243,92 @@
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <posX>310</posX>
-      <posY>250</posY>
-      <width>249</width>
+      <posX>465</posX>
+      <posY>375</posY>
+      <width>373</width>
       <label>#MPEI.Translation.Version.Label</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <type>label</type>
-      <posX>500</posX>
-      <posY>251</posY>
-      <width>426</width>
+      <posX>750</posX>
+      <posY>376</posY>
+      <width>639</width>
       <label>#MPE.Selected.Version</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <posX>310</posX>
-      <posY>276</posY>
-      <width>249</width>
+      <posX>465</posX>
+      <posY>414</posY>
+      <width>373</width>
       <label>#MPEI.Translation.Author.Label</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <type>label</type>
-      <posX>500</posX>
-      <posY>277</posY>
-      <width>428</width>
+      <posX>750</posX>
+      <posY>415</posY>
+      <width>642</width>
       <label>#MPE.Selected.Author</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <posX>310</posX>
-      <posY>302</posY>
-      <width>248</width>
+      <posX>465</posX>
+      <posY>453</posY>
+      <width>372</width>
       <label>#MPEI.Translation.ReleaseDate.Label</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
-      <posX>500</posX>
-      <posY>303</posY>
-      <width>428</width>
+      <posX>750</posX>
+      <posY>454</posY>
+      <width>642</width>
       <label>#MPE.Selected.ReleaseDate</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <posX>310</posX>
-      <posY>328</posY>
-      <width>248</width>
+      <posX>465</posX>
+      <posY>492</posY>
+      <width>372</width>
       <label>#MPEI.Translation.Status.Label</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
-      <posX>500</posX>
-      <posY>329</posY>
-      <width>428</width>
+      <posX>750</posX>
+      <posY>493</posY>
+      <width>642</width>
       <label>#MPE.Selected.Status</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <posX>310</posX>
-      <posY>356</posY>
-      <width>248</width>
+      <posX>465</posX>
+      <posY>534</posY>
+      <width>372</width>
       <label>#MPEI.Translation.Downloads.Label</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
       <visible>!string.equals(#MPE.Selected.Hits,)</visible>
     </control>
     <control Style="smallTitle">
-			<id>101</id>
+      <id>101</id>
       <type>fadelabel</type>
-      <posX>500</posX>
-      <posY>357</posY>
-      <width>428</width>
+      <posX>750</posX>
+      <posY>535</posY>
+      <width>642</width>
       <!-- Show Downloads and Hits -->
       <label>#(string.format('{0:#,0} ({1:#,0} #MPEI.Translation.Hits.Label)',cint(#MPE.Selected.Downloads),cint(#MPE.Selected.Hits)))</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
@@ -337,9 +337,9 @@
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
-      <posX>500</posX>
-      <posY>357</posY>
-      <width>428</width>
+      <posX>750</posX>
+      <posY>535</posY>
+      <width>642</width>
       <!-- Show Hits Only (avoid skin expression error) -->
       <label>#(string.format('{0:#,0} #MPEI.Translation.Hits.Label',cint(#MPE.Selected.Hits)))</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
@@ -348,9 +348,9 @@
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <posX>310</posX>
-      <posY>382</posY>
-      <width>248</width>
+      <posX>465</posX>
+      <posY>573</posY>
+      <width>372</width>
       <label>#MPEI.Translation.Compatibility.Label</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
@@ -358,9 +358,9 @@
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
-      <posX>500</posX>
-      <posY>383</posY>
-      <width>428</width>
+      <posX>750</posX>
+      <posY>574</posY>
+      <width>642</width>
       <label>MediaPortal #(iif(eq(#MPE.Selected.CompatibleVersions,' '),'N/A','#MPE.Selected.CompatibleVersions'))</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
@@ -368,9 +368,9 @@
     </control>
     <control Style="smallTitleB">
       <type>label</type>
-      <posX>310</posX>
-      <posY>408</posY>
-      <width>248</width>
+      <posX>465</posX>
+      <posY>612</posY>
+      <width>372</width>
       <label>#MPEI.Translation.Rating.Label</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
@@ -380,15 +380,15 @@
       <type>imagelist</type>
       <description>-</description>
       <id>0</id>
-      <posX>500</posX>
-      <posY>405</posY>
-      <width>130</width>
-      <height>24</height>
+      <posX>750</posX>
+      <posY>607</posY>
+      <width>195</width>
+      <height>36</height>
       <colordiffuse>ffffffff</colordiffuse>
       <percentage>#MPE.Selected.Rating</percentage>
-      <textureHeight>22</textureHeight>
+      <textureHeight>33</textureHeight>
       <orientation>horizontal</orientation>
-      <textureWidth>22</textureWidth>
+      <textureWidth>33</textureWidth>
       <subitems>
         <subitem>starwhitehollow.png</subitem>
         <subitem>starwhite.png</subitem>
@@ -399,9 +399,9 @@
     </control>
     <control Style="smallTitle">
       <type>fadelabel</type>
-      <posX>620</posX>
-      <posY>408</posY>
-      <width>428</width>
+      <posX>930</posX>
+      <posY>612</posY>
+      <width>642</width>
       <label>#(div(cint(#MPE.Selected.Rating), cflt(2))) #(string.format('({0:#,0} #MPEI.Translation.Votes.Label)',cint(#MPE.Selected.Votes)))</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
@@ -409,10 +409,10 @@
     </control>
     <control>
       <type>textboxscrollup</type>
-      <posX>310</posX>
-      <posY>460</posY>
-      <width>911</width>
-      <height>160</height>
+      <posX>465</posX>
+      <posY>690</posY>
+      <width>1366</width>
+      <height>240</height>
       <font>mediastream11</font>
       <label>#MPE.Selected.Description</label>
       <animation effect="Fade" time="250">WindowOpen</animation>
@@ -422,9 +422,9 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
       <animation effect="Fade" time="250">WindowOpen</animation>
       <animation effect="Fade" time="100">WindowClose</animation>
@@ -432,9 +432,9 @@
     <control>
       <type>fadelabel</type>
       <id>1</id>
-      <posX>40</posX>
-      <posY>684</posY>
-      <width>1200</width>
+      <posX>60</posX>
+      <posY>1026</posY>
+      <width>1800</width>
       <label>#MPE.Selected.Name</label>
       <font>mediastream16tc</font>
       <textcolor>White</textcolor>
@@ -444,4 +444,4 @@
     <import>common.overlays2.xml</import>
   </controls>
 </window>
-<!--Checksum:6f0a647f9beba6cdd3df26995062833a-->
+<!--Checksum:bedf19fa66b372091f5d668417cd223e-->

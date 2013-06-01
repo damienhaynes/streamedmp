@@ -18,47 +18,47 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1281</width>
-      <height>720</height>
+      <width>1921</width>
+      <height>1080</height>
       <texture>#header.BG.overlay</texture>
     </control>
     <control>
       <id>1</id>
       <description>Top Title Background</description>
       <type>image</type>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <control>
       <id>1</id>
       <type>fadelabel</type>
       <description>Top Title</description>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>#header.label</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
-		<import>common.time.xml</import>
+    <import>common.time.xml</import>
     <control>
       <description>Default Cover Art</description>
       <type>image</type>
       <id>0</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>257</width>
-      <height>257</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>385</width>
+      <height>385</height>
       <texture>defaultArtistBig.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -67,10 +67,10 @@
       <description>Cover Art</description>
       <type>image</type>
       <id>1</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>257</width>
-      <height>257</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>385</width>
+      <height>385</height>
       <texture>#AlbumInfo.Thumb</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -79,10 +79,10 @@
       <description>Cover Art Glass Overlay</description>
       <type>image</type>
       <id>0</id>
-      <posX>31</posX>
-      <posY>254</posY>
-      <width>228</width>
-      <height>177</height>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>342</width>
+      <height>265</height>
       <texture>glassoverlay2.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -91,27 +91,26 @@
       <description>Album Title</description>
       <type>label</type>
       <id>0</id>
-      <posX>308</posX>
-      <posY>251</posY>
-      <width>950</width>
+      <posX>462</posX>
+      <posY>376</posY>
+      <width>1425</width>
       <font>mediastream16tc</font>
       <label>#AlbumInfo.Title</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-    
     <control Style="smallTitleB">
       <description>Year Label</description>
       <id>0</id>
       <type>label</type>
       <label>#(string.rtrim(L(201),':'))</label>
-      <posX>310</posX>
-      <posY>550</posY>
-      <width>140</width>
+      <posX>465</posX>
+      <posY>825</posY>
+      <width>210</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -120,21 +119,20 @@
       <id>1</id>
       <type>label</type>
       <label>#(iif(neq(#AlbumInfo.Year,''),'#AlbumInfo.Year','N/A'))</label>
-      <posX>470</posX>
-      <posY>551</posY>
-      <width>750</width>
+      <posX>705</posX>
+      <posY>826</posY>
+      <width>1125</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		
     <control Style="smallTitleB">
       <description>Rating Label</description>
       <id>0</id>
       <type>label</type>
       <label>#(string.rtrim(L(173),':'))</label>
-      <posX>310</posX>
-      <posY>572</posY>
-      <width>140</width>
+      <posX>465</posX>
+      <posY>858</posY>
+      <width>210</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -143,21 +141,20 @@
       <id>1</id>
       <type>label</type>
       <label>#(iif(neq(#AlbumInfo.Rating,''),#AlbumInfo.Rating,'N/A'))</label>
-      <posX>470</posX>
-      <posY>573</posY>
-      <width>750</width>
+      <posX>705</posX>
+      <posY>859</posY>
+      <width>1125</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		
     <control Style="smallTitleB">
       <description>Genre Label</description>
       <id>0</id>
       <type>label</type>
       <label>#(L(669))</label>
-      <posX>310</posX>
-      <posY>594</posY>
-      <width>140</width>
+      <posX>465</posX>
+      <posY>891</posY>
+      <width>210</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -166,21 +163,20 @@
       <id>1</id>
       <type>label</type>
       <label>#(iif(neq(#AlbumInfo.Genre,''),#AlbumInfo.Genre,'N/A'))</label>
-      <posX>470</posX>
-      <posY>595</posY>
-      <width>750</width>
+      <posX>705</posX>
+      <posY>892</posY>
+      <width>1125</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		
     <control Style="smallTitleB">
       <description>Tones Label</description>
       <id>0</id>
       <type>label</type>
       <label>#(string.rtrim(L(175),':'))</label>
-      <posX>310</posX>
-      <posY>616</posY>
-      <width>140</width>
+      <posX>465</posX>
+      <posY>924</posY>
+      <width>210</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -189,23 +185,22 @@
       <id>1</id>
       <type>fadelabel</type>
       <label>#(iif(neq(#AlbumInfo.Tones,''),#AlbumInfo.Tones,'N/A'))</label>
-      <posX>470</posX>
-      <posY>617</posY>
-      <width>750</width>
+      <posX>705</posX>
+      <posY>925</posY>
+      <width>1125</width>
       <font>mediastream9c</font>
-			<scrollStartDelaySec>15</scrollStartDelaySec>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-		
-		<control Style="smallTitleB">
+    <control Style="smallTitleB">
       <description>Styles Label</description>
       <id>0</id>
       <type>label</type>
       <label>#(string.rtrim(L(176),':'))</label>
-      <posX>310</posX>
-      <posY>638</posY>
-      <width>140</width>
+      <posX>465</posX>
+      <posY>957</posY>
+      <width>210</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -214,86 +209,85 @@
       <id>1</id>
       <type>fadelabel</type>
       <label>#(iif(neq(#AlbumInfo.Styles,''),#AlbumInfo.Styles,'N/A'))</label>
-      <posX>470</posX>
-      <posY>639</posY>
-      <width>750</width>
+      <posX>705</posX>
+      <posY>958</posY>
+      <width>1125</width>
       <font>mediastream9c</font>
-			<scrollStartDelaySec>15</scrollStartDelaySec>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-				
-		<control>
+    <control>
       <description>Review</description>
       <type>textboxscrollup</type>
       <id>1</id>
-      <posX>308</posX>
-      <posY>290</posY>
-      <width>950</width>
-      <height>215</height>
+      <posX>462</posX>
+      <posY>435</posY>
+      <width>1425</width>
+      <height>322</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#AlbumInfo.Review</label>
-			<scrollStartDelaySec>15</scrollStartDelaySec>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-			<visible>!skin.hassetting(#AlbumInfo.ShowTracks)</visible>
+      <visible>!skin.hassetting(#AlbumInfo.ShowTracks)</visible>
     </control>
-		<control>
+    <control>
       <description>Tracks</description>
       <type>textboxscrollup</type>
       <id>1</id>
-      <posX>308</posX>
-      <posY>290</posY>
-      <width>950</width>
-      <height>215</height>
+      <posX>462</posX>
+      <posY>435</posY>
+      <width>1425</width>
+      <height>322</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#AlbumInfo.Tracks</label>
-			<scrollStartDelaySec>15</scrollStartDelaySec>
+      <scrollStartDelaySec>15</scrollStartDelaySec>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-			<visible>skin.hassetting(#AlbumInfo.ShowTracks)</visible>
+      <visible>skin.hassetting(#AlbumInfo.ShowTracks)</visible>
     </control>
-		
     <control>
       <type>group</type>
       <description>Button Group</description>
-      <posX>22</posX>
-      <posY>580</posY>
+      <posX>33</posX>
+      <posY>870</posY>
       <layout>StackLayout(0, Vertical, true)</layout>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <control Style="skinbutton">
-				<description>Review/Tracks</description>
-				<type>button</type>
-				<id>5</id>
-				<label>#(L(183))/#(L(182))</label>
-				<width>270</width>
-				<onleft>5</onleft>
-				<onright>5</onright>
-				<onup>6</onup>
-				<ondown>6</ondown>
-				<onclick>#(skin.togglesetting('#AlbumInfo.ShowTracks'))</onclick>
-				<animation effect="fade" time="250">WindowOpen</animation>
-				<animation effect="fade" time="250">WindowClose</animation>
-			</control>
-			<control Style="skinbutton">
-				<description>Refresh</description>
-				<type>button</type>
-				<id>6</id>
-				<label>184</label>
-				<width>270</width>
-				<onleft>6</onleft>
-				<onright>6</onright>
-				<onup>5</onup>
-				<ondown>5</ondown>
-				<animation effect="fade" time="250">WindowOpen</animation>
-				<animation effect="fade" time="250">WindowClose</animation>
-			</control>
+        <description>Review/Tracks</description>
+        <type>button</type>
+        <id>5</id>
+        <label>#(L(183))/#(L(182))</label>
+        <width>405</width>
+        <onleft>5</onleft>
+        <onright>5</onright>
+        <onup>6</onup>
+        <ondown>6</ondown>
+        <onclick>#(skin.togglesetting('#AlbumInfo.ShowTracks'))</onclick>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
+      <control Style="skinbutton">
+        <description>Refresh</description>
+        <type>button</type>
+        <id>6</id>
+        <label>184</label>
+        <width>405</width>
+        <onleft>6</onleft>
+        <onright>6</onright>
+        <onup>5</onup>
+        <ondown>5</ondown>
+        <animation effect="fade" time="250">WindowOpen</animation>
+        <animation effect="fade" time="250">WindowClose</animation>
+      </control>
     </control>
     <import>common.overlays2.xml</import>
   </controls>
 </window>
+<!--Checksum:e561ad71c48fddcd9c1873e4f44ae5e4-->

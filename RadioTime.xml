@@ -19,10 +19,10 @@
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
-      <buttonX>1232</buttonX>
-      <buttonY>50</buttonY>
-      <buttonwidth>48</buttonwidth>
-      <buttonheight>144</buttonheight>
+      <buttonX>1848</buttonX>
+      <buttonY>75</buttonY>
+      <buttonwidth>72</buttonwidth>
+      <buttonheight>216</buttonheight>
       <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
       <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
       <description>action menu</description>
@@ -31,14 +31,14 @@
       <defaultcontrol>5</defaultcontrol>
       <control>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>label OPTIONS</description>
@@ -46,35 +46,35 @@
         <label>496</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
+        <posX>1560</posX>
+        <posY>337</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <description>dummy button (For Mouse Use)</description>
         <label>-</label>
         <type>button</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+        <posX>1560</posX>
+        <posY>375</posY>
+        <width>330</width>
+        <height>1080</height>
         <layout>StackLayout</layout>
         <control>
           <id>5</id>
@@ -164,10 +164,10 @@
       <description>station logo</description>
       <type>image</type>
       <visible>facadeview.list|facadeview.album</visible>
-      <posX>20</posX>
-      <posY>300</posY>
-      <width>200</width>
-      <height>300</height>
+      <posX>30</posX>
+      <posY>450</posY>
+      <width>300</width>
+      <height>450</height>
       <texture>-</texture>
       <keepaspectratio>yes</keepaspectratio>
     </control>
@@ -175,9 +175,9 @@
       <id>47</id>
       <description>meta label</description>
       <type>label</type>
-      <posX>20</posX>
-      <posY>490</posY>
-      <width>580</width>
+      <posX>30</posX>
+      <posY>735</posY>
+      <width>870</width>
       <font>mediastream12c</font>
       <textcolor>ffffffff</textcolor>
       <align>left</align>
@@ -188,9 +188,9 @@
       <id>47</id>
       <description>meta label</description>
       <type>label</type>
-      <posX>20</posX>
-      <posY>430</posY>
-      <width>580</width>
+      <posX>30</posX>
+      <posY>645</posY>
+      <width>870</width>
       <font>mediastream14c</font>
       <textcolor>ffffffff</textcolor>
       <align>left</align>
@@ -201,9 +201,9 @@
       <id>47</id>
       <description>meta label</description>
       <type>label</type>
-      <posX>20</posX>
-      <posY>460</posY>
-      <width>580</width>
+      <posX>30</posX>
+      <posY>690</posY>
+      <width>870</width>
       <font>mediastream14c</font>
       <textcolor>ffffffff</textcolor>
       <align>left</align>
@@ -215,12 +215,12 @@
       <description>existent rating2</description>
       <type>imagelist</type>
       <visible>facadeview.list</visible>
-      <posX>20</posX>
-      <posY>635</posY>
-      <width>142</width>
-      <height>60</height>
-      <textureHeight>30</textureHeight>
-      <textureWidth>38</textureWidth>
+      <posX>30</posX>
+      <posY>952</posY>
+      <width>213</width>
+      <height>90</height>
+      <textureHeight>45</textureHeight>
+      <textureWidth>57</textureWidth>
       <percentage>#RadioTime.Selected.Reliability</percentage>
       <imagesToDraw>5</imagesToDraw>
       <orientation>HORIZONTAL</orientation>
@@ -236,4 +236,4 @@
     <import>common.radiotime.overlay.xml</import>
   </controls>
 </window>
-<!--Checksum:05fa69933cdc41bc9b70d8521b14663e-->
+<!--Checksum:7bbc660a64ba579b4df5b1d4a730badf-->

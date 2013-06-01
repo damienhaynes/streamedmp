@@ -5,9 +5,9 @@
       <id>0</id>
       <type>image</type>
       <posX>0</posX>
-      <posY>500</posY>
-      <width>1275</width>
-      <height>220</height>
+      <posY>750</posY>
+      <width>1912</width>
+      <height>330</height>
       <texture>fullscreenbg2.png</texture>
       <colordiffuse>FAFFFFFF</colordiffuse>
       <animation effect="Fade" time="400">WindowOpen</animation>
@@ -17,8 +17,8 @@
       <id>0</id>
       <description>Shadow - Menu label</description>
       <type>label</type>
-      <posX>1107</posX>
-      <posY>528</posY>
+      <posX>1660</posX>
+      <posY>792</posY>
       <font>mediastream12tc</font>
       <textcolor>ff000000</textcolor>
       <label>924</label>
@@ -29,8 +29,8 @@
       <id>0</id>
       <description>Menu label</description>
       <type>label</type>
-      <posX>1105</posX>
-      <posY>527</posY>
+      <posX>1657</posX>
+      <posY>790</posY>
       <font>mediastream12tc</font>
       <label>924</label>
       <textcolor>ff006699</textcolor>
@@ -39,8 +39,8 @@
     </control>
     <control>
       <type>group</type>
-      <posX>1006</posX>
-      <posY>552</posY>
+      <posX>1509</posX>
+      <posY>828</posY>
       <layout>Stacklayout</layout>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
@@ -48,8 +48,8 @@
         <id>5101</id>
         <description>Now Playing button</description>
         <type>button</type>
-        <width>265</width>
-        <height>26</height>
+        <width>397</width>
+        <height>38</height>
         <label>4540</label>
         <textYOff>1</textYOff>
         <onleft>5101</onleft>
@@ -62,10 +62,10 @@
         <id>5102</id>
         <description>Top Album Tracks button</description>
         <type>button</type>
-        <posX>650</posX>
-        <posY>235</posY>
-        <width>265</width>
-        <height>26</height>
+        <posX>975</posX>
+        <posY>352</posY>
+        <width>397</width>
+        <height>38</height>
         <label>33030</label>
         <textYOff>1</textYOff>
         <textureFocus>listbg_fo.png</textureFocus>
@@ -75,10 +75,10 @@
         <id>5103</id>
         <description>Tagged Tracks button</description>
         <type>button</type>
-        <posX>650</posX>
-        <posY>235</posY>
-        <width>265</width>
-        <height>26</height>
+        <posX>975</posX>
+        <posY>352</posY>
+        <width>397</width>
+        <height>38</height>
         <label>33011</label>
         <textYOff>1</textYOff>
         <textureFocus>listbg_fo.png</textureFocus>
@@ -88,8 +88,8 @@
         <id>5104</id>
         <description>Current Playlist button</description>
         <type>button</type>
-        <width>265</width>
-        <height>26</height>
+        <width>397</width>
+        <height>38</height>
         <hyperlink>500</hyperlink>
         <label>4555</label>
         <textYOff>1</textYOff>
@@ -105,10 +105,10 @@
         <onup>5104</onup>
         <ondown>5101</ondown>
         <visible>plugin.isenabled(My Lyrics)</visible>
-        <posX>609</posX>
-        <posY>242</posY>
-        <width>265</width>
-        <height>26</height>
+        <posX>913</posX>
+        <posY>363</posY>
+        <width>397</width>
+        <height>38</height>
         <hyperlink>90478</hyperlink>
         <label>MyLyrics</label>
         <textYOff>1</textYOff>
@@ -123,10 +123,10 @@
       <id>0</id>
       <type>image</type>
       <visible>string.equals(#Play.Current.Thumb,)</visible>
-      <posX>25</posX>
-      <posY>530</posY>
-      <width>160</width>
-      <height>160</height>
+      <posX>37</posX>
+      <posY>795</posY>
+      <width>240</width>
+      <height>240</height>
       <texture>defaultAudioBig.png</texture>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
@@ -135,10 +135,10 @@
       <id>112</id>
       <description>album art image</description>
       <type>image</type>
-      <posX>25</posX>
-      <posY>530</posY>
-      <width>160</width>
-      <height>160</height>
+      <posX>37</posX>
+      <posY>795</posY>
+      <width>240</width>
+      <height>240</height>
       <texture>-</texture>
       <visible>string.equals(#StreamedMP.cdCoverOnly,false)</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -148,10 +148,10 @@
       <id>0</id>
       <description>album art image</description>
       <type>image</type>
-      <posX>25</posX>
-      <posY>530</posY>
-      <width>160</width>
-      <height>160</height>
+      <posX>37</posX>
+      <posY>795</posY>
+      <width>240</width>
+      <height>240</height>
       <texture>#Play.Current.Thumb</texture>
       <visible>string.equals(#StreamedMP.cdCoverOnly,true)</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -161,10 +161,10 @@
       <id>0</id>
       <description>album art overlay</description>
       <type>image</type>
-      <posX>20</posX>
-      <posY>525</posY>
-      <width>170</width>
-      <height>170</height>
+      <posX>30</posX>
+      <posY>787</posY>
+      <width>255</width>
+      <height>255</height>
       <texture>mayacdborder.png</texture>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
@@ -174,9 +174,9 @@
       <description>artist label</description>
       <type>fadelabel</type>
       <visible>Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)</visible>
-      <posX>200</posX>
-      <posY>528</posY>
-      <width>497</width>
+      <posX>300</posX>
+      <posY>792</posY>
+      <width>745</width>
       <font>mediastream14tc</font>
       <label>#Play.Current.Artist</label>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -187,9 +187,9 @@
       <description>album label</description>
       <type>fadelabel</type>
       <visible>Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)</visible>
-      <posX>200</posX>
-      <posY>560</posY>
-      <width>447</width>
+      <posX>300</posX>
+      <posY>840</posY>
+      <width>670</width>
       <font>mediastream12tc</font>
       <label>#Play.Current.Title</label>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -200,9 +200,9 @@
       <description>title label</description>
       <type>fadelabel</type>
       <visible>Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)</visible>
-      <posX>200</posX>
-      <posY>585</posY>
-      <width>497</width>
+      <posX>300</posX>
+      <posY>877</posY>
+      <width>745</width>
       <font>font12</font>
       <label>#Play.Current.Album</label>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -212,10 +212,10 @@
       <type>label</type>
       <description>Track / Year</description>
       <id>0</id>
-      <posX>200</posX>
-      <posY>610</posY>
-      <width>400</width>
-      <height>26</height>
+      <posX>300</posX>
+      <posY>915</posY>
+      <width>600</width>
+      <height>38</height>
       <label>435</label>
       <label>#StreamedMP.Track #Play.Current.Track | #StreamedMP.Year #Play.Current.Year</label>
       <font>font12</font>
@@ -227,10 +227,10 @@
       <type>label</type>
       <description>Track Only</description>
       <id>0</id>
-      <posX>200</posX>
-      <posY>610</posY>
-      <width>400</width>
-      <height>26</height>
+      <posX>300</posX>
+      <posY>915</posY>
+      <width>600</width>
+      <height>38</height>
       <label>435</label>
       <label>#StreamedMP.Track #Play.Current.Track</label>
       <font>mediastream10c</font>
@@ -242,10 +242,10 @@
       <type>label</type>
       <description>Year Only</description>
       <id>0</id>
-      <posX>200</posX>
-      <posY>610</posY>
-      <width>400</width>
-      <height>26</height>
+      <posX>300</posX>
+      <posY>915</posY>
+      <width>600</width>
+      <height>38</height>
       <label>435</label>
       <label>#StreamedMP.Year #Play.Current.Year</label>
       <font>mediastream10c</font>
@@ -256,10 +256,10 @@
     <control>
       <type>image</type>
       <id>117</id>
-      <posX>350</posX>
-      <posY>670</posY>
-      <width>600</width>
-      <height>12</height>
+      <posX>525</posX>
+      <posY>1005</posY>
+      <width>900</width>
+      <height>18</height>
       <texture>osd_progress_background_medium.png</texture>
       <visible>Player.HasMedia</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -269,10 +269,10 @@
       <description>progressbar background</description>
       <type>image</type>
       <id>0</id>
-      <posX>256</posX>
-      <posY>670</posY>
-      <width>594</width>
-      <height>29</height>
+      <posX>384</posX>
+      <posY>1005</posY>
+      <width>891</width>
+      <height>43</height>
       <texture>osdprogressbackv.png</texture>
       <colordiffuse>ffFFFFFF</colordiffuse>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -282,10 +282,10 @@
       <type>progress</type>
       <description>track progress</description>
       <id>118</id>
-      <posX>250</posX>
-      <posY>675</posY>
-      <width>594</width>
-      <height>23</height>
+      <posX>375</posX>
+      <posY>1012</posY>
+      <width>891</width>
+      <height>34</height>
       <label>#percentage</label>
       <texturebg>-</texturebg>
       <lefttexture>osdprogressleft.png</lefttexture>
@@ -299,8 +299,8 @@
       <type>label</type>
       <description>track progress label</description>
       <id>0</id>
-      <posX>250</posX>
-      <posY>670</posY>
+      <posX>375</posX>
+      <posY>1005</posY>
       <align>right</align>
       <label>[#currentplaytime]</label>
       <font>mediastream12c</font>
@@ -312,8 +312,8 @@
       <type>label</type>
       <description>track progress label</description>
       <id>0</id>
-      <posX>848</posX>
-      <posY>670</posY>
+      <posX>1272</posX>
+      <posY>1005</posY>
       <align>left</align>
       <label>[#duration]</label>
       <font>mediastream12c</font>
@@ -325,8 +325,8 @@
       <type>label</type>
       <description>Shadow - up next label</description>
       <id>0</id>
-      <posX>975</posX>
-      <posY>528</posY>
+      <posX>1462</posX>
+      <posY>792</posY>
       <label>4541</label>
       <font>mediastream12tc</font>
       <align>right</align>
@@ -339,8 +339,8 @@
       <type>label</type>
       <description>up next label</description>
       <id>0</id>
-      <posX>975</posX>
-      <posY>527</posY>
+      <posX>1462</posX>
+      <posY>790</posY>
       <label>4541</label>
       <font>mediastream12tc</font>
       <align>right</align>
@@ -353,9 +353,9 @@
       <type>fadelabel</type>
       <description>next artist label</description>
       <id>0</id>
-      <posX>975</posX>
-      <posY>550</posY>
-      <width>320</width>
+      <posX>1462</posX>
+      <posY>825</posY>
+      <width>480</width>
       <label>#Play.Next.Title</label>
       <font>font12</font>
       <align>right</align>
@@ -367,9 +367,9 @@
       <type>fadelabel</type>
       <description>next artist label</description>
       <id>0</id>
-      <posX>975</posX>
-      <posY>575</posY>
-      <width>400</width>
+      <posX>1462</posX>
+      <posY>862</posY>
+      <width>600</width>
       <label>#Play.Next.Artist</label>
       <font>font12</font>
       <align>right</align>
@@ -381,10 +381,10 @@
       <description>music logo</description>
       <type>image</type>
       <id>0</id>
-      <posX>909</posX>
-      <posY>610</posY>
-      <width>66</width>
-      <height>66</height>
+      <posX>1363</posX>
+      <posY>915</posY>
+      <width>99</width>
+      <height>99</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>defaultAudio.png</texture>
       <visible>!string.equals(#Play.Next.Title,)</visible>
@@ -395,10 +395,10 @@
       <description>music logo</description>
       <type>image</type>
       <id>600</id>
-      <posX>909</posX>
-      <posY>610</posY>
-      <width>66</width>
-      <height>66</height>
+      <posX>1363</posX>
+      <posY>915</posY>
+      <width>99</width>
+      <height>99</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#Play.Next.Thumb</texture>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -408,10 +408,10 @@
       <id>0</id>
       <description>album art overlay</description>
       <type>image</type>
-      <posX>904</posX>
-      <posY>605</posY>
-      <width>76</width>
-      <height>76</height>
+      <posX>1356</posX>
+      <posY>907</posY>
+      <width>114</width>
+      <height>114</height>
       <texture>mayacdborder.png</texture>
       <visible>control.hasthumb(600)</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -422,10 +422,10 @@
       <description>Rating</description>
       <type>imagelist</type>
       <visible>[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]+!string.equals(#Play.Current.Title,)</visible>
-      <posX>195</posX>
-      <posY>640</posY>
-      <textureWidth>24</textureWidth>
-      <textureHeight>24</textureHeight>
+      <posX>292</posX>
+      <posY>960</posY>
+      <textureWidth>36</textureWidth>
+      <textureHeight>36</textureHeight>
       <percentage>#Play.Current.Rating</percentage>
       <imagesToDraw>5</imagesToDraw>
       <orientation>HORIZONTAL</orientation>
@@ -442,9 +442,9 @@
       <description>Shadow -list of top album tracks label</description>
       <type>fadelabel</type>
       <visible>Control.HasFocus(5102) | Control.HasFocus(166)</visible>
-      <posX>202</posX>
-      <posY>526</posY>
-      <width>627</width>
+      <posX>303</posX>
+      <posY>789</posY>
+      <width>940</width>
       <font>mediastream16c</font>
       <textcolor>ff000000</textcolor>
       <label>33030</label>
@@ -456,9 +456,9 @@
       <description>list of top album tracks label</description>
       <type>fadelabel</type>
       <visible>Control.HasFocus(5102) | Control.HasFocus(166)</visible>
-      <posX>200</posX>
-      <posY>525</posY>
-      <width>627</width>
+      <posX>300</posX>
+      <posY>787</posY>
+      <width>940</width>
       <font>mediastream16c</font>
       <textcolor>ff006699</textcolor>
       <label>33030</label>
@@ -474,23 +474,23 @@
       <onup>166</onup>
       <ondown>166</ondown>
       <visible>Control.HasFocus(5102) | Control.HasFocus(166)</visible>
-      <posX>225</posX>
-      <posY>555</posY>
-      <width>500</width>
-      <height>210</height>
+      <posX>337</posX>
+      <posY>832</posY>
+      <width>750</width>
+      <height>315</height>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
-      <textureHeight>32</textureHeight>
-      <textYOff>4</textYOff>
+      <textureHeight>48</textureHeight>
+      <textYOff>6</textYOff>
     </control>
     <control>
       <id>0</id>
       <description>Shadow - list of tagged tracks label</description>
       <type>fadelabel</type>
       <visible>Control.HasFocus(5103) | Control.HasFocus(155)</visible>
-      <posX>202</posX>
-      <posY>526</posY>
-      <width>627</width>
+      <posX>303</posX>
+      <posY>789</posY>
+      <width>940</width>
       <onleft>155</onleft>
       <onright>5103</onright>
       <onup>155</onup>
@@ -506,9 +506,9 @@
       <description>list of tagged tracks label</description>
       <type>fadelabel</type>
       <visible>Control.HasFocus(5103) | Control.HasFocus(155)</visible>
-      <posX>200</posX>
-      <posY>525</posY>
-      <width>627</width>
+      <posX>300</posX>
+      <posY>787</posY>
+      <width>940</width>
       <onleft>155</onleft>
       <onright>5103</onright>
       <onup>155</onup>
@@ -528,30 +528,30 @@
       <onup>155</onup>
       <ondown>155</ondown>
       <visible>Control.HasFocus(5103) | Control.HasFocus(155)</visible>
-      <posX>328</posX>
-      <posY>537</posY>
-      <width>649</width>
-      <height>210</height>
+      <posX>491</posX>
+      <posY>805</posY>
+      <width>973</width>
+      <height>315</height>
       <animation effect="Fade" time="200">WindowOpen</animation>
       <animation effect="Fade" time="200">WindowClose</animation>
-      <posX>225</posX>
-      <posY>555</posY>
-      <width>500</width>
-      <height>210</height>
-      <textureHeight>32</textureHeight>
-      <textYOff>4</textYOff>
+      <posX>337</posX>
+      <posY>832</posY>
+      <width>750</width>
+      <height>315</height>
+      <textureHeight>48</textureHeight>
+      <textYOff>6</textYOff>
     </control>
     <control>
       <id>77</id>
       <description>unknown rating1</description>
       <type>imagelist</type>
       <visible>no</visible>
-      <posX>-2595</posX>
-      <posY>610</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureHeight>24</textureHeight>
-      <textureWidth>24</textureWidth>
+      <posX>-3893</posX>
+      <posY>915</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureHeight>36</textureHeight>
+      <textureWidth>36</textureWidth>
       <percentage>#Lastfm.Rating.AlbumTrack1</percentage>
       <orientation>HORIZONTAL</orientation>
       <align>LEFT</align>
@@ -567,12 +567,12 @@
       <description>unknown rating2</description>
       <type>imagelist</type>
       <visible>no</visible>
-      <posX>-2595</posX>
-      <posY>580</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureHeight>24</textureHeight>
-      <textureWidth>24</textureWidth>
+      <posX>-3893</posX>
+      <posY>870</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureHeight>36</textureHeight>
+      <textureWidth>36</textureWidth>
       <percentage>#Lastfm.Rating.AlbumTrack2</percentage>
       <orientation>HORIZONTAL</orientation>
       <align>LEFT</align>
@@ -588,12 +588,12 @@
       <description>unknown rating3</description>
       <type>imagelist</type>
       <visible>no</visible>
-      <posX>-2595</posX>
-      <posY>628</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureHeight>24</textureHeight>
-      <textureWidth>24</textureWidth>
+      <posX>-3893</posX>
+      <posY>942</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureHeight>36</textureHeight>
+      <textureWidth>36</textureWidth>
       <percentage>#Lastfm.Rating.AlbumTrack3</percentage>
       <orientation>HORIZONTAL</orientation>
       <align>LEFT</align>
@@ -609,12 +609,12 @@
       <description>existent rating1</description>
       <type>imagelist</type>
       <visible>no</visible>
-      <posX>-2595</posX>
-      <posY>532</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureHeight>24</textureHeight>
-      <textureWidth>24</textureWidth>
+      <posX>-3893</posX>
+      <posY>798</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureHeight>36</textureHeight>
+      <textureWidth>36</textureWidth>
       <percentage>#Lastfm.Rating.AlbumTrack1</percentage>
       <orientation>HORIZONTAL</orientation>
       <align>LEFT</align>
@@ -630,12 +630,12 @@
       <description>existent rating2</description>
       <type>imagelist</type>
       <visible>no</visible>
-      <posX>-2595</posX>
-      <posY>580</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureHeight>24</textureHeight>
-      <textureWidth>24</textureWidth>
+      <posX>-3893</posX>
+      <posY>870</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureHeight>36</textureHeight>
+      <textureWidth>36</textureWidth>
       <percentage>#Lastfm.Rating.AlbumTrack2</percentage>
       <orientation>HORIZONTAL</orientation>
       <align>LEFT</align>
@@ -651,12 +651,12 @@
       <description>existent rating3</description>
       <type>imagelist</type>
       <visible>no</visible>
-      <posX>-2595</posX>
-      <posY>628</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureHeight>24</textureHeight>
-      <textureWidth>24</textureWidth>
+      <posX>-3893</posX>
+      <posY>942</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureHeight>36</textureHeight>
+      <textureWidth>36</textureWidth>
       <percentage>#Lastfm.Rating.AlbumTrack3</percentage>
       <orientation>HORIZONTAL</orientation>
       <align>LEFT</align>
@@ -672,12 +672,12 @@
       <description>known rating1</description>
       <type>imagelist</type>
       <visible>no</visible>
-      <posX>-2595</posX>
-      <posY>532</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureHeight>24</textureHeight>
-      <textureWidth>24</textureWidth>
+      <posX>-3893</posX>
+      <posY>798</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureHeight>36</textureHeight>
+      <textureWidth>36</textureWidth>
       <percentage>#Lastfm.Rating.AlbumTrack1</percentage>
       <orientation>HORIZONTAL</orientation>
       <align>LEFT</align>
@@ -693,12 +693,12 @@
       <description>known rating2</description>
       <type>imagelist</type>
       <visible>no</visible>
-      <posX>-2595</posX>
-      <posY>580</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureHeight>24</textureHeight>
-      <textureWidth>24</textureWidth>
+      <posX>-3893</posX>
+      <posY>870</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureHeight>36</textureHeight>
+      <textureWidth>36</textureWidth>
       <percentage>#Lastfm.Rating.AlbumTrack2</percentage>
       <orientation>HORIZONTAL</orientation>
       <align>LEFT</align>
@@ -714,12 +714,12 @@
       <description>known rating3</description>
       <type>imagelist</type>
       <visible>no</visible>
-      <posX>-2595</posX>
-      <posY>628</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureHeight>24</textureHeight>
-      <textureWidth>24</textureWidth>
+      <posX>-3893</posX>
+      <posY>942</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureHeight>36</textureHeight>
+      <textureWidth>36</textureWidth>
       <percentage>#Lastfm.Rating.AlbumTrack3</percentage>
       <orientation>HORIZONTAL</orientation>
       <align>LEFT</align>
@@ -735,12 +735,12 @@
       <description>famous rating1</description>
       <type>imagelist</type>
       <visible>no</visible>
-      <posX>-2595</posX>
-      <posY>532</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureHeight>24</textureHeight>
-      <textureWidth>24</textureWidth>
+      <posX>-3893</posX>
+      <posY>798</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureHeight>36</textureHeight>
+      <textureWidth>36</textureWidth>
       <percentage>#Lastfm.Rating.AlbumTrack1</percentage>
       <orientation>HORIZONTAL</orientation>
       <align>LEFT</align>
@@ -756,12 +756,12 @@
       <description>famous rating2</description>
       <type>imagelist</type>
       <visible>no</visible>
-      <posX>-2595</posX>
-      <posY>580</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureHeight>24</textureHeight>
-      <textureWidth>24</textureWidth>
+      <posX>-3893</posX>
+      <posY>870</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureHeight>36</textureHeight>
+      <textureWidth>36</textureWidth>
       <percentage>#Lastfm.Rating.AlbumTrack2</percentage>
       <orientation>HORIZONTAL</orientation>
       <align>LEFT</align>
@@ -777,12 +777,12 @@
       <description>famous rating3</description>
       <type>imagelist</type>
       <visible>no</visible>
-      <posX>-2595</posX>
-      <posY>628</posY>
-      <width>130</width>
-      <height>32</height>
-      <textureHeight>24</textureHeight>
-      <textureWidth>24</textureWidth>
+      <posX>-3893</posX>
+      <posY>942</posY>
+      <width>195</width>
+      <height>48</height>
+      <textureHeight>36</textureHeight>
+      <textureWidth>36</textureWidth>
       <percentage>#Lastfm.Rating.AlbumTrack3</percentage>
       <orientation>HORIZONTAL</orientation>
       <align>LEFT</align>
@@ -797,12 +797,12 @@
       <id>1337</id>
       <type>imagelist</type>
       <visible>Control.HasFocus(5101)</visible>
-      <posX>-2700</posX>
-      <posY>425</posY>
-      <width>120</width>
-      <height>24</height>
-      <textureHeight>19</textureHeight>
-      <textureWidth>23</textureWidth>
+      <posX>-4050</posX>
+      <posY>637</posY>
+      <width>180</width>
+      <height>36</height>
+      <textureHeight>28</textureHeight>
+      <textureWidth>34</textureWidth>
       <percentage>#Play.Current.Rating</percentage>
       <orientation>HORIZONTAL</orientation>
       <align>LEFT</align>
@@ -815,4 +815,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:f393e404310b634c55efe1ff88eaf52c-->
+<!--Checksum:99aabd6c82c3dce53b7044c35db33d20-->

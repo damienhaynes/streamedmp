@@ -13,8 +13,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>HTPCInfo\htpcinfo_overview_bg.jpg</texture>
       <animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
       <visible>string.equals(#HTPCInfo.SectionView, Overview)</visible>
@@ -26,8 +26,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>HTPCInfo\htpcinfo_details_bg.jpg</texture>
       <animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
       <visible>string.equals(#HTPCInfo.SectionView, Details)</visible>
@@ -39,8 +39,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>HTPCInfo\htpcinfo_gauges_bg.jpg</texture>
       <animation effect="fade" start="0" end="100" time="350">VisibleChange</animation>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)|string.equals(#HTPCInfo.SectionView, Summary)</visible>
@@ -52,18 +52,18 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>streamed_overlay.png</texture>
     </control>
     <!-- *** Menu *** -->
     <control>
       <description>Hidden Menu Indicator</description>
       <type>image</type>
-      <posX>1232</posX>
-      <posY>50</posY>
-      <width>48</width>
-      <height>144</height>
+      <posX>1848</posX>
+      <posY>75</posY>
+      <width>72</width>
+      <height>216</height>
       <texture>#StreamedMP.ActionMenu.Image</texture>
       <visible>control.isvisible(1223)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -73,38 +73,38 @@
       <description>action menu</description>
       <defaultcontrol>6</defaultcontrol>
       <onexit>1223</onexit>
-      <buttonX>1231</buttonX>
-      <buttonY>55</buttonY>
-      <buttonwidth>49</buttonwidth>
-      <buttonheight>153</buttonheight>
+      <buttonX>1846</buttonX>
+      <buttonY>82</buttonY>
+      <buttonwidth>73</buttonwidth>
+      <buttonheight>229</buttonheight>
       <dimColor>00ffffff</dimColor>
-      <animation effect="slide" time="100" start="300,0">visible</animation>
-      <animation effect="slide" time="0" end="300,0">hidden</animation>
+      <animation effect="slide" time="100" start="450,0">visible</animation>
+      <animation effect="slide" time="0" end="450,0">hidden</animation>
       <visible>!Control.HasFocus(1223)</visible>
       <control>
         <id>1</id>
         <type>image</type>
-        <posX>1012</posX>
+        <posX>1518</posX>
         <posY>0</posY>
-        <width>268</width>
-        <height>720</height>
+        <width>402</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
         <colorDiffuse>fffffffff</colorDiffuse>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
+        <posX>1560</posX>
+        <posY>375</posY>
+        <width>330</width>
+        <height>1080</height>
         <layout>StackLayout</layout>
         <control>
           <id>0</id>
           <label>Menu</label>
           <type>label</type>
           <font>mediastream12tc</font>
-          <height>20</height>
+          <height>30</height>
         </control>
         <control>
           <description>View Section</description>
@@ -131,7 +131,7 @@
           <label>Flush Caches</label>
           <onup>2</onup>
           <ondown>3</ondown>
-          <width>160</width>
+          <width>240</width>
         </control>
         <control>
           <description>Empty Recycle Bin</description>
@@ -196,7 +196,7 @@
       <description>Dummy</description>
       <type>button</type>
       <id>1223</id>
-      <posY>-100</posY>
+      <posY>-150</posY>
       <onup>6</onup>
       <ondown>6</ondown>
       <onleft>6</onleft>
@@ -204,4 +204,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:9e609cec6299e4e2980a9b190af0b0a2-->
+<!--Checksum:8d720e89a0d7fd9c44434ce26b7febac-->

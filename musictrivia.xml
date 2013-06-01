@@ -10,16 +10,16 @@
       <description>BG</description>
       <type>image</type>
       <id>6</id>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#header.hover</texture>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
@@ -29,58 +29,58 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>mainoverlay.png</texture>
     </control>
     <control>
       <type>fadelabel</type>
       <description>Top Title</description>
       <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>MUISCTRIVIA</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     <control>
       <description>Top Title Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     <control>
       <description>Time Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>6</posX>
-      <posY>10</posY>
-      <width>132</width>
-      <height>32</height>
+      <posX>9</posX>
+      <posY>15</posY>
+      <width>198</width>
+      <height>48</height>
       <texture>clockbackground.png</texture>
     </control>
     <!--<control>
       <description>header</description>
       <type>image</type>
       <id>30</id>
-      <posX>75</posX>
-      <posY>45</posY>
+      <posX>112</posX>
+      <posY>67</posY>
       <texture flipY="true" diffuse="Thumb_Mask.png">musictrivia.png</texture>
    </control>-->
     <control>
       <description>Start Button</description>
       <type>button</type>
       <id>110</id>
-      <posX>60</posX>
-      <posY>227</posY>
+      <posX>90</posX>
+      <posY>340</posY>
       <label>Start</label>
       <font>mediastream11tc</font>
       <onleft>110</onleft>
@@ -92,8 +92,8 @@
       <description>Stop</description>
       <type>button</type>
       <id>2</id>
-      <posX>60</posX>
-      <posY>265</posY>
+      <posX>90</posX>
+      <posY>397</posY>
       <label>Stop</label>
       <font>mediastream11tc</font>
       <onleft>2</onleft>
@@ -105,8 +105,8 @@
       <description>time</description>
       <type>button</type>
       <id>3</id>
-      <posX>60</posX>
-      <posY>342</posY>
+      <posX>90</posX>
+      <posY>513</posY>
       <label>Time: 15</label>
       <font>mediastream11tc</font>
       <onleft>3</onleft>
@@ -118,8 +118,8 @@
       <description>tries</description>
       <type>button</type>
       <id>4</id>
-      <posX>60</posX>
-      <posY>303</posY>
+      <posX>90</posX>
+      <posY>454</posY>
       <label>Tries: 2</label>
       <font>mediastream11tc</font>
       <onleft>4</onleft>
@@ -130,8 +130,8 @@
     <control>
       <type>label</type>
       <id>10</id>
-      <posX>380</posX>
-      <posY>352</posY>
+      <posX>570</posX>
+      <posY>528</posY>
       <label>:00</label>
       <font>mediastream11c</font>
       <align>left</align>
@@ -142,8 +142,8 @@
     <control>
       <type>label</type>
       <id>11</id>
-      <posX>445</posX>
-      <posY>585</posY>
+      <posX>667</posX>
+      <posY>877</posY>
       <label>Points</label>
       <font>font18</font>
       <align>left</align>
@@ -154,8 +154,8 @@
     <control>
       <type>label</type>
       <id>12</id>
-      <posX>395</posX>
-      <posY>585</posY>
+      <posX>592</posX>
+      <posY>877</posY>
       <label>
       </label>
       <font>font18</font>
@@ -168,8 +168,8 @@
       <type>label</type>
       <description>Player 1 label</description>
       <id>100</id>
-      <posX>75</posX>
-      <posY>385</posY>
+      <posX>112</posX>
+      <posY>577</posY>
       <label>Player 1</label>
       <font>font18</font>
       <align>left</align>
@@ -182,8 +182,8 @@
       <type>label</type>
       <description>p1 correct: label</description>
       <id>13</id>
-      <posX>75</posX>
-      <posY>445</posY>
+      <posX>112</posX>
+      <posY>667</posY>
       <label>Correct:</label>
       <font>font12</font>
       <align>left</align>
@@ -195,8 +195,8 @@
       <type>label</type>
       <id>14</id>
       <description>p1 number of correct label</description>
-      <posX>155</posX>
-      <posY>445</posY>
+      <posX>232</posX>
+      <posY>667</posY>
       <label>
       </label>
       <font>font12</font>
@@ -209,8 +209,8 @@
       <type>label</type>
       <id>15</id>
       <description>p1 wrong: label</description>
-      <posX>75</posX>
-      <posY>485</posY>
+      <posX>112</posX>
+      <posY>727</posY>
       <label>Wrong:</label>
       <font>font12</font>
       <align>left</align>
@@ -222,8 +222,8 @@
       <type>label</type>
       <id>16</id>
       <description>p1 number wrong label</description>
-      <posX>155</posX>
-      <posY>485</posY>
+      <posX>232</posX>
+      <posY>727</posY>
       <label>
       </label>
       <font>font12</font>
@@ -236,8 +236,8 @@
       <type>label</type>
       <id>17</id>
       <description>p1 score: label</description>
-      <posX>75</posX>
-      <posY>525</posY>
+      <posX>112</posX>
+      <posY>787</posY>
       <label>Score:</label>
       <font>font18</font>
       <align>left</align>
@@ -249,8 +249,8 @@
       <type>label</type>
       <id>18</id>
       <description>p1 number score label</description>
-      <posX>200</posX>
-      <posY>529</posY>
+      <posX>300</posX>
+      <posY>793</posY>
       <label>
       </label>
       <font>font18</font>
@@ -263,8 +263,8 @@
       <type>label</type>
       <description>Player 2 label</description>
       <id>20</id>
-      <posX>75</posX>
-      <posY>495</posY>
+      <posX>112</posX>
+      <posY>742</posY>
       <label>Player 2</label>
       <font>font18</font>
       <align>left</align>
@@ -277,8 +277,8 @@
       <type>label</type>
       <description>p2 correct: label</description>
       <id>23</id>
-      <posX>75</posX>
-      <posY>555</posY>
+      <posX>112</posX>
+      <posY>832</posY>
       <label>Correct:</label>
       <font>font12</font>
       <align>left</align>
@@ -291,8 +291,8 @@
       <type>label</type>
       <id>24</id>
       <description>p2 number of correct label</description>
-      <posX>155</posX>
-      <posY>555</posY>
+      <posX>232</posX>
+      <posY>832</posY>
       <label>
       </label>
       <font>font12</font>
@@ -306,8 +306,8 @@
       <type>label</type>
       <id>25</id>
       <description>p2 wrong: label</description>
-      <posX>75</posX>
-      <posY>595</posY>
+      <posX>112</posX>
+      <posY>892</posY>
       <label>Wrong:</label>
       <font>font12</font>
       <align>left</align>
@@ -320,8 +320,8 @@
       <type>label</type>
       <id>26</id>
       <description>p2 number wrong label</description>
-      <posX>155</posX>
-      <posY>595</posY>
+      <posX>232</posX>
+      <posY>892</posY>
       <label>
       </label>
       <font>font12</font>
@@ -335,8 +335,8 @@
       <type>label</type>
       <id>27</id>
       <description>p2 score: label</description>
-      <posX>75</posX>
-      <posY>635</posY>
+      <posX>112</posX>
+      <posY>952</posY>
       <label>Score:</label>
       <font>font18</font>
       <align>left</align>
@@ -349,8 +349,8 @@
       <type>label</type>
       <id>28</id>
       <description>p2 number score label</description>
-      <posX>200</posX>
-      <posY>638</posY>
+      <posX>300</posX>
+      <posY>957</posY>
       <label>
       </label>
       <font>font18</font>
@@ -364,10 +364,10 @@
       <type>listcontrol</type>
       <description>answers</description>
       <id>9</id>
-      <posX>600</posX>
-      <posY>210</posY>
-      <height>600</height>
-      <width>750</width>
+      <posX>900</posX>
+      <posY>315</posY>
+      <height>900</height>
+      <width>1125</width>
       <onleft>2</onleft>
       <onright>9</onright>
       <onup>9</onup>
@@ -375,22 +375,22 @@
       <font>font16</font>
       <font2>font12</font2>
       <font3>mediastream11tc</font3>
-      <textXOff>27</textXOff>
-      <textXOff2>780</textXOff2>
-      <textXOff3>172</textXOff3>
-      <textYOff>12</textYOff>
-      <textYOff2>88</textYOff2>
-      <textYOff3>48</textYOff3>
-      <IconXOff>22</IconXOff>
-      <IconYOff>16</IconYOff>
+      <textXOff>40</textXOff>
+      <textXOff2>1170</textXOff2>
+      <textXOff3>258</textXOff3>
+      <textYOff>18</textYOff>
+      <textYOff2>132</textYOff2>
+      <textYOff3>72</textYOff3>
+      <IconXOff>33</IconXOff>
+      <IconYOff>24</IconYOff>
       <!--<textcolor2>ffa9d0f7</textcolor2>-->
       <!--<textcolor3>ff006698</textcolor3>-->
       <font>mediastream12tc</font>
-      <itemHeight>80</itemHeight>
-      <itemWidth>133</itemWidth>
-      <textureHeight>133</textureHeight>
+      <itemHeight>120</itemHeight>
+      <itemWidth>199</itemWidth>
+      <textureHeight>199</textureHeight>
       <keepaspectratio>yes</keepaspectratio>
     </control>
   </controls>
 </window>
-<!--Checksum:a8ac7d7ebf1cf0346fcb682acc4543f0-->
+<!--Checksum:b4956e66bd80f0552fc56d42fa329ba5-->

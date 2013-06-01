@@ -10,9 +10,9 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
       <visible>control.isvisible(101)</visible>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -22,9 +22,9 @@
       <description>About Header</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>40</posX>
-      <posY>684</posY>
-      <width>900</width>
+      <posX>60</posX>
+      <posY>1026</posY>
+      <width>1350</width>
       <label>#SubCentral.Header.Label</label>
       <font>mediastream16tc</font>
       <textcolor>White</textcolor>
@@ -37,10 +37,10 @@
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1013</posX>
-      <posY>684</posY>
-      <width>260</width>
-      <height>30</height>
+      <posX>1519</posX>
+      <posY>1026</posY>
+      <width>390</width>
+      <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>control.isvisible(101)</visible>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -51,8 +51,8 @@
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1023</posX>
-      <posY>688</posY>
+      <posX>1534</posX>
+      <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>control.isvisible(101)</visible>
@@ -62,10 +62,10 @@
     <control>
       <type>textbox</type>
       <id>912</id>
-      <posX>40</posX>
-      <posY>240</posY>
-      <width>1180</width>
-      <height>440</height>
+      <posX>60</posX>
+      <posY>360</posY>
+      <width>1770</width>
+      <height>660</height>
       <label>#SubCentral.About</label>
       <font>mediastream13</font>
       <textcolor>White</textcolor>
@@ -74,11 +74,11 @@
       <onleft>202</onleft>
       <onright>202</onright>
       <spinColor>ff006698</spinColor>
-      <spinPosX>1140</spinPosX>
-      <spinPosY>681</spinPosY>
+      <spinPosX>1710</spinPosX>
+      <spinPosY>1021</spinPosY>
       <spinAlign>Right</spinAlign>
-      <spinWidth>50</spinWidth>
-      <spinHeight>37</spinHeight>
+      <spinWidth>75</spinWidth>
+      <spinHeight>55</spinHeight>
       <textureUp>arrow_round_up_nofocus.png</textureUp>
       <textureDown>arrow_round_down_nofocus.png</textureDown>
       <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
@@ -89,4 +89,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:3e669b72121d336e65f4f259c0f93335-->
+<!--Checksum:edb65c8881cd050d3c3d6413c6aec70a-->

@@ -6,10 +6,10 @@
       <description>Thumbnail Frame</description>
       <type>image</type>
       <id>0</id>
-      <posX>930</posX>
-      <posY>60</posY>
-      <width>247</width>
-      <height>555</height>
+      <posX>1395</posX>
+      <posY>90</posY>
+      <width>370</width>
+      <height>832</height>
       <texture>weatherimagemenu.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -18,8 +18,8 @@
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>965</posX>
-      <posY>106</posY>
+      <posX>1447</posX>
+      <posY>159</posY>
       <layout>StackLayout(5,Vertical,true)</layout>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -31,8 +31,8 @@
         <onleft>2</onleft>
         <onup>50</onup>
         <ondown>19629002</ondown>
-        <width>130</width>
-        <height>88</height>
+        <width>195</width>
+        <height>132</height>
         <textureFocus>#WorldWeather.ImageSatellite</textureFocus>
         <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImageSatellite</textureNoFocus>
         <disabledcolor>30ffffff</disabledcolor>
@@ -45,8 +45,8 @@
         <onleft>2</onleft>
         <onup>19629001</onup>
         <ondown>19629003</ondown>
-        <width>130</width>
-        <height>88</height>
+        <width>195</width>
+        <height>132</height>
         <textureFocus>#WorldWeather.ImageTemperature</textureFocus>
         <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImageTemperature</textureNoFocus>
         <disabledcolor>30ffffff</disabledcolor>
@@ -59,8 +59,8 @@
         <onleft>2</onleft>
         <onup>19629002</onup>
         <ondown>19629004</ondown>
-        <width>130</width>
-        <height>88</height>
+        <width>195</width>
+        <height>132</height>
         <textureFocus>#WorldWeather.ImageUVIndex</textureFocus>
         <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImageUVIndex</textureNoFocus>
         <disabledcolor>30ffffff</disabledcolor>
@@ -73,8 +73,8 @@
         <onleft>2</onleft>
         <onup>19629003</onup>
         <ondown>19629005</ondown>
-        <width>130</width>
-        <height>88</height>
+        <width>195</width>
+        <height>132</height>
         <textureFocus>#WorldWeather.ImageWind</textureFocus>
         <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImageWind</textureNoFocus>
         <disabledcolor>30ffffff</disabledcolor>
@@ -86,8 +86,8 @@
         <id>19629005</id>
         <onup>19629004</onup>
         <ondown>2</ondown>
-        <width>130</width>
-        <height>88</height>
+        <width>195</width>
+        <height>132</height>
         <textureFocus>#WorldWeather.ImagePrecipitation</textureFocus>
         <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImagePrecipitation</textureNoFocus>
         <disabledcolor>30ffffff</disabledcolor>
@@ -100,10 +100,10 @@
       <description>Image Frame</description>
       <type>image</type>
       <id>0</id>
-      <posX>140</posX>
-      <posY>60</posY>
-      <width>765</width>
-      <height>555</height>
+      <posX>210</posX>
+      <posY>90</posY>
+      <width>1147</width>
+      <height>832</height>
       <texture>LCD.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -113,8 +113,8 @@
       <description>Images</description>
       <type>label</type>
       <id>0</id>
-      <posX>520</posX>
-      <posY>85</posY>
+      <posX>780</posX>
+      <posY>127</posY>
       <label>750</label>
       <font>mediastream14tc</font>
       <align>center</align>
@@ -128,10 +128,10 @@
       <description>Satellite image</description>
       <type>image</type>
       <id>0</id>
-      <posX>178</posX>
-      <posY>107</posY>
-      <width>687</width>
-      <height>462</height>
+      <posX>267</posX>
+      <posY>160</posY>
+      <width>1030</width>
+      <height>693</height>
       <keepaspectratio>no</keepaspectratio>
       <texture>#WorldWeather.ImageSatellite</texture>
       <visible>string.equals(#WorldWeather.View,Image)+string.equals(#WorldWeather.ImageView,Flat)</visible>
@@ -142,8 +142,8 @@
       <description>Location label</description>
       <type>label</type>
       <id>0</id>
-      <posX>520</posX>
-      <posY>592</posY>
+      <posX>780</posX>
+      <posY>888</posY>
       <label>#WorldWeather.TranslationSatelliteImage</label>
       <font>mediastream14c</font>
       <align>center</align>
@@ -157,10 +157,10 @@
       <description>Temperature image</description>
       <type>image</type>
       <id>0</id>
-      <posX>178</posX>
-      <posY>107</posY>
-      <width>687</width>
-      <height>462</height>
+      <posX>267</posX>
+      <posY>160</posY>
+      <width>1030</width>
+      <height>693</height>
       <keepaspectratio>no</keepaspectratio>
       <texture>#WorldWeather.ImageTemperature</texture>
       <visible>string.equals(#WorldWeather.View,Image)+control.hasfocus(19629002)+string.equals(#WorldWeather.ImageView,Flat)</visible>
@@ -171,8 +171,8 @@
       <description>Temperature Image label</description>
       <type>label</type>
       <id>0</id>
-      <posX>520</posX>
-      <posY>592</posY>
+      <posX>780</posX>
+      <posY>888</posY>
       <label>#WorldWeather.TranslationTemperatureImage</label>
       <font>mediastream14c</font>
       <align>center</align>
@@ -186,10 +186,10 @@
       <description>UV image</description>
       <type>image</type>
       <id>0</id>
-      <posX>178</posX>
-      <posY>107</posY>
-      <width>687</width>
-      <height>462</height>
+      <posX>267</posX>
+      <posY>160</posY>
+      <width>1030</width>
+      <height>693</height>
       <keepaspectratio>no</keepaspectratio>
       <texture>#WorldWeather.ImageUVIndex</texture>
       <visible>string.equals(#WorldWeather.View,Image)+control.hasfocus(19629003)+string.equals(#WorldWeather.ImageView,Flat)</visible>
@@ -200,8 +200,8 @@
       <description>UV Image label</description>
       <type>label</type>
       <id>0</id>
-      <posX>520</posX>
-      <posY>592</posY>
+      <posX>780</posX>
+      <posY>888</posY>
       <label>#WorldWeather.TranslationUVIndexImage</label>
       <font>mediastream14c</font>
       <align>center</align>
@@ -215,10 +215,10 @@
       <description>Wind Image</description>
       <type>image</type>
       <id>0</id>
-      <posX>178</posX>
-      <posY>107</posY>
-      <width>687</width>
-      <height>462</height>
+      <posX>267</posX>
+      <posY>160</posY>
+      <width>1030</width>
+      <height>693</height>
       <keepaspectratio>no</keepaspectratio>
       <texture>#WorldWeather.ImageWind</texture>
       <visible>string.equals(#WorldWeather.View,Image)+control.hasfocus(19629004)+string.equals(#WorldWeather.ImageView,Flat)</visible>
@@ -229,8 +229,8 @@
       <description>Wind Image label</description>
       <type>label</type>
       <id>0</id>
-      <posX>520</posX>
-      <posY>592</posY>
+      <posX>780</posX>
+      <posY>888</posY>
       <label>#WorldWeather.TranslationWindImage</label>
       <font>mediastream14c</font>
       <align>center</align>
@@ -244,10 +244,10 @@
       <description>Precipitation Image</description>
       <type>image</type>
       <id>0</id>
-      <posX>178</posX>
-      <posY>107</posY>
-      <width>687</width>
-      <height>462</height>
+      <posX>267</posX>
+      <posY>160</posY>
+      <width>1030</width>
+      <height>693</height>
       <keepaspectratio>no</keepaspectratio>
       <texture>#WorldWeather.ImagePrecipitation</texture>
       <visible>string.equals(#WorldWeather.View,Image)+control.hasfocus(19629005)+string.equals(#WorldWeather.ImageView,Flat)</visible>
@@ -258,8 +258,8 @@
       <description>Precipitation Image label</description>
       <type>label</type>
       <id>0</id>
-      <posX>520</posX>
-      <posY>592</posY>
+      <posX>780</posX>
+      <posY>888</posY>
       <label>#WorldWeather.TranslationPrecipitationImage</label>
       <font>mediastream14c</font>
       <align>center</align>
@@ -272,8 +272,8 @@
       <description>group element</description>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1800,0">WindowClose</animation>
       <type>group</type>
       <control>
         <type>facadeview</type>
@@ -284,18 +284,18 @@
           <id>50</id>
           <onup>2</onup>
           <ondown>2</ondown>
-          <posX>100</posX>
-          <posY>400</posY>
-          <width>1200</width>
-          <height>217</height>
-          <thumbWidth>200</thumbWidth>
-          <thumbHeight>140</thumbHeight>
-          <thumbPosX>7</thumbPosX>
-          <thumbPosY>7</thumbPosY>
-          <itemWidth>210</itemWidth>
-          <itemHeight>154</itemHeight>
-          <textureWidth>217</textureWidth>
-          <textureHeight>154</textureHeight>
+          <posX>150</posX>
+          <posY>600</posY>
+          <width>1800</width>
+          <height>325</height>
+          <thumbWidth>300</thumbWidth>
+          <thumbHeight>210</thumbHeight>
+          <thumbPosX>10</thumbPosX>
+          <thumbPosY>10</thumbPosY>
+          <itemWidth>315</itemWidth>
+          <itemHeight>231</itemHeight>
+          <textureWidth>325</textureWidth>
+          <textureHeight>231</textureHeight>
           <imageFolderFocus>imagebg.png</imageFolderFocus>
           <imageFolder>imagebg.png</imageFolder>
           <frame>imagebg.png</frame>
@@ -309,10 +309,10 @@
           <showInfoImage>no</showInfoImage>
           <thumbAnimation effect="zoom" start="100,100" end="200,200" time="0">focus</thumbAnimation>
           <thumbAnimation effect="zoom" start="200,200" end="100,100" time="0">unfocus</thumbAnimation>
-          <thumbAnimation effect="slide" end="0,-18" time="0">focus</thumbAnimation>
+          <thumbAnimation effect="slide" end="0,-27" time="0">focus</thumbAnimation>
           <thumbAnimation effect="slide" end="0,0" time="0">unfocus</thumbAnimation>
-          <spinPosX>1565</spinPosX>
-          <spinPosY>1685</spinPosY>
+          <spinPosX>2347</spinPosX>
+          <spinPosY>2527</spinPosY>
           <spinCanFocus>no</spinCanFocus>
           <scrollOffset>3</scrollOffset>
           <visible>string.equals(#WorldWeather.View,Image)+string.equals(#WorldWeather.ImageView,Filmstrip)</visible>
@@ -324,42 +324,42 @@
           <dimColor>90ffffff</dimColor>
           <id>50</id>
           <posX>0</posX>
-          <posY>230</posY>
-          <width>1280</width>
-          <height>720</height>
+          <posY>345</posY>
+          <width>1920</width>
+          <height>1080</height>
           <onup>2</onup>
           <ondown>2</ondown>
           <onright>50</onright>
           <selectedCard>0</selectedCard>
-          <cardWidth>492</cardWidth>
-          <cardHeight>370</cardHeight>
+          <cardWidth>738</cardWidth>
+          <cardHeight>555</cardHeight>
           <angle>45</angle>
-          <sideShift>400</sideShift>
-          <sideGap>350</sideGap>
-          <sideDepth>350</sideDepth>
+          <sideShift>600</sideShift>
+          <sideGap>525</sideGap>
+          <sideDepth>525</sideDepth>
           <offsetY>0</offsetY>
           <selectedOffsetY>0</selectedOffsetY>
           <speed>4</speed>
           <backgroundColor>000000FF</backgroundColor>
-          <backgroundHeight>250</backgroundHeight>
-          <backgroundWidth>1280</backgroundWidth>
+          <backgroundHeight>375</backgroundHeight>
+          <backgroundWidth>1920</backgroundWidth>
           <backgroundX>0</backgroundX>
-          <backgroundY>370</backgroundY>
+          <backgroundY>555</backgroundY>
           <backgroundDiffuse>FF000000</backgroundDiffuse>
           <background>black.png</background>
           <showBackground>no</showBackground>
-          <foregroundHeight>505</foregroundHeight>
-          <foregroundWidth>1280</foregroundWidth>
+          <foregroundHeight>757</foregroundHeight>
+          <foregroundWidth>1920</foregroundWidth>
           <foregroundX>0</foregroundX>
-          <foregroundY>215</foregroundY>
+          <foregroundY>322</foregroundY>
           <foregroundDiffuse>FF000000</foregroundDiffuse>
           <foreground>coverflow_overlay.png</foreground>
           <showForeground>no</showForeground>
           <showFrame>no</showFrame>
           <frame>-</frame>
           <frameFocus>-</frameFocus>
-          <frameWidth>455</frameWidth>
-          <frameHeight>350</frameHeight>
+          <frameWidth>682</frameWidth>
+          <frameHeight>525</frameHeight>
           <spinSpeed>8</spinSpeed>
           <unfocusedAlpha>ff</unfocusedAlpha>
           <folderPrefix>[</folderPrefix>
@@ -376,13 +376,13 @@
           <shadowAngle>45</shadowAngle>
           <shadowDistance>1</shadowDistance>
           <shadowColor>FF000000</shadowColor>
-          <label1YOff>400</label1YOff>
-          <label2YOff>425</label2YOff>
+          <label1YOff>600</label1YOff>
+          <label2YOff>637</label2YOff>
           <pageSize>5</pageSize>
           <scrollbarBackground>bar_hor.png</scrollbarBackground>
           <scrollbarLeft>mouse_left_horizontal.png</scrollbarLeft>
           <scrollbarRight>mouse_right_horizontal.png</scrollbarRight>
-          <scrollbarYOff>405</scrollbarYOff>
+          <scrollbarYOff>607</scrollbarYOff>
           <showScrollbar>no</showScrollbar>
           <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_square_mask.png" />
           <visible>string.equals(#WorldWeather.View,Image)+string.equals(#WorldWeather.ImageView,Coverflow)</visible>
@@ -391,4 +391,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:bf55a839d2c77223f26cdb41df56ebca-->
+<!--Checksum:d88d477a13ea71e76813d588f9ff1a6f-->

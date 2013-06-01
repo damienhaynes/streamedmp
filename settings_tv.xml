@@ -3,7 +3,7 @@
   <id>700</id>
   <defaultcontrol>24</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:#(L(5))->TV</define>
+  <define>#header.label:#(L(5))-&gt;TV</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:24</define>
   <define>#defaultcontrol.onright:9994</define>
@@ -14,19 +14,19 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>85</posY>
-      <width>595</width>
-      <height>500</height>
+      <posX>324</posX>
+      <posY>127</posY>
+      <width>892</width>
+      <height>750</height>
       <layout>StackLayout(0, Vertical, true)</layout>
       <control Style="settingsmainbutton">
         <description>MPEG-2 Video Codecs</description>
         <type>button</type>
         <id>24</id>
         <label>6000</label>
-				<textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onup>32</onup>
-				<width>766</width>
+        <width>1149</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -34,8 +34,8 @@
         <type>button</type>
         <id>35</id>
         <label>6036</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
+        <textXOff>52</textXOff>
+        <width>1149</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -43,8 +43,8 @@
         <description>Audio Codecs</description>
         <id>25</id>
         <label>6001</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
+        <textXOff>52</textXOff>
+        <width>1149</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -52,8 +52,8 @@
         <description>LATM AAC Audio Codecs</description>
         <id>36</id>
         <label>6039</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
+        <textXOff>52</textXOff>
+        <width>1149</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -61,8 +61,8 @@
         <type>button</type>
         <id>33</id>
         <label>6002</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
+        <textXOff>52</textXOff>
+        <width>1149</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -70,8 +70,8 @@
         <type>button</type>
         <id>27</id>
         <label>6003</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
+        <textXOff>52</textXOff>
+        <width>1149</width>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -79,9 +79,9 @@
         <type>button</type>
         <id>28</id>
         <label>6004</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<ondown>30</ondown>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <ondown>30</ondown>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -89,111 +89,111 @@
         <type>button</type>
         <id>30</id>
         <label>6006</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<ondown>29</ondown>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <ondown>29</ondown>
         <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmaincheckbutton">
+      <control Style="settingsmaincheckbutton">
         <description>Ask for stopping timeshift</description>
         <type>checkbutton</type>
         <id>29</id>
         <label>300228</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<ondown>40</ondown>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <ondown>40</ondown>
         <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmaincheckbutton">
+      <control Style="settingsmaincheckbutton">
         <description>Use button colors for TVGuide</description>
         <type>checkbutton</type>
         <id>40</id>
         <label>1246</label>
-				<textXOff>35</textXOff>
-				<onright>#defaultcontrol.onright</onright>
-				<onleft>40</onleft>
-				<width>766</width>
+        <textXOff>52</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+        <onleft>40</onleft>
+        <width>1149</width>
         <selected>#(skin.hassetting('#skin.tvguide.usecolorsforbuttons'))</selected>
         <onclick>#(skin.togglesetting('#skin.tvguide.usecolorsforbuttons'))</onclick>
-				<visible>!plugin.isenabled(ARGUS TV)</visible>
+        <visible>!plugin.isenabled(ARGUS TV)</visible>
       </control>
       <control Style="settingsmaincheckbutton">
         <description>Use guide colors for genre</description>
         <type>checkbutton</type>
         <id>41</id>
         <label>1247</label>
-				<textXOff>35</textXOff>
-				<onleft>41</onleft>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
+        <textXOff>52</textXOff>
+        <onleft>41</onleft>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
         <selected>#(skin.hassetting('#skin.tvguide.usecolorsforgenre'))</selected>
         <onclick>#(skin.togglesetting('#skin.tvguide.usecolorsforgenre'))</onclick>
-				<visible>!plugin.isenabled(ARGUS TV)</visible>
+        <visible>!plugin.isenabled(ARGUS TV)</visible>
       </control>
       <control Style="settingsmaincheckbutton">
         <description>Use highlight</description>
         <type>checkbutton</type>
         <id>42</id>
         <label>1248</label>
-				<textXOff>35</textXOff>
-				<onleft>42</onleft>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
+        <textXOff>52</textXOff>
+        <onleft>42</onleft>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
         <selected>#(skin.hassetting('#skin.tvguide.useborderhighlight'))</selected>
         <onclick>#(skin.togglesetting('#skin.tvguide.useborderhighlight'))</onclick>
-				<visible>!plugin.isenabled(ARGUS TV)</visible>
+        <visible>!plugin.isenabled(ARGUS TV)</visible>
       </control>
       <control Style="settingsmaincheckbutton">
         <description>Show genre color key</description>
         <type>checkbutton</type>
         <id>43</id>
         <label>1249</label>
-				<textXOff>35</textXOff>
-				<onleft>43</onleft>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
+        <textXOff>52</textXOff>
+        <onleft>43</onleft>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
         <selected>#(skin.hassetting('#skin.tvguide.showgenrekey'))</selected>
         <onclick>#(skin.togglesetting('#skin.tvguide.showgenrekey'))</onclick>
-				<ondown>34</ondown>
-				<visible>!plugin.isenabled(ARGUS TV)</visible>
+        <ondown>34</ondown>
+        <visible>!plugin.isenabled(ARGUS TV)</visible>
       </control>
       <control Style="settingsmainbutton">
         <description>Argus Channel Manager</description>
         <type>button</type>
         <id>34</id>
         <label>Argus #TV.Settings.ChannelManagerName</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
+        <textXOff>52</textXOff>
+        <width>1149</width>
         <onright>#defaultcontrol.onright</onright>
         <hyperlink>49856</hyperlink>
         <visible>plugin.isenabled(ARGUS TV)</visible>
-				<ondown>31</ondown>
+        <ondown>31</ondown>
       </control>
       <control Style="settingsmainbutton">
         <description>Argus Client Settings</description>
         <type>button</type>
         <id>31</id>
         <label>#TV.Settings.ArgusClientSettingsName</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
+        <textXOff>52</textXOff>
+        <width>1149</width>
         <onright>#defaultcontrol.onright</onright>
         <hyperlink>49857</hyperlink>
         <visible>plugin.isenabled(ARGUS TV)</visible>
-				<ondown>32</ondown>
+        <ondown>32</ondown>
       </control>
       <control Style="settingsmainbutton">
         <description>Argus Server Settings</description>
         <type>button</type>
         <id>32</id>
         <label>#TV.Settings.ArgusServerSettingsName</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
+        <textXOff>52</textXOff>
+        <width>1149</width>
         <onright>#defaultcontrol.onright</onright>
         <hyperlink>49855</hyperlink>
         <visible>plugin.isenabled(ARGUS TV)</visible>
-				<ondown>24</ondown>
+        <ondown>24</ondown>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:30d09ebc435939020a1d25969100dc24-->
+<!--Checksum:2496740ee5fb18a5a7cecd66dbea0762-->

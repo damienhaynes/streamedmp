@@ -15,9 +15,9 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
       <animation effect="fade" time="230" delay="0">WindowClose</animation>
@@ -26,9 +26,9 @@
       <description>Selected item Label</description>
       <type>fadelabel</type>
       <id>1</id>
-      <posX>25</posX>
-      <posY>684</posY>
-      <width>950</width>
+      <posX>37</posX>
+      <posY>1026</posY>
+      <width>1425</width>
       <font>mediastream16tc</font>
       <label>#infoservice.twitter.selected.username</label>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
@@ -38,41 +38,41 @@
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1013</posX>
-      <posY>683</posY>
-      <width>260</width>
-      <height>32</height>
+      <posX>1519</posX>
+      <posY>1024</posY>
+      <width>390</width>
+      <height>48</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>yes</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Page Count Label</description>
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1023</posX>
-      <posY>688</posY>
+      <posX>1534</posX>
+      <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>yes</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <!-- Facade Item Counts -->
     <control>
       <description>Item Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1065</posX>
-      <posY>13</posY>
-      <width>202</width>
-      <height>28</height>
+      <posX>1597</posX>
+      <posY>19</posY>
+      <width>303</width>
+      <height>42</height>
       <texture>mediacountbg.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -82,9 +82,9 @@
       <type>label</type>
       <label>507</label>
       <id>0</id>
-      <width>135</width>
-      <posX>1078</posX>
-      <posY>16</posY>
+      <width>202</width>
+      <posX>1617</posX>
+      <posY>24</posY>
       <align>left</align>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
@@ -96,8 +96,8 @@
       <type>label</type>
       <label>#infoservice.twitter.itemcount</label>
       <id>0</id>
-      <posX>1238</posX>
-      <posY>14</posY>
+      <posX>1857</posX>
+      <posY>21</posY>
       <font>mediastream11c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
@@ -108,21 +108,21 @@
       <id>1</id>
       <description>Top Title Background</description>
       <type>image</type>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <control>
       <type>image</type>
       <id>1</id>
-      <posX>25</posX>
-      <posY>240</posY>
-      <width>276</width>
-      <height>214</height>
+      <posX>37</posX>
+      <posY>360</posY>
+      <width>414</width>
+      <height>321</height>
       <texture>pic_preview_thumb_background.png</texture>
       <visible>control.hasthumb(101)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -131,10 +131,10 @@
     <control>
       <id>101</id>
       <type>image</type>
-      <posX>38</posX>
-      <posY>254</posY>
-      <width>245</width>
-      <height>179</height>
+      <posX>57</posX>
+      <posY>381</posY>
+      <width>367</width>
+      <height>268</height>
       <texture>#infoservice.twitter.selected.userpicture</texture>
       <keepaspectratio>no</keepaspectratio>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -145,10 +145,10 @@
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
-      <buttonX>1232</buttonX>
-      <buttonY>50</buttonY>
-      <buttonwidth>48</buttonwidth>
-      <buttonheight>144</buttonheight>
+      <buttonX>1848</buttonX>
+      <buttonY>75</buttonY>
+      <buttonwidth>72</buttonwidth>
+      <buttonheight>216</buttonheight>
       <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
       <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -156,14 +156,14 @@
       <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
@@ -171,35 +171,35 @@
         <label>496</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
+        <posX>1560</posX>
+        <posY>337</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <description>dummy button</description>
         <label>-</label>
         <type>button</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <visible>!Control.HasFocus(10)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+        <posX>1560</posX>
+        <posY>375</posY>
+        <width>330</width>
+        <height>1080</height>
         <layout>StackLayout</layout>
         <control>
           <description>Refresh Button</description>
@@ -241,46 +241,46 @@
         <description>listcontrol</description>
         <type>listcontrol</type>
         <id>50</id>
-        <posY>245</posY>
-        <posX>685</posX>
-        <height>475</height>
+        <posY>367</posY>
+        <posX>1027</posX>
+        <height>712</height>
         <onleft>2</onleft>
-        <textXOff>15</textXOff>
-        <textXOff2>580</textXOff2>
-        <textYOff>2</textYOff>
-        <textYOff2>35</textYOff2>
+        <textXOff>22</textXOff>
+        <textXOff2>870</textXOff2>
+        <textYOff>3</textYOff>
+        <textYOff2>52</textYOff2>
         <font>mediastream12c</font>
         <font2>mediastream9c</font2>
         <spaceBetweenItems>5</spaceBetweenItems>
-        <textureHeight>60</textureHeight>
+        <textureHeight>90</textureHeight>
         <scrollOffset>1</scrollOffset>
-        <IconXOff>3</IconXOff>
-        <IconYOff>2</IconYOff>
-        <itemWidth>50</itemWidth>
-        <itemHeight>50</itemHeight>
+        <IconXOff>4</IconXOff>
+        <IconYOff>3</IconYOff>
+        <itemWidth>75</itemWidth>
+        <itemHeight>75</itemHeight>
         <keepaspectratio>yes</keepaspectratio>
-        <spinPosX>1175</spinPosX>
-        <spinPosY>681</spinPosY>
+        <spinPosX>1762</spinPosX>
+        <spinPosY>1021</spinPosY>
         <spinAlign>Right</spinAlign>
         <textureUp>arrow_round_up_nofocus.png</textureUp>
         <textureDown>arrow_round_down_nofocus.png</textureDown>
         <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
         <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-        <spinWidth>50</spinWidth>
-        <spinHeight>37</spinHeight>
+        <spinWidth>75</spinWidth>
+        <spinHeight>55</spinHeight>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
-        <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-        <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+        <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+        <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       </control>
       <control>
         <description>Message</description>
         <type>textboxscrollup</type>
         <id>506</id>
-        <posX>25</posX>
-        <posY>500</posY>
-        <width>600</width>
-        <height>250</height>
+        <posX>37</posX>
+        <posY>750</posY>
+        <width>900</width>
+        <height>375</height>
         <label>-</label>
         <font>font12</font>
         <textcolor>FFFFFFFF</textcolor>
@@ -292,8 +292,8 @@
       <description>Channel name label</description>
       <type>label</type>
       <id>12</id>
-      <posX>25</posX>
-      <posY>690</posY>
+      <posX>37</posX>
+      <posY>1035</posY>
       <label>-</label>
       <font>font18</font>
       <textcolor>20ffffff</textcolor>
@@ -303,4 +303,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:a04086f400f5f09b945bd755ff0b8040-->
+<!--Checksum:f1d52a0ff996a7867d9a49bd9c275906-->

@@ -5,9 +5,9 @@
       <description>Movie Title</description>
       <type>label</type>
       <id>1</id>
-      <posX>20</posX>
-      <posY>660</posY>
-      <width>1280</width>
+      <posX>30</posX>
+      <posY>990</posY>
+      <width>1920</width>
       <align>center</align>
       <font>mediastream16tc</font>
       <label>#selecteditem</label>
@@ -20,14 +20,14 @@
       <type>label</type>
       <label>#myfilms.db.category.value</label>
       <id>0</id>
-      <posX>20</posX>
-      <posY>680</posY>
-      <width>1280</width>
+      <posX>30</posX>
+      <posY>1020</posY>
+      <width>1920</width>
       <align>center</align>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>3</shadowDistance>
+      <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#myfilms.db.category.value,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -35,4 +35,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:93c95b1a339187051d409d3a95b65101-->
+<!--Checksum:fc2e3ee05434f71d53cb4f52551109d4-->

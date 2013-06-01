@@ -3,7 +3,7 @@
   <id>704</id>
   <defaultcontrol>22</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:#(L(5))->#(L(446))</define>
+  <define>#header.label:#(L(5))-&gt;#(L(446))</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:22</define>
   <define>#defaultcontrol.onright:9998</define>
@@ -14,10 +14,10 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>150</posY>
-      <width>595</width>
-      <height>500</height>
+      <posX>324</posX>
+      <posY>225</posY>
+      <width>892</width>
+      <height>750</height>
       <layout>StackLayout</layout>
       <control Style="settingsmaincheckbutton">
         <description>Enable Subtitles</description>
@@ -25,8 +25,8 @@
         <id>22</id>
         <label>1196</label>
         <onup>25</onup>
-				<textXOff>35</textXOff>
-				<onleft>22</onleft>
+        <textXOff>52</textXOff>
+        <onleft>22</onleft>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmaincheckbutton">
@@ -34,8 +34,8 @@
         <type>checkbutton</type>
         <id>31</id>
         <label>300079</label>
-				<textXOff>35</textXOff>
-				<onleft>31</onleft>
+        <textXOff>52</textXOff>
+        <onleft>31</onleft>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmaincheckbutton">
@@ -43,8 +43,8 @@
         <type>checkbutton</type>
         <id>23</id>
         <label>1197</label>
-				<textXOff>35</textXOff>
-				<onleft>23</onleft>
+        <textXOff>52</textXOff>
+        <onleft>23</onleft>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -52,7 +52,7 @@
         <type>button</type>
         <id>24</id>
         <label>291</label>
-				<textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -60,11 +60,11 @@
         <type>button</type>
         <id>25</id>
         <label>292</label>
-				<textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
-				<ondown>22</ondown>
+        <ondown>22</ondown>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:ecdcb8c43bc0bdaa159f7d8a5f6bcca1-->
+<!--Checksum:bb5f3a9851a7eaca2653fb633df7cabc-->

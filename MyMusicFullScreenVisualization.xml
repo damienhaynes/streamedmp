@@ -19,10 +19,10 @@ including the text (the alpha component of textcolor is ignored)
     <description>Now Playing Screen Overlay Image</description>
     <type>nowplayingoverlay</type>
     <id>1</id>
-    <posX>35</posX>
-    <posY>25</posY>
-    <width>711</width>
-    <height>158</height>
+    <posX>52</posX>
+    <posY>37</posY>
+    <width>1066</width>
+    <height>237</height>
     <texture>dialogprogressbg.png</texture>
     <alpha>0xff</alpha>
   </control>
@@ -30,10 +30,10 @@ including the text (the alpha component of textcolor is ignored)
     <description>CoverArt Image</description>
     <type>image</type>
     <id>2</id>
-    <posX>44</posX>
-    <posY>31</posY>
-    <width>136</width>
-    <height>96</height>
+    <posX>66</posX>
+    <posY>46</posY>
+    <width>204</width>
+    <height>144</height>
     <texture>-</texture>
   </control>
   <control>
@@ -46,8 +46,8 @@ including the text (the alpha component of textcolor is ignored)
     <description>Label 1</description>
     <type>label</type>
     <id>4</id>
-    <posX>199</posX>
-    <posY>31</posY>
+    <posX>298</posX>
+    <posY>46</posY>
     <label>#Play.Current.Title</label>
     <font>font10</font>
     <bold>yes</bold>
@@ -57,8 +57,8 @@ including the text (the alpha component of textcolor is ignored)
     <description>Label 2</description>
     <type>label</type>
     <id>5</id>
-    <posX>199</posX>
-    <posY>56</posY>
+    <posX>298</posX>
+    <posY>84</posY>
     <label>#Play.Current.Album</label>
     <font>font10</font>
     <bold>yes</bold>
@@ -68,8 +68,8 @@ including the text (the alpha component of textcolor is ignored)
     <description>Label 3</description>
     <type>label</type>
     <id>6</id>
-    <posX>199</posX>
-    <posY>81</posY>
+    <posX>298</posX>
+    <posY>121</posY>
     <label>#Play.Current.Year</label>
     <bold>yes</bold>
     <font>font10</font>
@@ -79,8 +79,8 @@ including the text (the alpha component of textcolor is ignored)
     <description>Label 4</description>
     <type>label</type>
     <id>7</id>
-    <posX>199</posX>
-    <posY>106</posY>
+    <posX>298</posX>
+    <posY>159</posY>
     <label>#Play.Current.Artist</label>
     <bold>yes</bold>
     <font>font10</font>
@@ -90,81 +90,81 @@ including the text (the alpha component of textcolor is ignored)
     <description>Pause Icon</description>
     <type>image</type>
     <id>8</id>
-    <posX>88</posX>
-    <posY>581</posY>
-    <width>100</width>
-    <height>100</height>
+    <posX>132</posX>
+    <posY>871</posY>
+    <width>150</width>
+    <height>150</height>
     <texture>top_pause_enabled.png</texture>
   </control>
   <control>
     <description>Play Icon</description>
     <type>image</type>
     <id>9</id>
-    <posX>88</posX>
-    <posY>581</posY>
-    <width>100</width>
-    <height>100</height>
+    <posX>132</posX>
+    <posY>871</posY>
+    <width>150</width>
+    <height>150</height>
     <texture>top_play_enabled.png</texture>
   </control>
   <control>
     <description>FF Icon</description>
     <type>image</type>
     <id>10</id>
-    <posX>88</posX>
-    <posY>581</posY>
-    <width>100</width>
-    <height>100</height>
+    <posX>132</posX>
+    <posY>871</posY>
+    <width>150</width>
+    <height>150</height>
     <texture>top_fastforward_enabled.png</texture>
   </control>
   <control>
     <description>Rew Icon</description>
     <type>image</type>
     <id>11</id>
-    <posX>88</posX>
-    <posY>581</posY>
-    <width>100</width>
-    <height>100</height>
+    <posX>132</posX>
+    <posY>871</posY>
+    <width>150</width>
+    <height>150</height>
     <texture>top_rew_enabled.png</texture>
   </control>
   <control>
     <description>Stop Icon</description>
     <type>image</type>
     <id>12</id>
-    <posX>88</posX>
-    <posY>581</posY>
-    <width>100</width>
-    <height>100</height>
+    <posX>132</posX>
+    <posY>871</posY>
+    <width>150</width>
+    <height>150</height>
     <texture>top_stop_enabled.png</texture>
   </control>
   <control>
     <description>Crossfade Icon</description>
     <type>image</type>
     <id>13</id>
-    <posX>88</posX>
-    <posY>581</posY>
-    <width>100</width>
-    <height>100</height>
+    <posX>132</posX>
+    <posY>871</posY>
+    <width>150</width>
+    <height>150</height>
     <texture>top_exit_enabled.png</texture>
   </control>
   <control>
     <description>Gap Icon</description>
     <type>image</type>
     <id>14</id>
-    <posX>88</posX>
-    <posY>581</posY>
-    <width>100</width>
-    <height>100</height>
+    <posX>132</posX>
+    <posY>871</posY>
+    <width>150</width>
+    <height>150</height>
     <texture>logo_gap.png</texture>
   </control>
   <control>
     <description>Gapless Icon</description>
     <type>image</type>
     <id>15</id>
-    <posX>88</posX>
-    <posY>581</posY>
-    <width>100</width>
-    <height>100</height>
+    <posX>132</posX>
+    <posY>871</posY>
+    <width>150</width>
+    <height>150</height>
     <texture>logo_gapless.png</texture>
   </control>
 </controls>
-<!--Checksum:0345d1b1ddf5110fb0c9be4d839b78af-->
+<!--Checksum:5eaeff6b2ce626cb5f50cbe8654595b7-->

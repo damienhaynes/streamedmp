@@ -3,7 +3,7 @@
   <id>1013</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:#(L(5))->#(L(100014))->#(L(4540))</define>
+  <define>#header.label:#(L(5))-&gt;#(L(100014))-&gt;#(L(4540))</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9996</define>
@@ -14,59 +14,59 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>85</posY>
-      <width>595</width>
-      <height>500</height>
+      <posX>324</posX>
+      <posY>127</posY>
+      <width>892</width>
+      <height>750</height>
       <layout>StackLayout(0, Vertical, true)</layout>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>Dynamic Content Heading</description>
         <type>button</type>
         <id>0</id>
         <font>mediastream12tc</font>
-				<label>300175</label>
-				<textXOff>35</textXOff>
+        <label>300175</label>
+        <textXOff>52</textXOff>
       </control>
       <control Style="settingsmaincheckbutton">
         <description>Disable internet lookup for coverart</description>
-				<type>checkbutton</type>
-				<id>2</id>
-				<label>300176</label>
-				<textXOff>35</textXOff>
+        <type>checkbutton</type>
+        <id>2</id>
+        <label>300176</label>
+        <textXOff>52</textXOff>
         <onup>6</onup>
-				<width>766</width>
-				<onleft>2</onleft>
+        <width>1149</width>
+        <onleft>2</onleft>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmaincheckbutton">
         <description>Disable Interent lookups for best albums tracks</description>
-				<type>checkbutton</type>
-				<id>3</id>
-				<label>300177</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onleft>3</onleft>
+        <type>checkbutton</type>
+        <id>3</id>
+        <label>300177</label>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onleft>3</onleft>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmaincheckbutton">
         <description>Disable interent lookups for track suggestions</description>
-				<type>checkbutton</type>
-				<id>4</id>
-				<label>300178</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onleft>4</onleft>
+        <type>checkbutton</type>
+        <id>4</id>
+        <label>300178</label>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onleft>4</onleft>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmaincheckbutton">
         <description>Switch artists</description>
-				<type>checkbutton</type>
-				<id>5</id>
-				<label>300179</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onleft>5</onleft>
-				<ondown>6</ondown>
+        <type>checkbutton</type>
+        <id>5</id>
+        <label>300179</label>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onleft>5</onleft>
+        <ondown>6</ondown>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -74,21 +74,21 @@
         <type>button</type>
         <id>0</id>
         <font>mediastream12tc</font>
-				<label>300180</label>
-				<textXOff>35</textXOff>
+        <label>300180</label>
+        <textXOff>52</textXOff>
       </control>
       <control Style="settingsmainbutton">
         <description>VUMeter button</description>
-				<type>button</type>
-				<id>6</id>
-				<label>#vumeter</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onup>5</onup>
-				<ondown>2</ondown>
+        <type>button</type>
+        <id>6</id>
+        <label>#vumeter</label>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onup>5</onup>
+        <ondown>2</ondown>
         <onright>#defaultcontrol.onright</onright>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:30d09ebc435939020a1d25969100dc24-->
+<!--Checksum:aa035a142a46750f319bf1cc82b37e94-->

@@ -15,8 +15,8 @@
       <visible>control.isvisible(50)+!facadeview.coverflow</visible>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1281</width>
-      <height>720</height>
+      <width>1921</width>
+      <height>1080</height>
       <texture>mainoverlay.png</texture>
     </control>
     <control>
@@ -25,8 +25,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>51</height>
+      <width>1920</width>
+      <height>76</height>
       <texture>overlay_topbar.png</texture>
       <visible>facadeview.coverflow</visible>
     </control>
@@ -35,9 +35,9 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
       <visible>!facadeview.coverflow</visible>
     </control>
@@ -45,23 +45,23 @@
       <description>Top Title Extension Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>381</posX>
-      <posY>11</posY>
-      <width>486</width>
-      <height>36</height>
+      <posX>571</posX>
+      <posY>16</posY>
+      <width>729</width>
+      <height>54</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
       <animation effect="fade" time="300" delay="0">WindowClose</animation>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>fadelabel</type>
       <description>mvCentral Hierarchy</description>
       <id>0</id>
-      <posX>839</posX>
-      <posY>13</posY>
-      <width>600</width>
+      <posX>1258</posX>
+      <posY>19</posY>
+      <width>900</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
@@ -73,10 +73,10 @@
       <description>mvCentral Title Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -85,9 +85,9 @@
       <type>fadelabel</type>
       <description>mvCentral Title Text</description>
       <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
@@ -100,8 +100,8 @@
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1023</posX>
-      <posY>688</posY>
+      <posX>1534</posX>
+      <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -111,10 +111,10 @@
       <description>Page Count Spin Control Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1013</posX>
-      <posY>684</posY>
-      <width>260</width>
-      <height>30</height>
+      <posX>1519</posX>
+      <posY>1026</posY>
+      <width>390</width>
+      <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -123,10 +123,10 @@
       <description>Item Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1113</posX>
-      <posY>12</posY>
-      <width>159</width>
-      <height>27</height>
+      <posX>1669</posX>
+      <posY>18</posY>
+      <width>238</width>
+      <height>40</height>
       <texture>mediacountbackground.png</texture>
       <visible>control.isvisible(50)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -137,8 +137,8 @@
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1023</posX>
-      <posY>688</posY>
+      <posX>1534</posX>
+      <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>!facadeview.coverflow</visible>
@@ -149,9 +149,9 @@
       <type>label</type>
       <description>Number of Files Label (Artist)</description>
       <id>0</id>
-      <posX>1246</posX>
-      <posY>14</posY>
-      <width>350</width>
+      <posX>1869</posX>
+      <posY>21</posY>
+      <width>525</width>
       <font>mediastream10c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
@@ -164,9 +164,9 @@
       <type>label</type>
       <description>Number of Files Label (Genres)</description>
       <id>0</id>
-      <posX>1246</posX>
-      <posY>14</posY>
-      <width>350</width>
+      <posX>1869</posX>
+      <posY>21</posY>
+      <width>525</width>
       <font>mediastream10c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
@@ -179,9 +179,9 @@
       <type>label</type>
       <description>Number of Files Label (Album)</description>
       <id>0</id>
-      <posX>1246</posX>
-      <posY>14</posY>
-      <width>350</width>
+      <posX>1869</posX>
+      <posY>21</posY>
+      <width>525</width>
       <font>mediastream10c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
@@ -194,9 +194,9 @@
       <type>label</type>
       <description>Number of Files Label (Videos)</description>
       <id>0</id>
-      <posX>1246</posX>
-      <posY>14</posY>
-      <width>350</width>
+      <posX>1869</posX>
+      <posY>21</posY>
+      <width>525</width>
       <font>mediastream10c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
@@ -211,10 +211,10 @@
     <control>
       <id>0</id>
       <type>image</type>
-      <posX>30</posX>
-      <posY>320</posY>
-      <width>280</width>
-      <height>280</height>
+      <posX>45</posX>
+      <posY>480</posY>
+      <width>420</width>
+      <height>420</height>
       <texture flipY="true" diffuse="Thumb_Mask2.png">#selectedthumb</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -224,10 +224,10 @@
     <control>
       <id>0</id>
       <type>image</type>
-      <posX>15</posX>
-      <posY>320</posY>
-      <width>300</width>
-      <height>222</height>
+      <posX>22</posX>
+      <posY>480</posY>
+      <width>450</width>
+      <height>333</height>
       <texture flipY="true" diffuse="Thumb_Mask2.png">#selectedthumb</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -238,13 +238,13 @@
       <id>0</id>
       <description>Artist/Track Description</description>
       <type>fadelabel</type>
-      <posX>30</posX>
-      <posY>220</posY>
-      <width>925</width>
+      <posX>45</posX>
+      <posY>330</posY>
+      <width>1387</width>
       <font>mediastream16tc</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>left</align>
       <label>#selecteditem</label>
@@ -256,13 +256,13 @@
       <id>0</id>
       <description>Track Title and Runtime</description>
       <type>fadelabel</type>
-      <posX>30</posX>
-      <posY>220</posY>
-      <width>925</width>
+      <posX>45</posX>
+      <posY>330</posY>
+      <width>1387</width>
       <font>mediastream16tc</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>left</align>
       <label>#selecteditem    [#mvCentral.Duration]</label>
@@ -274,13 +274,13 @@
       <id>0</id>
       <description>Album Indication Text</description>
       <type>fadelabel</type>
-      <posX>30</posX>
-      <posY>220</posY>
-      <width>925</width>
+      <posX>45</posX>
+      <posY>330</posY>
+      <width>1387</width>
       <font>mediastream16tc</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>left</align>
       <label>#selecteditem    [#mvCentral.Translation.Album.Label]</label>
@@ -292,13 +292,13 @@
       <id>0</id>
       <description>Album Runtime and Tracks</description>
       <type>fadelabel</type>
-      <posX>30</posX>
-      <posY>275</posY>
-      <width>925</width>
+      <posX>45</posX>
+      <posY>412</posY>
+      <width>1387</width>
       <font>mediastream11c</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>left</align>
       <label>[#mvCentral.Translation.Tracks.Label #mvCentral.TracksForAlbum | #mvCentral.Translation.TotalRuntime.Label #mvCentral.AlbumTracksRuntime]</label>
@@ -310,10 +310,10 @@
       <description>Album Star Rating Image</description>
       <type>image</type>
       <id>0</id>
-      <posX>30</posX>
-      <posY>251</posY>
-      <width>94</width>
-      <height>18</height>
+      <posX>45</posX>
+      <posY>376</posY>
+      <width>141</width>
+      <height>27</height>
       <texture>star#mvCentral.Album.Rating.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -323,10 +323,10 @@
       <description>Track Star Rating Image</description>
       <type>image</type>
       <id>0</id>
-      <posX>30</posX>
-      <posY>251</posY>
-      <width>94</width>
-      <height>18</height>
+      <posX>45</posX>
+      <posY>376</posY>
+      <width>141</width>
+      <height>27</height>
       <texture>star#mvCentral.Track.Rating.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -336,14 +336,14 @@
       <description>Composers</description>
       <type>label</type>
       <id>0</id>
-      <posX>150</posX>
-      <posY>251</posY>
-      <width>600</width>
-      <height>18</height>
+      <posX>225</posX>
+      <posY>376</posY>
+      <width>900</width>
+      <height>27</height>
       <font>mediastream10c</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>left</align>
       <label>#mvCentral.Composers</label>
@@ -355,13 +355,13 @@
       <id>0</id>
       <description>Tracks by Artist</description>
       <type>fadelabel</type>
-      <posX>30</posX>
-      <posY>275</posY>
-      <width>925</width>
+      <posX>45</posX>
+      <posY>412</posY>
+      <width>1387</width>
       <font>mediastream12c</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>left</align>
       <label>Music Videos: #mvCentral.VideosByArtist    [#mvCentral.Translation.TotalRuntime.Label #mvCentral.ArtistTracksRuntime]</label>
@@ -373,14 +373,14 @@
       <id>0</id>
       <description>Born or Formed</description>
       <type>fadelabel</type>
-      <posX>30</posX>
-      <posY>251</posY>
-      <width>900</width>
+      <posX>45</posX>
+      <posY>376</posY>
+      <width>1350</width>
       <font>mediastream10c</font>
       <textcolor>ffffffff</textcolor>
       <align>left</align>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <label>#mvCentral.BornOrFormed</label>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -391,10 +391,10 @@
       <id>0</id>
       <description>Artist Bio</description>
       <type>textboxscrollup</type>
-      <posX>330</posX>
-      <posY>320</posY>
-      <width>430</width>
-      <height>310</height>
+      <posX>495</posX>
+      <posY>480</posY>
+      <width>645</width>
+      <height>465</height>
       <label>#mvCentral.ArtistBio</label>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -407,10 +407,10 @@
       <id>0</id>
       <description>Track Description</description>
       <type>textboxscrollup</type>
-      <posX>330</posX>
-      <posY>320</posY>
-      <width>430</width>
-      <height>335</height>
+      <posX>495</posX>
+      <posY>480</posY>
+      <width>645</width>
+      <height>502</height>
       <label>#mvCentral.TrackInfo</label>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -423,9 +423,9 @@
       <id>0</id>
       <description>Artist Genre (AllMusic sourced)</description>
       <type>fadelabel</type>
-      <posX>330</posX>
-      <posY>635</posY>
-      <width>925</width>
+      <posX>495</posX>
+      <posY>952</posY>
+      <width>1387</width>
       <font>mediastream10tc</font>
       <textcolor>ff006698</textcolor>
       <align>left</align>
@@ -438,9 +438,9 @@
       <id>0</id>
       <description>Artist Tags (Last.FM)</description>
       <type>fadelabel</type>
-      <posX>330</posX>
-      <posY>655</posY>
-      <width>925</width>
+      <posX>495</posX>
+      <posY>982</posY>
+      <width>1387</width>
       <font>mediastream10tc</font>
       <textcolor>ff006698</textcolor>
       <align>left</align>
@@ -454,10 +454,10 @@
       <description>SD/HD Fullscreen/Widescreen</description>
       <type>image</type>
       <id>0</id>
-      <posX>15</posX>
-      <posY>280</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>22</posX>
+      <posY>420</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#mvCentral.LocalMedia.videoresolution #mvCentral.LocalMedia.videoaspectratio.png</texture>
       <visible>[facadeview.list|facadeview.smallicons|facadeview.largeicons]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -467,10 +467,10 @@
       <description>Video Codecs</description>
       <type>image</type>
       <id>0</id>
-      <posX>115</posX>
-      <posY>280</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>172</posX>
+      <posY>420</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#mvCentral.LocalMedia.videocodec.png</texture>
       <visible>[facadeview.list|facadeview.smallicons|facadeview.largeicons]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -481,10 +481,10 @@
       <description>Audio Codecs / Channels</description>
       <type>image</type>
       <id>0</id>
-      <posX>215</posX>
-      <posY>280</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>322</posX>
+      <posY>420</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#mvCentral.LocalMedia.audio.png</texture>
       <visible>[facadeview.list|facadeview.smallicons|facadeview.largeicons]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -497,12 +497,12 @@
       <id>0</id>
       <description>Artist/Track Description</description>
       <type>label</type>
-      <posX>640</posX>
-      <posY>670</posY>
+      <posX>960</posX>
+      <posY>1005</posY>
       <font>mediastream16tc</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>center</align>
       <label>#selecteditem</label>
@@ -514,12 +514,12 @@
       <id>0</id>
       <description>Tracks by Artist</description>
       <type>label</type>
-      <posX>640</posX>
-      <posY>700</posY>
+      <posX>960</posX>
+      <posY>1050</posY>
       <font>mediastream14tc</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>center</align>
       <label>Music Videos: #mvCentral.VideosByArtist     [#mvCentral.Translation.TotalRuntime.Label #mvCentral.ArtistTracksRuntime]</label>
@@ -531,12 +531,12 @@
       <id>0</id>
       <description>Artist/Track Description</description>
       <type>label</type>
-      <posX>640</posX>
-      <posY>670</posY>
+      <posX>960</posX>
+      <posY>1005</posY>
       <font>mediastream16tc</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>center</align>
       <label>#selecteditem</label>
@@ -548,12 +548,12 @@
       <id>0</id>
       <description>Album Runtime and Tracks</description>
       <type>label</type>
-      <posX>640</posX>
-      <posY>700</posY>
+      <posX>960</posX>
+      <posY>1050</posY>
       <font>mediastream14tc</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>center</align>
       <label>[#mvCentral.Translation.Tracks.Label #mvCentral.TracksForAlbum | #mvCentral.Translation.TotalRuntime.Label #mvCentral.AlbumTracksRuntime]</label>
@@ -567,10 +567,10 @@
     <control>
       <id>0</id>
       <type>image</type>
-      <posX>30</posX>
-      <posY>225</posY>
-      <width>280</width>
-      <height>280</height>
+      <posX>45</posX>
+      <posY>337</posY>
+      <width>420</width>
+      <height>420</height>
       <texture flipY="true" diffuse="Thumb_Mask2.png">#selectedthumb</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -580,10 +580,10 @@
     <control>
       <id>0</id>
       <type>image</type>
-      <posX>15</posX>
-      <posY>225</posY>
-      <width>300</width>
-      <height>222</height>
+      <posX>22</posX>
+      <posY>337</posY>
+      <width>450</width>
+      <height>333</height>
       <texture flipY="true" diffuse="Thumb_Mask2.png">#selectedthumb</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -594,13 +594,13 @@
       <id>0</id>
       <description>Artist/Track Description</description>
       <type>fadelabel</type>
-      <posX>330</posX>
-      <posY>220</posY>
-      <width>925</width>
+      <posX>495</posX>
+      <posY>330</posY>
+      <width>1387</width>
       <font>mediastream16tc</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>left</align>
       <label>#selecteditem</label>
@@ -612,13 +612,13 @@
       <id>0</id>
       <description>Track Title and Runtime</description>
       <type>fadelabel</type>
-      <posX>330</posX>
-      <posY>220</posY>
-      <width>925</width>
+      <posX>495</posX>
+      <posY>330</posY>
+      <width>1387</width>
       <font>mediastream16tc</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>left</align>
       <label>#selecteditem    [#mvCentral.Duration]</label>
@@ -630,13 +630,13 @@
       <id>0</id>
       <description>Album Indication text</description>
       <type>fadelabel</type>
-      <posX>330</posX>
-      <posY>220</posY>
-      <width>925</width>
+      <posX>495</posX>
+      <posY>330</posY>
+      <width>1387</width>
       <font>mediastream16tc</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>left</align>
       <label>#selecteditem    [#mvCentral.Translation.Album.Label]</label>
@@ -648,10 +648,10 @@
       <description>Album Star Rating Image</description>
       <type>image</type>
       <id>0</id>
-      <posX>330</posX>
-      <posY>251</posY>
-      <width>94</width>
-      <height>18</height>
+      <posX>495</posX>
+      <posY>376</posY>
+      <width>141</width>
+      <height>27</height>
       <texture>star#mvCentral.Album.Rating.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -661,14 +661,14 @@
       <id>0</id>
       <description>Born or Formed</description>
       <type>fadelabel</type>
-      <posX>330</posX>
-      <posY>251</posY>
-      <width>900</width>
+      <posX>495</posX>
+      <posY>376</posY>
+      <width>1350</width>
       <font>mediastream10c</font>
       <textcolor>ffffffff</textcolor>
       <align>left</align>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <label>#mvCentral.BornOrFormed</label>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -679,13 +679,13 @@
       <id>0</id>
       <description>Album Runtime and Tracks</description>
       <type>fadelabel</type>
-      <posX>330</posX>
-      <posY>275</posY>
-      <width>925</width>
+      <posX>495</posX>
+      <posY>412</posY>
+      <width>1387</width>
       <font>mediastream11c</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>left</align>
       <label>[#mvCentral.Translation.Tracks.Label #mvCentral.TracksForAlbum | #mvCentral.Translation.TotalRuntime.Label #mvCentral.AlbumTracksRuntime]</label>
@@ -697,13 +697,13 @@
       <id>0</id>
       <description>Tracks by Artist</description>
       <type>fadelabel</type>
-      <posX>330</posX>
-      <posY>275</posY>
-      <width>925</width>
+      <posX>495</posX>
+      <posY>412</posY>
+      <width>1387</width>
       <font>mediastream12c</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <align>left</align>
       <label>Music Videos: #mvCentral.VideosByArtist     [#mvCentral.Translation.TotalRuntime.Label #mvCentral.ArtistTracksRuntime]</label>
@@ -715,10 +715,10 @@
       <id>0</id>
       <description>Artist Bio</description>
       <type>textboxscrollup</type>
-      <posX>330</posX>
-      <posY>310</posY>
-      <width>930</width>
-      <height>175</height>
+      <posX>495</posX>
+      <posY>465</posY>
+      <width>1395</width>
+      <height>262</height>
       <label>#mvCentral.ArtistBio</label>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -731,10 +731,10 @@
       <id>0</id>
       <description>Artist Bio</description>
       <type>textboxscrollup</type>
-      <posX>330</posX>
-      <posY>310</posY>
-      <width>930</width>
-      <height>120</height>
+      <posX>495</posX>
+      <posY>465</posY>
+      <width>1395</width>
+      <height>180</height>
       <label>#mvCentral.TrackInfo</label>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -747,9 +747,9 @@
       <id>0</id>
       <description>Artist Tags</description>
       <type>fadelabel</type>
-      <posX>330</posX>
-      <posY>490</posY>
-      <width>925</width>
+      <posX>495</posX>
+      <posY>735</posY>
+      <width>1387</width>
       <font>mediastream10tc</font>
       <textcolor>ff006698</textcolor>
       <align>left</align>
@@ -762,9 +762,9 @@
       <id>0</id>
       <description>Artist Tags</description>
       <type>fadelabel</type>
-      <posX>330</posX>
-      <posY>510</posY>
-      <width>925</width>
+      <posX>495</posX>
+      <posY>765</posY>
+      <width>1387</width>
       <font>mediastream10tc</font>
       <textcolor>ff006698</textcolor>
       <align>left</align>
@@ -778,10 +778,10 @@
       <description>SD/HD Fullscreen/Widescreen</description>
       <type>image</type>
       <id>0</id>
-      <posX>330</posX>
-      <posY>470</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>495</posX>
+      <posY>705</posY>
+      <width>150</width>
+      <height>48</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#mvCentral.LocalMedia.videoresolution #mvCentral.LocalMedia.videoaspectratio.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>facadeview.filmstrip</visible>
@@ -790,10 +790,10 @@
       <description>Video Codecs</description>
       <type>image</type>
       <id>0</id>
-      <posX>430</posX>
-      <posY>470</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>645</posX>
+      <posY>705</posY>
+      <width>150</width>
+      <height>48</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#mvCentral.LocalMedia.videocodec.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>facadeview.filmstrip</visible>
@@ -803,10 +803,10 @@
       <description>Audio Codecs / Channels</description>
       <type>image</type>
       <id>0</id>
-      <posX>530</posX>
-      <posY>470</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>795</posX>
+      <posY>705</posY>
+      <width>150</width>
+      <height>48</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#mvCentral.LocalMedia.audio.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>facadeview.filmstrip</visible>
@@ -829,35 +829,35 @@
           <type>listcontrol</type>
           <onleft>2</onleft>
           <onright>2</onright>
-          <posX>760</posX>
-          <posY>232</posY>
-          <width>550</width>
-          <height>480</height>
+          <posX>1140</posX>
+          <posY>348</posY>
+          <width>825</width>
+          <height>720</height>
           <scrollOffset>1</scrollOffset>
-          <IconYOff>12</IconYOff>
-          <IconXOff>390</IconXOff>
-          <itemHeight>32</itemHeight>
-          <itemWidth>72</itemWidth>
-          <textXOff>-60</textXOff>
+          <IconYOff>18</IconYOff>
+          <IconXOff>585</IconXOff>
+          <itemHeight>48</itemHeight>
+          <itemWidth>108</itemWidth>
+          <textXOff>-90</textXOff>
           <textYOff>0</textYOff>
-          <textXOff2>500</textXOff2>
-          <textYOff2>21</textYOff2>
-          <textXOff3>21</textXOff3>
-          <textYOff3>22</textYOff3>
+          <textXOff2>750</textXOff2>
+          <textYOff2>31</textYOff2>
+          <textXOff3>31</textXOff3>
+          <textYOff3>33</textYOff3>
           <font2>mediastream9c</font2>
           <font3>mediastream9c</font3>
           <textcolor2>ff006698</textcolor2>
           <keepaspectratio>no</keepaspectratio>
-          <spinPosX>1175</spinPosX>
-          <spinPosY>681</spinPosY>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
           <spinAlign>Right</spinAlign>
           <spinColor>ff006698</spinColor>
           <textureUp>arrow_round_up_nofocus.png</textureUp>
           <textureDown>arrow_round_down_nofocus.png</textureDown>
           <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
           <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
           <suffix>|</suffix>
         </control>
         <control>
@@ -866,75 +866,75 @@
           <type>thumbnailpanel</type>
           <onleft>2</onleft>
           <onright>2</onright>
-          <posX>830</posX>
-          <posY>232</posY>
-          <width>500</width>
-          <height>480</height>
+          <posX>1245</posX>
+          <posY>348</posY>
+          <width>750</width>
+          <height>720</height>
           <textureUp>-</textureUp>
           <textureDown>-</textureDown>
-          <itemWidth>107</itemWidth>
-          <itemHeight>107</itemHeight>
-          <textureWidth>108</textureWidth>
-          <textureHeight>108</textureHeight>
-          <thumbWidth>100</thumbWidth>
-          <thumbHeight>100</thumbHeight>
-          <thumbPosX>4</thumbPosX>
-          <thumbPosY>4</thumbPosY>
+          <itemWidth>160</itemWidth>
+          <itemHeight>160</itemHeight>
+          <textureWidth>162</textureWidth>
+          <textureHeight>162</textureHeight>
+          <thumbWidth>150</thumbWidth>
+          <thumbHeight>150</thumbHeight>
+          <thumbPosX>6</thumbPosX>
+          <thumbPosY>6</thumbPosY>
           <imageFolderFocus>thumbborder3.png</imageFolderFocus>
           <font>font12</font>
           <suffix>|</suffix>
-          <textureWidthBig>213</textureWidthBig>
-          <textureHeightBig>213</textureHeightBig>
-          <itemWidthBig>215</itemWidthBig>
-          <itemHeightBig>215</itemHeightBig>
-          <thumbWidthBig>200</thumbWidthBig>
-          <thumbHeightBig>200</thumbHeightBig>
-          <thumbPosXBig>7</thumbPosXBig>
-          <thumbPosYBig>7</thumbPosYBig>
+          <textureWidthBig>319</textureWidthBig>
+          <textureHeightBig>319</textureHeightBig>
+          <itemWidthBig>322</itemWidthBig>
+          <itemHeightBig>322</itemHeightBig>
+          <thumbWidthBig>300</thumbWidthBig>
+          <thumbHeightBig>300</thumbHeightBig>
+          <thumbPosXBig>10</thumbPosXBig>
+          <thumbPosYBig>10</thumbPosYBig>
           <thumbZoom>no</thumbZoom>
           <keepaspectratio>no</keepaspectratio>
           <enableFocusZoom>no</enableFocusZoom>
-          <spinPosX>1175</spinPosX>
-          <spinPosY>681</spinPosY>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
           <spinAlign>Right</spinAlign>
           <spinColor>ff006698</spinColor>
           <textureUp>arrow_round_up_nofocus.png</textureUp>
           <textureDown>arrow_round_down_nofocus.png</textureDown>
           <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
           <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
         </control>
         <control>
           <description>Filmstrip view</description>
           <type>filmstrip</type>
           <dimColor>90ffffff</dimColor>
           <id>50</id>
-          <posX>30</posX>
-          <posY>554</posY>
+          <posX>45</posX>
+          <posY>831</posY>
           <scrollOffset>0</scrollOffset>
-          <width>1280</width>
-          <height>100</height>
-          <thumbWidth>100</thumbWidth>
-          <thumbHeight>100</thumbHeight>
+          <width>1920</width>
+          <height>150</height>
+          <thumbWidth>150</thumbWidth>
+          <thumbHeight>150</thumbHeight>
           <thumbPosX>0</thumbPosX>
           <thumbPosY>0</thumbPosY>
-          <itemWidth>124</itemWidth>
-          <itemHeight>100</itemHeight>
-          <textureWidth>100</textureWidth>
-          <textureHeight>100</textureHeight>
+          <itemWidth>186</itemWidth>
+          <itemHeight>150</itemHeight>
+          <textureWidth>150</textureWidth>
+          <textureHeight>150</textureHeight>
           <thumbs flipY="true" diffuse="Thumb_Mask.png">
           </thumbs>
           <showFrame>yes</showFrame>
           <showFolder>yes</showFolder>
           <showBackGround>no</showBackGround>
           <showInfoImage>no</showInfoImage>
-          <spinPosX>1175</spinPosX>
-          <spinPosY>681</spinPosY>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
           <spinAlign>Right</spinAlign>
           <spinColor>ff006698</spinColor>
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
           <textureUp>arrow_round_right_nofocus.png</textureUp>
           <textureDown>arrow_round_left_nofocus.png</textureDown>
           <textureUpFocus>arrow_round_right_focus.png</textureUpFocus>
@@ -950,30 +950,30 @@
           <dimColor>90ffffff</dimColor>
           <id>50</id>
           <posX>0</posX>
-          <posY>200</posY>
-          <width>1280</width>
-          <height>720</height>
+          <posY>300</posY>
+          <width>1920</width>
+          <height>1080</height>
           <onup>2</onup>
           <ondown>2</ondown>
           <selectedCard>0</selectedCard>
-          <cardWidth>360</cardWidth>
-          <cardHeight>360</cardHeight>
+          <cardWidth>540</cardWidth>
+          <cardHeight>540</cardHeight>
           <angle>45</angle>
-          <sideShift>220</sideShift>
-          <sideGap>150</sideGap>
-          <sideDepth>250</sideDepth>
+          <sideShift>330</sideShift>
+          <sideGap>225</sideGap>
+          <sideDepth>375</sideDepth>
           <offsetY>20</offsetY>
           <selectedOffsetY>0</selectedOffsetY>
           <speed>4</speed>
-          <backgroundHeight>250</backgroundHeight>
-          <backgroundWidth>1280</backgroundWidth>
+          <backgroundHeight>375</backgroundHeight>
+          <backgroundWidth>1920</backgroundWidth>
           <backgroundX>0</backgroundX>
-          <backgroundY>470</backgroundY>
+          <backgroundY>705</backgroundY>
           <backgroundDiffuse>FF000000</backgroundDiffuse>
           <background>filmstrip_overlay.png</background>
           <showBackground>yes</showBackground>
-          <foregroundHeight>720</foregroundHeight>
-          <foregroundWidth>1280</foregroundWidth>
+          <foregroundHeight>1080</foregroundHeight>
+          <foregroundWidth>1920</foregroundWidth>
           <foregroundX>0</foregroundX>
           <foregroundY>0</foregroundY>
           <foregroundDiffuse>FF000000</foregroundDiffuse>
@@ -982,8 +982,8 @@
           <showFrame>yes</showFrame>
           <frame>coverflow.poster.square.glass.png</frame>
           <frameFocus>coverflow.poster.square.glass.png</frameFocus>
-          <frameWidth>360</frameWidth>
-          <frameHeight>360</frameHeight>
+          <frameWidth>540</frameWidth>
+          <frameHeight>540</frameHeight>
           <spinSpeed>8</spinSpeed>
           <unfocusedAlpha>FF</unfocusedAlpha>
           <folderPrefix>
@@ -999,9 +999,9 @@
           <downloadColor>FF00FF00</downloadColor>
           <selectedColor>FFFFFFFF</selectedColor>
           <shadowAngle>45</shadowAngle>
-          <shadowDistance>2</shadowDistance>
+          <shadowDistance>3</shadowDistance>
           <shadowColor>FF222222</shadowColor>
-          <label1YOff>395</label1YOff>
+          <label1YOff>592</label1YOff>
           <pageSize>5</pageSize>
           <scrollbarBackground>bar_hor.png</scrollbarBackground>
           <scrollbarLeft>mouse_left_horizontal.png</scrollbarLeft>
@@ -1023,16 +1023,16 @@
                 <type>image</type>
                 <posX>0</posX>
                 <posY>0</posY>
-                <width>360</width>
-                <height>360</height>
+                <width>540</width>
+                <height>540</height>
                 <texture flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_square_mask.png">black.png</texture>
               </control>
               <control>
                 <description>General Info</description>
                 <type>fadelabel</type>
-                <posX>20</posX>
-                <posY>10</posY>
-                <width>320</width>
+                <posX>30</posX>
+                <posY>15</posY>
+                <width>480</width>
                 <label>#(L(171)) #mvCentral.ArtistName</label>
                 <font>mediastream10</font>
                 <align>left</align>
@@ -1041,9 +1041,9 @@
           		<control>
           			<description>Tracks by Artist</description>
           			<type>fadelabel</type>
-          			<posX>20</posX>
-          			<posY>32</posY>
-          			<width>320</width>
+          			<posX>30</posX>
+          			<posY>48</posY>
+          			<width>480</width>
           			<font>mediastream10</font>
           			<textcolor>gainsboro</textcolor>
           			<label>#mvCentral.Translation.Videos.Label: #mvCentral.VideosByArtist     [#mvCentral.Translation.TotalRuntime.Label #mvCentral.ArtistTracksRuntime]</label>
@@ -1052,9 +1052,9 @@
           		<control>
           			<description>Album Name</description>
           			<type>fadelabel</type>
-          			<posX>20</posX>
-          			<posY>32</posY>
-          			<width>320</width>
+          			<posX>30</posX>
+          			<posY>48</posY>
+          			<width>480</width>
           			<font>mediastream10</font>
           			<textcolor>gainsboro</textcolor>
           			<label>#mvCentral.Translation.Album.Label: #selecteditem</label>
@@ -1063,9 +1063,9 @@
           		<control>
           			<description>Video Title</description>
           			<type>fadelabel</type>
-          			<posX>20</posX>
-          			<posY>32</posY>
-          			<width>320</width>
+          			<posX>30</posX>
+          			<posY>48</posY>
+          			<width>480</width>
           			<font>mediastream10</font>
           			<textcolor>gainsboro</textcolor>
           			<label>#mvCentral.Translation.Video.Label: #selecteditem</label>
@@ -1074,9 +1074,9 @@
           		<control>
           			<description>Tracks on Album</description>
           			<type>fadelabel</type>
-          			<posX>20</posX>
-          			<posY>54</posY>
-          			<width>320</width>
+          			<posX>30</posX>
+          			<posY>81</posY>
+          			<width>480</width>
           			<font>mediastream10</font>
           			<textcolor>gainsboro</textcolor>
           			<label>[#mvCentral.Translation.Tracks.Label #mvCentral.TracksForAlbum | #mvCentral.Translation.TotalRuntime.Label #mvCentral.AlbumTracksRuntime]</label>
@@ -1085,9 +1085,9 @@
           	  <control>
           			<description>Album Genre</description>
           			<type>fadelabel</type>
-          			<posX>20</posX>
-          			<posY>64</posY>
-          			<width>320</width>
+          			<posX>30</posX>
+          			<posY>96</posY>
+          			<width>480</width>
           			<font>mediastream10</font>
                 <textcolor>ffa9d0f7</textcolor>
           			<align>left</align>
@@ -1097,10 +1097,10 @@
           		<control>
           			<description>Artist Bio</description>
           			<type>textboxscrollup</type>
-          			<posX>20</posX>
-          			<posY>94</posY>
-          			<width>320</width>
-          			<height>120</height>
+          			<posX>30</posX>
+          			<posY>141</posY>
+          			<width>480</width>
+          			<height>180</height>
                 <align>left</align>
                 <font>mediastream10</font>
                 <lineSpacing>2</lineSpacing>
@@ -1114,10 +1114,10 @@
           			<id>0</id>
           			<description>Track Description</description>
           			<type>textboxscrollup</type>
-          			<posX>20</posX>
-          			<posY>94</posY>
-          			<width>320</width>
-          			<height>120</height>
+          			<posX>30</posX>
+          			<posY>141</posY>
+          			<width>480</width>
+          			<height>180</height>
           			<label>#mvCentral.TrackInfo</label>
           			<seperator>-----------------------------------------------------------------------------------</seperator>
           			<font>mediastream10</font>
@@ -1128,10 +1128,10 @@
                <control>
                 <description>SD/HD Fullscreen/Widescreen</description>
                 <type>image</type>
-                <posX>20</posX>
-                <posY>40</posY>
-                <width>65</width>
-                <height>44</height>
+                <posX>30</posX>
+                <posY>60</posY>
+                <width>97</width>
+                <height>66</height>
                 <texture>Logos\#mvCentral.LocalMedia.videoresolution.png</texture>
            			<visible>string.equals(#mvCentral.TrackView, true)</visible>
               </control>
@@ -1139,10 +1139,10 @@
               <control>
                 <description>Video Codecs</description>
                 <type>image</type>
-                <posX>140</posX>
-                <posY>40</posY>
-                <width>65</width>
-                <height>44</height>
+                <posX>210</posX>
+                <posY>60</posY>
+                <width>97</width>
+                <height>66</height>
                 <texture>Logos\#mvCentral.LocalMedia.videocodec.png</texture>
            			<visible>string.equals(#mvCentral.TrackView, true)</visible>
               </control>
@@ -1150,10 +1150,10 @@
               <control>
                 <description>Audio Codecs / Channels</description>
                 <type>image</type>
-                <posX>250</posX>
-                <posY>40</posY>
-                <width>65</width>
-                <height>44</height>
+                <posX>375</posX>
+                <posY>60</posY>
+                <width>97</width>
+                <height>66</height>
                 <texture>Logos\#mvCentral.LocalMedia.audiochannels.png</texture>
            			<visible>string.equals(#mvCentral.TrackView, true)</visible>
               </control>
@@ -1173,14 +1173,14 @@
       <dimColor>50ffffff</dimColor>
       <control>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>Label OPTIONS</description>
@@ -1188,11 +1188,11 @@
         <label>496</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
+        <posX>1560</posX>
+        <posY>337</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>Label PLAYLIST</description>
@@ -1200,34 +1200,34 @@
         <label>136</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>340</posY>
+        <posX>1560</posX>
+        <posY>510</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <type>image</type>
-        <posX>1030</posX>
-        <posY>460</posY>
-        <width>230</width>
-        <height>5</height>
+        <posX>1545</posX>
+        <posY>690</posY>
+        <width>345</width>
+        <height>7</height>
         <colordiffuse>60ffffff</colordiffuse>
         <texture>osdprogressmid.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)+control.isvisible(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>120</height>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+        <posX>1560</posX>
+        <posY>375</posY>
+        <width>330</width>
+        <height>180</height>
         <layout>StackLayout</layout>
         <control>
           <description>Layout Menu button</description>
@@ -1325,9 +1325,9 @@
       <type>label</type>
       <description>Metadata Refresh Label</description>
       <id>0</id>
-      <posX>5</posX>
-      <posY>686</posY>
-      <width>800</width>
+      <posX>7</posX>
+      <posY>1029</posY>
+      <width>1200</width>
       <font>mediastream11</font>
       <label>Metadata Refresh: </label>
       <visible>control.isvisible(12)</visible>
@@ -1338,9 +1338,9 @@
       <type>label</type>
       <description>Progress percentage text (Format #.##% Complete)</description>
       <id>0</id>
-      <posX>590</posX>
-      <posY>686</posY>
-      <width>800</width>
+      <posX>885</posX>
+      <posY>1029</posY>
+      <width>1200</width>
       <font>mediastream11</font>
       <label>#mvCentral.Metadata.Update.Progress</label>
       <visible>control.isvisible(12)</visible>
@@ -1351,10 +1351,10 @@
       <description>Metadata Progress Bar (This is set hidden by MvC if value 0 or 100)</description>
       <type>progress</type>
       <id>12</id>
-      <posX>150</posX>
-      <posY>677</posY>
-      <width>440</width>
-      <height>40</height>
+      <posX>225</posX>
+      <posY>1015</posY>
+      <width>660</width>
+      <height>60</height>
       <label>-</label>
       <texturebg>osdprogressbackv.png</texturebg>
       <onlymidtexture>yes</onlymidtexture>
@@ -1372,4 +1372,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:05f56d3e95f6394388e12874a1e4a4be-->
+<!--Checksum:246b2101170e3bd4e9c87acf4cb71817-->

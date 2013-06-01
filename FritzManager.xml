@@ -15,53 +15,53 @@
       <description>Top Title Extension Background</description>
       <type>image</type>
       <id>1</id>
-      <posX>381</posX>
-      <posY>11</posY>
-      <width>486</width>
-      <height>36</height>
+      <posX>571</posX>
+      <posY>16</posY>
+      <width>729</width>
+      <height>54</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
       <animation effect="fade" time="300" delay="0">WindowClose</animation>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
     </control>
     <control>
       <id>1</id>
       <description>Top Title Background</description>
       <type>image</type>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <control>
       <description>Current Feed</description>
       <type>fadelabel</type>
       <id>4711</id>
-      <posX>839</posX>
-      <posY>13</posY>
-      <width>320</width>
+      <posX>1258</posX>
+      <posY>19</posY>
+      <width>480</width>
       <align>right</align>
       <label>-</label>
       <font>mediastream12c</font>
       <align>right</align>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
       <animation effect="fade" time="230" delay="0">WindowClose</animation>
-      <animation effect="slide" start="-514,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="bounce" time="700" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
     </control>
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
-      <buttonX>1232</buttonX>
-      <buttonY>50</buttonY>
-      <buttonwidth>48</buttonwidth>
-      <buttonheight>144</buttonheight>
+      <buttonX>1848</buttonX>
+      <buttonY>75</buttonY>
+      <buttonwidth>72</buttonwidth>
+      <buttonheight>216</buttonheight>
       <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
       <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
       <dimColor>00ffffff</dimColor>
@@ -69,27 +69,27 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <control>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <description>dummy button</description>
         <label>-</label>
         <type>button</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
@@ -97,22 +97,22 @@
         <label>499</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
+        <posX>1560</posX>
+        <posY>337</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>group element</description>
         <type>group</type>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+        <posX>1560</posX>
+        <posY>375</posY>
+        <width>330</width>
+        <height>1080</height>
         <layout>StackLayout</layout>
         <control>
           <id>2</id>
@@ -150,10 +150,10 @@
     <control>
       <id>1</id>
       <type>image</type>
-      <posX>90</posX>
-      <posY>250</posY>
-      <width>348</width>
-      <height>348</height>
+      <posX>135</posX>
+      <posY>375</posY>
+      <width>522</width>
+      <height>522</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
       <visible>!facadeview.filmstrip</visible>
@@ -163,10 +163,10 @@
       <description>Item Count Background</description>
       <type>image</type>
       <id>1</id>
-      <posX>1113</posX>
-      <posY>12</posY>
-      <width>159</width>
-      <height>27</height>
+      <posX>1669</posX>
+      <posY>18</posY>
+      <width>238</width>
+      <height>40</height>
       <texture>mediacountbackground.png</texture>
       <visible>Control.IsVisible(50)+!string.equals(#FritzManager.TotalMessages, )</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -176,9 +176,9 @@
       <type>label</type>
       <description>Number of Files Label</description>
       <id>0</id>
-      <posX>1246</posX>
-      <posY>14</posY>
-      <width>130</width>
+      <posX>1869</posX>
+      <posY>21</posY>
+      <width>195</width>
       <font>mediastream10c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
@@ -191,9 +191,9 @@
                      <type>fadelabel</type>
                      <description>Label</description>
                      <id>4711</id>
-                     <posX>240</posX>
-                     <posY>14</posY>
-                     <width>130</width>
+                     <posX>360</posX>
+                     <posY>21</posY>
+                     <width>195</width>
                      <font>mediastream10c</font>
                      <textcolor>ff006698</textcolor>
                      <align>right</align>
@@ -205,4 +205,4 @@
     <import>FritzManager.facade.xml</import>
   </controls>
 </window>
-<!--Checksum:d839770e25ff722b42c1836bd2804d1d-->
+<!--Checksum:be763b3204b81a717c898bf4e6f35d7a-->

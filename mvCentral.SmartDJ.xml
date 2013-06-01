@@ -13,8 +13,8 @@
       <type>image</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1281</width>
-      <height>720</height>
+      <width>1921</width>
+      <height>1080</height>
       <texture>mainoverlay.png</texture>
     </control>
     <control>
@@ -23,8 +23,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>51</height>
+      <width>1920</width>
+      <height>76</height>
       <texture>overlay_topbar.png</texture>
     </control>
     <control>
@@ -32,9 +32,9 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
     </control>
     <control>
@@ -42,33 +42,33 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
     </control>
     <control>
       <description>Top Title Extension Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>381</posX>
-      <posY>11</posY>
-      <width>486</width>
-      <height>36</height>
+      <posX>571</posX>
+      <posY>16</posY>
+      <width>729</width>
+      <height>54</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
       <animation effect="fade" time="300" delay="0">WindowClose</animation>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="300">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="600" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Musicvideos Title Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -77,9 +77,9 @@
       <type>fadelabel</type>
       <description>mvCentral Title</description>
       <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
@@ -91,10 +91,10 @@
       <description>Item Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1113</posX>
-      <posY>12</posY>
-      <width>159</width>
-      <height>27</height>
+      <posX>1669</posX>
+      <posY>18</posY>
+      <width>238</width>
+      <height>40</height>
       <texture>mediacountbackground.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -103,9 +103,9 @@
       <type>label</type>
       <description>Number of Files Label (Videos)</description>
       <id>0</id>
-      <posX>1246</posX>
-      <posY>14</posY>
-      <width>350</width>
+      <posX>1869</posX>
+      <posY>21</posY>
+      <width>525</width>
       <font>mediastream10c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
@@ -118,9 +118,9 @@
       <type>fadelabel</type>
       <description>SmartDJ Mode Indicator</description>
       <id>0</id>
-      <posX>839</posX>
-      <posY>13</posY>
-      <width>600</width>
+      <posX>1258</posX>
+      <posY>19</posY>
+      <width>900</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
@@ -132,10 +132,10 @@
       <description>Page Count Spin Control Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1013</posX>
-      <posY>684</posY>
-      <width>260</width>
-      <height>30</height>
+      <posX>1519</posX>
+      <posY>1026</posY>
+      <width>390</width>
+      <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -145,8 +145,8 @@
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1023</posX>
-      <posY>688</posY>
+      <posX>1534</posX>
+      <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -159,14 +159,14 @@
       <description>Genre/Custom1 Button</description>
       <type>button</type>
       <id>30</id>
-      <posX>30</posX>
-      <posY>260</posY>
-      <width>620</width>
+      <posX>45</posX>
+      <posY>390</posY>
+      <width>930</width>
       <onleft>20</onleft>
       <onright>50</onright>
       <onup>20</onup>
       <ondown>31</ondown>
-      <textXOff>5</textXOff>
+      <textXOff>7</textXOff>
       <disabledcolor>ff808080</disabledcolor>
       <label>-</label>
       <animation effect="fade" time="300" delay="300">WindowOpen</animation>
@@ -176,10 +176,10 @@
       <description>Tag/Custom2 Button</description>
       <type>button</type>
       <id>31</id>
-      <posX>30</posX>
-      <posY>300</posY>
-      <width>620</width>
-      <textXOff>5</textXOff>
+      <posX>45</posX>
+      <posY>450</posY>
+      <width>930</width>
+      <textXOff>7</textXOff>
       <onleft>20</onleft>
       <onright>50</onright>
       <onup>30</onup>
@@ -193,10 +193,10 @@
       <description>Style/Custom3 Button</description>
       <type>button</type>
       <id>32</id>
-      <posX>30</posX>
-      <posY>340</posY>
-      <width>620</width>
-      <textXOff>5</textXOff>
+      <posX>45</posX>
+      <posY>510</posY>
+      <width>930</width>
+      <textXOff>7</textXOff>
       <onleft>20</onleft>
       <onright>50</onright>
       <onup>31</onup>
@@ -210,10 +210,10 @@
       <description>Tone/Custom4 Button</description>
       <type>button</type>
       <id>33</id>
-      <posX>30</posX>
-      <posY>380</posY>
-      <width>620</width>
-      <textXOff>5</textXOff>
+      <posX>45</posX>
+      <posY>570</posY>
+      <width>930</width>
+      <textXOff>7</textXOff>
       <onleft>20</onleft>
       <onright>50</onright>
       <onup>32</onup>
@@ -227,10 +227,10 @@
       <description>Composer/Custom5 Button</description>
       <type>button</type>
       <id>34</id>
-      <posX>30</posX>
-      <posY>420</posY>
-      <width>620</width>
-      <textXOff>5</textXOff>
+      <posX>45</posX>
+      <posY>630</posY>
+      <width>930</width>
+      <textXOff>7</textXOff>
       <onleft>20</onleft>
       <onright>50</onright>
       <onup>33</onup>
@@ -244,10 +244,10 @@
       <description>Keyword/Custom6 Button</description>
       <type>button</type>
       <id>35</id>
-      <posX>30</posX>
-      <posY>460</posY>
-      <width>620</width>
-      <textXOff>5</textXOff>
+      <posX>45</posX>
+      <posY>690</posY>
+      <width>930</width>
+      <textXOff>7</textXOff>
       <onleft>50</onleft>
       <onright>50</onright>
       <onup>34</onup>
@@ -264,9 +264,9 @@
       <type>label</type>
       <description>Artists in Playlist</description>
       <id>37</id>
-      <posX>5</posX>
-      <posY>687</posY>
-      <width>700</width>
+      <posX>7</posX>
+      <posY>1030</posY>
+      <width>1050</width>
       <font>mediastream11c</font>
       <label>
       </label>
@@ -292,29 +292,29 @@
           <scrollOffset>3</scrollOffset>
           <onleft>30</onleft>
           <onright>20</onright>
-          <posX>700</posX>
-          <posY>270</posY>
-          <textXOff>-60</textXOff>
+          <posX>1050</posX>
+          <posY>405</posY>
+          <textXOff>-90</textXOff>
           <textYOff>0</textYOff>
-          <textXOff2>500</textXOff2>
-          <textYOff2>21</textYOff2>
-          <textXOff3>21</textXOff3>
-          <textYOff3>22</textYOff3>
+          <textXOff2>750</textXOff2>
+          <textYOff2>31</textYOff2>
+          <textXOff3>31</textXOff3>
+          <textYOff3>33</textYOff3>
           <font2>mediastream9c</font2>
           <textcolor2>ff006698</textcolor2>
           <keepaspectratio>no</keepaspectratio>
-          <textXOff>-40</textXOff>
-          <textXOff2>485</textXOff2>
+          <textXOff>-60</textXOff>
+          <textXOff2>727</textXOff2>
           <!-- Watched/Unwatched Icons -->
-          <IconYOff>13</IconYOff>
-          <IconXOff>10</IconXOff>
-          <itemHeight>18</itemHeight>
-          <itemWidth>72</itemWidth>
+          <IconYOff>19</IconYOff>
+          <IconXOff>15</IconXOff>
+          <itemHeight>27</itemHeight>
+          <itemWidth>108</itemWidth>
           <!-- Spin Controls -->
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
-          <spinPosX>1175</spinPosX>
-          <spinPosY>681</spinPosY>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
           <spinAlign>Right</spinAlign>
           <spinColor>ff006698</spinColor>
           <textureUp>arrow_round_up_nofocus.png</textureUp>
@@ -332,23 +332,23 @@
       <description>action menu</description>
       <defaultcontrol>20</defaultcontrol>
       <onexit>30</onexit>
-      <buttonX>1232</buttonX>
-      <buttonY>50</buttonY>
-      <buttonwidth>48</buttonwidth>
-      <buttonheight>144</buttonheight>
+      <buttonX>1848</buttonX>
+      <buttonY>75</buttonY>
+      <buttonwidth>72</buttonwidth>
+      <buttonheight>216</buttonheight>
       <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
       <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
       <dimColor>50ffffff</dimColor>
       <control>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
         <visible>![Control.HasFocus(30)|Control.HasFocus(31)|Control.HasFocus(32)|Control.HasFocus(33)|Control.HasFocus(34)|Control.HasFocus(35)|Control.HasFocus(50)]</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>Label OPTIONS</description>
@@ -356,11 +356,11 @@
         <label>496</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
+        <posX>1560</posX>
+        <posY>337</posY>
         <visible>![Control.HasFocus(30)|Control.HasFocus(31)|Control.HasFocus(32)|Control.HasFocus(33)|Control.HasFocus(34)|Control.HasFocus(35)|Control.HasFocus(50)]</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <description>Label PLAYLIST</description>
@@ -368,22 +368,22 @@
         <label>136</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>340</posY>
+        <posX>1560</posX>
+        <posY>510</posY>
         <visible>![Control.HasFocus(30)|Control.HasFocus(31)|Control.HasFocus(32)|Control.HasFocus(33)|Control.HasFocus(34)|Control.HasFocus(35)|Control.HasFocus(50)]</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <visible>![Control.HasFocus(30)|Control.HasFocus(31)|Control.HasFocus(32)|Control.HasFocus(33)|Control.HasFocus(34)|Control.HasFocus(35)|Control.HasFocus(50)]</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>120</height>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+        <posX>1560</posX>
+        <posY>375</posY>
+        <width>330</width>
+        <height>180</height>
         <onright>30</onright>
         <onleft>30</onleft>
         <layout>StackLayout(0,Vertical)</layout>
@@ -443,4 +443,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:8f12d7b410f0540e52dd538dea030ee9-->
+<!--Checksum:6afe5e1d2d684e827e340d795f451075-->

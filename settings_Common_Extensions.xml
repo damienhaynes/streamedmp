@@ -3,74 +3,71 @@
   <id>1001</id>
   <defaultcontrol>3</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:#(L(5))->#(L(300162))</define>
+  <define>#header.label:#(L(5))-&gt;#(L(300162))</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:3</define>
   <define>#defaultcontrol.onright:9995</define>
   <controls>
     <import>common.settings.xml</import>
     <import>common.time.xml</import>
-		
     <control>
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>235</posX>
-      <posY>95</posY>
-      <height>500</height>
-			<dimColor>ffFFFFFF</dimColor>
+      <posX>352</posX>
+      <posY>142</posY>
+      <height>750</height>
+      <dimColor>ffFFFFFF</dimColor>
       <layout>StackLayout</layout>
       <control Style="skinbutton">
         <description>Add</description>
         <type>button</type>
         <id>3</id>
         <label>300063</label>
-				<width>250</width>
+        <width>375</width>
         <onright>2</onright>
-				<onup>5</onup>
-				<font>mediastream10tc</font>
+        <onup>5</onup>
+        <font>mediastream10tc</font>
       </control>
       <control Style="skinbutton">
         <description>Remove</description>
         <type>button</type>
         <id>4</id>
         <label>300064</label>
-				<width>250</width>
+        <width>375</width>
         <onright>2</onright>
-				<font>mediastream10tc</font>
+        <font>mediastream10tc</font>
       </control>
       <control Style="skinbutton">
         <description>Default</description>
         <type>button</type>
         <id>5</id>
         <label>886</label>
-				<width>250</width>
+        <width>375</width>
         <onright>2</onright>
-				<ondown>3</ondown>
-				<font>mediastream10tc</font>
+        <ondown>3</ondown>
+        <font>mediastream10tc</font>
       </control>
     </control>
-		
-		<control>
+    <control>
       <description>Share folders list</description>
       <type>listcontrol</type>
       <id>2</id>
-      <posX>500</posX>
-      <posY>100</posY>
-      <height>600</height>
-      <width>270</width>
+      <posX>750</posX>
+      <posY>150</posY>
+      <height>900</height>
+      <width>405</width>
       <onleft>3</onleft>
-			<font>mediastream12c</font>
-			<textXOff>100</textXOff>
-			<textXOff2>350</textXOff2>
-			<textYOff>0</textYOff>
-			<textYOff2>0</textYOff2>
-			<spinPosX>2500</spinPosX>
-			<textureHeight>30</textureHeight>
-			<onright>#defaultcontrol.onright</onright>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <font>mediastream12c</font>
+      <textXOff>150</textXOff>
+      <textXOff2>525</textXOff2>
+      <textYOff>0</textYOff>
+      <textYOff2>0</textYOff2>
+      <spinPosX>3750</spinPosX>
+      <textureHeight>45</textureHeight>
+      <onright>#defaultcontrol.onright</onright>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-		
   </controls>
 </window>
-<!--Checksum:ec8dc32594c1cddd848007d6b4563968-->
+<!--Checksum:bffe5f644b0489fb839f0b9275fcbd58-->

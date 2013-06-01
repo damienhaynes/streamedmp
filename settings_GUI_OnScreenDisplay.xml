@@ -3,7 +3,7 @@
   <id>1006</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:#(L(5))->#(L(101021))->#(L(478))</define>
+  <define>#header.label:#(L(5))-&gt;#(L(101021))-&gt;#(L(478))</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9993</define>
@@ -14,92 +14,90 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>150</posY>
-      <width>595</width>
-      <height>500</height>
-			<dimColor>ffFFFFFF</dimColor>
+      <posX>324</posX>
+      <posY>225</posY>
+      <width>892</width>
+      <height>750</height>
+      <dimColor>ffFFFFFF</dimColor>
       <layout>StackLayout</layout>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>Display Timeout Heading</description>
         <type>button</type>
         <id>0</id>
         <font>mediastream12tc</font>
-				<label>300121</label>
-				<textXOff>35</textXOff>
+        <label>300121</label>
+        <textXOff>52</textXOff>
       </control>
       <control Style="settingsmainbutton">
         <description>DisplayTimeout button</description>
-				<type>button</type>
-				<id>2</id>
-				<label>300133</label>
-        <textXOff>35</textXOff>
-				<onup>4</onup>
-				<ondown>3</ondown>
+        <type>button</type>
+        <id>2</id>
+        <label>300133</label>
+        <textXOff>52</textXOff>
+        <onup>4</onup>
+        <ondown>3</ondown>
         <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>Zap Heading</description>
         <type>button</type>
         <id>0</id>
         <font>mediastream12tc</font>
-				<label>300130</label>
-				<textXOff>35</textXOff>
+        <label>300130</label>
+        <textXOff>52</textXOff>
       </control>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>Zap delay button</description>
-				<type>button</type>
-				<id>3</id>
-				<label>300131</label>
-        <textXOff>35</textXOff>
-				<onup>2</onup>
+        <type>button</type>
+        <id>3</id>
+        <label>300131</label>
+        <textXOff>52</textXOff>
+        <onup>2</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>ZapTimeout button</description>
-				<type>button</type>
-				<id>4</id>
-				<label>300132</label>
-        <textXOff>35</textXOff>
-				<ondown>2</ondown>
+        <type>button</type>
+        <id>4</id>
+        <label>300132</label>
+        <textXOff>52</textXOff>
+        <ondown>2</ondown>
         <onright>#defaultcontrol.onright</onright>
       </control>
-		</control>
-		
-		<control>
-			<description>Display Timeout value</description>
+    </control>
+    <control>
+      <description>Display Timeout value</description>
       <type>label</type>
       <id>1</id>
-      <posX>800</posX>
-      <posY>200</posY>
+      <posX>1200</posX>
+      <posY>300</posY>
       <label>#displayTimeout</label>
       <align>right</align>
       <font>mediastream12c</font>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-		<control>
-			<description>Zap Delay value</description>
+    <control>
+      <description>Zap Delay value</description>
       <type>label</type>
       <id>1</id>
-      <posX>800</posX>
-      <posY>284</posY>
+      <posX>1200</posX>
+      <posY>426</posY>
       <label>#zapDelay</label>
       <align>right</align>
       <font>mediastream12c</font>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-		<control>
-			<description>Zap Timeout value</description>
+    <control>
+      <description>Zap Timeout value</description>
       <type>label</type>
       <id>1</id>
-      <posX>800</posX>
-      <posY>327</posY>
+      <posX>1200</posX>
+      <posY>490</posY>
       <label>#zapTimeout</label>
       <align>right</align>
       <font>mediastream12c</font>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-    
   </controls>
 </window>
-<!--Checksum:b2e3e60c6fafc5e69b3d98db9fc5d4ed-->
+<!--Checksum:5f1e0df55fad6b9c9df1be1545eb7fe2-->

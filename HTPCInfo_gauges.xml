@@ -7,10 +7,10 @@
       <description>Processor Gauge</description>
       <type>image</type>
       <id>1</id>
-      <posX>50</posX>
-      <posY>250</posY>
-      <width>145</width>
-      <height>120</height>
+      <posX>75</posX>
+      <posY>375</posY>
+      <width>217</width>
+      <height>180</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.ProcessorGauge</texture>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
@@ -20,8 +20,8 @@
       <description>Processor Gauge Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>230</posY>
+      <posX>97</posX>
+      <posY>345</posY>
       <label>#HTPCInfo.TranslationProcessor</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -30,9 +30,9 @@
       <description>Processor Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>210</posX>
-      <posY>280</posY>
-      <width>195</width>
+      <posX>315</posX>
+      <posY>420</posY>
+      <width>292</width>
       <label>#HTPCInfo.TranslationProcessorUsage</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -41,8 +41,8 @@
       <description>Processor Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>430</posX>
-      <posY>280</posY>
+      <posX>645</posX>
+      <posY>420</posY>
       <label>#HTPCInfo.ProcessorUsage%</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -51,9 +51,9 @@
       <description>Processor Core Count Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>210</posX>
-      <posY>300</posY>
-      <width>195</width>
+      <posX>315</posX>
+      <posY>450</posY>
+      <width>292</width>
       <label>#HTPCInfo.TranslationProcessorCore</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -62,8 +62,8 @@
       <description>Processor Core Count</description>
       <type>label</type>
       <id>1</id>
-      <posX>430</posX>
-      <posY>300</posY>
+      <posX>645</posX>
+      <posY>450</posY>
       <label>#HTPCInfo.ProcessorCoresx #HTPCInfo.ProcessorManufacturer (#HTPCInfo.SensorTemperatureCPU/#HTPCInfo.SensorVoltageVcore/#HTPCInfo.SensorFan2)</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)+!string.equals(#HTPCInfo.SensorTemperatureCPU,#HTPCInfo.SensorTemperatureCPU)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -72,8 +72,8 @@
       <description>Processor Core Count</description>
       <type>label</type>
       <id>1</id>
-      <posX>430</posX>
-      <posY>300</posY>
+      <posX>645</posX>
+      <posY>450</posY>
       <label>#HTPCInfo.ProcessorCoresx #HTPCInfo.ProcessorManufacturer</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -82,9 +82,9 @@
       <description>Processor Usage Gauge Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>210</posX>
-      <posY>320</posY>
-      <width>195</width>
+      <posX>315</posX>
+      <posY>480</posY>
+      <width>292</width>
       <label>#HTPCInfo.TranslationProcessorType</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -93,8 +93,8 @@
       <description>Processor Core Count</description>
       <type>label</type>
       <id>1</id>
-      <posX>430</posX>
-      <posY>320</posY>
+      <posX>645</posX>
+      <posY>480</posY>
       <label>#HTPCInfo.ProcessorName</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -104,10 +104,10 @@
       <description>Memory Gauge</description>
       <type>image</type>
       <id>1</id>
-      <posX>50</posX>
-      <posY>400</posY>
-      <width>145</width>
-      <height>120</height>
+      <posX>75</posX>
+      <posY>600</posY>
+      <width>217</width>
+      <height>180</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.MemoryGauge</texture>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
@@ -117,9 +117,9 @@
       <description>Memory Gauge Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>380</posY>
-      <width>195</width>
+      <posX>97</posX>
+      <posY>570</posY>
+      <width>292</width>
       <label>#HTPCInfo.TranslationMemory</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -128,10 +128,10 @@
       <description>Memory Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>210</posX>
-      <posY>430</posY>
+      <posX>315</posX>
+      <posY>645</posY>
       <label>#HTPCInfo.TranslationMemoryUsage</label>
-      <width>195</width>
+      <width>292</width>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
@@ -139,8 +139,8 @@
       <description>Memory Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>430</posX>
-      <posY>430</posY>
+      <posX>645</posX>
+      <posY>645</posY>
       <label>#HTPCInfo.MemoryPercentUsed% (#HTPCInfo.MemoryAvailable)</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -149,10 +149,10 @@
       <description>Pagefile Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>210</posX>
-      <posY>450</posY>
+      <posX>315</posX>
+      <posY>675</posY>
       <label>#HTPCInfo.TranslationMemoryPagefileUsage</label>
-      <width>195</width>
+      <width>292</width>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
@@ -160,8 +160,8 @@
       <description>Pagefile Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>430</posX>
-      <posY>450</posY>
+      <posX>645</posX>
+      <posY>675</posY>
       <label>#HTPCInfo.PagefileUsed%</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -170,10 +170,10 @@
       <description>Memory Size Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>210</posX>
-      <posY>470</posY>
+      <posX>315</posX>
+      <posY>705</posY>
       <label>#HTPCInfo.TranslationMemorySize</label>
-      <width>195</width>
+      <width>292</width>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
     </control>
@@ -181,8 +181,8 @@
       <description>Memory Size</description>
       <type>label</type>
       <id>1</id>
-      <posX>430</posX>
-      <posY>470</posY>
+      <posX>645</posX>
+      <posY>705</posY>
       <label>#HTPCInfo.MemoryPhysical</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -193,10 +193,10 @@
       <description>Drive1 Gauge</description>
       <type>image</type>
       <id>1</id>
-      <posX>50</posX>
-      <posY>550</posY>
-      <width>68</width>
-      <height>63</height>
+      <posX>75</posX>
+      <posY>825</posY>
+      <width>102</width>
+      <height>94</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.Drive1Gauge</texture>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
@@ -207,10 +207,10 @@
       <description>Drive2 Gauge</description>
       <type>image</type>
       <id>1</id>
-      <posX>50</posX>
-      <posY>620</posY>
-      <width>68</width>
-      <height>63</height>
+      <posX>75</posX>
+      <posY>930</posY>
+      <width>102</width>
+      <height>94</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.Drive2Gauge</texture>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
@@ -221,10 +221,10 @@
       <description>Drive3 Gauge</description>
       <type>image</type>
       <id>1</id>
-      <posX>450</posX>
-      <posY>555</posY>
-      <width>68</width>
-      <height>63</height>
+      <posX>675</posX>
+      <posY>832</posY>
+      <width>102</width>
+      <height>94</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.Drive3Gauge</texture>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
@@ -235,10 +235,10 @@
       <description>Drive4 Gauge</description>
       <type>image</type>
       <id>1</id>
-      <posX>450</posX>
-      <posY>620</posY>
-      <width>68</width>
-      <height>63</height>
+      <posX>675</posX>
+      <posY>930</posY>
+      <width>102</width>
+      <height>94</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.Drive4Gauge</texture>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
@@ -249,10 +249,10 @@
       <description>Drive5 Gauge</description>
       <type>image</type>
       <id>1</id>
-      <posX>850</posX>
-      <posY>555</posY>
-      <width>68</width>
-      <height>63</height>
+      <posX>1275</posX>
+      <posY>832</posY>
+      <width>102</width>
+      <height>94</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#HTPCInfo.Drive5Gauge</texture>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
@@ -263,8 +263,8 @@
       <description>Drives Gauge Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>65</posX>
-      <posY>530</posY>
+      <posX>97</posX>
+      <posY>795</posY>
       <label>Harddisks</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -274,8 +274,8 @@
       <description>Drive 1 Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>130</posX>
-      <posY>555</posY>
+      <posX>195</posX>
+      <posY>832</posY>
       <label>#HTPCInfo.Drive1Name</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -284,8 +284,8 @@
       <description>Drive 1 Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>130</posX>
-      <posY>575</posY>
+      <posX>195</posX>
+      <posY>862</posY>
       <label>#HTPCInfo.Drive1PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.Drive1FreeSpace #HTPCInfo.TranslationFree)</label>
       <font>mediastream10</font>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
@@ -296,8 +296,8 @@
       <description>Drive 2 Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>130</posX>
-      <posY>625</posY>
+      <posX>195</posX>
+      <posY>937</posY>
       <label>#HTPCInfo.Drive2Name</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -306,8 +306,8 @@
       <description>Drive 2 Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>130</posX>
-      <posY>645</posY>
+      <posX>195</posX>
+      <posY>967</posY>
       <label>#HTPCInfo.Drive2PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.Drive2FreeSpace #HTPCInfo.TranslationFree)</label>
       <font>mediastream10</font>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
@@ -318,8 +318,8 @@
       <description>Drive 3 Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>530</posX>
-      <posY>555</posY>
+      <posX>795</posX>
+      <posY>832</posY>
       <label>#HTPCInfo.Drive3Name</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -328,8 +328,8 @@
       <description>Drive 3 Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>530</posX>
-      <posY>575</posY>
+      <posX>795</posX>
+      <posY>862</posY>
       <label>#HTPCInfo.Drive3PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.Drive3FreeSpace #HTPCInfo.TranslationFree)</label>
       <font>mediastream10</font>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
@@ -340,8 +340,8 @@
       <description>Drive 4 Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>530</posX>
-      <posY>625</posY>
+      <posX>795</posX>
+      <posY>937</posY>
       <label>#HTPCInfo.Drive4Name</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -350,8 +350,8 @@
       <description>Drive 4 Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>530</posX>
-      <posY>645</posY>
+      <posX>795</posX>
+      <posY>967</posY>
       <label>#HTPCInfo.Drive4PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.Drive4FreeSpace #HTPCInfo.TranslationFree)</label>
       <font>mediastream10</font>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
@@ -362,8 +362,8 @@
       <description>Drive 5 Usage Label</description>
       <type>label</type>
       <id>1</id>
-      <posX>930</posX>
-      <posY>555</posY>
+      <posX>1395</posX>
+      <posY>832</posY>
       <label>#HTPCInfo.Drive5Name</label>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
       <animation effect="fade" time="500">visiblechange</animation>
@@ -372,8 +372,8 @@
       <description>Drive 5 Usage</description>
       <type>label</type>
       <id>1</id>
-      <posX>930</posX>
-      <posY>575</posY>
+      <posX>1395</posX>
+      <posY>862</posY>
       <label>#HTPCInfo.Drive5PercentUsedSpace% #HTPCInfo.TranslationUsed (#HTPCInfo.Drive5FreeSpace #HTPCInfo.TranslationFree)</label>
       <font>mediastream10</font>
       <visible>string.equals(#HTPCInfo.SectionView, Gauges)</visible>
@@ -381,4 +381,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:960172c5db442ebbf5371d2396e0e52d-->
+<!--Checksum:e3ff5c565da97d6ab17b64fe224c87d6-->

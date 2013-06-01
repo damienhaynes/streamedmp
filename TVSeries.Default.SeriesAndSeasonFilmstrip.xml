@@ -5,10 +5,10 @@
       <description>Glasstitlebar (Graphical View)</description>
       <type>image</type>
       <id>0</id>
-      <posX>225</posX>
-      <posY>54</posY>
-      <width>512</width>
-      <height>43</height>
+      <posX>337</posX>
+      <posY>81</posY>
+      <width>768</width>
+      <height>64</height>
       <colordiffuse>ccffffff</colordiffuse>
       <texture>glasstitlebar.png</texture>
       <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]</visible>
@@ -19,10 +19,10 @@
       <description>Series Poster</description>
       <type>image</type>
       <id>63</id>
-      <posX>75</posX>
-      <posY>66</posY>
-      <width>278</width>
-      <height>418</height>
+      <posX>112</posX>
+      <posY>99</posY>
+      <width>417</width>
+      <height>627</height>
       <texture>#TVSeries.SeriesPoster</texture>
       <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -31,10 +31,10 @@
       <description>Season Cover Art</description>
       <type>image</type>
       <id>64</id>
-      <posX>75</posX>
-      <posY>66</posY>
-      <width>278</width>
-      <height>418</height>
+      <posX>112</posX>
+      <posY>99</posY>
+      <width>417</width>
+      <height>627</height>
       <texture>#TVSeries.SeasonPoster</texture>
       <visible>facadeview.filmstrip+control.isvisible(1238)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -43,10 +43,10 @@
       <description>Cover Art Glass Overlay</description>
       <type>image</type>
       <id>0</id>
-      <posX>75</posX>
-      <posY>66</posY>
-      <width>228</width>
-      <height>177</height>
+      <posX>112</posX>
+      <posY>99</posY>
+      <width>342</width>
+      <height>265</height>
       <texture>glassoverlay2.png</texture>
       <visible>facadeview.filmstrip+[Control.HasThumb(63)|Control.HasThumb(64)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -56,10 +56,10 @@
       <description>Series Watched Icon Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>321</posX>
-      <posY>130</posY>
-      <width>32</width>
-      <height>39</height>
+      <posX>481</posX>
+      <posY>195</posY>
+      <width>48</width>
+      <height>58</height>
       <texture>#StreamedMP.Icons.Background</texture>
       <visible>facadeview.filmstrip+[Control.HasThumb(63)|Control.HasThumb(64)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -68,10 +68,10 @@
       <description>Series Watched Icon</description>
       <type>image</type>
       <id>0</id>
-      <posX>327</posX>
-      <posY>133</posY>
-      <width>24</width>
-      <height>24</height>
+      <posX>490</posX>
+      <posY>199</posY>
+      <width>36</width>
+      <height>36</height>
       <texture>#StreamedMP.Icons.Watched</texture>
       <visible>facadeview.filmstrip+control.isvisible(1243)+control.isvisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -80,10 +80,10 @@
       <description>Series Un-Watched Icon</description>
       <type>image</type>
       <id>0</id>
-      <posX>327</posX>
-      <posY>133</posY>
-      <width>24</width>
-      <height>24</height>
+      <posX>490</posX>
+      <posY>199</posY>
+      <width>36</width>
+      <height>36</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
       <visible>facadeview.filmstrip+!control.isvisible(1243)+control.isvisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -92,10 +92,10 @@
       <description>Series Not Available and Watched Icon</description>
       <type>image</type>
       <id>0</id>
-      <posX>327</posX>
-      <posY>133</posY>
-      <width>24</width>
-      <height>24</height>
+      <posX>490</posX>
+      <posY>199</posY>
+      <width>36</width>
+      <height>36</height>
       <texture>#StreamedMP.Icons.NAWatched</texture>
       <visible>facadeview.filmstrip+control.isvisible(1243)+!control.isvisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -104,10 +104,10 @@
       <description>Series Not Available and Un-Watched Icon</description>
       <type>image</type>
       <id>0</id>
-      <posX>327</posX>
-      <posY>133</posY>
-      <width>24</width>
-      <height>24</height>
+      <posX>490</posX>
+      <posY>199</posY>
+      <width>36</width>
+      <height>36</height>
       <texture>#StreamedMP.Icons.NAUnWatched</texture>
       <visible>facadeview.filmstrip+!control.isvisible(1243)+!control.isvisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -116,9 +116,9 @@
       <description>Series Title</description>
       <type>label</type>
       <id>0</id>
-      <posX>410</posX>
-      <posY>63</posY>
-      <width>850</width>
+      <posX>615</posX>
+      <posY>94</posY>
+      <width>1275</width>
       <font>mediastream16tc</font>
       <label>#TVSeries.Series.Pretty_Name</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -129,9 +129,9 @@
       <description>Season Title</description>
       <type>label</type>
       <id>0</id>
-      <posX>410</posX>
-      <posY>63</posY>
-      <width>850</width>
+      <posX>615</posX>
+      <posY>94</posY>
+      <width>1275</width>
       <font>mediastream16tc</font>
       <label>#TVSeries.Series.Pretty_Name #TVSeries.Season.SeasonLabel</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -142,10 +142,10 @@
       <description>Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>410</posX>
-      <posY>100</posY>
-      <width>850</width>
-      <height>150</height>
+      <posX>615</posX>
+      <posY>150</posY>
+      <width>1275</width>
+      <height>225</height>
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
@@ -158,9 +158,9 @@
       <description>TVSeries Details Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>410</posX>
-      <posY>270</posY>
-      <width>300</width>
+      <posX>615</posX>
+      <posY>405</posY>
+      <width>450</width>
       <font>mediastream12tc</font>
       <label>#TVSeries.Translation.SeriesDetails.Label</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -170,9 +170,9 @@
     <control>
       <type>label</type>
       <label>#TVSeries.Series.DataPanelLine1Value</label>
-      <posX>410</posX>
-      <posY>297</posY>
-      <width>350</width>
+      <posX>615</posX>
+      <posY>445</posY>
+      <width>525</width>
       <font>mediastream10</font>
       <visible>facadeview.filmstrip</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -180,12 +180,12 @@
     <control>
       <type>label</type>
       <label>#TVSeries.Series.DataPanelLine2Value</label>
-      <posX>410</posX>
-      <posY>321</posY>
-      <width>360</width>
+      <posX>615</posX>
+      <posY>481</posY>
+      <width>540</width>
       <font>mediastream10</font>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.filmstrip</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -193,12 +193,12 @@
     <control>
       <type>label</type>
       <label>#TVSeries.Series.DataPanelLine5Value</label>
-      <posX>410</posX>
-      <posY>345</posY>
-      <width>360</width>
+      <posX>615</posX>
+      <posY>517</posY>
+      <width>540</width>
       <font>mediastream10</font>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.filmstrip</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -206,12 +206,12 @@
     <control>
       <type>label</type>
       <label>#TVSeries.Series.DataPanelLine41Value #TVSeries.Series.DataPanelLine42Value</label>
-      <posX>410</posX>
-      <posY>369</posY>
-      <width>360</width>
+      <posX>615</posX>
+      <posY>553</posY>
+      <width>540</width>
       <font>mediastream10</font>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(5555)+control.isvisible(5556)+!control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -219,12 +219,12 @@
     <control>
       <type>label</type>
       <label>#TVSeries.Series.DataPanelLine40Value #TVSeries.Series.DataPanelLine43Value</label>
-      <posX>410</posX>
-      <posY>369</posY>
-      <width>360</width>
+      <posX>615</posX>
+      <posY>553</posY>
+      <width>540</width>
       <font>mediastream10</font>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(5555)+control.isvisible(5556)+control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -232,12 +232,12 @@
     <control>
       <type>label</type>
       <label>#TVSeries.Series.DataPanelLine41Value #TVSeries.Series.DataPanelLine44Value</label>
-      <posX>410</posX>
-      <posY>369</posY>
-      <width>360</width>
+      <posX>615</posX>
+      <posY>553</posY>
+      <width>540</width>
       <font>mediastream10</font>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(5555)+!control.isvisible(5556)+control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -245,12 +245,12 @@
     <control>
       <type>label</type>
       <label>#TVSeries.Series.DataPanelLine41Value</label>
-      <posX>410</posX>
-      <posY>369</posY>
-      <width>360</width>
+      <posX>615</posX>
+      <posY>553</posY>
+      <width>540</width>
       <font>mediastream10</font>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(5555)+!control.isvisible(5556)+!control.isvisible(5560)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -258,12 +258,12 @@
     <control>
       <type>label</type>
       <label>#TVSeries.Translation.Rating.Label: N/A</label>
-      <posX>410</posX>
-      <posY>369</posY>
-      <width>360</width>
+      <posX>615</posX>
+      <posY>553</posY>
+      <width>540</width>
       <font>mediastream10</font>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.filmstrip+!control.isvisible(5555)+!control.isvisible(5556)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -272,9 +272,9 @@
       <description>TVSeries Episodes Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>410</posX>
-      <posY>400</posY>
-      <width>300</width>
+      <posX>615</posX>
+      <posY>600</posY>
+      <width>450</width>
       <font>mediastream12tc</font>
       <label>#TVSeries.Translation.Episodes.Label</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -284,12 +284,12 @@
     <control>
       <type>label</type>
       <label>#TVSeries.Series.DataPanelLine6Value</label>
-      <posX>410</posX>
-      <posY>425</posY>
-      <width>360</width>
+      <posX>615</posX>
+      <posY>637</posY>
+      <width>540</width>
       <font>mediastream10</font>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.filmstrip</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -297,12 +297,12 @@
     <control>
       <type>label</type>
       <label>#TVSeries.Series.DataPanelLine7Value</label>
-      <posX>410</posX>
-      <posY>449</posY>
-      <width>360</width>
+      <posX>615</posX>
+      <posY>673</posY>
+      <width>540</width>
       <font>mediastream10</font>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>2</shadowDistance>
+      <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <visible>facadeview.filmstrip</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -311,9 +311,9 @@
       <description>Actors Label</description>
       <type>label</type>
       <id>0</id>
-      <posX>850</posX>
-      <posY>270</posY>
-      <width>300</width>
+      <posX>1275</posX>
+      <posY>405</posY>
+      <width>450</width>
       <font>mediastream12tc</font>
       <label>#TVSeries.Translation.Actors.Label</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -323,10 +323,10 @@
     <control>
       <type>textboxscrollup</type>
       <label>#TVSeries.Series.Actors</label>
-      <posX>850</posX>
-      <posY>295</posY>
-      <width>360</width>
-      <height>195</height>
+      <posX>1275</posX>
+      <posY>442</posY>
+      <width>540</width>
+      <height>292</height>
       <seperator>==========================================</seperator>
       <font>mediastream10</font>
       <visible>facadeview.filmstrip</visible>
@@ -334,4 +334,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:3e7fa339b6bc2a1d3ade1dcc1a9c1635-->
+<!--Checksum:520bc104a38f8d9329d78499ce965ea8-->

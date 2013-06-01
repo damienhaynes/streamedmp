@@ -2,64 +2,61 @@
 <window>
   <controls>
     <!-- List View -->
-		<control>
+    <control>
       <description>Category Image</description>
       <type>image</type>
       <id>0</id>
-      <posX>100</posX>
-      <posY>300</posY>
-      <width>300</width>
-      <height>100</height>
+      <posX>150</posX>
+      <posY>450</posY>
+      <width>450</width>
+      <height>150</height>
       <texture flipY="true" diffuse="diffusemirrorwide.png">#OnlineVideos.HeaderImage</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="-1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-1200,0">WindowClose</animation>
       <visible>facadeview.list+!string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)+!string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+string.equals(#OnlineVideos.state,categories)</visible>
     </control>
-		
-		<control>
+    <control>
       <description>Thumbnail</description>
       <type>image</type>
       <id>88</id>
-      <posX>28</posX>
-      <posY>254</posY>
-      <height>180</height>
-      <width>250</width>
+      <posX>42</posX>
+      <posY>381</posY>
+      <height>270</height>
+      <width>375</width>
       <keepaspectratio>no</keepaspectratio>
       <zoom>no</zoom>
       <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-			<visible>facadeview.list+!control.isvisible(51)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)]+!string.equals(#OnlineVideos.state,categories)</visible>
+      <visible>facadeview.list+!control.isvisible(51)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)]+!string.equals(#OnlineVideos.state,categories)</visible>
     </control>
-		
-		<control>
+    <control>
       <type>textbox</type>
       <label>#selecteditem</label>
       <id>0</id>
-      <posX>300</posX>
-      <posY>250</posY>
-      <width>300</width>
-      <height>100</height>
+      <posX>450</posX>
+      <posY>375</posY>
+      <width>450</width>
+      <height>150</height>
       <font>mediastream14tc</font>
       <textcolor>ffffffff</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>4</shadowDistance>
+      <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <visible>facadeview.list+!control.isvisible(51)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)]+!string.equals(#selecteditem2,)+string.equals(#OnlineVideos.state,videos)</visible>
     </control>
-		
-		<control>
+    <control>
       <description>Summary</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>30</posX>
-      <posY>500</posY>
-      <width>610</width>
-      <height>150</height>
+      <posX>45</posX>
+      <posY>750</posY>
+      <width>915</width>
+      <height>225</height>
       <seperator>----------------------------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#OnlineVideos.desc</label>
@@ -67,14 +64,13 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <visible>facadeview.list+!control.isvisible(51)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)]</visible>
-    </control>		
-		
-		<control Style="smallTitleB">
+    </control>
+    <control Style="smallTitleB">
       <label>#OnlineVideos.Translation.Airdate.Label</label>
       <type>label</type>
-      <posX>300</posX>
-      <posY>392</posY>
-      <width>140</width>
+      <posX>450</posX>
+      <posY>588</posY>
+      <width>210</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <visible>facadeview.list+!control.isvisible(51)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)|string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+string.equals(#OnlineVideos.state,videos)+!string.equals(#selecteditem,..)+string.equals(#OnlineVideos.state,videos)+[!string.equals(#OnlineVideos.aired,)+!string.equals(#OnlineVideos.length,)]</visible>
@@ -83,21 +79,20 @@
       <id>0</id>
       <label>#(iif(eq(#OnlineVideos.aired,''),'N/A',#OnlineVideos.aired))</label>
       <type>label</type>
-      <posX>449</posX>
-      <posY>393</posY>
-      <width>140</width>
+      <posX>673</posX>
+      <posY>589</posY>
+      <width>210</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <visible>facadeview.list+!control.isvisible(51)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)|string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+string.equals(#OnlineVideos.state,videos)+!string.equals(#selecteditem,..)+string.equals(#OnlineVideos.state,videos)+[!string.equals(#OnlineVideos.aired,)+!string.equals(#OnlineVideos.length,)]</visible>
     </control>
-		
-		<control Style="smallTitleB">
+    <control Style="smallTitleB">
       <id>0</id>
       <label>#OnlineVideos.Translation.Runtime.Label</label>
       <type>label</type>
-      <posX>300</posX>
-      <posY>415</posY>
-      <width>140</width>
+      <posX>450</posX>
+      <posY>622</posY>
+      <width>210</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <visible>facadeview.list+!control.isvisible(51)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)|string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+string.equals(#OnlineVideos.state,videos)+!string.equals(#selecteditem,..)+string.equals(#OnlineVideos.state,videos)+[!string.equals(#OnlineVideos.aired,)+!string.equals(#OnlineVideos.length,)]</visible>
@@ -106,15 +101,14 @@
       <id>0</id>
       <label>#(iif(eq(#OnlineVideos.length,''),'N/A',#OnlineVideos.length))</label>
       <type>label</type>
-      <posX>449</posX>
-      <posY>416</posY>
-      <width>180</width>
-      <width>140</width>
+      <posX>673</posX>
+      <posY>623</posY>
+      <width>270</width>
+      <width>210</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <visible>facadeview.list+!control.isvisible(51)+![string.equals(#OnlineVideos.selectedSiteUtil,ITMovieTrailers)|string.equals(#OnlineVideos.selectedSiteUtil,IMDb)|string.equals(#OnlineVideos.selectedSiteUtil,YouTube)]+string.equals(#OnlineVideos.state,videos)+!string.equals(#selecteditem,..)+string.equals(#OnlineVideos.state,videos)+[!string.equals(#OnlineVideos.aired,)+!string.equals(#OnlineVideos.length,)]</visible>
     </control>
-		
   </controls>
 </window>
-<!--Checksum:fdef83c7a072a2085355f0e4872cb912-->
+<!--Checksum:067d1ecc0ca0e980e36c743ef9a76602-->

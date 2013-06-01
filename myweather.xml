@@ -12,8 +12,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#header.hover</texture>
       <animation effect="fade" time="400" delay="0">WindowOpen</animation>
     </control>
@@ -23,8 +23,8 @@
       <id>0</id>
       <posx>0</posx>
       <posy>0</posy>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>SMPbackgrounds\linkedweather\#WorldWeather.TodayIconNumber.jpg</texture>
       <visible>plugin.isenabled(World Weather)</visible>
     </control>
@@ -32,10 +32,10 @@
       <description>Current Weather BG</description>
       <type>image</type>
       <id>0</id>
-      <posX>135</posX>
-      <posY>95</posY>
-      <width>1010</width>
-      <height>510</height>
+      <posX>202</posX>
+      <posY>142</posY>
+      <width>1515</width>
+      <height>765</height>
       <texture>weatherframe.png</texture>
       <visible>control.isvisible(23)</visible>
       <animation effect="fade" time="300">WindowOpen</animation>
@@ -46,10 +46,10 @@
       <description>BUTTONS BG</description>
       <type>image</type>
       <id>0</id>
-      <posX>5</posX>
-      <posY>658</posY>
-      <width>1270</width>
-      <height>30</height>
+      <posX>7</posX>
+      <posY>987</posY>
+      <width>1905</width>
+      <height>45</height>
       <texture>buttonbar.png</texture>
       <animation effect="fade" time="200">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -58,9 +58,9 @@
       <description>location label</description>
       <type>label</type>
       <id>10</id>
-      <posX>15</posX>
-      <posY>662</posY>
-      <width>250</width>
+      <posX>22</posX>
+      <posY>993</posY>
+      <width>375</width>
       <font>mediastream10c</font>
       <label>-</label>
       <textcolor>White</textcolor>
@@ -71,8 +71,8 @@
       <description>update time </description>
       <type>label</type>
       <id>11</id>
-      <posX>1265</posX>
-      <posY>662</posY>
+      <posX>1897</posX>
+      <posY>993</posY>
       <label>-</label>
       <font>mediastream10</font>
       <textcolor>White</textcolor>
@@ -83,8 +83,8 @@
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>300</posX>
-      <posY>660</posY>
+      <posX>450</posX>
+      <posY>990</posY>
       <layout>StackLayout(0,Horizontal)</layout>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -97,8 +97,8 @@
         <font>mediastream11c</font>
         <textureFocus>dialogbigbuttonfo.png</textureFocus>
         <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
-        <width>162</width>
-        <height>26</height>
+        <width>243</width>
+        <height>38</height>
         <textalign>center</textalign>
         <textYOff>1</textYOff>
         <disabledcolor>ff909090</disabledcolor>
@@ -114,8 +114,8 @@
         <font>mediastream11c</font>
         <textureFocus>dialogbigbuttonfo.png</textureFocus>
         <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
-        <width>162</width>
-        <height>26</height>
+        <width>243</width>
+        <height>38</height>
         <textalign>center</textalign>
         <textYOff>1</textYOff>
         <disabledcolor>ff909090</disabledcolor>
@@ -130,8 +130,8 @@
         <font>mediastream11c</font>
         <textureFocus>dialogbigbuttonfo.png</textureFocus>
         <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
-        <width>162</width>
-        <height>26</height>
+        <width>243</width>
+        <height>38</height>
         <textalign>center</textalign>
         <textYOff>1</textYOff>
         <disabledcolor>ff909090</disabledcolor>
@@ -146,8 +146,8 @@
         <font>mediastream11c</font>
         <textureFocus>dialogbigbuttonfo.png</textureFocus>
         <textureNoFocus>dialogbigbuttonnf.png</textureNoFocus>
-        <width>162</width>
-        <height>26</height>
+        <width>243</width>
+        <height>38</height>
         <textalign>center</textalign>
         <textYOff>1</textYOff>
         <disabledcolor>ff909090</disabledcolor>
@@ -158,10 +158,10 @@
       <description>TWC Logo</description>
       <type>image</type>
       <id>101</id>
-      <posX>239</posX>
-      <posY>489</posY>
-      <width>114</width>
-      <height>85</height>
+      <posX>358</posX>
+      <posY>733</posY>
+      <width>171</width>
+      <height>127</height>
       <texture>-</texture>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -170,10 +170,10 @@
       <description>current weather icon</description>
       <type>image</type>
       <id>21</id>
-      <posX>380</posX>
-      <posY>140</posY>
-      <width>180</width>
-      <height>180</height>
+      <posX>570</posX>
+      <posY>210</posY>
+      <width>270</width>
+      <height>270</height>
       <texture>-</texture>
       <colorkey>FFFF00FF</colorkey>
       <colordiffuse>White:#20</colordiffuse>
@@ -184,9 +184,9 @@
       <description>Current Condition Label</description>
       <type>label</type>
       <id>22</id>
-      <posX>180</posX>
-      <posY>300</posY>
-      <width>230</width>
+      <posX>270</posX>
+      <posY>450</posY>
+      <width>345</width>
       <label>-</label>
       <align>left</align>
       <font>mediastream14tc</font>
@@ -198,8 +198,8 @@
       <description>Current Temp static label</description>
       <type>label</type>
       <id>223</id>
-      <posX>182</posX>
-      <posY>165</posY>
+      <posX>273</posX>
+      <posY>247</posY>
       <label>Temp</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
@@ -210,9 +210,9 @@
       <description>current temp label</description>
       <type>label</type>
       <id>23</id>
-      <posX>180</posX>
-      <posY>190</posY>
-      <height>72</height>
+      <posX>270</posX>
+      <posY>285</posY>
+      <height>108</height>
       <align>left</align>
       <label>-</label>
       <font>mediastream28tc</font>
@@ -224,8 +224,8 @@
       <description>current feels like static label</description>
       <type>label</type>
       <id>224</id>
-      <posX>180</posX>
-      <posY>430</posY>
+      <posX>270</posX>
+      <posY>645</posY>
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
@@ -236,8 +236,8 @@
       <description>current feels like label</description>
       <type>label</type>
       <id>24</id>
-      <posX>350</posX>
-      <posY>430</posY>
+      <posX>525</posX>
+      <posY>645</posY>
       <align>left</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -249,8 +249,8 @@
       <description>current UV Index static label</description>
       <type>label</type>
       <id>225</id>
-      <posX>180</posX>
-      <posY>530</posY>
+      <posX>270</posX>
+      <posY>795</posY>
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
@@ -261,8 +261,8 @@
       <description>current UV Index label</description>
       <type>label</type>
       <id>25</id>
-      <posX>350</posX>
-      <posY>530</posY>
+      <posX>525</posX>
+      <posY>795</posY>
       <align>left</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -274,8 +274,8 @@
       <description>current wind static label</description>
       <type>label</type>
       <id>226</id>
-      <posX>180</posX>
-      <posY>505</posY>
+      <posX>270</posX>
+      <posY>757</posY>
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
@@ -286,8 +286,8 @@
       <description>current wind label</description>
       <type>label</type>
       <id>26</id>
-      <posX>350</posX>
-      <posY>505</posY>
+      <posX>525</posX>
+      <posY>757</posY>
       <align>left</align>
       <font>mediastream11c</font>
       <textcolor>White</textcolor>
@@ -298,8 +298,8 @@
       <description>current dew static label</description>
       <type>label</type>
       <id>227</id>
-      <posX>180</posX>
-      <posY>455</posY>
+      <posX>270</posX>
+      <posY>682</posY>
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
@@ -310,8 +310,8 @@
       <description>current dew label</description>
       <type>label</type>
       <id>27</id>
-      <posX>350</posX>
-      <posY>455</posY>
+      <posX>525</posX>
+      <posY>682</posY>
       <align>left</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -323,8 +323,8 @@
       <description>current humidity static label</description>
       <type>label</type>
       <id>228</id>
-      <posX>180</posX>
-      <posY>480</posY>
+      <posX>270</posX>
+      <posY>720</posY>
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
@@ -335,8 +335,8 @@
       <description>current humidity label</description>
       <type>label</type>
       <id>28</id>
-      <posX>350</posX>
-      <posY>480</posY>
+      <posX>525</posX>
+      <posY>720</posY>
       <align>left</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -348,8 +348,8 @@
       <description>sun rise label</description>
       <type>label</type>
       <id>200</id>
-      <posX>350</posX>
-      <posY>530</posY>
+      <posX>525</posX>
+      <posY>795</posY>
       <align>left</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -360,8 +360,8 @@
       <description>sun rise static label</description>
       <type>label</type>
       <id>201</id>
-      <posX>180</posX>
-      <posY>530</posY>
+      <posX>270</posX>
+      <posY>795</posY>
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
@@ -371,8 +371,8 @@
       <description>sun set control</description>
       <type>label</type>
       <id>202</id>
-      <posX>350</posX>
-      <posY>555</posY>
+      <posX>525</posX>
+      <posY>832</posY>
       <align>left</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -383,8 +383,8 @@
       <description>sun set static label</description>
       <type>label</type>
       <id>203</id>
-      <posX>180</posX>
-      <posY>555</posY>
+      <posX>270</posX>
+      <posY>832</posY>
       <label>-</label>
       <font>mediastream11tc</font>
       <textcolor>White</textcolor>
@@ -395,9 +395,9 @@
       <description>DAY 0 LABEL</description>
       <type>label</type>
       <id>31</id>
-      <posX>-100</posX>
-      <posY>-100</posY>
-      <width>200</width>
+      <posX>-150</posX>
+      <posY>-150</posY>
+      <width>300</width>
       <align>left</align>
       <label>-</label>
       <font>mediastream11tc</font>
@@ -410,9 +410,9 @@
       <description>DAY 0 ICON</description>
       <type>image</type>
       <id>35</id>
-      <posX>-100</posX>
-      <posY>-100</posY>
-      <height>80</height>
+      <posX>-150</posX>
+      <posY>-150</posY>
+      <height>120</height>
       <texture>-</texture>
       <keepaspectratio>yes</keepaspectratio>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -422,8 +422,8 @@
       <description>DAY 0 MAX LABEL</description>
       <type>label</type>
       <id>0</id>
-      <posX>-100</posX>
-      <posY>-100</posY>
+      <posX>-150</posX>
+      <posY>-150</posY>
       <label>MAX</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -435,8 +435,8 @@
       <description>DAY 0 MAX VALUE</description>
       <type>label</type>
       <id>32</id>
-      <posX>-100</posX>
-      <posY>-100</posY>
+      <posX>-150</posX>
+      <posY>-150</posY>
       <align>right</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -448,8 +448,8 @@
       <description>DAY 0 MIN LABEL</description>
       <type>label</type>
       <id>0</id>
-      <posX>-100</posX>
-      <posY>-100</posY>
+      <posX>-150</posX>
+      <posY>-150</posY>
       <label>MIN</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -461,8 +461,8 @@
       <description>DAY 0 MIN VALUE</description>
       <type>label</type>
       <id>33</id>
-      <posX>-100</posX>
-      <posY>-100</posY>
+      <posX>-150</posX>
+      <posY>-150</posY>
       <align>right</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -474,8 +474,8 @@
       <description>DAY 0 GENERAL WEATHER</description>
       <type>label</type>
       <id>34</id>
-      <posX>-100</posX>
-      <posY>-100</posY>
+      <posX>-150</posX>
+      <posY>-150</posY>
       <label>-</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -487,9 +487,9 @@
       <description>DAY 1 LABEL</description>
       <type>label</type>
       <id>41</id>
-      <posX>650</posX>
-      <posY>111</posY>
-      <width>200</width>
+      <posX>975</posX>
+      <posY>166</posY>
+      <width>300</width>
       <align>left</align>
       <label>-</label>
       <font>mediastream11tc</font>
@@ -502,9 +502,9 @@
       <description>DAY 1 ICON</description>
       <type>image</type>
       <id>45</id>
-      <posX>1000</posX>
-      <posY>138</posY>
-      <height>80</height>
+      <posX>1500</posX>
+      <posY>207</posY>
+      <height>120</height>
       <texture>-</texture>
       <keepaspectratio>yes</keepaspectratio>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -514,8 +514,8 @@
       <description>DAY 1 MAX LABEL</description>
       <type>label</type>
       <id>0</id>
-      <posX>650</posX>
-      <posY>152</posY>
+      <posX>975</posX>
+      <posY>228</posY>
       <label>MAX</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -527,8 +527,8 @@
       <description>DAY 1 MAX VALUE</description>
       <type>label</type>
       <id>42</id>
-      <posX>760</posX>
-      <posY>150</posY>
+      <posX>1140</posX>
+      <posY>225</posY>
       <align>right</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -540,8 +540,8 @@
       <description>DAY 1 MIN LABEL</description>
       <type>label</type>
       <id>0</id>
-      <posX>650</posX>
-      <posY>177</posY>
+      <posX>975</posX>
+      <posY>265</posY>
       <label>MIN</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -553,8 +553,8 @@
       <description>DAY 1 MIN VALUE</description>
       <type>label</type>
       <id>43</id>
-      <posX>760</posX>
-      <posY>175</posY>
+      <posX>1140</posX>
+      <posY>262</posY>
       <align>right</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -566,8 +566,8 @@
       <description>DAY 1 GENERAL WEATHER</description>
       <type>label</type>
       <id>44</id>
-      <posX>850</posX>
-      <posY>155</posY>
+      <posX>1275</posX>
+      <posY>232</posY>
       <label>-</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -579,9 +579,9 @@
       <description>DAY 2 LABEL</description>
       <type>label</type>
       <id>51</id>
-      <posX>650</posX>
-      <posY>229</posY>
-      <width>200</width>
+      <posX>975</posX>
+      <posY>343</posY>
+      <width>300</width>
       <align>left</align>
       <label>-</label>
       <font>mediastream11tc</font>
@@ -594,9 +594,9 @@
       <description>DAY 2 ICON</description>
       <type>image</type>
       <id>55</id>
-      <posX>1000</posX>
-      <posY>262</posY>
-      <height>80</height>
+      <posX>1500</posX>
+      <posY>393</posY>
+      <height>120</height>
       <texture>-</texture>
       <keepaspectratio>yes</keepaspectratio>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -606,8 +606,8 @@
       <description>DAY 2 MAX LABEL</description>
       <type>label</type>
       <id>0</id>
-      <posX>650</posX>
-      <posY>279</posY>
+      <posX>975</posX>
+      <posY>418</posY>
       <label>MAX</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -619,8 +619,8 @@
       <description>DAY 2 MAX VALUE</description>
       <type>label</type>
       <id>52</id>
-      <posX>760</posX>
-      <posY>277</posY>
+      <posX>1140</posX>
+      <posY>415</posY>
       <align>right</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -632,8 +632,8 @@
       <description>DAY 2 MIN VALUE</description>
       <type>label</type>
       <id>0</id>
-      <posX>650</posX>
-      <posY>304</posY>
+      <posX>975</posX>
+      <posY>456</posY>
       <label>MIN</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -645,8 +645,8 @@
       <description>DAY 2 LOW VALUE</description>
       <type>label</type>
       <id>53</id>
-      <posX>760</posX>
-      <posY>302</posY>
+      <posX>1140</posX>
+      <posY>453</posY>
       <align>right</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -658,8 +658,8 @@
       <description>DAY 2 GENERAL WEATHER</description>
       <type>label</type>
       <id>54</id>
-      <posX>850</posX>
-      <posY>282</posY>
+      <posX>1275</posX>
+      <posY>423</posY>
       <label>-</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -671,9 +671,9 @@
       <description>DAY 3 LABEL</description>
       <type>label</type>
       <id>61</id>
-      <posX>650</posX>
-      <posY>354</posY>
-      <width>200</width>
+      <posX>975</posX>
+      <posY>531</posY>
+      <width>300</width>
       <align>left</align>
       <label>-</label>
       <font>mediastream11tc</font>
@@ -686,9 +686,9 @@
       <description>DAY 3 ICON</description>
       <type>image</type>
       <id>65</id>
-      <posX>1000</posX>
-      <posY>385</posY>
-      <height>80</height>
+      <posX>1500</posX>
+      <posY>577</posY>
+      <height>120</height>
       <texture>-</texture>
       <keepaspectratio>yes</keepaspectratio>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -698,8 +698,8 @@
       <description>DAY 3 MAX LABEL</description>
       <type>label</type>
       <id>0</id>
-      <posX>650</posX>
-      <posY>399</posY>
+      <posX>975</posX>
+      <posY>598</posY>
       <label>MAX</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -711,8 +711,8 @@
       <description>DAY 3 MAX VALUE</description>
       <type>label</type>
       <id>62</id>
-      <posX>760</posX>
-      <posY>397</posY>
+      <posX>1140</posX>
+      <posY>595</posY>
       <align>right</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -724,8 +724,8 @@
       <description>DAY 3 MIN LABEL</description>
       <type>label</type>
       <id>0</id>
-      <posX>650</posX>
-      <posY>424</posY>
+      <posX>975</posX>
+      <posY>636</posY>
       <label>MIN</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -737,8 +737,8 @@
       <description>DAY 3 MIN VALUE</description>
       <type>label</type>
       <id>63</id>
-      <posX>760</posX>
-      <posY>422</posY>
+      <posX>1140</posX>
+      <posY>633</posY>
       <align>right</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -750,8 +750,8 @@
       <description>DAY 3 GENERAL WEATHER</description>
       <type>label</type>
       <id>64</id>
-      <posX>850</posX>
-      <posY>402</posY>
+      <posX>1275</posX>
+      <posY>603</posY>
       <label>-</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -763,9 +763,9 @@
       <description>DAY 4 LABEL</description>
       <type>label</type>
       <id>71</id>
-      <posX>650</posX>
-      <posY>477</posY>
-      <width>200</width>
+      <posX>975</posX>
+      <posY>715</posY>
+      <width>300</width>
       <align>left</align>
       <label>-</label>
       <font>mediastream11tc</font>
@@ -778,9 +778,9 @@
       <description>DAY 4 ICON</description>
       <type>image</type>
       <id>75</id>
-      <posX>1000</posX>
-      <posY>506</posY>
-      <height>80</height>
+      <posX>1500</posX>
+      <posY>758</posY>
+      <height>120</height>
       <texture>-</texture>
       <keepaspectratio>yes</keepaspectratio>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -790,8 +790,8 @@
       <description>DAY 4 MAX LABEL</description>
       <type>label</type>
       <id>0</id>
-      <posX>650</posX>
-      <posY>522</posY>
+      <posX>975</posX>
+      <posY>783</posY>
       <label>MAX</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -803,8 +803,8 @@
       <description>DAY 4 MAX VALUE</description>
       <type>label</type>
       <id>72</id>
-      <posX>760</posX>
-      <posY>520</posY>
+      <posX>1140</posX>
+      <posY>780</posY>
       <align>right</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -816,8 +816,8 @@
       <description>DAY 4 MIN LABEL</description>
       <type>label</type>
       <id>0</id>
-      <posX>650</posX>
-      <posY>547</posY>
+      <posX>975</posX>
+      <posY>820</posY>
       <label>MIN</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -829,8 +829,8 @@
       <description>DAY 4 MIN VALUE</description>
       <type>label</type>
       <id>73</id>
-      <posX>760</posX>
-      <posY>545</posY>
+      <posX>1140</posX>
+      <posY>817</posY>
       <align>right</align>
       <label>-</label>
       <font>mediastream11c</font>
@@ -842,8 +842,8 @@
       <description>DAY 4 </description>
       <type>label</type>
       <id>74</id>
-      <posX>850</posX>
-      <posY>525</posY>
+      <posX>1275</posX>
+      <posY>787</posY>
       <label>-</label>
       <font>mediastream10tc</font>
       <textcolor>White</textcolor>
@@ -855,10 +855,10 @@
       <description>Satellite image</description>
       <type>image</type>
       <id>1000</id>
-      <posX>80</posX>
-      <posY>60</posY>
-      <width>1120</width>
-      <height>580</height>
+      <posX>120</posX>
+      <posY>90</posY>
+      <width>1680</width>
+      <height>870</height>
       <texture />
       <visible>no</visible>
       <colorkey>00000000</colorkey>
@@ -872,10 +872,10 @@
       <type>image</type>
       <id>1200</id>
       <label>-</label>
-      <posX>60</posX>
-      <posY>60</posY>
-      <width>1160</width>
-      <height>655</height>
+      <posX>90</posX>
+      <posY>90</posY>
+      <width>1740</width>
+      <height>982</height>
       <onleft>3</onleft>
       <onright>3</onright>
       <onup>3</onup>
@@ -886,4 +886,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:1a72af2c37cf592e4c4eaed38a850e61-->
+<!--Checksum:5f2ff820141c5285da7ad7fd1537a104-->

@@ -12,8 +12,8 @@
       <id>1</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#header.hover</texture>
     </control>
     <control>
@@ -22,8 +22,8 @@
       <id>1</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>60</height>
+      <width>1920</width>
+      <height>90</height>
       <texture>overlay_topbar.png</texture>
       <colordiffuse>c9ffffff</colordiffuse>
     </control>
@@ -32,9 +32,9 @@
       <type>image</type>
       <id>1</id>
       <posX>0</posX>
-      <posY>60</posY>
-      <width>1280</width>
-      <height>660</height>
+      <posY>90</posY>
+      <width>1920</width>
+      <height>990</height>
       <texture>osdbackground1.png</texture>
       <colordiffuse>f9ffffff</colordiffuse>
     </control>
@@ -42,28 +42,28 @@
       <id>1</id>
       <description>Top Title Background</description>
       <type>image</type>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <control>
       <id>1</id>
       <type>fadelabel</type>
       <description>Top Title</description>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>#header.label</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <import>common.time.xml</import>
@@ -76,20 +76,20 @@
       <description>group element</description>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <posX>60</posX>
-      <posY>600</posY>
+      <posX>90</posX>
+      <posY>900</posY>
       <control>
         <description>new channel group</description>
         <type>button</type>
         <id>6</id>
-        <width>400</width>
+        <width>600</width>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <height>40</height>
-        <width>350</width>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <height>60</height>
+        <width>525</width>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
@@ -102,14 +102,14 @@
         <description>channel type</description>
         <type>button</type>
         <id>7</id>
-        <width>400</width>
+        <width>600</width>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <height>40</height>
-        <width>350</width>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <height>60</height>
+        <width>525</width>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
@@ -125,9 +125,9 @@
       <description>Channel Groups</description>
       <type>label</type>
       <id>12</id>
-      <posX>100</posX>
-      <posY>160</posY>
-      <width>300</width>
+      <posX>150</posX>
+      <posY>240</posY>
+      <width>450</width>
       <align>center</align>
       <font>mediastream14tc</font>
       <textcolor>FFB2D4F5</textcolor>
@@ -138,10 +138,10 @@
       <description>List Background</description>
       <type>image</type>
       <id>1</id>
-      <posX>80</posX>
-      <posY>180</posY>
-      <width>350</width>
-      <height>290</height>
+      <posX>120</posX>
+      <posY>270</posY>
+      <width>525</width>
+      <height>435</height>
       <texture>pandora_tile.png</texture>
       <colordiffuse>eeffffff</colordiffuse>
     </control>
@@ -149,24 +149,24 @@
       <description>Channel Groups Listcontrol</description>
       <type>listcontrol</type>
       <id>9</id>
-      <posX>100</posX>
-      <posY>200</posY>
-      <width>300</width>
-      <height>250</height>
+      <posX>150</posX>
+      <posY>300</posY>
+      <width>450</width>
+      <height>375</height>
       <scrollOffset>2</scrollOffset>
-      <textXOff>10</textXOff>
-      <textYOff>2</textYOff>
-      <textXOff2>750</textXOff2>
-      <textYOff2>2</textYOff2>
-      <PinIconWidth>35</PinIconWidth>
-      <PinIconHeight>25</PinIconHeight>
-      <PinIconXOff>747</PinIconXOff>
-      <PinIconYOff>6</PinIconYOff>
-      <textureHeight>40</textureHeight>
-      <itemWidth>32</itemWidth>
-      <itemHeight>32</itemHeight>
-      <IconXOff>10</IconXOff>
-      <IconYOff>4</IconYOff>
+      <textXOff>15</textXOff>
+      <textYOff>3</textYOff>
+      <textXOff2>1125</textXOff2>
+      <textYOff2>3</textYOff2>
+      <PinIconWidth>52</PinIconWidth>
+      <PinIconHeight>37</PinIconHeight>
+      <PinIconXOff>1120</PinIconXOff>
+      <PinIconYOff>9</PinIconYOff>
+      <textureHeight>60</textureHeight>
+      <itemWidth>48</itemWidth>
+      <itemHeight>48</itemHeight>
+      <IconXOff>15</IconXOff>
+      <IconYOff>6</IconYOff>
       <keepaspectratio>yes</keepaspectratio>
       <font>mediastream13</font>
       <font2>mediastream10</font2>
@@ -182,10 +182,10 @@
       <downloadColor>ff666666</downloadColor>
       <downloadColor2>ff80ff80</downloadColor2>
       <spinfont>mediastream10</spinfont>
-      <spinWidth>50</spinWidth>
-      <spinHeight>37</spinHeight>
-      <spinPosX>405</spinPosX>
-      <spinPosY>418</spinPosY>
+      <spinWidth>75</spinWidth>
+      <spinHeight>55</spinHeight>
+      <spinPosX>607</spinPosX>
+      <spinPosY>627</spinPosY>
       <spinAlign>Right</spinAlign>
       <spaceBetweenItems>0</spaceBetweenItems>
       <unfocusedAlpha>160</unfocusedAlpha>
@@ -198,10 +198,10 @@
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>260</posX>
-      <posY>420</posY>
-      <width>150</width>
-      <height>32</height>
+      <posX>390</posX>
+      <posY>630</posY>
+      <width>225</width>
+      <height>48</height>
       <texture>mediacountbg_Spin.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -211,8 +211,8 @@
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>270</posX>
-      <posY>425</posY>
+      <posX>405</posX>
+      <posY>637</posY>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -225,9 +225,9 @@
       <description>Channels in Group</description>
       <type>label</type>
       <id>13</id>
-      <posX>500</posX>
-      <posY>160</posY>
-      <width>300</width>
+      <posX>750</posX>
+      <posY>240</posY>
+      <width>450</width>
       <align>center</align>
       <font>mediastream14tc</font>
       <textcolor>FFB2D4F5</textcolor>
@@ -238,10 +238,10 @@
       <description>Listcontrol Background Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>480</posX>
-      <posY>180</posY>
-      <width>350</width>
-      <height>540</height>
+      <posX>720</posX>
+      <posY>270</posY>
+      <width>525</width>
+      <height>810</height>
       <texture>pandora_tile.png</texture>
       <colordiffuse>eeffffff</colordiffuse>
     </control>
@@ -249,24 +249,24 @@
       <description>center list</description>
       <type>listcontrol</type>
       <id>10</id>
-      <posX>500</posX>
-      <posY>200</posY>
-      <width>300</width>
-      <height>500</height>
+      <posX>750</posX>
+      <posY>300</posY>
+      <width>450</width>
+      <height>750</height>
       <scrollOffset>2</scrollOffset>
-      <textXOff>10</textXOff>
-      <textYOff>2</textYOff>
-      <textXOff2>750</textXOff2>
-      <textYOff2>2</textYOff2>
-      <PinIconWidth>35</PinIconWidth>
-      <PinIconHeight>25</PinIconHeight>
-      <PinIconXOff>747</PinIconXOff>
-      <PinIconYOff>6</PinIconYOff>
-      <textureHeight>40</textureHeight>
-      <itemWidth>32</itemWidth>
-      <itemHeight>32</itemHeight>
-      <IconXOff>10</IconXOff>
-      <IconYOff>4</IconYOff>
+      <textXOff>15</textXOff>
+      <textYOff>3</textYOff>
+      <textXOff2>1125</textXOff2>
+      <textYOff2>3</textYOff2>
+      <PinIconWidth>52</PinIconWidth>
+      <PinIconHeight>37</PinIconHeight>
+      <PinIconXOff>1120</PinIconXOff>
+      <PinIconYOff>9</PinIconYOff>
+      <textureHeight>60</textureHeight>
+      <itemWidth>48</itemWidth>
+      <itemHeight>48</itemHeight>
+      <IconXOff>15</IconXOff>
+      <IconYOff>6</IconYOff>
       <keepaspectratio>yes</keepaspectratio>
       <font>mediastream13</font>
       <font2>mediastream10</font2>
@@ -281,10 +281,10 @@
       <remoteColor2>ffff00ff00</remoteColor2>
       <downloadColor>ff666666</downloadColor>
       <downloadColor2>ff80ff80</downloadColor2>
-      <spinWidth>46</spinWidth>
-      <spinHeight>33</spinHeight>
-      <spinPosX>800</spinPosX>
-      <spinPosY>665</spinPosY>
+      <spinWidth>69</spinWidth>
+      <spinHeight>49</spinHeight>
+      <spinPosX>1200</spinPosX>
+      <spinPosY>997</spinPosY>
       <spinAlign>Right</spinAlign>
       <ondown>10</ondown>
       <spaceBetweenItems>0</spaceBetweenItems>
@@ -298,10 +298,10 @@
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>655</posX>
-      <posY>665</posY>
-      <width>150</width>
-      <height>32</height>
+      <posX>982</posX>
+      <posY>997</posY>
+      <width>225</width>
+      <height>48</height>
       <texture>mediacountbg_Spin.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -311,8 +311,8 @@
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>665</posX>
-      <posY>670</posY>
+      <posX>997</posX>
+      <posY>1005</posY>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -325,9 +325,9 @@
       <description>Channel Not In Group</description>
       <type>label</type>
       <id>14</id>
-      <posX>900</posX>
-      <posY>160</posY>
-      <width>300</width>
+      <posX>1350</posX>
+      <posY>240</posY>
+      <width>450</width>
       <align>center</align>
       <font>mediastream14tc</font>
       <textcolor>FFB2D4F5</textcolor>
@@ -338,10 +338,10 @@
       <description>Listcontrol Background Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>880</posX>
-      <posY>180</posY>
-      <width>350</width>
-      <height>540</height>
+      <posX>1320</posX>
+      <posY>270</posY>
+      <width>525</width>
+      <height>810</height>
       <texture>pandora_tile.png</texture>
       <colordiffuse>eeffffff</colordiffuse>
     </control>
@@ -349,24 +349,24 @@
       <description>Channels not in Group Listcontrol</description>
       <type>listcontrol</type>
       <id>11</id>
-      <posX>900</posX>
-      <posY>200</posY>
-      <width>300</width>
-      <height>500</height>
+      <posX>1350</posX>
+      <posY>300</posY>
+      <width>450</width>
+      <height>750</height>
       <scrollOffset>2</scrollOffset>
-      <textXOff>10</textXOff>
-      <textYOff>2</textYOff>
-      <textXOff2>750</textXOff2>
-      <textYOff2>2</textYOff2>
-      <PinIconWidth>35</PinIconWidth>
-      <PinIconHeight>25</PinIconHeight>
-      <PinIconXOff>747</PinIconXOff>
-      <PinIconYOff>6</PinIconYOff>
-      <textureHeight>40</textureHeight>
-      <itemWidth>32</itemWidth>
-      <itemHeight>32</itemHeight>
-      <IconXOff>10</IconXOff>
-      <IconYOff>4</IconYOff>
+      <textXOff>15</textXOff>
+      <textYOff>3</textYOff>
+      <textXOff2>1125</textXOff2>
+      <textYOff2>3</textYOff2>
+      <PinIconWidth>52</PinIconWidth>
+      <PinIconHeight>37</PinIconHeight>
+      <PinIconXOff>1120</PinIconXOff>
+      <PinIconYOff>9</PinIconYOff>
+      <textureHeight>60</textureHeight>
+      <itemWidth>48</itemWidth>
+      <itemHeight>48</itemHeight>
+      <IconXOff>15</IconXOff>
+      <IconYOff>6</IconYOff>
       <keepaspectratio>yes</keepaspectratio>
       <font>mediastream13</font>
       <font2>mediastream10</font2>
@@ -381,10 +381,10 @@
       <remoteColor2>ffff00ff00</remoteColor2>
       <downloadColor>ff666666</downloadColor>
       <downloadColor2>ff80ff80</downloadColor2>
-      <spinWidth>46</spinWidth>
-      <spinHeight>33</spinHeight>
-      <spinPosX>1200</spinPosX>
-      <spinPosY>665</spinPosY>
+      <spinWidth>69</spinWidth>
+      <spinHeight>49</spinHeight>
+      <spinPosX>1800</spinPosX>
+      <spinPosY>997</spinPosY>
       <spinAlign>Right</spinAlign>
       <spaceBetweenItems>0</spaceBetweenItems>
       <unfocusedAlpha>160</unfocusedAlpha>
@@ -397,10 +397,10 @@
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1055</posX>
-      <posY>665</posY>
-      <width>150</width>
-      <height>32</height>
+      <posX>1582</posX>
+      <posY>997</posY>
+      <width>225</width>
+      <height>48</height>
       <texture>mediacountbg_Spin.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -410,8 +410,8 @@
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1065</posX>
-      <posY>670</posY>
+      <posX>1597</posX>
+      <posY>1005</posY>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -421,13 +421,13 @@
       <description>Info text</description>
       <type>textboxscrollup</type>
       <id>15</id>
-      <posX>50</posX>
-      <posY>500</posY>
-      <height>300</height>
-      <width>400</width>
+      <posX>75</posX>
+      <posY>750</posY>
+      <height>450</height>
+      <width>600</width>
       <font>mediastream12tc</font>
       <textcolor>FFFFFFFF</textcolor>
     </control>
   </controls>
 </window>
-<!--Checksum:3ab2ec6231150264641d3a73e0d1a49b-->
+<!--Checksum:284883ce5ce479de1fb6097154c50cdf-->

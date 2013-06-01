@@ -10,42 +10,42 @@
     <import>common.time.xml</import>
     <control Style="settingsmaintexturefo">
       <type>image</type>
-      <posY>269</posY>
+      <posY>403</posY>
       <visible>control.hasfocus(4)</visible>
     </control>
     <control Style="settingsmaintexturenf">
       <type>image</type>
-      <posY>269</posY>
+      <posY>403</posY>
       <visible>!control.hasfocus(4)</visible>
     </control>
     <control Style="settingsmaintexturefo">
       <type>image</type>
-      <posY>311</posY>
+      <posY>466</posY>
       <visible>control.hasfocus(5)</visible>
     </control>
     <control Style="settingsmaintexturenf">
       <type>image</type>
-      <posY>311</posY>
+      <posY>466</posY>
       <visible>!control.hasfocus(5)</visible>
     </control>
     <control Style="settingsmaintexturefo">
       <type>image</type>
-      <posY>353</posY>
+      <posY>529</posY>
       <visible>control.hasfocus(6)</visible>
     </control>
     <control Style="settingsmaintexturenf">
       <type>image</type>
-      <posY>353</posY>
+      <posY>529</posY>
       <visible>!control.hasfocus(6)</visible>
     </control>
     <control>
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>251</posX>
-      <posY>185</posY>
-      <width>595</width>
-      <height>500</height>
+      <posX>376</posX>
+      <posY>277</posY>
+      <width>892</width>
+      <height>750</height>
       <dimColor>ffFFFFFF</dimColor>
       <layout>StackLayout</layout>
       <control Style="settingsmaincheckbutton">
@@ -69,8 +69,8 @@
       <description>sleep time label</description>
       <type>label</type>
       <id>0</id>
-      <posX>251</posX>
-      <posY>110</posY>
+      <posX>376</posX>
+      <posY>165</posY>
       <label>CURRENT:</label>
       <align>left</align>
       <font>mediastream14c</font>
@@ -80,8 +80,8 @@
       <description>sleep time label</description>
       <type>label</type>
       <id>0</id>
-      <posX>747</posX>
-      <posY>110</posY>
+      <posX>1120</posX>
+      <posY>165</posY>
       <label>#currentsleeptime</label>
       <align>left</align>
       <font>mediastream14c</font>
@@ -91,8 +91,8 @@
       <description>Number of minutes until sleep</description>
       <type>label</type>
       <id>1</id>
-      <posX>251</posX>
-      <posY>277</posY>
+      <posX>376</posX>
+      <posY>415</posY>
       <label>865</label>
       <font>mediastream12c</font>
     </control>
@@ -103,8 +103,8 @@
       <orientation>vertical</orientation>
       <digits>2</digits>
       <id>4</id>
-      <posX>800</posX>
-      <posY>283</posY>
+      <posX>1200</posX>
+      <posY>424</posY>
       <showrange>no</showrange>
       <onup>7</onup>
       <ondown>5</ondown>
@@ -113,7 +113,7 @@
       <description>fade out volume</description>
       <type>checkmark</type>
       <id>5</id>
-      <posY>319</posY>
+      <posY>478</posY>
       <label>866</label>
       <onup>4</onup>
       <ondown>6</ondown>
@@ -122,11 +122,11 @@
       <description>shutdown pc</description>
       <type>checkmark</type>
       <id>6</id>
-      <posY>361</posY>
+      <posY>541</posY>
       <label>867</label>
       <onup>5</onup>
       <ondown>3</ondown>
     </control>
   </controls>
 </window>
-<!--Checksum:d1b87283ac7a6177554c64e833f5cda9-->
+<!--Checksum:0cbb9c979a467b0846cbb837fdc451d6-->

@@ -19,8 +19,8 @@
       <id>1</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#header.hover</texture>
     </control>
     <control>
@@ -29,8 +29,8 @@
       <id>1</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>black.png</texture>
       <colordiffuse>90ffffff</colordiffuse>
     </control>
@@ -40,8 +40,8 @@
       <id>1</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>60</height>
+      <width>1920</width>
+      <height>90</height>
       <texture>overlay_topbar.png</texture>
       <colordiffuse>c9ffffff</colordiffuse>
     </control>
@@ -50,9 +50,9 @@
       <type>image</type>
       <id>1</id>
       <posX>0</posX>
-      <posY>500</posY>
-      <width>1280</width>
-      <height>220</height>
+      <posY>750</posY>
+      <width>1920</width>
+      <height>330</height>
       <texture>osdbackground1.png</texture>
       <colordiffuse>a9ffffff</colordiffuse>
     </control>
@@ -60,36 +60,36 @@
       <id>1</id>
       <description>Top Title Background</description>
       <type>image</type>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <control>
       <id>1</id>
       <type>fadelabel</type>
       <description>Top Title</description>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>#header.label</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
-      <animation effect="slide" start="0,0" end="-514,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="0,0" end="-771,0" tween="quadratic" time="300" delay="0">WindowClose</animation>
       <animation effect="fade" time="150">WindowClose</animation>
     </control>
     <import>common.time.xml</import>
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>80</posX>
-      <posY>100</posY>
+      <posX>120</posX>
+      <posY>150</posY>
       <layout>StackLayout</layout>
       <control>
         <description>TVGuide</description>
@@ -103,10 +103,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <height>40</height>
-        <width>300</width>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <height>60</height>
+        <width>450</width>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
@@ -124,10 +124,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <width>450</width>
+        <height>60</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <ondown>4</ondown>
         <onright>99</onright>
         <textureFocus>tv_button_focus.png</textureFocus>
@@ -145,10 +145,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <width>450</width>
+        <height>60</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <hyperlink>603</hyperlink>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
@@ -169,10 +169,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <width>450</width>
+        <height>60</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <ondown>6</ondown>
         <onright>99</onright>
         <textureFocus>tv_button_focus.png</textureFocus>
@@ -193,10 +193,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <width>450</width>
+        <height>60</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
         <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
         <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
@@ -215,10 +215,10 @@
         <label>603</label>
         <onup>6</onup>
         <font>mediastream12tc</font>
-        <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <width>450</width>
+        <height>60</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <ondown>8</ondown>
         <onright>99</onright>
         <textureFocus>tv_button_focus.png</textureFocus>
@@ -239,10 +239,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <width>450</width>
+        <height>60</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <onright>99</onright>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
@@ -261,10 +261,10 @@
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
-        <width>300</width>
-        <height>40</height>
-        <textYOff>8</textYOff>
-        <textXOff>20</textXOff>
+        <width>450</width>
+        <height>60</height>
+        <textYOff>12</textYOff>
+        <textXOff>30</textXOff>
         <ondown>2</ondown>
         <onright>99</onright>
         <textureFocus>tv_button_focus.png</textureFocus>
@@ -279,10 +279,10 @@
       <description>TV background</description>
       <type>image</type>
       <id>1</id>
-      <posX>512</posX>
-      <posY>100</posY>
-      <width>644</width>
-      <height>379</height>
+      <posX>768</posX>
+      <posY>150</posY>
+      <width>966</width>
+      <height>568</height>
       <texture>tv_frame.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -292,10 +292,10 @@
       <description>video window</description>
       <type>videowindow</type>
       <id>99</id>
-      <posX>545</posX>
-      <posY>116</posY>
-      <width>577</width>
-      <height>325</height>
+      <posX>817</posX>
+      <posY>174</posY>
+      <width>865</width>
+      <height>487</height>
       <onup>8</onup>
       <ondown>10</ondown>
       <action>18</action>
@@ -305,10 +305,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>521</posX>
-      <posY>470</posY>
-      <width>628</width>
-      <height>20</height>
+      <posX>781</posX>
+      <posY>705</posY>
+      <width>942</width>
+      <height>30</height>
       <texture>osdprogressback.png</texture>
       <keepaspectratio>no</keepaspectratio>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -318,9 +318,9 @@
       <description>progress bar</description>
       <type>progress</type>
       <id>20</id>
-      <posX>511</posX>
-      <posY>470</posY>
-      <width>648</width>
+      <posX>766</posX>
+      <posY>705</posY>
+      <width>972</width>
       <label>#TV.View.Percentage</label>
       <visible>yes</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -330,8 +330,8 @@
       <description>Channel label</description>
       <type>label</type>
       <id>13</id>
-      <posX>1280</posX>
-      <posY>590</posY>
+      <posX>1920</posX>
+      <posY>885</posY>
       <label>602</label>
       <font>mediastream12tc</font>
       <align>right</align>
@@ -343,8 +343,8 @@
       <description>Current program time Shadow</description>
       <type>label</type>
       <id>1</id>
-      <posX>1142</posX>
-      <posY>68</posY>
+      <posX>1713</posX>
+      <posY>102</posY>
       <label>#TV.View.start - #TV.View.stop</label>
       <textcolor>ff111111</textcolor>
       <font>mediastream16tc</font>
@@ -356,8 +356,8 @@
       <description>Current program time</description>
       <type>label</type>
       <id>1</id>
-      <posX>1140</posX>
-      <posY>70</posY>
+      <posX>1710</posX>
+      <posY>105</posY>
       <label>#TV.View.start - #TV.View.stop</label>
       <font>mediastream16tc</font>
       <textcolor>ffffffff</textcolor>
@@ -369,9 +369,9 @@
       <description>Current Channelname Shadow</description>
       <type>fadelabel</type>
       <id>13</id>
-      <posX>222</posX>
-      <posY>509</posY>
-      <width>730</width>
+      <posX>333</posX>
+      <posY>763</posY>
+      <width>1095</width>
       <label>#TV.View.channel</label>
       <font>mediastream16tc</font>
       <align>left</align>
@@ -384,9 +384,9 @@
       <description>Current Channelname</description>
       <type>fadelabel</type>
       <id>13</id>
-      <posX>220</posX>
-      <posY>507</posY>
-      <width>730</width>
+      <posX>330</posX>
+      <posY>760</posY>
+      <width>1095</width>
       <label>#TV.View.channel</label>
       <font>mediastream16tc</font>
       <align>left</align>
@@ -399,9 +399,9 @@
       <description>Current program title Shadow</description>
       <type>fadelabel</type>
       <id>13</id>
-      <posX>222</posX>
-      <posY>542</posY>
-      <width>800</width>
+      <posX>333</posX>
+      <posY>813</posY>
+      <width>1200</width>
       <label>#TV.View.title</label>
       <font>mediastream14tc</font>
       <textcolor>ff222222</textcolor>
@@ -412,9 +412,9 @@
       <description>Current program title</description>
       <type>fadelabel</type>
       <id>13</id>
-      <posX>220</posX>
-      <posY>540</posY>
-      <width>800</width>
+      <posX>330</posX>
+      <posY>810</posY>
+      <width>1200</width>
       <label>#TV.View.title</label>
       <font>mediastream14tc</font>
       <textcolor>ffffffff</textcolor>
@@ -425,9 +425,9 @@
       <description>Current program genre Shadow</description>
       <type>fadelabel</type>
       <id>13</id>
-      <posX>1270</posX>
-      <posY>514</posY>
-      <width>300</width>
+      <posX>1905</posX>
+      <posY>771</posY>
+      <width>450</width>
       <label>#TV.View.genre</label>
       <font>mediastream12tc</font>
       <align>right</align>
@@ -439,9 +439,9 @@
       <description>Current program genre</description>
       <type>fadelabel</type>
       <id>13</id>
-      <posX>1270</posX>
-      <posY>516</posY>
-      <width>300</width>
+      <posX>1905</posX>
+      <posY>774</posY>
+      <width>450</width>
       <label>#TV.View.genre</label>
       <font>mediastream12tc</font>
       <align>right</align>
@@ -453,10 +453,10 @@
       <description>Description</description>
       <type>textboxscrollup</type>
       <id>15</id>
-      <posX>220</posX>
-      <posY>570</posY>
-      <width>1000</width>
-      <height>135</height>
+      <posX>330</posX>
+      <posY>855</posY>
+      <width>1500</width>
+      <height>202</height>
       <seperator>__________________________________________________________________________________________________________</seperator>
       <label>#TV.View.description</label>
       <font>font14</font>
@@ -467,23 +467,23 @@
       <description>Current Channel Thumb</description>
       <type>image</type>
       <id>204</id>
-      <posX>25</posX>
-      <posY>540</posY>
-      <width>150</width>
-      <height>150</height>
+      <posX>37</posX>
+      <posY>810</posY>
+      <width>225</width>
+      <height>225</height>
       <texture flipY="true" diffuse="diffusemirrorwide.png">#TV.View.thumb</texture>
       <keepaspectratio>yes</keepaspectratio>
-      <animation effect="slide" start="0,-50" tween="bounce" time="700" delay="100">WindowOpen</animation>
+      <animation effect="slide" start="0,-75" tween="bounce" time="700" delay="100">WindowOpen</animation>
       <animation effect="rotatey" start="0" end="-131" center="15,0" time="500" reversible="false">WindowClose</animation>
     </control>
     <control>
       <description>record pin</description>
       <type>image</type>
       <id>24</id>
-      <posX>14</posX>
-      <posY>16</posY>
-      <width>18</width>
-      <height>18</height>
+      <posX>21</posX>
+      <posY>24</posY>
+      <width>27</width>
+      <height>27</height>
       <visible>no</visible>
       <texture>tvguide_record_button.png</texture>
       <animation effect="fade" start="20" time="2000" condition="true" pulse="true">Conditional</animation>
@@ -492,4 +492,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:206a5f019af09fcbc90a0b477099d2b2-->
+<!--Checksum:a6b6d9c5659ff92dd632096f5e26a643-->

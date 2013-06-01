@@ -5,15 +5,15 @@
       <description>Item Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1045</posX>
-      <posY>13</posY>
-      <width>222</width>
-      <height>28</height>
+      <posX>1567</posX>
+      <posY>19</posY>
+      <width>333</width>
+      <height>42</height>
       <texture>mediacountbg.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <visible>control.isvisible(50)</visible>
     </control>
     <control>
@@ -21,16 +21,16 @@
       <type>label</type>
       <label>507</label>
       <id>0</id>
-      <width>135</width>
-      <posX>1057</posX>
-      <posY>17</posY>
+      <width>202</width>
+      <posX>1585</posX>
+      <posY>25</posY>
       <align>left</align>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <visible>control.isvisible(50)</visible>
     </control>
     <control>
@@ -38,15 +38,15 @@
       <type>label</type>
       <label>#UpdateControl.AvailableUpdateSelectionCount/#UpdateControl.AvailableUpdateCount</label>
       <id>0</id>
-      <posX>1238</posX>
-      <posY>15</posY>
+      <posX>1857</posX>
+      <posY>22</posY>
       <font>mediastream11c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <visible>control.isvisible(50)+!string.equals(#UpdateControl.AvailableUpdateCount,0)</visible>
     </control>
     <control>
@@ -54,15 +54,15 @@
       <type>label</type>
       <label>#UpdateControl.InstalledUpdateCount</label>
       <id>0</id>
-      <posX>1238</posX>
-      <posY>15</posY>
+      <posX>1857</posX>
+      <posY>22</posY>
       <font>mediastream11c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <visible>control.isvisible(50)+!string.equals(#UpdateControl.InstalledUpdateCount,0)</visible>
     </control>
     <control>
@@ -70,8 +70,8 @@
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1023</posX>
-      <posY>688</posY>
+      <posX>1534</posX>
+      <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="150">WindowOpen</animation>
@@ -81,39 +81,39 @@
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1013</posX>
-      <posY>684</posY>
-      <width>260</width>
-      <height>30</height>
+      <posX>1519</posX>
+      <posY>1026</posY>
+      <width>390</width>
+      <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>!facadeview.filmstrip</visible>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <description>listcontrol</description>
       <type>listcontrol</type>
       <id>50</id>
-      <posX>270</posX>
-      <posY>500</posY>
-      <height>220</height>
-      <width>1030</width>
+      <posX>405</posX>
+      <posY>750</posY>
+      <height>330</height>
+      <width>1545</width>
       <onleft>2</onleft>
       <onright>2</onright>
       <scrollOffset>1</scrollOffset>
-      <textXOff>12</textXOff>
-      <itemWidth>25</itemWidth>
-      <itemHeight>25</itemHeight>
-      <IconXOff>22</IconXOff>
-      <IconYOff>10</IconYOff>
-      <PinIconXOff>2</PinIconXOff>
-      <PinIconYOff>10</PinIconYOff>
-      <spinWidth>50</spinWidth>
-      <spinHeight>37</spinHeight>
-      <spinPosX>1175</spinPosX>
-      <spinPosY>681</spinPosY>
+      <textXOff>18</textXOff>
+      <itemWidth>37</itemWidth>
+      <itemHeight>37</itemHeight>
+      <IconXOff>33</IconXOff>
+      <IconYOff>15</IconYOff>
+      <PinIconXOff>3</PinIconXOff>
+      <PinIconYOff>15</PinIconYOff>
+      <spinWidth>75</spinWidth>
+      <spinHeight>55</spinHeight>
+      <spinPosX>1762</spinPosX>
+      <spinPosY>1021</spinPosY>
       <spinAlign>Right</spinAlign>
       <spinColor>ff006698</spinColor>
       <textureUp>arrow_round_up_nofocus.png</textureUp>
@@ -125,4 +125,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:7a9c1cbceebc206c8bf408867f7ad10b-->
+<!--Checksum:43bdd536ffaf56a03bc27289dbbff698-->

@@ -9,10 +9,10 @@
       <description>Dialog Headline Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>175</posX>
-      <posY>140</posY>
-      <width>930</width>
-      <height>360</height>
+      <posX>262</posX>
+      <posY>210</posY>
+      <width>1395</width>
+      <height>540</height>
       <texture>subsearchbg.png</texture>
     </control>
     <!-- *** MediaTip Logo *** -->
@@ -20,10 +20,10 @@
       <description>Dialog Headline Logo</description>
       <type>image</type>
       <id>0</id>
-      <posX>1050</posX>
-      <posY>152</posY>
-      <width>45</width>
-      <height>45</height>
+      <posX>1575</posX>
+      <posY>228</posY>
+      <width>67</width>
+      <height>67</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>mediatip_logo.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -34,8 +34,8 @@
       <description>Dialog Headline</description>
       <type>label</type>
       <id>10</id>
-      <posX>640</posX>
-      <posY>175</posY>
+      <posX>960</posX>
+      <posY>262</posY>
       <align>center</align>
       <font>mediastream14tc</font>
       <textcolor>ffffffff</textcolor>
@@ -48,10 +48,10 @@
       <description>Dialog Headline Image</description>
       <type>image</type>
       <id>11</id>
-      <posX>185</posX>
-      <posY>148</posY>
-      <width>50</width>
-      <height>50</height>
+      <posX>277</posX>
+      <posY>222</posY>
+      <width>75</width>
+      <height>75</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#MediaTip.HeadlineImage</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -62,9 +62,9 @@
       <description>Line 1</description>
       <type>fadelabel</type>
       <id>22</id>
-      <posX>195</posX>
-      <posY>225</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>337</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.DescriptionArtist: #MediaTip.Artist, #MediaTip.DescriptionYear: #MediaTip.Year</label>
@@ -75,9 +75,9 @@
       <description>Line 2</description>
       <type>fadelabel</type>
       <id>21</id>
-      <posX>195</posX>
-      <posY>275</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>412</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.DescriptionTrack #MediaTip.Track - #MediaTip.DescriptionTitle: #MediaTip.Title, #MediaTip.DescriptionAlbum: #MediaTip.Album</label>
@@ -88,9 +88,9 @@
       <description>Line 3</description>
       <type>fadelabel</type>
       <id>23</id>
-      <posX>195</posX>
-      <posY>325</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>487</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.DescriptionGenre: #MediaTip.Genre</label>
@@ -101,9 +101,9 @@
       <description>Line 4</description>
       <type>fadelabel</type>
       <id>24</id>
-      <posX>195</posX>
-      <posY>375</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>562</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>Audio: #MediaTip.AudioCodec, #MediaTip.AudioType, #MediaTip.AudioBitRate, #MediaTip.AudioSamplingRate</label>
@@ -114,9 +114,9 @@
       <description>Line 5</description>
       <type>fadelabel</type>
       <id>20</id>
-      <posX>195</posX>
-      <posY>443</posY>
-      <width>800</width>
+      <posX>292</posX>
+      <posY>664</posY>
+      <width>1200</width>
       <font>mediastream12c</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.FileName</label>
@@ -127,9 +127,9 @@
       <description>Line 6</description>
       <type>fadelabel</type>
       <id>201962</id>
-      <posX>195</posX>
-      <posY>468</posY>
-      <width>500</width>
+      <posX>292</posX>
+      <posY>702</posY>
+      <width>750</width>
       <font>mediastream12c</font>
       <textcolor>ffffffff</textcolor>
       <visible>control.hastext(20)</visible>
@@ -142,10 +142,10 @@
       <type>image</type>
       <description>Cover</description>
       <id>25</id>
-      <posX>873</posX>
-      <posY>220</posY>
-      <width>204</width>
-      <height>202</height>
+      <posX>1309</posX>
+      <posY>330</posY>
+      <width>306</width>
+      <height>303</height>
       <texture>#MediaTip.Cover</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -154,10 +154,10 @@
       <type>image</type>
       <description>Case</description>
       <id>26</id>
-      <posX>840</posX>
-      <posY>210</posY>
-      <width>250</width>
-      <height>223</height>
+      <posX>1260</posX>
+      <posY>315</posY>
+      <width>375</width>
+      <height>334</height>
       <texture>mediatip_cdbox.png</texture>
       <keepaspectratio>yes</keepaspectratio>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -168,9 +168,9 @@
       <description>Line 1</description>
       <type>fadelabel</type>
       <id>31</id>
-      <posX>195</posX>
-      <posY>225</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>337</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.DescriptionTitle: #MediaTip.Title</label>
@@ -181,9 +181,9 @@
       <description>Line 2</description>
       <type>fadelabel</type>
       <id>32</id>
-      <posX>195</posX>
-      <posY>275</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>412</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>Audio: #MediaTip.AudioCodec, #MediaTip.AudioType, #MediaTip.AudioBitRate, #MediaTip.AudioSamplingRate</label>
@@ -194,9 +194,9 @@
       <description>Line 3</description>
       <type>fadelabel</type>
       <id>33</id>
-      <posX>195</posX>
-      <posY>325</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>487</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>Video: #MediaTip.VideoCodec, #MediaTip.VideoBitRate, #MediaTip.FrameRate, #MediaTip.Resolution</label>
@@ -207,9 +207,9 @@
       <description>Line 4</description>
       <type>fadelabel</type>
       <id>34</id>
-      <posX>195</posX>
-      <posY>375</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>562</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.DescriptionGeometry: #MediaTip.Geometry, #MediaTip.Dimension, #MediaTip.AspectRatio</label>
@@ -220,9 +220,9 @@
       <description>Line 5</description>
       <type>fadelabel</type>
       <id>30</id>
-      <posX>195</posX>
-      <posY>443</posY>
-      <width>800</width>
+      <posX>292</posX>
+      <posY>664</posY>
+      <width>1200</width>
       <font>mediastream12c</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.FileName</label>
@@ -233,9 +233,9 @@
       <description>Line 6</description>
       <type>fadelabel</type>
       <id>301962</id>
-      <posX>195</posX>
-      <posY>468</posY>
-      <width>500</width>
+      <posX>292</posX>
+      <posY>702</posY>
+      <width>750</width>
       <font>mediastream12c</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.FileSize, #MediaTip.Date</label>
@@ -248,10 +248,10 @@
       <type>image</type>
       <description>Cover</description>
       <id>35</id>
-      <posX>935</posX>
-      <posY>209</posY>
-      <width>155</width>
-      <height>220</height>
+      <posX>1402</posX>
+      <posY>313</posY>
+      <width>232</width>
+      <height>330</height>
       <texture>#MediaTip.Cover</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -260,10 +260,10 @@
       <type>image</type>
       <description>Case</description>
       <id>36</id>
-      <posX>910</posX>
-      <posY>200</posY>
-      <width>190</width>
-      <height>240</height>
+      <posX>1365</posX>
+      <posY>300</posY>
+      <width>285</width>
+      <height>360</height>
       <texture>mediatip_cdbox.png</texture>
       <keepaspectratio>yes</keepaspectratio>
       <texture>mediatip_dvdbox.png</texture>
@@ -275,9 +275,9 @@
       <description>Line 1</description>
       <type>fadelabel</type>
       <id>41</id>
-      <posX>195</posX>
-      <posY>225</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>337</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.DescriptionDimension: #MediaTip.Dimension, #MediaTip.DescriptionOrientation: #MediaTip.Orientation</label>
@@ -288,9 +288,9 @@
       <description>Line 2</description>
       <type>fadelabel</type>
       <id>42</id>
-      <posX>195</posX>
-      <posY>275</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>412</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.DescriptionCameraModel: #MediaTip.CameraModel, #MediaTip.CameraEquipment</label>
@@ -301,9 +301,9 @@
       <description>Line 3</description>
       <type>fadelabel</type>
       <id>43</id>
-      <posX>195</posX>
-      <posY>325</posY>
-      <width>650</width>
+      <posX>292</posX>
+      <posY>487</posY>
+      <width>975</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.DescriptionFStop: #MediaTip.FStop, #MediaTip.DescriptionShutterSpeed: #MediaTip.ShutterSpeed, #MediaTip.DescriptionMeteringMode: #MediaTip.MeteringMode, #MediaTip.DescriptionFlashMode: #MediaTip.FlashMode</label>
@@ -314,9 +314,9 @@
       <description>Line 4</description>
       <type>fadelabel</type>
       <id>44</id>
-      <posX>195</posX>
-      <posY>375</posY>
-      <width>650</width>
+      <posX>292</posX>
+      <posY>562</posY>
+      <width>975</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.DescriptionExposureTime: #MediaTip.ExposureTime, #MediaTip.DescriptionExposureCompensation: #MediaTip.ExposureCompensation</label>
@@ -327,9 +327,9 @@
       <description>Line 5</description>
       <type>fadelabel</type>
       <id>40</id>
-      <posX>195</posX>
-      <posY>443</posY>
-      <width>800</width>
+      <posX>292</posX>
+      <posY>664</posY>
+      <width>1200</width>
       <font>mediastream12c</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.FileName (#MediaTip.FileSize), #MediaTip.Date</label>
@@ -340,9 +340,9 @@
       <description>Line 6</description>
       <type>fadelabel</type>
       <id>401962</id>
-      <posX>195</posX>
-      <posY>468</posY>
-      <width>500</width>
+      <posX>292</posX>
+      <posY>702</posY>
+      <width>750</width>
       <font>mediastream12c</font>
       <textcolor>ffffffff</textcolor>
       <visible>control.hastext(40)</visible>
@@ -355,10 +355,10 @@
       <type>image</type>
       <description>Case</description>
       <id>46</id>
-      <posX>880</posX>
-      <posY>250</posY>
-      <width>210</width>
-      <height>160</height>
+      <posX>1320</posX>
+      <posY>375</posY>
+      <width>315</width>
+      <height>240</height>
       <texture>mediatip_picturebox.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -367,10 +367,10 @@
       <type>image</type>
       <description>Cover</description>
       <id>45</id>
-      <posX>885</posX>
-      <posY>255</posY>
-      <width>200</width>
-      <height>150</height>
+      <posX>1327</posX>
+      <posY>382</posY>
+      <width>300</width>
+      <height>225</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture>#MediaTip.Cover</texture>
       <centered>yes</centered>
@@ -382,9 +382,9 @@
       <description>Line 2</description>
       <type>fadelabel</type>
       <id>51</id>
-      <posX>195</posX>
-      <posY>225</posY>
-      <width>650</width>
+      <posX>292</posX>
+      <posY>337</posY>
+      <width>975</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.DescriptionDirectorySize: #MediaTip.DirectorySize</label>
@@ -395,9 +395,9 @@
       <description>Line 3</description>
       <type>fadelabel</type>
       <id>52</id>
-      <posX>195</posX>
-      <posY>275</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>412</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.DescriptionDirectoryFileCount: #MediaTip.DirectoryFileCount</label>
@@ -408,9 +408,9 @@
       <description>Line 4</description>
       <type>fadelabel</type>
       <id>53</id>
-      <posX>195</posX>
-      <posY>325</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>487</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>
@@ -422,9 +422,9 @@
       <description>Line 5</description>
       <type>fadelabel</type>
       <id>54</id>
-      <posX>195</posX>
-      <posY>375</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>562</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>
@@ -436,9 +436,9 @@
       <description>Line 6</description>
       <type>fadelabel</type>
       <id>50</id>
-      <posX>195</posX>
-      <posY>443</posY>
-      <width>800</width>
+      <posX>292</posX>
+      <posY>664</posY>
+      <width>1200</width>
       <font>mediastream12c</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.DirectoryName</label>
@@ -449,9 +449,9 @@
       <description>Line 7</description>
       <type>fadelabel</type>
       <id>501962</id>
-      <posX>195</posX>
-      <posY>468</posY>
-      <width>500</width>
+      <posX>292</posX>
+      <posY>702</posY>
+      <width>750</width>
       <font>mediastream12c</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.Date</label>
@@ -464,10 +464,10 @@
       <type>image</type>
       <description>Cover</description>
       <id>55</id>
-      <posX>885</posX>
-      <posY>255</posY>
-      <width>200</width>
-      <height>150</height>
+      <posX>1327</posX>
+      <posY>382</posY>
+      <width>300</width>
+      <height>225</height>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
       <texture>#MediaTip.Cover</texture>
@@ -478,10 +478,10 @@
       <type>image</type>
       <description>Case</description>
       <id>56</id>
-      <posX>905</posX>
-      <posY>250</posY>
-      <width>160</width>
-      <height>160</height>
+      <posX>1357</posX>
+      <posY>375</posY>
+      <width>240</width>
+      <height>240</height>
       <texture>mediatip_picturebox_transparent.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -491,9 +491,9 @@
       <description>Line 1</description>
       <type>fadelabel</type>
       <id>60</id>
-      <posX>195</posX>
-      <posY>225</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>337</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.Station</label>
@@ -504,9 +504,9 @@
       <description>Line 2</description>
       <type>fadelabel</type>
       <id>61</id>
-      <posX>195</posX>
-      <posY>275</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>412</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>#MediaTip.Title</label>
@@ -517,9 +517,9 @@
       <description>Line 3</description>
       <type>fadelabel</type>
       <id>62</id>
-      <posX>195</posX>
-      <posY>325</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>487</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>
@@ -531,9 +531,9 @@
       <description>Line 4</description>
       <type>fadelabel</type>
       <id>63</id>
-      <posX>195</posX>
-      <posY>375</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>562</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>
@@ -545,9 +545,9 @@
       <description>Line 5</description>
       <type>fadelabel</type>
       <id>64</id>
-      <posX>195</posX>
-      <posY>425</posY>
-      <width>600</width>
+      <posX>292</posX>
+      <posY>637</posY>
+      <width>900</width>
       <font>mediastream13</font>
       <textcolor>ffffffff</textcolor>
       <label>
@@ -560,10 +560,10 @@
       <type>image</type>
       <description>Case</description>
       <id>66</id>
-      <posX>840</posX>
-      <posY>210</posY>
-      <width>250</width>
-      <height>223</height>
+      <posX>1260</posX>
+      <posY>315</posY>
+      <width>375</width>
+      <height>334</height>
       <texture>mediatip_cdbox.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -572,14 +572,14 @@
       <type>image</type>
       <description>Cover</description>
       <id>65</id>
-      <posX>873</posX>
-      <posY>220</posY>
-      <width>204</width>
-      <height>202</height>
+      <posX>1309</posX>
+      <posY>330</posY>
+      <width>306</width>
+      <height>303</height>
       <texture>#MediaTip.Cover</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:81427f2520b1e2bf30554fc1dae3159b-->
+<!--Checksum:3d6af47e3245abd8efb3b74f9a9069a1-->

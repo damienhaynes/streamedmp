@@ -13,62 +13,62 @@
       <type>image</type>
       <posx>0</posx>
       <posy>0</posy>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>SMPBackgrounds\movies\default.jpg</texture>
     </control>
     <control>
       <description>BG</description>
       <type>image</type>
       <id>1</id>
-      <posX>-2</posX>
+      <posX>-3</posX>
       <posY>0</posY>
-      <width>1284</width>
-      <height>722</height>
+      <width>1926</width>
+      <height>1083</height>
       <texture>mainoverlay.png</texture>
     </control>
     <control>
       <description>Time Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>6</posX>
-      <posY>10</posY>
-      <width>132</width>
-      <height>32</height>
+      <posX>9</posX>
+      <posY>15</posY>
+      <width>198</width>
+      <height>48</height>
       <texture>clockbackground.png</texture>
     </control>
     <control>
       <description>Top Title Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     <control>
       <type>fadelabel</type>
       <description>Top Title</description>
       <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>#currentmodule</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     <!-- Selected Facade Item -->
     <control>
       <description>Index Item Selected Label</description>
       <type>fadelabel</type>
       <id>1</id>
-      <posX>40</posX>
-      <posY>684</posY>
-      <width>900</width>
+      <posX>60</posX>
+      <posY>1026</posY>
+      <width>1350</width>
       <label>#selecteditem</label>
       <font>mediastream16tc</font>
       <textcolor>White</textcolor>
@@ -81,8 +81,8 @@
       <type>fadelabel</type>
       <id>1</id>
       <posX>0</posX>
-      <posY>672</posY>
-      <width>1280</width>
+      <posY>1008</posY>
+      <width>1920</width>
       <label>#selecteditem</label>
       <font>mediastream16tc</font>
       <align>center</align>
@@ -96,10 +96,10 @@
       <description>Selected Poster</description>
       <type>image</type>
       <id>11</id>
-      <posX>100</posX>
-      <posY>225</posY>
-      <height>400</height>
-      <width>400</width>
+      <posX>150</posX>
+      <posY>337</posY>
+      <height>600</height>
+      <width>600</width>
       <keepaspectratio>yes</keepaspectratio>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -110,10 +110,10 @@
       <description>Default Image</description>
       <type>image</type>
       <id>1</id>
-      <posX>100</posX>
-      <posY>150</posY>
-      <width>454</width>
-      <height>455</height>
+      <posX>150</posX>
+      <posY>225</posY>
+      <width>681</width>
+      <height>682</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Categories\Trailers.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -123,28 +123,28 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
       <visible>[!facadeview.filmstrip+control.isvisible(50)]|[!control.isvisible(50)+!string.equals(#MyTrailers.Video.Description,)]</visible>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>650</posY>
-      <width>1280</width>
-      <height>42</height>
+      <posY>975</posY>
+      <width>1920</width>
+      <height>63</height>
       <texture>imagestreamtitle.png</texture>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <visible>facadeview.filmstrip+control.isvisible(50)</visible>
     </control>
     <!-- Facade Page Count -->
@@ -152,15 +152,15 @@
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1013</posX>
-      <posY>684</posY>
-      <width>260</width>
-      <height>30</height>
+      <posX>1519</posX>
+      <posY>1026</posY>
+      <width>390</width>
+      <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <visible>!facadeview.filmstrip</visible>
     </control>
     <control>
@@ -168,14 +168,14 @@
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1023</posX>
-      <posY>688</posY>
+      <posX>1534</posX>
+      <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <visible>!facadeview.filmstrip</visible>
     </control>
     <!-- Facade Item Counts -->
@@ -183,15 +183,15 @@
       <description>Item Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1065</posX>
-      <posY>13</posY>
-      <width>202</width>
-      <height>28</height>
+      <posX>1597</posX>
+      <posY>19</posY>
+      <width>303</width>
+      <height>42</height>
       <texture>mediacountbg.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <visible>control.isvisible(50)</visible>
     </control>
     <control>
@@ -199,16 +199,16 @@
       <type>label</type>
       <label>507</label>
       <id>0</id>
-      <width>135</width>
-      <posX>1078</posX>
-      <posY>16</posY>
+      <width>202</width>
+      <posX>1617</posX>
+      <posY>24</posY>
       <align>left</align>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <visible>control.isvisible(50)</visible>
     </control>
     <control>
@@ -216,15 +216,15 @@
       <type>label</type>
       <label>#itemcount</label>
       <id>0</id>
-      <posX>1238</posX>
-      <posY>14</posY>
+      <posX>1857</posX>
+      <posY>21</posY>
       <font>mediastream11c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <visible>control.isvisible(50)</visible>
     </control>
     <!-- Hidden Menu -->
@@ -233,22 +233,22 @@
       <description>menu headings</description>
       <defaultcontrol>2</defaultcontrol>
       <onexit>50</onexit>
-      <buttonX>1232</buttonX>
-      <buttonY>50</buttonY>
-      <buttonwidth>48</buttonwidth>
-      <buttonheight>144</buttonheight>
+      <buttonX>1848</buttonX>
+      <buttonY>75</buttonY>
+      <buttonwidth>72</buttonwidth>
+      <buttonheight>216</buttonheight>
       <textureFocus>#StreamedMP.ActionMenu.Image</textureFocus>
       <textureNoFocus>#StreamedMP.ActionMenu.Image</textureNoFocus>
       <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
         <visible>!Control.HasFocus(50)</visible>
       </control>
       <control>
@@ -256,46 +256,46 @@
         <description>Dummy Button (for Mouse)</description>
         <label>-</label>
         <type>button</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <label>499</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
+        <posX>1560</posX>
+        <posY>337</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <label>1065</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>365</posY>
+        <posX>1560</posX>
+        <posY>547</posY>
         <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>menu buttons</description>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
+        <posX>1560</posX>
+        <posY>375</posY>
+        <width>330</width>
+        <height>1080</height>
         <layout>StackLayout</layout>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
         <visible>!Control.HasFocus(50)</visible>
         <control>
           <description>View-As</description>
@@ -373,8 +373,8 @@
       <type>group</type>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="0,-300">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="0,-450">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <control>
         <description>composite control consisting of a list control and a thumbnail panel</description>
         <type>facadeview</type>
@@ -386,25 +386,25 @@
           <onleft>2</onleft>
           <onright>2</onright>
           <scrollOffset>4</scrollOffset>
-          <posX>670</posX>
-          <posY>230</posY>
-          <height>520</height>
-          <IconXOff>5</IconXOff>
-          <IconYOff>5</IconYOff>
-          <textXOff>40</textXOff>
-          <textureHeight>55</textureHeight>
-          <itemWidth>40</itemWidth>
-          <itemHeight>47</itemHeight>
-          <spinPosX>1175</spinPosX>
-          <spinPosY>681</spinPosY>
+          <posX>1005</posX>
+          <posY>345</posY>
+          <height>780</height>
+          <IconXOff>7</IconXOff>
+          <IconYOff>7</IconYOff>
+          <textXOff>60</textXOff>
+          <textureHeight>82</textureHeight>
+          <itemWidth>60</itemWidth>
+          <itemHeight>70</itemHeight>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
           <spinAlign>Right</spinAlign>
           <spinColor>ff006698</spinColor>
           <textureUp>arrow_round_up_nofocus.png</textureUp>
           <textureDown>arrow_round_down_nofocus.png</textureDown>
           <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
           <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
         </control>
         <control>
           <description>Thumbnail Panel</description>
@@ -414,39 +414,39 @@
           <onright>2</onright>
           <textureUp>-</textureUp>
           <textureDown>-</textureDown>
-          <posX>60</posX>
-          <posY>230</posY>
-          <width>1200</width>
-          <height>480</height>
+          <posX>90</posX>
+          <posY>345</posY>
+          <width>1800</width>
+          <height>720</height>
           <!--<scrollOffset>1</scrollOffset>-->
           <!-- Small Icons 0.66 aspect ratio -->
-          <itemWidth>100</itemWidth>
-          <itemHeight>145</itemHeight>
-          <textureWidth>100</textureWidth>
-          <textureHeight>144</textureHeight>
-          <thumbWidth>90</thumbWidth>
-          <thumbHeight>135</thumbHeight>
-          <thumbPosX>5</thumbPosX>
-          <thumbPosY>5</thumbPosY>
+          <itemWidth>150</itemWidth>
+          <itemHeight>217</itemHeight>
+          <textureWidth>150</textureWidth>
+          <textureHeight>216</textureHeight>
+          <thumbWidth>135</thumbWidth>
+          <thumbHeight>202</thumbHeight>
+          <thumbPosX>7</thumbPosX>
+          <thumbPosY>7</thumbPosY>
           <!-- Large Icons 0.66 aspect ratio -->
-          <textureWidthBig>148</textureWidthBig>
-          <textureHeightBig>217</textureHeightBig>
-          <itemWidthBig>147</itemWidthBig>
-          <itemHeightBig>215</itemHeightBig>
-          <thumbWidthBig>132</thumbWidthBig>
-          <thumbHeightBig>200</thumbHeightBig>
-          <thumbPosXBig>8</thumbPosXBig>
-          <thumbPosYBig>8</thumbPosYBig>
+          <textureWidthBig>222</textureWidthBig>
+          <textureHeightBig>325</textureHeightBig>
+          <itemWidthBig>220</itemWidthBig>
+          <itemHeightBig>322</itemHeightBig>
+          <thumbWidthBig>198</thumbWidthBig>
+          <thumbHeightBig>300</thumbHeightBig>
+          <thumbPosXBig>12</thumbPosXBig>
+          <thumbPosYBig>12</thumbPosYBig>
           <imageFolderFocus>thumbborder3.png</imageFolderFocus>
           <font>font12</font>
           <suffix>|</suffix>
           <thumbZoom>yes</thumbZoom>
           <enableFocusZoom>no</enableFocusZoom>
           <!-- Spin Controls -->
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
-          <spinPosX>1175</spinPosX>
-          <spinPosY>681</spinPosY>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
           <spinAlign>Right</spinAlign>
           <spinColor>ff006698</spinColor>
           <textureUp>arrow_round_up_nofocus.png</textureUp>
@@ -460,18 +460,18 @@
           <scrollOffset>4</scrollOffset>
           <dimColor>90ffffff</dimColor>
           <id>50</id>
-          <posX>50</posX>
-          <posY>325</posY>
+          <posX>75</posX>
+          <posY>487</posY>
           <onup>2</onup>
           <ondown>2</ondown>
           <onleft>2</onleft>
-          <width>1150</width>
-          <itemWidth>130</itemWidth>
-          <itemHeight>205</itemHeight>
-          <textureWidth>150</textureWidth>
-          <textureHeight>207</textureHeight>
-          <thumbWidth>120</thumbWidth>
-          <thumbHeight>186</thumbHeight>
+          <width>1725</width>
+          <itemWidth>195</itemWidth>
+          <itemHeight>307</itemHeight>
+          <textureWidth>225</textureWidth>
+          <textureHeight>310</textureHeight>
+          <thumbWidth>180</thumbWidth>
+          <thumbHeight>279</thumbHeight>
           <thumbs flipY="true" diffuse="diffusemirrorwide.png">
           </thumbs>
           <InfoImage flipY="true" diffuse="diffusemirrorwide.png">
@@ -485,16 +485,16 @@
           <showBackGround>no</showBackGround>
           <showInfoImage>no</showInfoImage>
           <spinCanFocus>no</spinCanFocus>
-          <spinPosX>565</spinPosX>
-          <spinPosY>685</spinPosY>
+          <spinPosX>847</spinPosX>
+          <spinPosY>1027</spinPosY>
           <spinAlign>center</spinAlign>
           <spinColor>ff006698</spinColor>
           <textureUp>arrow_round_right_nofocus.png</textureUp>
           <textureDown>arrow_round_left_nofocus.png</textureDown>
           <textureUpFocus>arrow_round_right_focus.png</textureUpFocus>
           <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
-          <spinWidth>50</spinWidth>
-          <spinHeight>37</spinHeight>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
           <thumbAnimation effect="zoom" start="100,100" end="180,180" time="700" tween="circle" ease="inout">focus</thumbAnimation>
           <thumbAnimation effect="zoom" start="170,170" end="100,100" time="900" tween="back" ease="inout">unfocus</thumbAnimation>
           <animation effect="rotatey" start="10" end="10" center="0,0" tween="back" ease="easeout" time="500" reversible="false">focus</animation>
@@ -506,4 +506,4 @@
     <import>common.overlays2.xml</import>
   </controls>
 </window>
-<!--Checksum:8d9467b0f785b64305866bf2e8dd4dde-->
+<!--Checksum:ea7212ab015f0d1cfca78457f0f66a65-->

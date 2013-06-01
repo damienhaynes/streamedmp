@@ -11,8 +11,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>#header.hover</texture>
       <animation effect="fade" time="200" delay="300">WindowOpen</animation>
     </control>
@@ -20,9 +20,9 @@
       <description>Menu</description>
       <type>menu</type>
       <id>50</id>
-      <posX>550</posX>
-      <posY>145</posY>
-      <width>320</width>
+      <posX>825</posX>
+      <posY>217</posY>
+      <width>480</width>
       <textcolor>ffffffff</textcolor>
       <textColorNoFocus>ff505050</textColorNoFocus>
       <dimColor>ffffffff</dimColor>
@@ -37,8 +37,8 @@
       <textureButtonNoFocus>-</textureButtonNoFocus>
       <hoverX>0</hoverX>
       <hoverY>0</hoverY>
-      <hoverWidth>1280</hoverWidth>
-      <hoverHeight>720</hoverHeight>
+      <hoverWidth>1920</hoverWidth>
+      <hoverHeight>1080</hoverHeight>
       <hoverKeepAspectratio>no</hoverKeepAspectratio>
       <scrollTime>90</scrollTime>
       <scrollTimeMin>45</scrollTimeMin>
@@ -55,25 +55,25 @@
       <description>action menu</description>
       <defaultcontrol>10</defaultcontrol>
       <onexit>50</onexit>
-      <buttonX>836</buttonX>
-      <buttonY>284</buttonY>
-      <buttonwidth>444</buttonwidth>
-      <buttonheight>153</buttonheight>
+      <buttonX>1254</buttonX>
+      <buttonY>426</buttonY>
+      <buttonwidth>666</buttonwidth>
+      <buttonheight>229</buttonheight>
       <textureFocus>-</textureFocus>
       <textureNoFocus>-</textureNoFocus>
       <posX>0</posX>
       <posY>0</posY>
-      <width>256</width>
-      <height>720</height>
+      <width>384</width>
+      <height>1080</height>
       <dimColor>00ffffff</dimColor>
       <control>
         <description>sub-blade</description>
         <type>image</type>
         <id>0</id>
-        <posX>836</posX>
+        <posX>1254</posX>
         <posY>0</posY>
-        <width>256</width>
-        <height>720</height>
+        <width>384</width>
+        <height>1080</height>
         <texture>homebladesub.png</texture>
         <visible>!Control.HasFocus(50)</visible>
       </control>
@@ -83,19 +83,19 @@
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="0" start="0,0">visible</animation>
         <animation effect="slide" time="0" end="0,0">hidden</animation>
-        <posX>836</posX>
-        <posY>270</posY>
-        <width>256</width>
-        <height>720</height>
+        <posX>1254</posX>
+        <posY>405</posY>
+        <width>384</width>
+        <height>1080</height>
         <layout>StackLayout</layout>
         <control>
           <description>Shutdown button</description>
           <type>button</type>
           <id>10</id>
-          <width>249</width>
-          <height>50</height>
-          <textXOff>25</textXOff>
-          <textYOff>15</textYOff>
+          <width>373</width>
+          <height>75</height>
+          <textXOff>37</textXOff>
+          <textYOff>22</textYOff>
           <label>1030</label>
           <font>mediastream11tc</font>
           <action>99</action>
@@ -106,10 +106,10 @@
           <description>settings button</description>
           <type>button</type>
           <id>11</id>
-          <width>249</width>
-          <height>50</height>
-          <textXOff>25</textXOff>
-          <textYOff>15</textYOff>
+          <width>373</width>
+          <height>75</height>
+          <textXOff>37</textXOff>
+          <textYOff>22</textYOff>
           <label>1048</label>
           <font>mediastream11tc</font>
           <hyperlink>4</hyperlink>
@@ -120,10 +120,10 @@
           <description>videowallpaper button</description>
           <type>button</type>
           <id>12</id>
-          <width>249</width>
-          <height>50</height>
-          <textXOff>25</textXOff>
-          <textYOff>15</textYOff>
+          <width>373</width>
+          <height>75</height>
+          <textXOff>37</textXOff>
+          <textYOff>22</textYOff>
           <label>#StreamedMP.VideoWallpaperLabel</label>
           <font>mediastream11tc</font>
           <action>101</action>
@@ -134,10 +134,10 @@
           <description>basichome button button</description>
           <type>button</type>
           <id>13</id>
-          <width>249</width>
-          <height>50</height>
-          <textXOff>25</textXOff>
-          <textYOff>15</textYOff>
+          <width>373</width>
+          <height>75</height>
+          <textXOff>37</textXOff>
+          <textYOff>22</textYOff>
           <label>100035</label>
           <font>mediastream11tc</font>
           <action>115</action>
@@ -148,10 +148,10 @@
           <description>Exit button</description>
           <type>button</type>
           <id>14</id>
-          <width>249</width>
-          <height>50</height>
-          <textXOff>25</textXOff>
-          <textYOff>15</textYOff>
+          <width>373</width>
+          <height>75</height>
+          <textXOff>37</textXOff>
+          <textYOff>22</textYOff>
           <label>4517</label>
           <font>mediastream11tc</font>
           <action>97</action>
@@ -166,8 +166,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>846</width>
-      <height>720</height>
+      <width>1269</width>
+      <height>1080</height>
       <texture>homebladeleft.png</texture>
       <colordiffuse>eaffffff</colordiffuse>
     </control>
@@ -175,10 +175,10 @@
       <description>right overlay</description>
       <type>image</type>
       <id>0</id>
-      <posX>1045</posX>
+      <posX>1567</posX>
       <posY>0</posY>
-      <width>235</width>
-      <height>720</height>
+      <width>352</width>
+      <height>1080</height>
       <texture>homerightoverlay.png</texture>
     </control>
     <!-- Date -->
@@ -186,54 +186,54 @@
       <description>Top Title Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>77</posX>
-      <posY>11</posY>
-      <width>437</width>
-      <height>35</height>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
       <texture>tvtitlebg.png</texture>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     <control>
       <type>fadelabel</type>
       <description>Top Title</description>
       <id>0</id>
-      <posX>493</posX>
-      <posY>13</posY>
-      <width>350</width>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
       <font>mediastream12c</font>
       <align>right</align>
       <visible>yes</visible>
       <label>#date</label>
-      <animation effect="slide" start="-514,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
     </control>
     <!-- RSS Ticker -->
     <control>
       <description>Rss Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>75</posX>
-      <posY>678</posY>
-      <width>1205</width>
-      <height>42</height>
+      <posX>112</posX>
+      <posY>1017</posY>
+      <width>1807</width>
+      <height>63</height>
       <texture>homerss.png</texture>
       <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.feed.enabled,False)+!string.equals(#infoservice.feed.titles,)</visible>
-      <animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="0,150" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>RSS Items</description>
       <type>fadelabel</type>
       <id>0</id>
-      <width>1250</width>
-      <height>50</height>
-      <posX>114</posX>
-      <posY>689</posY>
+      <width>1875</width>
+      <height>75</height>
+      <posX>171</posX>
+      <posY>1033</posY>
       <font>mediastream12tc</font>
       <label>#infoservice.feed.titles</label>
       <wrapString> #infoservice.feed.separator </wrapString>
       <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.feed.enabled,False)</visible>
-      <animation effect="slide" start="0,100" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="0,100" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="0,150" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
     </control>
     <!-- imports -->
     <import>common.weather.topright.xml</import>
@@ -244,10 +244,10 @@
       <description>Update Icon</description>
       <type>image</type>
       <id>0</id>
-      <width>250</width>
-      <height>250</height>
-      <posX>950</posX>
-      <posY>250</posY>
+      <width>375</width>
+      <height>375</height>
+      <posX>1425</posX>
+      <posY>375</posY>
       <align>center</align>
       <texture>skinupdate.png</texture>
       <visible>string.equals(#StreamedMP.UpdateAvailable,true)</visible>
@@ -258,4 +258,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:a32756b21ece8e631fccde84112adb7d-->
+<!--Checksum:9c63e5e96cb50a8dbb9f162dac7cbacd-->

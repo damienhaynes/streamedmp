@@ -12,8 +12,8 @@
       <type>label</type>
       <description>Number of Files Label</description>
       <id>12</id>
-      <posX>1281</posX>
-      <posY>721</posY>
+      <posX>1921</posX>
+      <posY>1081</posY>
       <label>#itemcount</label>
       <visible>false</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -23,9 +23,9 @@
       <type>fadelabel</type>
       <description>Selected item Label</description>
       <id>1</id>
-      <posX>28</posX>
-      <posY>505</posY>
-      <width>437</width>
+      <posX>42</posX>
+      <posY>757</posY>
+      <width>655</width>
       <label>#selecteditem</label>
       <font>mediastream12tc</font>
       <visible>false</visible>
@@ -35,10 +35,10 @@
     <control>
       <description>Hidden Menu Indicator</description>
       <type>image</type>
-      <posX>1232</posX>
-      <posY>50</posY>
-      <width>48</width>
-      <height>144</height>
+      <posX>1848</posX>
+      <posY>75</posY>
+      <width>72</width>
+      <height>216</height>
       <texture>#StreamedMP.ActionMenu.Image</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -46,35 +46,35 @@
       <type>actiongroup</type>
       <description>action menu</description>
       <defaultcontrol>2</defaultcontrol>
-      <buttonX>1231</buttonX>
-      <buttonY>55</buttonY>
-      <buttonwidth>49</buttonwidth>
-      <buttonheight>153</buttonheight>
+      <buttonX>1846</buttonX>
+      <buttonY>82</buttonY>
+      <buttonwidth>73</buttonwidth>
+      <buttonheight>229</buttonheight>
       <onexit>50</onexit>
       <dimColor>00ffffff</dimColor>
       <control>
         <type>image</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <texture>hiddenmenu_right.png</texture>
         <visible>![Control.HasFocus(10)|Control.HasFocus(11)]</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
         <description>Dummy Button (for Mouse)</description>
         <label>-</label>
         <type>button</type>
-        <posX>1002</posX>
+        <posX>1503</posX>
         <posY>0</posY>
-        <width>278</width>
-        <height>720</height>
+        <width>417</width>
+        <height>1080</height>
         <visible>![Control.HasFocus(10)|Control.HasFocus(11)]</visible>
-        <animation effect="slide" time="100" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
@@ -82,11 +82,11 @@
         <label>457</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>225</posY>
+        <posX>1560</posX>
+        <posY>337</posY>
         <visible>![Control.HasFocus(10)|Control.HasFocus(11)]</visible>
-        <animation effect="slide" time="150" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="150" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <id>0</id>
@@ -94,24 +94,24 @@
         <label>1065</label>
         <type>label</type>
         <font>mediastream12tc</font>
-        <posX>1040</posX>
-        <posY>337</posY>
+        <posX>1560</posX>
+        <posY>505</posY>
         <visible>![Control.HasFocus(10)|Control.HasFocus(11)]+plugin.isenabled(Moving Pictures)|plugin.isenabled(MP-TV Series)|plugin.isenabled(My Trailers)</visible>
-        <animation effect="slide" time="150" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="150" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
         <type>group</type>
         <description>group element</description>
         <id>24</id>
         <visible>![Control.HasFocus(10)|Control.HasFocus(11)]</visible>
-        <posX>1040</posX>
-        <posY>250</posY>
-        <width>220</width>
-        <height>720</height>
+        <posX>1560</posX>
+        <posY>375</posY>
+        <width>330</width>
+        <height>1080</height>
         <layout>StackLayout</layout>
-        <animation effect="slide" time="200" start="300,0">visible</animation>
-        <animation effect="slide" time="0" end="300,0">hidden</animation>
+        <animation effect="slide" time="200" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
         <control>
           <type>button</type>
           <description>View-As button</description>
@@ -184,110 +184,110 @@
       <description>Default Thumb</description>
       <type>image</type>
       <id>0</id>
-      <posX>27</posX>
-      <posY>237</posY>
-      <width>357</width>
-      <height>206</height>
+      <posX>40</posX>
+      <posY>355</posY>
+      <width>535</width>
+      <height>309</height>
       <texture>defaultepisodethumb.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="-1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Recording Thumb</description>
       <type>image</type>
       <id>1</id>
-      <posX>28</posX>
-      <posY>240</posY>
-      <height>200</height>
-      <width>354</width>
+      <posX>42</posX>
+      <posY>360</posY>
+      <height>300</height>
+      <width>531</width>
       <zoom>no</zoom>
       <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="-1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-1200,0">WindowClose</animation>
     </control>
     <control>
       <description>Glass Overlay</description>
       <type>image</type>
       <id>0</id>
-      <posX>23</posX>
-      <posY>232</posY>
-      <height>206</height>
-      <width>360</width>
+      <posX>34</posX>
+      <posY>348</posY>
+      <height>309</height>
+      <width>540</width>
       <keepaspectratio>no</keepaspectratio>
       <zoom>yes</zoom>
       <texture>glassoverlay.png</texture>
       <visible>!string.equals(#selectedthumb,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="-1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-1200,0">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
       <description>Current program title</description>
       <id>13</id>
-      <posX>28</posX>
-      <posY>460</posY>
-      <width>450</width>
+      <posX>42</posX>
+      <posY>690</posY>
+      <width>675</width>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <label>#Radio.RecordedTV.Title</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="-1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-1200,0">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
       <description>genre</description>
       <id>17</id>
-      <posX>28</posX>
-      <posY>490</posY>
-      <width>450</width>
+      <posX>42</posX>
+      <posY>735</posY>
+      <width>675</width>
       <label>#Radio.RecordedTV.Genre</label>
       <font>mediastream10tc</font>
       <textcolor>ff006698</textcolor>
       <align>left</align>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="-1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-1200,0">WindowClose</animation>
     </control>
     <control>
       <type>label</type>
       <description>Current program time</description>
       <id>14</id>
-      <posX>28</posX>
-      <posY>517</posY>
+      <posX>42</posX>
+      <posY>775</posY>
       <label>#Radio.RecordedTV.Time</label>
-      <width>450</width>
+      <width>675</width>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="-1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-1200,0">WindowClose</animation>
     </control>
     <control>
       <type>textboxscrollup</type>
       <description>Description</description>
       <id>15</id>
-      <posX>28</posX>
-      <posY>540</posY>
-      <width>450</width>
-      <height>120</height>
+      <posX>42</posX>
+      <posY>810</posY>
+      <width>675</width>
+      <height>180</height>
       <seperator>----------------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
       <label>#Radio.RecordedTV.Description</label>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="-800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="-800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="-1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="-1200,0">WindowClose</animation>
     </control>
     <import>common.facade.recordings.xml</import>
     <import>common.overlays.xml</import>
   </controls>
 </window>
-<!--Checksum:4a1c1fc4a42277645b41b695ecd04f4b-->
+<!--Checksum:1395dd59047832d885b72e89561bbd83-->

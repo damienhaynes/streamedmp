@@ -11,10 +11,10 @@
       <description>dummy to fix images disappearing on more than 2x seeking (MP BUG)</description>
       <type>image</type>
       <id>0</id>
-      <posX>2000</posX>
-      <posY>2000</posY>
-      <width>10</width>
-      <height>10</height>
+      <posX>3000</posX>
+      <posY>3000</posY>
+      <width>15</width>
+      <height>15</height>
       <texture>-</texture>
       <visible>player.forwarding|player.rewinding</visible>
     </control>
@@ -23,9 +23,9 @@
       <type>image</type>
       <id>1</id>
       <posX>0</posX>
-      <posY>523</posY>
-      <width>1280</width>
-      <height>197</height>
+      <posY>784</posY>
+      <width>1920</width>
+      <height>295</height>
       <texture>osdbackground1.png</texture>
       <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
@@ -34,19 +34,19 @@
       <type>image</type>
       <id>1</id>
       <posX>0</posX>
-      <posY>650</posY>
-      <width>1280</width>
-      <height>197</height>
+      <posY>975</posY>
+      <width>1920</width>
+      <height>295</height>
       <texture>osdbackground.png</texture>
       <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]+!string.equals(#StreamedMP.fullVideoOSD,true)</visible>
     </control>
     <control>
       <description>TV Logo border</description>
       <type>image</type>
-      <posX>6</posX>
-      <posY>470</posY>
-      <width>170</width>
-      <height>170</height>
+      <posX>9</posX>
+      <posY>705</posY>
+      <width>255</width>
+      <height>255</height>
       <texture>imagebg.png</texture>
       <centered>yes</centered>
       <keepaspectratio>yes</keepaspectratio>
@@ -56,10 +56,10 @@
       <description>TV background</description>
       <type>image</type>
       <id>1</id>
-      <posX>16</posX>
-      <posY>480</posY>
-      <width>150</width>
-      <height>150</height>
+      <posX>24</posX>
+      <posY>720</posY>
+      <width>225</width>
+      <height>225</height>
       <texture>logo_BG.png</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
@@ -69,10 +69,10 @@
       <description>TV Logo</description>
       <type>image</type>
       <id>1</id>
-      <posX>16</posX>
-      <posY>480</posY>
-      <width>150</width>
-      <height>150</height>
+      <posX>24</posX>
+      <posY>720</posY>
+      <width>225</width>
+      <height>225</height>
       <texture>#TV.View.thumb</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
@@ -82,8 +82,8 @@
       <description>Date</description>
       <type>label</type>
       <id>1</id>
-      <posX>1255</posX>
-      <posY>533</posY>
+      <posX>1882</posX>
+      <posY>799</posY>
       <label>#date</label>
       <align>right</align>
       <font>mediastream10</font>
@@ -94,10 +94,10 @@
       <description>Channel Name</description>
       <id>14</id>
       <type>label</type>
-      <width>900</width>
-      <height>25</height>
-      <posX>195</posX>
-      <posY>535</posY>
+      <width>1350</width>
+      <height>37</height>
+      <posX>292</posX>
+      <posY>802</posY>
       <font>mediastream16tc</font>
       <label>#TV.View.channel</label>
       <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]+string.equals(#StreamedMP.fullVideoOSD,true)</visible>
@@ -106,10 +106,10 @@
       <description>On tv NOW</description>
       <id>36</id>
       <type>textbox</type>
-      <width>900</width>
-      <height>25</height>
-      <posX>195</posX>
-      <posY>563</posY>
+      <width>1350</width>
+      <height>37</height>
+      <posX>292</posX>
+      <posY>844</posY>
       <label>#TV.View.title</label>
       <font>mediastream14tc</font>
       <textcolor>ff888888</textcolor>
@@ -119,10 +119,10 @@
       <description>Plot</description>
       <type>textboxscrollup</type>
       <id>38</id>
-      <posX>230</posX>
-      <posY>590</posY>
-      <width>820</width>
-      <height>59</height>
+      <posX>345</posX>
+      <posY>885</posY>
+      <width>1230</width>
+      <height>88</height>
       <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
       <label>#TV.View.description</label>
       <font>mediastream12</font>
@@ -132,10 +132,10 @@
       <description>On TV NEXT</description>
       <id>0</id>
       <type>label</type>
-      <width>800</width>
-      <height>24</height>
-      <posX>195</posX>
-      <posY>655</posY>
+      <width>1200</width>
+      <height>36</height>
+      <posX>292</posX>
+      <posY>982</posY>
       <label>#StreamedMP.Next #TV.Next.title ( #TV.Next.start - #TV.Next.stop )</label>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
@@ -145,10 +145,10 @@
       <description>Progress Bar Background</description>
       <type>image</type>
       <id>1</id>
-      <posX>190</posX>
-      <posY>676</posY>
-      <width>912</width>
-      <height>20</height>
+      <posX>285</posX>
+      <posY>1014</posY>
+      <width>1368</width>
+      <height>30</height>
       <texture>osdprogressback.png</texture>
       <keepaspectratio>no</keepaspectratio>
       <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]</visible>
@@ -157,10 +157,10 @@
       <description>Progress Bar</description>
       <type>progress</type>
       <id>1</id>
-      <posX>183</posX>
-      <posY>676</posY>
-      <width>928</width>
-      <height>20</height>
+      <posX>274</posX>
+      <posY>1014</posY>
+      <width>1392</width>
+      <height>30</height>
       <lefttexture>osdprogressleft_e.png</lefttexture>
       <midtexture>osdprogressmid_e.png</midtexture>
       <righttexture>-</righttexture>
@@ -171,10 +171,10 @@
       <description>TV Progress Bar</description>
       <type>tvprogress</type>
       <id>101</id>
-      <posX>183</posX>
-      <posY>676</posY>
-      <width>926</width>
-      <height>20</height>
+      <posX>274</posX>
+      <posY>1014</posY>
+      <width>1389</width>
+      <height>30</height>
       <toptexture>osd_progress_indicatorTV.png</toptexture>
       <TextureOffsetY>21</TextureOffsetY>
       <bottomtexture>-</bottomtexture>
@@ -204,14 +204,14 @@
       <description>Start Time Info</description>
       <type>label</type>
       <id>0</id>
-      <posX>195</posX>
-      <posY>695</posY>
+      <posX>292</posX>
+      <posY>1042</posY>
       <label>#currentplaytime</label>
       <align>left</align>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>3</shadowDistance>
+      <shadowDistance>4</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]</visible>
     </control>
@@ -219,14 +219,14 @@
       <description>End Time Info</description>
       <type>label</type>
       <id>0</id>
-      <posX>1093</posX>
-      <posY>695</posY>
+      <posX>1639</posX>
+      <posY>1042</posY>
       <label>#currentremaining</label>
       <align>right</align>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
       <shadowAngle>45</shadowAngle>
-      <shadowDistance>3</shadowDistance>
+      <shadowDistance>4</shadowDistance>
       <shadowColor>ff111111</shadowColor>
       <visible>!window.isosdvisible+[control.isvisible(10)|window.ispauseosdvisible|player.forwarding|player.rewinding|player.seeking]</visible>
     </control>
@@ -234,10 +234,10 @@
       <description>pause image</description>
       <type>image</type>
       <id>16</id>
-      <posX>58</posX>
-      <posY>650</posY>
-      <width>60</width>
-      <height>60</height>
+      <posX>87</posX>
+      <posY>975</posY>
+      <width>90</width>
+      <height>90</height>
       <texture>-</texture>
       <visible>no</visible>
     </control>
@@ -246,9 +246,9 @@
       <type>button</type>
       <id>2</id>
       <posX>0</posX>
-      <posY>462</posY>
-      <width>1280</width>
-      <height>225</height>
+      <posY>693</posY>
+      <width>1920</width>
+      <height>337</height>
       <label>-</label>
       <textureFocus>bar_hor.png</textureFocus>
       <textureNoFocus>bar_hor.png</textureNoFocus>
@@ -257,9 +257,9 @@
       <description>MSGBox label 1</description>
       <type>label</type>
       <id>3</id>
-      <posX>88</posX>
-      <posY>475</posY>
-      <width>1155</width>
+      <posX>132</posX>
+      <posY>712</posY>
+      <width>1732</width>
       <label>-</label>
       <align>left</align>
       <font>mediastream28tc</font>
@@ -270,9 +270,9 @@
       <description>MSGBox label 2</description>
       <type>label</type>
       <id>4</id>
-      <posX>88</posX>
-      <posY>525</posY>
-      <width>1155</width>
+      <posX>132</posX>
+      <posY>787</posY>
+      <width>1732</width>
       <label>-</label>
       <align>left</align>
       <font>mediastream28tc</font>
@@ -283,9 +283,9 @@
       <description>MSGBox label 3</description>
       <type>label</type>
       <id>5</id>
-      <posX>88</posX>
-      <posY>575</posY>
-      <width>1155</width>
+      <posX>132</posX>
+      <posY>862</posY>
+      <width>1732</width>
       <label>-</label>
       <align>left</align>
       <font>mediastream28tc</font>
@@ -296,9 +296,9 @@
       <description>MSGBox label 4</description>
       <type>label</type>
       <id>6</id>
-      <posX>88</posX>
-      <posY>625</posY>
-      <width>1155</width>
+      <posX>132</posX>
+      <posY>937</posY>
+      <width>1732</width>
       <label>-</label>
       <align>left</align>
       <font>mediastream28tc</font>
@@ -309,4 +309,4 @@
     <import>common.player.xml</import>
   </controls>
 </window>
-<!--Checksum:8fcbae47c4cd76628509e795f61001c1-->
+<!--Checksum:3d5c6cebf2eaabbd9812a2eb72df146d-->

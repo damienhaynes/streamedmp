@@ -6,16 +6,16 @@
   <define>#header.label:#view</define>
   <define>#header.hover:hover_my videos.png</define>
   <define>#useSelectedFanart:Yes</define>
-	<define evaluateNow="true">#listX1Off:#(iif(#StreamedMP.ShowProgressIndicators, -30, -60))</define>
-	<define evaluateNow="true">#listX3Off:#(iif(#StreamedMP.ShowProgressIndicators, 0, 2000))</define>
+  <define evaluateNow="true">#listX1Off:#(iif(#StreamedMP.ShowProgressIndicators, -30, -60))</define>
+  <define evaluateNow="true">#listX3Off:#(iif(#StreamedMP.ShowProgressIndicators, 0, 2000))</define>
   <controls>
     <import>myvideos.selected.fanart.xml</import>
     <control>
       <description>dummy label for imdb info</description>
       <type>label</type>
       <id>4441</id>
-      <posX>1300</posX>
-      <posY>800</posY>
+      <posX>1950</posX>
+      <posY>1200</posY>
       <label>#title</label>
       <visible>control.hastext(4441)</visible>
     </control>
@@ -25,8 +25,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1281</width>
-      <height>720</height>
+      <width>1921</width>
+      <height>1080</height>
       <texture>mainoverlay.png</texture>
       <visible>facadeview.list|facadeview.smallicons|facadeview.largeicons</visible>
     </control>
@@ -36,8 +36,8 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>51</height>
+      <width>1920</width>
+      <height>76</height>
       <texture>overlay_topbar.png</texture>
       <visible>![facadeview.list|facadeview.smallicons|facadeview.largeicons|facadeview.playlist|facadeview.filmstrip]</visible>
     </control>
@@ -45,16 +45,16 @@
       <description>Parental Controls Lock Indicator</description>
       <type>image</type>
       <id>1</id>
-      <posX>1030</posX>
-      <posY>8</posY>
-      <width>36</width>
-      <height>36</height>
+      <posX>1545</posX>
+      <posY>12</posY>
+      <width>54</width>
+      <height>54</height>
       <texture>parentallock.png</texture>
       <visible>string.equals(#MyVideos.PinLocked, True)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
     </control>
     <import>myvideoHiddenMenu.xml</import>
     <import>myvideoListView.xml</import>
@@ -69,4 +69,4 @@
     <import>common.scrollingpopup.xml</import>
   </controls>
 </window>
-<!--Checksum:3a41b66eb33097aa255fbcb632473ca4-->
+<!--Checksum:78fb07da19a040cad9073a96149e30a8-->

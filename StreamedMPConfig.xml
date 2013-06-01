@@ -3,7 +3,7 @@
   <id>196200</id>
   <defaultcontrol>40</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-	<rememberLastFocusedControl>yes</rememberLastFocusedControl>
+  <rememberLastFocusedControl>yes</rememberLastFocusedControl>
   <define>#header.label:#StreamedMP.SkinSettings</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:40</define>
@@ -15,10 +15,10 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>150</posY>
-      <width>595</width>
-      <height>500</height>
+      <posX>324</posX>
+      <posY>225</posY>
+      <width>892</width>
+      <height>750</height>
       <layout>StackLayout</layout>
       <control Style="settingsmainbutton">
         <type>button</type>
@@ -26,7 +26,7 @@
         <id>40</id>
         <label>-</label>
         <onup>47</onup>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -34,7 +34,7 @@
         <type>button</type>
         <id>41</id>
         <label>-</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -42,7 +42,7 @@
         <type>button</type>
         <id>42</id>
         <label>-</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -50,7 +50,7 @@
         <type>button</type>
         <id>44</id>
         <label>-</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -58,7 +58,7 @@
         <type>button</type>
         <id>45</id>
         <label>-</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -66,7 +66,7 @@
         <type>button</type>
         <id>46</id>
         <label>-</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -74,7 +74,7 @@
         <type>button</type>
         <id>43</id>
         <label>-</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -82,22 +82,22 @@
         <type>button</type>
         <id>47</id>
         <label>-</label>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
-				<ondown>40</ondown>
+        <ondown>40</ondown>
       </control>
     </control>
     <control>
       <description>Update Indicator</description>
       <type>image</type>
       <id>0</id>
-      <posX>700</posX>
-      <posY>407</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>1050</posX>
+      <posY>610</posY>
+      <width>48</width>
+      <height>48</height>
       <texture>isupdate.png</texture>
       <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true)</visible>
     </control>
   </controls>
 </window>
-<!--Checksum:08fca19b99c9b7761966ceebce8ebde2-->
+<!--Checksum:a608074bad51a4a9f9bbfd556925ce37-->

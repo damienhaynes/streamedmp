@@ -8,8 +8,8 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>black.png</texture>
       <colordiffuse>90ffffff</colordiffuse>
       <animation effect="fade" time="200">windowopen</animation>
@@ -18,28 +18,28 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>13</posX>
-      <posY>160</posY>
-      <width>390</width>
-      <height>37</height>
+      <posX>19</posX>
+      <posY>240</posY>
+      <width>585</width>
+      <height>55</height>
       <texture>dialogmenutop.png</texture>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>13</posX>
-      <posY>197</posY>
-      <width>390</width>
-      <height>233</height>
+      <posX>19</posX>
+      <posY>295</posY>
+      <width>585</width>
+      <height>349</height>
       <texture>dialogmenumiddle.png</texture>
     </control>
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>13</posX>
-      <posY>430</posY>
-      <width>390</width>
-      <height>12</height>
+      <posX>19</posX>
+      <posY>645</posY>
+      <width>585</width>
+      <height>18</height>
       <texture>dialogmenubottom.png</texture>
     </control>
     <control>
@@ -50,19 +50,19 @@
       <control>
         <type>image</type>
         <id>0</id>
-        <posX>186</posX>
-        <width>970</width>
-        <height>345</height>
-        <posY>193</posY>
+        <posX>279</posX>
+        <width>1455</width>
+        <height>517</height>
+        <posY>289</posY>
         <texture>dialog_schedule_rec.png</texture>
       </control>
       <control>
         <description>Heading text label</description>
         <type>label</type>
         <id>4</id>
-        <posX>13</posX>
-        <posY>180</posY>
-        <width>390</width>
+        <posX>19</posX>
+        <posY>270</posY>
+        <width>585</width>
         <label>RECORD NOW</label>
         <font>mediastream12tc</font>
         <align>center</align>
@@ -71,8 +71,8 @@
         <description>Label text </description>
         <type>label</type>
         <id>5</id>
-        <posX>384</posX>
-        <posY>416</posY>
+        <posX>576</posX>
+        <posY>623</posY>
         <label>-</label>
         <font>font12</font>
         <textcolor>FFFFFFFF</textcolor>
@@ -81,8 +81,8 @@
         <description>Label text </description>
         <type>label</type>
         <id>6</id>
-        <posX>384</posX>
-        <posY>436</posY>
+        <posX>576</posX>
+        <posY>654</posY>
         <label>-</label>
         <font>font12</font>
         <textcolor>FFFFFFFF</textcolor>
@@ -91,10 +91,10 @@
         <description>Exit button</description>
         <type>button</type>
         <id>2</id>
-        <posX>1020</posX>
-        <posY>230</posY>
-        <width>73</width>
-        <height>63</height>
+        <posX>1530</posX>
+        <posY>345</posY>
+        <width>109</width>
+        <height>94</height>
         <textureFocus>dialogue_shutdown_focus.png</textureFocus>
         <textureNoFocus>dialogue_shutdown_nofocus.png</textureNoFocus>
         <label>-</label>
@@ -107,24 +107,24 @@
         <description>options listcontrol</description>
         <type>listcontrol</type>
         <id>3</id>
-        <posX>20</posX>
-        <posY>250</posY>
-        <width>380</width>
-        <height>325</height>
+        <posX>30</posX>
+        <posY>375</posY>
+        <width>570</width>
+        <height>487</height>
         <onleft>2</onleft>
         <onright>2</onright>
         <onup>2</onup>
         <ondown>2</ondown>
-        <spinPosX>1031</spinPosX>
-        <spinPosY>622</spinPosY>
-        <spinWidth>28</spinWidth>
-        <spinHeight>20</spinHeight>
-        <textureHeight>43</textureHeight>
+        <spinPosX>1546</spinPosX>
+        <spinPosY>933</spinPosY>
+        <spinWidth>42</spinWidth>
+        <spinHeight>30</spinHeight>
+        <textureHeight>64</textureHeight>
         <font>mediastream11tc</font>
-        <textYOff>3</textYOff>
-        <textXOff>5</textXOff>
+        <textYOff>4</textYOff>
+        <textXOff>7</textXOff>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:b687ff85bba39e8b7dc1c6d1688bf15b-->
+<!--Checksum:72dcc9856bc1c343f39732e12335e712-->

@@ -10,17 +10,17 @@
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>523</posY>
-      <width>1280</width>
-      <height>197</height>
+      <posY>784</posY>
+      <width>1920</width>
+      <height>295</height>
       <texture>osdbackground1.png</texture>
     </control>
     <control>
       <description>Date</description>
       <type>label</type>
       <id>1</id>
-      <posX>1255</posX>
-      <posY>533</posY>
+      <posX>1882</posX>
+      <posY>799</posY>
       <label>#date</label>
       <align>right</align>
       <font>mediastream10</font>
@@ -29,10 +29,10 @@
     <control>
       <description>TV Logo border</description>
       <type>image</type>
-      <posX>6</posX>
-      <posY>470</posY>
-      <width>170</width>
-      <height>170</height>
+      <posX>9</posX>
+      <posY>705</posY>
+      <width>255</width>
+      <height>255</height>
       <texture>imagebg.png</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
@@ -41,10 +41,10 @@
       <description>TV background</description>
       <type>image</type>
       <id>1</id>
-      <posX>16</posX>
-      <posY>480</posY>
-      <width>150</width>
-      <height>150</height>
+      <posX>24</posX>
+      <posY>720</posY>
+      <width>225</width>
+      <height>225</height>
       <texture>logo_BG.png</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
@@ -53,10 +53,10 @@
       <description>TV Logo</description>
       <type>image</type>
       <id>10</id>
-      <posX>16</posX>
-      <posY>480</posY>
-      <width>150</width>
-      <height>150</height>
+      <posX>24</posX>
+      <posY>720</posY>
+      <width>225</width>
+      <height>225</height>
       <texture>#TV.View.thumb</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
@@ -65,10 +65,10 @@
       <description>Progress Bar Background</description>
       <type>image</type>
       <id>1</id>
-      <posX>190</posX>
-      <posY>676</posY>
-      <width>912</width>
-      <height>20</height>
+      <posX>285</posX>
+      <posY>1014</posY>
+      <width>1368</width>
+      <height>30</height>
       <texture>osdprogressback.png</texture>
       <keepaspectratio>no</keepaspectratio>
     </control>
@@ -76,9 +76,9 @@
       <description>Progress Bar</description>
       <type>progress</type>
       <id>1</id>
-      <posX>183</posX>
-      <posY>676</posY>
-      <width>928</width>
+      <posX>274</posX>
+      <posY>1014</posY>
+      <width>1392</width>
       <visible>yes</visible>
       <label>#TV.View.Percentage</label>
     </control>
@@ -86,8 +86,8 @@
       <description>Start Time Info</description>
       <type>label</type>
       <id>101</id>
-      <posX>195</posX>
-      <posY>695</posY>
+      <posX>292</posX>
+      <posY>1042</posY>
       <label>#TV.View.start</label>
       <align>left</align>
       <font>mediastream12tc</font>
@@ -97,8 +97,8 @@
       <description>End Time Info</description>
       <type>label</type>
       <id>102</id>
-      <posX>1093</posX>
-      <posY>695</posY>
+      <posX>1639</posX>
+      <posY>1042</posY>
       <label>#TV.View.stop</label>
       <align>right</align>
       <font>mediastream12tc</font>
@@ -108,10 +108,10 @@
       <description>Channel Name</description>
       <id>35</id>
       <type>label</type>
-      <width>900</width>
-      <height>25</height>
-      <posX>195</posX>
-      <posY>535</posY>
+      <width>1350</width>
+      <height>37</height>
+      <posX>292</posX>
+      <posY>802</posY>
       <font>mediastream16tc</font>
       <label>#TV.View.channel</label>
     </control>
@@ -119,10 +119,10 @@
       <description>On tv NOW</description>
       <id>36</id>
       <type>textbox</type>
-      <width>900</width>
-      <height>25</height>
-      <posX>195</posX>
-      <posY>563</posY>
+      <width>1350</width>
+      <height>37</height>
+      <posX>292</posX>
+      <posY>844</posY>
       <font>mediastream14tc</font>
       <textcolor>ff888888</textcolor>
     </control>
@@ -131,9 +131,9 @@
       <type>label</type>
       <id>38</id>
       <posX>0</posX>
-      <posY>695</posY>
-      <width>1280</width>
-      <height>25</height>
+      <posY>1042</posY>
+      <width>1920</width>
+      <height>37</height>
       <align>center</align>
       <font>mediastream12tc</font>
       <label>-</label>
@@ -143,10 +143,10 @@
       <description>On tv NEXT</description>
       <id>37</id>
       <type>textbox</type>
-      <width>900</width>
-      <height>24</height>
-      <posX>195</posX>
-      <posY>650</posY>
+      <width>1350</width>
+      <height>36</height>
+      <posX>292</posX>
+      <posY>975</posY>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
       <!-- <visible>plugin.isenabled(For The Record TV)</visible> -->
@@ -156,10 +156,10 @@
       <description>On TV NEXT</description>
       <id>0</id>
       <type>label</type>
-      <width>900</width>
-      <height>24</height>
-      <posX>195</posX>
-      <posY>655</posY>
+      <width>1350</width>
+      <height>36</height>
+      <posX>292</posX>
+      <posY>982</posY>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
       <label>#StreamedMP.Next #TV.Next.title ( #TV.Next.start - #TV.Next.stop )</label>
@@ -170,13 +170,13 @@
       <description>rec logo</description>
       <type>image</type>
       <id>39</id>
-      <posX>14</posX>
-      <posY>16</posY>
-      <width>18</width>
-      <height>18</height>
+      <posX>21</posX>
+      <posY>24</posY>
+      <width>27</width>
+      <height>27</height>
       <texture>tvguide_record_button.png</texture>
       <keepaspectratio>yes</keepaspectratio>
     </control>
   </controls>
 </window>
-<!--Checksum:472a1ee21c9a891a050202973a81ad3c-->
+<!--Checksum:b7a94bb7a72f55752c14e53ba150f38f-->

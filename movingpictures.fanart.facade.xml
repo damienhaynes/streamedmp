@@ -9,23 +9,23 @@ This file should contain the facade view
       <type>image</type>
       <id>0</id>
       <posX>0</posX>
-      <posY>675</posY>
-      <width>1280</width>
-      <height>47</height>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
       <texture>imagestreamtitle.png</texture>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <visible>control.isvisible(51)</visible>
     </control>
     <control>
       <description>Selected Category Label</description>
       <type>fadelabel</type>
       <id>1</id>
-      <posX>40</posX>
-      <posY>684</posY>
-      <width>900</width>
+      <posX>60</posX>
+      <posY>1026</posY>
+      <width>1350</width>
       <label>#MovingPictures.SelectedNode.name</label>
       <font>mediastream16tc</font>
       <textcolor>White</textcolor>
@@ -38,10 +38,10 @@ This file should contain the facade view
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1013</posX>
-      <posY>684</posY>
-      <width>260</width>
-      <height>30</height>
+      <posX>1519</posX>
+      <posY>1026</posY>
+      <width>390</width>
+      <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
       <visible>!facadeview.coverflow+[control.isvisible(50)|control.isvisible(51)]+!control.isvisible(9001)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -52,8 +52,8 @@ This file should contain the facade view
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>1023</posX>
-      <posY>688</posY>
+      <posX>1534</posX>
+      <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <visible>!facadeview.coverflow+[control.isvisible(50)|control.isvisible(51)]+!control.isvisible(9001)</visible>
@@ -65,10 +65,10 @@ This file should contain the facade view
       <description>Movie Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>1113</posX>
-      <posY>10</posY>
-      <width>159</width>
-      <height>28</height>
+      <posX>1669</posX>
+      <posY>15</posY>
+      <width>238</width>
+      <height>42</height>
       <texture>mediacountbackground.png</texture>
       <visible>!control.isvisible(51)+control.isvisible(50)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -78,8 +78,8 @@ This file should contain the facade view
       <type>label</type>
       <label>#MovingPictures.Translation.Movies.Label</label>
       <id>0</id>
-      <posX>1123</posX>
-      <posY>14</posY>
+      <posX>1684</posX>
+      <posY>21</posY>
       <font>mediastream10tc</font>
       <textcolor>ff909090</textcolor>
       <visible>!control.isvisible(51)+control.isvisible(50)</visible>
@@ -88,9 +88,9 @@ This file should contain the facade view
     <control>
       <type>label</type>
       <id>0</id>
-      <posX>1246</posX>
-      <posY>12</posY>
-      <width>350</width>
+      <posX>1869</posX>
+      <posY>18</posY>
+      <width>525</width>
       <font>mediastream11c</font>
       <textcolor>ff006698</textcolor>
       <align>right</align>
@@ -103,10 +103,10 @@ This file should contain the facade view
       <description>Parental Controls Lock Indicator</description>
       <type>image</type>
       <id>1</id>
-      <posX>1075</posX>
-      <posY>8</posY>
-      <width>36</width>
-      <height>36</height>
+      <posX>1612</posX>
+      <posY>12</posY>
+      <width>54</width>
+      <height>54</height>
       <texture>parentallock.png</texture>
       <visible>control.isvisible(16)+!control.isvisible(51)+control.isvisible(50)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -116,10 +116,10 @@ This file should contain the facade view
       <description>Parental Controls Lock Indicator</description>
       <type>image</type>
       <id>1</id>
-      <posX>1240</posX>
-      <posY>8</posY>
-      <width>36</width>
-      <height>36</height>
+      <posX>1860</posX>
+      <posY>12</posY>
+      <width>54</width>
+      <height>54</height>
       <texture>parentallock.png</texture>
       <visible>control.isvisible(16)+control.isvisible(51)+!control.isvisible(50)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -129,27 +129,27 @@ This file should contain the facade view
       <description>composite control consisting of a list control and a thumbnail panel</description>
       <type>facadeview</type>
       <id>51</id>
-      <animation effect="slide" time="150" start="0,-300">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="0,-450">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <control>
         <description>Movie List</description>
         <type>listcontrol</type>
         <id>51</id>
-        <posY>420</posY>
-        <posX>780</posX>
-        <height>300</height>
-        <width>465</width>
-        <spinPosY>900</spinPosY>
-        <spinPosX>1400</spinPosX>
-        <textXOff>17</textXOff>
+        <posY>630</posY>
+        <posX>1170</posX>
+        <height>450</height>
+        <width>697</width>
+        <spinPosY>1350</spinPosY>
+        <spinPosX>2100</spinPosX>
+        <textXOff>25</textXOff>
         <spinColor>ffcccccc</spinColor>
         <onleft>51</onleft>
         <onright>51</onright>
         <!-- Spin Controls -->
-        <spinWidth>50</spinWidth>
-        <spinHeight>37</spinHeight>
-        <spinPosX>1175</spinPosX>
-        <spinPosY>681</spinPosY>
+        <spinWidth>75</spinWidth>
+        <spinHeight>55</spinHeight>
+        <spinPosX>1762</spinPosX>
+        <spinPosY>1021</spinPosY>
         <spinAlign>Right</spinAlign>
         <spinColor>ff006698</spinColor>
         <textureUp>arrow_round_up_nofocus.png</textureUp>
@@ -167,22 +167,22 @@ This file should contain the facade view
         <description>Movie List</description>
         <type>listcontrol</type>
         <id>50</id>
-        <posY>420</posY>
-        <posX>780</posX>
-        <height>300</height>
-        <width>465</width>
-        <spinPosY>900</spinPosY>
-        <spinPosX>1400</spinPosX>
-        <textXOff>17</textXOff>
-        <textXOff2>485</textXOff2>
+        <posY>630</posY>
+        <posX>1170</posX>
+        <height>450</height>
+        <width>697</width>
+        <spinPosY>1350</spinPosY>
+        <spinPosX>2100</spinPosX>
+        <textXOff>25</textXOff>
+        <textXOff2>727</textXOff2>
         <spinColor>ffcccccc</spinColor>
         <onleft>3</onleft>
         <onright>3</onright>
         <!-- Spin Controls -->
-        <spinWidth>50</spinWidth>
-        <spinHeight>37</spinHeight>
-        <spinPosX>1175</spinPosX>
-        <spinPosY>681</spinPosY>
+        <spinWidth>75</spinWidth>
+        <spinHeight>55</spinHeight>
+        <spinPosX>1762</spinPosX>
+        <spinPosY>1021</spinPosY>
         <spinAlign>Right</spinAlign>
         <spinColor>ff006698</spinColor>
         <textureUp>arrow_round_up_nofocus.png</textureUp>
@@ -198,39 +198,39 @@ This file should contain the facade view
         <onright>3</onright>
         <textureUp>-</textureUp>
         <textureDown>-</textureDown>
-        <posX>525</posX>
-        <posY>350</posY>
-        <width>750</width>
-        <height>400</height>
+        <posX>787</posX>
+        <posY>525</posY>
+        <width>1125</width>
+        <height>600</height>
         <!--<scrollOffset>1</scrollOffset>-->
         <!-- Small Icons 0.66 aspect ratio -->
-        <textureWidth>74</textureWidth>
-        <textureHeight>110</textureHeight>
-        <itemWidth>74</itemWidth>
-        <itemHeight>109</itemHeight>
-        <thumbWidth>66</thumbWidth>
-        <thumbHeight>100</thumbHeight>
-        <thumbPosX>4</thumbPosX>
-        <thumbPosY>5</thumbPosY>
+        <textureWidth>111</textureWidth>
+        <textureHeight>165</textureHeight>
+        <itemWidth>111</itemWidth>
+        <itemHeight>163</itemHeight>
+        <thumbWidth>99</thumbWidth>
+        <thumbHeight>150</thumbHeight>
+        <thumbPosX>6</thumbPosX>
+        <thumbPosY>7</thumbPosY>
         <!-- Large Icons 0.66 aspect ratio -->
-        <textureWidthBig>108</textureWidthBig>
-        <textureHeightBig>163</textureHeightBig>
-        <itemWidthBig>107</itemWidthBig>
-        <itemHeightBig>162</itemHeightBig>
-        <thumbWidthBig>96</thumbWidthBig>
-        <thumbHeightBig>146</thumbHeightBig>
-        <thumbPosXBig>6</thumbPosXBig>
-        <thumbPosYBig>8</thumbPosYBig>
+        <textureWidthBig>162</textureWidthBig>
+        <textureHeightBig>244</textureHeightBig>
+        <itemWidthBig>160</itemWidthBig>
+        <itemHeightBig>243</itemHeightBig>
+        <thumbWidthBig>144</thumbWidthBig>
+        <thumbHeightBig>219</thumbHeightBig>
+        <thumbPosXBig>9</thumbPosXBig>
+        <thumbPosYBig>12</thumbPosYBig>
         <imageFolderFocus>thumbborder3.png</imageFolderFocus>
         <font>font12</font>
         <suffix>|</suffix>
         <thumbZoom>yes</thumbZoom>
         <enableFocusZoom>no</enableFocusZoom>
         <!-- Spin Controls -->
-        <spinWidth>50</spinWidth>
-        <spinHeight>37</spinHeight>
-        <spinPosX>1175</spinPosX>
-        <spinPosY>681</spinPosY>
+        <spinWidth>75</spinWidth>
+        <spinHeight>55</spinHeight>
+        <spinPosX>1762</spinPosX>
+        <spinPosY>1021</spinPosY>
         <spinAlign>Right</spinAlign>
         <spinColor>ff006698</spinColor>
         <textureUp>arrow_round_up_nofocus.png</textureUp>
@@ -242,19 +242,19 @@ This file should contain the facade view
         <description>Filmstrip view</description>
         <type>filmstrip</type>
         <id>50</id>
-        <posX>40</posX>
-        <posY>465</posY>
+        <posX>60</posX>
+        <posY>697</posY>
         <onup>3</onup>
-        <width>700</width>
+        <width>1050</width>
         <scrollOffset>3</scrollOffset>
-        <itemWidth>145</itemWidth>
-        <itemHeight>205</itemHeight>
-        <textureWidth>145</textureWidth>
-        <textureHeight>207</textureHeight>
-        <thumbWidth>132</thumbWidth>
-        <thumbHeight>200</thumbHeight>
-        <thumbPosX>2</thumbPosX>
-        <thumbPosY>2</thumbPosY>
+        <itemWidth>217</itemWidth>
+        <itemHeight>307</itemHeight>
+        <textureWidth>217</textureWidth>
+        <textureHeight>310</textureHeight>
+        <thumbWidth>198</thumbWidth>
+        <thumbHeight>300</thumbHeight>
+        <thumbPosX>3</thumbPosX>
+        <thumbPosY>3</thumbPosY>
         <thumbs flipY="true" diffuse="diffusemirrorwide.png">
         </thumbs>
         <InfoImage flipY="true" diffuse="diffusemirrorwide.png">
@@ -269,10 +269,10 @@ This file should contain the facade view
         <showInfoImage>no</showInfoImage>
         <thumbAnimation effect="zoom" start="100,100" end="140,140" time="100">focus</thumbAnimation>
         <!-- Spin Controls -->
-        <spinWidth>50</spinWidth>
-        <spinHeight>37</spinHeight>
-        <spinPosX>1175</spinPosX>
-        <spinPosY>681</spinPosY>
+        <spinWidth>75</spinWidth>
+        <spinHeight>55</spinHeight>
+        <spinPosX>1762</spinPosX>
+        <spinPosY>1021</spinPosY>
         <spinAlign>Right</spinAlign>
         <spinColor>ff006698</spinColor>
         <textureUp>arrow_round_up_nofocus.png</textureUp>
@@ -287,42 +287,42 @@ This file should contain the facade view
         <dimColor>90ffffff</dimColor>
         <id>50</id>
         <posX>0</posX>
-        <posY>240</posY>
-        <width>1280</width>
-        <height>720</height>
+        <posY>360</posY>
+        <width>1920</width>
+        <height>1080</height>
         <onup>3</onup>
         <onright>50</onright>
         <ondown>50</ondown>
         <selectedCard>0</selectedCard>
-        <cardWidth>250</cardWidth>
-        <cardHeight>375</cardHeight>
+        <cardWidth>375</cardWidth>
+        <cardHeight>562</cardHeight>
         <angle>45</angle>
-        <sideShift>220</sideShift>
-        <sideGap>100</sideGap>
-        <sideDepth>250</sideDepth>
+        <sideShift>330</sideShift>
+        <sideGap>150</sideGap>
+        <sideDepth>375</sideDepth>
         <offsetY>0</offsetY>
         <selectedOffsetY>0</selectedOffsetY>
         <thumbZoom>yes</thumbZoom>
         <speed>4</speed>
-        <backgroundHeight>250</backgroundHeight>
-        <backgroundWidth>1280</backgroundWidth>
+        <backgroundHeight>375</backgroundHeight>
+        <backgroundWidth>1920</backgroundWidth>
         <backgroundX>0</backgroundX>
-        <backgroundY>470</backgroundY>
+        <backgroundY>705</backgroundY>
         <backgroundDiffuse>FF000000</backgroundDiffuse>
         <background>filmstrip_overlay.png</background>
         <showBackground>no</showBackground>
-        <foregroundHeight>724</foregroundHeight>
-        <foregroundWidth>1284</foregroundWidth>
-        <foregroundX>-2</foregroundX>
-        <foregroundY>-2</foregroundY>
+        <foregroundHeight>1086</foregroundHeight>
+        <foregroundWidth>1926</foregroundWidth>
+        <foregroundX>-3</foregroundX>
+        <foregroundY>-3</foregroundY>
         <foregroundDiffuse>FF000000</foregroundDiffuse>
         <foreground>-</foreground>
         <showForeground>no</showForeground>
         <showFrame>yes</showFrame>
         <frame>coverflow.poster.square.glass.png</frame>
         <frameFocus>coverflow.poster.square.glass.png</frameFocus>
-        <frameWidth>250</frameWidth>
-        <frameHeight>375</frameHeight>
+        <frameWidth>375</frameWidth>
+        <frameHeight>562</frameHeight>
         <spinSpeed>8</spinSpeed>
         <unfocusedAlpha>FF</unfocusedAlpha>
         <folderPrefix>[</folderPrefix>
@@ -337,15 +337,15 @@ This file should contain the facade view
         <downloadColor>FFFFFFFF</downloadColor>
         <selectedColor>FFFFFFFF</selectedColor>
         <shadowAngle>45</shadowAngle>
-        <shadowDistance>2</shadowDistance>
+        <shadowDistance>3</shadowDistance>
         <shadowColor>FF222222</shadowColor>
-        <label1YOff>395</label1YOff>
-        <label2YOff>420</label2YOff>
+        <label1YOff>592</label1YOff>
+        <label2YOff>630</label2YOff>
         <pageSize>5</pageSize>
         <scrollbarBackground>bar_hor.png</scrollbarBackground>
         <scrollbarLeft>mouse_left_horizontal.png</scrollbarLeft>
         <scrollbarRight>mouse_right_horizontal.png</scrollbarRight>
-        <scrollbarYOff>462</scrollbarYOff>
+        <scrollbarYOff>693</scrollbarYOff>
         <showScrollbar>no</showScrollbar>
         <cards flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_square_mask.png" />
         <subitems>
@@ -356,16 +356,16 @@ This file should contain the facade view
                   <type>image</type>
                   <posX>0</posX>
                   <posY>0</posY>
-                  <width>250</width>
-                  <height>360</height>
+                  <width>375</width>
+                  <height>540</height>
                   <texture flipY="yes" diffuse="Thumb_Mask.png" mask="video_poster_square_mask.png">black.png</texture>
                 </control>
                 <control>
                   <description>Movie Details</description>
                   <type>label</type>
-                  <posX>20</posX>
-                  <posY>10</posY>
-                  <width>210</width>
+                  <posX>30</posX>
+                  <posY>15</posY>
+                  <width>315</width>
                   <label>#MovingPictures.Translation.MovieDetails.Label</label>
                   <font>mediastream10tc</font>
                   <textcolor>FFFFFFFF</textcolor>
@@ -373,9 +373,9 @@ This file should contain the facade view
                 <control>
                   <description>genre</description>
                   <type>label</type>
-                  <posX>20</posX>
-                  <posY>30</posY>
-                  <width>210</width>
+                  <posX>30</posX>
+                  <posY>45</posY>
+                  <width>315</width>
                   <label>#MovingPictures.SelectedMovie.genres</label>
                   <font>mediastream10</font>
                   <textcolor>FFFFFFFF</textcolor>
@@ -383,9 +383,9 @@ This file should contain the facade view
                 <control>
                   <description>year</description>
                   <type>label</type>
-                  <posX>20</posX>
-                  <posY>50</posY>
-                  <width>210</width>
+                  <posX>30</posX>
+                  <posY>75</posY>
+                  <width>315</width>
                   <label>#(iif(neq(#MovingPictures.SelectedMovie.year,''),#MovingPictures.SelectedMovie.year,'N/A'))</label>
                   <font>mediastream10</font>
                   <textcolor>FFFFFFFF</textcolor>
@@ -393,9 +393,9 @@ This file should contain the facade view
                 <control>
                   <description>runtime</description>
                   <type>label</type>
-                  <posX>20</posX>
-                  <posY>70</posY>
-                  <width>210</width>
+                  <posX>30</posX>
+                  <posY>105</posY>
+                  <width>315</width>
                   <label>#MovingPictures.SelectedMovie.extra.runtime.en.pretty</label>
                   <font>mediastream10</font>
                   <textcolor>FFFFFFFF</textcolor>
@@ -403,9 +403,9 @@ This file should contain the facade view
                 <control>
                   <description>rating</description>
                   <type>label</type>
-                  <posX>20</posX>
-                  <posY>90</posY>
-                  <width>210</width>
+                  <posX>30</posX>
+                  <posY>135</posY>
+                  <width>315</width>
                   <label>#MovingPictures.SelectedMovie.score.localized / 10 (#MovingPictures.SelectedMovie.popularity.localized #MovingPictures.Translation.Votes.Label)</label>
                   <font>mediastream10</font>
                   <textcolor>FFFFFFFF</textcolor>
@@ -413,9 +413,9 @@ This file should contain the facade view
                 <control>
                   <description>Director Label</description>
                   <type>label</type>
-                  <posX>20</posX>
-                  <posY>115</posY>
-                  <width>210</width>
+                  <posX>30</posX>
+                  <posY>172</posY>
+                  <width>315</width>
                   <label>#StreamedMP.Director</label>
                   <font>mediastream10tc</font>
                   <textcolor>FFFFFFFF</textcolor>
@@ -423,9 +423,9 @@ This file should contain the facade view
                 <control>
                   <description>director</description>
                   <type>label</type>
-                  <posX>20</posX>
-                  <posY>132</posY>
-                  <width>210</width>
+                  <posX>30</posX>
+                  <posY>198</posY>
+                  <width>315</width>
                   <label>#MovingPictures.SelectedMovie.directors</label>
                   <font>mediastream10</font>
                   <textcolor>FFFFFFFF</textcolor>
@@ -433,9 +433,9 @@ This file should contain the facade view
                 <control>
                   <description>Plot Label</description>
                   <type>label</type>
-                  <posX>20</posX>
-                  <posY>155</posY>
-                  <width>210</width>
+                  <posX>30</posX>
+                  <posY>232</posY>
+                  <width>315</width>
                   <label>#(string.rtrim(L(203),':'))</label>
                   <font>mediastream10tc</font>
                   <textcolor>FFFFFFFF</textcolor>
@@ -443,10 +443,10 @@ This file should contain the facade view
                 <control>
                   <description>plot</description>
                   <type>textboxscrollup</type>
-                  <posX>20</posX>
-                  <posY>173</posY>
-                  <width>220</width>
-                  <height>80</height>
+                  <posX>30</posX>
+                  <posY>259</posY>
+                  <width>330</width>
+                  <height>120</height>
                   <label>#MovingPictures.SelectedMovie.summary</label>
                   <font>mediastream10</font>
                   <lineSpacing>2</lineSpacing>
@@ -462,10 +462,10 @@ This file should contain the facade view
       <description>Default Category Image</description>
       <type>image</type>
       <id>0</id>
-      <posX>150</posX>
-      <posY>330</posY>
-      <width>341</width>
-      <height>341</height>
+      <posX>225</posX>
+      <posY>495</posY>
+      <width>511</width>
+      <height>511</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Categories\Movies.png</texture>
       <keepaspectratio>yes</keepaspectratio>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -476,10 +476,10 @@ This file should contain the facade view
       <description>Category Image</description>
       <type>image</type>
       <id>100</id>
-      <posX>150</posX>
-      <posY>330</posY>
-      <width>341</width>
-      <height>341</height>
+      <posX>225</posX>
+      <posY>495</posY>
+      <width>511</width>
+      <height>511</height>
       <texture flipY="true" diffuse="Thumb_Mask.png">Categories\#MovingPictures.SelectedNode.FileFriendlyName.png</texture>
       <keepaspectratio>yes</keepaspectratio>
       <animation effect="fade" time="250">WindowOpen</animation>
@@ -488,4 +488,4 @@ This file should contain the facade view
     </control>
   </controls>
 </window>
-<!--Checksum:130f5cd4084555764bed02f689943591-->
+<!--Checksum:1fd085aea4323a49143926a82fbf62a4-->

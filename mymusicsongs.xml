@@ -17,17 +17,17 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1281</width>
-      <height>720</height>
+      <width>1921</width>
+      <height>1080</height>
       <texture>mainoverlay.png</texture>
     </control>
     <control>
       <id>204</id>
       <type>image</type>
-      <posX>90</posX>
-      <posY>250</posY>
-      <width>348</width>
-      <height>348</height>
+      <posX>135</posX>
+      <posY>375</posY>
+      <width>522</width>
+      <height>522</height>
       <keepaspectratio>yes</keepaspectratio>
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
       <visible>facadeview.list|facadeview.smallicons|facadeview.largeicons|facadeview.playlist</visible>
@@ -36,10 +36,10 @@
     <control>
       <id>0</id>
       <type>image</type>
-      <posX>90</posX>
-      <posY>250</posY>
-      <width>348</width>
-      <height>348</height>
+      <posX>135</posX>
+      <posY>375</posY>
+      <width>522</width>
+      <height>522</height>
       <texture>missing_coverart.png</texture>
       <visible>[facadeview.list|facadeview.smallicons|facadeview.largeicons|facadeview.playlist]+!control.hasthumb(204)</visible>
       <animation effect="fade" start="100" end="0" time="250">WindowClose</animation>
@@ -52,4 +52,4 @@
     <import>common.scrollingpopup.xml</import>
   </controls>
 </window>
-<!--Checksum:4d27a2adf129ea6bfebad3c075125280-->
+<!--Checksum:6a19bf84796f5ee6f53535ee5b5c3fe5-->

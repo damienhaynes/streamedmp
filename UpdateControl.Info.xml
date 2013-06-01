@@ -5,9 +5,9 @@
       <description>Title Shadow</description>
       <type>label</type>
       <id>0</id>
-      <posX>281</posX>
-      <posY>252</posY>
-      <width>990</width>
+      <posX>421</posX>
+      <posY>378</posY>
+      <width>1485</width>
       <font>mediastream16tc</font>
       <label>#selecteditem</label>
       <textcolor>ff222222</textcolor>
@@ -19,9 +19,9 @@
       <description>Title</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>280</posX>
-      <posY>251</posY>
-      <width>990</width>
+      <posX>420</posX>
+      <posY>376</posY>
+      <width>1485</width>
       <font>mediastream16tc</font>
       <label>#selecteditem</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -33,10 +33,10 @@
       <id>0</id>
       <description>Image Serverty</description>
       <type>image</type>
-      <posX>280</posX>
-      <posY>288</posY>
-      <width>32</width>
-      <height>32</height>
+      <posX>420</posX>
+      <posY>432</posY>
+      <width>48</width>
+      <height>48</height>
       <texture>#UpdateControl.UpdateSeverityImage</texture>
       <visible>string.equals(#UpdateControl.Action, )</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
@@ -46,9 +46,9 @@
       <description>Update Date Shadow</description>
       <type>label</type>
       <id>0</id>
-      <posX>321</posX>
-      <posY>282</posY>
-      <width>900</width>
+      <posX>481</posX>
+      <posY>423</posY>
+      <width>1350</width>
       <font>mediastream12tc</font>
       <label>#UpdateControl.UpdateDate</label>
       <textcolor>ff222222</textcolor>
@@ -60,9 +60,9 @@
       <description>Update Date Title</description>
       <type>label</type>
       <id>0</id>
-      <posX>320</posX>
-      <posY>281</posY>
-      <width>900</width>
+      <posX>480</posX>
+      <posY>421</posY>
+      <width>1350</width>
       <font>mediastream12tc</font>
       <label>#UpdateControl.UpdateDate</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -74,9 +74,9 @@
       <description>Update Info Shadow</description>
       <type>label</type>
       <id>0</id>
-      <posX>321</posX>
-      <posY>306</posY>
-      <width>900</width>
+      <posX>481</posX>
+      <posY>459</posY>
+      <width>1350</width>
       <font>mediastream12tc</font>
       <label>#UpdateControl.UpdateSeverity ~ #UpdateControl.UpdateSize</label>
       <textcolor>ff222222</textcolor>
@@ -88,9 +88,9 @@
       <description>Update Info Title</description>
       <type>label</type>
       <id>0</id>
-      <posX>320</posX>
-      <posY>305</posY>
-      <width>900</width>
+      <posX>480</posX>
+      <posY>457</posY>
+      <width>1350</width>
       <font>mediastream12tc</font>
       <label>#UpdateControl.UpdateSeverity ~ #UpdateControl.UpdateSize</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -102,10 +102,10 @@
       <description>Update Describtion</description>
       <type>textboxscrollup</type>
       <id>0</id>
-      <posX>280</posX>
-      <posY>340</posY>
-      <width>1000</width>
-      <height>150</height>
+      <posX>420</posX>
+      <posY>510</posY>
+      <width>1500</width>
+      <height>225</height>
       <align>left</align>
       <font>mediastream12</font>
       <label>#UpdateControl.UpdateDescription</label>
@@ -115,4 +115,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:89a796fc89607e2f5fca749c1b681e37-->
+<!--Checksum:e69c00a0a4c66696f0493dba1b0e359d-->

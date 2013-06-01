@@ -3,8 +3,8 @@
   <id>9</id>
   <defaultcontrol>2</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-	<rememberLastFocusedControl>yes</rememberLastFocusedControl>
-  <define>#header.label:#(L(5))->#(L(101021))->#(L(131))</define>
+  <rememberLastFocusedControl>yes</rememberLastFocusedControl>
+  <define>#header.label:#(L(5))-&gt;#(L(101021))-&gt;#(L(131))</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:2</define>
   <define>#defaultcontrol.onright:9993</define>
@@ -15,10 +15,10 @@
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>150</posY>
-      <width>595</width>
-      <height>500</height>
+      <posX>324</posX>
+      <posY>225</posY>
+      <width>892</width>
+      <height>750</height>
       <layout>StackLayout</layout>
       <control Style="settingsmainbutton">
         <description>UI Calibration button</description>
@@ -26,8 +26,8 @@
         <id>2</id>
         <label>213</label>
         <hyperlink>10</hyperlink>
-        <textXOff>35</textXOff>
-				<onup>4</onup>
+        <textXOff>52</textXOff>
+        <onup>4</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -36,20 +36,20 @@
         <id>3</id>
         <label>214</label>
         <hyperlink>11</hyperlink>
-        <textXOff>35</textXOff>
+        <textXOff>52</textXOff>
         <onright>#defaultcontrol.onright</onright>
       </control>
-			<control Style="settingsmainbutton">
+      <control Style="settingsmainbutton">
         <description>Scroll speed button</description>
         <type>button</type>
         <id>4</id>
         <label>673</label>
         <hyperlink>31</hyperlink>
-				<textXOff>35</textXOff>
-				<onright>#defaultcontrol.onright</onright>
-				<ondown>2</ondown>
+        <textXOff>52</textXOff>
+        <onright>#defaultcontrol.onright</onright>
+        <ondown>2</ondown>
       </control>
     </control>
   </controls>
 </window>
-<!--Checksum:b2e3e60c6fafc5e69b3d98db9fc5d4ed-->
+<!--Checksum:3578188b5ba54b117965cc51bca73b8b-->

@@ -14,9 +14,9 @@
       <id>0</id>
       <type>image</type>
       <posX>0</posX>
-      <posY>500</posY>
-      <width>1275</width>
-      <height>220</height>
+      <posY>750</posY>
+      <width>1912</width>
+      <height>330</height>
       <texture>fullscreenbg2.png</texture>
       <colordiffuse>EFFFFFFF</colordiffuse>
       <animation effect="Fade" time="400">WindowOpen</animation>
@@ -29,8 +29,8 @@
       <id>0</id>
       <description>Shadow - Menu label</description>
       <type>label</type>
-      <posX>1107</posX>
-      <posY>527</posY>
+      <posX>1660</posX>
+      <posY>790</posY>
       <font>mediastream12tc</font>
       <textcolor>ff000000</textcolor>
       <label>924</label>
@@ -41,8 +41,8 @@
       <id>0</id>
       <description>Menu label</description>
       <type>label</type>
-      <posX>1105</posX>
-      <posY>526</posY>
+      <posX>1657</posX>
+      <posY>789</posY>
       <font>mediastream12tc</font>
       <textcolor>ff006699</textcolor>
       <label>924</label>
@@ -51,8 +51,8 @@
     </control>
     <control>
       <type>group</type>
-      <posX>1006</posX>
-      <posY>558</posY>
+      <posX>1509</posX>
+      <posY>837</posY>
       <layout>Stacklayout</layout>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
@@ -60,8 +60,8 @@
         <id>5101</id>
         <description>Now Playing button</description>
         <type>button</type>
-        <width>265</width>
-        <height>26</height>
+        <width>397</width>
+        <height>38</height>
         <label>4540</label>
         <textYOff>1</textYOff>
         <onleft>5101</onleft>
@@ -74,8 +74,8 @@
         <id>5102</id>
         <description>Genres</description>
         <type>button</type>
-        <width>265</width>
-        <height>26</height>
+        <width>397</width>
+        <height>38</height>
         <label>#RadioTime.Translation.Genres.Label</label>
         <textYOff>1</textYOff>
         <onleft>166</onleft>
@@ -89,10 +89,10 @@
         <id>5103</id>
         <description>Similar Stations</description>
         <type>button</type>
-        <posX>650</posX>
-        <posY>235</posY>
-        <width>265</width>
-        <height>26</height>
+        <posX>975</posX>
+        <posY>352</posY>
+        <width>397</width>
+        <height>38</height>
         <onleft>155</onleft>
         <onright>5103</onright>
         <onup>5102</onup>
@@ -110,10 +110,10 @@
       <id>0</id>
       <description>menu background image</description>
       <type>image</type>
-      <posX>55</posX>
-      <posY>531</posY>
-      <width>1191</width>
-      <height>177</height>
+      <posX>82</posX>
+      <posY>796</posY>
+      <width>1786</width>
+      <height>265</height>
       <texture>-</texture>
       <animation effect="Fade" time="150">WindowOpen</animation>
     </control>
@@ -121,10 +121,10 @@
       <id>0</id>
       <description>background hover image</description>
       <type>image</type>
-      <posX>71</posX>
-      <posY>553</posY>
-      <width>160</width>
-      <height>157</height>
+      <posX>106</posX>
+      <posY>829</posY>
+      <width>240</width>
+      <height>235</height>
       <texture>-</texture>
       <animation effect="Fade" time="150">WindowOpen</animation>
     </control>
@@ -132,10 +132,10 @@
       <id>0</id>
       <description>Default Image</description>
       <type>image</type>
-      <posX>29</posX>
-      <posY>531</posY>
-      <width>150</width>
-      <height>150</height>
+      <posX>43</posX>
+      <posY>796</posY>
+      <width>225</width>
+      <height>225</height>
       <texture>DefaultMyradioBig.png</texture>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
@@ -145,10 +145,10 @@
       <id>112</id>
       <description>Radio Logo</description>
       <type>image</type>
-      <posX>29</posX>
-      <posY>530</posY>
-      <width>150</width>
-      <height>150</height>
+      <posX>43</posX>
+      <posY>795</posY>
+      <width>225</width>
+      <height>225</height>
       <texture>#RadioTime.Play.Image</texture>
       <keepaspectratio>yes</keepaspectratio>
       <centered>yes</centered>
@@ -160,10 +160,10 @@
       <id>0</id>
       <description>Boarder</description>
       <type>image</type>
-      <posX>19</posX>
-      <posY>526</posY>
-      <width>169</width>
-      <height>169</height>
+      <posX>28</posX>
+      <posY>789</posY>
+      <width>253</width>
+      <height>253</height>
       <texture>mayacdborder.png</texture>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
@@ -173,9 +173,9 @@
       <description>Station Name</description>
       <type>fadelabel</type>
       <visible>Control.HasFocus(5101)</visible>
-      <posX>200</posX>
-      <posY>526</posY>
-      <width>497</width>
+      <posX>300</posX>
+      <posY>789</posY>
+      <width>745</width>
       <font>mediastream14tc</font>
       <label>#RadioTime.Play.Station</label>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -186,9 +186,9 @@
       <description>Genre\Description</description>
       <type>fadelabel</type>
       <visible>Control.HasFocus(5101)</visible>
-      <posX>200</posX>
-      <posY>555</posY>
-      <width>497</width>
+      <posX>300</posX>
+      <posY>832</posY>
+      <width>745</width>
       <font>mediastream12tc</font>
       <label>#RadioTime.Play.Description</label>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -198,10 +198,10 @@
       <id>0</id>
       <description>Currenty Playing Artist</description>
       <type>fadelabel</type>
-      <posX>200</posX>
-      <posY>580</posY>
-      <width>300</width>
-      <height>28</height>
+      <posX>300</posX>
+      <posY>870</posY>
+      <width>450</width>
+      <height>42</height>
       <font>mediastream12c</font>
       <label>#Play.Current.Artist</label>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -212,10 +212,10 @@
       <id>0</id>
       <description>Song Title</description>
       <type>fadelabel</type>
-      <posX>200</posX>
-      <posY>605</posY>
-      <width>300</width>
-      <height>28</height>
+      <posX>300</posX>
+      <posY>907</posY>
+      <width>450</width>
+      <height>42</height>
       <font>mediastream12</font>
       <label>#Play.Current.Title</label>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -226,10 +226,10 @@
       <id>0</id>
       <description>Radio Station Slogan</description>
       <type>fadelabel</type>
-      <posX>980</posX>
-      <posY>530</posY>
-      <width>500</width>
-      <height>28</height>
+      <posX>1470</posX>
+      <posY>795</posY>
+      <width>750</width>
+      <height>42</height>
       <font>mediastream12c</font>
       <align>right</align>
       <label>#RadioTime.Play.Slogan</label>
@@ -241,9 +241,9 @@
       <id>0</id>
       <description>Radio Location</description>
       <type>fadelabel</type>
-      <posX>980</posX>
-      <posY>555</posY>
-      <width>500</width>
+      <posX>1470</posX>
+      <posY>832</posY>
+      <width>750</width>
       <font>mediastream11c</font>
       <label>#RadioTime.Play.Location</label>
       <align>right</align>
@@ -255,10 +255,10 @@
       <id>0</id>
       <description>Language</description>
       <type>fadelabel</type>
-      <posX>980</posX>
-      <posY>580</posY>
-      <width>500</width>
-      <height>30</height>
+      <posX>1470</posX>
+      <posY>870</posY>
+      <width>750</width>
+      <height>45</height>
       <font>mediastream10c</font>
       <align>right</align>
       <label>#RadioTime.Play.Language</label>
@@ -274,10 +274,10 @@
       <description>progressbar background</description>
       <type>image</type>
       <id>0</id>
-      <posX>206</posX>
-      <posY>670</posY>
-      <width>574</width>
-      <height>29</height>
+      <posX>309</posX>
+      <posY>1005</posY>
+      <width>861</width>
+      <height>43</height>
       <texture>osdprogressbackv.png</texture>
       <colordiffuse>ffFFFFFF</colordiffuse>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -289,10 +289,10 @@
       <type>progress</type>
       <description>track progress</description>
       <id>118</id>
-      <posX>1290</posX>
-      <posY>675</posY>
-      <width>574</width>
-      <height>23</height>
+      <posX>1935</posX>
+      <posY>1012</posY>
+      <width>861</width>
+      <height>34</height>
       <label>#percentage</label>
       <texturebg>-</texturebg>
       <lefttexture>osdprogressleft.png</lefttexture>
@@ -308,8 +308,8 @@
       <description>track progress label</description>
       <type>label</type>
       <visible>player.hasmedia+Control.HasFocus(5101)</visible>
-      <posX>980</posX>
-      <posY>645</posY>
+      <posX>1470</posX>
+      <posY>967</posY>
       <font>mediastream28tc</font>
       <textcolor>80ffffff</textcolor>
       <align>right</align>
@@ -322,8 +322,8 @@
       <description>track duration label</description>
       <type>label</type>
       <visible>player.hasmedia</visible>
-      <posX>640</posX>
-      <posY>680</posY>
+      <posX>960</posX>
+      <posY>1020</posY>
       <font>font14</font>
       <align>right</align>
       <label>#duration</label>
@@ -340,15 +340,15 @@
       <description>Page Count Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>820</posX>
-      <posY>660</posY>
-      <width>160</width>
-      <height>30</height>
+      <posX>1230</posX>
+      <posY>990</posY>
+      <width>240</width>
+      <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <visible>!Control.HasFocus(5101)</visible>
     </control>
     <control>
@@ -356,14 +356,14 @@
       <type>label</type>
       <label>30009</label>
       <id>0</id>
-      <posX>830</posX>
-      <posY>664</posY>
+      <posX>1245</posX>
+      <posY>996</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <animation effect="slide" time="150" start="800,0">WindowOpen</animation>
-      <animation effect="slide" time="250" end="800,0">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
       <visible>!Control.HasFocus(5101)</visible>
     </control>
     <control>
@@ -371,9 +371,9 @@
       <description>Shodow - Genres</description>
       <type>fadelabel</type>
       <visible>Control.HasFocus(5102) | Control.HasFocus(166)</visible>
-      <posX>202</posX>
-      <posY>526</posY>
-      <width>627</width>
+      <posX>303</posX>
+      <posY>789</posY>
+      <width>940</width>
       <font>mediastream16c</font>
       <textcolor>ff000000</textcolor>
       <label>#RadioTime.Translation.Genres.Label</label>
@@ -384,9 +384,9 @@
       <id>29</id>
       <description>Genres</description>
       <type>fadelabel</type>
-      <posX>200</posX>
-      <posY>525</posY>
-      <width>627</width>
+      <posX>300</posX>
+      <posY>787</posY>
+      <width>940</width>
       <font>mediastream16c</font>
       <textcolor>ff006699</textcolor>
       <label>#RadioTime.Translation.Genres.Label</label>
@@ -402,16 +402,16 @@
       <onright>5102</onright>
       <onup>166</onup>
       <ondown>166</ondown>
-      <posX>225</posX>
-      <posY>555</posY>
-      <width>500</width>
-      <height>160</height>
-      <textureHeight>32</textureHeight>
-      <textYOff>4</textYOff>
-      <spinWidth>32</spinWidth>
-      <spinHeight>32</spinHeight>
-      <spinPosX>975</spinPosX>
-      <spinPosY>660</spinPosY>
+      <posX>337</posX>
+      <posY>832</posY>
+      <width>750</width>
+      <height>240</height>
+      <textureHeight>48</textureHeight>
+      <textYOff>6</textYOff>
+      <spinWidth>48</spinWidth>
+      <spinHeight>48</spinHeight>
+      <spinPosX>1462</spinPosX>
+      <spinPosY>990</spinPosY>
       <spinAlign>Right</spinAlign>
       <spinColor>ff006698</spinColor>
       <spinCanFocus>no</spinCanFocus>
@@ -423,9 +423,9 @@
       <id>0</id>
       <description>Shodow - Similar Stations</description>
       <type>fadelabel</type>
-      <posX>202</posX>
-      <posY>526</posY>
-      <width>627</width>
+      <posX>303</posX>
+      <posY>789</posY>
+      <width>940</width>
       <font>mediastream16c</font>
       <textcolor>ff000000</textcolor>
       <label>#RadioTime.Translation.SimilarStations.Label</label>
@@ -437,9 +437,9 @@
       <id>28</id>
       <description>Similar Stations</description>
       <type>fadelabel</type>
-      <posX>200</posX>
-      <posY>525</posY>
-      <width>627</width>
+      <posX>300</posX>
+      <posY>787</posY>
+      <width>940</width>
       <font>mediastream16c</font>
       <textcolor>ff006699</textcolor>
       <label>#RadioTime.Translation.SimilarStations.Label</label>
@@ -455,16 +455,16 @@
       <onright>5103</onright>
       <onup>155</onup>
       <ondown>155</ondown>
-      <posX>225</posX>
-      <posY>555</posY>
-      <width>500</width>
-      <height>160</height>
-      <textureHeight>32</textureHeight>
-      <textYOff>4</textYOff>
-      <spinWidth>32</spinWidth>
-      <spinHeight>32</spinHeight>
-      <spinPosX>975</spinPosX>
-      <spinPosY>660</spinPosY>
+      <posX>337</posX>
+      <posY>832</posY>
+      <width>750</width>
+      <height>240</height>
+      <textureHeight>48</textureHeight>
+      <textYOff>6</textYOff>
+      <spinWidth>48</spinWidth>
+      <spinHeight>48</spinHeight>
+      <spinPosX>1462</spinPosX>
+      <spinPosY>990</spinPosY>
       <spinAlign>Right</spinAlign>
       <spinColor>ff006698</spinColor>
       <spinCanFocus>no</spinCanFocus>
@@ -476,4 +476,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:175a7dbd08f9b04f8bde4a68d4b2310a-->
+<!--Checksum:063b58a3fe779252aee10746d5318c9e-->

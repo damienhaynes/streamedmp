@@ -7,10 +7,10 @@
       <description>720p, 1080i, 1080p</description>
       <type>image</type>
       <id>9801</id>
-      <posX>1105</posX>
-      <posY>110</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>1657</posX>
+      <posY>165</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#MovingPictures.LocalMedia.videoresolution.png</texture>
       <visible>control.isvisible(50)+facadeview.filmstrip</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -19,10 +19,10 @@
       <description>SD/HD Fullscreen/Widescreen</description>
       <type>image</type>
       <id>0</id>
-      <posX>1105</posX>
-      <posY>110</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>1657</posX>
+      <posY>165</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#MovingPictures.LocalMedia.videoresolution #MovingPictures.LocalMedia.videoaspectratio.png</texture>
       <visible>control.isvisible(50)+facadeview.filmstrip+!Control.HasThumb(9801)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -32,10 +32,10 @@
       <description>H264</description>
       <type>image</type>
       <id>0</id>
-      <posX>1105</posX>
-      <posY>144</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>1657</posX>
+      <posY>216</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#MovingPictures.LocalMedia.videocodec.png</texture>
       <visible>control.isvisible(50)+facadeview.filmstrip</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -45,10 +45,10 @@
       <description>Audio Codecs / Channels</description>
       <type>image</type>
       <id>9802</id>
-      <posX>1105</posX>
-      <posY>178</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>1657</posX>
+      <posY>267</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#MovingPictures.LocalMedia.audiocodec #MovingPictures.LocalMedia.audiochannels.png</texture>
       <visible>control.isvisible(50)+facadeview.filmstrip</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -57,10 +57,10 @@
       <description>Audio Codecs - Unknown number of channels</description>
       <type>image</type>
       <id>0</id>
-      <posX>1105</posX>
-      <posY>178</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>1657</posX>
+      <posY>267</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#MovingPictures.LocalMedia.audiocodec.png</texture>
       <visible>control.isvisible(50)+facadeview.filmstrip+!Control.HasThumb(9802)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -70,14 +70,14 @@
       <description>Subtitles</description>
       <type>image</type>
       <id>0</id>
-      <posX>1105</posX>
-      <posY>212</posY>
-      <width>100</width>
-      <height>32</height>
+      <posX>1657</posX>
+      <posY>318</posY>
+      <width>150</width>
+      <height>48</height>
       <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\#MovingPictures.LocalMedia.Subtitles.png</texture>
       <visible>control.isvisible(50)+facadeview.filmstrip</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:3efa3e7775353e59028cec6bd3f78e15-->
+<!--Checksum:9fa48391fdd6ceebe004b06b1e016e0e-->

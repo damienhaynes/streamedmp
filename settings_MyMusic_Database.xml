@@ -3,229 +3,226 @@
   <id>1011</id>
   <defaultcontrol>14</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.label:#(L(5))->#(L(100014))->#(L(300161))</define>
+  <define>#header.label:#(L(5))-&gt;#(L(100014))-&gt;#(L(300161))</define>
   <define>#header.hover:hover_settings.png</define>
   <define>#defaultcontrol:14</define>
   <define>#defaultcontrol.onright:9996</define>
   <controls>
     <import>common.settings.wide.xml</import>
     <import>common.time.xml</import>
-		<control>
-			<type>image</type>
-			<id>0</id>
-			<posX>240</posX>
-			<posY>60</posY>
-			<width>720</width>
-			<height>130</height>
-			<texture>SettingsFrame.png</texture>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
-		</control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>360</posX>
+      <posY>90</posY>
+      <width>1080</width>
+      <height>195</height>
+      <texture>SettingsFrame.png</texture>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+    </control>
     <control>
       <type>group</type>
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>255</posX>
-      <posY>115</posY>
-      <height>500</height>
-			<dimColor>ffFFFFFF</dimColor>
+      <posX>382</posX>
+      <posY>172</posY>
+      <height>750</height>
+      <dimColor>ffFFFFFF</dimColor>
       <layout>StackLayout</layout>
       <control Style="skinbutton">
         <description>Scan database</description>
         <type>button</type>
         <id>14</id>
         <label>300164</label>
-				<width>350</width>
+        <width>525</width>
         <onright>2</onright>
-				<onup>10</onup>
-				<ondown>11</ondown>
-				<font>mediastream10tc</font>
+        <onup>10</onup>
+        <ondown>11</ondown>
+        <font>mediastream10tc</font>
       </control>
     </control>
-		
-		<control Style="smallTitleB">
-			<description>Folders Label</description>
+    <control Style="smallTitleB">
+      <description>Folders Label</description>
       <label>300071</label>
       <type>label</type>
-      <posX>730</posX>
-      <posY>80</posY>
-      <width>170</width>
+      <posX>1095</posX>
+      <posY>120</posY>
+      <width>255</width>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-		<control>
+    <control>
       <description>Share folders list</description>
       <type>listcontrol</type>
       <id>2</id>
-      <posX>600</posX>
-      <posY>110</posY>
-      <height>80</height>
-      <width>355</width>
+      <posX>900</posX>
+      <posY>165</posY>
+      <height>120</height>
+      <width>532</width>
       <onleft>14</onleft>
-			<font>mediastream11c</font>
-			<font2>mediastream11c</font2>
-			<textXOff>15</textXOff>
-			<textXOff2>340</textXOff2>
-			<textYOff>0</textYOff>
-			<textYOff2>0</textYOff2>
-			<spinPosX>2500</spinPosX>
-			<textureHeight>25</textureHeight>
-			<onright>#defaultcontrol.onright</onright>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <font>mediastream11c</font>
+      <font2>mediastream11c</font2>
+      <textXOff>22</textXOff>
+      <textXOff2>510</textXOff2>
+      <textYOff>0</textYOff>
+      <textYOff2>0</textYOff2>
+      <spinPosX>3750</spinPosX>
+      <textureHeight>37</textureHeight>
+      <onright>#defaultcontrol.onright</onright>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
-		
-		<control>
+    <control>
       <type>group</type>
       <description>Options</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
-      <posX>216</posX>
-      <posY>200</posY>
-      <width>766</width>
-      <height>500</height>
-			<dimColor>ffFFFFFF</dimColor>
+      <posX>324</posX>
+      <posY>300</posY>
+      <width>1149</width>
+      <height>750</height>
+      <dimColor>ffFFFFFF</dimColor>
       <layout>StackLayout</layout>
-			<control Style="settingsmainbutton">
-				<description>Set scan date</description>
+      <control Style="settingsmainbutton">
+        <description>Set scan date</description>
         <type>button</type>
         <id>11</id>
         <label>#dateadded</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onup>14</onup>
-				<onright>#defaultcontrol.onright</onright>
-			</control>
-			<control Style="settingsmaincheckbutton">
-				<description>Only update after date</description>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onup>14</onup>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Only update after date</description>
         <type>checkbutton</type>
         <id>12</id>
         <label>#updatesincelastimprot</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
-				<onup>11</onup>
-				<onleft>12</onleft>
-			</control>
-			<control Style="settingsmaincheckbutton">
-				<description>Auto update</description>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>11</onup>
+        <onleft>12</onleft>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Auto update</description>
         <type>checkbutton</type>
         <id>13</id>
         <label>300165</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onleft>13</onleft>
-				<onup>12</onup>
-				<onright>#defaultcontrol.onright</onright>
-			</control>
-			<control Style="settingsmaincheckbutton">
-				<description>Strip prefixes button</description>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onleft>13</onleft>
+        <onup>12</onup>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Strip prefixes button</description>
         <type>checkbutton</type>
         <id>3</id>
         <label>300166</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
-				<onup>13</onup>
-				<onleft>3</onleft>
-			</control>
-			<control Style="settingsmaincheckbutton">
-				<description>Treat tracks</description>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>13</onup>
+        <onleft>3</onleft>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Treat tracks</description>
         <type>checkbutton</type>
         <id>4</id>
         <label>300167</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
-				<onup>3</onup>
-				<onleft>4</onleft>
-				<ondown>5</ondown>
-			</control>
-			<control Style="settingsmainbutton">
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>3</onup>
+        <onleft>4</onleft>
+        <ondown>5</ondown>
+      </control>
+      <control Style="settingsmainbutton">
         <description>Thumbs Heading</description>
         <type>button</type>
         <id>0</id>
         <font>mediastream12tc</font>
-				<label>300168</label>
-				<textXOff>35</textXOff>
+        <label>300168</label>
+        <textXOff>52</textXOff>
       </control>
-			<control Style="settingsmaincheckbutton">
-				<description>Extension</description>
+      <control Style="settingsmaincheckbutton">
+        <description>Extension</description>
         <type>checkbutton</type>
         <id>5</id>
         <label>300169</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
-				<onup>4</onup>
-				<onleft>5</onleft>
-			</control>
-			<control Style="settingsmaincheckbutton">
-				<description>Prefers Front Cover Extension</description>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>4</onup>
+        <onleft>5</onleft>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Prefers Front Cover Extension</description>
         <type>checkbutton</type>
         <id>6</id>
         <label>300170</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
-				<onup>5</onup>
-				<onleft>6</onleft>
-			</control>
-			<control Style="settingsmaincheckbutton">
-				<description>Cover art in ID3</description>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>5</onup>
+        <onleft>6</onleft>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Cover art in ID3</description>
         <type>checkbutton</type>
         <id>7</id>
         <label>300171</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
-				<onup>6</onup>
-				<onleft>7</onleft>
-			</control>
-			<control Style="settingsmaincheckbutton">
-				<description>Create genre previes</description>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>6</onup>
+        <onleft>7</onleft>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Create genre previes</description>
         <type>checkbutton</type>
         <id>8</id>
         <label>300172</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
-				<onup>7</onup>
-				<onleft>8</onleft>
-			</control>
-			<control Style="settingsmaincheckbutton">
-				<description>Create artist preview</description>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>7</onup>
+        <onleft>8</onleft>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Create artist preview</description>
         <type>checkbutton</type>
         <id>9</id>
         <label>300173</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
-				<onup>8</onup>
-				<onleft>9</onleft>
-			</control>
-			<control Style="settingsmaincheckbutton">
-				<description>Create missing folder.jpg</description>
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>8</onup>
+        <onleft>9</onleft>
+      </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Create missing folder.jpg</description>
         <type>checkbutton</type>
         <id>10</id>
         <label>300174</label>
-				<textXOff>35</textXOff>
-				<width>766</width>
-				<onright>#defaultcontrol.onright</onright>
-				<onleft>10</onleft>
-				<onup>9</onup>
-				<ondown>14</ondown>
-			</control>
-		</control>
-		
+        <textXOff>52</textXOff>
+        <width>1149</width>
+        <onright>#defaultcontrol.onright</onright>
+        <onleft>10</onleft>
+        <onup>9</onup>
+        <ondown>14</ondown>
+      </control>
+    </control>
     <control>
       <description>Prefixes</description>
       <type>label</type>
       <id>1</id>
-      <posX>910</posX>
-      <posY>335</posY>
-      <width>420</width>
-			<align>right</align>
+      <posX>1365</posX>
+      <posY>502</posY>
+      <width>630</width>
+      <align>right</align>
       <font>mediastream11c</font>
       <label>#prefixes</label>
-			<animation effect="fade" time="200" delay="200">windowopen</animation>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
   </controls>
 </window>
-<!--Checksum:ec8dc32594c1cddd848007d6b4563968-->
+<!--Checksum:1b2ff161db4c5790d27b6edbfe8466fb-->
