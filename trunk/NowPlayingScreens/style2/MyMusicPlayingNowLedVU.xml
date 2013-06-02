@@ -15,8 +15,8 @@
       <type>button</type>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>449</height>
+      <width>1920</width>
+      <height>673</height>
       <onup>1141</onup>
       <ondown>1141</ondown>
       <onleft>200010</onleft>
@@ -29,26 +29,26 @@
       <type>actiongroup</type>
       <description>group element</description>
       <defaultcontrol>155</defaultcontrol>
-      <animation effect="slide" start="0,0" end="0,120" time="500" tween="quadratic" delay="100">unfocus</animation>
+      <animation effect="slide" start="0,0" end="0,180" time="500" tween="quadratic" delay="100">unfocus</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <posX>0</posX>
-      <posY>250</posY>
-      <width>1280</width>
-      <height>470</height>
-      <buttonwidth>1280</buttonwidth>
-      <buttonheight>470</buttonheight>
+      <posY>375</posY>
+      <width>1920</width>
+      <height>705</height>
+      <buttonwidth>1920</buttonwidth>
+      <buttonheight>705</buttonheight>
       <buttonX>0</buttonX>
-      <buttonY>350</buttonY>
+      <buttonY>525</buttonY>
       <dimColor>ffffffff</dimColor>
       <control>
         <description>bottom black bg</description>
         <type>image</type>
         <id>0</id>
         <posX>0</posX>
-        <posY>250</posY>
-        <width>1280</width>
-        <height>470</height>
+        <posY>375</posY>
+        <width>1920</width>
+        <height>705</height>
         <texture>osdbackground1.png</texture>
         <dimColor>ffffffff</dimColor>
       </control>
@@ -56,10 +56,10 @@
         <type>image</type>
         <description>album art image</description>
         <id>112</id>
-        <posX>40</posX>
-        <posY>160</posY>
-        <width>250</width>
-        <height>250</height>
+        <posX>60</posX>
+        <posY>240</posY>
+        <width>375</width>
+        <height>375</height>
         <texture flipY="true" diffuse="diffusemirrorwide.png">-</texture>
         <visible>string.equals(#StreamedMP.cdCoverOnly,false)</visible>
       </control>
@@ -67,10 +67,10 @@
         <type>image</type>
         <description>album art image (Fixed)</description>
         <id>0</id>
-        <posX>40</posX>
-        <posY>160</posY>
-        <width>250</width>
-        <height>250</height>
+        <posX>60</posX>
+        <posY>240</posY>
+        <width>375</width>
+        <height>375</height>
         <texture flipY="true" diffuse="diffusemirrorwide.png">#Play.Current.Thumb</texture>
         <visible>string.equals(#StreamedMP.cdCoverOnly,true)</visible>
       </control>
@@ -78,26 +78,26 @@
         <type>image</type>
         <id>0</id>
         <description>nowplaying background</description>
-        <posX>7</posX>
-        <posY>128</posY>
-        <width>317</width>
-        <height>305</height>
+        <posX>10</posX>
+        <posY>192</posY>
+        <width>475</width>
+        <height>457</height>
         <texture>round.cover.frame.png</texture>
         <dimColor>ffffffff</dimColor>
       </control>
       <control>
         <type>imagelist</type>
         <id>141</id>
-        <posX>85</posX>
-        <posY>430</posY>
-        <width>120</width>
-        <height>24</height>
+        <posX>127</posX>
+        <posY>645</posY>
+        <width>180</width>
+        <height>36</height>
         <onup>1141</onup>
         <ondown>200010</ondown>
         <onleft>200010</onleft>
         <onright>200010</onright>
-        <textureWidth>32</textureWidth>
-        <textureHeight>32</textureHeight>
+        <textureWidth>48</textureWidth>
+        <textureHeight>48</textureHeight>
         <subitems>
           <subitem>white-star-outline.png</subitem>
           <subitem>white-star-filled.png</subitem>
@@ -107,25 +107,25 @@
         <imagesToDraw>5</imagesToDraw>
         <percentage>#Play.Current.Rating</percentage>
         <visible>control.hasthumb(112)</visible>
-      </control>      
+      </control>
       <!-- VU Meter: LED -->
       <control>
         <type>image</type>
         <id>0</id>
-        <posX>540</posX>
-        <posY>404</posY>
-        <width>200</width>
-        <height>15</height>
+        <posX>810</posX>
+        <posY>606</posY>
+        <width>300</width>
+        <height>22</height>
         <texture>VU aus led.png</texture>
         <visible>!Player.playing</visible>
       </control>
       <control>
         <type>image</type>
         <id>999</id>
-        <posX>540</posX>
-        <posY>404</posY>
-        <width>200</width>
-        <height>15</height>
+        <posX>810</posX>
+        <posY>606</posY>
+        <width>300</width>
+        <height>22</height>
         <imagepath>Animations\LedVu</imagepath>
         <texture>#VUMeterL</texture>
         <visible>Player.HasAudio + Player.playing</visible>
@@ -133,20 +133,20 @@
       <control>
         <type>image</type>
         <id>0</id>
-        <posX>540</posX>
-        <posY>424</posY>
-        <width>200</width>
-        <height>15</height>
+        <posX>810</posX>
+        <posY>636</posY>
+        <width>300</width>
+        <height>22</height>
         <texture>VU aus led.png</texture>
         <visible>!Player.playing</visible>
       </control>
       <control>
         <type>image</type>
         <id>998</id>
-        <posX>540</posX>
-        <posY>424</posY>
-        <width>200</width>
-        <height>15</height>
+        <posX>810</posX>
+        <posY>636</posY>
+        <width>300</width>
+        <height>22</height>
         <imagepath>Animations\LedVu</imagepath>
         <texture>#VUMeterR</texture>
         <visible>Player.HasAudio + Player.playing</visible>
@@ -155,10 +155,10 @@
         <type>fadelabel</type>
         <description>Artist label</description>
         <id>0</id>
-        <posX>325</posX>
-        <posY>264</posY>
-        <width>730</width>
-        <height>26</height>
+        <posX>487</posX>
+        <posY>396</posY>
+        <width>1095</width>
+        <height>38</height>
         <label>#Play.Current.Artist</label>
         <font>mediastream16tc</font>
       </control>
@@ -166,10 +166,10 @@
         <type>fadelabel</type>
         <description>Title label</description>
         <id>0</id>
-        <posX>325</posX>
-        <posY>294</posY>
-        <width>735</width>
-        <height>26</height>
+        <posX>487</posX>
+        <posY>441</posY>
+        <width>1102</width>
+        <height>38</height>
         <label>#Play.Current.Title</label>
         <font>mediastream14tc</font>
       </control>
@@ -177,10 +177,10 @@
         <type>fadelabel</type>
         <description>album label</description>
         <id>0</id>
-        <posX>325</posX>
-        <posY>324</posY>
-        <width>735</width>
-        <height>26</height>
+        <posX>487</posX>
+        <posY>486</posY>
+        <width>1102</width>
+        <height>38</height>
         <label>#Play.Current.Album</label>
         <font>mediastream12c</font>
       </control>
@@ -188,10 +188,10 @@
         <type>label</type>
         <description>Translation "Year"</description>
         <id>0</id>
-        <posX>325</posX>
-        <posY>354</posY>
-        <width>90</width>
-        <height>26</height>
+        <posX>487</posX>
+        <posY>531</posY>
+        <width>135</width>
+        <height>38</height>
         <label>201</label>
         <font>mediastream12c</font>
       </control>
@@ -199,10 +199,10 @@
         <type>label</type>
         <description>year label</description>
         <id>0</id>
-        <posX>415</posX>
-        <posY>354</posY>
-        <width>100</width>
-        <height>26</height>
+        <posX>622</posX>
+        <posY>531</posY>
+        <width>150</width>
+        <height>38</height>
         <label>#Play.Current.Year</label>
         <font>mediastream12c</font>
       </control>
@@ -210,10 +210,10 @@
         <type>label</type>
         <description>Translation "Track"</description>
         <id>0</id>
-        <posX>325</posX>
-        <posY>384</posY>
-        <width>90</width>
-        <height>26</height>
+        <posX>487</posX>
+        <posY>576</posY>
+        <width>135</width>
+        <height>38</height>
         <label>435</label>
         <font>mediastream12c</font>
       </control>
@@ -221,20 +221,20 @@
         <type>label</type>
         <description>track label</description>
         <id>0</id>
-        <posX>415</posX>
-        <posY>384</posY>
-        <width>100</width>
-        <height>26</height>
+        <posX>622</posX>
+        <posY>576</posY>
+        <width>150</width>
+        <height>38</height>
         <label>#Play.Current.Track</label>
         <font>mediastream12c</font>
       </control>
       <control>
         <type>image</type>
         <id>117</id>
-        <posX>587</posX>
-        <posY>410</posY>
-        <width>452</width>
-        <height>12</height>
+        <posX>880</posX>
+        <posY>615</posY>
+        <width>678</width>
+        <height>18</height>
         <texture>osd_progress_background_medium.png</texture>
         <visible>Player.HasMedia</visible>
       </control>
@@ -242,10 +242,10 @@
         <description>progressbar background</description>
         <type>image</type>
         <id>0</id>
-        <posX>393</posX>
-        <posY>434</posY>
-        <width>494</width>
-        <height>27</height>
+        <posX>589</posX>
+        <posY>651</posY>
+        <width>741</width>
+        <height>40</height>
         <texture>osdprogressbackv.png</texture>
         <colordiffuse>ffFFFFFF</colordiffuse>
       </control>
@@ -253,10 +253,10 @@
         <type>progress</type>
         <description>track progress</description>
         <id>118</id>
-        <posX>386</posX>
-        <posY>438</posY>
-        <width>514</width>
-        <height>23</height>
+        <posX>590</posX>
+        <posY>657</posY>
+        <width>743</width>
+        <height>34</height>
         <label>#percentage</label>
         <texturebg>-</texturebg>
         <lefttexture>osdprogressleft.png</lefttexture>
@@ -268,8 +268,8 @@
         <type>label</type>
         <description>track progress label</description>
         <id>0</id>
-        <posX>388</posX>
-        <posY>434</posY>
+        <posX>582</posX>
+        <posY>651</posY>
         <label>#currentplaytime</label>
         <align>right</align>
         <font>mediastream14c</font>
@@ -279,8 +279,8 @@
         <type>label</type>
         <description>track progress label</description>
         <id>0</id>
-        <posX>895</posX>
-        <posY>434</posY>
+        <posX>1342</posX>
+        <posY>651</posY>
         <label>#duration</label>
         <font>mediastream14c</font>
         <visible>Player.HasMedia</visible>
@@ -289,10 +289,10 @@
         <type>image</type>
         <description>album art image</description>
         <id>200011</id>
-        <posX>862</posX>
-        <posY>353</posY>
-        <width>50</width>
-        <height>50</height>
+        <posX>1293</posX>
+        <posY>529</posY>
+        <width>75</width>
+        <height>75</height>
         <texture>#Play.Next.Thumb</texture>
         <visible>player.hasmedia</visible>
       </control>
@@ -300,9 +300,9 @@
         <type>fadelabel</type>
         <description>next artist label</description>
         <id>123</id>
-        <posX>932</posX>
-        <posY>386</posY>
-        <width>335</width>
+        <posX>1398</posX>
+        <posY>579</posY>
+        <width>502</width>
         <label>#Play.Next.Title by #Play.Next.Artist</label>
         <font>mediastream10c</font>
         <textcolor>ff909090</textcolor>
@@ -312,8 +312,8 @@
         <type>label</type>
         <description>up next label</description>
         <id>20</id>
-        <posX>932</posX>
-        <posY>360</posY>
+        <posX>1398</posX>
+        <posY>540</posY>
         <label>4541</label>
         <font>mediastream10c</font>
         <textcolor>ff006699</textcolor>
@@ -324,9 +324,9 @@
         <type>image</type>
         <id>0</id>
         <posX>0</posX>
-        <posY>491</posY>
-        <width>1280</width>
-        <height>50</height>
+        <posY>736</posY>
+        <width>1920</width>
+        <height>75</height>
         <texture>imagestreamtitle.png</texture>
         <colordiffuse>ffFFFFFF</colordiffuse>
       </control>
@@ -335,16 +335,16 @@
         <description>unknown rating1</description>
         <type>imagelist</type>
         <id>77</id>
-        <posX>428</posX>
-        <posY>570</posY>
-        <width>130</width>
-        <height>32</height>
+        <posX>642</posX>
+        <posY>855</posY>
+        <width>195</width>
+        <height>48</height>
         <onup>200010</onup>
         <ondown>200010</ondown>
         <onleft>200010</onleft>
         <onright>200010</onright>
-        <textureWidth>23</textureWidth>
-        <textureHeight>22</textureHeight>
+        <textureWidth>34</textureWidth>
+        <textureHeight>33</textureHeight>
         <subitems>
           <subitem>-.png</subitem>
           <subitem>star_blue1.png</subitem>
@@ -359,16 +359,16 @@
         <description>unknown rating2</description>
         <type>imagelist</type>
         <id>78</id>
-        <posX>428</posX>
-        <posY>605</posY>
-        <width>130</width>
-        <height>32</height>
+        <posX>642</posX>
+        <posY>907</posY>
+        <width>195</width>
+        <height>48</height>
         <onup>200010</onup>
         <ondown>200010</ondown>
         <onleft>200010</onleft>
         <onright>200010</onright>
-        <textureWidth>23</textureWidth>
-        <textureHeight>22</textureHeight>
+        <textureWidth>34</textureWidth>
+        <textureHeight>33</textureHeight>
         <subitems>
           <subitem>-.png</subitem>
           <subitem>star_blue1.png</subitem>
@@ -383,16 +383,16 @@
         <description>unknown rating3</description>
         <type>imagelist</type>
         <id>79</id>
-        <posX>428</posX>
-        <posY>640</posY>
-        <width>130</width>
-        <height>32</height>
+        <posX>642</posX>
+        <posY>960</posY>
+        <width>195</width>
+        <height>48</height>
         <onup>200010</onup>
         <ondown>200010</ondown>
         <onleft>200010</onleft>
         <onright>200010</onright>
-        <textureWidth>23</textureWidth>
-        <textureHeight>22</textureHeight>
+        <textureWidth>34</textureWidth>
+        <textureHeight>33</textureHeight>
         <subitems>
           <subitem>-.png</subitem>
           <subitem>star_blue1.png</subitem>
@@ -407,16 +407,16 @@
         <description>existent rating1</description>
         <type>imagelist</type>
         <id>80</id>
-        <posX>428</posX>
-        <posY>570</posY>
-        <width>130</width>
-        <height>32</height>
+        <posX>642</posX>
+        <posY>855</posY>
+        <width>195</width>
+        <height>48</height>
         <onup>200010</onup>
         <ondown>200010</ondown>
         <onleft>200010</onleft>
         <onright>200010</onright>
-        <textureWidth>23</textureWidth>
-        <textureHeight>22</textureHeight>
+        <textureWidth>34</textureWidth>
+        <textureHeight>33</textureHeight>
         <subitems>
           <subitem>-.png</subitem>
           <subitem>star_blue2.png</subitem>
@@ -431,16 +431,16 @@
         <description>existent rating2</description>
         <type>imagelist</type>
         <id>81</id>
-        <posX>428</posX>
-        <posY>605</posY>
-        <width>130</width>
-        <height>32</height>
+        <posX>642</posX>
+        <posY>907</posY>
+        <width>195</width>
+        <height>48</height>
         <onup>200010</onup>
         <ondown>200010</ondown>
         <onleft>200010</onleft>
         <onright>200010</onright>
-        <textureWidth>23</textureWidth>
-        <textureHeight>22</textureHeight>
+        <textureWidth>34</textureWidth>
+        <textureHeight>33</textureHeight>
         <subitems>
           <subitem>-.png</subitem>
           <subitem>star_blue2.png</subitem>
@@ -455,16 +455,16 @@
         <description>existent rating3</description>
         <type>imagelist</type>
         <id>82</id>
-        <posX>428</posX>
-        <posY>640</posY>
-        <width>130</width>
-        <height>32</height>
+        <posX>642</posX>
+        <posY>960</posY>
+        <width>195</width>
+        <height>48</height>
         <onup>200010</onup>
         <ondown>200010</ondown>
         <onleft>200010</onleft>
         <onright>200010</onright>
-        <textureWidth>23</textureWidth>
-        <textureHeight>22</textureHeight>
+        <textureWidth>34</textureWidth>
+        <textureHeight>33</textureHeight>
         <subitems>
           <subitem>-.png</subitem>
           <subitem>star_blue2.png</subitem>
@@ -479,16 +479,16 @@
         <description>known rating1</description>
         <type>imagelist</type>
         <id>83</id>
-        <posX>428</posX>
-        <posY>570</posY>
-        <width>130</width>
-        <height>32</height>
+        <posX>642</posX>
+        <posY>855</posY>
+        <width>195</width>
+        <height>48</height>
         <onup>200010</onup>
         <ondown>200010</ondown>
         <onleft>200010</onleft>
         <onright>200010</onright>
-        <textureWidth>23</textureWidth>
-        <textureHeight>22</textureHeight>
+        <textureWidth>34</textureWidth>
+        <textureHeight>33</textureHeight>
         <subitems>
           <subitem>-.png</subitem>
           <subitem>star_blue3.png</subitem>
@@ -503,16 +503,16 @@
         <description>known rating2</description>
         <type>imagelist</type>
         <id>84</id>
-        <posX>428</posX>
-        <posY>605</posY>
-        <width>130</width>
-        <height>32</height>
+        <posX>642</posX>
+        <posY>907</posY>
+        <width>195</width>
+        <height>48</height>
         <onup>200010</onup>
         <ondown>200010</ondown>
         <onleft>200010</onleft>
         <onright>200010</onright>
-        <textureWidth>23</textureWidth>
-        <textureHeight>22</textureHeight>
+        <textureWidth>34</textureWidth>
+        <textureHeight>33</textureHeight>
         <subitems>
           <subitem>-.png</subitem>
           <subitem>star_blue3.png</subitem>
@@ -527,16 +527,16 @@
         <description>known rating3</description>
         <type>imagelist</type>
         <id>85</id>
-        <posX>428</posX>
-        <posY>640</posY>
-        <width>130</width>
-        <height>32</height>
+        <posX>642</posX>
+        <posY>960</posY>
+        <width>195</width>
+        <height>48</height>
         <onup>200010</onup>
         <ondown>200010</ondown>
         <onleft>200010</onleft>
         <onright>200010</onright>
-        <textureWidth>23</textureWidth>
-        <textureHeight>22</textureHeight>
+        <textureWidth>34</textureWidth>
+        <textureHeight>33</textureHeight>
         <subitems>
           <subitem>-.png</subitem>
           <subitem>star_blue3.png</subitem>
@@ -551,16 +551,16 @@
         <description>famous rating1</description>
         <type>imagelist</type>
         <id>87</id>
-        <posX>428</posX>
-        <posY>570</posY>
-        <width>130</width>
-        <height>32</height>
+        <posX>642</posX>
+        <posY>855</posY>
+        <width>195</width>
+        <height>48</height>
         <onup>200010</onup>
         <ondown>200010</ondown>
         <onleft>200010</onleft>
         <onright>200010</onright>
-        <textureWidth>23</textureWidth>
-        <textureHeight>22</textureHeight>
+        <textureWidth>34</textureWidth>
+        <textureHeight>33</textureHeight>
         <subitems>
           <subitem>-.png</subitem>
           <subitem>star_blue4.png</subitem>
@@ -575,16 +575,16 @@
         <description>famous rating2</description>
         <type>imagelist</type>
         <id>88</id>
-        <posX>428</posX>
-        <posY>605</posY>
-        <width>130</width>
-        <height>32</height>
+        <posX>642</posX>
+        <posY>907</posY>
+        <width>195</width>
+        <height>48</height>
         <onup>200010</onup>
         <ondown>200010</ondown>
         <onleft>200010</onleft>
         <onright>200010</onright>
-        <textureWidth>23</textureWidth>
-        <textureHeight>22</textureHeight>
+        <textureWidth>34</textureWidth>
+        <textureHeight>33</textureHeight>
         <subitems>
           <subitem>-.png</subitem>
           <subitem>star_blue4.png</subitem>
@@ -599,16 +599,16 @@
         <description>famous rating3</description>
         <type>imagelist</type>
         <id>89</id>
-        <posX>428</posX>
-        <posY>640</posY>
-        <width>130</width>
-        <height>32</height>
+        <posX>642</posX>
+        <posY>960</posY>
+        <width>195</width>
+        <height>48</height>
         <onup>200010</onup>
         <ondown>200010</ondown>
         <onleft>200010</onleft>
         <onright>200010</onright>
-        <textureWidth>23</textureWidth>
-        <textureHeight>22</textureHeight>
+        <textureWidth>34</textureWidth>
+        <textureHeight>33</textureHeight>
         <subitems>
           <subitem>-.png</subitem>
           <subitem>star_blue4.png</subitem>
@@ -623,9 +623,9 @@
         <type>fadelabel</type>
         <description>best album tracks label</description>
         <id>29</id>
-        <posX>40</posX>
-        <posY>500</posY>
-        <width>512</width>
+        <posX>60</posX>
+        <posY>750</posY>
+        <width>768</width>
         <label>33030</label>
         <font>mediastream16c</font>
       </control>
@@ -639,21 +639,21 @@
         <onright>155</onright>
         <ondown>1143</ondown>
         <posX>0</posX>
-        <posY>560</posY>
-        <width>550</width>
-        <height>130</height>
-        <textYOff>2</textYOff>
-        <textXOff>40</textXOff>
-        <IconXOff>10</IconXOff>
+        <posY>840</posY>
+        <width>825</width>
+        <height>195</height>
+        <textYOff>3</textYOff>
+        <textXOff>60</textXOff>
+        <IconXOff>15</IconXOff>
         <spinColor>-</spinColor>#
-        <font>mediastream12</font><textureHeight>35</textureHeight><unfocusedAlpha>100</unfocusedAlpha><image>-</image></control>
+        <font>mediastream12</font><textureHeight>52</textureHeight><unfocusedAlpha>100</unfocusedAlpha><image>-</image></control>
       <control>
         <type>fadelabel</type>
         <description>best tag tracks label</description>
         <id>28</id>
-        <posX>670</posX>
-        <posY>500</posY>
-        <width>612</width>
+        <posX>1005</posX>
+        <posY>750</posY>
+        <width>918</width>
         <label>Best Tracks For Tag</label>
         <font>mediastream16c</font>
       </control>
@@ -665,16 +665,16 @@
         <onleft>166</onleft>
         <onright>155</onright>
         <ondown>1142</ondown>
-        <posX>720</posX>
-        <posY>560</posY>
-        <width>550</width>
-        <height>130</height>
-        <textXOff>60</textXOff>
-        <textYOff>2</textYOff>
-        <IconXOff>10</IconXOff>
+        <posX>1080</posX>
+        <posY>840</posY>
+        <width>825</width>
+        <height>195</height>
+        <textXOff>90</textXOff>
+        <textYOff>3</textYOff>
+        <IconXOff>15</IconXOff>
         <spinColor>-</spinColor>
         <font>mediastream12</font>
-        <textureHeight>35</textureHeight>
+        <textureHeight>52</textureHeight>
         <unfocusedAlpha>100</unfocusedAlpha>
         <image>-</image>
       </control>
@@ -682,16 +682,16 @@
         <description>Music Search Button</description>
         <type>button</type>
         <id>1143</id>
-        <posX>525</posX>
-        <posY>660</posY>
+        <posX>787</posX>
+        <posY>990</posY>
         <onup>166</onup>
         <ondown>200010</ondown>
         <onleft>166</onleft>
         <onright>1141</onright>
         <textureFocus>top_search_enabled.png</textureFocus>
         <textureNoFocus>top_search_disabled.png</textureNoFocus>
-        <width>50</width>
-        <height>50</height>
+        <width>75</width>
+        <height>75</height>
         <hyperlink>30885</hyperlink>
         <visible>plugin.isenabled(Search music)</visible>
       </control>
@@ -699,8 +699,8 @@
         <description>Playlist Button</description>
         <type>button</type>
         <id>1141</id>
-        <posX>615</posX>
-        <posY>660</posY>
+        <posX>922</posX>
+        <posY>990</posY>
         <label>-</label>
         <onup>200010</onup>
         <ondown>200010</ondown>
@@ -708,24 +708,24 @@
         <onright>1142</onright>
         <textureFocus>top_playlist_enabled.png</textureFocus>
         <textureNoFocus>top_playlist_disabled.png</textureNoFocus>
-        <width>50</width>
-        <height>50</height>
+        <width>75</width>
+        <height>75</height>
         <hyperlink>500</hyperlink>
       </control>
       <control>
         <description>Lyrics Button</description>
         <type>button</type>
         <id>1142</id>
-        <posX>705</posX>
-        <posY>660</posY>
+        <posX>1057</posX>
+        <posY>990</posY>
         <onup>155</onup>
         <ondown>200010</ondown>
         <onleft>1141</onleft>
         <onright>155</onright>
         <textureFocus>top_lyrics_enabled.png</textureFocus>
         <textureNoFocus>top_lyrics_disabled.png</textureNoFocus>
-        <width>50</width>
-        <height>50</height>
+        <width>75</width>
+        <height>75</height>
         <hyperlink>90478</hyperlink>
         <visible>plugin.isenabled(My Lyrics)</visible>
       </control>
@@ -734,14 +734,14 @@
       <description>video preview window</description>
       <type>videowindow</type>
       <id>99</id>
-      <posX>20</posX>
-      <posY>79</posY>
-      <width>203</width>
-      <height>114</height>
+      <posX>30</posX>
+      <posY>118</posY>
+      <width>304</width>
+      <height>171</height>
       <visible>no</visible>
     </control>
     <import>common.window.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:c59771a01e29c9bf80f7cbf7350e1f81-->
+<!--Checksum:b9b69584c14aaf2120cd0c3892a232d0-->

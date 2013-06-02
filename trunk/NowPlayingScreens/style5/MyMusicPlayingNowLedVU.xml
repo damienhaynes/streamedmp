@@ -40,18 +40,18 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>black.png</texture>
     </control>
     <control>
       <type>image</type>
       <description>album art image (rotating)</description>
       <id>112</id>
-      <posX>20</posX>
-      <posY>45</posY>
-      <width>370</width>
-      <height>347</height>
+      <posX>30</posX>
+      <posY>67</posY>
+      <width>555</width>
+      <height>520</height>
       <texture>-</texture>
       <visible>string.equals(#StreamedMP.cdCoverOnly,false)</visible>
     </control>
@@ -59,10 +59,10 @@
       <type>image</type>
       <description>album art image (Fixed)</description>
       <id>0</id>
-      <posX>20</posX>
-      <posY>45</posY>
-      <width>370</width>
-      <height>347</height>
+      <posX>30</posX>
+      <posY>67</posY>
+      <width>555</width>
+      <height>520</height>
       <texture>-</texture>
       <texture>#Play.Current.Thumb</texture>
       <visible>string.equals(#StreamedMP.cdCoverOnly,true)</visible>
@@ -82,20 +82,20 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>20</posX>
-      <posY>600</posY>
-      <width>380</width>
-      <height>20</height>
+      <posX>30</posX>
+      <posY>900</posY>
+      <width>570</width>
+      <height>30</height>
       <texture>VU aus led.png</texture>
       <visible>!Player.playing</visible>
     </control>
     <control>
       <type>image</type>
       <id>999</id>
-      <posX>20</posX>
-      <posY>600</posY>
-      <width>380</width>
-      <height>20</height>
+      <posX>30</posX>
+      <posY>900</posY>
+      <width>570</width>
+      <height>30</height>
       <imagepath>Animations\LedVu</imagepath>
       <texture>#VUMeterL</texture>
       <visible>Player.HasAudio + Player.playing</visible>
@@ -103,20 +103,20 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>20</posX>
-      <posY>630</posY>
-      <width>380</width>
-      <height>20</height>
+      <posX>30</posX>
+      <posY>945</posY>
+      <width>570</width>
+      <height>30</height>
       <texture>VU aus led.png</texture>
       <visible>!Player.playing</visible>
     </control>
     <control>
       <type>image</type>
       <id>998</id>
-      <posX>20</posX>
-      <posY>630</posY>
-      <width>380</width>
-      <height>20</height>
+      <posX>30</posX>
+      <posY>945</posY>
+      <width>570</width>
+      <height>30</height>
       <imagepath>Animations\LedVu</imagepath>
       <texture>#VUMeterR</texture>
       <visible>Player.HasAudio + Player.playing</visible>
@@ -126,4 +126,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:33272fdb0fdf4f1b27bd09180d405af0-->
+<!--Checksum:a4eb6794f110de1b75ad72884adcc666-->

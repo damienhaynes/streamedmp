@@ -48,14 +48,11 @@ namespace StreamedMPConfig
       {
         return (int)StreamedMPConfig.SMPScreenID.SMPSkinInfo;
       }
-      set
-      {
-      }
     }
 
     public override bool Init()
     {
-      return Load(GUIGraphicsContext.Skin + @"\MySkinInfo.xml");
+      return Load(GUIGraphicsContext.Skin + @"\StreamedMPConfig_skininfo.xml");
     }
 
     protected override void OnPageLoad()
