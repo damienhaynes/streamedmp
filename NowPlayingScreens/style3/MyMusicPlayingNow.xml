@@ -40,18 +40,18 @@
       <id>0</id>
       <posX>0</posX>
       <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
+      <width>1920</width>
+      <height>1080</height>
       <texture>black.png</texture>
     </control>
     <control>
       <type>image</type>
       <description>album art image (rotating)</description>
       <id>112</id>
-      <posX>20</posX>
-      <posY>45</posY>
-      <width>370</width>
-      <height>347</height>
+      <posX>30</posX>
+      <posY>67</posY>
+      <width>555</width>
+      <height>520</height>
       <texture>-</texture>
       <visible>string.equals(#StreamedMP.cdCoverOnly,false)</visible>
     </control>
@@ -59,10 +59,10 @@
       <type>image</type>
       <description>album art image (Fixed)</description>
       <id>0</id>
-      <posX>20</posX>
-      <posY>45</posY>
-      <width>370</width>
-      <height>347</height>
+      <posX>30</posX>
+      <posY>67</posY>
+      <width>555</width>
+      <height>520</height>
       <texture>-</texture>
       <texture>#Play.Current.Thumb</texture>
       <visible>string.equals(#StreamedMP.cdCoverOnly,true)</visible>
@@ -81,10 +81,10 @@
     <control>
       <type>multiimage</type>
       <id>9990</id>
-      <posX>25</posX>
-      <posY>620</posY>
-      <width>170</width>
-      <height>60</height>
+      <posX>37</posX>
+      <posY>930</posY>
+      <width>255</width>
+      <height>90</height>
       <imagepath>Play</imagepath>
       <timeperimage>50</timeperimage>
       <fadetime>10</fadetime>
@@ -98,4 +98,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:d440f124c28137939c7ce6fd636b8d7d-->
+<!--Checksum:6175f5de178df9e1bf3718c3c6c8e72c-->

@@ -8,15 +8,15 @@
   <vumeter>yes</vumeter>
   <controls>
     <import>mymusic.autofanart.xml</import>
-		<import>music.nowplaying.default.common.xml</import>
+    <import>music.nowplaying.default.common.xml</import>
     <!-- VU Meter: Analog -->
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>660</posX>
-      <posY>598</posY>
-      <width>75</width>
-      <height>75</height>
+      <posX>990</posX>
+      <posY>897</posY>
+      <width>112</width>
+      <height>112</height>
       <texture>VU aus.png</texture>
       <visible>[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]+Player.HasAudio + Player.playing</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -25,10 +25,10 @@
     <control>
       <type>image</type>
       <id>999</id>
-      <posX>660</posX>
-      <posY>598</posY>
-      <width>75</width>
-      <height>75</height>
+      <posX>990</posX>
+      <posY>897</posY>
+      <width>112</width>
+      <height>112</height>
       <imagepath>Animations\AnVu</imagepath>
       <texture>#VUMeterL</texture>
       <visible>[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]+Player.HasAudio + Player.playing</visible>
@@ -38,10 +38,10 @@
     <control>
       <type>image</type>
       <id>0</id>
-      <posX>760</posX>
-      <posY>598</posY>
-      <width>75</width>
-      <height>75</height>
+      <posX>1140</posX>
+      <posY>897</posY>
+      <width>112</width>
+      <height>112</height>
       <texture>VU aus.png</texture>
       <visible>[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]++Player.HasAudio + Player.playing</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
@@ -50,17 +50,17 @@
     <control>
       <type>image</type>
       <id>998</id>
-      <posX>760</posX>
-      <posY>598</posY>
-      <width>75</width>
-      <height>75</height>
+      <posX>1140</posX>
+      <posY>897</posY>
+      <width>112</width>
+      <height>112</height>
       <imagepath>Animations\AnVu</imagepath>
       <texture>#VUMeterR</texture>
       <visible>[Control.HasFocus(5101) | Control.HasFocus(5104)| Control.HasFocus(20) | Control.HasFocus(5105)]+Player.HasAudio + Player.playing</visible>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
-    </control>    
+    </control>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:782ebb045750541badb54fc5669bc29e-->
+<!--Checksum:0bf43964f15d684d75f5179b696fd6e1-->
