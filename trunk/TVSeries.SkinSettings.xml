@@ -140,10 +140,10 @@
 <Enabled>1<Format><Series.FiveStarPath><FormatAs>starEval(Round(<Series.Rating>)).png
 <Enabled>1<Format>star.png<FormatAs>star0.png
 <Enabled>1<Format>SeriesUnWatched<FormatAs><Series.EpisodesUnWatched>
-<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))         Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))
+<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))       Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))
 <Enabled>1<Format>SeriesTotalEpisodes<FormatAs><Series.EpisodeCount> Episodes
 <Enabled>1<Format>SeasonUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))
-<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))          Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))
+<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))        Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))
 <Enabled>1<Format>SeasonTotalEpisodes<FormatAs><Season.EpisodeCount> Trans(Episodes)
 <Enabled>1<Format>SMALLSPACE<FormatAs> 
 <Enabled>1<Format>LARGESPACE<FormatAs>                                        
