@@ -384,17 +384,6 @@ namespace StreamedMPConfig
       if (skInfo.minimiseMPOnExit.ToLower() == "yes")
         MinimiseOnExit = true;
 
-      if (Screen.PrimaryScreen.Bounds.Width == 1920 && Screen.PrimaryScreen.Bounds.Height == 1080)
-      {
-        smcLog.WriteLog("Set #StreamedMP.FullHD = true", LogLevel.Debug);
-        StreamedMPConfig.SetProperty("#StreamedMP.FullHD", "true");
-      }
-      else
-      {
-        smcLog.WriteLog("Set #StreamedMP.FullHD = false", LogLevel.Debug);
-        StreamedMPConfig.SetProperty("#StreamedMP.FullHD", "false");
-      }
-
       // Set Artist Path Property used in music overlays
       string artistPath = Path.Combine(Config.GetFolder(Config.Dir.Thumbs), @"Music\Artists");
       smcLog.WriteLog(string.Format("Set #StreamedMP.ArtistPath = {0}", artistPath), LogLevel.Info);

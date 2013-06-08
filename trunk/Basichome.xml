@@ -6,7 +6,7 @@
   <define>#menuitemNoFocus:80C0C0C0</define>
   <define>#labelFont:mediastream16tc</define>
   <define>#selectedFont:mediastream28tc</define>
-  <define>#menuXPos:350</define>
+  <define>#menuXPos:525</define>
   <allowoverlay>no</allowoverlay>
   <disabletopbar>yes</disabletopbar>
   <rememberLastFocusedControl>yes</rememberLastFocusedControl>
@@ -40,7 +40,7 @@
       <type>label</type>
       <id>0</id>
       <height>90</height>
-      <posY>652</posY>
+      <posY>653</posY>
       <posX>960</posX>
       <align>center</align>
       <font>mediastream12tc</font>
@@ -52,7 +52,7 @@
       <type>label</type>
       <id>0</id>
       <height>90</height>
-      <posY>652</posY>
+      <posY>653</posY>
       <posX>960</posX>
       <align>center</align>
       <font>mediastream12tc</font>
@@ -64,7 +64,7 @@
       <type>label</type>
       <id>0</id>
       <height>90</height>
-      <posY>652</posY>
+      <posY>653</posY>
       <posX>960</posX>
       <align>center</align>
       <font>mediastream12tc</font>
@@ -76,7 +76,7 @@
       <type>label</type>
       <id>0</id>
       <height>90</height>
-      <posY>652</posY>
+      <posY>653</posY>
       <posX>960</posX>
       <align>center</align>
       <font>mediastream12tc</font>
@@ -87,10 +87,10 @@
       <description>Shutdown menu hbar</description>
       <type>image</type>
       <id>1</id>
-      <posX>577</posX>
-      <posY>502</posY>
-      <width>766</width>
-      <height>1</height>
+      <posX>578</posX>
+      <posY>503</posY>
+      <width>767</width>
+      <height>2</height>
       <texture>hbar1white.png</texture>
       <visible>Control.HasFocus(7888)|Control.HasFocus(7999)|Control.HasFocus(7777)|Control.HasFocus(79999)</visible>
     </control>
@@ -291,8 +291,8 @@
       <height>1080</height>
       <texture>basichome.menu.overlay.png</texture>
       <shouldCache>true</shouldCache>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>!Control.HasFocus(7888)+!Control.HasFocus(7999)+!Control.HasFocus(7777)+!Control.HasFocus(79999)</visible>
     </control>
     <control>
@@ -300,12 +300,12 @@
       <type>image</type>
       <id>1</id>
       <posX>120</posX>
-      <posY>1027</posY>
+      <posY>1028</posY>
       <width>1950</width>
       <height>75</height>
       <texture>homerss.png</texture>
-      <animation effect="slide" start="0,150" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="0,150" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="0,150" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>plugin.isenabled(InfoService)+!string.equals(#infoservice.feed.titles,)</visible>
     </control>
     <control>
@@ -315,10 +315,10 @@
       <posX>1464</posX>
       <posY>-5</posY>
       <width>459</width>
-      <height>112</height>
+      <height>113</height>
       <texture>homeweatheroverlaybg.png</texture>
-      <animation effect="slide" start="600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>plugin.isenabled(World Weather)+control.hasthumb(43001)</visible>
     </control>
     <control>
@@ -327,13 +327,13 @@
       <id>1</id>
       <width>1875</width>
       <height>75</height>
-      <posY>1042</posY>
+      <posY>1043</posY>
       <posX>180</posX>
       <font>mediastream12tc</font>
       <label>#infoservice.feed.titles</label>
       <wrapString> :: </wrapString>
-      <animation effect="slide" start="0,150" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="0,150" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="0,150" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>plugin.isenabled(InfoService)</visible>
     </control>
     <!-- BEGIN GENERATED TWITTER CODE-->
@@ -354,14 +354,14 @@
       <id>11111</id>
       <posX>517</posX>
       <posY>0</posY>
-      <width>349</width>
+      <width>350</width>
       <height>1080</height>
       <texture>homebladesub.png</texture>
       <visible>control.isvisible(80000)</visible>
       <animation effect="fade" time="200">visible</animation>
       <animation effect="fade" time="200" end="50">hidden</animation>
-      <animation effect="slide" end="-1200,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="-1200,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-1200,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-1200,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
     </control>
     <!--             End of Lateral Blade Submenu Code            -->
     <control>
@@ -380,9 +380,9 @@
       <animation effect="fade" time="200">visible</animation>
       <animation effect="fade" time="200">hidden</animation>
       <posX>517</posX>
-      <posY>487</posY>
-      <width>337</width>
-      <height>607</height>
+      <posY>488</posY>
+      <width>338</width>
+      <height>608</height>
       <dimColor>ffffffff</dimColor>
       <layout>StackLayout</layout>
       <control Style="settingsbutton">
@@ -390,7 +390,7 @@
         <type>button</type>
         <id>80001</id>
         <label>ONLINEVIDEOS</label>
-        <width>337</width>
+        <width>338</width>
         <hyperlink>4755</hyperlink>
         <onleft>1907</onleft>
         <onright>7777</onright>
@@ -403,7 +403,7 @@
         <type>button</type>
         <id>80002</id>
         <label>TRAKT.TV</label>
-        <width>337</width>
+        <width>338</width>
         <hyperlink>87258</hyperlink>
         <hyperlinkParameter>
         </hyperlinkParameter>
@@ -418,7 +418,7 @@
         <type>button</type>
         <id>80003</id>
         <label>YOUTUBE</label>
-        <width>337</width>
+        <width>338</width>
         <hyperlink>4755</hyperlink>
         <hyperlinkParameter>site:YouTube|return:Locked</hyperlinkParameter>
         <onleft>1907</onleft>
@@ -432,7 +432,7 @@
         <type>button</type>
         <id>80004</id>
         <label>ITUNES TRAILERS</label>
-        <width>337</width>
+        <width>338</width>
         <hyperlink>4755</hyperlink>
         <hyperlinkParameter>site:iTunes Movie Trailers|return:Locked</hyperlinkParameter>
         <onleft>1907</onleft>
@@ -446,7 +446,7 @@
         <type>button</type>
         <id>80005</id>
         <label>IMDB TRAILERS</label>
-        <width>337</width>
+        <width>338</width>
         <hyperlink>4755</hyperlink>
         <hyperlinkParameter>site:IMDb Movie Trailers|return:Locked</hyperlinkParameter>
         <onleft>1907</onleft>
@@ -460,7 +460,7 @@
         <type>button</type>
         <id>80006</id>
         <label>SHOWTIMES</label>
-        <width>337</width>
+        <width>338</width>
         <hyperlink>7111992</hyperlink>
         <hyperlinkParameter>
         </hyperlinkParameter>
@@ -475,7 +475,7 @@
         <type>button</type>
         <id>80007</id>
         <label>EXTENSIONS</label>
-        <width>337</width>
+        <width>338</width>
         <hyperlink>801</hyperlink>
         <hyperlinkParameter>
         </hyperlinkParameter>
@@ -490,7 +490,7 @@
         <type>button</type>
         <id>80008</id>
         <label>EXPLORER</label>
-        <width>337</width>
+        <width>338</width>
         <hyperlink>557311</hyperlink>
         <onleft>1907</onleft>
         <onright>7777</onright>
@@ -512,13 +512,13 @@
       <colordiffuse>77ffffff</colordiffuse>
       <animation effect="fade" time="400">Visible</animation>
       <animation effect="fade" time="400" delay="400">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <animation effect="fade" time="400">WindowClose</animation>
     </control>
     <control>
       <description>Sub Menu Indicator (Level1)</description>
       <type>image</type>
-      <posX>817</posX>
+      <posX>818</posX>
       <posY>507</posY>
       <align>right</align>
       <width>24</width>
@@ -528,7 +528,7 @@
       <colordiffuse>77ffffff</colordiffuse>
       <animation effect="fade" time="400">Visible</animation>
       <animation effect="fade" time="400" delay="400">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <animation effect="fade" time="400">WindowClose</animation>
     </control>
     <!--             End of Submenu Code            -->
@@ -591,9 +591,9 @@
       <align>right</align>
       <label>PICTURES</label>
       <visible>Control.HasFocus(1708)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PICTURES4</description>
@@ -607,9 +607,9 @@
       <align>right</align>
       <label>PICTURES</label>
       <visible>Control.HasFocus(1709)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PICTURES5</description>
@@ -623,9 +623,9 @@
       <align>right</align>
       <label>PICTURES</label>
       <visible>Control.HasFocus(1700)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PICTURES6</description>
@@ -639,9 +639,9 @@
       <align>right</align>
       <label>PICTURES</label>
       <visible>Control.HasFocus(1701)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PICTURES7</description>
@@ -655,9 +655,9 @@
       <align>right</align>
       <label>PICTURES</label>
       <visible>Control.HasFocus(1702)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PICTURES8</description>
@@ -671,9 +671,9 @@
       <align>right</align>
       <label>PICTURES</label>
       <visible>Control.HasFocus(1807)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-177" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-177" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PICTURES9</description>
@@ -687,9 +687,9 @@
       <align>right</align>
       <label>PICTURES</label>
       <visible>Control.HasFocus(1808)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PICTURES10</description>
@@ -703,9 +703,9 @@
       <align>right</align>
       <label>PICTURES</label>
       <visible>Control.HasFocus(1809)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PICTURES11</description>
@@ -719,9 +719,9 @@
       <align>right</align>
       <label>PICTURES</label>
       <visible>Control.HasFocus(1800)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PICTURES12</description>
@@ -735,9 +735,9 @@
       <align>right</align>
       <label>PICTURES</label>
       <visible>Control.HasFocus(1801)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PICTURES13</description>
@@ -751,9 +751,9 @@
       <align>right</align>
       <label>PICTURES</label>
       <visible>Control.HasFocus(1802)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>Dummy label indicating MUSIC visibility when submen open</description>
@@ -814,9 +814,9 @@
       <align>right</align>
       <label>MUSIC</label>
       <visible>Control.HasFocus(1709)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MUSIC4</description>
@@ -830,9 +830,9 @@
       <align>right</align>
       <label>MUSIC</label>
       <visible>Control.HasFocus(1700)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MUSIC5</description>
@@ -846,9 +846,9 @@
       <align>right</align>
       <label>MUSIC</label>
       <visible>Control.HasFocus(1701)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MUSIC6</description>
@@ -862,9 +862,9 @@
       <align>right</align>
       <label>MUSIC</label>
       <visible>Control.HasFocus(1702)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MUSIC7</description>
@@ -878,9 +878,9 @@
       <align>right</align>
       <label>MUSIC</label>
       <visible>Control.HasFocus(1703)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MUSIC8</description>
@@ -894,9 +894,9 @@
       <align>right</align>
       <label>MUSIC</label>
       <visible>Control.HasFocus(1808)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-177" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-177" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MUSIC9</description>
@@ -910,9 +910,9 @@
       <align>right</align>
       <label>MUSIC</label>
       <visible>Control.HasFocus(1809)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MUSIC10</description>
@@ -926,9 +926,9 @@
       <align>right</align>
       <label>MUSIC</label>
       <visible>Control.HasFocus(1800)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MUSIC11</description>
@@ -942,9 +942,9 @@
       <align>right</align>
       <label>MUSIC</label>
       <visible>Control.HasFocus(1801)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MUSIC12</description>
@@ -958,9 +958,9 @@
       <align>right</align>
       <label>MUSIC</label>
       <visible>Control.HasFocus(1802)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MUSIC13</description>
@@ -974,9 +974,9 @@
       <align>right</align>
       <label>MUSIC</label>
       <visible>Control.HasFocus(1803)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>Dummy label indicating MOVIES visibility when submen open</description>
@@ -1037,9 +1037,9 @@
       <align>right</align>
       <label>MOVIES</label>
       <visible>Control.HasFocus(1700)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MOVIES4</description>
@@ -1053,9 +1053,9 @@
       <align>right</align>
       <label>MOVIES</label>
       <visible>Control.HasFocus(1701)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MOVIES5</description>
@@ -1069,9 +1069,9 @@
       <align>right</align>
       <label>MOVIES</label>
       <visible>Control.HasFocus(1702)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MOVIES6</description>
@@ -1085,9 +1085,9 @@
       <align>right</align>
       <label>MOVIES</label>
       <visible>Control.HasFocus(1703)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MOVIES7</description>
@@ -1101,9 +1101,9 @@
       <align>right</align>
       <label>MOVIES</label>
       <visible>Control.HasFocus(1704)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MOVIES8</description>
@@ -1117,9 +1117,9 @@
       <align>right</align>
       <label>MOVIES</label>
       <visible>Control.HasFocus(1809)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-177" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-177" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MOVIES9</description>
@@ -1133,9 +1133,9 @@
       <align>right</align>
       <label>MOVIES</label>
       <visible>Control.HasFocus(1800)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MOVIES10</description>
@@ -1149,9 +1149,9 @@
       <align>right</align>
       <label>MOVIES</label>
       <visible>Control.HasFocus(1801)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MOVIES11</description>
@@ -1165,9 +1165,9 @@
       <align>right</align>
       <label>MOVIES</label>
       <visible>Control.HasFocus(1802)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MOVIES12</description>
@@ -1181,9 +1181,9 @@
       <align>right</align>
       <label>MOVIES</label>
       <visible>Control.HasFocus(1803)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>MOVIES13</description>
@@ -1197,9 +1197,9 @@
       <align>right</align>
       <label>MOVIES</label>
       <visible>Control.HasFocus(1804)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>Dummy label indicating SERIES visibility when submen open</description>
@@ -1260,9 +1260,9 @@
       <align>right</align>
       <label>SERIES</label>
       <visible>Control.HasFocus(1701)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SERIES4</description>
@@ -1276,9 +1276,9 @@
       <align>right</align>
       <label>SERIES</label>
       <visible>Control.HasFocus(1702)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SERIES5</description>
@@ -1292,9 +1292,9 @@
       <align>right</align>
       <label>SERIES</label>
       <visible>Control.HasFocus(1703)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SERIES6</description>
@@ -1308,9 +1308,9 @@
       <align>right</align>
       <label>SERIES</label>
       <visible>Control.HasFocus(1704)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SERIES7</description>
@@ -1324,9 +1324,9 @@
       <align>right</align>
       <label>SERIES</label>
       <visible>Control.HasFocus(1705)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SERIES8</description>
@@ -1340,9 +1340,9 @@
       <align>right</align>
       <label>SERIES</label>
       <visible>Control.HasFocus(1800)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-177" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-177" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SERIES9</description>
@@ -1356,9 +1356,9 @@
       <align>right</align>
       <label>SERIES</label>
       <visible>Control.HasFocus(1801)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SERIES10</description>
@@ -1372,9 +1372,9 @@
       <align>right</align>
       <label>SERIES</label>
       <visible>Control.HasFocus(1802)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SERIES11</description>
@@ -1388,9 +1388,9 @@
       <align>right</align>
       <label>SERIES</label>
       <visible>Control.HasFocus(1803)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SERIES12</description>
@@ -1404,9 +1404,9 @@
       <align>right</align>
       <label>SERIES</label>
       <visible>Control.HasFocus(1804)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SERIES13</description>
@@ -1420,9 +1420,9 @@
       <align>right</align>
       <label>SERIES</label>
       <visible>Control.HasFocus(1805)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>Dummy label indicating TV visibility when submen open</description>
@@ -1483,9 +1483,9 @@
       <align>right</align>
       <label>TV</label>
       <visible>Control.HasFocus(1702)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TV4</description>
@@ -1499,9 +1499,9 @@
       <align>right</align>
       <label>TV</label>
       <visible>Control.HasFocus(1703)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TV5</description>
@@ -1515,9 +1515,9 @@
       <align>right</align>
       <label>TV</label>
       <visible>Control.HasFocus(1704)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TV6</description>
@@ -1531,9 +1531,9 @@
       <align>right</align>
       <label>TV</label>
       <visible>Control.HasFocus(1705)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TV7</description>
@@ -1547,9 +1547,9 @@
       <align>right</align>
       <label>TV</label>
       <visible>Control.HasFocus(1706)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TV8</description>
@@ -1563,9 +1563,9 @@
       <align>right</align>
       <label>TV</label>
       <visible>Control.HasFocus(1801)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-177" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-177" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TV9</description>
@@ -1579,9 +1579,9 @@
       <align>right</align>
       <label>TV</label>
       <visible>Control.HasFocus(1802)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TV10</description>
@@ -1595,9 +1595,9 @@
       <align>right</align>
       <label>TV</label>
       <visible>Control.HasFocus(1803)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TV11</description>
@@ -1611,9 +1611,9 @@
       <align>right</align>
       <label>TV</label>
       <visible>Control.HasFocus(1804)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TV12</description>
@@ -1627,9 +1627,9 @@
       <align>right</align>
       <label>TV</label>
       <visible>Control.HasFocus(1805)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TV13</description>
@@ -1643,9 +1643,9 @@
       <align>right</align>
       <label>TV</label>
       <visible>Control.HasFocus(1806)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>Dummy label indicating TRAILERS visibility when submen open</description>
@@ -1708,9 +1708,9 @@
       <align>right</align>
       <label>TRAILERS</label>
       <visible>Control.HasFocus(1703)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TRAILERS4</description>
@@ -1724,9 +1724,9 @@
       <align>right</align>
       <label>TRAILERS</label>
       <visible>Control.HasFocus(1704)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TRAILERS5</description>
@@ -1740,9 +1740,9 @@
       <align>right</align>
       <label>TRAILERS</label>
       <visible>Control.HasFocus(1705)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TRAILERS6</description>
@@ -1756,9 +1756,9 @@
       <align>right</align>
       <label>TRAILERS</label>
       <visible>Control.HasFocus(1706)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TRAILERS7</description>
@@ -1772,9 +1772,9 @@
       <align>right</align>
       <label>TRAILERS</label>
       <visible>Control.HasFocus(1707)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TRAILERS8</description>
@@ -1788,9 +1788,9 @@
       <align>right</align>
       <label>TRAILERS</label>
       <visible>Control.HasFocus(1802)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-177" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-177" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TRAILERS9</description>
@@ -1804,9 +1804,9 @@
       <align>right</align>
       <label>TRAILERS</label>
       <visible>Control.HasFocus(1803)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TRAILERS10</description>
@@ -1820,9 +1820,9 @@
       <align>right</align>
       <label>TRAILERS</label>
       <visible>Control.HasFocus(1804)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TRAILERS11</description>
@@ -1836,9 +1836,9 @@
       <align>right</align>
       <label>TRAILERS</label>
       <visible>Control.HasFocus(1805)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TRAILERS12</description>
@@ -1852,9 +1852,9 @@
       <align>right</align>
       <label>TRAILERS</label>
       <visible>Control.HasFocus(1806)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>TRAILERS13</description>
@@ -1868,9 +1868,9 @@
       <align>right</align>
       <label>TRAILERS</label>
       <visible>Control.HasFocus(1807)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>Dummy label indicating VIDEOS visibility when submen open</description>
@@ -1931,9 +1931,9 @@
       <align>right</align>
       <label>VIDEOS</label>
       <visible>Control.HasFocus(1704)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>VIDEOS4</description>
@@ -1947,9 +1947,9 @@
       <align>right</align>
       <label>VIDEOS</label>
       <visible>Control.HasFocus(1705)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>VIDEOS5</description>
@@ -1963,9 +1963,9 @@
       <align>right</align>
       <label>VIDEOS</label>
       <visible>Control.HasFocus(1706)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>VIDEOS6</description>
@@ -1979,9 +1979,9 @@
       <align>right</align>
       <label>VIDEOS</label>
       <visible>Control.HasFocus(1707)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>VIDEOS7</description>
@@ -1995,9 +1995,9 @@
       <align>right</align>
       <label>VIDEOS</label>
       <visible>Control.HasFocus(1708)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>VIDEOS8</description>
@@ -2011,9 +2011,9 @@
       <align>right</align>
       <label>VIDEOS</label>
       <visible>Control.HasFocus(1803)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-177" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-177" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>VIDEOS9</description>
@@ -2027,9 +2027,9 @@
       <align>right</align>
       <label>VIDEOS</label>
       <visible>Control.HasFocus(1804)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>VIDEOS10</description>
@@ -2043,9 +2043,9 @@
       <align>right</align>
       <label>VIDEOS</label>
       <visible>Control.HasFocus(1805)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>VIDEOS11</description>
@@ -2059,9 +2059,9 @@
       <align>right</align>
       <label>VIDEOS</label>
       <visible>Control.HasFocus(1806)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>VIDEOS12</description>
@@ -2075,9 +2075,9 @@
       <align>right</align>
       <label>VIDEOS</label>
       <visible>Control.HasFocus(1807)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>VIDEOS13</description>
@@ -2091,9 +2091,9 @@
       <align>right</align>
       <label>VIDEOS</label>
       <visible>Control.HasFocus(1808)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>Dummy label indicating PLUGINS visibility when submen open</description>
@@ -2154,9 +2154,9 @@
       <align>right</align>
       <label>PLUGINS</label>
       <visible>Control.HasFocus(1705)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PLUGINS4</description>
@@ -2170,9 +2170,9 @@
       <align>right</align>
       <label>PLUGINS</label>
       <visible>Control.HasFocus(1706)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PLUGINS5</description>
@@ -2186,9 +2186,9 @@
       <align>right</align>
       <label>PLUGINS</label>
       <visible>Control.HasFocus(1707)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PLUGINS6</description>
@@ -2202,9 +2202,9 @@
       <align>right</align>
       <label>PLUGINS</label>
       <visible>Control.HasFocus(1708)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PLUGINS7</description>
@@ -2218,9 +2218,9 @@
       <align>right</align>
       <label>PLUGINS</label>
       <visible>Control.HasFocus(1709)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PLUGINS8</description>
@@ -2234,9 +2234,9 @@
       <align>right</align>
       <label>PLUGINS</label>
       <visible>Control.HasFocus(1804)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-177" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-177" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PLUGINS9</description>
@@ -2250,9 +2250,9 @@
       <align>right</align>
       <label>PLUGINS</label>
       <visible>Control.HasFocus(1805)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PLUGINS10</description>
@@ -2266,9 +2266,9 @@
       <align>right</align>
       <label>PLUGINS</label>
       <visible>Control.HasFocus(1806)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PLUGINS11</description>
@@ -2282,9 +2282,9 @@
       <align>right</align>
       <label>PLUGINS</label>
       <visible>Control.HasFocus(1807)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PLUGINS12</description>
@@ -2298,9 +2298,9 @@
       <align>right</align>
       <label>PLUGINS</label>
       <visible>Control.HasFocus(1808)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>PLUGINS13</description>
@@ -2314,9 +2314,9 @@
       <align>right</align>
       <label>PLUGINS</label>
       <visible>Control.HasFocus(1809)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>Dummy label indicating WEATHER visibility when submen open</description>
@@ -2377,9 +2377,9 @@
       <align>right</align>
       <label>WEATHER</label>
       <visible>Control.HasFocus(1706)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>WEATHER4</description>
@@ -2393,9 +2393,9 @@
       <align>right</align>
       <label>WEATHER</label>
       <visible>Control.HasFocus(1707)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>WEATHER5</description>
@@ -2409,9 +2409,9 @@
       <align>right</align>
       <label>WEATHER</label>
       <visible>Control.HasFocus(1708)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>WEATHER6</description>
@@ -2425,9 +2425,9 @@
       <align>right</align>
       <label>WEATHER</label>
       <visible>Control.HasFocus(1709)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>WEATHER7</description>
@@ -2441,9 +2441,9 @@
       <align>right</align>
       <label>WEATHER</label>
       <visible>Control.HasFocus(1700)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>WEATHER8</description>
@@ -2457,9 +2457,9 @@
       <align>right</align>
       <label>WEATHER</label>
       <visible>Control.HasFocus(1805)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-177" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-177" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>WEATHER9</description>
@@ -2473,9 +2473,9 @@
       <align>right</align>
       <label>WEATHER</label>
       <visible>Control.HasFocus(1806)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>WEATHER10</description>
@@ -2489,9 +2489,9 @@
       <align>right</align>
       <label>WEATHER</label>
       <visible>Control.HasFocus(1807)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>WEATHER11</description>
@@ -2505,9 +2505,9 @@
       <align>right</align>
       <label>WEATHER</label>
       <visible>Control.HasFocus(1808)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>WEATHER12</description>
@@ -2521,9 +2521,9 @@
       <align>right</align>
       <label>WEATHER</label>
       <visible>Control.HasFocus(1809)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>WEATHER13</description>
@@ -2537,9 +2537,9 @@
       <align>right</align>
       <label>WEATHER</label>
       <visible>Control.HasFocus(1800)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>Dummy label indicating SETTINGS visibility when submen open</description>
@@ -2600,9 +2600,9 @@
       <align>right</align>
       <label>SETTINGS</label>
       <visible>Control.HasFocus(1707)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SETTINGS4</description>
@@ -2616,9 +2616,9 @@
       <align>right</align>
       <label>SETTINGS</label>
       <visible>Control.HasFocus(1708)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SETTINGS5</description>
@@ -2632,9 +2632,9 @@
       <align>right</align>
       <label>SETTINGS</label>
       <visible>Control.HasFocus(1709)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SETTINGS6</description>
@@ -2648,9 +2648,9 @@
       <align>right</align>
       <label>SETTINGS</label>
       <visible>Control.HasFocus(1700)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SETTINGS7</description>
@@ -2664,9 +2664,9 @@
       <align>right</align>
       <label>SETTINGS</label>
       <visible>Control.HasFocus(1701)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SETTINGS8</description>
@@ -2680,9 +2680,9 @@
       <align>right</align>
       <label>SETTINGS</label>
       <visible>Control.HasFocus(1806)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-177" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-177" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SETTINGS9</description>
@@ -2696,9 +2696,9 @@
       <align>right</align>
       <label>SETTINGS</label>
       <visible>Control.HasFocus(1807)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SETTINGS10</description>
@@ -2712,9 +2712,9 @@
       <align>right</align>
       <label>SETTINGS</label>
       <visible>Control.HasFocus(1808)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SETTINGS11</description>
@@ -2728,9 +2728,9 @@
       <align>right</align>
       <label>SETTINGS</label>
       <visible>Control.HasFocus(1809)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SETTINGS12</description>
@@ -2744,9 +2744,9 @@
       <align>right</align>
       <label>SETTINGS</label>
       <visible>Control.HasFocus(1800)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
       <description>SETTINGS13</description>
@@ -2760,13 +2760,13 @@
       <align>right</align>
       <label>SETTINGS</label>
       <visible>Control.HasFocus(1801)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
-      <animation effect="slide" start="0,-150" time=" 250" acceleration=" -0.4" reversible="false">Visible</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
-    <!--**************-->
+    <!--**-->
     <!-- Crowding Fix -->
-    <!--**************-->
+    <!--**-->
     <control>
       <description>home PICTURES</description>
       <type>button</type>
@@ -2797,8 +2797,8 @@
       <font>#labelFont</font>
       <align>right</align>
       <visible>Control.HasFocus(1900)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>home SETTINGS</description>
@@ -2811,8 +2811,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1900)</visible>
     </control>
     <control>
@@ -2826,8 +2826,8 @@
       <textcolor>#menuitemFocus</textcolor>
       <font>#selectedFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1900)</visible>
     </control>
     <control>
@@ -2841,8 +2841,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1900)</visible>
     </control>
     <control>
@@ -2856,8 +2856,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1900)</visible>
     </control>
     <control>
@@ -2890,8 +2890,8 @@
       <font>#labelFont</font>
       <align>right</align>
       <visible>Control.HasFocus(1901)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>home PICTURES</description>
@@ -2904,8 +2904,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1901)</visible>
     </control>
     <control>
@@ -2919,8 +2919,8 @@
       <textcolor>#menuitemFocus</textcolor>
       <font>#selectedFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1901)</visible>
     </control>
     <control>
@@ -2934,8 +2934,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1901)</visible>
     </control>
     <control>
@@ -2949,8 +2949,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1901)</visible>
     </control>
     <control>
@@ -2983,8 +2983,8 @@
       <font>#labelFont</font>
       <align>right</align>
       <visible>Control.HasFocus(1902)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>home MUSIC</description>
@@ -2997,8 +2997,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1902)</visible>
     </control>
     <control>
@@ -3012,8 +3012,8 @@
       <textcolor>#menuitemFocus</textcolor>
       <font>#selectedFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1902)</visible>
     </control>
     <control>
@@ -3027,8 +3027,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1902)</visible>
     </control>
     <control>
@@ -3042,8 +3042,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1902)</visible>
     </control>
     <control>
@@ -3076,8 +3076,8 @@
       <font>#labelFont</font>
       <align>right</align>
       <visible>Control.HasFocus(1903)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>home MOVIES</description>
@@ -3090,8 +3090,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1903)</visible>
     </control>
     <control>
@@ -3105,8 +3105,8 @@
       <textcolor>#menuitemFocus</textcolor>
       <font>#selectedFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1903)</visible>
     </control>
     <control>
@@ -3120,8 +3120,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1903)</visible>
     </control>
     <control>
@@ -3135,8 +3135,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1903)</visible>
     </control>
     <control>
@@ -3169,8 +3169,8 @@
       <font>#labelFont</font>
       <align>right</align>
       <visible>Control.HasFocus(1904)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>home SERIES</description>
@@ -3183,8 +3183,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1904)</visible>
     </control>
     <control>
@@ -3198,8 +3198,8 @@
       <textcolor>#menuitemFocus</textcolor>
       <font>#selectedFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1904)</visible>
     </control>
     <control>
@@ -3213,8 +3213,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1904)</visible>
     </control>
     <control>
@@ -3228,8 +3228,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1904)</visible>
     </control>
     <control>
@@ -3242,7 +3242,7 @@
       <width>480</width>
       <height>108</height>
       <hyperlink>4755</hyperlink>
-      <hyperlinkParameter>iTunes Movie Trailers</hyperlinkParameter>
+      <hyperlinkParameter>site:iTunes Movie Trailers|return:Locked</hyperlinkParameter>
       <textureFocus>-</textureFocus>
       <textureNoFocus>-</textureNoFocus>
       <hover>-</hover>
@@ -3263,8 +3263,8 @@
       <font>#labelFont</font>
       <align>right</align>
       <visible>Control.HasFocus(1905)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>home TV</description>
@@ -3277,8 +3277,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1905)</visible>
     </control>
     <control>
@@ -3292,8 +3292,8 @@
       <textcolor>#menuitemFocus</textcolor>
       <font>#selectedFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1905)</visible>
     </control>
     <control>
@@ -3307,8 +3307,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1905)</visible>
     </control>
     <control>
@@ -3322,8 +3322,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1905)</visible>
     </control>
     <control>
@@ -3356,8 +3356,8 @@
       <font>#labelFont</font>
       <align>right</align>
       <visible>Control.HasFocus(1906)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>home TRAILERS</description>
@@ -3370,8 +3370,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1906)</visible>
     </control>
     <control>
@@ -3385,8 +3385,8 @@
       <textcolor>#menuitemFocus</textcolor>
       <font>#selectedFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1906)</visible>
     </control>
     <control>
@@ -3400,8 +3400,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1906)</visible>
     </control>
     <control>
@@ -3415,8 +3415,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1906)</visible>
     </control>
     <control>
@@ -3449,8 +3449,8 @@
       <font>#labelFont</font>
       <align>right</align>
       <visible>Control.HasFocus(1907)|control.isvisible(80000)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>home VIDEOS</description>
@@ -3463,8 +3463,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1907)|control.isvisible(80000)</visible>
     </control>
     <control>
@@ -3478,8 +3478,8 @@
       <textcolor>#menuitemFocus</textcolor>
       <font>#selectedFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1907)|control.isvisible(80000)</visible>
     </control>
     <control>
@@ -3493,8 +3493,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1907)|control.isvisible(80000)</visible>
     </control>
     <control>
@@ -3508,8 +3508,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1907)|control.isvisible(80000)</visible>
     </control>
     <control>
@@ -3542,8 +3542,8 @@
       <font>#labelFont</font>
       <align>right</align>
       <visible>Control.HasFocus(1908)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>home PLUGINS</description>
@@ -3556,8 +3556,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1908)</visible>
     </control>
     <control>
@@ -3571,8 +3571,8 @@
       <textcolor>#menuitemFocus</textcolor>
       <font>#selectedFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1908)</visible>
     </control>
     <control>
@@ -3586,8 +3586,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1908)</visible>
     </control>
     <control>
@@ -3601,8 +3601,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1908)</visible>
     </control>
     <control>
@@ -3635,8 +3635,8 @@
       <font>#labelFont</font>
       <align>right</align>
       <visible>Control.HasFocus(1909)</visible>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
     </control>
     <control>
       <description>home WEATHER</description>
@@ -3649,8 +3649,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1909)</visible>
     </control>
     <control>
@@ -3664,8 +3664,8 @@
       <textcolor>#menuitemFocus</textcolor>
       <font>#selectedFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1909)</visible>
     </control>
     <control>
@@ -3679,8 +3679,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1909)</visible>
     </control>
     <control>
@@ -3694,8 +3694,8 @@
       <textcolor>#menuitemNoFocus</textcolor>
       <font>#labelFont</font>
       <align>right</align>
-      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1909)</visible>
     </control>
     <!-- Menu Context Labels -->
@@ -3847,7 +3847,7 @@
       <description>WEATHER Location Label</description>
       <type>label</type>
       <posX>487</posX>
-      <posY>592</posY>
+      <posY>593</posY>
       <width>570</width>
       <height>93</height>
       <label> in #WorldWeather.Location</label>
@@ -3881,24 +3881,24 @@
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
       <visible>plugin.isenabled(World Weather)</visible>
-      <animation effect="slide" start="600,0" end="0,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowOpen</animation>
-      <animation effect="slide" end="600,0" tween="quadratic" easing="in" time=" 400" delay="200">WindowClose</animation>
+      <animation effect="slide" start="600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
+      <animation effect="slide" end="600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <control>
         <description>DAY 0 BG</description>
         <type>image</type>
         <id>0</id>
         <posX>1464</posX>
-        <posY>-5</posY>
+        <posY>-8</posY>
         <width>459</width>
-        <height>112</height>
+        <height>113</height>
         <texture>homeweatheroverlaybg.png</texture>
       </control>
       <control>
         <description>Todays weather image</description>
         <type>image</type>
         <id>0</id>
-        <posX>1489</posX>
-        <posY>13</posY>
+        <posX>1490</posX>
+        <posY>14</posY>
         <height>81</height>
         <width>81</width>
         <centered>no</centered>
@@ -3911,7 +3911,7 @@
         <width>600</width>
         <height>75</height>
         <align>right</align>
-        <posX>1897</posX>
+        <posX>1898</posX>
         <posY>45</posY>
         <font>mediastream14c</font>
         <label>#WorldWeather.TodayTemperature</label>
@@ -3923,8 +3923,8 @@
         <width>225</width>
         <height>75</height>
         <align>right</align>
-        <posX>1582</posX>
-        <posY>22</posY>
+        <posX>1583</posX>
+        <posY>15</posY>
         <font>mediastream10tc</font>
         <label>#WorldWeather.TodayCondition</label>
       </control>
@@ -3934,6 +3934,7 @@
     <import>basichome.recentlyadded.tvseries.VSum2.xml</import>
     <import>basichome.recentlyadded.movpics.VSum2.xml</import>
     <!-- BEGIN MOST RECENT MUSIC CODE-->
+    <!-- BEGIN MOST RECENT MUSICVIDEO CODE-->
     <!-- BEGIN MOST RECENT RECORDEDTV CODE-->
     <!-- BEGIN FREEDRIVESPACE OVERLAY CODE-->
     <!-- BEGIN SLEEPCONTROL OVERLAY CODE-->
@@ -3949,7 +3950,7 @@
       <id>0</id>
       <width>300</width>
       <height>300</height>
-      <posX>952</posX>
+      <posX>953</posX>
       <posY>225</posY>
       <align>center</align>
       <texture>skinupdate.png</texture>
@@ -3961,4 +3962,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:a3277f31b5614560c3fcd05691680eec-->
+<!--Checksum:01759a6b27c11c8b25f94ffe708f27b9-->

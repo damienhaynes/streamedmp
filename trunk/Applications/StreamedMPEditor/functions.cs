@@ -53,8 +53,6 @@ namespace StreamedMPEditor
       infoSkinpath.Text = SkinInfo.mpPaths.streamedMPpath;
       infoInstallPath.Text = SkinInfo.mpPaths.sMPbaseDir + "  (Version: " + MediaPortalVersion + ")";
       infoConfigpath.Text = SkinInfo.mpPaths.configBasePath;
-
-
     }
 
     private string getStreamedMPVer()
@@ -92,7 +90,6 @@ namespace StreamedMPEditor
 
       foreach (XmlNode node in nodeList)
       {
-
         XmlNode innerNode = node.Attributes.GetNamedItem("id");
 
         // get the Skin base path
@@ -194,19 +191,15 @@ namespace StreamedMPEditor
     private void GetMediaPortalPath(ref editorPaths mpPaths)
     {
       string sRegRoot = "SOFTWARE";
-
-
       if (IntPtr.Size > 4)
         sRegRoot += "\\Wow6432Node";
 
       try
       {
-
         RegistryKey MediaPortalKey = Registry.LocalMachine.OpenSubKey(sRegRoot + "\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\MediaPortal\\", false);
         if (MediaPortalKey != null)
         {
           mpPaths.sMPbaseDir = MediaPortalKey.GetValue("InstallPath").ToString();
-
         }
         else
         {
@@ -214,8 +207,6 @@ namespace StreamedMPEditor
           if (MediaPortalKey != null)
           {
             mpPaths.sMPbaseDir = MediaPortalKey.GetValue("ApplicationDir").ToString();
-
-
           }
           else
             mpPaths.sMPbaseDir = null;
@@ -226,9 +217,6 @@ namespace StreamedMPEditor
         helper.showError("Exception while attempting to read MediaPortal location from registry\n\nMediaPortal must be installed, is MediaPortal Installed?\n\n" + e.Message, errorCode.major);
         mpPaths.sMPbaseDir = null;
       }
-
-
-
     }
 
     //Check which datasource is active and do the correct action...
@@ -245,7 +233,6 @@ namespace StreamedMPEditor
 
     private void btSwapListMain_Click(object sender, EventArgs e)
     {
-
       if (xmlFilesDisplayed)
       {
         xmlFilesDisplayed = false; 
@@ -263,7 +250,6 @@ namespace StreamedMPEditor
     //If XMLFiles is the active datasource
     void doXMLFileSelectIndexChanged()
     {
-
       if (xmlFiles.SelectedIndex >= 0)
       {
         toolStripStatusLabel1.Text = "Window ID: " + ids[xmlFiles.SelectedIndex];
@@ -281,7 +267,6 @@ namespace StreamedMPEditor
           {
             // Populate
             QuickSelect(i);
-            //cboQuickSelect.SelectedIndex = i;
 
             bFound = true;
             int k = 0;
@@ -299,7 +284,6 @@ namespace StreamedMPEditor
           }
           i++;
         }
-
 
         if (!bFound)
         {
@@ -399,32 +383,6 @@ namespace StreamedMPEditor
       cboContextLabel.Text = "";
     }
 
-    private void BasicHomeFromTemplate()
-    {
-      System.IO.StreamWriter writer;
-      string backupFilename = SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml.backup." + DateTime.Now.Ticks.ToString();
-
-      if (System.IO.File.Exists(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml"))
-        System.IO.File.Copy(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml", backupFilename);
-
-      if (System.IO.File.Exists(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml"))
-        System.IO.File.Delete(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml");
-
-      Stream streamTemplate = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("StreamedMPEditor.xmlFiles.AeonBasicHomeDefault.xml");
-      StreamReader reader = new StreamReader(streamTemplate);
-      xmlTemplate = reader.ReadToEnd();
-
-      writer = System.IO.File.CreateText(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml");
-      writer.Write(xmlTemplate);
-      writer.Close();
-      helper.showError("Existing BasicHome.xml Saved Sucessfully as\n\n" + backupFilename + "\n\nNew BasicHome.xml created from Internal template", errorCode.info);
-
-      foreach (menuItem item in menuItems)
-      {
-        item.id = menuItems.IndexOf(item);
-      }
-    }
-
     private void verticalStyle_Click(object sender, EventArgs e)
     {
       if (menuStyle != chosenMenuStyle.verticalStyle)
@@ -496,16 +454,13 @@ namespace StreamedMPEditor
         fhRBScraper.Checked = true;
         fhRBUserDef.Checked = false;
 
-
         this.backgroundImages.Controls.Add(fhChoice);
         this.backgroundImages.Controls.Add(fhRBUserDef);
         this.backgroundImages.Controls.Add(fhRBScraper);
     }
 
-
     private void UpdateImageControlVisibility(bool fanartHandlerEnabled)
     {
-
       if (fanartHandlerEnabled)
       {
         cboFanartProperty.Visible = true;
@@ -549,7 +504,6 @@ namespace StreamedMPEditor
     private void disableItemControls()
     {
       itemProperties.Enabled = false;
-      //itemProperties.Height = 153;
       backgroundImages.Enabled = false;
       addButton.Enabled = false;
       removeButton.Enabled = true;
@@ -563,10 +517,6 @@ namespace StreamedMPEditor
       backgroundImages.Enabled = true;
       addButton.Enabled = true;
       removeButton.Enabled = false;
-      //if (movPicsCategoryCombo.Visible && itemProperties.Enabled)
-      //  itemProperties.Height = 253;
-      //else
-      //  itemProperties.Height = 153;
     }
 
     private void reloadBackgroundItems()
@@ -578,7 +528,6 @@ namespace StreamedMPEditor
       }
       GetDefaultBackgroundImages();
     }
-
 
     private void fillBackgroundItem(menuItem menItem)
     {
@@ -635,24 +584,22 @@ namespace StreamedMPEditor
       }
     }
 
-
     private void setBasicHomeValues()
     {
-
-      basicHomeValues.offsetMymenu = -39;
-      basicHomeValues.textYOffset = 6;
-      basicHomeValues.offsetSubmenu = 76;
-      basicHomeValues.offsetRssImage = 73;
-      basicHomeValues.offsetRssText = 75;
-      basicHomeValues.offsetTwitter = 55;
-      basicHomeValues.offsetTwitterImage = 28;
-      basicHomeValues.offsetButtons = 42;
-      basicHomeValues.menuHeight = 165;
-      basicHomeValues.subMenuHeight = 60;
+      basicHomeValues.offsetMymenu = -59;
+      basicHomeValues.textYOffset = 9;
+      basicHomeValues.offsetSubmenu = 114;
+      basicHomeValues.offsetRssImage = 111;
+      basicHomeValues.offsetRssText = 113;
+      basicHomeValues.offsetTwitter = 83;
+      basicHomeValues.offsetTwitterImage = 42;
+      basicHomeValues.offsetButtons = 63;
+      basicHomeValues.menuHeight = 248;
+      basicHomeValues.subMenuHeight = 90;
       basicHomeValues.subMenuXpos = 0;
-      basicHomeValues.subMenuWidth = 1280;
-      basicHomeValues.subMenuTopHeight = 60;
-      basicHomeValues.Button3Slide = 70;
+      basicHomeValues.subMenuWidth = 1920;
+      basicHomeValues.subMenuTopHeight = 90;
+      basicHomeValues.Button3Slide = 105;
 
       if (useAeonGraphics.Checked)
       {
@@ -677,45 +624,38 @@ namespace StreamedMPEditor
         case chosenMenuStyle.horizontalStandardStyle:
           if (horizontalContextLabels.Checked)
           {
-            basicHomeValues.menuHeight += 34;
-            basicHomeValues.offsetMymenu -= 25;
-            basicHomeValues.offsetButtons += 16;
-            basicHomeValues.offsetTwitter += 15;
-            basicHomeValues.offsetTwitterImage += 15;
+            basicHomeValues.menuHeight += 51;
+            basicHomeValues.offsetMymenu -= 38;
+            basicHomeValues.offsetButtons += 24;
+            basicHomeValues.offsetTwitter += 23;
+            basicHomeValues.offsetTwitterImage += 23;
           }
           break;
         case chosenMenuStyle.horizontalContextStyle:
           if (horizontalContextLabels.Checked)
           {
-            basicHomeValues.menuHeight += 33;
-            basicHomeValues.offsetMymenu -= 24;
-            basicHomeValues.offsetButtons += 16;
-            basicHomeValues.offsetTwitter += 15;
-            basicHomeValues.offsetTwitterImage += 15;
+            basicHomeValues.menuHeight += 50;
+            basicHomeValues.offsetMymenu -= 36;
+            basicHomeValues.offsetButtons += 24;
+            basicHomeValues.offsetTwitter += 23;
+            basicHomeValues.offsetTwitterImage += 23;
           }
           break;
         case chosenMenuStyle.graphicMenuStyle:
-          basicHomeValues.menuHeight = 198;
-          basicHomeValues.offsetMymenu = 27;
-          basicHomeValues.subMenuXpos = -70;
-          basicHomeValues.subMenuWidth = 1420;
-          basicHomeValues.subMenuHeight = 70;
-          basicHomeValues.offsetSubmenu = 257;
-          basicHomeValues.offsetRssText = 259;
-
-
-          basicHomeValues.textYOffset = 30;
-
-          basicHomeValues.offsetRssImage = 73;
-
-          basicHomeValues.offsetTwitter = 55;
-          basicHomeValues.offsetTwitterImage = 28;
-          basicHomeValues.offsetButtons = 42;
-
-
-
-          basicHomeValues.subMenuTopHeight = 60;
-          basicHomeValues.Button3Slide = 70;
+          basicHomeValues.menuHeight = 297;
+          basicHomeValues.offsetMymenu = 41;
+          basicHomeValues.subMenuXpos = -105;
+          basicHomeValues.subMenuWidth = 2130;
+          basicHomeValues.subMenuHeight = 105;
+          basicHomeValues.offsetSubmenu = 386;
+          basicHomeValues.offsetRssText = 389;
+          basicHomeValues.textYOffset = 45;
+          basicHomeValues.offsetRssImage = 110;
+          basicHomeValues.offsetTwitter = 83;
+          basicHomeValues.offsetTwitterImage = 42;
+          basicHomeValues.offsetButtons = 63;
+          basicHomeValues.subMenuTopHeight = 90;
+          basicHomeValues.Button3Slide = 105;
           weatherStyle = chosenWeatherStyle.middle;
           break;
       }
@@ -920,7 +860,6 @@ namespace StreamedMPEditor
       txtNoFocusColour.SelectionStart = start;
     }
 
-
     private void btnClearCache_Click(object sender, EventArgs e)
     {
       DialogResult result = helper.showError("Clearing cache\n\n" + SkinInfo.mpPaths.cacheBasePath + configuredSkin + "\n\nPlease confirm clearing of the cache", errorCode.infoQuestion);
@@ -936,11 +875,9 @@ namespace StreamedMPEditor
       try
       {
         System.IO.Directory.Delete(SkinInfo.mpPaths.cacheBasePath + configuredSkin, true);
-        //helper.showError("Skin cache has been cleared\n\nOk To Continue", errorCode.info);
       }
       catch
       {
-        //helper.showError("Exception while deleteing Cache\n\n" + ex.Message, errorCode.info);
       }
     }
 
@@ -993,7 +930,6 @@ namespace StreamedMPEditor
     private void txtMenuPos_Leave(object sender, EventArgs e)
     {
       validateMenuOffset();
-
     }
 
     private void validateMenuOffset()
@@ -1001,7 +937,7 @@ namespace StreamedMPEditor
       // Don't allow users to select 5 day weather postions that conflicts with menu bar position
       if (menuStyle != chosenMenuStyle.verticalStyle)
       {
-        if (int.Parse(txtMenuPos.Text) > 433)
+        if (int.Parse(txtMenuPos.Text) > 650)
         {
           weatherStyle = chosenWeatherStyle.middle;
           fullWeatherSummaryBottom.Enabled = false;
@@ -1090,7 +1026,6 @@ namespace StreamedMPEditor
         installWeatherBackgrounds.Visible = true;
       }
 
-
       switch (menuStyle)
       {
         case chosenMenuStyle.verticalStyle:
@@ -1103,7 +1038,7 @@ namespace StreamedMPEditor
             weatherIconsStatic.Checked = true;
 
           useAeonGraphics.Visible = false;
-          txtMenuPos.Text = "350";
+          txtMenuPos.Text = "525";
           menuPosLabel.Text = "Menu X Position:";
           cboLabelFont.Enabled = false;
           cboSelectedFont.Enabled = false;
@@ -1129,7 +1064,7 @@ namespace StreamedMPEditor
 
           weatherSummaryGroup.Visible = true;
           useAeonGraphics.Visible = false;
-          txtMenuPos.Text = "430";
+          txtMenuPos.Text = "645";
           cboLabelFont.Enabled = true;
           cboSelectedFont.Enabled = true;
           cboSelectedFont.Text = "mediastream28tc";
@@ -1147,11 +1082,10 @@ namespace StreamedMPEditor
           fullWeatherSummaryBottom.Enabled = false;
           horizontalContextLabels.Enabled = true;
           horizontalStyle2.Checked = true;
-          if (!WeatherIconsAnimated.Checked)
-            weatherIconsStatic.Checked = true;
+          if (!WeatherIconsAnimated.Checked) weatherIconsStatic.Checked = true;
           weatherSummaryGroup.Visible = true;
           useAeonGraphics.Visible = false;
-          txtMenuPos.Text = "620";
+          txtMenuPos.Text = "930";
           cboSelectedFont.Text = "mediastream28tc";
           cboLabelFont.Text = "mediastream28tc";
           cboLabelFont.Enabled = false;
@@ -1183,7 +1117,7 @@ namespace StreamedMPEditor
 
           weatherSummaryGroup.Visible = true;
           useAeonGraphics.Visible = false;
-          txtMenuPos.Text = "430";
+          txtMenuPos.Text = "645";
           cboLabelFont.Enabled = true;
           cboSelectedFont.Enabled = true;
           cboSelectedFont.Text = "mediastream28tc";
@@ -1257,7 +1191,6 @@ namespace StreamedMPEditor
       {
         weatherStyle = chosenWeatherStyle.bottom;
       }
-
     }
 
     private void getBackupFileTotals()
@@ -1312,8 +1245,6 @@ namespace StreamedMPEditor
       changeOutstanding = false;
 
       //reset everything
-      //xmlFiles.Items.Clear();
-      //cboQuickSelect.Items.Clear();
       itemsOnMenubar.Items.Clear();
       prettyItems.Clear();
       ids.Clear();
@@ -1348,7 +1279,6 @@ namespace StreamedMPEditor
       if (System.IO.Directory.Exists(SkinInfo.mpPaths.sMPbaseDir))
         System.Diagnostics.Process.Start(SkinInfo.mpPaths.sMPbaseDir);
       else MessageBox.Show("The directory/file does not exist.");
-
     }
 
     private void showSkinDir_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -1373,7 +1303,6 @@ namespace StreamedMPEditor
       else
         return false;
     }
-
 
     private void readFonts()
     {
@@ -1404,9 +1333,7 @@ namespace StreamedMPEditor
 
       cboSelectedFont.DataSource = skinFontsFocused;
       cboLabelFont.DataSource = skinFontsUnFocused;
-
     }
-
 
     public void checkAndSetRandomFanart(string fanartProperty)
     {
@@ -1471,7 +1398,6 @@ namespace StreamedMPEditor
         randomFanart.fanartScoreCenter = true;
     }
 
-
     private void rbRssNoImage_CheckedChanged(object sender, EventArgs e)
     {
       if (rbRssNoImage.Checked)
@@ -1500,58 +1426,6 @@ namespace StreamedMPEditor
       screenReset();
       setScreenProperties(itemsOnMenubar.SelectedIndex);
       disableItemControls();
-    }
-
-    private void sdRes_CheckedChanged(object sender, EventArgs e)
-    {
-      if (sdRes.Checked)
-      {
-        setSDScreenRes();
-      }
-      else
-      {
-        setHDScreenRes();
-      }
-
-    }
-
-    private void hdRes_CheckedChanged(object sender, EventArgs e)
-    {
-      if (hdRes.Checked)
-      {
-        setHDScreenRes();
-      }
-      else
-      {
-        setSDScreenRes();
-      }
-
-    }
-
-    private void setHDScreenRes()
-    {
-      screenres = screenResolutionType.res1920x1080;
-      hdRes.Checked = true;
-      sdRes.Checked = false;
-      if (screenres == detectedres)
-        detectedHD.Text = "Auto Detected";
-      else
-        detectedHD.Text = "Set Manually";
-      detectedHD.Visible = true;
-      detectedSD.Visible = false;
-    }
-
-    private void setSDScreenRes()
-    {
-      screenres = screenResolutionType.res1280x720;
-      hdRes.Checked = false;
-      sdRes.Checked = true;
-      if (screenres == detectedres)
-        detectedSD.Text = "Auto Detected";
-      else
-        detectedSD.Text = "Set Manually";
-      detectedSD.Visible = true;
-      detectedHD.Visible = false;
     }
 
     private void StreamedMPMenu_Click(object sender, EventArgs e)
@@ -1739,7 +1613,6 @@ namespace StreamedMPEditor
           gbSummaryStyle.Visible = false;
           pSumHeader.Visible = false;
         }
-
       }
     }
 
@@ -1785,8 +1658,6 @@ namespace StreamedMPEditor
       }
     }
 
-
-
     private void rbMovPicsSummary_CheckedChanged(object sender, EventArgs e)
     {
       if (rbMovPicsFull.Checked)
@@ -1818,7 +1689,6 @@ namespace StreamedMPEditor
           cboxSummaryFor.Text = "MovingPictures";
           cboxSummaryFor.Refresh();
           doSummaryFor();
-
         }
         else
         {
@@ -1881,7 +1751,6 @@ namespace StreamedMPEditor
 
     void doSummaryFor()
     {
-
       if (cboxSummaryFor.Text == "TVSeries")
       {
         cbCycleFanart.Checked = mostRecentTVSeriesCycleFanart;
@@ -1965,7 +1834,6 @@ namespace StreamedMPEditor
           cbMyeMailManager.Enabled = true;
       else
         cbMyeMailManager.Text += " (Not Installed)";
-      
     }
 
     //
@@ -1985,7 +1853,6 @@ namespace StreamedMPEditor
 
       checkSum.Add(Path.Combine(SkinInfo.mpPaths.streamedMPpath, xmlFileName));
     }
-
 
     public static string SkinName()
     {
@@ -2156,7 +2023,6 @@ namespace StreamedMPEditor
           return this._fullName;
         }
       }
-
     }
 
     public class menuItem
@@ -2251,7 +2117,6 @@ namespace StreamedMPEditor
       public string configBasePath;
       public string streamedMPpath;
       public string pluginPath;
-      //public string backgroundPath;
       public string fanartBasePath;
       public string thumbsPath;
     }
@@ -2299,7 +2164,6 @@ namespace StreamedMPEditor
       public string mymenu_submenu;
       public string mymenu_submenutop;
     }
-
 
     public class overlaySelectedState
     {

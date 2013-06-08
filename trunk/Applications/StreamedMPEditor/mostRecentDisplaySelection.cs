@@ -87,7 +87,7 @@ namespace StreamedMPEditor
     {
       set
       {
-        rbSubMusic.Enabled = value; ;
+        rbSubMusic.Enabled = value;
       }
     }
 
@@ -95,7 +95,7 @@ namespace StreamedMPEditor
     {
       set
       {
-        rbSubTV.Enabled = value; ;
+        rbSubTV.Enabled = value;
       }
     }
 
@@ -103,7 +103,7 @@ namespace StreamedMPEditor
     {
       set
       {
-        rbSubMusicVideos.Enabled = value; ;
+        rbSubMusicVideos.Enabled = value;
       }
     }
 
@@ -193,13 +193,11 @@ namespace StreamedMPEditor
           rbSubUpdateControl.Checked = true;
           break;
       }
-
     }
 
     private void btSaveAndClose_Click(object sender, EventArgs e)
     {
       this.Hide();
     }
-
   }
 }

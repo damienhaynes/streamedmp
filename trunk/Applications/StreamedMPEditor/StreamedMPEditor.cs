@@ -157,11 +157,9 @@ namespace StreamedMPEditor
     List<string> rawXMLFileNames = new List<string>();
     List<string> prettyFileNames = new List<string>();
 
-
     public static List<prettyItem> prettyItems = new List<prettyItem>();
     public static List<menuItem> menuItems = new List<menuItem>();
     public static List<string> driveFreeSpaceDrives = new List<string>();
-
 
     public static List<string> theTVSeriesViews = new List<string>();
     public static List<string> theMusicViews = new List<string>();
@@ -207,9 +205,7 @@ namespace StreamedMPEditor
     public static bool isBeta = false;
 
     string xml;
-    string xmlTemplate;
     string dropShadowColor = "1d1f1b";
-    //string infoServiceDayProperty = "forecast";
     string splashScreenImage = null;
     string defFocus = "FFFFFF";
     string defUnFocus = "C0C0C0";
@@ -220,8 +216,8 @@ namespace StreamedMPEditor
     public string fhSuffix = ".any";
     public static string driveFreeSpaceList = string.Empty;
 
-    int textXOffset = -25;
-    int maxXPosition = 520;
+    int textXOffset = -38;
+    int maxXPosition = 780;
     int menuOffset = 0;
     int deskHeight;
     int deskWidth;
@@ -255,10 +251,6 @@ namespace StreamedMPEditor
     //Defualt to Fanart Summary Style
     mostRecentTVSeriesSummaryStyle mrTVSeriesSummStyle = mostRecentTVSeriesSummaryStyle.fanart;
     mostRecentMovPicsSummaryStyle mrMovPicsSummStyle = mostRecentMovPicsSummaryStyle.fanart;
-
-    // Defaut to SD res - this is any resoloution other than 1920x1080 (FullHD)
-    screenResolutionType screenres = screenResolutionType.res1280x720;
-    screenResolutionType detectedres = screenResolutionType.res1280x720;
 
     CheckSum checkSum = new CheckSum();
     SkinInfo skInfo = new SkinInfo();
@@ -299,7 +291,6 @@ namespace StreamedMPEditor
     PictureBox pbThemePreview = new PictureBox();
     List<string> menuThemeFiles = new List<string>();
     int themeImageIndex = 0;
-    //bool menuThemeActive = false;
     //QuickList Info
     Form formQlPopup = new Form();
     Label lbQlPopup = new Label();
@@ -311,7 +302,7 @@ namespace StreamedMPEditor
 
     string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media");
     string menuThemeName = "3DBackgrounds";
-    string profileVersion = "2.0";
+    string profileVersion = "3.0";
 
     #endregion
 
@@ -353,17 +344,6 @@ namespace StreamedMPEditor
       //Check the display res
       deskHeight = Screen.PrimaryScreen.Bounds.Height;
       deskWidth = Screen.PrimaryScreen.Bounds.Width;
-
-      if (deskWidth == 1920 && deskHeight == 1080)
-      {
-        detectedres = screenResolutionType.res1920x1080;
-        setHDScreenRes();
-      }
-      else
-      {
-        detectedres = screenResolutionType.res1280x720;
-        setSDScreenRes();
-      }
 
       Version mpVersion = new Version(MediaPortalVersion);
       if (mpVersion.CompareTo(mpAlphaRelease) >= 0)
@@ -645,7 +625,6 @@ namespace StreamedMPEditor
           selectedWindow.Text = null;
           selectedWindowID.Text = null;
 
-
           selectedWindow.Text = null;
           selectedWindowID.Text = null;
 
@@ -656,7 +635,6 @@ namespace StreamedMPEditor
           pbFanartPicTVSeries.Visible = true;
           pbPosterPicMovPics.Visible = false;
           pbFanartPicMovPics.Visible = false;
-
         }
 
         loadMenuSettings();
@@ -678,7 +656,6 @@ namespace StreamedMPEditor
           wrapString.Enabled = true;
         else
           wrapString.Enabled = false;
-
 
         if (menuStyle == chosenMenuStyle.graphicMenuStyle)
         {
@@ -716,8 +693,6 @@ namespace StreamedMPEditor
       else
         this.Close();
     }
-
-
 
     #endregion
 
@@ -762,7 +737,6 @@ namespace StreamedMPEditor
       }
     }
 
-
     displayMostRecent getMostRecentDisplayOption()
     {
       if (mrDisplaySelection.mrToDisplay == displayMostRecent.tvSeries)
@@ -795,7 +769,6 @@ namespace StreamedMPEditor
           }
       }
     }
-
 
     void addButton_Click(object sender, EventArgs e)
     {
@@ -878,7 +851,6 @@ namespace StreamedMPEditor
             default:
               break;
           }
-
         }
         else
           item.hyperlinkParameter = "false";
@@ -893,7 +865,6 @@ namespace StreamedMPEditor
         else
           item.buttonTexture = buttonTexture.SelectedIcon;
 
-        //buttonTexture.MenuItem = item.name;
         setDefaultIcons(int.Parse(item.hyperlink), "Black");
 
         if (cbOnlineVideosReturn.Checked)
@@ -925,7 +896,6 @@ namespace StreamedMPEditor
       {
         helper.showError("All fields must be complete before a Menu Item can be added", errorCode.info);
       }
-
     }
 
     void editButton_Click(object sender, EventArgs e)
@@ -1188,7 +1158,6 @@ namespace StreamedMPEditor
       MovPicsCategorySelectedIndex = -1;
     }
 
-
     void itemsOnMenubar_SelectedIndexChanged(object sender, EventArgs e)
     {
       screenReset();
@@ -1380,8 +1349,6 @@ namespace StreamedMPEditor
       }
     }
 
-
-
     void xmlFiles_Click(object sender, EventArgs e)
     {
       selectedWindow.Text = xmlFiles.Text;
@@ -1415,7 +1382,6 @@ namespace StreamedMPEditor
       }
     }
 
-
     // Move selected menu item up one position in list. 
     void btMoveUp_Click(object sender, EventArgs e)
     {
@@ -1423,7 +1389,6 @@ namespace StreamedMPEditor
       if (itemsOnMenubar.SelectedItem != null && itemsOnMenubar.SelectedIndex > 0)
       {
         int index = itemsOnMenubar.SelectedIndex;
-
 
         Object listItem = itemsOnMenubar.SelectedItem;
         menuItem mnuItem = menuItems[index];
@@ -1435,14 +1400,12 @@ namespace StreamedMPEditor
         menuItems.Insert(index - 1, mnuItem);
 
         itemsOnMenubar.SelectedIndex = index - 1;
-
       }
       foreach (menuItem item in menuItems)
       {
         Console.WriteLine(item.name);
       }
       Console.WriteLine("");
-
     }
 
     // Move selected menu item down one position in list. 
@@ -1452,7 +1415,6 @@ namespace StreamedMPEditor
       if (itemsOnMenubar.SelectedItem != null && itemsOnMenubar.SelectedIndex < itemsOnMenubar.Items.Count - 1)
       {
         int index = itemsOnMenubar.SelectedIndex;
-
 
         Object listItem = itemsOnMenubar.SelectedItem;
         menuItem mnuItem = menuItems[index];
@@ -1470,7 +1432,6 @@ namespace StreamedMPEditor
           menuItems.Add(mnuItem);
         }
         itemsOnMenubar.SelectedIndex = index + 1;
-
       }
 
       foreach (menuItem item in menuItems)
@@ -1499,7 +1460,6 @@ namespace StreamedMPEditor
       tbItemName.SelectionStart = start;
     }
 
-
     void cboContextLabels_TextChanged(object sender, EventArgs e)
     {
       int start = cboContextLabel.SelectionStart;
@@ -1512,7 +1472,6 @@ namespace StreamedMPEditor
       cboContextLabel.Text = cboContextLabel.Text.ToUpper();
       cboContextLabel.SelectionStart = start;
     }
-
 
     void btGenerateMenu_Click(object sender, EventArgs e)
     {
@@ -1529,7 +1488,6 @@ namespace StreamedMPEditor
         genMenu(false);
 
       changeOutstanding = false;
-
     }
 
     void genMenu(bool onFormClosing)
@@ -1566,7 +1524,6 @@ namespace StreamedMPEditor
       if (cboClearCache.Checked)
         clearCacheDir();
     }
-
 
     // This function call will regenerate the menu from the currenly saved usermenuprofile.xml
     // it assums that this file is correct.....
@@ -1613,7 +1570,6 @@ namespace StreamedMPEditor
 
     void writeMenu(menuType direction, bool onFormClosing)
     {
-
       randomFanart.fanartGames = false;
       randomFanart.fanartMovies = false;
       randomFanart.fanartMoviesScraperFanart = false;
@@ -1711,8 +1667,8 @@ namespace StreamedMPEditor
 
       toolStripStatusLabel1.Text = "Done!";
 
-      if (System.IO.File.Exists(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml"))
-        System.IO.File.Delete(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml");
+      if (File.Exists(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml"))
+        File.Delete(SkinInfo.mpPaths.streamedMPpath + "BasicHome.xml");
 
       xml = xml.Replace("<!-- BEGIN GENERATED ID CODE-->", "<id>35</id>");
       CheckSum checkSum = new CheckSum();
@@ -1720,10 +1676,9 @@ namespace StreamedMPEditor
 
       generateMostRecentFilesAndImports("GenImports");
       if (menuStyle == chosenMenuStyle.graphicMenuStyle)
-        //generateOverlay(int.Parse(txtMenuPos.Text), 0, basicHomeValues.weatherControl);
-        generateOverlay(0, 380, basicHomeValues.weatherControl);
+        generateOverlay(0, 570, basicHomeValues.weatherControl);
       else
-        generateOverlay(int.Parse(txtMenuPos.Text), 765, basicHomeValues.weatherControl);
+        generateOverlay(int.Parse(txtMenuPos.Text), 1148, basicHomeValues.weatherControl);
 
       changeOutstanding = false;
       getBackupFileTotals();
@@ -1733,8 +1688,6 @@ namespace StreamedMPEditor
         if (result == DialogResult.No)
         {
           //reset everything
-          //xmlFiles.Items.Clear();
-          //cboQuickSelect.Items.Clear();
           itemsOnMenubar.Items.Clear();
           prettyItems.Clear();
           ids.Clear();
@@ -1833,11 +1786,11 @@ namespace StreamedMPEditor
       {
         if (cbMostRecentTvSeries.Checked)
           // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-          generateMostRecentOverlay(menuStyle, isOverlayType.TVSeries, 976, 50, 976, 370);
+          generateMostRecentOverlay(menuStyle, isOverlayType.TVSeries, 1464, 75, 1464, 555);
 
         if (cbMostRecentMovPics.Checked)
           // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
-          generateMostRecentOverlay(menuStyle, isOverlayType.MovPics, 976, 50, 976, 370);
+          generateMostRecentOverlay(menuStyle, isOverlayType.MovPics, 1464, 75, 1464, 555);
         //
         // Only generate music and RecordedTV if the correct Fanart Handler version is installed and enabled
         //
@@ -1845,34 +1798,34 @@ namespace StreamedMPEditor
         {
           // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
           if (cbEnableRecentMusic.Checked)
-            generateMostRecentOverlay(menuStyle, isOverlayType.Music, 976, 50, 0, 0);
+            generateMostRecentOverlay(menuStyle, isOverlayType.Music, 1464, 75, 0, 0);
 
           // Parms: Overlay Type, Recent added summary x,y, Recent watched summary x,y
           if (cbEnableRecentMusicVideos.Checked)
-            generateMostRecentOverlay(menuStyle, isOverlayType.MusicVideos, 976, 50, 0, 0);
+            generateMostRecentOverlay(menuStyle, isOverlayType.MusicVideos, 1464, 75, 0, 0);
 
           // Params: Overlay Type, Recent added summary x,y, Recent watched summary x,y
           if (cbEnableRecentRecordedTV.Checked)
-            generateMostRecentOverlay(menuStyle, isOverlayType.RecordedTV, 976, 50, 0, 0);
+            generateMostRecentOverlay(menuStyle, isOverlayType.RecordedTV, 1464, 75, 0, 0);
         }
 
         if (cbFreeDriveSpaceOverlay.Checked)
-          generateMostRecentOverlay(menuStyle, isOverlayType.freeDriveSpace, 976, 50, 0, 0);
+          generateMostRecentOverlay(menuStyle, isOverlayType.freeDriveSpace, 1464, 75, 0, 0);
 
         if (cbSleepControlOverlay.Checked)
-          generateMostRecentOverlay(menuStyle, isOverlayType.sleepControl, 976, 50, 0, 0);
+          generateMostRecentOverlay(menuStyle, isOverlayType.sleepControl, 1464, 75, 0, 0);
 
         if (cbSocksOverlay.Checked)
-          generateMostRecentOverlay(menuStyle, isOverlayType.stocks, 976, 50, 0, 0);
+          generateMostRecentOverlay(menuStyle, isOverlayType.stocks, 1464, 75, 0, 0);
 
         if (cbPowerControlOverlay.Checked)
-          generateMostRecentOverlay(menuStyle, isOverlayType.powerControl, 976, 50, 0, 0);
+          generateMostRecentOverlay(menuStyle, isOverlayType.powerControl, 1464, 75, 0, 0);
 
         if (cbHtpcInfoOverlay.Checked)
-          generateMostRecentOverlay(menuStyle, isOverlayType.htpcInfo, 976, 50, 0, 0);
+          generateMostRecentOverlay(menuStyle, isOverlayType.htpcInfo, 1464, 75, 0, 0);
 
         if (cbUpdateControlOverlay.Checked)
-          generateMostRecentOverlay(menuStyle, isOverlayType.updateControl, 976, 50, 0, 0);
+          generateMostRecentOverlay(menuStyle, isOverlayType.updateControl, 1464, 75, 0, 0);
 
         if (cbMyeMailManager.Checked)
           generateMostRecentOverlay(menuStyle, isOverlayType.myemailmanager, 0, 0, 0, 0);
@@ -2070,8 +2023,6 @@ namespace StreamedMPEditor
       }
     }
 
-    
-
     private void cboParameterViews_SelectedIndexChanged(object sender, EventArgs e)
     {
       string siteName = ((ComboBox)sender).Text;
@@ -2237,11 +2188,11 @@ namespace StreamedMPEditor
 
           tb3dInfo.BorderStyle = BorderStyle.None;
           tb3dInfo.Multiline = true;
-          tb3dInfo.Text = "When using 3D backgrounds background sharing will be automaticlly";
+          tb3dInfo.Text = "When using 3D backgrounds, background sharing will be automatic";
           tb3dInfo.AppendText(Environment.NewLine + "disabled for the Menu Item.");
           tb3dInfo.AppendText(Environment.NewLine);
           tb3dInfo.AppendText(Environment.NewLine + "Please remember you will need to set the the 3D background");
-          tb3dInfo.AppendText(Environment.NewLine + "for this Menu Item in the 'Defaul Background Images' tab.");
+          tb3dInfo.AppendText(Environment.NewLine + "for this Menu Item in the 'Default Background Images' tab.");
           tb3dInfo.Location = new System.Drawing.Point(20, 20);
           tb3dInfo.WordWrap = true;
           tb3dInfo.Width = 350;
@@ -2261,18 +2212,18 @@ namespace StreamedMPEditor
         Properties.Settings.Default.hide3dConfirm = true;
     }
 
-
-
-
     private void getThemeImages(string themeName)
     {
       menuThemeFiles.Clear();
       SkinInfo skInfo = new SkinInfo();
       string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media\\" + bgFolderName);
       DirectoryInfo dInfo = new DirectoryInfo(Path.Combine(streamedMPMediaPath, themeName));
-      foreach (FileInfo fInfo in dInfo.GetFiles("*.jpg"))
+      if (dInfo.Exists)
       {
-        menuThemeFiles.Add(fInfo.FullName);
+        foreach (FileInfo fInfo in dInfo.GetFiles("*.jpg"))
+        {
+          menuThemeFiles.Add(fInfo.FullName);
+        }
       }
     }
 
@@ -2567,7 +2518,7 @@ namespace StreamedMPEditor
       pbThemePreview.BorderStyle = BorderStyle.FixedSingle;
       pbThemePreview.Location = new Point(10, 40);
       pbThemePreview.SizeMode = PictureBoxSizeMode.StretchImage;
-      pbThemePreview.Image = (Bitmap)Image.FromFile(menuThemeFiles[themeImageIndex]).Clone();
+      if (menuThemeFiles.Count > 0) pbThemePreview.Image = (Bitmap)Image.FromFile(menuThemeFiles[themeImageIndex]).Clone();
       menuThemeForm.Controls.Add(pbThemePreview);
       //Previous Image Button
       btThemePrev.Width = 50;
@@ -2626,7 +2577,6 @@ namespace StreamedMPEditor
       }
     }
 
-
     void buildQuickListInfo()
     {
       formQlPopup.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2644,8 +2594,6 @@ namespace StreamedMPEditor
       formQlPopup.TopMost = true;
       formQlPopup.ControlBox = false;
       // Quicklist Name
-
-
       lbQlPopup.Location = new Point(50, 50);
       lbQlPopup.Width = 250;
       lbQlPopup.Text = "Quicklist Item name.....";
@@ -2653,7 +2601,7 @@ namespace StreamedMPEditor
     }
     #endregion
 
-    #region Parmeter Handling
+    #region Parameter Handling
 
     public string MovPicsCategoryText
     {
@@ -2771,7 +2719,6 @@ namespace StreamedMPEditor
           }
       }
 
-
     /// <summary>
     /// Get list of views in TVseries database
     /// Key: should be used as hyperlinkParameter
@@ -2796,7 +2743,6 @@ namespace StreamedMPEditor
         var y = OnlineVideos.MediaPortal1.PluginConfiguration.Instance;
 
         var siteGroups = y.SitesGroups;
-        //if ((siteGroups == null || siteGroups.Count == 0) && y.autoGroupByLang) siteGroups = y.CachedAutomaticSitesGroups;
 
         // get groups
         if ((siteGroups != null && siteGroups.Count > 0))

@@ -15,7 +15,6 @@ namespace StreamedMPEditor
 
     List<string> iconFiles = new List<string>();
     Image workingImage = null;
-    //Image boarderImage = null;
     string streamedMPMediaPath = Path.Combine(SkinInfo.mpPaths.streamedMPpath, "media");
     string theTheme = "Black";
 

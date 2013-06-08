@@ -11,8 +11,6 @@ namespace StreamedMPEditor
 {
   public partial class TVSereisFormatOptions : Form
   {
-
-
     public TVSereisFormatOptions()
     {
       InitializeComponent();
@@ -71,7 +69,6 @@ namespace StreamedMPEditor
         else
           cboxMREpisodeFont.SelectedIndex = cboxMREpisodeFont.Items.IndexOf("mediastream10c");
       }
-
     }
 
     private void btSaveAndExit_Click(object sender, EventArgs e)

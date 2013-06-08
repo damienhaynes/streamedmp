@@ -9,10 +9,6 @@ namespace StreamedMPEditor
 {
   public partial class formStreamedMpEditor
   {
-    //public string localxml = string.Empty;
-    //string onup;
-    //string ondown;
-
     int conextOffsett = 0;
 
     string bhSubMenuWriterH()
@@ -46,7 +42,7 @@ namespace StreamedMPEditor
       int isSecondLevel = 0;
 
       if (menuStyle != chosenMenuStyle.verticalStyle && horizontalContextLabels.Checked)
-        conextOffsett = 17;
+        conextOffsett = 26;
 
       if (parentMenu.subMenuLevel2.Count > 0)
         isSecondLevel = 100;
@@ -72,7 +68,6 @@ namespace StreamedMPEditor
         }
       }
 
-
       localxml += "<control>" +
                       "<description>dummy for lateral blade visibility</description>" +
                       "<type>label</type>" +
@@ -85,14 +80,14 @@ namespace StreamedMPEditor
                       "<description>group element</description>" +
                       "<animation effect=\"fade\" time=\"200\" start=\"0\" end=\"100\">visible</animation>" +
                       "<animation effect=\"fade\" time=\"200\" start=\"100\" end=\"0\">hidden</animation>" +
-                      "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                      "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                       "<animation effect=\"fade\" start=\"0\"  end=\"100\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
-                      "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"640," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Visible</animation>" +
-                      "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"640," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Hidden</animation>" +
-                      "<posX>520</posX>" +
-                      "<posY>" + (int.Parse(txtMenuPos.Text) - 355 - conextOffsett).ToString() + "</posY>" +
-                      "<width>230</width>" +
-                      "<height>405</height>" +
+                      "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"960," + (int.Parse(txtMenuPos.Text) - 383 + 188).ToString() + "\" time=\"200\">Visible</animation>" +
+                      "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"960," + (int.Parse(txtMenuPos.Text) - 383 + 188).ToString() + "\" time=\"200\">Hidden</animation>" +
+                      "<posX>780</posX>" +
+                      "<posY>" + (int.Parse(txtMenuPos.Text) - 533 - conextOffsett).ToString() + "</posY>" +
+                      "<width>345</width>" +
+                      "<height>608</height>" +
                       "<dimColor>ffffffff</dimColor>" +
                       "<layout>StackLayout</layout>";
 
@@ -117,7 +112,7 @@ namespace StreamedMPEditor
                 "<type>button</type>" +
                 "<id>" + (parentMenu.subMenuLevel1ID + (j + 1)).ToString() + "</id>" +
                 "<label>" + parentMenu.subMenuLevel1[j].displayName + "</label>" +
-                "<width>246</width>";
+                "<width>369</width>";
 
         if (parentMenu.subMenuLevel1[j].hyperlink == "196299")
           localxml += "<action>99</action>";
@@ -178,17 +173,17 @@ namespace StreamedMPEditor
       localxml += "<control>" +
                   "<description>Sub Menu Indicator (Main)</description>" +
                   "<type>image</type>" +
-                  "<posX>632</posX>" +
-                  "<posY>" + (int.Parse(txtMenuPos.Text) + 7 - (conextOffsett + 13)).ToString() + "</posY>" +
+                  "<posX>948</posX>" +
+                  "<posY>" + (int.Parse(txtMenuPos.Text) + 11 - (conextOffsett + 20)).ToString() + "</posY>" +
                   "<align>right</align>" +
-                  "<width>16</width>" +
-                  "<height>16</height>" +
+                  "<width>24</width>" +
+                  "<height>24</height>" +
                   "<visible>" + subArrowVisible + "</visible>" +
                   "<colorDiffuse>77fffffff</colorDiffuse>" +
                   "<texture>arrowupfo.png</texture>" +
                   "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"800\" reversible=\"false\">WindowOpen</animation>" +
                   "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"250\" delay=\"700\" reversible=\"false\">Visible</animation>" +
-                  "<animation effect=\"slide\" end=\"0,300\" time=\"250\" acceleration=\" -0.1\" reversible=\"false\">windowclose</animation>" +
+                  "<animation effect=\"slide\" end=\"0,450\" time=\"250\" acceleration=\" -0.1\" reversible=\"false\">windowclose</animation>" +
                 "</control>";
 
       // 2nd Level Menu Indicator
@@ -208,18 +203,17 @@ namespace StreamedMPEditor
       localxml += "<control>" +
                   "<description>Sub Menu Indicator (Level1)</description>" +
                   "<type>image</type>" +
-                  "<posX>750</posX>" +
-                  "<posY>" + (int.Parse(txtMenuPos.Text) - 340 - conextOffsett).ToString() + "</posY>" +
+                  "<posX>1125</posX>" +
+                  "<posY>" + (int.Parse(txtMenuPos.Text) - 510 - conextOffsett).ToString() + "</posY>" +
                   "<align>right</align>" +
-                  "<width>16</width>" +
-                  "<height>16</height>" +
+                  "<width>24</width>" +
+                  "<height>24</height>" +
                   "<visible>" + subArrowVisible + "</visible>" +
                   "<colorDiffuse>77fffffff</colorDiffuse>" +
                   "<texture>arrowrightfo.png</texture>" +
-                  "<animation effect=\"slide\" start=\"-400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                  "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                  "<animation effect=\"slide\" start=\"-600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                  "<animation effect=\"slide\" end=\"-600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                 "</control>";
-
 
       return localxml;
     }
@@ -229,7 +223,7 @@ namespace StreamedMPEditor
       string dummyFocusControls = "Control.HasFocus(";
 
       if (menuStyle != chosenMenuStyle.verticalStyle && horizontalContextLabels.Checked)
-        conextOffsett = 17;
+        conextOffsett = 26;
 
       for (int i = 0; i < parentMenu.subMenuLevel2.Count; i++)
       {
@@ -238,7 +232,6 @@ namespace StreamedMPEditor
         else
           dummyFocusControls += (parentMenu.subMenuLevel1ID + (i + 101)).ToString() + ")";
       }
-
 
       localxml += "<control>" +
                       "<description>dummy for lateral blade visibility</description>" +
@@ -252,14 +245,14 @@ namespace StreamedMPEditor
                       "<description>group element</description>" +
                       "<animation effect=\"fade\" time=\"200\" start=\"0\" end=\"100\">visible</animation>" +
                       "<animation effect=\"fade\" time=\"200\" start=\"100\" end=\"0\">hidden</animation>" +
-                      "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                      "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                       "<animation effect=\"fade\" start=\"0\"  end=\"100\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
-                      "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"765," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Visible</animation>" +
-                      "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"765," + (int.Parse(txtMenuPos.Text) - 255 + 125).ToString() + "\" time=\"200\">Hidden</animation>" +
-                      "<posY>" + (int.Parse(txtMenuPos.Text) - 355 - conextOffsett).ToString() + "</posY>" +
-                      "<posX>768</posX>" +
-                      "<width>230</width>" +
-                      "<height>405</height>" +
+                      "<animation effect=\"zoom\" start=\"10,10\" end=\"100,100\" center=\"1148," + (int.Parse(txtMenuPos.Text) - 383 + 188).ToString() + "\" time=\"200\">Visible</animation>" +
+                      "<animation effect=\"zoom\" start=\"100,100\" end=\"10,10\" center=\"1148," + (int.Parse(txtMenuPos.Text) - 383 + 188).ToString() + "\" time=\"200\">Hidden</animation>" +
+                      "<posY>" + (int.Parse(txtMenuPos.Text) - 533 - conextOffsett).ToString() + "</posY>" +
+                      "<posX>1152</posX>" +
+                      "<width>345</width>" +
+                      "<height>608</height>" +
                       "<dimColor>ffffffff</dimColor>" +
                       "<layout>StackLayout</layout>";
 
@@ -284,7 +277,7 @@ namespace StreamedMPEditor
                 "<type>button</type>" +
                 "<id>" + (parentMenu.subMenuLevel1ID + (j + 101)).ToString() + "</id>" +
                 "<label>" + parentMenu.subMenuLevel2[j].displayName + "</label>" +
-                "<width>246</width>";
+                "<width>369</width>";
 
         if (parentMenu.subMenuLevel2[j].hyperlink == "196299")
           localxml += "<action>99</action>";

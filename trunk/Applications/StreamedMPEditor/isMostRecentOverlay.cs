@@ -102,8 +102,8 @@
       {
         if (reqType == tvSeriesRecentType.summary)
         {
-          baseXPosWatched = 5;
-          baseYPosWatched = 50;
+          baseXPosWatched = 8;
+          baseYPosWatched = 75;
           horizontalTVSeriesSummary();
         }
         else
@@ -137,8 +137,8 @@
       {
         if (reqType == movPicsRecentType.summary)
         {
-          baseXPosWatched = 5;
-          baseYPosWatched = 50;
+          baseXPosWatched = 8;
+          baseYPosWatched = 75;
           horizontalMovingPicturesSummary();
         }
         else
@@ -147,7 +147,6 @@
         }
       }
     }
-
 
     #endregion
 
@@ -163,20 +162,20 @@
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series1.thumb,#)</visible>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
                   "<control>\n" +
                     "<description>Series 1 BG</description>\n" +
-                    "<posX>890</posX>\n" +
-                    "<posY>70</posY>\n" +
+                    "<posX>1335</posX>\n" +
+                    "<posY>105</posY>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<width>385</width>\n" +
-                    "<height>180</height>\n" +
+                    "<width>578</width>\n" +
+                    "<height>270</height>\n" +
                     "<texture>recentfullbg.png</texture>\n" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                   "</control>\n" +
@@ -184,10 +183,10 @@
                     "<description>Series 1 thumb</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>900</posX>\n" +
-                    "<posY>79</posY>\n" +
-                    "<width>112</width>\n" +
-                    "<height>165</height>\n" +
+                    "<posX>1350</posX>\n" +
+                    "<posY>119</posY>\n" +
+                    "<width>168</width>\n" +
+                    "<height>248</height>\n" +
                     "<keepaspectratio>true</keepaspectratio>\n" +
                     "<texture>#StreamedMP.recentlyAdded.series1.thumb</texture>\n" +
                   "</control>\n" +
@@ -195,19 +194,19 @@
                     "<description>Series 1 Rounded Cover</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>892</posX>\n" +
-                    "<posY>71</posY>\n" +
-                    "<height>181</height>\n" +
-                    "<width>129</width>\n" +
+                    "<posX>1338</posX>\n" +
+                    "<posY>107</posY>\n" +
+                    "<height>272</height>\n" +
+                    "<width>194</width>\n" +
                     "<texture>round.poster.frame.noreflection.png</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
                     "<description>Series 1 name</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>98</posY>\n" +
-                    "<width>258</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>147</posY>\n" +
+                    "<width>387</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.series1.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -216,9 +215,9 @@
                     "<description>Series 1 title</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>151</posY>\n" +
-                    "<width>255</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>227</posY>\n" +
+                    "<width>383</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.series1.episodetitle</label>\n" +
                     "<font>mediastream12</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -227,9 +226,9 @@
                     "<description>Series 1 episode</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>206</posY>\n" +
-                    "<width>255</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>309</posY>\n" +
+                    "<width>383</width>\n" +
                     "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series1.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series1.episodenumber</label>\n" +
                     "<font>mediastream10</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -240,20 +239,20 @@
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series2.thumb,#)</visible>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
                   "<control>\n" +
                     "<description>Series 2 BG</description>\n" +
-                    "<posX>890</posX>\n" +
-                    "<posY>270</posY>\n" +
+                    "<posX>1335</posX>\n" +
+                    "<posY>405</posY>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<width>385</width>\n" +
-                    "<height>180</height>\n" +
+                    "<width>578</width>\n" +
+                    "<height>270</height>\n" +
                     "<texture>recentfullbg.png</texture>\n" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                   "</control>\n" +
@@ -261,10 +260,10 @@
                     "<description>Series 2 thumb</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>902</posX>\n" +
-                    "<posY>279</posY>\n" +
-                    "<width>112</width>\n" +
-                    "<height>165</height>\n" +
+                    "<posX>1353</posX>\n" +
+                    "<posY>419</posY>\n" +
+                    "<width>168</width>\n" +
+                    "<height>248</height>\n" +
                     "<keepaspectratio>true</keepaspectratio>\n" +
                     "<texture>#StreamedMP.recentlyAdded.series2.thumb</texture>\n" +
                   "</control>\n" +
@@ -272,19 +271,19 @@
                     "<description>Series 2 Rounded Cover</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>892</posX>\n" +
-                    "<posY>270</posY>\n" +
-                    "<height>181</height>\n" +
-                    "<width>129</width>\n" +
+                    "<posX>1338</posX>\n" +
+                    "<posY>405</posY>\n" +
+                    "<height>272</height>\n" +
+                    "<width>194</width>\n" +
                     "<texture>round.poster.frame.noreflection.png</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
                     "<description>Series 2 name</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>299</posY>\n" +
-                    "<width>258</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>449</posY>\n" +
+                    "<width>387</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.series2.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -293,9 +292,9 @@
                     "<description>Series 2 title</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>352</posY>\n" +
-                    "<width>255</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>528</posY>\n" +
+                    "<width>383</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.series2.episodetitle</label>\n" +
                     "<font>mediastream12</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -304,9 +303,9 @@
                     "<description>Series 2 episode</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>405</posY>\n" +
-                    "<width>258</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>608</posY>\n" +
+                    "<width>387</width>\n" +
                     "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series2.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series2.episodenumber</label>\n" +
                     "<font>mediastream10</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -317,20 +316,20 @@
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series3.thumb,#)</visible>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
                   "<control>\n" +
                     "<description>Series 3 BG</description>\n" +
-                    "<posX>890</posX>\n" +
-                    "<posY>470</posY>\n" +
+                    "<posX>1335</posX>\n" +
+                    "<posY>705</posY>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<width>385</width>\n" +
-                    "<height>180</height>\n" +
+                    "<width>578</width>\n" +
+                    "<height>270</height>\n" +
                     "<texture>recentfullbg.png</texture>\n" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                   "</control>\n" +
@@ -338,10 +337,10 @@
                     "<description>Series 3 thumb</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>901</posX>\n" +
-                    "<posY>478</posY>\n" +
-                    "<width>112</width>\n" +
-                    "<height>165</height>\n" +
+                    "<posX>1352</posX>\n" +
+                    "<posY>717</posY>\n" +
+                    "<width>168</width>\n" +
+                    "<height>248</height>\n" +
                     "<keepaspectratio>true</keepaspectratio>\n" +
                     "<texture>#StreamedMP.recentlyAdded.series3.thumb</texture>\n" +
                   "</control>\n" +
@@ -349,19 +348,19 @@
                     "<description>Series 3 Rounded Cover</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>892</posX>\n" +
-                    "<posY>470</posY>\n" +
-                    "<height>181</height>\n" +
-                    "<width>129</width>\n" +
+                    "<posX>1338</posX>\n" +
+                    "<posY>705</posY>\n" +
+                    "<height>272</height>\n" +
+                    "<width>194</width>\n" +
                     "<texture>round.poster.frame.noreflection.png</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
                     "<description>Series 3 name</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>498</posY>\n" +
-                    "<width>255</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>747</posY>\n" +
+                    "<width>383</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.series3.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -370,9 +369,9 @@
                     "<description>Series 3 title</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>551</posY>\n" +
-                    "<width>255</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>827</posY>\n" +
+                    "<width>383</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.series3.episodetitle</label>\n" +
                     "<font>mediastream12</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -381,9 +380,9 @@
                     "<description>Series 3 episode</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>604</posY>\n" +
-                    "<width>255</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>906</posY>\n" +
+                    "<width>383</width>\n" +
                     "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series3.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series3.episodenumber</label>\n" +
                     "<font>mediastream10</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -404,12 +403,12 @@
     {
       if (mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.poster)
       {
-        buildTVSeriesSummaryFile(475, mostRecentTVSeriesSummaryStyle.poster);
+        buildTVSeriesSummaryFile(713, mostRecentTVSeriesSummaryStyle.poster);
         writeXMLFile("basichome.recentlyadded.tvseries.VSum.xml");
       }
       if (mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.fanart)
       {
-        buildTVSeriesSummaryFile(475, mostRecentTVSeriesSummaryStyle.fanart);
+        buildTVSeriesSummaryFile(713, mostRecentTVSeriesSummaryStyle.fanart);
         if (cbTVSeriesRecentWatched.Checked)
           mostRecentTVSeriesWatched();
 
@@ -427,35 +426,29 @@
       // Work out the Ypos
       //
       int overlayYpos = 0;
-      int maxYpos = 536;
-      int overlayOffset = 184;
+      int maxYpos = 804;
+      int overlayOffset = 276;
       int hdOffset = 0;
 
-      int menuTop = int.Parse(txtMenuPos.Text) + basicHomeValues.offsetMymenu + 54;
+      int menuTop = int.Parse(txtMenuPos.Text) + basicHomeValues.offsetMymenu + 81;
       int menuBot = int.Parse(txtMenuPos.Text) + basicHomeValues.offsetSubmenu;
 
-      if (screenres == screenResolutionType.res1920x1080)
-        hdOffset = 0;
-      else
-        hdOffset = 0;
-
       if (enableTwitter.Checked)
-        menuTop = int.Parse(txtMenuPos.Text) - basicHomeValues.offsetTwitter + 30;
+        menuTop = int.Parse(txtMenuPos.Text) - basicHomeValues.offsetTwitter + 45;
 
       if (enableRssfeed.Checked && infoserviceOptions.Enabled)
-        menuBot += (basicHomeValues.subMenuHeight - 30);
+        menuBot += (basicHomeValues.subMenuHeight - 45);
 
       if (menuBot > maxYpos)
       {
         overlayYpos = menuTop - overlayOffset;
-        if (screenres == screenResolutionType.res1920x1080)
-          hdOffset -= 54;
+        hdOffset -= 81;
       }
       else
-        overlayYpos = 536;
+        overlayYpos = 804;
 
       if (menuStyle == chosenMenuStyle.graphicMenuStyle)
-        overlayYpos -= 80;
+        overlayYpos -= 120;
 
       // Build the file
       xml = "<?xml version=" + quote + "1.0" + quote + " encoding=" + quote + "utf-8" + quote + "?>" +
@@ -466,20 +459,20 @@
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series1.thumb,#)</visible>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,450" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                   "<control>" +
                     "<description>Series 1 BG</description>" +
-                    "<posX>28</posX>" +
-                    "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
+                    "<posX>42</posX>" +
+                    "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
                     "<type>image</type>" +
                     "<id>6777</id>" +
-                    "<width>385</width>" +
-                    "<height>180</height>" +
+                    "<width>578</width>" +
+                    "<height>270</height>" +
                     "<texture>recentfullbg.png</texture>" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>" +
                   "</control>" +
@@ -487,10 +480,10 @@
                     "<description>Series 1 thumb</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>36</posX>" +
-                    "<posY>" + (overlayYpos + 10).ToString() + "</posY>" +
-                    "<height>163</height>" +
-                    "<width>111</width>" +
+                    "<posX>54</posX>" +
+                    "<posY>" + (overlayYpos + 15).ToString() + "</posY>" +
+                    "<height>245</height>" +
+                    "<width>167</width>" +
                     "<keepaspectratio>true</keepaspectratio>" +
                     "<texture>#StreamedMP.recentlyAdded.series1.thumb</texture>" +
                   "</control>" +
@@ -498,19 +491,19 @@
                     "<description>Series 1 Rounded Cover</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>26</posX>" +
-                    "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
-                    "<height>181</height>" +
-                    "<width>129</width>" +
+                    "<posX>39</posX>" +
+                    "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
+                    "<height>272</height>" +
+                    "<width>194</width>" +
                     "<texture>round.poster.frame.noreflection.png</texture>" +
                   "</control>      " +
                 "<control>" +
                     "<description>Series 1 name</description>" +
                     "<type>fadelabel</type>" +
                     "<id>0</id>" +
-                    "<posX>152</posX>" +
-                    "<posY>" + (overlayYpos + 29).ToString() + "</posY>" +
-                    "<width>258</width>" +
+                    "<posX>228</posX>" +
+                    "<posY>" + (overlayYpos + 44).ToString() + "</posY>" +
+                    "<width>387</width>" +
                     "<label>#StreamedMP.recentlyAdded.series1.title</label>" +
                     "<font>mediastream12tc</font>" +
                     "<textcolor>White</textcolor>" +
@@ -519,9 +512,9 @@
                     "<description>Series 1 title</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>152</posX>" +
-                    "<posY>" + (overlayYpos + 82).ToString() + "</posY>" +
-                    "<width>255</width>" +
+                    "<posX>228</posX>" +
+                    "<posY>" + (overlayYpos + 123).ToString() + "</posY>" +
+                    "<width>383</width>" +
                     "<label>#StreamedMP.recentlyAdded.series1.episodetitle</label>" +
                     "<font>mediastream12</font>" +
                     "<textcolor>White</textcolor>" +
@@ -530,9 +523,9 @@
                     "<description>Series 1 episode</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>152</posX>" +
-                    "<posY>" + (overlayYpos + 139).ToString() + "</posY>" +
-                    "<width>255</width>" +
+                    "<posX>228</posX>" +
+                    "<posY>" + (overlayYpos + 209).ToString() + "</posY>" +
+                    "<width>383</width>" +
                     "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series1.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series1.episodenumber</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>White</textcolor>" +
@@ -543,20 +536,20 @@
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series2.thumb,#)</visible>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,450" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                   "<control>" +
                     "<description>Series 2 BG</description>" +
-                    "<posX>442</posX>" +
-                    "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
+                    "<posX>663</posX>" +
+                    "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
                     "<type>image</type>" +
                     "<id>6777</id>" +
-                    "<width>385</width>" +
-                    "<height>180</height>" +
+                    "<width>578</width>" +
+                    "<height>270</height>" +
                     "<texture>recentfullbg.png</texture>" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>" +
                   "</control>" +
@@ -564,10 +557,10 @@
                     "<description>Series 2 thumb</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>452</posX>" +
-                    "<posY>" + (overlayYpos + 10).ToString() + "</posY>" +
-                    "<height>163</height>" +
-                    "<width>111</width>" +
+                    "<posX>678</posX>" +
+                    "<posY>" + (overlayYpos + 15).ToString() + "</posY>" +
+                    "<height>245</height>" +
+                    "<width>167</width>" +
                     "<keepaspectratio>true</keepaspectratio>" +
                     "<texture>#StreamedMP.recentlyAdded.series2.thumb</texture>" +
                   "</control>" +
@@ -575,19 +568,19 @@
                     "<description>Series 2 Rounded Cover</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>440</posX>" +
-                    "<posY>" + (overlayYpos + 1).ToString() + "</posY>" +
-                    "<height>181</height>" +
-                    "<width>127</width>" +
+                    "<posX>660</posX>" +
+                    "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
+                    "<height>272</height>" +
+                    "<width>191</width>" +
                     "<texture>round.poster.frame.noreflection.png</texture>" +
                   "</control>      " +
                   "<control>" +
                     "<description>Series 2 name</description>" +
                     "<type>fadelabel</type>" +
                     "<id>0</id>" +
-                    "<posX>568</posX>" +
-                    "<posY>" + (overlayYpos + 29).ToString() + "</posY>" +
-                    "<width>258</width>" +
+                    "<posX>852</posX>" +
+                    "<posY>" + (overlayYpos + 44).ToString() + "</posY>" +
+                    "<width>387</width>" +
                     "<label>#StreamedMP.recentlyAdded.series2.title</label>" +
                     "<font>mediastream12tc</font>" +
                     "<textcolor>White</textcolor>" +
@@ -596,9 +589,9 @@
                     "<description>Series 2 title</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>565</posX>" +
-                    "<posY>" + (overlayYpos + 82).ToString() + "</posY>" +
-                    "<width>255</width>" +
+                    "<posX>848</posX>" +
+                    "<posY>" + (overlayYpos + 123).ToString() + "</posY>" +
+                    "<width>383</width>" +
                     "<label>#StreamedMP.recentlyAdded.series2.episodetitle</label>" +
                     "<font>mediastream12</font>" +
                     "<textcolor>White</textcolor>" +
@@ -607,9 +600,9 @@
                     "<description>Series 2 episode</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>565</posX>" +
-                    "<posY>" + (overlayYpos + 139).ToString() + "</posY>" +
-                    "<width>258</width>" +
+                    "<posX>848</posX>" +
+                    "<posY>" + (overlayYpos + 209).ToString() + "</posY>" +
+                    "<width>387</width>" +
                     "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series2.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series2.episodenumber</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>White</textcolor>" +
@@ -620,20 +613,20 @@
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series3.thumb,#)</visible>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,450" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                   "<control>" +
                     "<description>Series 3 BG</description>" +
-                    "<posX>855</posX>" +
-                    "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
+                    "<posX>*1283</posX>" +
+                    "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
                     "<type>image</type>" +
                     "<id>6777</id>" +
-                    "<width>385</width>" +
-                    "<height>180</height>" +
+                    "<width>578</width>" +
+                    "<height>270</height>" +
                     "<texture>recentfullbg.png</texture>" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>" +
                   "</control>" +
@@ -641,10 +634,10 @@
                     "<description>Series 3 thumb</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>866</posX>" +
-                    "<posY>" + (overlayYpos + 10).ToString() + "</posY>" +
-                    "<height>163</height>" +
-                    "<width>111</width>" +
+                    "<posX>1299</posX>" +
+                    "<posY>" + (overlayYpos + 15).ToString() + "</posY>" +
+                    "<height>245</height>" +
+                    "<width>167</width>" +
                     "<keepaspectratio>true</keepaspectratio>" +
                     "<texture>#StreamedMP.recentlyAdded.series3.thumb</texture>" +
                   "</control>" +
@@ -652,19 +645,19 @@
                     "<description>Series 3 Rounded Cover</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>858</posX>" +
-                    "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
-                    "<height>181</height>" +
-                    "<width>127</width>" +
+                    "<posX>1287</posX>" +
+                    "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
+                    "<height>272</height>" +
+                    "<width>191</width>" +
                     "<texture>round.poster.frame.noreflection.png</texture>" +
                   "</control>      " +
                   "<control>" +
                     "<description>Series 3 name</description>" +
                     "<type>fadelabel</type>" +
                     "<id>0</id>" +
-                    "<posX>981</posX>" +
-                    "<posY>" + (overlayYpos + 29).ToString() + "</posY>" +
-                    "<width>255</width>" +
+                    "<posX>1472</posX>" +
+                    "<posY>" + (overlayYpos + 44).ToString() + "</posY>" +
+                    "<width>383</width>" +
                     "<label>#StreamedMP.recentlyAdded.series3.title</label>" +
                     "<font>mediastream12tc</font>" +
                     "<textcolor>White</textcolor>" +
@@ -673,9 +666,9 @@
                     "<description>Series 3 title</description>" +
                     "<type>fadelabel</type>" +
                     "<id>0</id>" +
-                    "<posX>981</posX>" +
-                    "<posY>" + (overlayYpos + 82).ToString() + "</posY>" +
-                    "<width>255</width>" +
+                    "<posX>1472</posX>" +
+                    "<posY>" + (overlayYpos + 123).ToString() + "</posY>" +
+                    "<width>383</width>" +
                     "<label>#StreamedMP.recentlyAdded.series3.episodetitle</label>" +
                     "<font>mediastream12</font>" +
                     "<textcolor>White</textcolor>" +
@@ -684,9 +677,9 @@
                     "<description>Series 3 episode</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>981</posX>" +
-                    "<posY>" + (overlayYpos + 139).ToString() + "</posY>" +
-                    "<width>255</width>" +
+                    "<posX>1472</posX>" +
+                    "<posY>" + (overlayYpos + 209).ToString() + "</posY>" +
+                    "<width>383</width>" +
                     "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series3.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series3.episodenumber</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>White</textcolor>" +
@@ -709,18 +702,18 @@
       // Work out the Ypos
       //
       int overlayYpos = 0;
-      int overlayOffset = 224;
-      int menuOffset = 50;
+      int overlayOffset = 336;
+      int menuOffset = 75;
       if (menuStyle == chosenMenuStyle.horizontalContextStyle || horizontalContextLabels.Checked)
-        menuOffset = 60;
+        menuOffset = 90;
 
       int menuTop = int.Parse(txtMenuPos.Text) + basicHomeValues.offsetMymenu + menuOffset;
 
       if (enableTwitter.Checked)
-        menuTop = int.Parse(txtMenuPos.Text) - basicHomeValues.offsetTwitter + 30;
+        menuTop = int.Parse(txtMenuPos.Text) - basicHomeValues.offsetTwitter + 45;
 
       if (menuStyle == chosenMenuStyle.graphicMenuStyle)
-        menuTop -= 60;
+        menuTop -= 90;
 
       overlayYpos = menuTop - overlayOffset;
       if (mrTVSeriesSummStyle == mostRecentTVSeriesSummaryStyle.poster)
@@ -736,8 +729,6 @@
 
         writeXMLFile("basichome.recentlyadded.tvseries.HSum2.xml");
       }
-
-
     }
 
     #endregion
@@ -759,20 +750,20 @@
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
                     "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series3.thumb,#)</visible>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                     "<control>" +
                       "<description>Series 3 thumb</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>861</posX>" +
+                      "<posX>1292</posX>" +
                       "<posY>" + (overlayYpos).ToString() + "</posY>" +
-                      "<width>135</width>" +
-                      "<height>220</height>" +
+                      "<width>203</width>" +
+                      "<height>330</height>" +
                       "<texture>pic_preview_thumb_background.png</texture>" +
                       "<colordiffuse>99FFFFFF</colordiffuse>" +
                     "</control>" +
@@ -780,10 +771,10 @@
                       "<description>Series 3 thumb</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>871</posX>" +
-                      "<posY>" + (overlayYpos + 11).ToString() + "</posY>" +
-                      "<width>115</width>" +
-                      "<height>170</height>" +
+                      "<posX>1961</posX>" +
+                      "<posY>" + (overlayYpos + 17).ToString() + "</posY>" +
+                      "<width>173</width>" +
+                      "<height>255</height>" +
                       "<keepaspectratio>true</keepaspectratio>" +
                       "<texture>#StreamedMP.recentlyAdded.series3.thumb</texture>" +
                     "</control>" +
@@ -791,9 +782,9 @@
                       "<description>Series 3 episode</description>" +
                       "<type>label</type>" +
                       "<id>0</id>" +
-                      "<posX>871</posX>" +
-                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
-                      "<width>115</width>" +
+                      "<posX>1961</posX>" +
+                      "<posY>" + (overlayYpos + 291).ToString() + "</posY>" +
+                      "<width>173</width>" +
                       "<label>#StreamedMP.recentlyAdded.series3.seasonx#StreamedMP.recentlyAdded.series3.episodenumber</label>" +
                       "<font>mediastream10tc</font>" +
                       "<align>center</align>" +
@@ -805,20 +796,20 @@
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
                     "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series2.thumb,#)</visible>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                     "<control>" +
                       "<description>Series 2 thumb</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>1001</posX>" +
+                      "<posX>1502</posX>" +
                       "<posY>" + (overlayYpos).ToString() + "</posY>" +
-                      "<width>135</width>" +
-                      "<height>220</height>" +
+                      "<width>203</width>" +
+                      "<height>330</height>" +
                       "<texture>pic_preview_thumb_background.png</texture>" +
                       "<colordiffuse>99FFFFFF</colordiffuse>" +
                     "</control>" +
@@ -826,10 +817,10 @@
                       "<description>Series 2 thumb</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>1011</posX>" +
-                      "<posY>" + (overlayYpos + 11).ToString() + "</posY>" +
-                      "<width>115</width>" +
-                      "<height>170</height>" +
+                      "<posX>1517</posX>" +
+                      "<posY>" + (overlayYpos + 17).ToString() + "</posY>" +
+                      "<width>173</width>" +
+                      "<height>255</height>" +
                       "<keepaspectratio>true</keepaspectratio>" +
                       "<texture>#StreamedMP.recentlyAdded.series2.thumb</texture>" +
                     "</control>" +
@@ -837,9 +828,9 @@
                       "<description>Series 2 episode</description>" +
                       "<type>label</type>" +
                       "<id>0</id>" +
-                      "<posX>1011</posX>" +
-                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
-                      "<width>115</width>" +
+                      "<posX>1517</posX>" +
+                      "<posY>" + (overlayYpos + 291).ToString() + "</posY>" +
+                      "<width>173</width>" +
                       "<label>#StreamedMP.recentlyAdded.series2.seasonx#StreamedMP.recentlyAdded.series2.episodenumber</label>" +
                       "<font>mediastream10tc</font>" +
                       "<align>center</align>" +
@@ -851,20 +842,20 @@
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
                     "<visible>" + mostRecentVisibleControls(isOverlayType.TVSeries) + "+!string.starts(#StreamedMP.recentlyAdded.series1.thumb,#)</visible>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                     "<control>" +
                       "<description>Series 3 thumb</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>1141</posX>" +
+                      "<posX>1712</posX>" +
                       "<posY>" + (overlayYpos).ToString() + "</posY>" +
-                      "<width>135</width>" +
-                      "<height>220</height>" +
+                      "<width>203</width>" +
+                      "<height>330</height>" +
                       "<texture>pic_preview_thumb_background.png</texture>" +
                       "<colordiffuse>99FFFFFF</colordiffuse>" +
                     "</control>" +
@@ -872,10 +863,10 @@
                       "<description>Series 3 thumb</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>1151</posX>" +
-                      "<posY>" + (overlayYpos + 11).ToString() + "</posY>" +
-                      "<width>115</width>" +
-                      "<height>170</height>" +
+                      "<posX>1727</posX>" +
+                      "<posY>" + (overlayYpos + 17).ToString() + "</posY>" +
+                      "<width>173</width>" +
+                      "<height>255</height>" +
                       "<keepaspectratio>true</keepaspectratio>" +
                       "<texture>#StreamedMP.recentlyAdded.series1.thumb</texture>" +
                     "</control>" +
@@ -883,9 +874,9 @@
                       "<description>Series 3 episode</description>" +
                       "<type>label</type>" +
                       "<id>0</id>" +
-                      "<posX>1151</posX>" +
-                      "<posY>" + (overlayYpos + 194).ToString() + "</posY>" +
-                      "<width>115</width>" +
+                      "<posX>1727</posX>" +
+                      "<posY>" + (overlayYpos + 291).ToString() + "</posY>" +
+                      "<width>173</width>" +
                       "<label>#StreamedMP.recentlyAdded.series1.seasonx#StreamedMP.recentlyAdded.series1.episodenumber</label>" +
                       "<font>mediastream10tc</font>" +
                       "<align>center</align>" +
@@ -925,18 +916,18 @@
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
                     "<control>\n" +
                     "<description>Series 1 BG</description>\n" +
                     "<posX>" + baseXPosAdded.ToString() + "</posX>\n" +
                     "<posY>" + baseYPosAdded.ToString() + "</posY>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<width>306</width>\n" +
-                    "<height>320</height>\n" +
+                    "<width>459</width>\n" +
+                    "<height>480</height>\n" +
                     "<texture>recentsummoverlaybg.png</texture>\n" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                   "</control>\n" +
@@ -944,9 +935,9 @@
                     "<description>Header label</description>\n" +
                     "<type>" + fadelabelControl + "</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                    "<posY>" + (baseYPosAdded + 20).ToString() + "</posY>\n" +
-                    "<width>258</width>\n" +
+                    "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                    "<posY>" + (baseYPosAdded + 30).ToString() + "</posY>\n" +
+                    "<width>387</width>\n" +
                     "<label>#StreamedMP.LatestEpisodes</label>\n" +
                     "<font>mediastream10tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -955,9 +946,9 @@
                     "<description>Series 1 name</description>\n" +
                     "<type>" + fadelabelControl + "</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                    "<posY>" + (baseYPosAdded + 195).ToString() + "</posY>\n" +
-                    "<width>258</width>\n" +
+                    "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                    "<posY>" + (baseYPosAdded + 293).ToString() + "</posY>\n" +
+                    "<width>387</width>\n" +
                     "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
           xml += "<label>#StreamedMP.MostRecent.Added.1.SEFormat - #StreamedMP.recentlyAdded.series1.title</label>\n";
@@ -970,9 +961,9 @@
         "<description>Series 1 title</description>\n" +
         "<type>" + fadelabelControl + "</type>\n" +
         "<id>0</id>\n" +
-        "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-        "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
-        "<width>255</width>\n" +
+        "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+        "<posY>" + (baseYPosAdded + 318).ToString() + "</posY>\n" +
+        "<width>383</width>\n" +
         "<scrollStartDelaySec>30</scrollStartDelaySec>" +
         "<label>#StreamedMP.recentlyAdded.series1.episodetitle</label>\n" +
         "<font>" + mrEpisodeFont + "</font>\n" +
@@ -982,10 +973,10 @@
         "<description>Series 1 thumb/fanart</description>\n" +
         "<type>image</type>\n" +
         "<id>0</id>\n" +
-        "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-        "<posY>" + (baseYPosAdded + 42).ToString() + "</posY>\n" +
-        "<width>268</width>\n" +
-        "<height>151</height>\n" +
+        "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+        "<posY>" + (baseYPosAdded + 63).ToString() + "</posY>\n" +
+        "<width>402</width>\n" +
+        "<height>227</height>\n" +
         "<keepaspectratio>true</keepaspectratio>\n" +
         "<texture>" + fanartProperty + "</texture>\n" +
         "<shouldCache>true</shouldCache>\n" +
@@ -999,17 +990,17 @@
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-      "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-      "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-      "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-      "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
+      "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+      "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+      "<animation effect=" + quote + "slide" + quote + " start=" + quote + "600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+      "<animation effect=" + quote + "slide" + quote + " end=" + quote + "600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
       "<control>\n" +
         "<description>Series 2 name</description>\n" +
         "<type>" + fadelabelControl + "</type>\n" +
         "<id>0</id>\n" +
-        "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-        "<posY>" + (baseYPosAdded + 230).ToString() + "</posY>\n" +
-        "<width>258</width>\n" +
+        "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+        "<posY>" + (baseYPosAdded + 345).ToString() + "</posY>\n" +
+        "<width>387</width>\n" +
         "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
           xml += "<label>#StreamedMP.MostRecent.Added.2.SEFormat - #StreamedMP.recentlyAdded.series2.title</label>\n";
@@ -1022,9 +1013,9 @@
         "<description>Series 2 title</description>\n" +
         "<type>" + fadelabelControl + "</type>\n" +
         "<id>0</id>\n" +
-        "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-        "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
-        "<width>255</width>\n" +
+        "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+        "<posY>" + (baseYPosAdded + 371).ToString() + "</posY>\n" +
+        "<width>383</width>\n" +
         "<scrollStartDelaySec>30</scrollStartDelaySec>" +
         "<label>#StreamedMP.recentlyAdded.series2.episodetitle</label>\n" +
         "<font>" + mrEpisodeFont + "</font>\n" +
@@ -1039,16 +1030,16 @@
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
       "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-      "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-      "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-      "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-      "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
+      "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+      "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+      "<animation effect=" + quote + "slide" + quote + " start=" + quote + "600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+      "<animation effect=" + quote + "slide" + quote + " end=" + quote + "600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
       "<control>\n" +
         "<type>" + fadelabelControl + "</type>\n" +
         "<id>0</id>\n" +
-        "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-        "<posY>" + (baseYPosAdded + 265).ToString() + "</posY>\n" +
-        "<width>258</width>\n" +
+        "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+        "<posY>" + (baseYPosAdded + 398).ToString() + "</posY>\n" +
+        "<width>387</width>\n" +
         "<scrollStartDelaySec>30</scrollStartDelaySec>";
         if (mrSeriesTitleLast)
           xml += "<label>#StreamedMP.MostRecent.Added.3.SEFormat - #StreamedMP.recentlyAdded.series3.title</label>\n";
@@ -1061,9 +1052,9 @@
         "<description>Series 3 title</description>\n" +
         "<type>" + fadelabelControl + "</type>\n" +
         "<id>0</id>\n" +
-        "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-        "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
-        "<width>255</width>\n" +
+        "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+        "<posY>" + (baseYPosAdded + 423).ToString() + "</posY>\n" +
+        "<width>383</width>\n" +
         "<scrollStartDelaySec>30</scrollStartDelaySec>" +
         "<label>#StreamedMP.recentlyAdded.series3.episodetitle</label>\n" +
         "<font>" + mrEpisodeFont + "</font>\n" +
@@ -1093,20 +1084,20 @@
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)</visible>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
                   "<control>\n" +
                     "<description>Series 1 BG</description>\n" +
-                    "<posX>890</posX>\n" +
-                    "<posY>70</posY>\n" +
+                    "<posX>1335</posX>\n" +
+                    "<posY>105</posY>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<width>385</width>\n" +
-                    "<height>180</height>\n" +
+                    "<width>578</width>\n" +
+                    "<height>270</height>\n" +
                     "<texture>recentfullbg.png</texture>\n" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                   "</control>\n" +
@@ -1114,10 +1105,10 @@
                     "<description>Series 1 thumb</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>900</posX>\n" +
-                    "<posY>79</posY>\n" +
-                    "<width>112</width>\n" +
-                    "<height>165</height>\n" +
+                    "<posX>1350</posX>\n" +
+                    "<posY>119</posY>\n" +
+                    "<width>168</width>\n" +
+                    "<height>248</height>\n" +
                     "<keepaspectratio>true</keepaspectratio>\n" +
                     "<texture>#StreamedMP.recentlyAdded.movie1.thumb</texture>\n" +
                   "</control>\n" +
@@ -1125,19 +1116,19 @@
                     "<description>Series 1 Rounded Cover</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>892</posX>\n" +
-                    "<posY>71</posY>\n" +
-                    "<height>181</height>\n" +
-                    "<width>129</width>\n" +
+                    "<posX>1338</posX>\n" +
+                    "<posY>107</posY>\n" +
+                    "<height>272</height>\n" +
+                    "<width>194</width>\n" +
                     "<texture>round.poster.frame.noreflection.png</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
                     "<description>Series 1 name</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>98</posY>\n" +
-                    "<width>258</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>147</posY>\n" +
+                    "<width>387</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie1.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -1147,9 +1138,9 @@
                     "<description>Series 1 title</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>151</posY>\n" +
-                    "<width>255</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>227</posY>\n" +
+                    "<width>383</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie1.runtime</label>\n" +
                     "<font>mediastream12</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -1158,9 +1149,9 @@
                     "<description>Series 1 episode</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>206</posY>\n" +
-                    "<width>255</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>309</posY>\n" +
+                    "<width>383</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie1.certification</label>\n" +
                     "<font>mediastream10</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -1171,20 +1162,20 @@
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)</visible>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
                   "<control>\n" +
                     "<description>Series 2 BG</description>\n" +
-                    "<posX>890</posX>\n" +
-                    "<posY>270</posY>\n" +
+                    "<posX>1335</posX>\n" +
+                    "<posY>405</posY>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<width>385</width>\n" +
-                    "<height>180</height>\n" +
+                    "<width>578</width>\n" +
+                    "<height>270</height>\n" +
                     "<texture>recentfullbg.png</texture>\n" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                   "</control>\n" +
@@ -1192,10 +1183,10 @@
                     "<description>Series 2 thumb</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>902</posX>\n" +
-                    "<posY>279</posY>\n" +
-                    "<width>112</width>\n" +
-                    "<height>165</height>\n" +
+                    "<posX>1353</posX>\n" +
+                    "<posY>419</posY>\n" +
+                    "<width>168</width>\n" +
+                    "<height>248</height>\n" +
                     "<keepaspectratio>true</keepaspectratio>\n" +
                     "<texture>#StreamedMP.recentlyAdded.movie2.thumb</texture>\n" +
                   "</control>\n" +
@@ -1203,19 +1194,19 @@
                     "<description>Series 2 Rounded Cover</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>892</posX>\n" +
-                    "<posY>270</posY>\n" +
-                    "<height>181</height>\n" +
-                    "<width>129</width>\n" +
+                    "<posX>1338</posX>\n" +
+                    "<posY>405</posY>\n" +
+                    "<height>272</height>\n" +
+                    "<width>194</width>\n" +
                     "<texture>round.poster.frame.noreflection.png</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
                     "<description>Series 2 name</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>299</posY>\n" +
-                    "<width>258</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>449</posY>\n" +
+                    "<width>387</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie2.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -1225,9 +1216,9 @@
                     "<description>Series 2 title</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>352</posY>\n" +
-                    "<width>255</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>528</posY>\n" +
+                    "<width>383</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie2.runtime</label>\n" +
                     "<font>mediastream12</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -1236,9 +1227,9 @@
                     "<description>Series 2 episode</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>405</posY>\n" +
-                    "<width>258</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>608</posY>\n" +
+                    "<width>387</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie2.certification</label>\n" +
                     "<font>mediastream10</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -1249,20 +1240,20 @@
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)</visible>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
                   "<control>\n" +
                     "<description>Series 3 BG</description>\n" +
-                    "<posX>890</posX>\n" +
-                    "<posY>470</posY>\n" +
+                    "<posX>1335</posX>\n" +
+                    "<posY>705</posY>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<width>385</width>\n" +
-                    "<height>180</height>\n" +
+                    "<width>578</width>\n" +
+                    "<height>270</height>\n" +
                     "<texture>recentfullbg.png</texture>\n" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                   "</control>\n" +
@@ -1270,10 +1261,10 @@
                     "<description>Series 3 thumb</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>901</posX>\n" +
-                    "<posY>478</posY>\n" +
-                    "<width>112</width>\n" +
-                    "<height>165</height>\n" +
+                    "<posX>1352</posX>\n" +
+                    "<posY>717</posY>\n" +
+                    "<width>168</width>\n" +
+                    "<height>248</height>\n" +
                     "<keepaspectratio>true</keepaspectratio>\n" +
                     "<texture>#StreamedMP.recentlyAdded.movie3.thumb</texture>\n" +
                   "</control>\n" +
@@ -1281,19 +1272,19 @@
                     "<description>Series 3 Rounded Cover</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>892</posX>\n" +
-                    "<posY>470</posY>\n" +
-                    "<height>181</height>\n" +
-                    "<width>129</width>\n" +
+                    "<posX>1338</posX>\n" +
+                    "<posY>705</posY>\n" +
+                    "<height>272</height>\n" +
+                    "<width>194</width>\n" +
                     "<texture>round.poster.frame.noreflection.png</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
                     "<description>Series 3 name</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>498</posY>\n" +
-                    "<width>255</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>747</posY>\n" +
+                    "<width>383</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie3.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -1302,9 +1293,9 @@
                     "<description>Series 3 title</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>551</posY>\n" +
-                    "<width>255</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>827</posY>\n" +
+                    "<width>383</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie3.runtime</label>\n" +
                     "<font>mediastream12</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -1314,9 +1305,9 @@
                     "<description>Series 3 episode</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>1020</posX>\n" +
-                    "<posY>604</posY>\n" +
-                    "<width>255</width>\n" +
+                    "<posX>1530</posX>\n" +
+                    "<posY>906</posY>\n" +
+                    "<width>383</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie3.certification</label>\n" +
                     "<font>mediastream10</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -1337,12 +1328,12 @@
     {
       if (mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.poster)
       {
-        buildMovingPicturesSummaryFile(475, mostRecentMovPicsSummaryStyle.poster);
+        buildMovingPicturesSummaryFile(713, mostRecentMovPicsSummaryStyle.poster);
         writeXMLFile("basichome.recentlyadded.movpics.VSum.xml");
       }
       if (mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.fanart)
       {
-        buildMovingPicturesSummaryFile(475, mostRecentMovPicsSummaryStyle.fanart);
+        buildMovingPicturesSummaryFile(713, mostRecentMovPicsSummaryStyle.fanart);
         if (cbMovPicsRecentWatched.Checked)
           mostRecentMoviesWatched();
 
@@ -1360,35 +1351,29 @@
       // Work out the Ypos
       //
       int overlayYpos = 0;
-      int maxYpos = 536;
-      int overlayOffset = 184;
+      int maxYpos = 804;
+      int overlayOffset = 276;
       int hdOffset = 0;
 
-      int menuTop = int.Parse(txtMenuPos.Text) + basicHomeValues.offsetMymenu + 54;
+      int menuTop = int.Parse(txtMenuPos.Text) + basicHomeValues.offsetMymenu + 81;
       int menuBot = int.Parse(txtMenuPos.Text) + basicHomeValues.offsetSubmenu;
 
-      if (screenres == screenResolutionType.res1920x1080)
-        hdOffset = 0;
-      else
-        hdOffset = 0;
-
       if (enableTwitter.Checked)
-        menuTop = int.Parse(txtMenuPos.Text) - basicHomeValues.offsetTwitter + 30;
+        menuTop = int.Parse(txtMenuPos.Text) - basicHomeValues.offsetTwitter + 45;
 
       if (enableRssfeed.Checked && infoserviceOptions.Enabled)
-        menuBot += (basicHomeValues.subMenuHeight - 30);
+        menuBot += (basicHomeValues.subMenuHeight - 45);
 
       if (menuBot > maxYpos)
       {
         overlayYpos = menuTop - overlayOffset;
-        if (screenres == screenResolutionType.res1920x1080)
-          hdOffset -= 54;
+        hdOffset -= 81;
       }
       else
-        overlayYpos = 536;
+        overlayYpos = 804;
 
       if (menuStyle == chosenMenuStyle.graphicMenuStyle)
-        overlayYpos -= 80;
+        overlayYpos -= 120;
 
       // Build the file
       xml = "<?xml version=" + quote + "1.0" + quote + " encoding=" + quote + "utf-8" + quote + "?>" +
@@ -1399,20 +1384,20 @@
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)</visible>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,450" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                   "<control>" +
-                    "<description>Mivie 1 BG</description>" +
-                    "<posX>28</posX>" +
-                    "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
+                    "<description>Movie 1 BG</description>" +
+                    "<posX>42</posX>" +
+                    "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
                     "<type>image</type>" +
                     "<id>6777</id>" +
-                    "<width>385</width>" +
-                    "<height>180</height>" +
+                    "<width>578</width>" +
+                    "<height>270</height>" +
                     "<texture>recentfullbg.png</texture>" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>" +
                   "</control>" +
@@ -1420,10 +1405,10 @@
                     "<description>Movie 1 Thumb</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>36</posX>" +
-                    "<posY>" + (overlayYpos + 10).ToString() + "</posY>" +
-                    "<height>163</height>" +
-                    "<width>111</width>" +
+                    "<posX>54</posX>" +
+                    "<posY>" + (overlayYpos + 15).ToString() + "</posY>" +
+                    "<height>245</height>" +
+                    "<width>167</width>" +
                     "<keepaspectratio>true</keepaspectratio>" +
                     "<texture>#StreamedMP.recentlyAdded.movie1.thumb</texture>" +
                   "</control>" +
@@ -1431,19 +1416,19 @@
                     "<description>Movie 1 Rounded Cover</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>26</posX>" +
-                    "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
-                    "<height>181</height>" +
-                    "<width>129</width>" +
+                    "<posX>39</posX>" +
+                    "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
+                    "<height>272</height>" +
+                    "<width>194</width>" +
                     "<texture>round.poster.frame.noreflection.png</texture>" +
                   "</control>      " +
                 "<control>" +
                     "<description>Movie 2 Title</description>" +
                     "<type>fadelabel</type>" +
                     "<id>0</id>" +
-                    "<posX>152</posX>" +
-                    "<posY>" + (overlayYpos + 29).ToString() + "</posY>" +
-                    "<width>258</width>" +
+                    "<posX>228</posX>" +
+                    "<posY>" + (overlayYpos + 44).ToString() + "</posY>" +
+                    "<width>387</width>" +
                     "<label>#StreamedMP.recentlyAdded.movie1.title</label>" +
                     "<font>mediastream12tc</font>" +
                     "<textcolor>White</textcolor>" +
@@ -1452,9 +1437,9 @@
                     "<description>Movie 1 Runtime</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>152</posX>" +
-                    "<posY>" + (overlayYpos + 82).ToString() + "</posY>" +
-                    "<width>255</width>" +
+                    "<posX>228</posX>" +
+                    "<posY>" + (overlayYpos + 123).ToString() + "</posY>" +
+                    "<width>383</width>" +
                     "<label>#StreamedMP.recentlyAdded.movie1.runtime</label>" +
                     "<font>mediastream12</font>" +
                     "<textcolor>White</textcolor>" +
@@ -1463,9 +1448,9 @@
                     "<description>Movie 1 Certification</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>152</posX>" +
-                    "<posY>" + (overlayYpos + 139).ToString() + "</posY>" +
-                    "<width>255</width>" +
+                    "<posX>228</posX>" +
+                    "<posY>" + (overlayYpos + 209).ToString() + "</posY>" +
+                    "<width>383</width>" +
                     "<label>#StreamedMP.recentlyAdded.movie1.certification</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>White</textcolor>" +
@@ -1476,20 +1461,20 @@
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)</visible>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,450" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                   "<control>" +
                     "<description>Movie 2 BG</description>" +
-                    "<posX>442</posX>" +
-                    "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
+                    "<posX>663</posX>" +
+                    "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
                     "<type>image</type>" +
                     "<id>6777</id>" +
-                    "<width>385</width>" +
-                    "<height>180</height>" +
+                    "<width>578</width>" +
+                    "<height>270</height>" +
                     "<texture>recentfullbg.png</texture>" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>" +
                   "</control>" +
@@ -1497,10 +1482,10 @@
                     "<description>Movie 2 thumb</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>452</posX>" +
-                    "<posY>" + (overlayYpos + 10).ToString() + "</posY>" +
-                    "<height>163</height>" +
-                    "<width>111</width>" +
+                    "<posX>678</posX>" +
+                    "<posY>" + (overlayYpos + 15).ToString() + "</posY>" +
+                    "<height>245</height>" +
+                    "<width>167</width>" +
                     "<keepaspectratio>true</keepaspectratio>" +
                     "<texture>#StreamedMP.recentlyAdded.movie2.thumb</texture>" +
                   "</control>" +
@@ -1508,19 +1493,19 @@
                     "<description>Movie Rounded Cover</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>440</posX>" +
-                    "<posY>" + (overlayYpos + 1).ToString() + "</posY>" +
-                    "<height>181</height>" +
-                    "<width>127</width>" +
+                    "<posX>660</posX>" +
+                    "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
+                    "<height>272</height>" +
+                    "<width>191</width>" +
                     "<texture>round.poster.frame.noreflection.png</texture>" +
                   "</control>      " +
                   "<control>" +
                     "<description>Movie 2 Title</description>" +
                     "<type>fadelabel</type>" +
                     "<id>0</id>" +
-                    "<posX>568</posX>" +
-                    "<posY>" + (overlayYpos + 29).ToString() + "</posY>" +
-                    "<width>258</width>" +
+                    "<posX>852</posX>" +
+                    "<posY>" + (overlayYpos + 44).ToString() + "</posY>" +
+                    "<width>387</width>" +
                     "<label>#StreamedMP.recentlyAdded.movie2.title</label>" +
                     "<font>mediastream12tc</font>" +
                     "<textcolor>White</textcolor>" +
@@ -1529,9 +1514,9 @@
                     "<description>Movie 2 Runtime</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>565</posX>" +
-                    "<posY>" + (overlayYpos + 82).ToString() + "</posY>" +
-                    "<width>255</width>" +
+                    "<posX>848</posX>" +
+                    "<posY>" + (overlayYpos + 123).ToString() + "</posY>" +
+                    "<width>383</width>" +
                     "<label>#StreamedMP.recentlyAdded.movie2.runtime</label>" +
                     "<font>mediastream12</font>" +
                     "<textcolor>White</textcolor>" +
@@ -1540,9 +1525,9 @@
                     "<description>Movie 2 Certification</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>565</posX>" +
-                    "<posY>" + (overlayYpos + 139).ToString() + "</posY>" +
-                    "<width>258</width>" +
+                    "<posX>848</posX>" +
+                    "<posY>" + (overlayYpos + 209).ToString() + "</posY>" +
+                    "<width>387</width>" +
                     "<label>#StreamedMP.recentlyAdded.movie2.certification</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>White</textcolor>" +
@@ -1553,20 +1538,20 @@
                   "<type>group</type>" +
                   "<dimColor>0xffffffff</dimColor>" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)</visible>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,450" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                  "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                   "<control>" +
                     "<description>Movie 3 BG</description>" +
-                    "<posX>855</posX>" +
-                    "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
+                    "<posX>*1283</posX>" +
+                    "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
                     "<type>image</type>" +
                     "<id>6777</id>" +
-                    "<width>385</width>" +
-                    "<height>180</height>" +
+                    "<width>578</width>" +
+                    "<height>270</height>" +
                     "<texture>recentfullbg.png</texture>" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>" +
                   "</control>" +
@@ -1574,10 +1559,10 @@
                     "<description>Movie 3 Thumb</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>866</posX>" +
-                    "<posY>" + (overlayYpos + 10).ToString() + "</posY>" +
-                    "<height>163</height>" +
-                    "<width>111</width>" +
+                    "<posX>1299</posX>" +
+                    "<posY>" + (overlayYpos + 15).ToString() + "</posY>" +
+                    "<height>245</height>" +
+                    "<width>167</width>" +
                     "<keepaspectratio>true</keepaspectratio>" +
                     "<texture>#StreamedMP.recentlyAdded.movie3.thumb</texture>" +
                   "</control>" +
@@ -1585,19 +1570,19 @@
                     "<description>Movie 3 Rounded Cover</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>858</posX>" +
-                    "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
-                    "<height>181</height>" +
-                    "<width>127</width>" +
+                    "<posX>1287</posX>" +
+                    "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
+                    "<height>272</height>" +
+                    "<width>191</width>" +
                     "<texture>round.poster.frame.noreflection.png</texture>" +
                   "</control>      " +
                   "<control>" +
                     "<description>Movie 3 Title</description>" +
                     "<type>fadelabel</type>" +
                     "<id>0</id>" +
-                    "<posX>981</posX>" +
-                    "<posY>" + (overlayYpos + 29).ToString() + "</posY>" +
-                    "<width>255</width>" +
+                    "<posX>1472</posX>" +
+                    "<posY>" + (overlayYpos + 44).ToString() + "</posY>" +
+                    "<width>383</width>" +
                     "<label>#StreamedMP.recentlyAdded.movie3.title</label>" +
                     "<font>mediastream12tc</font>" +
                     "<textcolor>White</textcolor>" +
@@ -1606,9 +1591,9 @@
                     "<description>Movie 3 Runtime</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>981</posX>" +
-                    "<posY>" + (overlayYpos + 82).ToString() + "</posY>" +
-                    "<width>255</width>" +
+                    "<posX>1472</posX>" +
+                    "<posY>" + (overlayYpos + 123).ToString() + "</posY>" +
+                    "<width>383</width>" +
                     "<label>#StreamedMP.recentlyAdded.movie3.runtime</label>" +
                     "<font>mediastream12</font>" +
                     "<textcolor>White</textcolor>" +
@@ -1617,9 +1602,9 @@
                     "<description>Movie 3 Certification</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>981</posX>" +
-                    "<posY>" + (overlayYpos + 139).ToString() + "</posY>" +
-                    "<width>255</width>" +
+                    "<posX>1472</posX>" +
+                    "<posY>" + (overlayYpos + 209).ToString() + "</posY>" +
+                    "<width>383</width>" +
                     "<label>#StreamedMP.recentlyAdded.movie3.certification</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>White</textcolor>" +
@@ -1642,18 +1627,18 @@
       // Work out the Ypos
       //
       int overlayYpos = 0;
-      int overlayOffset = 224;
-      int menuOffset = 50;
+      int overlayOffset = 336;
+      int menuOffset = 75;
       if (menuStyle == chosenMenuStyle.horizontalContextStyle || horizontalContextLabels.Checked)
-        menuOffset = 60;
+        menuOffset = 90;
 
       int menuTop = int.Parse(txtMenuPos.Text) + basicHomeValues.offsetMymenu + menuOffset;
 
       if (enableTwitter.Checked)
-        menuTop = int.Parse(txtMenuPos.Text) - basicHomeValues.offsetTwitter + 30;
+        menuTop = int.Parse(txtMenuPos.Text) - basicHomeValues.offsetTwitter + 45;
 
       if (menuStyle == chosenMenuStyle.graphicMenuStyle)
-        menuTop -= 60;
+        menuTop -= 90;
 
       overlayYpos = menuTop - overlayOffset;
       if (mrMovPicsSummStyle == mostRecentMovPicsSummaryStyle.poster)
@@ -1669,8 +1654,6 @@
 
         writeXMLFile("basichome.recentlyadded.movpics.HSum2.xml");
       }
-
-
     }
 
     #endregion
@@ -1692,20 +1675,20 @@
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
                     "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)</visible>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                     "<control>" +
                       "<description>Series 3 thumb</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>861</posX>" +
+                      "<posX>1292</posX>" +
                       "<posY>" + (sumStyle1OverlayYpos).ToString() + "</posY>" +
-                      "<width>135</width>" +
-                      "<height>220</height>" +
+                      "<width>203</width>" +
+                      "<height>330</height>" +
                       "<texture>pic_preview_thumb_background.png</texture>" +
                       "<colordiffuse>99FFFFFF</colordiffuse>" +
                     "</control>" +
@@ -1713,10 +1696,10 @@
                       "<description>Series 3 thumb</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>871</posX>" +
-                      "<posY>" + (sumStyle1OverlayYpos + 11).ToString() + "</posY>" +
-                      "<width>115</width>" +
-                      "<height>170</height>" +
+                      "<posX>1961</posX>" +
+                      "<posY>" + (sumStyle1OverlayYpos + 17).ToString() + "</posY>" +
+                      "<width>173</width>" +
+                      "<height>255</height>" +
                       "<keepaspectratio>true</keepaspectratio>" +
                       "<texture>#StreamedMP.recentlyAdded.movie3.thumb</texture>" +
                     "</control>" +
@@ -1724,10 +1707,10 @@
                     "<description>Movie 1 Star Rating</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>871</posX>" +
-                    "<posY>" + (sumStyle1OverlayYpos + 185).ToString() + "</posY>" +
-                    "<width>115</width>" +
-                    "<height>22</height>" +
+                    "<posX>1961</posX>" +
+                    "<posY>" + (sumStyle1OverlayYpos + 278).ToString() + "</posY>" +
+                    "<width>173</width>" +
+                    "<height>33</height>" +
                     "<texture>star#StreamedMP.recentlyAdded.movie3.score.png</texture>" +
                     "<align>left</align>" +
                   "</control>" +
@@ -1737,20 +1720,20 @@
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
                     "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)</visible>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                     "<control>" +
                       "<description>Series 2 thumb</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>1001</posX>" +
+                      "<posX>1502</posX>" +
                       "<posY>" + (sumStyle1OverlayYpos).ToString() + "</posY>" +
-                      "<width>135</width>" +
-                      "<height>220</height>" +
+                      "<width>203</width>" +
+                      "<height>330</height>" +
                       "<texture>pic_preview_thumb_background.png</texture>" +
                       "<colordiffuse>99FFFFFF</colordiffuse>" +
                     "</control>" +
@@ -1758,10 +1741,10 @@
                       "<description>Series 2 thumb</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>1011</posX>" +
-                      "<posY>" + (sumStyle1OverlayYpos + 11).ToString() + "</posY>" +
-                      "<width>115</width>" +
-                      "<height>170</height>" +
+                      "<posX>1517</posX>" +
+                      "<posY>" + (sumStyle1OverlayYpos + 17).ToString() + "</posY>" +
+                      "<width>173</width>" +
+                      "<height>255</height>" +
                       "<keepaspectratio>true</keepaspectratio>" +
                       "<texture>#StreamedMP.recentlyAdded.movie2.thumb</texture>" +
                     "</control>" +
@@ -1769,10 +1752,10 @@
                     "<description>Movie 2 Star Rating</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>1011</posX>" +
-                    "<posY>" + (sumStyle1OverlayYpos + 185).ToString() + "</posY>" +
-                    "<width>115</width>" +
-                    "<height>22</height>" +
+                    "<posX>1517</posX>" +
+                    "<posY>" + (sumStyle1OverlayYpos + 278).ToString() + "</posY>" +
+                    "<width>173</width>" +
+                    "<height>33</height>" +
                     "<texture>star#StreamedMP.recentlyAdded.movie2.score.png</texture>" +
                     "<align>left</align>" +
                   "</control>" +
@@ -1782,20 +1765,20 @@
                     "<type>group</type>" +
                     "<dimColor>0xffffffff</dimColor>" +
                     "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)</visible>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + " 1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,200" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,300" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,300" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                     "<control>" +
                       "<description>Movie 1 background</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>1141</posX>" +
+                      "<posX>1712</posX>" +
                       "<posY>" + (sumStyle1OverlayYpos).ToString() + "</posY>" +
-                      "<width>135</width>" +
-                      "<height>220</height>" +
+                      "<width>203</width>" +
+                      "<height>330</height>" +
                       "<texture>pic_preview_thumb_background.png</texture>" +
                       "<colordiffuse>99FFFFFF</colordiffuse>" +
                     "</control>" +
@@ -1803,10 +1786,10 @@
                       "<description>Movie 1 thumb</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>1151</posX>" +
-                      "<posY>" + (sumStyle1OverlayYpos + 11).ToString() + "</posY>" +
-                      "<width>115</width>" +
-                      "<height>170</height>" +
+                      "<posX>1727</posX>" +
+                      "<posY>" + (sumStyle1OverlayYpos + 17).ToString() + "</posY>" +
+                      "<width>173</width>" +
+                      "<height>255</height>" +
                       "<keepaspectratio>true</keepaspectratio>" +
                       "<texture>#StreamedMP.recentlyAdded.movie1.thumb</texture>" +
                     "</control>" +
@@ -1814,10 +1797,10 @@
                       "<description>Movie 1 Star rating</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>1151</posX>" +
-                      "<posY>" + (sumStyle1OverlayYpos + 185).ToString() + "</posY>" +
-                      "<width>115</width>" +
-                      "<height>22</height>" +
+                      "<posX>1727</posX>" +
+                      "<posY>" + (sumStyle1OverlayYpos + 278).ToString() + "</posY>" +
+                      "<width>173</width>" +
+                      "<height>33</height>" +
                       "<texture>star#StreamedMP.recentlyAdded.movie1.score.png</texture>" +
                       "<align>left</align>" +
                     "</control>" +
@@ -1834,7 +1817,7 @@
       {
         bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
 
-        int xPos = baseXPosAdded + 20;
+        int xPos = baseXPosAdded + 30;
 
         string mrMovieTitleFont = movPicsOptions.MovieTitleFont;
         string mrMovieDetailFont = movPicsOptions.MovieDetailFont;
@@ -1859,18 +1842,18 @@
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                     "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                    "<animation effect=" + quote + "slide" + quote + " start=" + quote + "600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+                    "<animation effect=" + quote + "slide" + quote + " end=" + quote + "600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
                     "<control>\n" +
                     "<description>Movie 1 BG</description>\n" +
                     "<posX>" + baseXPosAdded.ToString() + "</posX>\n" +
                     "<posY>" + baseYPosAdded.ToString() + "</posY>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
-                    "<width>306</width>\n" +
-                    "<height>320</height>\n" +
+                    "<width>459</width>\n" +
+                    "<height>480</height>\n" +
                     "<texture>recentsummoverlaybg.png</texture>\n" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                   "</control>\n" +
@@ -1878,9 +1861,9 @@
                     "<description>Header label</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                    "<posY>" + (baseYPosAdded + 20).ToString() + "</posY>\n" +
-                    "<width>258</width>\n" +
+                    "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                    "<posY>" + (baseYPosAdded + 30).ToString() + "</posY>\n" +
+                    "<width>387</width>\n" +
                     "<label>#StreamedMP.LatestMovies</label>\n" +
                     "<font>mediastream10tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -1889,9 +1872,9 @@
                     "<description>Movie 1 Title</description>\n" +
                     "<type>" + fadeLabelControl + "</type>\n" +
                     "<id>0</id>\n" +
-                    "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                    "<posY>" + (baseYPosAdded + 195).ToString() + "</posY>\n" +
-                    "<width>258</width>\n" +
+                    "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                    "<posY>" + (baseYPosAdded + 293).ToString() + "</posY>\n" +
+                    "<width>387</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie1.title</label>\n" +
                     "<textcolor>White</textcolor>\n" +
                     "<font>" + mrMovieTitleFont + "</font>" +
@@ -1905,18 +1888,18 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-             "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
-             "<width>257</width>\n" +
+             "<posY>" + (baseYPosAdded + 318).ToString() + "</posY>\n" +
+             "<width>386</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie1.runtime</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
           "</control>";
-          xPos = 1180;
+          xPos = 1770;
         }
         else
         {
           alignTxt = "left";
-          xPos -= 5;
+          xPos -= 8;
         }
 
         if (!movPicsOptions.HideCertification)
@@ -1926,8 +1909,8 @@
             "<type>fadelabel</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
-            "<width>100</width>\n" +
+            "<posY>" + (baseYPosAdded + 318).ToString() + "</posY>\n" +
+            "<width>150</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie1.certification</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
@@ -1945,10 +1928,10 @@
               "<description>Movie 1 Star Rating Text</description>" +
               "<type>label</type>" +
               "<id>0</id>" +
-              "<posX>" + (baseXPosAdded + 284).ToString() + "</posX>\n" +
-              "<posY>" + (baseYPosAdded + 215).ToString() + "</posY>\n" +
-              "<width>70</width>" +
-              "<height>13</height>" +
+              "<posX>" + (baseXPosAdded + 426).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosAdded + 323).ToString() + "</posY>\n" +
+              "<width>105</width>" +
+              "<height>20</height>" +
               "<font>" + mrMovieDetailFont + "</font>" +
               "<align>right</align>" +
               "<label>#StreamedMP.recentlyAdded.movie1.actualscore/10</label>" +
@@ -1960,24 +1943,24 @@
               "<description>Movie 1 Star Rating Image</description>" +
               "<type>image</type>" +
               "<id>0</id>" +
-              "<posX>" + (baseXPosAdded + 214).ToString() + "</posX>\n" +
-              "<posY>" + (baseYPosAdded + 215).ToString() + "</posY>\n" +
-              "<width>70</width>" +
-              "<height>13</height>" +
+              "<posX>" + (baseXPosAdded + 321).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosAdded + 323).ToString() + "</posY>\n" +
+              "<width>105</width>" +
+              "<height>20</height>" +
               "<texture>star#StreamedMP.recentlyAdded.movie1.score.png</texture>" +
             "</control>";
           }
         }
 
-        xPos = baseXPosAdded + 20;
+        xPos = baseXPosAdded + 30;
         xml += "<control>\n" +
                 "<description>Movie 1 thumb/fanart</description>\n" +
                 "<type>image</type>\n" +
                 "<id>0</id>\n" +
-                "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                "<posY>" + (baseYPosAdded + 42).ToString() + "</posY>\n" +
-                "<width>268</width>\n" +
-                "<height>151</height>\n" +
+                "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                "<posY>" + (baseYPosAdded + 63).ToString() + "</posY>\n" +
+                "<width>402</width>\n" +
+                "<height>227</height>\n" +
                 "<keepaspectratio>true</keepaspectratio>\n" +
                 "<texture>" + fanartProperty + "</texture>\n" +
                 "<shouldCache>true</shouldCache>\n" +
@@ -1991,17 +1974,17 @@
               "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
               "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
               "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-              "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-              "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-              "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-              "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
+              "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+              "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+              "<animation effect=" + quote + "slide" + quote + " start=" + quote + "600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+              "<animation effect=" + quote + "slide" + quote + " end=" + quote + "600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
               "<control>\n" +
                 "<description>Movie 2 Title</description>\n" +
                 "<type>" + fadeLabelControl + "</type>\n" +
                 "<id>0</id>\n" +
-                "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                "<posY>" + (baseYPosAdded + 230).ToString() + "</posY>\n" +
-                "<width>258</width>\n" +
+                "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                "<posY>" + (baseYPosAdded + 345).ToString() + "</posY>\n" +
+                "<width>387</width>\n" +
                 "<label>#StreamedMP.recentlyAdded.movie2.title</label>\n" +
                 "<font>" + mrMovieTitleFont + "</font>" +
                 "<textcolor>White</textcolor>\n" +
@@ -2015,17 +1998,17 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
-            "<width>257</width>\n" +
+            "<posY>" + (baseYPosAdded + 371).ToString() + "</posY>\n" +
+            "<width>386</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie2.runtime</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
           "</control>";
-          xPos = baseXPosAdded + 204;
+          xPos = baseXPosAdded + 306;
         }
         else
         {
-          xPos -= 5;
+          xPos -= 8;
         }
 
         if (!movPicsOptions.HideCertification)
@@ -2035,8 +2018,8 @@
             "<type>fadelabel</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
-            "<width>100</width>\n" +
+            "<posY>" + (baseYPosAdded + 371).ToString() + "</posY>\n" +
+            "<width>150</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie2.certification</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
@@ -2054,10 +2037,10 @@
               "<description>Movie 2 Star Rating Text</description>" +
               "<type>label</type>" +
               "<id>0</id>" +
-              "<posX>" + (baseXPosAdded + 284).ToString() + "</posX>\n" +
-              "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
-              "<width>70</width>" +
-              "<height>13</height>" +
+              "<posX>" + (baseXPosAdded + 426).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosAdded + 371).ToString() + "</posY>\n" +
+              "<width>105</width>" +
+              "<height>20</height>" +
               "<font>" + mrMovieDetailFont + "</font>" +
               "<align>right</align>" +
               "<label>#StreamedMP.recentlyAdded.movie2.actualscore/10</label>" +
@@ -2069,16 +2052,16 @@
               "<description>Movie 2 Star Rating Image</description>" +
               "<type>image</type>" +
               "<id>0</id>" +
-              "<posX>" + (baseXPosAdded + 214).ToString() + "</posX>\n" +
-              "<posY>" + (baseYPosAdded + 251).ToString() + "</posY>\n" +
-              "<width>70</width>" +
-              "<height>13</height>" +
+              "<posX>" + (baseXPosAdded + 321).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosAdded + 377).ToString() + "</posY>\n" +
+              "<width>105</width>" +
+              "<height>20</height>" +
               "<texture>star#StreamedMP.recentlyAdded.movie2.score.png</texture>" +
             "</control>";
           }
         }
 
-        xPos = baseXPosAdded + 20;
+        xPos = baseXPosAdded + 30;
         xml += "</control>\n" +
         "<control>\n" +
           "<description>GROUP: RecentlyAdded Movie 3</description>\n" +
@@ -2088,16 +2071,16 @@
           "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
           "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
           "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
-          "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-          "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-          "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-          "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
+          "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+          "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+          "<animation effect=" + quote + "slide" + quote + " start=" + quote + "600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+          "<animation effect=" + quote + "slide" + quote + " end=" + quote + "600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n" +
           "<control>\n" +
             "<type>" + fadeLabelControl + "</type>\n" +
             "<id>0</id>\n" +
-            "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-            "<posY>" + (baseYPosAdded + 265).ToString() + "</posY>\n" +
-            "<width>258</width>\n" +
+            "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+            "<posY>" + (baseYPosAdded + 398).ToString() + "</posY>\n" +
+            "<width>387</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie3.title</label>\n" +
             "<textcolor>White</textcolor>\n" +
             "<font>" + mrMovieTitleFont + "</font>" +
@@ -2112,17 +2095,17 @@
             "<type>label</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
-            "<width>257</width>\n" +
+            "<posY>" + (baseYPosAdded + 423).ToString() + "</posY>\n" +
+            "<width>386</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie3.runtime</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
           "</control>";
-          xPos = baseXPosAdded + 204;
+          xPos = baseXPosAdded + 306;
         }
         else
         {
-          xPos -= 5;
+          xPos -= 8;
         }
 
         if (!movPicsOptions.HideCertification)
@@ -2132,8 +2115,8 @@
             "<type>fadelabel</type>\n" +
             "<id>0</id>\n" +
             "<posX>" + xPos.ToString() + "</posX>\n" +
-            "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
-            "<width>100</width>\n" +
+            "<posY>" + (baseYPosAdded + 423).ToString() + "</posY>\n" +
+            "<width>150</width>\n" +
             "<label>#StreamedMP.recentlyAdded.movie3.certification</label>\n" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<textcolor>White</textcolor>\n" +
@@ -2151,10 +2134,10 @@
               "<description>Movie 3 Star Rating Text</description>" +
               "<type>label</type>" +
               "<id>0</id>" +
-              "<posX>" + (baseXPosAdded + 284).ToString() + "</posX>\n" +
-              "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
-              "<width>70</width>" +
-              "<height>13</height>" +
+              "<posX>" + (baseXPosAdded + 426).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosAdded + 423).ToString() + "</posY>\n" +
+              "<width>105</width>" +
+              "<height>20</height>" +
               "<font>" + mrMovieDetailFont + "</font>" +
               "<align>right</align>" +
               "<label>#StreamedMP.recentlyAdded.movie3.actualscore/10</label>" +
@@ -2166,10 +2149,10 @@
               "<description>Movie 3 Star Rating Image</description>" +
               "<type>image</type>" +
               "<id>0</id>" +
-              "<posX>" + (baseXPosAdded + 214).ToString() + "</posX>\n" +
-              "<posY>" + (baseYPosAdded + 285).ToString() + "</posY>\n" +
-              "<width>70</width>" +
-              "<height>13</height>" +
+              "<posX>" + (baseXPosAdded + 321).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosAdded + 428).ToString() + "</posY>\n" +
+              "<width>105</width>" +
+              "<height>20</height>" +
               "<texture>star#StreamedMP.recentlyAdded.movie3.score.png</texture>" +
             "</control>";
           }
@@ -2199,7 +2182,7 @@
 
       string mrMovieTitleFont = movPicsOptions.MovieTitleFont;
       string mrMovieDetailFont = movPicsOptions.MovieDetailFont; bool mrSeriesTitleLast = tvSeriesOptions.mrTitleLast;
-      int xPos = baseXPosWatched + 20; ;
+      int xPos = baseXPosWatched + 30;
 
       if (menuStyle == chosenMenuStyle.verticalStyle)
         mediaControl = "![player.hasmedia]+";
@@ -2218,19 +2201,19 @@
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
                 "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
-      if (baseXPosWatched > 640)
+      if (baseXPosWatched > 960)
       {
-        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
       }
       else
       {
-        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+                "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
       }
       xml += "<control>\n" +
                 "<description>Movie 1 BG</description>\n" +
@@ -2238,8 +2221,8 @@
                   "<posY>" + baseYPosWatched.ToString() + "</posY>\n" +
                   "<type>image</type>\n" +
                   "<id>0</id>\n" +
-                  "<width>306</width>\n" +
-                  "<height>320</height>\n" +
+                  "<width>459</width>\n" +
+                  "<height>480</height>\n" +
                   "<texture>recentsummoverlaybg.png</texture>\n" +
                   "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                 "</control>\n" +
@@ -2247,9 +2230,9 @@
                   "<description>Header label</description>\n" +
                   "<type>label</type>\n" +
                   "<id>0</id>\n" +
-                  "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosWatched + 20).ToString() + "</posY>\n" +
-                  "<width>258</width>\n" +
+                  "<posX>" + (baseXPosWatched + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosWatched + 30).ToString() + "</posY>\n" +
+                  "<width>387</width>\n" +
                   "<label>#StreamedMP.RecentlyWatched</label>\n" +
                   "<font>mediastream10tc</font>\n" +
                   "<textcolor>White</textcolor>\n" +
@@ -2258,9 +2241,9 @@
                   "<description>Movie 1 Title</description>\n" +
                   "<type>" + fadelabelControl + "</type>\n" +
                   "<id>0</id>\n" +
-                  "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosWatched + 195).ToString() + "</posY>\n" +
-                  "<width>258</width>\n" +
+                  "<posX>" + (baseXPosWatched + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosWatched + 293).ToString() + "</posY>\n" +
+                  "<width>387</width>\n" +
                   "<label>#StreamedMP.recentlyWatched.movie1.title</label>\n" +
                   "<textcolor>White</textcolor>\n" +
                   "<font>" + mrMovieTitleFont + "</font>" +
@@ -2274,18 +2257,18 @@
           "<type>label</type>\n" +
           "<id>0</id>\n" +
           "<posX>" + xPos.ToString() + "</posX>\n" +
-          "<posY>" + (baseYPosWatched + 212).ToString() + "</posY>\n" +
-          "<width>257</width>\n" +
+          "<posY>" + (baseYPosWatched + 318).ToString() + "</posY>\n" +
+          "<width>386</width>\n" +
           "<label>#StreamedMP.recentlyWatched.movie1.runtime</label>\n" +
           "<font>" + mrMovieDetailFont + "</font>" +
           "<textcolor>White</textcolor>\n" +
         "</control>";
-        xPos = baseXPosWatched + 204;
+        xPos = baseXPosWatched + 306;
       }
       else
       {
         alignTxt = "left";
-        xPos -= 5;
+        xPos -= 8;
       }
 
       if (!movPicsOptions.HideCertification)
@@ -2295,8 +2278,8 @@
           "<type>fadelabel</type>\n" +
           "<id>0</id>\n" +
           "<posX>" + xPos.ToString() + "</posX>\n" +
-          "<posY>" + (baseYPosWatched + 212).ToString() + "</posY>\n" +
-          "<width>100</width>\n" +
+          "<posY>" + (baseYPosWatched + 318).ToString() + "</posY>\n" +
+          "<width>150</width>\n" +
           "<label>#StreamedMP.recentlyWatched.movie1.certification</label>\n" +
           "<font>" + mrMovieDetailFont + "</font>" +
           "<textcolor>White</textcolor>\n" +
@@ -2314,10 +2297,10 @@
             "<description>Movie 1 Star Rating Text</description>" +
             "<type>label</type>" +
             "<id>0</id>" +
-            "<posX>" + (baseXPosWatched + 284).ToString() + "</posX>\n" +
-            "<posY>" + (baseYPosWatched + 215).ToString() + "</posY>\n" +
-            "<width>70</width>" +
-            "<height>13</height>" +
+            "<posX>" + (baseXPosWatched + 426).ToString() + "</posX>\n" +
+            "<posY>" + (baseYPosWatched + 323).ToString() + "</posY>\n" +
+            "<width>105</width>" +
+            "<height>20</height>" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<align>right</align>" +
             "<label>#StreamedMP.recentlyWatched.movie1.actualscore/10</label>" +
@@ -2329,24 +2312,24 @@
             "<description>Movie 1 Star Rating Image</description>" +
             "<type>image</type>" +
             "<id>0</id>" +
-            "<posX>" + (baseXPosWatched + 214).ToString() + "</posX>\n" +
-            "<posY>" + (baseYPosWatched + 215).ToString() + "</posY>\n" +
-            "<width>70</width>" +
-            "<height>13</height>" +
+            "<posX>" + (baseXPosWatched + 321).ToString() + "</posX>\n" +
+            "<posY>" + (baseYPosWatched + 323).ToString() + "</posY>\n" +
+            "<width>105</width>" +
+            "<height>20</height>" +
             "<texture>star#StreamedMP.recentlyWatched.movie1.score.png</texture>" +
           "</control>";
         }
       }
 
-      xPos = baseXPosWatched + 19;
+      xPos = baseXPosWatched + 29;
       xml += "<control>\n" +
               "<description>Movie 1 thumb/fanart</description>\n" +
               "<type>image</type>\n" +
               "<id>0</id>\n" +
-              "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
-              "<posY>" + (baseYPosWatched + 42).ToString() + "</posY>\n" +
-              "<width>268</width>\n" +
-              "<height>151</height>\n" +
+              "<posX>" + (baseXPosWatched + 29).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosWatched + 63).ToString() + "</posY>\n" +
+              "<width>402</width>\n" +
+              "<height>227</height>\n" +
               "<keepaspectratio>true</keepaspectratio>\n" +
               "<texture>" + fanartProperty + "</texture>\n" +
               "<shouldCache>true</shouldCache>\n" +
@@ -2359,28 +2342,28 @@
             "<visible>" + mediaControl + mostRecentVisibleControls(isOverlayType.MovPics) + "+string.equals(#StreamedMP.recentlyWatched.movie2.show,true)</visible>" +
             "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
             "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
+            "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
       if (baseXPosWatched > 640)
       {
-        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
       }
       else
       {
-        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+                "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
       }
       xml += "<control>\n" +
             "<description>Movie 2 Title</description>\n" +
               "<type>" + fadelabelControl + "</type>\n" +
               "<id>0</id>\n" +
-              "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
-              "<posY>" + (baseYPosWatched + 230).ToString() + "</posY>\n" +
-              "<width>258</width>\n" +
+              "<posX>" + (baseXPosWatched + 29).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosWatched + 345).ToString() + "</posY>\n" +
+              "<width>387</width>\n" +
               "<label>#StreamedMP.recentlyWatched.movie2.title</label>\n" +
               "<font>" + mrMovieTitleFont + "</font>" +
               "<textcolor>White</textcolor>\n" +
@@ -2394,17 +2377,17 @@
           "<type>label</type>\n" +
           "<id>0</id>\n" +
           "<posX>" + xPos.ToString() + "</posX>\n" +
-          "<posY>" + (baseYPosWatched + 247).ToString() + "</posY>\n" +
-          "<width>257</width>\n" +
+          "<posY>" + (baseYPosWatched + 371).ToString() + "</posY>\n" +
+          "<width>386</width>\n" +
           "<label>#StreamedMP.recentlyWatched.movie2.runtime</label>\n" +
           "<font>" + mrMovieDetailFont + "</font>" +
           "<textcolor>White</textcolor>\n" +
         "</control>";
-        xPos = baseXPosWatched + 204;
+        xPos = baseXPosWatched + 306;
       }
       else
       {
-        xPos -= 5;
+        xPos -= 8;
       }
 
       if (!movPicsOptions.HideCertification)
@@ -2414,8 +2397,8 @@
           "<type>fadelabel</type>\n" +
           "<id>0</id>\n" +
           "<posX>" + xPos.ToString() + "</posX>\n" +
-          "<posY>" + (baseYPosWatched + 247).ToString() + "</posY>\n" +
-          "<width>100</width>\n" +
+          "<posY>" + (baseYPosWatched + 371).ToString() + "</posY>\n" +
+          "<width>150</width>\n" +
           "<label>#StreamedMP.recentlyWatched.movie2.certification</label>\n" +
           "<font>" + mrMovieDetailFont + "</font>" +
           "<textcolor>White</textcolor>\n" +
@@ -2433,10 +2416,10 @@
             "<description>Movie 2 Star Rating Text</description>" +
             "<type>label</type>" +
             "<id>0</id>" +
-            "<posX>" + (baseXPosWatched + 284).ToString() + "</posX>\n" +
-            "<posY>" + (baseYPosWatched + 247).ToString() + "</posY>\n" +
-            "<width>70</width>" +
-            "<height>13</height>" +
+            "<posX>" + (baseXPosWatched + 426).ToString() + "</posX>\n" +
+            "<posY>" + (baseYPosWatched + 371).ToString() + "</posY>\n" +
+            "<width>105</width>" +
+            "<height>20</height>" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<align>right</align>" +
             "<label>#StreamedMP.recentlyWatched.movie2.actualscore/10</label>" +
@@ -2448,16 +2431,16 @@
             "<description>Movie 2 Star Rating Image</description>" +
             "<type>image</type>" +
             "<id>0</id>" +
-            "<posX>" + (baseXPosWatched + 214).ToString() + "</posX>\n" +
-            "<posY>" + (baseYPosWatched + 251).ToString() + "</posY>\n" +
-            "<width>70</width>" +
-            "<height>13</height>" +
+            "<posX>" + (baseXPosWatched + 321).ToString() + "</posX>\n" +
+            "<posY>" + (baseYPosWatched + 377).ToString() + "</posY>\n" +
+            "<width>105</width>" +
+            "<height>20</height>" +
             "<texture>star#StreamedMP.recentlyWatched.movie2.score.png</texture>" +
           "</control>";
         }
       }
 
-      xPos = baseXPosWatched + 19;
+      xPos = baseXPosWatched + 29;
       xml += "</control>\n" +
       "<control>\n" +
         "<description>GROUP: RecentlyAdded Movie 3</description>\n" +
@@ -2466,27 +2449,27 @@
         "<visible>" + mediaControl + mostRecentVisibleControls(isOverlayType.MovPics) + "+string.equals(#StreamedMP.recentlyWatched.movie3.show,true)</visible>" +
         "<animation effect=" + quote + "fade" + quote + " start=" + quote + "100" + quote + " end=" + quote + "0" + quote + " time=" + quote + "250" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
         "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " delay=" + quote + "700" + quote + " time=" + quote + "500" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
+        "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
       if (baseXPosWatched > 640)
       {
-        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
       }
       else
       {
-        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
       }
       xml += "<control>\n" +
           "<type>" + fadelabelControl + "</type>\n" +
           "<id>0</id>\n" +
-          "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
-          "<posY>" + (baseYPosWatched + 265).ToString() + "</posY>\n" +
-          "<width>258</width>\n" +
+          "<posX>" + (baseXPosWatched + 29).ToString() + "</posX>\n" +
+          "<posY>" + (baseYPosWatched + 398).ToString() + "</posY>\n" +
+          "<width>387</width>\n" +
           "<label>#StreamedMP.recentlyWatched.movie3.title</label>\n" +
           "<textcolor>White</textcolor>\n" +
           "<font>" + mrMovieTitleFont + "</font>" +
@@ -2501,17 +2484,17 @@
           "<type>label</type>\n" +
           "<id>0</id>\n" +
           "<posX>" + xPos.ToString() + "</posX>\n" +
-          "<posY>" + (baseYPosWatched + 282).ToString() + "</posY>\n" +
-          "<width>257</width>\n" +
+          "<posY>" + (baseYPosWatched + 423).ToString() + "</posY>\n" +
+          "<width>386</width>\n" +
           "<label>#StreamedMP.recentlyWatched.movie3.runtime</label>\n" +
           "<font>" + mrMovieDetailFont + "</font>" +
           "<textcolor>White</textcolor>\n" +
         "</control>";
-        xPos = baseXPosWatched + 204;
+        xPos = baseXPosWatched + 306;
       }
       else
       {
-        xPos -= 5;
+        xPos -= 8;
       }
 
       if (!movPicsOptions.HideCertification)
@@ -2521,8 +2504,8 @@
           "<type>fadelabel</type>\n" +
           "<id>0</id>\n" +
           "<posX>" + xPos.ToString() + "</posX>\n" +
-          "<posY>" + (baseYPosWatched + 282).ToString() + "</posY>\n" +
-          "<width>100</width>\n" +
+          "<posY>" + (baseYPosWatched + 423).ToString() + "</posY>\n" +
+          "<width>150</width>\n" +
           "<label>#StreamedMP.recentlyWatched.movie3.certification</label>\n" +
           "<font>" + mrMovieDetailFont + "</font>" +
           "<textcolor>White</textcolor>\n" +
@@ -2540,10 +2523,10 @@
             "<description>Movie 3 Star Rating Text</description>" +
             "<type>label</type>" +
             "<id>0</id>" +
-            "<posX>" + (baseXPosWatched + 284).ToString() + "</posX>\n" +
-            "<posY>" + (baseYPosWatched + 282).ToString() + "</posY>\n" +
-            "<width>70</width>" +
-            "<height>13</height>" +
+            "<posX>" + (baseXPosWatched + 426).ToString() + "</posX>\n" +
+            "<posY>" + (baseYPosWatched + 423).ToString() + "</posY>\n" +
+            "<width>105</width>" +
+            "<height>20</height>" +
             "<font>" + mrMovieDetailFont + "</font>" +
             "<align>right</align>" +
             "<label>#StreamedMP.recentlyWatched.movie3.actualscore/10</label>" +
@@ -2555,10 +2538,10 @@
             "<description>Movie 3 Star Rating Image</description>" +
             "<type>image</type>" +
             "<id>0</id>" +
-            "<posX>" + (baseXPosWatched + 214).ToString() + "</posX>\n" +
-            "<posY>" + (baseYPosWatched + 285).ToString() + "</posY>\n" +
-            "<width>70</width>" +
-            "<height>13</height>" +
+            "<posX>" + (baseXPosWatched + 321).ToString() + "</posX>\n" +
+            "<posY>" + (baseYPosWatched + 428).ToString() + "</posY>\n" +
+            "<width>105</width>" +
+            "<height>20</height>" +
             "<texture>star#StreamedMP.recentlyWatched.movie3.score.png</texture>" +
           "</control>";
         }
@@ -2602,17 +2585,17 @@
                 "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
       if (baseXPosWatched > 640)
       {
-        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
       }
       else
       {
-        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
       }
       xml += "<control>\n" +
               "<description>Series 1 BG</description>\n" +
@@ -2620,8 +2603,8 @@
               "<posY>" + baseYPosWatched.ToString() + "</posY>\n" +
               "<type>image</type>\n" +
               "<id>0</id>\n" +
-              "<width>306</width>\n" +
-              "<height>320</height>\n" +
+              "<width>459</width>\n" +
+              "<height>480</height>\n" +
               "<texture>recentsummoverlaybg.png</texture>\n" +
               "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
             "</control>\n" +
@@ -2629,9 +2612,9 @@
               "<description>Header label</description>\n" +
               "<type>label</type>\n" +
               "<id>0</id>\n" +
-              "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
-              "<posY>" + (baseYPosWatched + 20).ToString() + "</posY>\n" +
-              "<width>258</width>\n" +
+              "<posX>" + (baseXPosWatched + 29).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosWatched + 30).ToString() + "</posY>\n" +
+              "<width>387</width>\n" +
               "<label>#StreamedMP.RecentlyWatched</label>\n" +
               "<font>mediastream10tc</font>\n" +
               "<textcolor>White</textcolor>\n" +
@@ -2640,9 +2623,9 @@
               "<description>Series 1 name</description>\n" +
               "<type>" + fadeLabelControl + "</type>\n" +
               "<id>0</id>\n" +
-              "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
-              "<posY>" + (baseYPosWatched + 195).ToString() + "</posY>\n" +
-              "<width>258</width>\n" +
+              "<posX>" + (baseXPosWatched + 29).ToString() + "</posX>\n" +
+              "<posY>" + (baseYPosWatched + 293).ToString() + "</posY>\n" +
+              "<width>387</width>\n" +
               "<scrollStartDelaySec>30</scrollStartDelaySec>";
       if (mrSeriesTitleLast)
         xml += "<label>#StreamedMP.MostRecent.Watched.1.SEFormat - #StreamedMP.recentlyWatched.series1.title</label>\n";
@@ -2655,9 +2638,9 @@
       "<description>Series 1 title</description>\n" +
       "<type>" + fadeLabelControl + "</type>\n" +
       "<id>0</id>\n" +
-      "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
-      "<posY>" + (baseYPosWatched + 212).ToString() + "</posY>\n" +
-      "<width>255</width>\n" +
+      "<posX>" + (baseXPosWatched + 29).ToString() + "</posX>\n" +
+      "<posY>" + (baseYPosWatched + 318).ToString() + "</posY>\n" +
+      "<width>383</width>\n" +
       "<scrollStartDelaySec>30</scrollStartDelaySec>" +
       "<label>#StreamedMP.recentlyWatched.series1.episodetitle</label>\n" +
       "<font>" + mrEpisodeFont + "</font>\n" +
@@ -2667,10 +2650,10 @@
       "<description>Series 1 thumb/fanart</description>\n" +
       "<type>image</type>\n" +
       "<id>0</id>\n" +
-      "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
-      "<posY>" + (baseYPosWatched + 42).ToString() + "</posY>\n" +
-      "<width>268</width>\n" +
-      "<height>151</height>\n" +
+      "<posX>" + (baseXPosWatched + 29).ToString() + "</posX>\n" +
+      "<posY>" + (baseYPosWatched + 63).ToString() + "</posY>\n" +
+      "<width>402</width>\n" +
+      "<height>227</height>\n" +
       "<keepaspectratio>true</keepaspectratio>\n" +
       "<texture>" + fanartProperty + "</texture>\n" +
       "<shouldCache>true</shouldCache>\n" +
@@ -2686,25 +2669,25 @@
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
       if (baseXPosWatched > 640)
       {
-        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
       }
       else
       {
-        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
       }
       xml += "<control>\n" +
       "<description>Series 2 name</description>\n" +
       "<type>" + fadeLabelControl + "</type>\n" +
       "<id>0</id>\n" +
-      "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
-      "<posY>" + (baseYPosWatched + 230).ToString() + "</posY>\n" +
-      "<width>258</width>\n" +
+      "<posX>" + (baseXPosWatched + 29).ToString() + "</posX>\n" +
+      "<posY>" + (baseYPosWatched + 345).ToString() + "</posY>\n" +
+      "<width>387</width>\n" +
       "<scrollStartDelaySec>30</scrollStartDelaySec>";
       if (mrSeriesTitleLast)
         xml += "<label>#StreamedMP.MostRecent.Watched.2.SEFormat - #StreamedMP.recentlyWatched.series2.title</label>\n";
@@ -2717,9 +2700,9 @@
       "<description>Series 2 title</description>\n" +
       "<type>" + fadeLabelControl + "</type>\n" +
       "<id>0</id>\n" +
-      "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
-      "<posY>" + (baseYPosWatched + 247).ToString() + "</posY>\n" +
-      "<width>255</width>\n" +
+      "<posX>" + (baseXPosWatched + 29).ToString() + "</posX>\n" +
+      "<posY>" + (baseYPosWatched + 371).ToString() + "</posY>\n" +
+      "<width>383</width>\n" +
       "<scrollStartDelaySec>30</scrollStartDelaySec>" +
       "<label>#StreamedMP.recentlyWatched.series2.episodetitle</label>\n" +
       "<font>" + mrEpisodeFont + "</font>\n" +
@@ -2736,24 +2719,24 @@
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n";
       if (baseXPosWatched > 640)
       {
-        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " start=" + quote + "600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+               "<animation effect=" + quote + "slide" + quote + " end=" + quote + "600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
       }
       else
       {
-        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-300,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-300,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
-                "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
+        xml += "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-450,0" + quote + " time=" + quote + "1500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Hidden</animation>\n" +
+                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-450,0" + quote + " end=" + quote + "0,0" + quote + " time=" + quote + "1000" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>\n" +
+                "<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>\n" +
+                "<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>\n";
       }
       xml += "<control>\n" +
       "<type>" + fadeLabelControl + "</type>\n" +
       "<id>0</id>\n" +
-      "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
-      "<posY>" + (baseYPosWatched + 265).ToString() + "</posY>\n" +
-      "<width>258</width>\n" +
+      "<posX>" + (baseXPosWatched + 29).ToString() + "</posX>\n" +
+      "<posY>" + (baseYPosWatched + 398).ToString() + "</posY>\n" +
+      "<width>387</width>\n" +
       "<scrollStartDelaySec>30</scrollStartDelaySec>";
       if (mrSeriesTitleLast)
         xml += "<label>#StreamedMP.MostRecent.Watched.3.SEFormat - #StreamedMP.recentlyWatched.series3.title</label>\n";
@@ -2766,9 +2749,9 @@
       "<description>Series 3 title</description>\n" +
       "<type>" + fadeLabelControl + "</type>\n" +
       "<id>0</id>\n" +
-      "<posX>" + (baseXPosWatched + 19).ToString() + "</posX>\n" +
-      "<posY>" + (baseYPosWatched + 282).ToString() + "</posY>\n" +
-      "<width>255</width>\n" +
+      "<posX>" + (baseXPosWatched + 29).ToString() + "</posX>\n" +
+      "<posY>" + (baseYPosWatched + 423).ToString() + "</posY>\n" +
+      "<width>383</width>\n" +
       "<scrollStartDelaySec>30</scrollStartDelaySec>" +
       "<label>#StreamedMP.recentlyWatched.series3.episodetitle</label>\n" +
       "<font>" + mrEpisodeFont + "</font>\n" +
@@ -2801,18 +2784,18 @@
          xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-                "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-                "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-                "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                 "<control>" +
                   "<description>Music 1 BG</description>" +
                   "<posX>" + baseXPosAdded.ToString() + "</posX>\n" +
                   "<posY>" + baseYPosAdded.ToString() + "</posY>\n" +
                   "<type>image</type>" +
                   "<id>0</id>" +
-                  "<width>306</width>" +
-                  "<height>320</height>" +
+                  "<width>459</width>" +
+                  "<height>480</height>" +
                   "<texture>recentsummoverlaybg.png</texture>" +
                   "<colordiffuse>EEFFFFFF</colordiffuse>" +
                 "</control>" +
@@ -2820,9 +2803,9 @@
                   "<description>Header label</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 20).ToString() + "</posY>\n" +
-                  "<width>258</width>" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 30).ToString() + "</posY>\n" +
+                  "<width>387</width>" +
                   "<label>#StreamedMP.LatestMusic</label>" +
                   "<font>mediastream10tc</font>" +
                   "<textcolor>White</textcolor>" +
@@ -2831,8 +2814,8 @@
                   "<description>Music 1 Artist</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 195).ToString() + "</posY>\n" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 293).ToString() + "</posY>\n" +
                   "<label>" + latestMediaPrefix + ".music.latest1.artist</label>" +
                   "<textcolor>White</textcolor>" +
                   "<font>mediastream10tc</font>" +
@@ -2842,9 +2825,9 @@
                   "<description>Music 1 Album</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
-                  "<width>257</width>" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 318).ToString() + "</posY>\n" +
+                  "<width>386</width>" +
                   "<label>" + latestMediaPrefix + ".music.latest1.album</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
@@ -2853,10 +2836,10 @@
                   "<description>Music1 thumb/fanart</description>" +
                   "<type>image</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 71).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 42).ToString() + "</posY>\n" +
-                  "<width>155</width>" +
-                  "<height>155</height>" +
+                  "<posX>" + (baseXPosAdded + 107).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 63).ToString() + "</posY>\n" +
+                  "<width>233</width>" +
+                  "<height>233</height>" +
                   "<keepaspectratio>true</keepaspectratio>" +
                   "<texture>" + latestMediaPrefix + ".music.latest1.thumb</texture>" +
                   "<shouldCache>true</shouldCache>\n" +
@@ -2875,17 +2858,17 @@
          xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-                "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-                "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-                "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                 "<control>" +
                   "<description>Music 2 Artist</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 230).ToString() + "</posY>\n" +
-                  "<width>258</width>" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 345).ToString() + "</posY>\n" +
+                  "<width>387</width>" +
                   "<label>" + latestMediaPrefix + ".music.latest2.artist</label>" +
                   "<font>mediastream10tc</font>" +
                   "<textcolor>White</textcolor>" +
@@ -2895,9 +2878,9 @@
                   "<description>Movie 2 Album</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
-                  "<width>257</width>" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 371).ToString() + "</posY>\n" +
+                  "<width>386</width>" +
                   "<label>" + latestMediaPrefix + ".music.latest2.album</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
@@ -2916,17 +2899,17 @@
          xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-                "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-                "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-                "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                 "<control>" +
                   "<description>Music 3 Artist</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 265).ToString() + "</posY>\n" +
-                  "<width>258</width>" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 398).ToString() + "</posY>\n" +
+                  "<width>387</width>" +
                   "<label>" + latestMediaPrefix + ".music.latest3.artist</label>" +
                   "<textcolor>White</textcolor>" +
                   "<font>mediastream10tc</font>" +
@@ -2936,9 +2919,9 @@
                   "<description>Music 3 Album</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
-                  "<width>257</width>" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 423).ToString() + "</posY>\n" +
+                  "<width>386</width>" +
                   "<label>" + latestMediaPrefix + ".music.latest3.album</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
@@ -2962,24 +2945,23 @@
                 "<type>group</type>" +
                 "<dimColor>0xffffffff</dimColor>";
 
-
-        xml += "<visible>" + mostRecentVisibleControls(isOverlayType.MusicVideos) + "+[string.equals(#mvCentral.latest.enabled,true)]" + "</visible>";
+      xml += "<visible>" + mostRecentVisibleControls(isOverlayType.MusicVideos) + "+[string.equals(#mvCentral.latest.enabled,true)]" + "</visible>";
 
       xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
              "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
              "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-             "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-             "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-             "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-             "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+             "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+             "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+             "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+             "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
              "<control>" +
                "<description>Music 1 BG</description>" +
                "<posX>" + baseXPosAdded.ToString() + "</posX>\n" +
                "<posY>" + baseYPosAdded.ToString() + "</posY>\n" +
                "<type>image</type>" +
                "<id>0</id>" +
-               "<width>306</width>" +
-               "<height>320</height>" +
+               "<width>459</width>" +
+               "<height>480</height>" +
                "<texture>recentsummoverlaybg.png</texture>" +
                "<colordiffuse>EEFFFFFF</colordiffuse>" +
              "</control>" +
@@ -2987,9 +2969,9 @@
                "<description>Header label</description>" +
                "<type>label</type>" +
                "<id>0</id>" +
-               "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-               "<posY>" + (baseYPosAdded + 20).ToString() + "</posY>\n" +
-               "<width>258</width>" +
+               "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 30).ToString() + "</posY>\n" +
+               "<width>387</width>" +
                "<label>#StreamedMP.LatestMusicVideos</label>" +
                "<font>mediastream10tc</font>" +
                "<textcolor>White</textcolor>" +
@@ -2998,8 +2980,8 @@
                "<description>Music Video 1 Artist</description>" +
                "<type>label</type>" +
                "<id>0</id>" +
-               "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-               "<posY>" + (baseYPosAdded + 195).ToString() + "</posY>\n" +
+               "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 293).ToString() + "</posY>\n" +
                "<label>#mvCentral.Latest.Artist1</label>" +
                "<textcolor>White</textcolor>" +
                "<font>mediastream10tc</font>" +
@@ -3009,9 +2991,9 @@
                "<description>Music 1 Track</description>" +
                "<type>label</type>" +
                "<id>0</id>" +
-               "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-               "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
-               "<width>257</width>" +
+               "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 318).ToString() + "</posY>\n" +
+               "<width>386</width>" +
                "<label>#mvCentral.Latest.Track1</label>" +
                "<font>mediastream10c</font>" +
                "<textcolor>White</textcolor>" +
@@ -3020,10 +3002,10 @@
                "<description>Music Video 1 thumb/fanart</description>" +
                "<type>image</type>" +
                "<id>0</id>" +
-               "<posX>" + (baseXPosAdded + 71).ToString() + "</posX>\n" +
-               "<posY>" + (baseYPosAdded + 42).ToString() + "</posY>\n" +
-               "<width>155</width>" +
-               "<height>155</height>" +
+               "<posX>" + (baseXPosAdded + 107).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 63).ToString() + "</posY>\n" +
+               "<width>233</width>" +
+               "<height>233</height>" +
                "<keepaspectratio>true</keepaspectratio>" +
                "<texture>#mvCentral.Latest.ArtistImage1</texture>" +
                "<shouldCache>true</shouldCache>\n" +
@@ -3036,21 +3018,20 @@
 
       xml += "<visible>" + mostRecentVisibleControls(isOverlayType.MusicVideos) + "+[string.equals(#mvCentral.latest.enabled,true)]" + "</visible>";
 
-
       xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
              "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
              "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-             "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-             "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-             "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-             "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+             "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+             "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+             "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+             "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
              "<control>" +
                "<description>Music 2 Video Artist</description>" +
                "<type>label</type>" +
                "<id>0</id>" +
-               "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-               "<posY>" + (baseYPosAdded + 230).ToString() + "</posY>\n" +
-               "<width>258</width>" +
+               "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 345).ToString() + "</posY>\n" +
+               "<width>387</width>" +
                "<label>#mvCentral.Latest.Artist2</label>" +
                "<font>mediastream10tc</font>" +
                "<textcolor>White</textcolor>" +
@@ -3060,9 +3041,9 @@
                "<description>Music Video 2 Track</description>" +
                "<type>label</type>" +
                "<id>0</id>" +
-               "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-               "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
-               "<width>257</width>" +
+               "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 371).ToString() + "</posY>\n" +
+               "<width>386</width>" +
                "<label>#mvCentral.Latest.Track2</label>" +
                "<font>mediastream10c</font>" +
                "<textcolor>White</textcolor>" +
@@ -3075,21 +3056,20 @@
 
       xml += "<visible>" + mostRecentVisibleControls(isOverlayType.MusicVideos) + "+[string.equals(#mvCentral.latest.enabled,true)]" + "</visible>";
 
-
       xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
              "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
              "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-             "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-             "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-             "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-             "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+             "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+             "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+             "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+             "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
              "<control>" +
                "<description>Music 3 Artist</description>" +
                "<type>label</type>" +
                "<id>0</id>" +
-               "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-               "<posY>" + (baseYPosAdded + 265).ToString() + "</posY>\n" +
-               "<width>258</width>" +
+               "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 398).ToString() + "</posY>\n" +
+               "<width>387</width>" +
                "<label>#mvCentral.Latest.Artist3</label>" +
                "<textcolor>White</textcolor>" +
                "<font>mediastream10tc</font>" +
@@ -3099,9 +3079,9 @@
                "<description>Music Video 3 Track</description>" +
                "<type>label</type>" +
                "<id>0</id>" +
-               "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-               "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
-               "<width>257</width>" +
+               "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+               "<posY>" + (baseYPosAdded + 423).ToString() + "</posY>\n" +
+               "<width>386</width>" +
                "<label>#mvCentral.Latest.Track3</label>" +
                "<font>mediastream10c</font>" +
                "<textcolor>White</textcolor>" +
@@ -3133,18 +3113,18 @@
       xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
              "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-                "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-                "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-                "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                 "<control>" +
                   "<description>RecordedTV 1 BG</description>" +
                   "<posX>" + baseXPosAdded.ToString() + "</posX>\n" +
                   "<posY>" + baseYPosAdded.ToString() + "</posY>\n" +
                   "<type>image</type>" +
                   "<id>0</id>" +
-                  "<width>306</width>" +
-                  "<height>320</height>" +
+                  "<width>459</width>" +
+                  "<height>480</height>" +
                   "<texture>recentsummoverlaybg.png</texture>" +
                   "<colordiffuse>EEFFFFFF</colordiffuse>" +
                 "</control>" +
@@ -3152,9 +3132,9 @@
                   "<description>RecordedTV Header label</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 20).ToString() + "</posY>\n" +
-                  "<width>258</width>" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 30).ToString() + "</posY>\n" +
+                  "<width>387</width>" +
                   "<label>#StreamedMP.LatestTVRecordings</label>" +
                   "<font>mediastream10tc</font>" +
                   "<textcolor>White</textcolor>" +
@@ -3163,9 +3143,9 @@
                   "<description>RecordedTV 1 title</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>995</posX>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 195).ToString() + "</posY>\n" +
+                  "<posX>1493</posX>" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 293).ToString() + "</posY>\n" +
                   "<label>" + latestMediaPrefix + ".tvrecordings.latest1.title</label>" +
                   "<textcolor>White</textcolor>" +
                   "<font>mediastream10tc</font>" +
@@ -3175,9 +3155,9 @@
                   "<description>RecordedTV 1 dateAdded</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 212).ToString() + "</posY>\n" +
-                  "<width>257</width>" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 318).ToString() + "</posY>\n" +
+                  "<width>386</width>" +
                   "<label>#StreamedMP.RecordedOn " + latestMediaPrefix + ".tvrecordings.latest1.dateAdded</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
@@ -3186,10 +3166,10 @@
                   "<description>RecordedTV thumb/fanart</description>" +
                   "<type>image</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 42).ToString() + "</posY>\n" +
-                  "<width>268</width>" +
-                  "<height>151</height>" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 63).ToString() + "</posY>\n" +
+                  "<width>402</width>" +
+                  "<height>227</height>" +
                   "<keepaspectratio>true</keepaspectratio>" +
                   "<texture>" + latestMediaPrefix + ".tvrecordings.latest1.thumb</texture>" +
                   "<shouldCache>true</shouldCache>\n" +
@@ -3208,17 +3188,17 @@
       xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-                "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-                "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-                "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                 "<control>" +
                   "<description>RecordedTV 2 title</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 230).ToString() + "</posY>\n" +
-                  "<width>258</width>" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 345).ToString() + "</posY>\n" +
+                  "<width>387</width>" +
                   "<label>" + latestMediaPrefix + ".tvrecordings.latest2.title</label>" +
                   "<font>mediastream10tc</font>" +
                   "<textcolor>White</textcolor>" +
@@ -3228,9 +3208,9 @@
                   "<description>RecordedTV 2 dateAdded</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 247).ToString() + "</posY>\n" +
-                  "<width>257</width>" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 371).ToString() + "</posY>\n" +
+                  "<width>386</width>" +
                   "<label>#StreamedMP.RecordedOn " + latestMediaPrefix + ".tvrecordings.latest2.dateAdded</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
@@ -3249,17 +3229,17 @@
       xml += "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                 "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-                "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-                "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-                "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                 "<control>" +
                   "<description>RecordedTV 3 title</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 265).ToString() + "</posY>\n" +
-                  "<width>258</width>" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 398).ToString() + "</posY>\n" +
+                  "<width>387</width>" +
                   "<label>" + latestMediaPrefix + ".tvrecordings.latest3.title</label>" +
                   "<textcolor>White</textcolor>" +
                   "<font>mediastream10tc</font>" +
@@ -3269,9 +3249,9 @@
                   "<description>RecordedTV 3 dateAdded</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>" + (baseXPosAdded + 19).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 282).ToString() + "</posY>\n" +
-                  "<width>257</width>" +
+                  "<posX>" + (baseXPosAdded + 29).ToString() + "</posX>\n" +
+                  "<posY>" + (baseYPosAdded + 423).ToString() + "</posY>\n" +
+                  "<width>386</width>" +
                   "<label>#StreamedMP.RecordedOn " + latestMediaPrefix + ".tvrecordings.latest3.dateAdded</label>" +
                   "<font>mediastream10c</font>" +
                   "<textcolor>White</textcolor>" +
@@ -3299,18 +3279,18 @@
                           "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                           "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                           "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-                          "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-                          "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-                          "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                          "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                          "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                          "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                          "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                          "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                           "<control>" +
                           "<description>Overlay BG</description>" +
-                          "<posX>976</posX>" +
-                          "<posY>50</posY>" +
+                          "<posX>1464</posX>" +
+                          "<posY>75</posY>" +
                           "<type>image</type>" +
                           "<id>0</id>" +
-                          "<width>306</width>" +
-                          "<height>320</height>" +
+                          "<width>459</width>" +
+                          "<height>480</height>" +
                           "<texture>recentsummoverlaybg.png</texture>" +
                           "<colordiffuse>EEFFFFFF</colordiffuse>" +
                           "</control>" +
@@ -3318,9 +3298,9 @@
                           "<description>Plugin Name</description>" +
                           "<type>label</type>" +
                           "<id>0</id>" +
-                          "<posX>995</posX>" +
-                          "<posY>76</posY>" +
-                          "<width>258</width>" +
+                          "<posX>1493</posX>" +
+                          "<posY>114</posY>" +
+                          "<width>387</width>" +
                           "<label>Drive Free Space</label>" +
                           "<font>mediastream10tc</font>" +
                           "<textcolor>White</textcolor>" +
@@ -3329,16 +3309,15 @@
                           "<description>Index Separator</description>" +
                           "<type>label</type>" +
                           "<id>0</id>" +
-                          "<posX>995</posX>" +
-                          "<posY>80</posY>" +
-                          "<width>264</width>" +
+                          "<posX>1493</posX>" +
+                          "<posY>120</posY>" +
+                          "<width>396</width>" +
                           "<label>____________________________________________________________________________________________________________		</label>" +
                           "<textcolor>ff808080</textcolor>" +
                           "</control>";
 
       foreach (string driveToDisplay in driveFreeSpaceDrives)
       {
-
         string driveLetter = driveToDisplay.Substring(0, 1);
 
         string driveIcon = "FreeDriveSpace_Icon_C.png";
@@ -3350,10 +3329,10 @@
                     "<description>Drive " + driveLetter + " Image</description>" +
                     "<type>image</type>" +
                     "<id>1</id>" +
-                    "<posX>995</posX>" +
-                    "<posY>" + (90 + yOffset).ToString() + "</posY>" +
-                    "<width>60</width>" +
-                    "<height>60</height>" +
+                    "<posX>1493</posX>" +
+                    "<posY>" + (135 + yOffset).ToString() + "</posY>" +
+                    "<width>90</width>" +
+                    "<height>90</height>" +
                     "<texture>" + driveIcon + "</texture>" +
                     "<visible>string.contains(#DriveFreeSpace." + driveLetter + ".Enabled,true)</visible>" +
                   "</control>" +
@@ -3361,10 +3340,10 @@
                     "<description>Drive " + driveLetter + " Progress BG</description>" +
                     "<type>image</type>" +
                     "<id>1</id>" +
-                    "<posX>995</posX>" +
-                    "<posY>" + (160 + yOffset).ToString() + "</posY>" +
-                    "<width>266</width>" +
-                    "<height>20</height>" +
+                    "<posX>1493</posX>" +
+                    "<posY>" + (240 + yOffset).ToString() + "</posY>" +
+                    "<width>399</width>" +
+                    "<height>30</height>" +
                     "<texture>osdprogressbackv.png</texture>" +
                     "<visible>string.contains(#DriveFreeSpace." + driveLetter + ".Enabled,true)</visible>" +
                   "</control>" +
@@ -3372,10 +3351,10 @@
                     "<description>Drive " + driveLetter + " Progress Bar</description>" +
                     "<type>progress</type>" +
                     "<id>20</id>" +
-                    "<posX>985</posX>" +
-                    "<posY>" + (161 + yOffset).ToString() + "</posY>" +
-                    "<width>266</width>" +
-                    "<height>20</height>" +
+                    "<posX>1478</posX>" +
+                    "<posY>" + (242 + yOffset).ToString() + "</posY>" +
+                    "<width>399</width>" +
+                    "<height>30</height>" +
                     "<texturebg>-</texturebg>" +
                     "<label>#DriveFreeSpace." + driveLetter + ".AvailableSpace.UsedPercentage</label>" +
                     "<lefttexture>osdprogressleft.png</lefttexture>" +
@@ -3387,15 +3366,15 @@
                     "<description>Drive " + driveLetter + " Description</description>" +
                     "<type>label</type>" +
                     "<id>1</id>" +
-                    "<posX>1060</posX>" +
-                    "<posY>" + (100 + yOffset).ToString() + "</posY>" +
-                    "<width>198</width>" +
+                    "<posX>1590</posX>" +
+                    "<posY>" + (150 + yOffset).ToString() + "</posY>" +
+                    "<width>297</width>" +
                     "<label>#DriveFreeSpace." + driveLetter + ".AvailableSpace.Data</label>" +
                     "<font>mediastream10</font>" +
                     "<visible>string.contains(#DriveFreeSpace." + driveLetter + ".Enabled,true)</visible>" +
                   "</control>";
 
-        yOffset += 84;
+        yOffset += 126;
       }
 
       xml += "</control>" +
@@ -3420,18 +3399,18 @@
                   "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                   "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                   "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-                  "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-                  "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-                  "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                  "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                  "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                  "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                  "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                  "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                 "<control>" +
                   "<description>Overlay BG</description>" +
-                  "<posX>976</posX>" +
-                  "<posY>50</posY>" +
+                  "<posX>1464</posX>" +
+                  "<posY>75</posY>" +
                   "<type>image</type>" +
                   "<id>0</id>" +
-                  "<width>306</width>" +
-                  "<height>320</height>" +
+                  "<width>459</width>" +
+                  "<height>480</height>" +
                   "<texture>recentsummoverlaybg.png</texture>" +
                   "<colordiffuse>EEFFFFFF</colordiffuse>" +
                 "</control>" +
@@ -3439,9 +3418,9 @@
                   "<description>Plugin Name</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>76</posY>" +
-                  "<width>258</width>" +
+                  "<posX>1493</posX>" +
+                  "<posY>114</posY>" +
+                  "<width>387</width>" +
                   "<label>Sleep Control</label>" +
                   "<font>mediastream10tc</font>" +
                   "<textcolor>White</textcolor>" +
@@ -3450,28 +3429,29 @@
                   "<description>Index Separator</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>80</posY>" +
-                  "<width>264</width>				<label>____________________________________________________________________________________________________________</label>" +
+                  "<posX>1493</posX>" +
+                  "<posY>120</posY>" +
+                  "<width>396</width>" +
+                  "<label>____________________________________________________________________________________________________________</label>" +
                   "<textcolor>ff808080</textcolor>" +
                 "</control>" +
                 "<control>" +
                   "<description>Sleep Control Mode Image</description>" +
                   "<type>image</type>" +
                   "<id>1</id>" +
-                  "<posX>1140</posX>" +
-                  "<posY>74</posY>" +
-                  "<width>20</width>" +
-                  "<height>20</height>" +
+                  "<posX>1710</posX>" +
+                  "<posY>111</posY>" +
+                  "<width>30</width>" +
+                  "<height>30</height>" +
                   "<texture>#SleepControl.Image</texture>" +
                 "</control>" +
                 "<control>" +
                   "<description>Sleep Control Counter</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>976</posX>" +
-                  "<posY>150</posY>" +
-                  "<width>306</width>" +
+                  "<posX>1464</posX>" +
+                  "<posY>225</posY>" +
+                  "<width>459</width>" +
                   "<align>center</align>" +
                   "<label>#SleepControl.Counter</label>" +
                   "<font>mediastream28tc</font>" +
@@ -3480,9 +3460,9 @@
                   "<description>Sleep Control Activity</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>976</posX>" +
-                  "<posY>200</posY>" +
-                  "<width>306</width>" +
+                  "<posX>1464</posX>" +
+                  "<posY>300</posY>" +
+                  "<width>459</width>" +
                   "<align>center</align>" +
                   "<label>#SleepControl.Activity</label>" +
                   "<font>mediastream10tc</font>" +
@@ -3491,9 +3471,9 @@
                   "<description>Sleep Control Mode</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>976</posX>" +
-                  "<posY>230</posY>" +
-                  "<width>306</width>" +
+                  "<posX>1464</posX>" +
+                  "<posY>345</posY>" +
+                  "<width>459</width>" +
                   "<align>center</align>" +
                   "<label>#SleepControl.Method</label>" +
                   "<font>mediastream10tc</font>" +
@@ -3502,9 +3482,9 @@
                   "<description>Sleep Control Start</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>976</posX>" +
-                  "<posY>260</posY>" +
-                  "<width>306</width>" +
+                  "<posX>1464</posX>" +
+                  "<posY>390</posY>" +
+                  "<width>459</width>" +
                   "<align>center</align>" +
                   "<label>#SleepControl.Start</label>" +
                   "<font>mediastream10tc</font>" +
@@ -3513,9 +3493,9 @@
                   "<description>Sleep Control End</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>976</posX>" +
-                  "<posY>290</posY>" +
-                  "<width>306</width>" +
+                  "<posX>1464</posX>" +
+                  "<posY>435</posY>" +
+                  "<width>459</width>" +
                   "<align>center</align>" +
                   "<label>#SleepControl.End</label>" +
                   "<font>mediastream10tc</font>" +
@@ -3523,7 +3503,6 @@
                 "</control>" +
               "</controls>" +
             "</window>";
-
     }
     #endregion
 
@@ -3542,18 +3521,18 @@
                   "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                   "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                   "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-                  "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-                  "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-                  "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                  "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                  "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                  "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                  "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                  "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                 "<control>" +
                   "<description>Overlay BG</description>" +
-                  "<posX>976</posX>" +
-                  "<posY>50</posY>" +
+                  "<posX>1464</posX>" +
+                  "<posY>75</posY>" +
                   "<type>image</type>" +
                   "<id>0</id>" +
-                  "<width>306</width>" +
-                  "<height>320</height>" +
+                  "<width>459</width>" +
+                  "<height>480</height>" +
                   "<texture>recentsummoverlaybg.png</texture>" +
                   "<colordiffuse>EEFFFFFF</colordiffuse>" +
                 "</control>" +
@@ -3562,9 +3541,9 @@
                   "<description>Plugin Name</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>76</posY>" +
-                  "<width>258</width>" +
+                  "<posX>1493</posX>" +
+                  "<posY>114</posY>" +
+                  "<width>387</width>" +
                   "<label>Indices</label>" +
                   "<font>mediastream10tc</font>" +
                   "<textcolor>White</textcolor>" +
@@ -3573,9 +3552,9 @@
                   "<description>Index Separator</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>80</posY>" +
-                  "<width>264</width>" +
+                  "<posX>1493</posX>" +
+                  "<posY>120</posY>" +
+                  "<width>396</width>" +
                   "<label>____________________________________________________________________________________________________________</label>" +
                   "<textcolor>ff808080</textcolor>" +
                 "</control>" +
@@ -3584,10 +3563,10 @@
                   "<description>Stocks.Index0Indicator</description>" +
                   "<type>image</type>" +
                   "<id>1</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>100</posY>" +
-                  "<width>18</width>" +
-                  "<height>18</height>" +
+                  "<posX>1493</posX>" +
+                  "<posY>150</posY>" +
+                  "<width>27</width>" +
+                  "<height>27</height>" +
                   "<keepaspectratio>yes</keepaspectratio>" +
                   "<texture>#Stocks.Index0Indicator</texture>" +
                 "</control>" +
@@ -3595,9 +3574,9 @@
                   "<description>Stocks.Index0Name</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<width>100</width>" +
-                  "<posX>1014</posX>" +
-                  "<posY>99</posY>" +
+                  "<width>150</width>" +
+                  "<posX>1521</posX>" +
+                  "<posY>149</posY>" +
                   "<label>#Stocks.Index0Name</label>" +
                   "<font>mediastream10c</font>" +
                 "</control>" +
@@ -3605,8 +3584,8 @@
                   "<description>Stocks.Index0Last</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1190</posX>" +
-                  "<posY>99</posY>" +
+                  "<posX>1785</posX>" +
+                  "<posY>149</posY>" +
                   "<label>#Stocks.Index0Last</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -3615,8 +3594,8 @@
                   "<description>Stocks.Index0PercentChange</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1260</posX>" +
-                  "<posY>99</posY>" +
+                  "<posX>1890</posX>" +
+                  "<posY>149</posY>" +
                   "<label>#Stocks.Index0PercentChange</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -3626,10 +3605,10 @@
                   "<description>Stocks.Index1Indicator</description>" +
                   "<type>image</type>" +
                   "<id>1</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>120</posY>" +
-                  "<width>18</width>" +
-                  "<height>18</height>" +
+                  "<posX>1493</posX>" +
+                  "<posY>180</posY>" +
+                  "<width>27</width>" +
+                  "<height>27</height>" +
                   "<keepaspectratio>yes</keepaspectratio>" +
                   "<texture>#Stocks.Index1Indicator</texture>" +
                 "</control>" +
@@ -3637,9 +3616,9 @@
                   "<description>Stocks.Index1Name</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<width>100</width>" +
-                  "<posX>1014</posX>" +
-                  "<posY>119</posY>" +
+                  "<width>150</width>" +
+                  "<posX>1521</posX>" +
+                  "<posY>179</posY>" +
                   "<label>#Stocks.Index1Name</label>" +
                   "<font>mediastream10c</font>" +
                 "</control>" +
@@ -3647,8 +3626,8 @@
                   "<description>Stocks.Index1Last</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1190</posX>" +
-                  "<posY>119</posY>" +
+                  "<posX>1785</posX>" +
+                  "<posY>179</posY>" +
                   "<label>#Stocks.Index1Last</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -3657,8 +3636,8 @@
                   "<description>Stocks.Index1PercentChange</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1260</posX>" +
-                  "<posY>119</posY>" +
+                  "<posX>1890</posX>" +
+                  "<posY>179</posY>" +
                   "<label>#Stocks.Index1PercentChange</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -3668,10 +3647,10 @@
                   "<description>Stocks.Index2Indicator</description>" +
                   "<type>image</type>" +
                   "<id>1</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>140</posY>" +
-                  "<width>18</width>" +
-                  "<height>18</height>" +
+                  "<posX>1493</posX>" +
+                  "<posY>210</posY>" +
+                  "<width>27</width>" +
+                  "<height>27</height>" +
                   "<keepaspectratio>yes</keepaspectratio>" +
                   "<texture>#Stocks.Index2Indicator</texture>" +
                 "</control>" +
@@ -3679,9 +3658,9 @@
                   "<description>Stocks.Index2Name</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<width>100</width>" +
-                  "<posX>1014</posX>" +
-                  "<posY>139</posY>" +
+                  "<width>150</width>" +
+                  "<posX>1521</posX>" +
+                  "<posY>209</posY>" +
                   "<label>#Stocks.Index2Name</label>" +
                   "<font>mediastream10c</font>" +
                 "</control>" +
@@ -3689,8 +3668,8 @@
                   "<description>Stocks.Index2Last</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1190</posX>" +
-                  "<posY>139</posY>" +
+                  "<posX>1785</posX>" +
+                  "<posY>209</posY>" +
                   "<label>#Stocks.Index2Last</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -3699,8 +3678,8 @@
                   "<description>Stocks.Index2PercentChange</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1260</posX>" +
-                  "<posY>139</posY>" +
+                  "<posX>1890</posX>" +
+                  "<posY>209</posY>" +
                   "<label>#Stocks.Index2PercentChange</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -3710,9 +3689,9 @@
                   "<description>Plugin Name</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>165</posY>" +
-                  "<width>263</width>" +
+                  "<posX>1493</posX>" +
+                  "<posY>248</posY>" +
+                  "<width>395</width>" +
                   "<label>Stocks</label>" +
                   "<font>mediastream10tc</font>" +
                   "<textcolor>White</textcolor>" +
@@ -3721,9 +3700,9 @@
                   "<description>Index Separator</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>169</posY>" +
-                  "<width>264</width>" +
+                  "<posX>1493</posX>" +
+                  "<posY>254</posY>" +
+                  "<width>396</width>" +
                   "<label>____________________________________________________________________________________________________________</label>" +
                   "<textcolor>ff808080</textcolor>" +
                 "</control>" +
@@ -3732,10 +3711,10 @@
                   "<description>Stocks.Stock0Indicator</description>" +
                   "<type>image</type>" +
                   "<id>1</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>189</posY>" +
-                  "<width>18</width>" +
-                  "<height>18</height>" +
+                  "<posX>1493</posX>" +
+                  "<posY>284</posY>" +
+                  "<width>27</width>" +
+                  "<height>27</height>" +
                   "<keepaspectratio>yes</keepaspectratio>" +
                   "<texture>#Stocks.Stock0Indicator</texture>" +
                 "</control>" +
@@ -3743,9 +3722,9 @@
                   "<description>Stocks.Stock0Name</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<width>100</width>" +
-                  "<posX>1014</posX>" +
-                  "<posY>188</posY>" +
+                  "<width>150</width>" +
+                  "<posX>1521</posX>" +
+                  "<posY>282</posY>" +
                   "<label>#Stocks.Stock0Name</label>" +
                   "<font>mediastream10c</font>" +
                 "</control>" +
@@ -3753,8 +3732,8 @@
                   "<description>Stocks.Stock0Last</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1190</posX>" +
-                  "<posY>188</posY>" +
+                  "<posX>1785</posX>" +
+                  "<posY>282</posY>" +
                   "<label>#Stocks.Stock0Last</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -3763,8 +3742,8 @@
                   "<description>Stocks.Stock0PercentChange</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1260</posX>" +
-                  "<posY>188</posY>" +
+                  "<posX>1890</posX>" +
+                  "<posY>282</posY>" +
                   "<label>#Stocks.Stock0PercentChange</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -3774,10 +3753,10 @@
                   "<description>Stocks.Stock1Indicator</description>" +
                   "<type>image</type>" +
                   "<id>1</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>209</posY>" +
-                  "<width>18</width>" +
-                  "<height>18</height>" +
+                  "<posX>1493</posX>" +
+                  "<posY>314</posY>" +
+                  "<width>27</width>" +
+                  "<height>27</height>" +
                   "<keepaspectratio>yes</keepaspectratio>" +
                   "<texture>#Stocks.Stock1Indicator</texture>" +
                 "</control>" +
@@ -3785,9 +3764,9 @@
                   "<description>Stocks.Stock1Name</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<width>100</width>" +
-                  "<posX>1014</posX>" +
-                  "<posY>209</posY>" +
+                  "<width>150</width>" +
+                  "<posX>1521</posX>" +
+                  "<posY>314</posY>" +
                   "<label>#Stocks.Stock1Name</label>" +
                   "<font>mediastream10c</font>" +
                 "</control>" +
@@ -3795,8 +3774,8 @@
                   "<description>Stocks.Stock1Last</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1190</posX>" +
-                  "<posY>209</posY>" +
+                  "<posX>1785</posX>" +
+                  "<posY>314</posY>" +
                   "<label>#Stocks.Stock1Last</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -3805,8 +3784,8 @@
                   "<description>Stocks.Stock1PercentChange</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1260</posX>" +
-                  "<posY>209</posY>" +
+                  "<posX>1890</posX>" +
+                  "<posY>314</posY>" +
                   "<label>#Stocks.Stock1PercentChange</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -3816,10 +3795,10 @@
                   "<description>Stocks.Stock2Indicator</description>" +
                   "<type>image</type>" +
                   "<id>1</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>229</posY>" +
-                  "<width>18</width>" +
-                  "<height>18</height>" +
+                  "<posX>1493</posX>" +
+                  "<posY>344</posY>" +
+                  "<width>27</width>" +
+                  "<height>27</height>" +
                   "<keepaspectratio>yes</keepaspectratio>" +
                   "<texture>#Stocks.Stock2Indicator</texture>" +
                 "</control>" +
@@ -3827,9 +3806,9 @@
                   "<description>Stocks.Stock2Name</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<width>100</width>" +
-                  "<posX>1014</posX>" +
-                  "<posY>228</posY>" +
+                  "<width>150</width>" +
+                  "<posX>1521</posX>" +
+                  "<posY>342</posY>" +
                   "<label>#Stocks.Stock2Name</label>" +
                   "<font>mediastream10c</font>" +
                 "</control>" +
@@ -3837,8 +3816,8 @@
                   "<description>Stocks.Stock2Last</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1190</posX>" +
-                  "<posY>228</posY>" +
+                  "<posX>1785</posX>" +
+                  "<posY>342</posY>" +
                   "<label>#Stocks.Stock2Last</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -3847,8 +3826,8 @@
                     "<description>Stocks.Stock2PercentChange</description>" +
                     "<type>label</type>" +
                     "<id>1</id>" +
-                    "<posX>1260</posX>" +
-                    "<posY>228</posY>" +
+                    "<posX>1890</posX>" +
+                    "<posY>342</posY>" +
                     "<label>#Stocks.Stock2PercentChange</label>" +
                     "<font>mediastream10c</font>" +
                     "<align>right</align>" +
@@ -3858,9 +3837,9 @@
                   "<description>Plugin Name</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>254</posY>" +
-                  "<width>258</width>" +
+                  "<posX>1493</posX>" +
+                  "<posY>381</posY>" +
+                  "<width>387</width>" +
                   "<label>Currencies</label>" +
                   "<font>mediastream10tc</font>" +
                   "<textcolor>White</textcolor>" +
@@ -3869,9 +3848,9 @@
                   "<description>Index Separator</description>" +
                   "<type>label</type>" +
                   "<id>0</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>258</posY>" +
-                  "<width>264</width>" +
+                  "<posX>1493</posX>" +
+                  "<posY>387</posY>" +
+                  "<width>396</width>" +
                   "<label>____________________________________________________________________________________________________________</label>" +
                   "<textcolor>ff808080</textcolor>" +
                 "</control>" +
@@ -3880,10 +3859,10 @@
                   "<description>Stocks.Currency0Indicator</description>" +
                   "<type>image</type>" +
                   "<id>1</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>278</posY>" +
-                  "<width>18</width>" +
-                  "<height>18</height>" +
+                  "<posX>1493</posX>" +
+                  "<posY>417</posY>" +
+                  "<width>27</width>" +
+                  "<height>27</height>" +
                   "<keepaspectratio>yes</keepaspectratio>" +
                   "<texture>#Stocks.Currency0Indicator</texture>" +
                 "</control>" +
@@ -3891,9 +3870,9 @@
                   "<description>Stocks.Currency0Name</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<width>190</width>" +
-                  "<posX>1014</posX>" +
-                  "<posY>277</posY>" +
+                  "<width>285</width>" +
+                  "<posX>1521</posX>" +
+                  "<posY>416</posY>" +
                   "<label>#Stocks.Currency0Name</label>" +
                   "<font>mediastream10c</font>" +
                 "</control>" +
@@ -3901,8 +3880,8 @@
                   "<description>Stocks.Currency0Last</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1260</posX>" +
-                  "<posY>277</posY>" +
+                  "<posX>1890</posX>" +
+                  "<posY>416</posY>" +
                   "<label>#Stocks.Currency0Last</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -3912,10 +3891,10 @@
                   "<description>Stocks.Currency1Indicator</description>" +
                   "<type>image</type>" +
                   "<id>1</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>298</posY>" +
-                  "<width>18</width>" +
-                  "<height>18</height>" +
+                  "<posX>1493</posX>" +
+                  "<posY>447</posY>" +
+                  "<width>27</width>" +
+                  "<height>27</height>" +
                   "<keepaspectratio>yes</keepaspectratio>" +
                   "<texture>#Stocks.Currency1Indicator</texture>" +
                 "</control>" +
@@ -3923,9 +3902,9 @@
                   "<description>Stocks.Currency1Name</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<width>190</width>" +
-                  "<posX>1014</posX>" +
-                  "<posY>297</posY>" +
+                  "<width>285</width>" +
+                  "<posX>1521</posX>" +
+                  "<posY>446</posY>" +
                   "<label>#Stocks.Currency1Name</label>" +
                   "<font>mediastream10c</font>" +
                 "</control>" +
@@ -3933,8 +3912,8 @@
                   "<description>Stocks.Currency1Last</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1260</posX>" +
-                  "<posY>297</posY>" +
+                  "<posX>1890</posX>" +
+                  "<posY>446</posY>" +
                   "<label>#Stocks.Currency1Last</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -3944,10 +3923,10 @@
                   "<description>Stocks.Currency2Indicator</description>" +
                   "<type>image</type>" +
                   "<id>1</id>" +
-                  "<posX>995</posX>" +
-                  "<posY>318</posY>" +
-                  "<width>18</width>" +
-                  "<height>18</height>" +
+                  "<posX>1493</posX>" +
+                  "<posY>477</posY>" +
+                  "<width>27</width>" +
+                  "<height>27</height>" +
                   "<keepaspectratio>yes</keepaspectratio>" +
                   "<texture>#Stocks.Currency2Indicator</texture>" +
                 "</control>" +
@@ -3955,9 +3934,9 @@
                   "<description>Stocks.Currency2Name</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<width>190</width>" +
-                  "<posX>1014</posX>" +
-                  "<posY>317</posY>" +
+                  "<width>285</width>" +
+                  "<posX>1521</posX>" +
+                  "<posY>476</posY>" +
                   "<label>#Stocks.Currency2Name</label>" +
                   "<font>mediastream10c</font>" +
                 "</control>" +
@@ -3965,8 +3944,8 @@
                   "<description>Stocks.Currency2Last</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1260</posX>" +
-                  "<posY>317</posY>" +
+                  "<posX>1890</posX>" +
+                  "<posY>476</posY>" +
                   "<label>#Stocks.Currency2Last</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -3976,8 +3955,8 @@
                   "<description>Stocks.Time</description>" +
                   "<type>label</type>" +
                   "<id>1</id>" +
-                  "<posX>1260</posX>" +
-                  "<posY>76</posY>" +
+                  "<posX>1890</posX>" +
+                  "<posY>114</posY>" +
                   "<label>#Stocks.Time</label>" +
                   "<font>mediastream10c</font>" +
                   "<align>right</align>" +
@@ -4005,18 +3984,18 @@
                   "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                   "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                   "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-                  "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-                  "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-                  "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                  "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                  "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                  "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                  "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                  "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                   "<control>" +
                     "<description>Movie 1 BG</description>" +
-                    "<posX>976</posX>" +
-                    "<posY>50</posY>" +
+                    "<posX>1464</posX>" +
+                    "<posY>75</posY>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<width>306</width>" +
-                    "<height>320</height>" +
+                    "<width>459</width>" +
+                    "<height>480</height>" +
                     "<texture>recentsummoverlaybg.png</texture>" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>" +
                   "</control>" +
@@ -4024,9 +4003,9 @@
                     "<description>Header label</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>995</posX>" +
-                    "<posY>76</posY>" +
-                    "<width>258</width>" +
+                    "<posX>1493</posX>" +
+                    "<posY>114</posY>" +
+                    "<width>387</width>" +
                     "<label>Power Control</label>" +
                     "<font>mediastream10tc</font>" +
                     "<textcolor>White</textcolor>" +
@@ -4035,9 +4014,9 @@
                     "<description>Index Separator</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>995</posX>" +
-                    "<posY>80</posY>" +
-                    "<width>264</width>" +
+                    "<posX>1493</posX>" +
+                    "<posY>120</posY>" +
+                    "<width>396</width>" +
                     "<label>____________________________________________________________________________________________________________</label>" +
                     "<textcolor>ff808080</textcolor>" +
                   "</control>" +
@@ -4050,19 +4029,19 @@
                       "<description>Network Device 0 Image</description>" +
                       "<type>image</type>" +
                       "<id>1</id>" +
-                      "<posX>995</posX>" +
-                      "<posY>100</posY>" +
-                      "<width>40</width>" +
-                      "<height>40</height>" +
+                      "<posX>1493</posX>" +
+                      "<posY>150</posY>" +
+                      "<width>60</width>" +
+                      "<height>60</height>" +
                       "<texture>#PowerControl.NetworkDevice0TypeImage</texture>" +
                     "</control>" +
                     "<control>" +
                       "<description>Network Device 0 Description</description>" +
                       "<type>label</type>" +
                       "<id>1</id>" +
-                      "<posX>1042</posX>" +
-                      "<posY>110</posY>" +
-                      "<width>198</width>" +
+                      "<posX>1563</posX>" +
+                      "<posY>165</posY>" +
+                      "<width>297</width>" +
                       "<label>#PowerControl.NetworkDevice0Description</label>" +
                       "<font>mediastream10tc</font>" +
                     "</control>" +
@@ -4070,11 +4049,11 @@
                       "<description>Network Device 0 Alive</description>" +
                       "<type>image</type>" +
                       "<id>1</id>" +
-                      "<posX>1240</posX>" +
-                      "<posY>110</posY>>" +
+                      "<posX>1860</posX>" +
+                      "<posY>165</posY>>" +
                       "<texture>#PowerControl.NetworkDevice0AliveImage</texture>" +
-                      "<width>20</width>" +
-                      "<height>20</height>" +
+                      "<width>30</width>" +
+                      "<height>30</height>" +
                     "</control>" +
                   "</control>" +
                   "<control>" +
@@ -4086,18 +4065,18 @@
                       "<description>Network Device 1 Image</description>" +
                       "<type>image</type>" +
                       "<id>1</id>" +
-                      "<posX>995</posX>" +
-                      "<posY>152</posY>" +
-                      "<width>40</width>" +
-                      "<height>40</height>" +
+                      "<posX>1493</posX>" +
+                      "<posY>228</posY>" +
+                      "<width>60</width>" +
+                      "<height>60</height>" +
                       "<texture>#PowerControl.NetworkDevice1TypeImage</texture>" +
                     "</control>" +
                     "<control>" +
                       "<description>Network Device 1 Description</description>" +
                       "<type>label</type>" +
                       "<id>1</id>" +
-                      "<posX>1042</posX>" +
-                      "<posY>162</posY>" +
+                      "<posX>1563</posX>" +
+                      "<posY>243</posY>" +
                       "<label>#PowerControl.NetworkDevice1Description</label>" +
                       "<font>mediastream10tc</font>" +
                     "</control>" +
@@ -4105,11 +4084,11 @@
                       "<description>Network Device 1 Alive</description>" +
                       "<type>image</type>" +
                       "<id>1</id>" +
-                      "<posX>1240</posX>" +
-                      "<posY>162</posY>>" +
+                      "<posX>1860</posX>" +
+                      "<posY>243</posY>>" +
                       "<texture>#PowerControl.NetworkDevice1AliveImage</texture>" +
-                      "<width>20</width>" +
-                      "<height>20</height>" +
+                      "<width>30</width>" +
+                      "<height>30</height>" +
                     "</control>" +
                   "</control>" +
                   "<control>" +
@@ -4121,18 +4100,18 @@
                       "<description>Network Device 2 Image</description>" +
                       "<type>image</type>" +
                       "<id>1</id>" +
-                      "<posX>995</posX>" +
-                      "<posY>204</posY>" +
-                      "<width>40</width>" +
-                      "<height>40</height>" +
+                      "<posX>1493</posX>" +
+                      "<posY>306</posY>" +
+                      "<width>60</width>" +
+                      "<height>60</height>" +
                       "<texture>#PowerControl.NetworkDevice2TypeImage</texture>" +
                     "</control>" +
                     "<control>" +
                         "<description>Network Device 2 Description</description>" +
                         "<type>label</type>" +
                         "<id>1</id>" +
-                        "<posX>1042</posX>" +
-                        "<posY>214</posY>" +
+                        "<posX>1563</posX>" +
+                        "<posY>321</posY>" +
                         "<label>#PowerControl.NetworkDevice2Description</label>" +
                         "<font>mediastream10tc</font>" +
                     "</control>" +
@@ -4140,11 +4119,11 @@
                       "<description>Network Device 2 Alive</description>" +
                       "<type>image</type>" +
                       "<id>1</id>" +
-                      "<posX>1240</posX>" +
-                      "<posY>214</posY>>" +
+                      "<posX>1860</posX>" +
+                      "<posY>321</posY>>" +
                       "<texture>#PowerControl.NetworkDevice2AliveImage</texture>" +
-                      "<width>20</width>" +
-                      "<height>20</height>" +
+                      "<width>30</width>" +
+                      "<height>30</height>" +
                     "</control>" +
                   "</control>" +
                   "<control>" +
@@ -4156,18 +4135,18 @@
                       "<description>Network Device 3 Image</description>" +
                       "<type>image</type>" +
                       "<id>1</id>" +
-                      "<posX>995</posX>" +
-                      "<posY>256</posY>" +
-                      "<width>40</width>" +
-                      "<height>40</height>" +
+                      "<posX>1493</posX>" +
+                      "<posY>384</posY>" +
+                      "<width>60</width>" +
+                      "<height>60</height>" +
                       "<texture>#PowerControl.NetworkDevice3TypeImage</texture>" +
                     "</control>" +
                     "<control>" +
                       "<description>Network Device 3 Description</description>" +
                       "<type>label</type>" +
                       "<id>1</id>" +
-                      "<posX>1042</posX>" +
-                      "<posY>266</posY>" +
+                      "<posX>1563</posX>" +
+                      "<posY>399</posY>" +
                       "<label>#PowerControl.NetworkDevice3Description</label>" +
                       "<font>mediastream10tc</font>" +
                     "</control>" +
@@ -4175,11 +4154,11 @@
                       "<description>Network Device 3 Alive</description>" +
                       "<type>image</type>" +
                       "<id>1</id>" +
-                      "<posX>1240</posX>" +
-                      "<posY>266</posY>>" +
+                      "<posX>1860</posX>" +
+                      "<posY>399</posY>>" +
                       "<texture>#PowerControl.NetworkDevice3AliveImage</texture>" +
-                      "<width>20</width>" +
-                      "<height>20</height>" +
+                      "<width>30</width>" +
+                      "<height>30</height>" +
                     "</control>" +
                   "</control>" +
                   "<control>" +
@@ -4191,18 +4170,18 @@
                       "<description>Network Device 4 Image</description>" +
                       "<type>image</type>" +
                       "<id>1</id>" +
-                      "<posX>995</posX>" +
-                      "<posY>308</posY>" +
-                      "<width>40</width>" +
-                      "<height>40</height>" +
+                      "<posX>1493</posX>" +
+                      "<posY>462</posY>" +
+                      "<width>60</width>" +
+                      "<height>60</height>" +
                       "<texture>#PowerControl.NetworkDevice4TypeImage</texture>" +
                     "</control>" +
                     "<control>" +
                       "<description>Network Device 4 Description</description>" +
                       "<type>label</type>" +
                       "<id>1</id>" +
-                      "<posX>1042</posX>" +
-                      "<posY>318</posY>" +
+                      "<posX>1563</posX>" +
+                      "<posY>477</posY>" +
                       "<label>#PowerControl.NetworkDevice4Description</label>" +
                       "<font>mediastream10tc</font>" +
                     "</control>" +
@@ -4210,11 +4189,11 @@
                       "<description>Network Device 4 Alive</description>" +
                       "<type>image</type>" +
                       "<id>1</id>" +
-                      "<posX>1240</posX>" +
-                      "<posY>318</posY>" +
+                      "<posX>1860</posX>" +
+                      "<posY>477</posY>" +
                       "<texture>#PowerControl.NetworkDevice4AliveImage</texture>" +
-                      "<width>20</width>" +
-                      "<height>20</height>" +
+                      "<width>30</width>" +
+                      "<height>30</height>" +
                     "</control>" +
                   "</control>" +
                 "</control>" +
@@ -4239,18 +4218,18 @@
                   "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                   "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                   "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-                  "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-                  "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-                  "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                  "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                  "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                  "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                  "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                  "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                   "<control>" +
                     "<description>Overlay BG</description>" +
-                    "<posX>976</posX>" +
-                    "<posY>50</posY>" +
+                    "<posX>1464</posX>" +
+                    "<posY>75</posY>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<width>306</width>" +
-                    "<height>320</height>" +
+                    "<width>459</width>" +
+                    "<height>480</height>" +
                     "<texture>recentsummoverlaybg.png</texture>" +
                     "<colordiffuse>EEFFFFFF</colordiffuse>" +
                   "</control>" +
@@ -4258,9 +4237,9 @@
                     "<description>Plugin Name</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>995</posX>" +
-                    "<posY>76</posY>" +
-                    "<width>258</width>" +
+                    "<posX>1493</posX>" +
+                    "<posY>114</posY>" +
+                    "<width>387</width>" +
                     "<label>HTPC Info</label>" +
                     "<font>mediastream10tc</font>" +
                     "<textcolor>White</textcolor>" +
@@ -4269,30 +4248,30 @@
                     "<description>Index Separator</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>995</posX>" +
-                    "<posY>80</posY>" +
-                    "<width>264</width>" +
+                    "<posX>1493</posX>" +
+                    "<posY>120</posY>" +
+                    "<width>396</width>" +
                     "<label>____________________________________________________________________________________________________________</label>" +
                     "<textcolor>ff808080</textcolor>" +
                   "</control>" +
                   "<!-- *** CPU Infos *** -->" +
                   "<control>" +
                     "<description>CPU Picture</description>" +
-                    "<posX>995</posX>" +
-                    "<posY>100</posY>" +
+                    "<posX>1493</posX>" +
+                    "<posY>150</posY>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<width>80</width>" +
-                    "<height>80</height>" +
+                    "<width>120</width>" +
+                    "<height>120</height>" +
                     "<texture>HTPC_Info_CPU.png</texture>" +
                   "</control>" +
                   "<control>" +
                     "<description>CPU Temp label</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>1090</posX>" +
-                    "<posY>115</posY>" +
-                    "<width>170</width>" +
+                    "<posX>1635</posX>" +
+                    "<posY>173</posY>" +
+                    "<width>255</width>" +
                     "<label>CPU Temp:</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>white</textcolor>" +
@@ -4301,9 +4280,9 @@
                     "<description>CPU Temp value</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>1255</posX>" +
-                    "<posY>115</posY>" +
-                    "<width>250</width>" +
+                    "<posX>1883</posX>" +
+                    "<posY>173</posY>" +
+                    "<width>375</width>" +
                     "<label>#HTPCInfo.SensorTemperatureCPU</label>" +
                     "<font>mediastream10</font>" +
                     "<align>right</align>" +
@@ -4313,9 +4292,9 @@
                     "<description>CPU Usage label</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>1090</posX>" +
-                    "<posY>135</posY>" +
-                    "<width>170</width>" +
+                    "<posX>1635</posX>" +
+                    "<posY>203</posY>" +
+                    "<width>255</width>" +
                     "<label>CPU Usage:</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>white</textcolor>" +
@@ -4324,9 +4303,9 @@
                     "<description>Processor Usage</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>1255</posX>" +
-                    "<posY>135</posY>" +
-                    "<width>250</width>" +
+                    "<posX>1883</posX>" +
+                    "<posY>203</posY>" +
+                    "<width>375</width>" +
                     "<label>#HTPCInfo.ProcessorUsage%</label>" +
                     "<font>mediastream10</font>" +
                     "<align>right</align>" +
@@ -4336,20 +4315,20 @@
                     "<description>CPU Progress BG</description>" +
                     "<type>image</type>" +
                     "<id>1</id>" +
-                    "<posX>1086</posX>" +
-                    "<posY>154</posY>" +
-                    "<width>176</width>" +
-                    "<height>20</height>" +
+                    "<posX>1629</posX>" +
+                    "<posY>231</posY>" +
+                    "<width>264</width>" +
+                    "<height>30</height>" +
                     "<texture>osdprogressbackv.png</texture>" +
                   "</control>" +
                   "<control>" +
                     "<description>CPU Progress Bar</description>" +
                     "<type>progress</type>" +
                     "<id>20</id>" +
-                    "<posX>1074</posX>" +
-                    "<posY>155</posY>" +
-                    "<width>196</width>" +
-                    "<height>20</height>" +
+                    "<posX>1611</posX>" +
+                    "<posY>233</posY>" +
+                    "<width>294</width>" +
+                    "<height>30</height>" +
                     "<texturebg>-</texturebg>" +
                     "<label>#HTPCInfo.ProcessorUsage</label>" +
                     "<lefttexture>osdprogressleft.png</lefttexture>" +
@@ -4360,21 +4339,21 @@
                   "<!-- *** RAM Infos *** -->" +
                   "<control>" +
                     "<description>CPU Picture</description>" +
-                    "<posX>995</posX>" +
-                    "<posY>185</posY>" +
+                    "<posX>1493</posX>" +
+                    "<posY>278</posY>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<width>80</width>" +
-                    "<height>80</height>" +
+                    "<width>120</width>" +
+                    "<height>120</height>" +
                     "<texture>HTPC_Info_RAM.png</texture>" +
                   "</control>" +
                   "<control>" +
                     "<description>Free RAM label</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>1090</posX>" +
-                    "<posY>200</posY>" +
-                    "<width>170</width>" +
+                    "<posX>1635</posX>" +
+                    "<posY>300</posY>" +
+                    "<width>255</width>" +
                     "<label>Free RAM:</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>white</textcolor>" +
@@ -4383,9 +4362,9 @@
                     "<description>Free RAM Usage</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>1255</posX>" +
-                    "<posY>200</posY>" +
-                    "<width>250</width>" +
+                    "<posX>1883</posX>" +
+                    "<posY>300</posY>" +
+                    "<width>375</width>" +
                     "<label>#HTPCInfo.MemoryAvailable</label>" +
                     "<font>mediastream10</font>" +
                     "<align>right</align>" +
@@ -4395,9 +4374,9 @@
                     "<description>RAM Usage label</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>1090</posX>" +
-                    "<posY>220</posY>" +
-                    "<width>170</width>" +
+                    "<posX>1635</posX>" +
+                    "<posY>330</posY>" +
+                    "<width>255</width>" +
                     "<label>RAM Usage:</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>white</textcolor>" +
@@ -4406,9 +4385,9 @@
                     "<description>Ram Usage</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>1255</posX>" +
-                    "<posY>220</posY>" +
-                    "<width>250</width>" +
+                    "<posX>1883</posX>" +
+                    "<posY>330</posY>" +
+                    "<width>375</width>" +
                     "<label>#HTPCInfo.MemoryPercentUsed%</label>" +
                     "<font>mediastream10</font>" +
                     "<align>right</align>" +
@@ -4418,20 +4397,20 @@
                     "<description>RAM Progress BG</description>" +
                     "<type>image</type>" +
                     "<id>1</id>" +
-                    "<posX>1086</posX>" +
-                    "<posY>239</posY>" +
-                    "<width>176</width>" +
-                    "<height>20</height>" +
+                    "<posX>1629</posX>" +
+                    "<posY>359</posY>" +
+                    "<width>264</width>" +
+                    "<height>30</height>" +
                     "<texture>osdprogressbackv.png</texture>" +
                   "</control>" +
                   "<control>" +
                     "<description>RAM Progress Bar</description>" +
                     "<type>progress</type>" +
                     "<id>20</id>" +
-                    "<posX>1074</posX>" +
-                    "<posY>240</posY>" +
-                    "<width>196</width>" +
-                    "<height>20</height>" +
+                    "<posX>1611</posX>" +
+                    "<posY>360</posY>" +
+                    "<width>294</width>" +
+                    "<height>30</height>" +
                     "<texturebg>-</texturebg>" +
                     "<label>#HTPCInfo.MemoryPercentUsed</label>" +
                     "<lefttexture>osdprogressleft.png</lefttexture>" +
@@ -4442,21 +4421,21 @@
                   "<!-- *** GPU Infos *** -->" +
                   "<control>" +
                     "<description>CPU Picture</description>" +
-                    "<posX>995</posX>" +
-                    "<posY>275</posY>" +
+                    "<posX>1493</posX>" +
+                    "<posY>413</posY>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<width>80</width>" +
-                    "<height>80</height>" +
+                    "<width>120</width>" +
+                    "<height>120</height>" +
                     "<texture>HTPC_Info_GPU.png</texture>" +
                   "</control>" +
                   "<control>" +
                     "<description>GPU Temp label</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>1090</posX>" +
-                    "<posY>290</posY>" +
-                    "<width>170</width>" +
+                    "<posX>1635</posX>" +
+                    "<posY>435</posY>" +
+                    "<width>255</width>" +
                     "<label>GPU Temp:</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>white</textcolor>" +
@@ -4465,9 +4444,9 @@
                     "<description>GPU Temp value</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>1255</posX>" +
-                    "<posY>290</posY>" +
-                    "<width>250</width>" +
+                    "<posX>1883</posX>" +
+                    "<posY>435</posY>" +
+                    "<width>375</width>" +
                     "<label>#HTPCInfo.GPUSensorTemperature0</label>" +
                     "<font>mediastream10</font>" +
                     "<align>right</align>" +
@@ -4477,9 +4456,9 @@
                     "<description>GPU Usage label</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>1090</posX>" +
-                    "<posY>310</posY>" +
-                    "<width>170</width>" +
+                    "<posX>1635</posX>" +
+                    "<posY>465</posY>" +
+                    "<width>255</width>" +
                     "<label>GPU Usage:</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>white</textcolor>" +
@@ -4488,9 +4467,9 @@
                     "<description>GPU Usage</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>1255</posX>" +
-                    "<posY>310</posY>" +
-                    "<width>250</width>" +
+                    "<posX>1883</posX>" +
+                    "<posY>465</posY>" +
+                    "<width>375</width>" +
                     "<label>#HTPCInfo.GPUSensorUsage0%</label>" +
                     "<font>mediastream10</font>" +
                     "<align>right</align>" +
@@ -4500,20 +4479,20 @@
                     "<description>GPU Progress BG</description>" +
                     "<type>image</type>" +
                     "<id>1</id>" +
-                    "<posX>1086</posX>" +
-                    "<posY>329</posY>" +
-                    "<width>176</width>" +
-                    "<height>20</height>" +
+                    "<posX>1629</posX>" +
+                    "<posY>494</posY>" +
+                    "<width>264</width>" +
+                    "<height>30</height>" +
                     "<texture>osdprogressbackv.png</texture>" +
                   "</control>" +
                   "<control>" +
                     "<description>GPU Progress Bar</description>" +
                     "<type>progress</type>" +
                     "<id>20</id>" +
-                    "<posX>1074</posX>" +
-                    "<posY>330</posY>" +
-                    "<width>196</width>" +
-                    "<height>20</height>" +
+                    "<posX>1611</posX>" +
+                    "<posY>495</posY>" +
+                    "<width>294</width>" +
+                    "<height>30</height>" +
                     "<texturebg>-</texturebg>" +
                     "<label>#HTPCInfo.GPUSensorUsage0</label>" +
                     "<lefttexture>osdprogressleft.png</lefttexture>" +
@@ -4543,18 +4522,18 @@
                           "<animation effect=\"fade\" start=\"100\" end=\"0\" time=\"250\" reversible=\"false\">Hidden</animation>" +
                           "<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"700\" time=\"500\" reversible=\"false\">Visible</animation>" +
                           "<animation effect=\"fade\" start=\"0\" end=\"100\" time=\"4000\" reversible=\"false\">WindowOpen</animation>" +
-                          "<animation effect=\"slide\" end=\"300,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
-                          "<animation effect=\"slide\" start=\"300,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
-                          "<animation effect=\"slide\" start=\"400,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowOpen</animation>" +
-                          "<animation effect=\"slide\" end=\"400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                          "<animation effect=\"slide\" end=\"450,0\" time=\"1500\" acceleration=\"-0.1\" reversible=\"false\">Hidden</animation>" +
+                          "<animation effect=\"slide\" start=\"450,0\" end=\"0,0\" time=\"1000\" acceleration=\"-0.1\" reversible=\"false\">Visible</animation>" +
+                          "<animation effect=\"slide\" start=\"600,0\" end=\"0,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowOpen</animation>" +
+                          "<animation effect=\"slide\" end=\"600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                           "<control>" +
                               "<description>Overlay BG</description>" +
-                              "<posX>976</posX>" +
-                              "<posY>50</posY>" +
+                              "<posX>1464</posX>" +
+                              "<posY>75</posY>" +
                               "<type>image</type>" +
                               "<id>0</id>" +
-                              "<width>306</width>" +
-                              "<height>320</height>" +
+                              "<width>459</width>" +
+                              "<height>480</height>" +
                               "<texture>recentsummoverlaybg.png</texture>" +
                               "<colordiffuse>EEFFFFFF</colordiffuse>" +
                           "</control>" +
@@ -4562,9 +4541,9 @@
                               "<description>Plugin Name</description>" +
                               "<type>label</type>" +
                               "<id>0</id>" +
-                              "<posX>995</posX>" +
-                              "<posY>76</posY>" +
-                              "<width>258</width>" +
+                              "<posX>1493</posX>" +
+                              "<posY>114</posY>" +
+                              "<width>387</width>" +
                               "<label>Update Control</label>" +
                               "<font>mediastream10tc</font>" +
                               "<textcolor>White</textcolor>" +
@@ -4573,9 +4552,9 @@
                               "<description>Index Separator</description>" +
                               "<type>label</type>" +
                               "<id>0</id>" +
-                              "<posX>995</posX>" +
-                              "<posY>80</posY>" +
-                              "<width>264</width>" +
+                              "<posX>1493</posX>" +
+                              "<posY>120</posY>" +
+                              "<width>396</width>" +
                               "<label>____________________________________________________________________________________________________________</label>" +
                               "<textcolor>ff808080</textcolor>" +
                           "</control>" +
@@ -4583,10 +4562,10 @@
                               "<description>Urgency Image</description>" +
                               "<type>image</type>" +
                               "<id>1</id>" +
-                              "<posX>995</posX>" +
-                              "<posY>115</posY>" +
-                              "<width>60</width>" +
-                              "<height>60</height>" +
+                              "<posX>1493</posX>" +
+                              "<posY>173</posY>" +
+                              "<width>90</width>" +
+                              "<height>90</height>" +
                               "<texture>updatecontrol_empty.png</texture>" +
                               "<visible>string.equals(#UpdateControl.AvailableUpdateCount,0)</visible>" +
                           "</control>" +
@@ -4594,10 +4573,10 @@
                               "<description>Urgency Image</description>" +
                               "<type>image</type>" +
                               "<id>1</id>" +
-                              "<posX>995</posX>" +
-                              "<posY>115</posY>" +
-                              "<width>60</width>" +
-                              "<height>60</height>" +
+                              "<posX>1493</posX>" +
+                              "<posY>173</posY>" +
+                              "<width>90</width>" +
+                              "<height>90</height>" +
                               "<texture>#UpdateControl.AvailableUpdateUrgencyImage</texture>" +
                               "<visible>!string.equals(#UpdateControl.AvailableUpdateCount,0)</visible>" +
                           "</control>" +
@@ -4605,9 +4584,9 @@
                             "<description>Text</description>" +
                             "<type>textbox</type>" +
                             "<id>1</id>" +
-                            "<posX>1060</posX>" +
-                            "<posY>120</posY>" +
-                            "<width>198</width>" +
+                            "<posX>1590</posX>" +
+                            "<posY>180</posY>" +
+                            "<width>297</width>" +
                             "<label>New Updates Available</label>" +
                             "<font>mediastream12tc</font>" +
                             "<visible>!string.equals(#UpdateControl.AvailableUpdateCount,0)</visible>" +
@@ -4616,9 +4595,9 @@
                             "<description>Text</description>" +
                             "<type>textbox</type>" +
                             "<id>1</id>" +
-                            "<posX>1060</posX>" +
-                            "<posY>120</posY>" +
-                            "<width>198</width>" +
+                            "<posX>1590</posX>" +
+                            "<posY>180</posY>" +
+                            "<width>297</width>" +
                             "<label>No Updates Available</label>" +
                             "<font>mediastream12tc</font>" +
                             "<visible>string.equals(#UpdateControl.AvailableUpdateCount,0)</visible>" +
@@ -4630,9 +4609,9 @@
                             "<description>Text available windows updates</description>" +
                             "<type>label</type>" +
                             "<id>1</id>" +
-                            "<posX>995</posX>" +
-                            "<posY>190</posY>" +
-                            "<width>198</width>" +
+                            "<posX>1493</posX>" +
+                            "<posY>285</posY>" +
+                            "<width>297</width>" +
                             "<label>Available Updates</label>" +
                             "<font>mediastream10tc</font>" +
                           "</control>" +
@@ -4640,9 +4619,9 @@
                             "<description>available windows updates</description>" +
                             "<type>label</type>" +
                             "<id>1</id>" +
-                            "<posX>995</posX>" +
-                            "<posY>207</posY>" +
-                            "<width>198</width>" +
+                            "<posX>1493</posX>" +
+                            "<posY>311</posY>" +
+                            "<width>297</width>" +
                             "<label>#UpdateControl.AvailableUpdateCount</label>" +
                             "<font>mediastream10</font>          " +
                             "</control>" +
@@ -4650,9 +4629,9 @@
                             "<description>Text available windows updates Size</description>" +
                             "<type>label</type>" +
                             "<id>1</id>" +
-                            "<posX>995</posX>" +
-                            "<posY>235</posY>" +
-                            "<width>198</width>" +
+                            "<posX>1493</posX>" +
+                            "<posY>353</posY>" +
+                            "<width>297</width>" +
                             "<label>Size</label>" +
                             "<font>mediastream10tc</font>" +
                           "</control>" +
@@ -4660,9 +4639,9 @@
                             "<description>available windows updates Size</description>" +
                             "<type>label</type>" +
                             "<id>1</id>" +
-                            "<posX>995</posX>" +
-                            "<posY>252</posY>" +
-                            "<width>198</width>" +
+                            "<posX>1493</posX>" +
+                            "<posY>378</posY>" +
+                            "<width>297</width>" +
                             "<label>#UpdateControl.AvailableUpdateSize</label>" +
                             "<font>mediastream10</font>          " +
                           "</control>" +
@@ -4670,9 +4649,9 @@
                             "<description>Text Update Time</description>" +
                             "<type>label</type>" +
                             "<id>1</id>" +
-                            "<posX>995</posX>" +
-                            "<posY>280</posY>" +
-                            "<width>198</width>" +
+                            "<posX>1493</posX>" +
+                            "<posY>420</posY>" +
+                            "<width>297</width>" +
                             "<label>Update Time</label>" +
                             "<font>mediastream10tc</font>" +
                           "</control>" +
@@ -4680,8 +4659,8 @@
                             "<description>Update.Time</description>" +
                             "<type>label</type>" +
                             "<id>1</id>" +
-                            "<posX>995</posX>" +
-                            "<posY>297</posY>" +
+                            "<posX>1493</posX>" +
+                            "<posY>446</posY>" +
                             "<label>#UpdateControl.UpdateDate</label>" +
                             "<font>mediastream10c</font>" +
                           "</control>" +
@@ -4695,7 +4674,6 @@
 
     #region MyeMailManager
 
-
     void myeMailManagerOverlay()
     {
       xml = "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" +
@@ -4705,18 +4683,18 @@
                       "<description>Email Background</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>135</posX>" +
-                      "<posY>10</posY>" +
-                      "<width>210</width>" +
-                      "<height>32</height>" +
+                      "<posX>203</posX>" +
+                      "<posY>15</posY>" +
+                      "<width>315</width>" +
+                      "<height>48</height>" +
                       "<texture>emailbackground.png</texture>" +
                       "<animation effect=\"fade\" time=\"200\" delay=\"100\">WindowOpen</animation>" +
                     "</control>" +
                     "<control>" +
                       "<description>New Email</description>" +
                       "<type>label</type>" +
-                      "<posX>174</posX>" +
-                      "<posY>13</posY>" +
+                      "<posX>261</posX>" +
+                      "<posY>20</posY>" +
                       "<label>#newEmail</label>" +
                       "<font>mediastream11</font>" +
                       "<textcolor>ffffffff</textcolor>" +
@@ -4910,7 +4888,6 @@
           }
         }
       }
-
       
       //
       //Controls to display recent RecordedTV overlay

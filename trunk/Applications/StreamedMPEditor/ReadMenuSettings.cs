@@ -17,18 +17,17 @@ namespace StreamedMPEditor
       string _selectedFont = null;
       string _labelFont = null;
       string activeRssImageType = null;
-      string targetScreenRes = null;
       string tvRecentDisplayType = null;
       string movPicsDisplayType = null;
       string mostRecentSumStyle = null;
       string mostRecentTVSeriesSummStyle = null;
       string mostRecentMovPicsSummStyle = null;
 
-
       int subMenuItems1 = 0;
       int subMenuItems2 = 0;
 
       bool folderUpdateRequired = false;
+      bool updateMenuPostion = false;
 
       itemsOnMenubar.Items.Clear();
 
@@ -61,28 +60,32 @@ namespace StreamedMPEditor
       // Get the version of usermenuprofile
       //
       XmlNode versionControlNode = doc.DocumentElement.SelectSingleNode("/profile/version");
-      string versionNum = null, optionsTag = null, menuTag = null;
+      string versionNum = null;
+      string optionsTag = "StreamedMP Options";
+      string menuTag = "StreamedMP Menu Items";
 
       if (versionControlNode != null)
       {
         versionNum = versionControlNode.InnerText;
       }
+
       switch (versionNum)
       {
+        case "3.0":
+          bgFolderName = "SMPbackgrounds";
+          break;
         case "2.0":
-          optionsTag = "StreamedMP Options";
-          menuTag = "StreamedMP Menu Items";
+          updateMenuPostion = true;
           bgFolderName = "SMPbackgrounds";
           break;
         case "1.0":
-          optionsTag = "StreamedMP Options";
-          menuTag = "StreamedMP Menu Items";
+          updateMenuPostion = true;
           folderUpdateRequired = true;
           if (foldersUpdated())
-            bgFolderName = "SMPbackgrounds";           
+            bgFolderName = "SMPbackgrounds";
           break;
         default:
-          optionsTag = "StreamedMP Options";
+          updateMenuPostion = true;
           menuTag = "Menu Items";
           break;
       }
@@ -180,7 +183,6 @@ namespace StreamedMPEditor
         txtNoFocusColour.Text = defUnFocus;
       }
 
-
       // Line up all the options this also sets the defaults for the style
       // which can be overidden by user settings below
       syncEditor(sync.OnLoad);
@@ -198,12 +200,22 @@ namespace StreamedMPEditor
       {
         weatherStyle = chosenWeatherStyle.bottom;
       }
+
+      string menuPos = "0";
       if (readEntryValue(optionsTag, "menustyle", nodelist) == "verticalStyle")
-        txtMenuPos.Text = readEntryValue(optionsTag, "menuXPos", nodelist);
+      {
+        menuPos = readEntryValue(optionsTag, "menuXPos", nodelist);
+      }
       else
-        txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
+      {
+        menuPos = readEntryValue(optionsTag, "menuYPos", nodelist);
+      }
 
-
+      // update menu position to be compatible with 1920x1080 resolution
+      if (updateMenuPostion)
+        txtMenuPos.Text = Math.Round((Convert.ToDouble(menuPos) * 1.5), MidpointRounding.AwayFromZero).ToString();
+      else
+        txtMenuPos.Text = menuPos;
 
       //
       // Check and set the Global and Plugin options and apply any customization by user
@@ -228,7 +240,6 @@ namespace StreamedMPEditor
         fullWeatherSummaryMiddle.Checked = bool.Parse(readEntryValue(optionsTag, "fullWeatherSummaryMiddle", nodelist));
         activeRssImageType = readEntryValue(optionsTag, "activeRssImageType", nodelist);
         cbDisableClock.Checked = bool.Parse(readEntryValue(optionsTag, "disableOnScreenClock", nodelist));
-        targetScreenRes = readEntryValue(optionsTag, "targetScreenRes", nodelist);
         splashScreenImage = readEntryValue(optionsTag, "splashScreenImage", nodelist);
         cbHideFanartScraper.Checked = bool.Parse(readEntryValue(optionsTag, "hideFanartScrapingtext", nodelist));
         cbOverlayFanart.Checked = bool.Parse(readEntryValue(optionsTag, "enableOverlayFanart", nodelist));
@@ -296,8 +307,6 @@ namespace StreamedMPEditor
           }
         }
       }
-      
-
 
       if (tvSeriesOptions.mrSeriesFont == "mediastream9c")
         tvSeriesOptions.mrSeriesFont = "mediastream10c";
@@ -328,8 +337,6 @@ namespace StreamedMPEditor
       else
         weatherIconsStatic.Checked = true;
 
-
-
       if (!weatherBackgoundsInstalled())
       {
         weatherBGlink.Checked = false;
@@ -352,7 +359,6 @@ namespace StreamedMPEditor
         tvSeriesRecentStyle = tvSeriesRecentType.full;
         rbTBSeriesFull.Checked = true;
         gbSummaryStyle.Enabled = false;
-
       }
 
       if (movPicsDisplayType == "summary")
@@ -419,11 +425,6 @@ namespace StreamedMPEditor
       if (splashScreenImage == "false")
         splashScreenImage = "splashscreen.png";
 
-      if (targetScreenRes == "HD")
-        setHDScreenRes();
-      else if (targetScreenRes == "SD")
-        setSDScreenRes();
-
       switch (activeRssImageType)
       {
         case "infoservice":
@@ -455,20 +456,12 @@ namespace StreamedMPEditor
 
       if (menuStyle == chosenMenuStyle.verticalStyle)
       {
-        txtMenuPos.Text = readEntryValue(optionsTag, "menuXPos", nodelist);
         cbContextLabelBelow.Enabled = true;
       }
       else
       {
-        txtMenuPos.Text = readEntryValue(optionsTag, "menuYPos", nodelist);
         cbContextLabelBelow.Enabled = false;
       }
-
-      //Version isver = new Version("1.6.0.0");
-      //if (getInfoServiceVersion().CompareTo(isver) >= 0)
-      //  infoServiceDayProperty = "forecast";
-      //else
-      //  infoServiceDayProperty = "day";
 
       // Check if Moving Pictures is installed and enabled, if not disable most recent options
       if (MovingPicturesVersion == "0.0.0.0")
@@ -565,7 +558,6 @@ namespace StreamedMPEditor
           subMenuItems1 = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "submenu1", nodelist));
           subMenuItems2 = int.Parse(readEntryValue(menuTag, "menuitem" + i.ToString() + "submenu2", nodelist));
 
-
           if (subMenuItems1 > 0)
           {
             for (int k = 0; k < subMenuItems1; k++)
@@ -654,44 +646,43 @@ namespace StreamedMPEditor
 
               switch (readEntryValue(menuTag, "submenu" + i.ToString() + "2subitem" + k.ToString() + "mrDisplay", nodelist))
               {
-                  case "off":
-                      subItem.showMostRecent = displayMostRecent.off;
-                      break;
-                  case "tvSeries":
-                      subItem.showMostRecent = displayMostRecent.tvSeries;
-                      break;
-                  case "movies":
-                      subItem.showMostRecent = displayMostRecent.movies;
-                      break;
-                  case "music":
-                      subItem.showMostRecent = displayMostRecent.music;
-                      break;
-                  case "recordedTV":
-                      subItem.showMostRecent = displayMostRecent.recordedTV;
-                      break;
-                  case "freeDriveSpace":
-                      subItem.showMostRecent = displayMostRecent.freeDriveSpace;
-                      break;
-                  case "htpcInfo":
-                      subItem.showMostRecent = displayMostRecent.htpcInfo;
-                      break;
-                  case "powerControl":
-                      subItem.showMostRecent = displayMostRecent.powerControl;
-                      break;
-                  case "sleepControl":
-                      subItem.showMostRecent = displayMostRecent.sleepControl;
-                      break;
-                  case "stocks":
-                      subItem.showMostRecent = displayMostRecent.stocks;
-                      break;
-                  case "updateControl":
-                      subItem.showMostRecent = displayMostRecent.updateControl;
-                      break;
+                case "off":
+                  subItem.showMostRecent = displayMostRecent.off;
+                  break;
+                case "tvSeries":
+                  subItem.showMostRecent = displayMostRecent.tvSeries;
+                  break;
+                case "movies":
+                  subItem.showMostRecent = displayMostRecent.movies;
+                  break;
+                case "music":
+                  subItem.showMostRecent = displayMostRecent.music;
+                  break;
+                case "recordedTV":
+                  subItem.showMostRecent = displayMostRecent.recordedTV;
+                  break;
+                case "freeDriveSpace":
+                  subItem.showMostRecent = displayMostRecent.freeDriveSpace;
+                  break;
+                case "htpcInfo":
+                  subItem.showMostRecent = displayMostRecent.htpcInfo;
+                  break;
+                case "powerControl":
+                  subItem.showMostRecent = displayMostRecent.powerControl;
+                  break;
+                case "sleepControl":
+                  subItem.showMostRecent = displayMostRecent.sleepControl;
+                  break;
+                case "stocks":
+                  subItem.showMostRecent = displayMostRecent.stocks;
+                  break;
+                case "updateControl":
+                  subItem.showMostRecent = displayMostRecent.updateControl;
+                  break;
               }
               mnuItem.subMenuLevel2.Add(subItem);
             }
           }
-
         }
 
         disableBGSharing.Checked = mnuItem.disableBGSharing;
@@ -736,7 +727,6 @@ namespace StreamedMPEditor
         menuItems.Add(mnuItem);
       }
       reloadBackgroundItems();
-      //UpdateImageControlVisibility();
       btGenerateMenu.Enabled = true;
 
       if (folderUpdateRequired)
@@ -750,7 +740,6 @@ namespace StreamedMPEditor
 
       try
       {
-
         firstFound = xmlFiles.Items[index].ToString();
 
         index = ids.IndexOf(hyperLink, index + 1);
@@ -789,7 +778,6 @@ namespace StreamedMPEditor
       // Enable most recent Music on Music menu item if not defined
       if (mrOption == "false" && skinId == mvCentralSkinID)
         return displayMostRecent.musicVideos;
-
 
       if (mrOption == displayMostRecent.movies.ToString() || mrOption == "movies")
           return displayMostRecent.movies;
@@ -905,10 +893,8 @@ namespace StreamedMPEditor
       return theIcon;
     }
 
-
     void updateBackgroundFolders()
     {
-
       // Up the location of of the background folders
       // Move from sub folders of animations folder to new background folder.
       // get list of folders to move
@@ -945,7 +931,6 @@ namespace StreamedMPEditor
         copyDirectory(fromDir, toDir);
         Directory.Delete(fromDir, true);
       }
-
 
       // directories moved - update menu image directory to point at new dir
       bgFolderName = "SMPBackgrounds";
@@ -989,7 +974,6 @@ namespace StreamedMPEditor
       }
     }
 
-
     bool foldersUpdated()
     {
       // Ok, quick check to see if the folder have already moved but the usermenuprofile
@@ -1000,7 +984,6 @@ namespace StreamedMPEditor
       else
         return false;
     }
-
   }
 }
 

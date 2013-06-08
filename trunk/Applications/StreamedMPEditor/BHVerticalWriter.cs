@@ -9,7 +9,6 @@ namespace StreamedMPEditor
 {
   public partial class formStreamedMpEditor
   {
-
     void writeVerticalMenu(int i, menuItem menItem, ref StringBuilder rawXML)
     {
       string acceleration = tbAcceleration.Text;
@@ -31,18 +30,18 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<type>button</type>");
           rawXML.AppendLine("<id>" + (menItem.id + 700).ToString() + "</id>");
           rawXML.AppendLine("<posX>0</posX>");
-          rawXML.AppendLine("<posY>-30</posY>");
+          rawXML.AppendLine("<posY>-45</posY>");
           rawXML.AppendLine("<label>" + menItem.name + "</label>");
 
           if (menItem.isDefault)
           {
-            rawXML.AppendLine("<width>1280</width>");
-            rawXML.AppendLine("<height>720</height>");
+            rawXML.AppendLine("<width>1920</width>");
+            rawXML.AppendLine("<height>1080</height>");
           }
           else
           {
-            rawXML.AppendLine("<width>320</width>");
-            rawXML.AppendLine("<height>72</height>");
+            rawXML.AppendLine("<width>480</width>");
+            rawXML.AppendLine("<height>108</height>");
           }
 
           rawXML.AppendLine("<textureFocus>-</textureFocus>");
@@ -108,7 +107,7 @@ namespace StreamedMPEditor
               else
                 rawXML.AppendLine("<onleft>7777</onleft>");
             }
-            }
+          }
           else
           {
             if (!cbExitStyleNew.Checked)
@@ -145,10 +144,10 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<type>button</type>");
           rawXML.AppendLine("<id>" + (menItem.id + 800).ToString() + "</id>");
           rawXML.AppendLine("<posX>0</posX>");
-          rawXML.AppendLine("<posY>-30</posY>");
+          rawXML.AppendLine("<posY>-45</posY>");
           rawXML.AppendLine("<label>" + menItem.name + "</label>");
-          rawXML.AppendLine("<width>320</width>");
-          rawXML.AppendLine("<height>72</height>");
+          rawXML.AppendLine("<width>480</width>");
+          rawXML.AppendLine("<height>108</height>");
           rawXML.AppendLine("<textureFocus>-</textureFocus>");
           rawXML.AppendLine("<textureNoFocus>-</textureNoFocus>");
 
@@ -241,40 +240,16 @@ namespace StreamedMPEditor
           break;
 
         case 2:
-          //rawXML.AppendLine("<control>");
-          //rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
-          //rawXML.AppendLine("<type>label</type>");
-          //rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-          //rawXML.AppendLine("<posY>-24</posY>");
-          //rawXML.AppendLine("<width>500</width>");
-          //rawXML.AppendLine("<height>72</height>");
-          //rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
-          //rawXML.AppendLine("<font>#labelFont</font>");
-          //rawXML.AppendLine("<align>right</align>");
-          //rawXML.AppendLine("<label>" + menItem.name + "</label>");
-
-          //if (menuItems.IndexOf(menItem) + 3 == menuItems.Count + 1)
-          //  rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[0].id + 700).ToString() + ")</visible>");
-          //else if (menuItems.IndexOf(menItem) + 3 == menuItems.Count + 2)
-          //  rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[1].id + 700).ToString() + ")</visible>");
-          //else if (menuItems.IndexOf(menItem) + 3 == menuItems.Count + 3)
-          //  rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[2].id + 700).ToString() + ")</visible>");
-          //else
-          //  rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 701).ToString() + ")</visible>");
-
-          //rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-          //rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          //rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,118" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
-          //rawXML.AppendLine("</control>");
           break;
+
         case 3:
           rawXML.AppendLine("<control>");
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-          rawXML.AppendLine("<posY>542</posY>");
-          rawXML.AppendLine("<width>500</width>");
-          rawXML.AppendLine("<height>72</height>");
+          rawXML.AppendLine("<posY>813</posY>");
+          rawXML.AppendLine("<width>750</width>");
+          rawXML.AppendLine("<height>108</height>");
           rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
           rawXML.AppendLine("<font>#labelFont</font>");
           rawXML.AppendLine("<align>right</align>");
@@ -287,9 +262,9 @@ namespace StreamedMPEditor
           else
             rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 698).ToString() + ")</visible>");
 
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,100" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,150" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
           rawXML.AppendLine("</control>");
           break;
         case 4:
@@ -297,9 +272,9 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-          rawXML.AppendLine("<posY>442</posY>");
-          rawXML.AppendLine("<width>500</width>");
-          rawXML.AppendLine("<height>72</height>");
+          rawXML.AppendLine("<posY>663</posY>");
+          rawXML.AppendLine("<width>750</width>");
+          rawXML.AppendLine("<height>108</height>");
           rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
           rawXML.AppendLine("<font>#labelFont</font>");
           rawXML.AppendLine("<align>right</align>");
@@ -310,9 +285,9 @@ namespace StreamedMPEditor
           else
             rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 699).ToString() + ")</visible>");
 
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,100" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,150" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
           rawXML.AppendLine("</control>");
           break;
         case 5:
@@ -320,17 +295,17 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-          rawXML.AppendLine("<posY>342</posY>");
-          rawXML.AppendLine("<width>500</width>");
-          rawXML.AppendLine("<height>72</height>");
+          rawXML.AppendLine("<posY>513</posY>");
+          rawXML.AppendLine("<width>750</width>");
+          rawXML.AppendLine("<height>108</height>");
           rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
           rawXML.AppendLine("<font>#selectedFont</font>");
           rawXML.AppendLine("<align>right</align>");
           rawXML.AppendLine("<label>" + menItem.name + "</label>");
           rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")</visible>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,100" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,150" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
           rawXML.AppendLine("</control>");
           break;
         case 6:
@@ -338,9 +313,9 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-          rawXML.AppendLine("<posY>242</posY>");
-          rawXML.AppendLine("<width>500</width>");
-          rawXML.AppendLine("<height>72</height>");
+          rawXML.AppendLine("<posY>363</posY>");
+          rawXML.AppendLine("<width>750</width>");
+          rawXML.AppendLine("<height>108</height>");
           rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
           rawXML.AppendLine("<font>#labelFont</font>");
           rawXML.AppendLine("<align>right</align>");
@@ -351,9 +326,9 @@ namespace StreamedMPEditor
           else
             rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 701).ToString() + ")</visible>");
 
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,100" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,150" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
           rawXML.AppendLine("</control>");
           break;
         case 7:
@@ -361,9 +336,9 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-          rawXML.AppendLine("<posY>142</posY>");
-          rawXML.AppendLine("<width>500</width>");
-          rawXML.AppendLine("<height>72</height>");
+          rawXML.AppendLine("<posY>213</posY>");
+          rawXML.AppendLine("<width>750</width>");
+          rawXML.AppendLine("<height>108</height>");
           rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
           rawXML.AppendLine("<font>#labelFont</font>");
           rawXML.AppendLine("<align>right</align>");
@@ -376,9 +351,9 @@ namespace StreamedMPEditor
           else
             rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 702).ToString() + ")</visible>");
 
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,100" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,150" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
           rawXML.AppendLine("</control>");
           break;
         case 8:
@@ -386,9 +361,9 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-          rawXML.AppendLine("<posY>-24</posY>");
-          rawXML.AppendLine("<width>500</width>");
-          rawXML.AppendLine("<height>72</height>");
+          rawXML.AppendLine("<posY>-36</posY>");
+          rawXML.AppendLine("<width>750</width>");
+          rawXML.AppendLine("<height>108</height>");
           rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
           rawXML.AppendLine("<font>#labelFont</font>");
           rawXML.AppendLine("<align>right</align>");
@@ -403,9 +378,9 @@ namespace StreamedMPEditor
           else
             rawXML.AppendLine("<visible>Control.HasFocus(" + ((menItem.id + 800) - 3).ToString() + ")</visible>");
 
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,-118" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,-177" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
           rawXML.AppendLine("</control>");
           break;
         case 9:
@@ -413,9 +388,9 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-          rawXML.AppendLine("<posY>542</posY>");
-          rawXML.AppendLine("<width>500</width>");
-          rawXML.AppendLine("<height>72</height>");
+          rawXML.AppendLine("<posY>813</posY>");
+          rawXML.AppendLine("<width>750</width>");
+          rawXML.AppendLine("<height>108</height>");
           rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
           rawXML.AppendLine("<font>#labelFont</font>");
           rawXML.AppendLine("<align>right</align>");
@@ -428,9 +403,9 @@ namespace StreamedMPEditor
           else
             rawXML.AppendLine("<visible>Control.HasFocus(" + ((menItem.id + 800) - 2).ToString() + ")</visible>");
 
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,-100" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,-150" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
           rawXML.AppendLine("</control>");
           break;
         case 10:
@@ -438,9 +413,9 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-          rawXML.AppendLine("<posY>442</posY>");
-          rawXML.AppendLine("<width>500</width>");
-          rawXML.AppendLine("<height>72</height>");
+          rawXML.AppendLine("<posY>663</posY>");
+          rawXML.AppendLine("<width>750</width>");
+          rawXML.AppendLine("<height>108</height>");
           rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
           rawXML.AppendLine("<font>#labelFont</font>");
           rawXML.AppendLine("<align>right</align>");
@@ -451,9 +426,9 @@ namespace StreamedMPEditor
           else
             rawXML.AppendLine("<visible>Control.HasFocus(" + ((menItem.id + 800) - 1).ToString() + ")</visible>");
 
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,-100" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,-150" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
           rawXML.AppendLine("</control>");
           break;
         case 11:
@@ -461,17 +436,17 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-          rawXML.AppendLine("<posY>342</posY>");
-          rawXML.AppendLine("<width>500</width>");
-          rawXML.AppendLine("<height>72</height>");
+          rawXML.AppendLine("<posY>513</posY>");
+          rawXML.AppendLine("<width>750</width>");
+          rawXML.AppendLine("<height>108</height>");
           rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
           rawXML.AppendLine("<font>#selectedFont</font>");
           rawXML.AppendLine("<align>right</align>");
           rawXML.AppendLine("<label>" + menItem.name + "</label>");
           rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 800).ToString() + ")</visible>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,-100" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,-150" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
           rawXML.AppendLine("</control>");
           break;
         case 12:
@@ -479,9 +454,9 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-          rawXML.AppendLine("<posY>242</posY>");
-          rawXML.AppendLine("<width>500</width>");
-          rawXML.AppendLine("<height>72</height>");
+          rawXML.AppendLine("<posY>363</posY>");
+          rawXML.AppendLine("<width>750</width>");
+          rawXML.AppendLine("<height>108</height>");
           rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
           rawXML.AppendLine("<font>#labelFont</font>");
           rawXML.AppendLine("<align>right</align>");
@@ -492,9 +467,9 @@ namespace StreamedMPEditor
           else
             rawXML.AppendLine("<visible>Control.HasFocus(" + ((menItem.id + 800) + 1).ToString() + ")</visible>");
 
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,-100" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,-150" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
           rawXML.AppendLine("</control>");
           break;
         case 13:
@@ -502,9 +477,9 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<description>" + menItem.name + i.ToString() + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
-          rawXML.AppendLine("<posY>142</posY>");
-          rawXML.AppendLine("<width>500</width>");
-          rawXML.AppendLine("<height>72</height>");
+          rawXML.AppendLine("<posY>213</posY>");
+          rawXML.AppendLine("<width>750</width>");
+          rawXML.AppendLine("<height>108</height>");
           rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
           rawXML.AppendLine("<font>#labelFont</font>");
           rawXML.AppendLine("<align>right</align>");
@@ -517,9 +492,9 @@ namespace StreamedMPEditor
           else
             rawXML.AppendLine("<visible>Control.HasFocus(" + ((menItem.id + 800) + 2).ToString() + ")</visible>");
 
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-400,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-400,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + " 400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,-100" + quote + " time=" + quote + " 250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "-600,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowClose</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "0,-150" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.4" + quote + " reversible=" + quote + "false" + quote + ">Visible</animation>");
           rawXML.AppendLine("</control>");
           break;
       }

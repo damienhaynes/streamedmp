@@ -63,7 +63,6 @@ namespace StreamedMPEditor
         else
           cboxMRMovieTitle.SelectedIndex = cboxMRMovieTitle.Items.IndexOf("mediastream10c");
       }
-
     }
 
     public string MovieDetailFont
@@ -85,12 +84,9 @@ namespace StreamedMPEditor
       }
     }
 
-
     private void btSaveAndExit_Click(object sender, EventArgs e)
     {
       this.Hide();
     }
-
-
   }
 }

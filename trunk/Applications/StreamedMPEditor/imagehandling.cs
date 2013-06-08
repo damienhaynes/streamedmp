@@ -24,7 +24,6 @@ namespace StreamedMPEditor
     int totalImages = 0;
     int pBoxElement = 0;
 
-
     private void GetDefaultBackgroundImages()
     {
       Image workingImage = null;
@@ -32,7 +31,6 @@ namespace StreamedMPEditor
       Label[] bgCount = new Label[bgItems.Count];
       Button[] bgButtons = new Button[bgItems.Count];
       ToolTip labelsToolTip;
-
 
       for (int i = 0; i < 48; i++)
         defImgs.picBoxes[i] = null;
@@ -50,8 +48,6 @@ namespace StreamedMPEditor
       defaultBackgrounds.Controls.Clear();
       fileResults.Clear();
 
-
-
       //
       // Set the default base directory for backgrounds (need to work out how to handle custom directories)
       //
@@ -59,7 +55,6 @@ namespace StreamedMPEditor
       int bg_item_count = 1;
       foreach (backgroundItem bgItem in bgItems)
       {
-
         if (bgItem.fanartHandlerEnabled)
           continue;
 
@@ -84,18 +79,16 @@ namespace StreamedMPEditor
         }
         totalImages = fileResults.Count();
 
-
-
-
-        //totalImages = Directory.GetFiles(Path.GetDirectoryName(imageDir(bgItem.image))).Length;
-        //if (totalImages > 1)
-        //    totalImages--;
         string dirParent = Path.GetDirectoryName(imageDir(bgItem.image));
         SkinInfo.mpPaths.fanartBasePath = dirParent;
 
-        workingImage = Image.FromFile(imageDir(bgItem.image));
-        newPBox.Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
-        workingImage.Dispose();
+        string img = imageDir(bgItem.image);
+        if (File.Exists(img))
+        {
+          workingImage = Image.FromFile(img);
+          newPBox.Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
+          workingImage.Dispose();
+        }
 
         defImgs.picBoxes[pBoxElement] = newPBox;
         defaultBackgrounds.Controls.Add(defImgs.picBoxes[pBoxElement]);
@@ -123,11 +116,10 @@ namespace StreamedMPEditor
         bgLabels[pBoxElement] = newBGlabel;
         defaultBackgrounds.Controls.Add(bgLabels[pBoxElement]);
 
-        //Create numbe of files label
+        //Create number of files label
         newBGCount.Location = new Point(xPos, (yPos + 82));
         newBGCount.Size = new Size(160, 15);
         newBGCount.Text = "Images Available: " + (totalImages).ToString();
-        //newBGCount.Font = new Font(newBGCount.Font, FontStyle.Bold);
         bgCount[pBoxElement] = newBGCount;
         defaultBackgrounds.Controls.Add(bgCount[pBoxElement]);
 
@@ -164,13 +156,11 @@ namespace StreamedMPEditor
           defaultBackgrounds.AutoScroll = true;
       }
 
-
       // Configure the Panel
       selectPanel.Size = new Size(756, 120);
       selectPanel.Location = new Point(12, 101);
       selectPanel.BackColor = Color.White;
       selectPanel.BorderStyle = BorderStyle.FixedSingle;
-
 
       //Configure the 3 PictureBox Controls
       xPos = 70;
@@ -306,8 +296,7 @@ namespace StreamedMPEditor
       if (fromFile != defaultFile)
       {
         imageReset(true);
-        //File.Delete(defaultFile);
-        //File.Copy(fromFile, defaultFile, true);
+
         int i = 0;
         foreach (menuItem menItem in menuItems)
         {
@@ -323,7 +312,6 @@ namespace StreamedMPEditor
             else
             {
               // This is a shared or possible shared background so we need to set the default image selected
-
               if (defaultIsCopy(defaultFile))
                 File.Delete(defaultFile);
               else
@@ -339,12 +327,10 @@ namespace StreamedMPEditor
           i++;
         }
         reloadBackgroundItems();
-
       }
       else
         imageReset(true);
     }
-
 
     private bool defaultIsCopy(string fileToCheck)
     {
@@ -413,7 +399,6 @@ namespace StreamedMPEditor
               defImgs.NewPicBoxes[i].Image = workingImage.GetThumbnailImage(160, 80, null, new IntPtr());
               defImgs.NewPicBoxes[i].Visible = true;
               workingImage.Dispose();
-
             }
             else
             {
@@ -469,8 +454,8 @@ namespace StreamedMPEditor
 
     private void createDefaultJpg(string imageDir)
     {
-      // Check if there is defult.jog already and exit if there is
-      if (System.IO.File.Exists(Path.Combine(imageDir,"default.jpg")))
+      // Check if there is default.jpg already and exit if there is
+      if (File.Exists(Path.Combine(imageDir, "default.jpg")))
         return;
 
       // Check if there is a trailing backslash
@@ -478,11 +463,15 @@ namespace StreamedMPEditor
       {
         imageDir += @"\";
       }
-      // Take the first file in the directoy and copy to default.jpg (overwriteing existing)
-      string sourceImgFile = getFileListing(imageDir, "*.*", true)[0];
-      System.IO.File.Copy(sourceImgFile, imageDir + "default.jpg", true);
-      // Delete the Source file
-      System.IO.File.Delete(sourceImgFile);
+      // Take the first file in the directory and copy to default.jpg (overwriting existing)
+      var fileListing = getFileListing(imageDir, "*.*", true);
+      if (fileListing.Count() > 0)
+      {
+        string sourceImgFile = fileListing.First();
+        File.Copy(sourceImgFile, imageDir + "default.jpg", true);
+        // Delete the Source file
+        File.Delete(sourceImgFile);
+      }
     }
 
     private string imageDir(string image)
@@ -491,7 +480,6 @@ namespace StreamedMPEditor
         return SkinInfo.mpPaths.streamedMPpath + "media\\" + image;
       else
         return image;
-
     }
 
     public string[] getFileListing(string imageDir, string fileMask, bool imagelisting)
@@ -500,6 +488,8 @@ namespace StreamedMPEditor
       totalImages = 0;
       fileResults.Clear();
       DirectoryInfo dInfo = new DirectoryInfo(imageDir);
+      if (!dInfo.Exists) return fileResults.ToArray();
+
       //get list of files from directory
       foreach (FileInfo fInfo in dInfo.GetFiles(fileMask))
       {
@@ -541,8 +531,7 @@ namespace StreamedMPEditor
       else
       {
         //Convert each image to a byte array
-        System.Drawing.ImageConverter ic =
-               new System.Drawing.ImageConverter();
+        ImageConverter ic = new ImageConverter();
         byte[] btImage1 = new byte[1];
         btImage1 = (byte[])ic.ConvertTo(bmp1, btImage1.GetType());
         byte[] btImage2 = new byte[1];
@@ -554,8 +543,7 @@ namespace StreamedMPEditor
         byte[] hash2 = shaM.ComputeHash(btImage2);
 
         //Compare the hash values
-        for (int i = 0; i < hash1.Length && i < hash2.Length
-                          && cr == CompareResult.ciCompareOk; i++)
+        for (int i = 0; i < hash1.Length && i < hash2.Length && cr == CompareResult.ciCompareOk; i++)
         {
           if (hash1[i] != hash2[i])
             cr = CompareResult.ciPixelMismatch;
