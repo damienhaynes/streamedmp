@@ -15,7 +15,6 @@ using System.Net;
 using System.Threading;
 using ICSharpCode.SharpZipLib.Zip;
 
-
 namespace StreamedMPEditor
 {
   public partial class formStreamedMpEditor
@@ -39,7 +38,6 @@ namespace StreamedMPEditor
       }
     }
 
-
     private void checkSplashScreens()
     {
       if (!splashScreensInstalled)
@@ -59,7 +57,6 @@ namespace StreamedMPEditor
       }
     }
 
-
     private void GetSplashScreens()
     {
       if (!splashScreensInstalled) return;
@@ -69,7 +66,6 @@ namespace StreamedMPEditor
       btSplashNext.Enabled = true;
       btSplashPrev.Enabled = true;
       btSplashSelect.Enabled = true;
-
     }
 
     private void displayImage(string imageFile)
@@ -82,7 +78,6 @@ namespace StreamedMPEditor
         toolStripStatusLabel2.Text = "SpashScreen Image " + (imagePos + 1).ToString() + " of " + numOfImages.ToString() + "   " + "[" + Path.GetFileName(imageFile) + "]";
       }
     }
-
 
     private void btSplashPrev_Click(object sender, EventArgs e)
     {
@@ -153,7 +148,6 @@ namespace StreamedMPEditor
 
     private void userConfirmation()
     {
-
       if (Properties.Settings.Default.hideSplashConfirm)
       {
         return;
@@ -178,7 +172,6 @@ namespace StreamedMPEditor
       btOk.Location = new System.Drawing.Point(310, 65);
       btOk.Click += new System.EventHandler(btOk_Click);
       userConfirm.Controls.Add(btOk);
-
 
       cbShowAgain.Text = "Do not show this message again";
       cbShowAgain.AutoSize = true;

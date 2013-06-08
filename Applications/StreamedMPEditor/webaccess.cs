@@ -11,7 +11,6 @@ namespace StreamedMPEditor
 {
   public partial class formStreamedMpEditor
   {
-
     private Thread theDownload;
     private Stream strResponse;
     private Stream strLocal;
@@ -57,7 +56,6 @@ namespace StreamedMPEditor
       downloadForm.Enabled = false;
     }
 
-
     private void installAnimatedIcons_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
       if (!downloadActive)
@@ -73,7 +71,7 @@ namespace StreamedMPEditor
       }
       else
       {
-        DialogResult result = helper.showError("Please wait till current download has finished before contining", errorCode.info);
+        DialogResult result = helper.showError("Please wait until current download has finished before contining", errorCode.info);
         downloadForm.BringToFront();
       }
     }
@@ -93,12 +91,11 @@ namespace StreamedMPEditor
       }
       else
       {
-        DialogResult result = helper.showError("Please wait till current download has finished before contining", errorCode.info);
+        DialogResult result = helper.showError("Please wait until current download has finished before contining", errorCode.info);
         downloadForm.BringToFront();
       }
     }
 
-    
     private void Download()
     {
       downloadActive = true;
@@ -146,7 +143,6 @@ namespace StreamedMPEditor
 
     private void downloadStop_Click(object sender, EventArgs e)
     {
-      
       webResponse.Close();
       strResponse.Close();
       strLocal.Close();
@@ -159,16 +155,16 @@ namespace StreamedMPEditor
         WeatherIconsAnimated.Text = "Animated (Not Installed)";
         installAnimatedIcons.Visible = true;
       }
-      System.IO.File.Delete(optionDownloadPath);
+      File.Delete(optionDownloadPath);
     }
 
     private void extractAndCleanup()
     {
-      if (System.IO.File.Exists(optionDownloadPath))
+      if (File.Exists(optionDownloadPath))
       {
         FastZip fz = new FastZip();
         fz.ExtractZip(optionDownloadPath, destinationPath, "");
-        System.IO.File.Delete(optionDownloadPath);
+        File.Delete(optionDownloadPath);
         updateBackgroundFolders();
       }
 

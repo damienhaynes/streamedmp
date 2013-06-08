@@ -35,7 +35,6 @@ namespace StreamedMPEditor
           if (!lboxSelectedDrives.Items.Contains(driveToAdd))
             lboxAvailableDrives.Items.Add(driveToAdd);
         }
-
       }
       else
       {
@@ -46,7 +45,6 @@ namespace StreamedMPEditor
         }
       }
     }
-
 
     void addDriveDetails(string hdName)
     {
@@ -125,7 +123,6 @@ namespace StreamedMPEditor
       {
         return string.Empty;
       }
-
     }
 
     private void btSaveAndClose_Click(object sender, EventArgs e)

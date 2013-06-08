@@ -12,7 +12,6 @@ namespace StreamedMPEditor
 {
   public partial class getButtonTexture : Form
   {
-
     List<string> iconFiles = new List<string>();
     Image workingImage = null;
     Image boarderImage = null;

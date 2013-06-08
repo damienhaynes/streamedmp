@@ -18,7 +18,6 @@ namespace StreamedMPEditor
 
     #region Variables
 
-    //public StreamedMPEditor.formStreamedMpEditor.overlaySelectedState ovss = new formStreamedMpEditor.overlaySelectedState();
     static mostRecentDisplaySelection mrDisplaySelection = new mostRecentDisplaySelection();
 
     List<string> rawXMLFileNames = new List<string>();
@@ -135,7 +134,6 @@ namespace StreamedMPEditor
 
     private void lboxXMLSkinFiles_MouseDown(object sender, MouseEventArgs e)
     {
-
       if (lboxXMLSkinFiles.Items.Count == 0)
         return;
 
@@ -269,6 +267,7 @@ namespace StreamedMPEditor
 
     private void lboxXMLSkinFiles_Click(object sender, EventArgs e)
     {
+
     }
 
     void displayItemInfo()
@@ -355,7 +354,6 @@ namespace StreamedMPEditor
           break;
       }
     }
-
     
     private void lboxSubMenuLevel1_MouseDoubleClick(object sender, MouseEventArgs e)
     {
@@ -407,10 +405,10 @@ namespace StreamedMPEditor
             itemProperties.movingPicturesHyperlinkParmeter = subMenuLevel1[index].hyperlinkParameter;
             break;
         }
+
         itemProperties.BaseName = subMenuLevel1[index].baseDisplayName;
         itemProperties.initialIndex = index;
         itemProperties.ShowDialog();
-
 
         if (itemProperties.DisplayName != subMenuLevel1[index].displayName)
         {
@@ -732,9 +730,8 @@ namespace StreamedMPEditor
         mrDisplaySelection.mrToDisplay = subMenuLevel2[lboxSubMenuLevel2.SelectedIndex].showMostRecent;
         mrDisplaySelection.ShowDialog();
         subMenuLevel2[lboxSubMenuLevel2.SelectedIndex].showMostRecent = mrDisplaySelection.mrToDisplay;
-      };
+      }
     }
-
 
     static void setEnabledState()
     {
@@ -750,7 +747,6 @@ namespace StreamedMPEditor
       mrDisplaySelection.setEnableState(formStreamedMpEditor.displayMostRecent.tvSeries, StreamedMPEditor.formStreamedMpEditor.ovss.TVSeries);
       mrDisplaySelection.setEnableState(formStreamedMpEditor.displayMostRecent.updateControl, StreamedMPEditor.formStreamedMpEditor.ovss.UpdateControl);
     }
-
 
     private void btSaveAndClose_Click(object sender, EventArgs e)
     {

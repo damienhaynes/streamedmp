@@ -20,7 +20,7 @@ namespace StreamedMPEditor
       {
         try
         {
-          if (file.StartsWith("common") == false && file.Contains("Dialog") == false && file.Contains("dialog") == false && file.Contains("wizard") == false && file.Contains("xml.backup") == false)
+          if (file.StartsWith("common") == false && file.ToLowerInvariant().Contains("dialog") == false && file.Contains("wizard") == false && file.Contains("xml.backup") == false)
           {
             XmlDocument doc = new XmlDocument();
             doc.Load(file);
@@ -99,7 +99,6 @@ namespace StreamedMPEditor
         // Dont Add item if its not available
         if (ids.Contains(pItem.id))
           formStreamedMpEditor.prettyItems.Add(pItem);
-      
       }
     }
 
@@ -143,14 +142,12 @@ namespace StreamedMPEditor
         return true;
     }
 
-
     public string fileVersion(string fileToCheck)
     {
       if (File.Exists(fileToCheck))
       {
         FileVersionInfo fv = FileVersionInfo.GetVersionInfo(fileToCheck);
         return fv.FileVersion;
-        
       }
       else
         return "0.0.0.0";
@@ -420,12 +417,9 @@ namespace StreamedMPEditor
             this.filename = Path.Combine(SkinInfo.mpPaths.pluginPath, @"windows\WorldWeather.dll");
             this.name = "World Weather";
             break;
- 
         }
       }
     }
-
     #endregion
-
   }
 }

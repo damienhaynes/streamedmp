@@ -15,15 +15,13 @@ using System.Net;
 using System.Threading;
 using ICSharpCode.SharpZipLib.Zip;
 
-
 namespace StreamedMPEditor
 {
   public partial class formStreamedMpEditor
   {
-
     private void useSkinWeatherIcons_Click(object sender, EventArgs e)
     {
-      if (!System.IO.File.Exists(SkinInfo.mpPaths.sMPbaseDir + "\\Weather\\128x128.zip"))
+      if (!File.Exists(SkinInfo.mpPaths.sMPbaseDir + "\\Weather\\128x128.zip"))
       {
         zipIcons(SkinInfo.mpPaths.sMPbaseDir + "\\Weather\\128x128.zip", SkinInfo.mpPaths.sMPbaseDir + "\\Weather\\128x128");
         deleteIcons(SkinInfo.mpPaths.sMPbaseDir + "\\Weather\\128x128");
@@ -52,20 +50,20 @@ namespace StreamedMPEditor
     {
       string[] files = Directory.GetFiles(fromDirectory);
       foreach (string file in files)
-        System.IO.File.Delete(file);
+        File.Delete(file);
     }
 
     private void copyInIcons(string fromHere, string toHere)
     {
       string[] files = Directory.GetFiles(fromHere);
       foreach (string file in files)
-        System.IO.File.Copy(file, toHere + "\\" + Path.GetFileName(file), true);
+        File.Copy(file, toHere + "\\" + Path.GetFileName(file), true);
     }
     private void unzipIcons(string zipName, string filesToUnzip)
     {
       FastZip fz = new FastZip();
       fz.ExtractZip(zipName, filesToUnzip, "");
-      System.IO.File.Delete(zipName);
+      File.Delete(zipName);
     }
   }
 }

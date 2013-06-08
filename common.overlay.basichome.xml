@@ -73,9 +73,9 @@
       <description>dialog bg</description>
       <type>image</type>
       <id>0</id>
-      <posX>1147</posX>
+      <posX>1148</posX>
       <posY>810</posY>
-      <width>778</width>
+      <width>779</width>
       <height>228</height>
       <texture>dialogprogressbg.png</texture>
       <visible>player.hasmedia+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)+!control.isvisible(6767) + string.equals(#StreamedMP.VideoWallpaper,false)</visible>
@@ -85,7 +85,7 @@
       <description>PICTURES NOW PLAYING BACKGROUND 1</description>
       <id>0</id>
       <type>image</type>
-      <posX>1485</posX>
+      <posX>1486</posX>
       <posY>837</posY>
       <width>405</width>
       <height>171</height>
@@ -97,7 +97,7 @@
       <description>PICTURES NOW PLAYING BACKGROUND 2</description>
       <id>0</id>
       <type>image</type>
-      <posX>1485</posX>
+      <posX>1486</posX>
       <posY>837</posY>
       <width>405</width>
       <height>171</height>
@@ -109,7 +109,7 @@
       <description>Overlay Mask</description>
       <id>0</id>
       <type>image</type>
-      <posX>1174</posX>
+      <posX>1175</posX>
       <posY>837</posY>
       <width>768</width>
       <height>171</height>
@@ -122,7 +122,7 @@
       <description>music logo</description>
       <type>image</type>
       <id>0</id>
-      <posX>1174</posX>
+      <posX>1175</posX>
       <posY>837</posY>
       <width>171</width>
       <height>171</height>
@@ -136,7 +136,7 @@
       <description>music logo</description>
       <type>image</type>
       <id>7220</id>
-      <posX>1174</posX>
+      <posX>1175</posX>
       <posY>837</posY>
       <width>171</width>
       <height>171</height>
@@ -150,7 +150,7 @@
       <description>music logo</description>
       <type>image</type>
       <id>7230</id>
-      <posX>1174</posX>
+      <posX>1175</posX>
       <posY>837</posY>
       <width>171</width>
       <height>171</height>
@@ -164,7 +164,7 @@
       <description>Music logo Animation</description>
       <type>animation</type>
       <id>7210</id>
-      <posX>1174</posX>
+      <posX>1175</posX>
       <posY>837</posY>
       <width>171</width>
       <height>171</height>
@@ -180,8 +180,8 @@
       <description>Selectable Button</description>
       <type>button</type>
       <id>17011</id>
-      <posX>1167</posX>
-      <posY>829</posY>
+      <posX>1168</posX>
+      <posY>830</posY>
       <width>186</width>
       <height>186</height>
       <textureFocus>thumbborder5.png</textureFocus>
@@ -201,8 +201,8 @@
       <id>0</id>
       <width>510</width>
       <height>60</height>
-      <posX>1362</posX>
-      <posY>844</posY>
+      <posX>1363</posX>
+      <posY>845</posY>
       <label>#Play.Current.Artist</label>
       <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
@@ -217,7 +217,7 @@
       <id>0</id>
       <width>510</width>
       <height>60</height>
-      <posX>1362</posX>
+      <posX>1363</posX>
       <posY>876</posY>
       <label>#Play.Current.Title</label>
       <align>left</align>
@@ -233,8 +233,8 @@
       <id>0</id>
       <width>510</width>
       <height>60</height>
-      <posX>1362</posX>
-      <posY>904</posY>
+      <posX>1363</posX>
+      <posY>905</posY>
       <label>#Play.Current.Album</label>
       <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
@@ -249,8 +249,8 @@
       <id>0</id>
       <width>510</width>
       <height>60</height>
-      <posX>1362</posX>
-      <posY>931</posY>
+      <posX>1363</posX>
+      <posY>932</posY>
       <align>left</align>
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
@@ -259,12 +259,12 @@
     </control>
     <control>
       <description>next song label</description>
-      <type>fadelabel</type>
+      <type>label</type>
       <id>0</id>
       <width>63</width>
       <height>60</height>
-      <posX>1362</posX>
-      <posY>970</posY>
+      <posX>1363</posX>
+      <posY>971</posY>
       <label>Next</label>
       <textcolor>FF025984</textcolor>
       <font>mediastream10</font>
@@ -275,8 +275,8 @@
       <description>next song info label</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>1417</posX>
-      <posY>970</posY>
+      <posX>1418</posX>
+      <posY>971</posY>
       <width>450</width>
       <height>60</height>
       <label>: #Play.Next.Title by #Play.Next.Artist</label>
@@ -292,9 +292,9 @@
       <description>video preview window BACKGROUND</description>
       <type>button</type>
       <id>17</id>
-      <posX>1174</posX>
-      <posY>835</posY>
-      <width>304</width>
+      <posX>1175</posX>
+      <posY>836</posY>
+      <width>305</width>
       <height>174</height>
       <textureFocus>video_window_focus.png</textureFocus>
       <textureNoFocus>-</textureNoFocus>
@@ -309,10 +309,10 @@
       <description>video preview window</description>
       <type>videowindow</type>
       <id>99</id>
-      <posX>1186</posX>
-      <posY>847</posY>
+      <posX>1187</posX>
+      <posY>848</posY>
       <width>270</width>
-      <height>154</height>
+      <height>155</height>
       <textureFocus>tv_blue_border.png</textureFocus>
       <action>18</action>
       <onup>7777</onup>
@@ -325,7 +325,7 @@
       <description>artist info label</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>1497</posX>
+      <posX>1498</posX>
       <posY>840</posY>
       <width>375</width>
       <height>60</height>
@@ -340,7 +340,7 @@
       <description>title info label</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>1497</posX>
+      <posX>1498</posX>
       <posY>867</posY>
       <width>375</width>
       <height>60</height>
@@ -355,7 +355,7 @@
       <description>album info label</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>1497</posX>
+      <posX>1498</posX>
       <posY>906</posY>
       <width>375</width>
       <height>60</height>
@@ -370,7 +370,7 @@
       <description>album info label</description>
       <type>fadelabel</type>
       <id>0</id>
-      <posX>1497</posX>
+      <posX>1498</posX>
       <posY>936</posY>
       <width>375</width>
       <height>60</height>
@@ -385,7 +385,7 @@
       <description>play time / duration label</description>
       <type>label</type>
       <id>0</id>
-      <posX>1497</posX>
+      <posX>1498</posX>
       <posY>966</posY>
       <width>375</width>
       <height>60</height>
@@ -396,4 +396,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:8c9304b8a7c0b7be5e6b400cff98717b-->
+<!--Checksum:1c036e25c12b3d91fe0e8f4d88fdfbdb-->

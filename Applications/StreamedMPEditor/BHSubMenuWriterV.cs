@@ -69,7 +69,6 @@ namespace StreamedMPEditor
         }
       }
 
-
       localxml += "<control>" +
                       "<description>dummy for lateral blade visibility</description>" +
                       "<type>label</type>" +
@@ -84,10 +83,10 @@ namespace StreamedMPEditor
                       "<animation effect=\"fade\" time=\"200\">WindowClose</animation>" +
                       "<animation effect=\"fade\" time=\"200\">visible</animation>" +
                       "<animation effect=\"fade\" time=\"200\">hidden</animation>" +
-                      "<posX>" + (int.Parse(txtMenuPos.Text) - 5).ToString() + "</posX>" +
-                      "<posY>325</posY>" +
-                      "<width>225</width>" +
-                      "<height>405</height>" +
+                      "<posX>" + (int.Parse(txtMenuPos.Text) - 8).ToString() + "</posX>" +
+                      "<posY>488</posY>" +
+                      "<width>338</width>" +
+                      "<height>608</height>" +
                       "<dimColor>ffffffff</dimColor>" +
                       "<layout>StackLayout</layout>";
 
@@ -112,7 +111,7 @@ namespace StreamedMPEditor
                 "<type>button</type>" +
                 "<id>" + (parentMenu.subMenuLevel1ID + (j + 1)).ToString() + "</id>" +
                 "<label>" + parentMenu.subMenuLevel1[j].displayName + "</label>" +
-                "<width>225</width>";
+                "<width>338</width>";
 
         if (parentMenu.subMenuLevel1[j].hyperlink == "196299")
         localxml += "<action>99</action>";
@@ -179,17 +178,17 @@ namespace StreamedMPEditor
       localxml += "<control>" +
                   "<description>Sub Menu Indicator (Main)</description>" +
                   "<type>image</type>" +
-                  "<posX>" + (int.Parse(txtMenuPos.Text) - 27).ToString() + "</posX>" +
-                  "<posY>330</posY>" +
+                  "<posX>" + (int.Parse(txtMenuPos.Text) - 41).ToString() + "</posX>" +
+                  "<posY>495</posY>" +
                   "<align>right</align>" +
-                  "<width>16</width>" +
-                  "<height>16</height>" +
+                  "<width>24</width>" +
+                  "<height>24</height>" +
                   "<visible>" + subArrowVisible + "</visible>" +
                   "<texture>arrowrightfo.png</texture>" +
                   "<colordiffuse>77ffffff</colordiffuse>" +
                   "<animation effect=\"fade\" time=\"400\">Visible</animation>" +
                   "<animation effect=\"fade\" time=\"400\" delay=\"400\">WindowOpen</animation>" +
-                  "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                  "<animation effect=\"slide\" end=\"-600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                   "<animation effect=\"fade\" time=\"400\">WindowClose</animation>" +
               "</control>";
 
@@ -210,17 +209,17 @@ namespace StreamedMPEditor
       localxml += "<control>" +
                   "<description>Sub Menu Indicator (Level1)</description>" +
                   "<type>image</type>" +
-                  "<posX>" + (int.Parse(txtMenuPos.Text) + 195).ToString() + "</posX>" +
-                  "<posY>338</posY>" +
+                  "<posX>" + (int.Parse(txtMenuPos.Text) + 293).ToString() + "</posX>" +
+                  "<posY>507</posY>" +
                   "<align>right</align>" +
-                  "<width>16</width>" +
-                  "<height>16</height>" +
+                  "<width>24</width>" +
+                  "<height>24</height>" +
                   "<visible>" + subArrowVisible + "</visible>" +
                   "<texture>arrowrightfo.png</texture>" +
                   "<colordiffuse>77ffffff</colordiffuse>" +
                   "<animation effect=\"fade\" time=\"400\">Visible</animation>" +
                   "<animation effect=\"fade\" time=\"400\" delay=\"400\">WindowOpen</animation>" +
-                  "<animation effect=\"slide\" end=\"-400,0\" tween=\"quadratic\" easing=\"in\" time=\" 400\" delay=\"200\">WindowClose</animation>" +
+                  "<animation effect=\"slide\" end=\"-600,0\" tween=\"quadratic\" easing=\"in\" time=\"400\" delay=\"200\">WindowClose</animation>" +
                   "<animation effect=\"fade\" time=\"400\">WindowClose</animation>" +
                 "</control>";
       return localxml;
@@ -237,7 +236,6 @@ namespace StreamedMPEditor
           dummyFocusControls += (parentMenu.subMenuLevel1ID + (i + 101)).ToString() + ")";
       }
 
-
       localxml += "<control>" +
                       "<description>dummy for lateral blade visibility</description>" +
                       "<type>label</type>" +
@@ -252,10 +250,10 @@ namespace StreamedMPEditor
                       "<animation effect=\"fade\" time=\"200\">WindowClose</animation>" +
                       "<animation effect=\"fade\" time=\"200\">visible</animation>" +
                       "<animation effect=\"fade\" time=\"200\">hidden</animation>" +
-                      "<posX>" + (int.Parse(txtMenuPos.Text) + 226).ToString() + "</posX>" +
-                      "<posY>325</posY>" +
-                      "<width>225</width>" +
-                      "<height>405</height>" +
+                      "<posX>" + (int.Parse(txtMenuPos.Text) + 339).ToString() + "</posX>" +
+                      "<posY>488</posY>" +
+                      "<width>338</width>" +
+                      "<height>608</height>" +
                       "<dimColor>ffffffff</dimColor>" +
                       "<layout>StackLayout</layout>";
 
@@ -280,7 +278,7 @@ namespace StreamedMPEditor
                 "<type>button</type>" +
                 "<id>" + (parentMenu.subMenuLevel1ID + (j + 101)).ToString() + "</id>" +
                 "<label>" + parentMenu.subMenuLevel2[j].displayName + "</label>" +
-                "<width>225</width>";
+                "<width>338</width>";
 
         if (parentMenu.subMenuLevel2[j].hyperlink == "196299")
           localxml += "<action>99</action>";

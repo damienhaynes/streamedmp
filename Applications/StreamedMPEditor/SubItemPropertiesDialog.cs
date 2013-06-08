@@ -17,7 +17,6 @@ namespace StreamedMPEditor
 {
   public partial class SubItemProperties : Form
   {
-
     public string baseName = null;
     public int initialIndex = -1;
     public int initialMovPicIndex = -1;
@@ -88,7 +87,6 @@ namespace StreamedMPEditor
               gbHyperlinkParameter.Visible = false;
           }
           break;
-
       }      
     }
 
@@ -173,7 +171,6 @@ namespace StreamedMPEditor
       }
     }
 
-
     public string tvseriesHypelinkParameter
     {
       get
@@ -226,6 +223,7 @@ namespace StreamedMPEditor
       {
         if (formStreamedMpEditor.musicViews.Count == 0)
           cboViews.Text = value;
+
         int i = 0;
         foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.musicViews)
         {
@@ -312,7 +310,6 @@ namespace StreamedMPEditor
       }
     }
 
-
     public string MovPicsCategoryText
     {
         set
@@ -346,7 +343,6 @@ namespace StreamedMPEditor
                 return string.Empty;
             }
         }
-
     }
 
     public bool MovPicsCategoryVisibility
@@ -596,6 +592,5 @@ namespace StreamedMPEditor
         }
         catch { }
     }
-
   }
 }
