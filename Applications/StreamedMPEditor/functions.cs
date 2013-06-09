@@ -1842,12 +1842,12 @@ namespace StreamedMPEditor
     public void writeXMLFile(string xmlFileName)
     {
       // Delete any existing file
-      if (System.IO.File.Exists(SkinInfo.mpPaths.streamedMPpath + xmlFileName))
-        System.IO.File.Delete(SkinInfo.mpPaths.streamedMPpath + xmlFileName);
+      if (File.Exists(SkinInfo.mpPaths.streamedMPpath + xmlFileName))
+        File.Delete(SkinInfo.mpPaths.streamedMPpath + xmlFileName);
 
       //Write tempory file
       StreamWriter tmpwriter;
-      tmpwriter = System.IO.File.CreateText(Path.Combine(SkinInfo.mpPaths.streamedMPpath,xmlFileName));
+      tmpwriter = File.CreateText(Path.Combine(SkinInfo.mpPaths.streamedMPpath,xmlFileName));
       tmpwriter.Write(xml);
       tmpwriter.Close();
 
