@@ -3787,7 +3787,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<id>1</id>");
       rawXML.AppendLine("<width>1163</width>");
       rawXML.AppendLine("<height>75</height>");
-      rawXML.AppendLine("<posY>15</posY>");
+      rawXML.AppendLine("<posY>22</posY>");
       rawXML.AppendLine("<posX>263</posX>");
       rawXML.AppendLine("<font>mediastream12tc</font>");
       rawXML.AppendLine("<label>#infoservice.twitter.messages</label>");
@@ -4005,6 +4005,9 @@ namespace StreamedMPEditor
 
       rawXML.AppendLine("\n\t\t<!-- End Of Menu Options -->\n\t\t<section name=" + quote + "StreamedMP Menu Items" + quote + ">");
 
+      subMenuL1Exists = false;
+      subMenuL2Exists = false;
+
       int menuIndex = 0;
       rawXML.AppendLine(generateEntry("count", menuItems.Count.ToString(), 3, false));
       foreach (menuItem menItem in menuItems)
@@ -4058,6 +4061,7 @@ namespace StreamedMPEditor
           }
 
           subCount = 0;
+          
           if (menItem.subMenuLevel2.Count > 0)
           {
             subMenuL2Exists = true;
@@ -4089,14 +4093,14 @@ namespace StreamedMPEditor
 
       xml += rawXML.ToString();
 
-      if (System.IO.File.Exists(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml"))
-        System.IO.File.Copy(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml", SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml.backup." + DateTime.Now.Ticks.ToString());
+      if (File.Exists(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml"))
+        File.Copy(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml", SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml.backup." + DateTime.Now.Ticks.ToString());
 
-      if (System.IO.File.Exists(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml"))
-        System.IO.File.Delete(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml");
+      if (File.Exists(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml"))
+        File.Delete(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml");
 
       StreamWriter writer;
-      writer = System.IO.File.CreateText(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml");
+      writer = File.CreateText(SkinInfo.mpPaths.configBasePath + "usermenuprofile.xml");
       writer.Write(xml);
       writer.Close();
     }

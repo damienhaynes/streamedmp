@@ -206,7 +206,7 @@
                     "<id>0</id>\n" +
                     "<posX>1530</posX>\n" +
                     "<posY>147</posY>\n" +
-                    "<width>387</width>\n" +
+                    "<width>373</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.series1.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -283,7 +283,7 @@
                     "<id>0</id>\n" +
                     "<posX>1530</posX>\n" +
                     "<posY>449</posY>\n" +
-                    "<width>387</width>\n" +
+                    "<width>373</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.series2.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -360,7 +360,7 @@
                     "<id>0</id>\n" +
                     "<posX>1530</posX>\n" +
                     "<posY>747</posY>\n" +
-                    "<width>383</width>\n" +
+                    "<width>373</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.series3.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
@@ -771,7 +771,7 @@
                       "<description>Series 3 thumb</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>1961</posX>" +
+                      "<posX>1307</posX>" +
                       "<posY>" + (overlayYpos + 17).ToString() + "</posY>" +
                       "<width>173</width>" +
                       "<height>255</height>" +
@@ -782,7 +782,7 @@
                       "<description>Series 3 episode</description>" +
                       "<type>label</type>" +
                       "<id>0</id>" +
-                      "<posX>1961</posX>" +
+                      "<posX>1307</posX>" +
                       "<posY>" + (overlayYpos + 291).ToString() + "</posY>" +
                       "<width>173</width>" +
                       "<label>#StreamedMP.recentlyAdded.series3.seasonx#StreamedMP.recentlyAdded.series3.episodenumber</label>" +
@@ -1080,7 +1080,7 @@
             "<window>\n" +
               "<controls>\n" +
                 "<control>\n" +
-                  "<description>GROUP: RecentlyAdded Series</description>\n" +
+                  "<description>GROUP: RecentlyAdded Movies</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie1.thumb,#)</visible>\n" +
@@ -1091,7 +1091,7 @@
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
                   "<control>\n" +
-                    "<description>Series 1 BG</description>\n" +
+                    "<description>Movie 1 BG</description>\n" +
                     "<posX>1335</posX>\n" +
                     "<posY>105</posY>\n" +
                     "<type>image</type>\n" +
@@ -1102,7 +1102,7 @@
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 1 thumb</description>\n" +
+                    "<description>Movie 1 thumb</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1350</posX>\n" +
@@ -1113,7 +1113,7 @@
                     "<texture>#StreamedMP.recentlyAdded.movie1.thumb</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 1 Rounded Cover</description>\n" +
+                    "<description>Movie 1 Rounded Cover</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1338</posX>\n" +
@@ -1123,19 +1123,19 @@
                     "<texture>round.poster.frame.noreflection.png</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 1 name</description>\n" +
+                    "<description>Movie 1 title</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1530</posX>\n" +
                     "<posY>147</posY>\n" +
-                    "<width>387</width>\n" +
+                    "<width>373</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie1.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                     "<scrollStartDelaySec>20</scrollStartDelaySec>" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 1 title</description>\n" +
+                    "<description>Movie 1 runtime</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1530</posX>\n" +
@@ -1146,7 +1146,7 @@
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 1 episode</description>\n" +
+                    "<description>Movie 1 certification</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1530</posX>\n" +
@@ -1158,7 +1158,7 @@
                   "</control>\n" +
                 "</control>\n" +
                 "<control>\n" +
-                  "<description>GROUP: RecentlyAdded Series</description>\n" +
+                  "<description>GROUP: RecentlyAdded Movies</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie2.thumb,#)</visible>\n" +
@@ -1169,7 +1169,7 @@
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
                   "<control>\n" +
-                    "<description>Series 2 BG</description>\n" +
+                    "<description>Movie 2 BG</description>\n" +
                     "<posX>1335</posX>\n" +
                     "<posY>405</posY>\n" +
                     "<type>image</type>\n" +
@@ -1180,7 +1180,7 @@
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 2 thumb</description>\n" +
+                    "<description>Movie 2 thumb</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1353</posX>\n" +
@@ -1191,7 +1191,7 @@
                     "<texture>#StreamedMP.recentlyAdded.movie2.thumb</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 2 Rounded Cover</description>\n" +
+                    "<description>Movie 2 Rounded Cover</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1338</posX>\n" +
@@ -1201,19 +1201,19 @@
                     "<texture>round.poster.frame.noreflection.png</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 2 name</description>\n" +
+                    "<description>Movie 2 title</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1530</posX>\n" +
                     "<posY>449</posY>\n" +
-                    "<width>387</width>\n" +
+                    "<width>373</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie2.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                     "<scrollStartDelaySec>20</scrollStartDelaySec>" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 2 title</description>\n" +
+                    "<description>Movie 2 runtime</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1530</posX>\n" +
@@ -1224,7 +1224,7 @@
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 2 episode</description>\n" +
+                    "<description>Movie 2 certification</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1530</posX>\n" +
@@ -1236,7 +1236,7 @@
                   "</control>\n" +
                 "</control>\n" +
                 "<control>\n" +
-                  "<description>GROUP: RecentlyAdded Series</description>\n" +
+                  "<description>GROUP: RecentlyAdded Movies</description>\n" +
                   "<type>group</type>\n" +
                   "<dimColor>0xffffffff</dimColor>\n" +
                   "<visible>" + mostRecentVisibleControls(isOverlayType.MovPics) + "+!string.starts(#StreamedMP.recentlyAdded.movie3.thumb,#)</visible>\n" +
@@ -1247,7 +1247,7 @@
                   "<animation effect=" + quote + "slide" + quote + " end=" + quote + "450,0" + quote + " time=" + quote + "500" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">WindowClose</animation>\n" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>\n" +
                   "<control>\n" +
-                    "<description>Series 3 BG</description>\n" +
+                    "<description>Movie 3 BG</description>\n" +
                     "<posX>1335</posX>\n" +
                     "<posY>705</posY>\n" +
                     "<type>image</type>\n" +
@@ -1258,7 +1258,7 @@
                     "<colordiffuse>EEFFFFFF</colordiffuse>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 3 thumb</description>\n" +
+                    "<description>Movie 3 thumb</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1352</posX>\n" +
@@ -1269,7 +1269,7 @@
                     "<texture>#StreamedMP.recentlyAdded.movie3.thumb</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 3 Rounded Cover</description>\n" +
+                    "<description>Movie 3 Rounded Cover</description>\n" +
                     "<type>image</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1338</posX>\n" +
@@ -1279,18 +1279,18 @@
                     "<texture>round.poster.frame.noreflection.png</texture>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 3 name</description>\n" +
+                    "<description>Movie 3 title</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1530</posX>\n" +
                     "<posY>747</posY>\n" +
-                    "<width>383</width>\n" +
+                    "<width>373</width>\n" +
                     "<label>#StreamedMP.recentlyAdded.movie3.title</label>\n" +
                     "<font>mediastream12tc</font>\n" +
                     "<textcolor>White</textcolor>\n" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 3 title</description>\n" +
+                    "<description>Movie 3 runtime</description>\n" +
                     "<type>fadelabel</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1530</posX>\n" +
@@ -1302,7 +1302,7 @@
                     "<scrollStartDelaySec>20</scrollStartDelaySec>" +
                   "</control>\n" +
                   "<control>\n" +
-                    "<description>Series 3 episode</description>\n" +
+                    "<description>Movie 3 certification</description>\n" +
                     "<type>label</type>\n" +
                     "<id>0</id>\n" +
                     "<posX>1530</posX>\n" +
@@ -1317,7 +1317,6 @@
             "</window>";
 
       writeXMLFile("basichome.recentlyadded.movpics.VFull.xml");
-
     }
 
     #endregion
@@ -1696,7 +1695,7 @@
                       "<description>Series 3 thumb</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>1961</posX>" +
+                      "<posX>1307</posX>" +
                       "<posY>" + (sumStyle1OverlayYpos + 17).ToString() + "</posY>" +
                       "<width>173</width>" +
                       "<height>255</height>" +
@@ -1704,13 +1703,13 @@
                       "<texture>#StreamedMP.recentlyAdded.movie3.thumb</texture>" +
                     "</control>" +
                   "<control>" +
-                    "<description>Movie 1 Star Rating</description>" +
+                    "<description>Movie 3 Star Rating</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>1961</posX>" +
-                    "<posY>" + (sumStyle1OverlayYpos + 278).ToString() + "</posY>" +
-                    "<width>173</width>" +
-                    "<height>33</height>" +
+                    "<posX>1310</posX>" +
+                    "<posY>" + (sumStyle1OverlayYpos + 277).ToString() + "</posY>" +
+                    "<width>164</width>" +
+                    "<height>31</height>" +
                     "<texture>star#StreamedMP.recentlyAdded.movie3.score.png</texture>" +
                     "<align>left</align>" +
                   "</control>" +
@@ -1752,10 +1751,10 @@
                     "<description>Movie 2 Star Rating</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>1517</posX>" +
-                    "<posY>" + (sumStyle1OverlayYpos + 278).ToString() + "</posY>" +
-                    "<width>173</width>" +
-                    "<height>33</height>" +
+                    "<posX>1520</posX>" +
+                    "<posY>" + (sumStyle1OverlayYpos + 277).ToString() + "</posY>" +
+                    "<width>164</width>" +
+                    "<height>31</height>" +
                     "<texture>star#StreamedMP.recentlyAdded.movie2.score.png</texture>" +
                     "<align>left</align>" +
                   "</control>" +
@@ -1797,10 +1796,10 @@
                       "<description>Movie 1 Star rating</description>" +
                       "<type>image</type>" +
                       "<id>0</id>" +
-                      "<posX>1727</posX>" +
-                      "<posY>" + (sumStyle1OverlayYpos + 278).ToString() + "</posY>" +
-                      "<width>173</width>" +
-                      "<height>33</height>" +
+                      "<posX>1730</posX>" +
+                      "<posY>" + (sumStyle1OverlayYpos + 277).ToString() + "</posY>" +
+                      "<width>164</width>" +
+                      "<height>31</height>" +
                       "<texture>star#StreamedMP.recentlyAdded.movie1.score.png</texture>" +
                       "<align>left</align>" +
                     "</control>" +
