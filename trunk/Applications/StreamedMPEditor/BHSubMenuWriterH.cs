@@ -44,6 +44,9 @@ namespace StreamedMPEditor
       if (menuStyle != chosenMenuStyle.verticalStyle && horizontalContextLabels.Checked)
         conextOffsett = 26;
 
+      if (enableTwitter.Checked)
+        conextOffsett += 43;
+
       if (parentMenu.subMenuLevel2.Count > 0)
         isSecondLevel = 100;
 
@@ -221,10 +224,7 @@ namespace StreamedMPEditor
     string writeSubMenuLevel2H(formStreamedMpEditor.menuItem parentMenu)
     {
       string dummyFocusControls = "Control.HasFocus(";
-
-      if (menuStyle != chosenMenuStyle.verticalStyle && horizontalContextLabels.Checked)
-        conextOffsett = 26;
-
+      
       for (int i = 0; i < parentMenu.subMenuLevel2.Count; i++)
       {
         if (i < (parentMenu.subMenuLevel2.Count - 1))

@@ -637,8 +637,8 @@ namespace StreamedMPEditor
             basicHomeValues.menuHeight += 50;
             basicHomeValues.offsetMymenu -= 36;
             basicHomeValues.offsetButtons += 24;
-            basicHomeValues.offsetTwitter += 23;
-            basicHomeValues.offsetTwitterImage += 23;
+            basicHomeValues.offsetTwitter += 21;
+            basicHomeValues.offsetTwitterImage += 22;
           }
           break;
         case chosenMenuStyle.graphicMenuStyle:
