@@ -392,7 +392,6 @@
             "</window>";
 
       writeXMLFile("basichome.recentlyadded.tvseries.VFull.xml");
-
     }
 
     #endregion
@@ -2836,9 +2835,9 @@
                   "<type>image</type>" +
                   "<id>0</id>" +
                   "<posX>" + (baseXPosAdded + 107).ToString() + "</posX>\n" +
-                  "<posY>" + (baseYPosAdded + 63).ToString() + "</posY>\n" +
-                  "<width>233</width>" +
-                  "<height>233</height>" +
+                  "<posY>" + (baseYPosAdded + 60).ToString() + "</posY>\n" +
+                  "<width>230</width>" +
+                  "<height>230</height>" +
                   "<keepaspectratio>true</keepaspectratio>" +
                   "<texture>" + latestMediaPrefix + ".music.latest1.thumb</texture>" +
                   "<shouldCache>true</shouldCache>\n" +

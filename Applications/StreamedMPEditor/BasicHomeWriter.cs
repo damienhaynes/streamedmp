@@ -145,7 +145,7 @@ namespace StreamedMPEditor
           xml = xml.Replace("<!-- BEGIN GENERATED DEFAULTCONTROL CODE-->", "<defaultcontrol>" + (menItem.id + 900).ToString() + "</defaultcontrol>");
 
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>Dummy label indicating " + menItem.name + " visibility when submen open</description>");
+        rawXML.AppendLine("<description>Dummy label indicating " + menItem.name + " visibility when submenu open</description>");
         rawXML.AppendLine("<id>" + menItem.id.ToString() + "</id>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>150</posX>");
@@ -187,12 +187,11 @@ namespace StreamedMPEditor
 
       if (direction != menuType.vertical && subMenuL1Exists && menuStyle != chosenMenuStyle.graphicMenuStyle)
         writeHorizontalSubmenus();
-
     }
 
     #endregion
 
-    #region Vetical SubMenu Controls
+    #region Vertical SubMenu Controls
 
     void writeVerticalSubmenus()
     {
@@ -273,6 +272,9 @@ namespace StreamedMPEditor
       if (menuStyle != chosenMenuStyle.verticalStyle && horizontalContextLabels.Checked)
         contextOffset = 39;
 
+      if (enableTwitter.Checked)
+        contextOffset += 43;
+
       // Are the Submenus defined, if so we need the additional blade controls
       string tmpXML = string.Empty;
       if (subMenuL1Exists)
@@ -340,12 +342,11 @@ namespace StreamedMPEditor
       }
       tmpXML += "<!--             End of Lateral Blade Submenu Code            -->";
       xml = xml.Replace("<!-- BEGIN GENERATED LATERAL MENU CONTROL -->", tmpXML.ToString());
-
     }
 
     #endregion
 
-    #region Generate menu Graphics Horizontal
+    #region Generate Menu Graphics Horizontal
 
     private void generateMenuGraphicsH()
     {
@@ -381,7 +382,7 @@ namespace StreamedMPEditor
 
     #endregion
 
-    #region Generate menu Graphics Vertical
+    #region Generate Menu Graphics Vertical
 
     private void generateMenuGraphicsV()
     {
@@ -552,7 +553,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("<id>1</id>");
             rawXML.AppendLine("<width>36</width>");
             rawXML.AppendLine("<height>36</height>");
-            rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage + 6 + rssImageYposOffset).ToString() + "</posY>");
+            rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.offsetRssImage + 4 + rssImageYposOffset).ToString() + "</posY>");
             rawXML.AppendLine("<posX>90</posX>");
             rawXML.AppendLine("<texture>InfoService\\defaultFeedRSS.png</texture>");
             rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
@@ -2742,7 +2743,6 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<texture>weather2.png</texture>");
         rawXML.AppendLine("<shouldCache>true</shouldCache>");
         rawXML.AppendLine("</control>");
-
       }
       rawXML.AppendLine("</control>");
 
@@ -2809,7 +2809,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<posX>180</posX>");
-      rawXML.AppendLine("<posY>1049</posY>");
+      rawXML.AppendLine("<posY>1048</posY>");
       rawXML.AppendLine("<width>300</width>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<label>6030</label>");
@@ -2847,7 +2847,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<posX>495</posX>");
-      rawXML.AppendLine("<posY>1049</posY>");
+      rawXML.AppendLine("<posY>1048</posY>");
       rawXML.AppendLine("<width>300</width>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay0Day</label>");
@@ -2898,7 +2898,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<posX>810</posX>");
-      rawXML.AppendLine("<posY>1049</posY>");
+      rawXML.AppendLine("<posY>1048</posY>");
       rawXML.AppendLine("<width>300</width>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay1Day</label>");
@@ -2949,7 +2949,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<posX>1125</posX>");
-      rawXML.AppendLine("<posY>1049</posY>");
+      rawXML.AppendLine("<posY>1048</posY>");
       rawXML.AppendLine("<width>300</width>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay2Day</label>");
@@ -3000,7 +3000,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<posX>1440</posX>");
-      rawXML.AppendLine("<posY>1049</posY>");
+      rawXML.AppendLine("<posY>1048</posY>");
       rawXML.AppendLine("<width>300</width>");
       rawXML.AppendLine("<align>center</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay3Day</label>");
