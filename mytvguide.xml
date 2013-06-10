@@ -142,16 +142,12 @@
       <animation effect="slide" start="1920,0" end="0,0" tween="circle" time="1700">Visible</animation>
       <animation effect="fade" time="300">Visible</animation>
     </control>
-    <!-- Timeheader background must be dedfined before Timeheader label template -->
+    <!-- Timeheader background must be defined before Timeheader label template -->
     <!-- b/c Timeheader is on the background and will be rendered first -->
     <control>
       <description>time header background image template</description>
       <type>image</type>
       <id>90</id>
-      <posX>355</posX>
-      <posY>105</posY>
-      <width>244</width>
-      <height>51</height>
       <texture>button_small_settings_nofocus.png</texture>
     </control>
     <control>
