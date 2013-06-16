@@ -241,10 +241,10 @@ prototype NUMBER	SetSkinDefine(STRING,STRING,STRING);
 prototype NUMBER	GetSkinDefine(STRING,STRING,BYREF STRING);
 prototype BOOL 		GetInstalledVersion(STRING,BYREF STRING);
 prototype VOID		SetInstallationDirectories();
-prototype BOOL		AdjustForScreenSize();
+//prototype BOOL	AdjustForScreenSize();
 prototype NUMBER	ReplaceLineInFile(STRING, STRING, STRING);
 prototype NUMBER	ReplaceStringInFile(STRING, STRING, STRING);
-prototype VOID		ModifySkinFilesForFULLHD(BOOL);
+//prototype VOID	ModifySkinFilesForFULLHD(BOOL);
 prototype VOID 		ShowNowPlayingPreviewImage(STRING);
 prototype VOID 		HideControl(STRING, NUMBER);   
 prototype VOID 		ShowControl(STRING, NUMBER);    
@@ -2355,8 +2355,8 @@ begin
 	endif;				 
 		
 	// Adjust Skin to support 1920x1080 resolution
-	bReturn = AdjustForScreenSize();
-	ModifySkinFilesForFULLHD(bReturn);
+	//bReturn = AdjustForScreenSize();
+	//ModifySkinFilesForFULLHD(bReturn);
 	
 	// Update TVSeries Logo Rules
 	UpdateTVSeriesLogoRules();
@@ -3335,32 +3335,32 @@ begin
 	   
 end;
   
-function BOOL AdjustForScreenSize()
-	NUMBER nvDx, nvDy;
-	STRING sValue, sFile;
-begin
+//function BOOL AdjustForScreenSize()
+//	NUMBER nvDx, nvDy;
+//	STRING sValue, sFile;
+//begin
 	
 	// Get Screen Dimmensions
-	if GetExtents ( nvDx, nvDy ) < 0 then
-		return FALSE;
-	endif;
+//	if GetExtents ( nvDx, nvDy ) < 0 then
+//		return FALSE;
+//	endif;
 	
 	// Dont Adjust if not 1920 wide, we dont want to support any other resolution at this time
-	if nvDx != 1920 then
-		return FALSE;	
-	endif;
+//	if nvDx != 1920 then
+//		return FALSE;	
+//	endif;
 	
 	// Check if MediaPortal is Running in Full Screen
 	// If not then it will run in Windowed Mode using default resolution 
-	sFile = g_sConfigDir^"MediaPortal.xml";
-	GetMPXMLProperty(sFile, "general", "startfullscreen", sValue);
-	if sValue = "yes" then
-		return TRUE;
-	else
-		return FALSE;
-	endif;	
+//	sFile = g_sConfigDir^"MediaPortal.xml";
+//	GetMPXMLProperty(sFile, "general", "startfullscreen", sValue);
+//	if sValue = "yes" then
+//		return TRUE;
+//	else
+//		return FALSE;
+//	endif;	
 	
-end; 
+//end; 
 
 function VOID UpdateTVSeriesLogoRules()
    	STRING szFileName, szSearchStr, szReplaceStr;
@@ -3400,36 +3400,36 @@ end;
 
 // This function will modify skin files that runing 1920x1080 screen resolution
 // and are also running MediaPortal in Fullscreen
-function VOID ModifySkinFilesForFULLHD(b1920)
-	STRING szFileName, szSearchStr, szReplaceStr;
-	STRING szDefine, szValue;
-begin
+//function VOID ModifySkinFilesForFULLHD(b1920)
+//	STRING szFileName, szSearchStr, szReplaceStr;
+//	STRING szDefine, szValue;
+//begin
     
     // Adjust TVSeries Watched / Unwatched string
     // Using 1920 wide the watched value is displaced further from the watched icon...dont ask me why!    
-    szFileName = STREAMEDMP_SKIN_TVSERIESSETTINGS;
+//    szFileName = STREAMEDMP_SKIN_TVSERIESSETTINGS;
     
     // String replacement will only occur if a match ie. currently has the wrong value
-    if b1920 then
+//    if b1920 then
 	    // Needs adjustments by 2 pixls to the left
-	    szSearchStr = "<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))         Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))";
-	    szReplaceStr = "<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))       Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))";    
-	    ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr);
+//	    szSearchStr = "<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))         Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))";
+//	    szReplaceStr = "<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))       Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))";    
+//	    ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr);
 	    
-	    szSearchStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))          Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";
-	    szReplaceStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))         Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";    
-	    ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr);
-	else        
-	    szSearchStr = "<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))       Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))";
-	    szReplaceStr = "<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))         Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))";    
-	    ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr);
+//	    szSearchStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))          Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";
+//	    szReplaceStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))         Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";    
+//	    ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr);
+//	else        
+//	    szSearchStr = "<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))       Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))";
+//	    szReplaceStr = "<Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))         Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))";    
+//	    ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr);
 	    
-	    szSearchStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))         Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";
-	    szReplaceStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))          Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";    
-	    ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr);    
-    endif; 
+//	    szSearchStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))         Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";
+//	    szReplaceStr = "<Enabled>1<Format>SeasonWatchedAndUnWatched<FormatAs>Eval(PrettyNumber10(<Season.EpisodesUnWatched>))          Eval(PrettyNumber10(<Season.EpisodeCount>-<Season.EpisodesUnWatched>))";    
+//	    ReplaceLineInFile(szFileName, szSearchStr, szReplaceStr);    
+//    endif; 
    
-end; 
+//end; 
 
 function void DetectWinLargeFonts()
 	STRING szKey, svValue, szMessage;
