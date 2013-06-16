@@ -1,27 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<!--
-Contains Music and Video Overlay
-same location everywhere
--->
+<!-- Music and Video Overlays, Excludes Filmstrip layout -->
 <window>
   <controls>
-    <!--                                    :: DUMMY / BACKGROUND ::                                    -->
-    <control>
-      <description>dummy (visible when music is playing)</description>
-      <type>label</type>
-      <id>3337</id>
-      <posX>3000</posX>
-      <label>#Play.Current.Album</label>
-      <visible>!player.hasvideo+player.hasaudio</visible>
-    </control>
-    <control>
-      <description>dummy (visible when there is a next track)</description>
-      <type>label</type>
-      <id>3338</id>
-      <posX>2700</posX>
-      <label>#Play.Next.Title</label>
-      <visible>player.hasmedia+control.hastext(3338)</visible>
-    </control>
     <control>
       <description>dialog bg</description>
       <type>image</type>
@@ -35,7 +15,7 @@ same location everywhere
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
-    <!--                                    :: MUSIC OVERLAY IN REGULAR HOME ::                                    -->
+    <!-- MUSIC OVERLAY -->
     <control>
       <description>music logo</description>
       <type>image</type>
@@ -48,7 +28,7 @@ same location everywhere
       <centered>yes</centered>
       <zoom>yes</zoom>
       <texture>defaultAudioBig.png</texture>
-      <visible>player.hasmedia+!facadeview.filmstrip+string.equals(#Play.Current.Thumb,)+control.isvisible(3337)</visible>
+      <visible>player.hasaudio+!facadeview.filmstrip+string.equals(#Play.Current.Thumb,)</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
@@ -64,7 +44,7 @@ same location everywhere
       <centered>yes</centered>
       <zoom>yes</zoom>
       <texture>#StreamedMP.ArtistPath\#StreamedMP.Current.ArtistL.jpg</texture>
-      <visible>player.hasmedia+control.isvisible(3337)+string.equals(#Play.Current.Thumb,)+!facadeview.filmstrip</visible>
+      <visible>player.hasaudio+string.equals(#Play.Current.Thumb,)+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
@@ -80,7 +60,7 @@ same location everywhere
       <centered>yes</centered>
       <zoom>no</zoom>
       <texture>#Play.Current.Thumb</texture>
-      <visible>player.hasmedia+control.isvisible(3337)+!string.equals(#Play.Current.Thumb,)+!facadeview.filmstrip</visible>
+      <visible>player.hasaudio+!string.equals(#Play.Current.Thumb,)+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
@@ -98,7 +78,7 @@ same location everywhere
       <keepaspectratio>no</keepaspectratio>
       <centered>yes</centered>
       <zoom>yes</zoom>
-      <visible>player.hasmedia+control.isvisible(3337)+control.hasthumb(7220)+control.hasthumb(7230)+!facadeview.filmstrip</visible>
+      <visible>player.hasaudio+control.hasthumb(7220)+control.hasthumb(7230)+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500" reversible="true">Visible</animation>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
@@ -116,7 +96,7 @@ same location everywhere
       <!--<action>18</action>-->
       <hyperlink>510</hyperlink>
       <colordiffuse>f1ffffff</colordiffuse>
-      <visible>player.hasmedia+control.isvisible(3337)+!facadeview.filmstrip</visible>
+      <visible>player.hasaudio+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
@@ -133,7 +113,7 @@ same location everywhere
       <font>mediastream12tc</font>
       <scrollStartDelaySec>30</scrollStartDelaySec>
       <wrapString> | </wrapString>
-      <visible>player.hasmedia+control.isvisible(3337)+!facadeview.filmstrip</visible>
+      <visible>player.hasaudio+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
@@ -150,7 +130,7 @@ same location everywhere
       <font>mediastream10tc</font>
       <scrollStartDelaySec>30</scrollStartDelaySec>
       <wrapString> | </wrapString>
-      <visible>player.hasmedia+control.isvisible(3337)+!facadeview.filmstrip</visible>
+      <visible>player.hasaudio+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
@@ -167,7 +147,7 @@ same location everywhere
       <font>mediastream10c</font>
       <scrollStartDelaySec>30</scrollStartDelaySec>
       <wrapString> | </wrapString>
-      <visible>player.hasmedia+control.isvisible(3337)+!facadeview.filmstrip</visible>
+      <visible>player.hasaudio+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
@@ -182,7 +162,7 @@ same location everywhere
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+control.isvisible(3337)+!facadeview.filmstrip</visible>
+      <visible>player.hasaudio+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
@@ -197,7 +177,7 @@ same location everywhere
       <label>Next:</label>
       <textcolor>FF025984</textcolor>
       <font>mediastream10</font>
-      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+!facadeview.filmstrip</visible>
+      <visible>player.hasaudio+!string.equals(#Play.Next.Title,)+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
@@ -212,11 +192,11 @@ same location everywhere
       <label>#Play.Next.Title by #Play.Next.Artist</label>
       <textcolor>FF999999</textcolor>
       <font>mediastream10</font>
-      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+!facadeview.filmstrip</visible>
+      <visible>player.hasaudio+!string.equals(#Play.Next.Title,)+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
-    <!--                                    :: VIDEO OVERLAY ::                                    -->
+    <!-- VIDEO OVERLAY -->
     <control>
       <description>video preview window</description>
       <type>videowindow</type>
@@ -228,12 +208,12 @@ same location everywhere
       <action>18</action>
       <onleft>1701</onleft>
       <textureFocus>tv_blue_border.png</textureFocus>
-      <visible>player.hasmedia+!control.isvisible(3337)+!facadeview.filmstrip</visible>
+      <visible>player.hasvideo+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
     <control>
-      <description>artist info label</description>
+      <description>Title</description>
       <type>fadelabel</type>
       <id>0</id>
       <width>375</width>
@@ -245,12 +225,12 @@ same location everywhere
       <font>mediastream10tc</font>
       <scrollStartDelaySec>30</scrollStartDelaySec>
       <wrapString> | </wrapString>
-      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)+!facadeview.filmstrip</visible>
+      <visible>player.hasvideo+string.equals(#StreamedMP.VideoWallpaper,false)+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
     <control>
-      <description>title info label</description>
+      <description>Year</description>
       <type>fadelabel</type>
       <id>0</id>
       <width>375</width>
@@ -262,12 +242,12 @@ same location everywhere
       <font>mediastream10tc</font>
       <scrollStartDelaySec>30</scrollStartDelaySec>
       <wrapString> | </wrapString>
-      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)+!facadeview.filmstrip</visible>
+      <visible>player.hasvideo+string.equals(#StreamedMP.VideoWallpaper,false)+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
     <control>
-      <description>album info label</description>
+      <description>Genre</description>
       <type>fadelabel</type>
       <id>0</id>
       <width>375</width>
@@ -279,12 +259,12 @@ same location everywhere
       <font>mediastream10c</font>
       <scrollStartDelaySec>30</scrollStartDelaySec>
       <wrapString> | </wrapString>
-      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)+!facadeview.filmstrip</visible>
+      <visible>player.hasvideo+string.equals(#StreamedMP.VideoWallpaper,false)+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
     <control>
-      <description>album info label</description>
+      <description>Director</description>
       <type>fadelabel</type>
       <id>0</id>
       <width>375</width>
@@ -296,7 +276,7 @@ same location everywhere
       <font>mediastream10c</font>
       <scrollStartDelaySec>30</scrollStartDelaySec>
       <wrapString> | </wrapString>
-      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)+!facadeview.filmstrip</visible>
+      <visible>player.hasvideo+string.equals(#StreamedMP.VideoWallpaper,false)+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
@@ -311,7 +291,7 @@ same location everywhere
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)+!facadeview.filmstrip</visible>
+      <visible>player.hasvideo+string.equals(#StreamedMP.VideoWallpaper,false)+!facadeview.filmstrip</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>

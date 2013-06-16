@@ -79,7 +79,7 @@ namespace StreamedMPEditor
             "-->" +
             "<window>" +
               "<controls>" +
-              "<!--                                    :: DUMMY / BACKGROUND ::                                    -->" +
+              "<!-- DUMMY / BACKGROUND -->" +
                 "<control>" +
                 "<description>dummy (To enable fanart set this control to visible)</description>" +
                   "<type>label</type>" +
@@ -130,22 +130,6 @@ namespace StreamedMPEditor
                   "<visible>no</visible>" +
                 "</control>" +
                 "<control>" +
-                  "<description>dummy (visible when music is playing)</description>" +
-                  "<type>label</type>" +
-                  "<id>3337</id>" +
-                  "<posX>3000</posX>" +
-                  "<label>#Play.Current.Album</label>" +
-                  "<visible>!player.hasvideo+player.hasaudio</visible>" +
-                "</control>" +
-                "<control>" +
-                  "<description>dummy (visible when there is a next track)</description>" +
-                  "<type>label</type>" +
-                  "<id>3338</id>" +
-                  "<posX>3000</posX>" +
-                  "<label>#Play.Next.Title</label>" +
-                  "<visible>player.hasmedia+control.hastext(3338)</visible>" +
-                "</control>" +
-                "<control>" +
                   "<description>dialog bg</description>" +
                   "<type>image</type>" +
                   "<id>0</id>" +
@@ -166,7 +150,7 @@ namespace StreamedMPEditor
                   "<width>405</width>" +
                   "<height>171</height>" +
                   "<texture>#fanarthandler.music.backdrop1.play</texture>" +
-                  "<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919295)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+control.isvisible(91919295)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "10" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">Visible</animation>" +
                 "</control>" +
                 "<control>" +
@@ -178,7 +162,7 @@ namespace StreamedMPEditor
                   "<width>405</width>" +
                   "<height>171</height>" +
                   "<texture>#fanarthandler.music.backdrop2.play</texture>" +
-                  "<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919296)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+control.isvisible(91919296)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "10" + quote + " end=" + quote + "100" + quote + " time=" + quote + "1000" + quote + ">Visible</animation>" +
                 "</control>" +
                 "<control>" +
@@ -191,9 +175,9 @@ namespace StreamedMPEditor
                   "<height>171</height>" +
                   "<colordiffuse>EFFFFFFF</colordiffuse>" +
                   "<texture>overlayfanartmask.png</texture>" +
-                  "<visible>control.isvisible(3339)+Player.HasMedia+control.isvisible(91919294)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+control.isvisible(91919294)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
-                "<!--                                    :: MUSIC OVERLAY IN BASIC HOME ::                                    -->" +
+                "<!-- MUSIC OVERLAY -->" +
                 "<control>" +
                   "<description>music logo</description>" +
                   "<type>image</type>" +
@@ -206,7 +190,7 @@ namespace StreamedMPEditor
                   "<centered>yes</centered>" +
                   "<zoom>no</zoom>" +
                   "<texture>defaultAudioBig.png</texture>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.starts(#Play.Current.thumb,#)+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+string.starts(#Play.Current.thumb,#)+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>music logo</description>" +
@@ -220,7 +204,7 @@ namespace StreamedMPEditor
                   "<centered>yes</centered>" +
                   "<zoom>yes</zoom>" +
                   "<texture>#StreamedMP.ArtistPath\\#StreamedMP.Current.ArtistL.jpg</texture>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb,)+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb,)+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>music logo</description>" +
@@ -234,7 +218,7 @@ namespace StreamedMPEditor
                   "<centered>yes</centered>" +
                   "<zoom>no</zoom>" +
                   "<texture>#Play.Current.Thumb</texture>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!string.equals(#Play.Current.thumb,)+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+!string.equals(#Play.Current.thumb,)+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>Music logo Animation</description>" +
@@ -250,7 +234,7 @@ namespace StreamedMPEditor
                   "<keepaspectratio>no</keepaspectratio>" +
                   "<centered>yes</centered>" +
                   "<zoom>yes</zoom>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+control.hasthumb(7220)+control.hasthumb(7230)+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+control.hasthumb(7220)+control.hasthumb(7230)+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>Selectable Button</description>" +
@@ -269,7 +253,7 @@ namespace StreamedMPEditor
                   "<onright>7777</onright>" +
                   "<onleft>7777</onleft>" +
                   "<colordiffuse>f1ffffff</colordiffuse>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>artist info label</description>" +
@@ -285,7 +269,7 @@ namespace StreamedMPEditor
                   "<font>mediastream12tc</font>" +
                   "<scrollStartDelaySec>30</scrollStartDelaySec>" +
                   "<wrapString> | </wrapString>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>title info label</description>" +
@@ -301,7 +285,7 @@ namespace StreamedMPEditor
                   "<font>mediastream10tc</font>" +
                   "<scrollStartDelaySec>30</scrollStartDelaySec>" +
                   "<wrapString> | </wrapString>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>album info label</description>" +
@@ -317,7 +301,7 @@ namespace StreamedMPEditor
                   "<font>mediastream10c</font>" +
                   "<scrollStartDelaySec>30</scrollStartDelaySec>" +
                   "<wrapString> | </wrapString>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>play time / duration label</description>" +
@@ -331,7 +315,7 @@ namespace StreamedMPEditor
                   "<label>#currentplaytime / #duration</label>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10c</font>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>next song label</description>" +
@@ -345,7 +329,7 @@ namespace StreamedMPEditor
                   "<textcolor>FF025984</textcolor>" +
                   "<font>mediastream10</font>" +
                   "<align>left</align>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+!string.equals(#Play.Next.Title,)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>next song info label</description>" +
@@ -361,11 +345,11 @@ namespace StreamedMPEditor
                   "<font>mediastream10</font>" +
                   "<scrollStartDelaySec>30</scrollStartDelaySec>" +
                   "<wrapString> | </wrapString>" +
-                  "<visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+!string.equals(#Play.Next.Title,)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
-                "<!--                                    :: VIDEO OVERLAY IN BASIC HOME ::                                    -->" +
+                "<!-- VIDEO OVERLAY -->" +
                 "<control>" +
-                  "<description>video preview window BACKGROUND</description>" +
+                  "<description>Video Preview BACKGROUND</description>" +
                   "<type>button</type>" +
                   "<id>17</id>" +
                   "<posX>" + (baseXpos + 27).ToString() + "</posX>" +
@@ -379,10 +363,10 @@ namespace StreamedMPEditor
                   "<ondown>7777</ondown>" +
                   "<onright>7777</onright>" +
                   "<onleft>7777</onleft>" +
-                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasvideo+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
-                  "<description>video preview window</description>" +
+                  "<description>Video Preview</description>" +
                   "<type>videowindow</type>" +
                   "<id>99</id>" +
                   "<posX>" + (baseXpos + 39).ToString() + "</posX>" +
@@ -395,10 +379,10 @@ namespace StreamedMPEditor
                   "<ondown>7777</ondown>" +
                   "<onright>7777</onright>" +
                   "<onleft>7777</onleft>" +
-                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasvideo+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
-                  "<description>artist info label</description>" +
+                  "<description>Title</description>" +
                   "<type>fadelabel</type>" +
                   "<id>0</id>" +
                   "<posX>" + (baseXpos + 350).ToString() + "</posX>" +
@@ -410,10 +394,10 @@ namespace StreamedMPEditor
                   "<font>mediastream10tc</font>" +
                   "<scrollStartDelaySec>30</scrollStartDelaySec>" +
                   "<wrapString> | </wrapString>" +
-                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasvideo+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
-                  "<description>title info label</description>" +
+                  "<description>Year</description>" +
                   "<type>fadelabel</type>" +
                   "<id>0</id>" +
                   "<posX>" + (baseXpos + 350).ToString() + "</posX>" +
@@ -425,10 +409,10 @@ namespace StreamedMPEditor
                   "<font>mediastream10tc</font>" +
                   "<scrollStartDelaySec>30</scrollStartDelaySec>" +
                   "<wrapString> | </wrapString>" +
-                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasvideo+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
-                  "<description>album info label</description>" +
+                  "<description>Genre</description>" +
                   "<type>fadelabel</type>" +
                   "<id>0</id>" +
                   "<posX>" + (baseXpos + 350).ToString() + "</posX>" +
@@ -440,10 +424,10 @@ namespace StreamedMPEditor
                   "<font>mediastream10c</font>" +
                   "<scrollStartDelaySec>30</scrollStartDelaySec>" +
                   "<wrapString> | </wrapString>" +
-                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasvideo+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
-                  "<description>album info label</description>" +
+                  "<description>Director</description>" +
                   "<type>fadelabel</type>" +
                   "<id>0</id>" +
                   "<posX>" + (baseXpos + 350).ToString() + "</posX>" +
@@ -455,7 +439,7 @@ namespace StreamedMPEditor
                   "<font>mediastream10c</font>" +
                   "<scrollStartDelaySec>30</scrollStartDelaySec>" +
                   "<wrapString> | </wrapString>" +
-                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasvideo+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>play time / duration label</description>" +
@@ -468,7 +452,7 @@ namespace StreamedMPEditor
                   "<label>#currentplaytime / #duration</label>" +
                   "<textcolor>FFFFFFFF</textcolor>" +
                   "<font>mediastream10c</font>" +
-                  "<visible>player.hasmedia+!control.isvisible(3337)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasvideo+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
               "</controls>" +
             "</window>";

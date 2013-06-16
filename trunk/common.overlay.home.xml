@@ -1,24 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
-    <!--                                    :: DUMMY / STUFF ::                                    -->
-    <control>
-      <description>dummy (visible when music is playing)</description>
-      <type>label</type>
-      <id>3337</id>
-      <posX>3000</posX>
-      <label>#Play.Current.Album</label>
-      <visible>!player.hasvideo+player.hasaudio</visible>
-    </control>
-    <control>
-      <description>dummy (visible when there is a next track)</description>
-      <type>label</type>
-      <id>3338</id>
-      <posX>3000</posX>
-      <label>#Play.Next.Title</label>
-      <visible>player.hasmedia+control.hastext(3338)</visible>
-    </control>
-    <!--                                    :: MUSIC OVERLAY IN REGULAR HOME ::                                    -->
+    <!-- MUSIC OVERLAY -->
     <control>
       <description>music logo</description>
       <type>image</type>
@@ -46,7 +29,7 @@
       <zoom>yes</zoom>
       <!-- Updated by Setup (Ensure ID is unique)-->
       <texture>#StreamedMP.ArtistPath\#StreamedMP.Current.ArtistL.jpg</texture>
-      <visible>player.hasmedia+control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
+      <visible>player.hasaudio+string.equals(#Play.Current.Thumb,)</visible>
     </control>
     <control>
       <description>music logo</description>
@@ -60,7 +43,7 @@
       <centered>yes</centered>
       <zoom>no</zoom>
       <texture>#Play.Current.Thumb</texture>
-      <visible>player.hasmedia+control.isvisible(3337)</visible>
+      <visible>player.hasaudio</visible>
     </control>
     <control>
       <description>Music logo Animation</description>
@@ -77,7 +60,7 @@
       <keepaspectratio>no</keepaspectratio>
       <centered>yes</centered>
       <zoom>yes</zoom>
-      <visible>player.hasmedia+control.isvisible(3337)+control.hasthumb(7220)+control.hasthumb(7230)</visible>
+      <visible>player.hasaudio+control.hasthumb(7220)+control.hasthumb(7230)</visible>
     </control>
     <control>
       <description>Selectable Button (Cover preview window)</description>
@@ -96,7 +79,7 @@
       <onright>50</onright>
       <onleft>50</onleft>
       <colordiffuse>f1ffffff</colordiffuse>
-      <visible>player.hasmedia+control.isvisible(3337)</visible>
+      <visible>player.hasaudio</visible>
     </control>
     <control>
       <description>artist info label</description>
@@ -110,7 +93,7 @@
       <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream12tc</font>
-      <visible>player.hasmedia+control.isvisible(3337)</visible>
+      <visible>player.hasaudio</visible>
     </control>
     <control>
       <description>title info label</description>
@@ -124,7 +107,7 @@
       <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
-      <visible>player.hasmedia+control.isvisible(3337)</visible>
+      <visible>player.hasaudio</visible>
     </control>
     <control>
       <description>album info label</description>
@@ -138,7 +121,7 @@
       <align>left</align>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+control.isvisible(3337)</visible>
+      <visible>player.hasaudio</visible>
     </control>
     <control>
       <description>play time / duration label</description>
@@ -152,7 +135,7 @@
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+control.isvisible(3337)</visible>
+      <visible>player.hasaudio</visible>
     </control>
     <control>
       <description>next song label</description>
@@ -166,7 +149,7 @@
       <textcolor>FF025984</textcolor>
       <font>mediastream10</font>
       <align>left</align>
-      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
+      <visible>player.hasaudio+string.equals(#Play.Current.Thumb,)</visible>
     </control>
     <control>
       <description>next song info label</description>
@@ -180,9 +163,9 @@
       <textcolor>FF999999</textcolor>
       <align>left</align>
       <font>mediastream10</font>
-      <visible>player.hasmedia+control.isvisible(3337)+control.isvisible(3338)</visible>
+      <visible>player.hasaudio+string.equals(#Play.Current.Thumb,)</visible>
     </control>
-    <!--                                    :: VIDEO OVERLAY IN REGULAR HOME ::                                    -->
+    <!-- VIDEO OVERLAY -->
     <control>
       <description>video preview window BACKGROUND</description>
       <type>image</type>
@@ -192,7 +175,7 @@
       <width>304</width>
       <height>171</height>
       <texture>black.png</texture>
-      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
+      <visible>player.hasvideo+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
     </control>
     <control>
       <description>video preview window</description>
@@ -209,10 +192,10 @@
       <onleft>17</onleft>
       <textureFocus>tv_blue_border.png</textureFocus>
       <textureNoFocus>-</textureNoFocus>
-      <visible>player.hasmedia+!control.isvisible(3337)</visible>
+      <visible>player.hasvideo</visible>
     </control>
     <control>
-      <description>artist info label</description>
+      <description>Title</description>
       <type>fadelabel</type>
       <id>0</id>
       <posX>447</posX>
@@ -222,10 +205,10 @@
       <label>#Play.Current.Title</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
-      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
+      <visible>player.hasvideo+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
     </control>
     <control>
-      <description>title info label</description>
+      <description>Year</description>
       <type>fadelabel</type>
       <id>0</id>
       <posX>447</posX>
@@ -235,10 +218,10 @@
       <label>#Play.Current.Year</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10tc</font>
-      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
+      <visible>player.hasvideo+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
     </control>
     <control>
-      <description>album info label</description>
+      <description>Genre</description>
       <type>fadelabel</type>
       <id>0</id>
       <posX>447</posX>
@@ -248,10 +231,10 @@
       <label>#Play.Current.Genre</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
+      <visible>player.hasvideo+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
     </control>
     <control>
-      <description>album info label</description>
+      <description>Director</description>
       <type>fadelabel</type>
       <id>0</id>
       <posX>447</posX>
@@ -261,7 +244,7 @@
       <label>#Play.Current.Director</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
+      <visible>player.hasvideo+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
     </control>
     <control>
       <description>play time / duration label</description>
@@ -274,7 +257,7 @@
       <label>#currentplaytime / #duration</label>
       <textcolor>FFFFFFFF</textcolor>
       <font>mediastream10c</font>
-      <visible>player.hasmedia+!control.isvisible(3337)+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
+      <visible>player.hasvideo+string.equals(#StreamedMP.VideoWallpaper,false)</visible>
     </control>
   </controls>
 </window>
