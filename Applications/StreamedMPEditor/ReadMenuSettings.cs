@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Xml;
 using System.IO;
 using System.Linq;
+using System.Web;
 
 namespace StreamedMPEditor
 {
@@ -53,7 +54,7 @@ namespace StreamedMPEditor
       }
       catch (Exception e)
       {
-        helper.showError("Exception while loading usermenuprofile.xml\n\nUnable to Continue - please restore from backup" + e.Message, errorCode.major);
+        helper.showError("Exception while loading usermenuprofile.xml\n\nUnable to Continue - please restore from backup. " + e.Message, errorCode.major);
       }
 
       //

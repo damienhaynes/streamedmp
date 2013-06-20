@@ -4,6 +4,7 @@ using System.Text;
 using System.Xml;
 using System.IO;
 using System.Linq;
+using System.Web;
 
 namespace StreamedMPEditor
 {
@@ -145,7 +146,7 @@ namespace StreamedMPEditor
           xml = xml.Replace("<!-- BEGIN GENERATED DEFAULTCONTROL CODE-->", "<defaultcontrol>" + (menItem.id + 900).ToString() + "</defaultcontrol>");
 
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>Dummy label indicating " + menItem.name + " visibility when submenu open</description>");
+        rawXML.AppendLine("<description>Dummy label indicating " + HttpUtility.HtmlEncode(menItem.name) + " visibility when submenu open</description>");
         rawXML.AppendLine("<id>" + menItem.id.ToString() + "</id>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>150</posX>");
@@ -831,18 +832,18 @@ namespace StreamedMPEditor
         String topMenuId = (menItem.id + 600).ToString();
         // Dummy control for background and menu visibilty
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>Button Bar: Dummy label indicating " + menItem.name + " menu visibility</description>");
+        rawXML.AppendLine("<description>Button Bar: Dummy label indicating " + HttpUtility.HtmlEncode(menItem.name) + " menu visibility</description>");
         rawXML.AppendLine("<id>" + (menItem.id + 100).ToString() + "</id>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>150</posX>");
         rawXML.AppendLine("<posY>-150</posY>");
         rawXML.AppendLine("<width>750</width>");
         rawXML.AppendLine("<height>0</height>");
-        rawXML.AppendLine("<label>" + menItem.name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menItem.name) + "</label>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)|Control.HasFocus(" + topMenuId + "04)</visible>");
         rawXML.AppendLine("</control>");
         // group the buttons
-        rawXML.AppendLine("<control><description>Topbar buttons " + menItem.name + "</description>");
+        rawXML.AppendLine("<control><description>Topbar buttons " + HttpUtility.HtmlEncode(menItem.name) + "</description>");
         rawXML.AppendLine("<type>group</type>");
         rawXML.AppendLine("<dimColor>0x60ffffff</dimColor>");
         // Exit Button
@@ -1039,14 +1040,14 @@ namespace StreamedMPEditor
         String topMenuId = (menItem.id + 600).ToString();
 
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>Dummy label indicating " + menItem.name + " menu visibility</description>");
+        rawXML.AppendLine("<description>Dummy label indicating " + HttpUtility.HtmlEncode(menItem.name) + " menu visibility</description>");
         rawXML.AppendLine("<id>" + (menItem.id + 100).ToString() + "</id>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>150</posX>");
         rawXML.AppendLine("<posY>-150</posY>");
         rawXML.AppendLine("<width>750</width>");
         rawXML.AppendLine("<height>0</height>");
-        rawXML.AppendLine("<label>" + menItem.name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menItem.name) + "</label>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + topMenuId + "01)|Control.HasFocus(" + topMenuId + "02)|Control.HasFocus(" + topMenuId + "03)|Control.HasFocus(" + topMenuId + "04)</visible>");
         rawXML.AppendLine("</control>");
       }
@@ -1058,7 +1059,6 @@ namespace StreamedMPEditor
     //
     private void generateTopBarH()
     {
-
       generateTopBarHButtons();
 
       int twitterHeight = 0;
@@ -1070,7 +1070,7 @@ namespace StreamedMPEditor
       {
         String topMenuId = (menItem.id + 600).ToString();
 
-        rawXML.AppendLine("<control><description>Topbar buttons " + menItem.name + "</description>");
+        rawXML.AppendLine("<control><description>Topbar buttons " + HttpUtility.HtmlEncode(menItem.name) + "</description>");
         rawXML.AppendLine("<type>group</type>");
 
         rawXML.AppendLine("<control>");
@@ -1275,12 +1275,12 @@ namespace StreamedMPEditor
 
 
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[k].name) + "</description>");
         rawXML.AppendLine("<type>button</type>");
         rawXML.AppendLine("<id>" + (menuItems[k].id + 900).ToString() + "</id>");
         rawXML.AppendLine("<posX>0</posX>");
         rawXML.AppendLine("<posY>-45</posY>");
-        rawXML.AppendLine("<label>" + menuItems[k].name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[k].name) + "</label>");
         rawXML.AppendLine("<width>480</width>");
         rawXML.AppendLine("<height>108</height>");
         rawXML.AppendLine("<hyperlink>" + menuItems[k].hyperlink + "</hyperlink>");
@@ -1293,18 +1293,18 @@ namespace StreamedMPEditor
                     {
                         string search = string.IsNullOrEmpty(menuItems[k].hyperlinkParameterSearch) ? string.Empty : "|search:" + menuItems[k].hyperlinkParameterSearch;
                         string category = string.IsNullOrEmpty(menuItems[k].hyperlinkParameterCategory) ? string.Empty : "|category:" + menuItems[k].hyperlinkParameterCategory;
-                        rawXML.AppendLine("<hyperlinkParameter>site:" + menuItems[k].hyperlinkParameter + category + search + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
+                        rawXML.AppendLine("<hyperlinkParameter>site:" + HttpUtility.HtmlEncode(menuItems[k].hyperlinkParameter + category + search) + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
                     }
                     else
                     {
-                        rawXML.AppendLine("<hyperlinkParameter>group:" + menuItems[k].hyperlinkParameter.Substring(7) + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
+                        rawXML.AppendLine("<hyperlinkParameter>group:" + HttpUtility.HtmlEncode(menuItems[k].hyperlinkParameter.Substring(7)) + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
                     }
                     break;
                 case movingPicturesSkinID:
-                    rawXML.AppendLine("<hyperlinkParameter>categoryid:" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+                    rawXML.AppendLine("<hyperlinkParameter>categoryid:" + HttpUtility.HtmlEncode(menuItems[k].hyperlinkParameter) + "</hyperlinkParameter>");
                     break;
                 default:
-                    rawXML.AppendLine("<hyperlinkParameter>" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+                    rawXML.AppendLine("<hyperlinkParameter>" + HttpUtility.HtmlEncode(menuItems[k].hyperlinkParameter) + "</hyperlinkParameter>");
                     break;
             }
         }
@@ -1337,13 +1337,13 @@ namespace StreamedMPEditor
         rawXML.AppendLine("</control>");
         //  FIRST
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[first].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[first].name) + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
         rawXML.AppendLine("<posY>213</posY>");
         rawXML.AppendLine("<width>480</width>");
         rawXML.AppendLine("<height>108</height>");
-        rawXML.AppendLine("<label>" + menuItems[first].name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[first].name) + "</label>");
         rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
         rawXML.AppendLine("<align>right</align>");
@@ -1353,13 +1353,13 @@ namespace StreamedMPEditor
         rawXML.AppendLine("</control>");
         // ** SECOND
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[second].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[second].name) + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
         rawXML.AppendLine("<posY>363</posY>");
         rawXML.AppendLine("<width>480</width>");
         rawXML.AppendLine("<height>108</height>");
-        rawXML.AppendLine("<label>" + menuItems[second].name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[second].name) + "</label>");
         rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
         rawXML.AppendLine("<align>right</align>");
@@ -1369,13 +1369,13 @@ namespace StreamedMPEditor
         rawXML.AppendLine("</control>");
         //  CENTER
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[k].name) + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
         rawXML.AppendLine("<posY>513</posY>");
         rawXML.AppendLine("<width>480</width>");
         rawXML.AppendLine("<height>108</height>");
-        rawXML.AppendLine("<label>" + menuItems[k].name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[k].name) + "</label>");
         rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
         rawXML.AppendLine("<font>#selectedFont</font>");
         rawXML.AppendLine("<align>right</align>");
@@ -1385,13 +1385,13 @@ namespace StreamedMPEditor
         rawXML.AppendLine("</control>");
         //  THIRD
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[third].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[third].name) + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
         rawXML.AppendLine("<posY>663</posY>");
         rawXML.AppendLine("<width>480</width>");
         rawXML.AppendLine("<height>108</height>");
-        rawXML.AppendLine("<label>" + menuItems[third].name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[third].name) + "</label>");
         rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
         rawXML.AppendLine("<align>right</align>");
@@ -1401,13 +1401,13 @@ namespace StreamedMPEditor
         rawXML.AppendLine("</control>");
         // *** FOURTH
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[fourth].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[fourth].name) + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
         rawXML.AppendLine("<posY>813</posY>");
         rawXML.AppendLine("<width>480</width>");
         rawXML.AppendLine("<height>108</height>");
-        rawXML.AppendLine("<label>" + menuItems[fourth].name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[fourth].name) + "</label>");
         rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
         rawXML.AppendLine("<align>right</align>");
@@ -1454,12 +1454,12 @@ namespace StreamedMPEditor
         topBarButtons = "|control.isvisible(" + (menuItems[k].id + 100).ToString() + ")";
 
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[k].name) + "</description>");
         rawXML.AppendLine("<type>button</type>");
         rawXML.AppendLine("<id>" + (menuItems[k].id + 900).ToString() + "</id>");
         rawXML.AppendLine("<posX>0</posX>");
         rawXML.AppendLine("<posY>-45</posY>");
-        rawXML.AppendLine("<label>" + menuItems[k].name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[k].name) + "</label>");
         rawXML.AppendLine("<width>480</width>");
         rawXML.AppendLine("<height>108</height>");
         rawXML.AppendLine("<hyperlink>" + menuItems[k].hyperlink + "</hyperlink>");
@@ -1472,18 +1472,18 @@ namespace StreamedMPEditor
                     {
                         string search = string.IsNullOrEmpty(menuItems[k].hyperlinkParameterSearch) ? string.Empty : "|search:" + menuItems[k].hyperlinkParameterSearch;
                         string category = string.IsNullOrEmpty(menuItems[k].hyperlinkParameterCategory) ? string.Empty : "|category:" + menuItems[k].hyperlinkParameterCategory;
-                        rawXML.AppendLine("<hyperlinkParameter>site:" + menuItems[k].hyperlinkParameter + category + search + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
+                        rawXML.AppendLine("<hyperlinkParameter>site:" + HttpUtility.HtmlEncode(menuItems[k].hyperlinkParameter + category + search) + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
                     }
                     else
                     {
-                        rawXML.AppendLine("<hyperlinkParameter>group:" + menuItems[k].hyperlinkParameter.Substring(7) + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
+                        rawXML.AppendLine("<hyperlinkParameter>group:" + HttpUtility.HtmlEncode(menuItems[k].hyperlinkParameter.Substring(7)) + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
                     }
                     break;
                 case movingPicturesSkinID:
-                    rawXML.AppendLine("<hyperlinkParameter>categoryid:" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+                    rawXML.AppendLine("<hyperlinkParameter>categoryid:" + HttpUtility.HtmlEncode(menuItems[k].hyperlinkParameter) + "</hyperlinkParameter>");
                     break;
                 default:
-                    rawXML.AppendLine("<hyperlinkParameter>" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+                    rawXML.AppendLine("<hyperlinkParameter>" + HttpUtility.HtmlEncode(menuItems[k].hyperlinkParameter) + "</hyperlinkParameter>");
                     break;
             }
         }
@@ -1505,13 +1505,13 @@ namespace StreamedMPEditor
 
         //  FIRST
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[first].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[first].name) + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>0</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>480</width>");
         rawXML.AppendLine("<height>108</height>");
-        rawXML.AppendLine("<label>" + menuItems[first].name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[first].name) + "</label>");
         rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
         rawXML.AppendLine("<align>center</align>");
@@ -1525,13 +1525,13 @@ namespace StreamedMPEditor
 
         // ** SECOND
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[second].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[second].name) + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>240</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>480</width>");
         rawXML.AppendLine("<height>108</height>");
-        rawXML.AppendLine("<label>" + menuItems[second].name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[second].name) + "</label>");
         rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
         rawXML.AppendLine("<align>center</align>");
@@ -1543,13 +1543,13 @@ namespace StreamedMPEditor
         if (cbDropShadow.Checked)
         {
           rawXML.AppendLine("<control>");
-          rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
+          rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[k].name) + "</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posX>723</posX>");
           rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 3) + "</posY>");
           rawXML.AppendLine("<width>480</width>");
           rawXML.AppendLine("<height>108</height>");
-          rawXML.AppendLine("<label>" + menuItems[k].name + "</label>");
+          rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[k].name) + "</label>");
           rawXML.AppendLine("<textcolor>black</textcolor>");
           rawXML.AppendLine("<font>#selectedFont</font>");
           rawXML.AppendLine("<align>center</align>");
@@ -1558,13 +1558,13 @@ namespace StreamedMPEditor
           rawXML.AppendLine("</control>	");
         }
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[k].name) + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>720</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>480</width>");
         rawXML.AppendLine("<height>108</height>");
-        rawXML.AppendLine("<label>" + menuItems[k].name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[k].name) + "</label>");
         rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
         rawXML.AppendLine("<font>#selectedFont</font>");
         rawXML.AppendLine("<align>center</align>");
@@ -1574,13 +1574,13 @@ namespace StreamedMPEditor
 
         //  THIRD
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[third].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[third].name) + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>1200</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>480</width>");
         rawXML.AppendLine("<height>108</height>");
-        rawXML.AppendLine("<label>" + menuItems[third].name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[third].name) + "</label>");
         rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
         rawXML.AppendLine("<align>center</align>");
@@ -1590,13 +1590,13 @@ namespace StreamedMPEditor
 
         // *** FOURTH
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[fourth].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[fourth].name) + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>1680</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
         rawXML.AppendLine("<width>480</width>");
         rawXML.AppendLine("<height>108</height>");
-        rawXML.AppendLine("<label>" + menuItems[fourth].name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[fourth].name) + "</label>");
         rawXML.AppendLine("<textcolor>#menuitemNoFocus</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
         rawXML.AppendLine("<align>center</align>");
@@ -1613,7 +1613,6 @@ namespace StreamedMPEditor
 
     private void generateGraphicCrowdingFixH()
     {
-
       StringBuilder rawXML = new StringBuilder();
 
       rawXML.AppendLine("<!--            Crowding Fix                   -->");
@@ -1647,7 +1646,7 @@ namespace StreamedMPEditor
         topBarButtons = "|control.isvisible(" + (menuItems[k].id + 100).ToString() + ")";
 
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[k].name) + "</description>");
         rawXML.AppendLine("<type>button</type>");
         rawXML.AppendLine("<id>" + (menuItems[k].id + 900).ToString() + "</id>");
         rawXML.AppendLine("<posX>0</posX>");
@@ -1665,18 +1664,18 @@ namespace StreamedMPEditor
                     {
                         string search = string.IsNullOrEmpty(menuItems[k].hyperlinkParameterSearch) ? string.Empty : "|search:" + menuItems[k].hyperlinkParameterSearch;
                         string category = string.IsNullOrEmpty(menuItems[k].hyperlinkParameterCategory) ? string.Empty : "|category:" + menuItems[k].hyperlinkParameterCategory;
-                        rawXML.AppendLine("<hyperlinkParameter>site:" + menuItems[k].hyperlinkParameter + category + search + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
+                        rawXML.AppendLine("<hyperlinkParameter>site:" + HttpUtility.HtmlEncode(menuItems[k].hyperlinkParameter + category + search) + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
                     }
                     else
                     {
-                        rawXML.AppendLine("<hyperlinkParameter>group:" + menuItems[k].hyperlinkParameter.Substring(7) + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
+                        rawXML.AppendLine("<hyperlinkParameter>group:" + HttpUtility.HtmlEncode(menuItems[k].hyperlinkParameter.Substring(7)) + "|return:" + menuItems[k].hyperlinkParameterOption + "</hyperlinkParameter>");
                     }
                     break;
                 case movingPicturesSkinID:
-                    rawXML.AppendLine("<hyperlinkParameter>categoryid:" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+                    rawXML.AppendLine("<hyperlinkParameter>categoryid:" + HttpUtility.HtmlEncode(menuItems[k].hyperlinkParameter) + "</hyperlinkParameter>");
                     break;
                 default:
-                    rawXML.AppendLine("<hyperlinkParameter>" + menuItems[k].hyperlinkParameter + "</hyperlinkParameter>");
+                    rawXML.AppendLine("<hyperlinkParameter>" + HttpUtility.HtmlEncode(menuItems[k].hyperlinkParameter) + "</hyperlinkParameter>");
                     break;
             }
         }
@@ -1698,7 +1697,7 @@ namespace StreamedMPEditor
 
         //  FIRST
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[first].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[first].name) + "</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<posX>-132</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
@@ -1713,7 +1712,7 @@ namespace StreamedMPEditor
 
         // ** SECOND
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[second].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[second].name) + "</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<posX>188</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
@@ -1727,7 +1726,7 @@ namespace StreamedMPEditor
 
         // ** THIRD
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[third].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[third].name) + "</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<posX>507</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
@@ -1742,7 +1741,7 @@ namespace StreamedMPEditor
         //  CENTER
 
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>" + menuItems[k].name + k.ToString() + "</description>");
+        rawXML.AppendLine("<description>" + HttpUtility.HtmlEncode(menuItems[k].name) + k.ToString() + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>962</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 228) + "</posY>");
@@ -1750,14 +1749,14 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<textcolor>" + dropShadowColor + "</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
         rawXML.AppendLine("<align>center</align>");
-        rawXML.AppendLine("<label>" + menuItems[k].name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[k].name) + "</label>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
         rawXML.AppendLine("<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
         rawXML.AppendLine("<animation effect=\"slide\" end=\"0,450\" time=\"250\" acceleration=\"-0.1\" reversible=\"false\">windowclose</animation>");
         rawXML.AppendLine("</control>");
 
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>" + menuItems[k].name + k.ToString() + "</description>");
+        rawXML.AppendLine("<description>" + HttpUtility.HtmlEncode(menuItems[k].name) + k.ToString() + "</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>960</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset + 227) + "</posY>");
@@ -1765,14 +1764,14 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
         rawXML.AppendLine("<align>center</align>");
-        rawXML.AppendLine("<label>" + menuItems[k].name + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menuItems[k].name) + "</label>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
         rawXML.AppendLine("<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
         rawXML.AppendLine("<animation effect=\"slide\" end=\"0,450\" time=\"250\" acceleration=\"-0.1\" reversible=\"false\">windowclose</animation>");
         rawXML.AppendLine("</control>");
 
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[k].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[k].name) + "</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<posX>815</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + (basicHomeValues.textYOffset - 50)) + "</posY>");
@@ -1784,9 +1783,9 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<animation effect=\"slide\" end=\"0,450\" time=\"250\" acceleration=\"-0.1\" reversible=\"false\">windowclose</animation>");
         rawXML.AppendLine("</control>	");
 
-        //  FIFTH
+        //  FOURTH
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[fourth].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[fourth].name) + "</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<posX>1221</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
@@ -1798,9 +1797,9 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>	");
 
-        // *** SIXTH
+        // *** FIFTH
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[fifth].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[fifth].name) + "</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<posX>1541</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
@@ -1812,9 +1811,9 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>	");
 
-        // *** SEVENTH
+        // *** SIXTH
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>home " + menuItems[sixth].name + "</description>");
+        rawXML.AppendLine("<description>home " + HttpUtility.HtmlEncode(menuItems[sixth].name) + "</description>");
         rawXML.AppendLine("<type>image</type>");
         rawXML.AppendLine("<posX>1860</posX>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) + basicHomeValues.textYOffset) + "</posY>");
@@ -1828,7 +1827,6 @@ namespace StreamedMPEditor
       }
       xml = xml.Replace("<!-- BEGIN CROWDING FIX CODE-->", rawXML.ToString());
     }
-
 
     #endregion
 
@@ -1884,7 +1882,7 @@ namespace StreamedMPEditor
         }
 
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>" + item.name + " BACKGROUND 1</description>");
+        rawXML.AppendLine("<description>" + HttpUtility.HtmlEncode(item.name) + " BACKGROUND 1</description>");
         if (item.fanartHandlerEnabled)
           rawXML.AppendLine("<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "1</id>");
         else
@@ -1963,7 +1961,7 @@ namespace StreamedMPEditor
         {
           rawXML.AppendLine("<control>");
 
-          rawXML.AppendLine("<description>" + item.name + " BACKGROUND 2</description>");
+          rawXML.AppendLine("<description>" + HttpUtility.HtmlEncode(item.name) + " BACKGROUND 2</description>");
           rawXML.AppendLine("<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "2</id>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<texture>#fanarthandler." + item.fanartPropery + fhUserDef + ".backdrop2.any</texture>");
@@ -2015,7 +2013,7 @@ namespace StreamedMPEditor
           //
           rawXML.AppendLine("<control>");
 
-          rawXML.AppendLine("<description>" + item.name + " NOW PLAYING BACKGROUND 1</description>");
+          rawXML.AppendLine("<description>" + HttpUtility.HtmlEncode(item.name) + " NOW PLAYING BACKGROUND 1</description>");
           rawXML.AppendLine("<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "3</id>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<texture>#fanarthandler.music.backdrop1.play</texture>");
@@ -2054,7 +2052,7 @@ namespace StreamedMPEditor
           //
           rawXML.AppendLine("<control>");
 
-          rawXML.AppendLine("<description>" + item.name + " NOW PLAYING BACKGROUND 2</description>");
+          rawXML.AppendLine("<description>" + HttpUtility.HtmlEncode(item.name) + " NOW PLAYING BACKGROUND 2</description>");
           rawXML.AppendLine("<id>" + (int.Parse(item.ids[0]) + 200).ToString() + "4</id>");
           rawXML.AppendLine("<type>image</type>");
           rawXML.AppendLine("<texture>#fanarthandler.music.backdrop2.play</texture>");
@@ -2116,13 +2114,13 @@ namespace StreamedMPEditor
           {
             // Add default label
             rawXML.AppendLine("<control>");
-            rawXML.AppendLine("<description>" + menItem.name + " Label (Default)</description>");
+            rawXML.AppendLine("<description>" + HttpUtility.HtmlEncode(menItem.name) + " Label (Default)</description>");
             rawXML.AppendLine("<type>label</type>");
             rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - 6) + "</posY>");
             rawXML.AppendLine("<posX>722</posX>");
             rawXML.AppendLine("<width>480</width>");
             rawXML.AppendLine("<height>36</height>");
-            rawXML.AppendLine("<label>" + menItem.contextLabel + "</label>");
+            rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menItem.contextLabel) + "</label>");
             rawXML.AppendLine("<textcolor>" + dropShadowColor + "</textcolor>");
             rawXML.AppendLine("<font>mediastream14tc</font>");
             rawXML.AppendLine("<align>center</align>");
@@ -2133,13 +2131,13 @@ namespace StreamedMPEditor
           }
           // Add default label
           rawXML.AppendLine("<control>");
-          rawXML.AppendLine("<description>" + menItem.name + " Label (Default)</description>");
+          rawXML.AppendLine("<description>" + HttpUtility.HtmlEncode(menItem.name) + " Label (Default)</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - 8) + "</posY>");
           rawXML.AppendLine("<posX>720</posX>");
           rawXML.AppendLine("<width>480</width>");
           rawXML.AppendLine("<height>36</height>");
-          rawXML.AppendLine("<label>" + menItem.contextLabel + "</label>");
+          rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menItem.contextLabel) + "</label>");
           rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
           rawXML.AppendLine("<font>mediastream14tc</font>");
           rawXML.AppendLine("<align>center</align>");
@@ -2151,13 +2149,13 @@ namespace StreamedMPEditor
         if (cbDropShadow.Checked)
         {
           rawXML.AppendLine("<control>");
-          rawXML.AppendLine("<description>" + menItem.name + " Label</description>");
+          rawXML.AppendLine("<description>" + HttpUtility.HtmlEncode(menItem.name) + " Label</description>");
           rawXML.AppendLine("<type>label</type>");
           rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - 6) + "</posY>");
           rawXML.AppendLine("<posX>722</posX>");
           rawXML.AppendLine("<width>480</width>");
           rawXML.AppendLine("<height>36</height>");
-          rawXML.AppendLine("<label>" + menItem.contextLabel + "</label>");
+          rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menItem.contextLabel) + "</label>");
           rawXML.AppendLine("<textcolor>" + dropShadowColor + "</textcolor>");
           rawXML.AppendLine("<font>mediastream14tc</font>");
           rawXML.AppendLine("<align>center</align>");
@@ -2167,13 +2165,13 @@ namespace StreamedMPEditor
           rawXML.AppendLine("</control>");
         }
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>" + menItem.name + " Label</description>");
+        rawXML.AppendLine("<description>" + HttpUtility.HtmlEncode(menItem.name) + " Label</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posY>" + (int.Parse(txtMenuPos.Text) - 8) + "</posY>");
         rawXML.AppendLine("<posX>720</posX>");
         rawXML.AppendLine("<width>480</width>");
         rawXML.AppendLine("<height>36</height>");
-        rawXML.AppendLine("<label>" + menItem.contextLabel + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menItem.contextLabel) + "</label>");
         rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
         rawXML.AppendLine("<font>mediastream14tc</font>");
         rawXML.AppendLine("<align>center</align>");
@@ -2209,13 +2207,13 @@ namespace StreamedMPEditor
           menuIDControl = "|control.isvisible(" + (menItem.subMenuLevel1ID).ToString() + ")";
         // Context Lables
         rawXML.AppendLine("<control>");
-        rawXML.AppendLine("<description>" + menItem.name + " Label</description>");
+        rawXML.AppendLine("<description>" + HttpUtility.HtmlEncode(menItem.name) + " Label</description>");
         rawXML.AppendLine("<type>label</type>");
         rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) + textXOffset) + "</posX>");
         rawXML.AppendLine("<posY>" + (483 + textYOffset).ToString() + "</posY>");
         rawXML.AppendLine("<width>570</width>");
         rawXML.AppendLine("<height>108</height>");
-        rawXML.AppendLine("<label>" + menItem.contextLabel + "</label>");
+        rawXML.AppendLine("<label>" + HttpUtility.HtmlEncode(menItem.contextLabel) + "</label>");
         rawXML.AppendLine("<textcolor>#menuitemFocus</textcolor>");
         rawXML.AppendLine("<font>#labelFont</font>");
         rawXML.AppendLine("<align>right</align>");
@@ -4016,18 +4014,18 @@ namespace StreamedMPEditor
           menItem.disableBGSharing = true;
 
         rawXML.AppendLine("\t\t\t<!-- Menu Entry : " + menuIndex.ToString() + " -->");
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "name", menItem.name, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "label", menItem.contextLabel, 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "name", HttpUtility.HtmlEncode(menItem.name), 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "label", HttpUtility.HtmlEncode(menItem.contextLabel), 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "folder", menItem.bgFolder, 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "fanartproperty", menItem.fanartProperty, 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "fanartSource", menItem.fhBGSource.ToString(), 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "fanarthandlerenabled", menItem.fanartHandlerEnabled.ToString(), 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "enablemusicnowplayingfanart", menItem.EnableMusicNowPlayingFanart.ToString(), 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlink", menItem.hyperlink, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlinkParameter", menItem.hyperlinkParameter, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlinkParameterOption", menItem.hyperlinkParameterOption, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlinkParameterSearch", menItem.hyperlinkParameterSearch, 3, false));
-        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlinkParameterCategory", menItem.hyperlinkParameterCategory, 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlinkParameter", HttpUtility.HtmlEncode(menItem.hyperlinkParameter), 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlinkParameterOption", HttpUtility.HtmlEncode(menItem.hyperlinkParameterOption), 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlinkParameterSearch", HttpUtility.HtmlEncode(menItem.hyperlinkParameterSearch), 3, false));
+        rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "hyperlinkParameterCategory", HttpUtility.HtmlEncode(menItem.hyperlinkParameterCategory), 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "isdefault", menItem.isDefault.ToString(), 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "isweather", menItem.isWeather.ToString(), 3, false));
         rawXML.AppendLine(generateEntry("menuitem" + menuIndex.ToString() + "id", menItem.id.ToString(), 3, false));
@@ -4048,14 +4046,14 @@ namespace StreamedMPEditor
           rawXML.AppendLine("\t\t\t<!-- Menu Entry : " + menuIndex.ToString() + " Sub Level 1 -->");
           foreach (subMenuItem subItem in menItem.subMenuLevel1)
           {
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "displayName", subItem.displayName, 3, false));
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "baseDisplayName", subItem.baseDisplayName, 3, false));
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "displayName", HttpUtility.HtmlEncode(subItem.displayName), 3, false));
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "baseDisplayName", HttpUtility.HtmlEncode(subItem.baseDisplayName), 3, false));
             rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "xmlFileName", subItem.xmlFileName, 3, false));
             rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlink", subItem.hyperlink, 3, false));
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlinkParameter", subItem.hyperlinkParameter, 3, false));
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlinkParameterOption", subItem.hyperlinkParameterOption, 3, false));
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlinkParameterSearch", subItem.hyperlinkParameterSearch, 3, false));
-            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlinkParameterCategory", subItem.hyperlinkParameterCategory, 3, false));
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlinkParameter", HttpUtility.HtmlEncode(subItem.hyperlinkParameter), 3, false));
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlinkParameterOption", HttpUtility.HtmlEncode(subItem.hyperlinkParameterOption), 3, false));
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlinkParameterSearch", HttpUtility.HtmlEncode(subItem.hyperlinkParameterSearch), 3, false));
+            rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "hyperlinkParameterCategory", HttpUtility.HtmlEncode(subItem.hyperlinkParameterCategory), 3, false));
             rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "1subitem" + subCount.ToString() + "mrDisplay", subItem.showMostRecent.ToString(), 3, false));
             subCount++;
           }
@@ -4068,14 +4066,14 @@ namespace StreamedMPEditor
             rawXML.AppendLine("\t\t\t<!-- Menu Entry : " + menuIndex.ToString() + " Sub Level 2 -->");
             foreach (subMenuItem subItem in menItem.subMenuLevel2)
             {
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "displayName", subItem.displayName, 3, false));
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "baseDisplayName", subItem.baseDisplayName, 3, false));
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "displayName", HttpUtility.HtmlEncode(subItem.displayName), 3, false));
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "baseDisplayName", HttpUtility.HtmlEncode(subItem.baseDisplayName), 3, false));
               rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "xmlFileName", subItem.xmlFileName, 3, false));
               rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlink", subItem.hyperlink, 3, false));
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlinkParameter", subItem.hyperlinkParameter, 3, false));
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlinkParameterOption", subItem.hyperlinkParameterOption, 3, false));
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlinkParameterSearch", subItem.hyperlinkParameterSearch, 3, false));
-              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlinkParameterCategory", subItem.hyperlinkParameterCategory, 3, false));
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlinkParameter", HttpUtility.HtmlEncode(subItem.hyperlinkParameter), 3, false));
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlinkParameterOption", HttpUtility.HtmlEncode(subItem.hyperlinkParameterOption), 3, false));
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlinkParameterSearch", HttpUtility.HtmlEncode(subItem.hyperlinkParameterSearch), 3, false));
+              rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "hyperlinkParameterCategory", HttpUtility.HtmlEncode(subItem.hyperlinkParameterCategory), 3, false));
               rawXML.AppendLine(generateEntry("submenu" + menuIndex.ToString() + "2subitem" + subCount.ToString() + "mrDisplay", subItem.showMostRecent.ToString(), 3, false));
               subCount++;
             }
