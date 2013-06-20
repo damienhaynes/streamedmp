@@ -10,6 +10,7 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using MediaPortal.Configuration;
 using MediaPortal.GUI.Library;
+using System.Web;
 
 namespace StreamedMPEditor
 {
@@ -836,7 +837,7 @@ namespace StreamedMPEditor
               XmlNode path = skinNode.SelectSingleNode("entry[@name=\"" + elementName + "\"]");
               if (path != null)
               {
-                entryValue = path.InnerText;
+                entryValue = HttpUtility.HtmlDecode(path.InnerText);
                 return entryValue;
               }
             }
@@ -1845,7 +1846,7 @@ namespace StreamedMPEditor
       if (File.Exists(SkinInfo.mpPaths.streamedMPpath + xmlFileName))
         File.Delete(SkinInfo.mpPaths.streamedMPpath + xmlFileName);
 
-      //Write tempory file
+      // Write temp file
       StreamWriter tmpwriter;
       tmpwriter = File.CreateText(Path.Combine(SkinInfo.mpPaths.streamedMPpath,xmlFileName));
       tmpwriter.Write(xml);

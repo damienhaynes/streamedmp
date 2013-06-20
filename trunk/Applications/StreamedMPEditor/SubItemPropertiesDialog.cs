@@ -470,12 +470,12 @@ namespace StreamedMPEditor
     private void tbItemDisplayName_TextChanged(object sender, EventArgs e)
     {
       int start = tbItemDisplayName.SelectionStart;
-      if (isIlegalXML(tbItemDisplayName.Text))
-      {
-        tbItemDisplayName.Text = tbItemDisplayName.Text.Substring(0, tbItemDisplayName.Text.Length - 1);
-        tbItemDisplayName.SelectionStart = start;
-        return;
-      }
+      //if (isIlegalXML(tbItemDisplayName.Text))
+      //{
+      //  tbItemDisplayName.Text = tbItemDisplayName.Text.Substring(0, tbItemDisplayName.Text.Length - 1);
+      //  tbItemDisplayName.SelectionStart = start;
+      //  return;
+      //}
       tbItemDisplayName.Text = tbItemDisplayName.Text.ToUpper();
       tbItemDisplayName.SelectionStart = start;
     }

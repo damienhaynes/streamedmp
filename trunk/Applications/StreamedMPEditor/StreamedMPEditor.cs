@@ -20,6 +20,7 @@ using Cornerstone.Database.Tables;
 using Cornerstone.GUI.Filtering;
 using MediaPortal.Plugins.MovingPictures;
 using MediaPortal.Plugins.MovingPictures.Database;
+using System.Web;
 
 namespace StreamedMPEditor
 {
@@ -1450,12 +1451,12 @@ namespace StreamedMPEditor
     void itemName_TextChanged(object sender, EventArgs e)
     {
       int start = tbItemName.SelectionStart;
-      if (isIlegalXML(tbItemName.Text))
-      {
-        tbItemName.Text = tbItemName.Text.Substring(0, tbItemName.Text.Length - 1);
-        tbItemName.SelectionStart = start;
-        return;
-      }
+      //if (isIlegalXML(tbItemName.Text))
+      //{
+      //  tbItemName.Text = tbItemName.Text.Substring(0, tbItemName.Text.Length - 1);
+      //  tbItemName.SelectionStart = start;
+      //  return;
+      //}
       tbItemName.Text = tbItemName.Text.ToUpper();
       tbItemName.SelectionStart = start;
     }
@@ -1463,12 +1464,12 @@ namespace StreamedMPEditor
     void cboContextLabels_TextChanged(object sender, EventArgs e)
     {
       int start = cboContextLabel.SelectionStart;
-      if (isIlegalXML(tbItemName.Text))
-      {
-        tbItemName.Text = tbItemName.Text.Substring(0, tbItemName.Text.Length - 1);
-        tbItemName.SelectionStart = start;
-        return;
-      }
+      //if (isIlegalXML(tbItemName.Text))
+      //{
+      //  tbItemName.Text = tbItemName.Text.Substring(0, tbItemName.Text.Length - 1);
+      //  tbItemName.SelectionStart = start;
+      //  return;
+      //}
       cboContextLabel.Text = cboContextLabel.Text.ToUpper();
       cboContextLabel.SelectionStart = start;
     }
@@ -1684,7 +1685,7 @@ namespace StreamedMPEditor
       getBackupFileTotals();
       if (!onFormClosing)
       {
-        DialogResult result = helper.showError("BasicHome.xml Saved Sucessfully \n\n  Backup file has been created \n\nDo you want to Contine Editing", errorCode.infoQuestion);
+        DialogResult result = helper.showError("BasicHome.xml Saved Sucessfully \n\n  Backup file has been created \n\nDo you want to Continue Editing?", errorCode.infoQuestion);
         if (result == DialogResult.No)
         {
           //reset everything

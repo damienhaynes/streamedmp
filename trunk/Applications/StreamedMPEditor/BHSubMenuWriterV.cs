@@ -4,6 +4,7 @@ using System.Text;
 using System.Xml;
 using System.IO;
 using System.Linq;
+using System.Web;
 
 namespace StreamedMPEditor
 {
@@ -110,7 +111,7 @@ namespace StreamedMPEditor
                 "<description>SUB ITEM " + j.ToString() + "</description>" +
                 "<type>button</type>" +
                 "<id>" + (parentMenu.subMenuLevel1ID + (j + 1)).ToString() + "</id>" +
-                "<label>" + parentMenu.subMenuLevel1[j].displayName + "</label>" +
+                "<label>" + HttpUtility.HtmlEncode(parentMenu.subMenuLevel1[j].displayName) + "</label>" +
                 "<width>338</width>";
 
         if (parentMenu.subMenuLevel1[j].hyperlink == "196299")
@@ -135,18 +136,18 @@ namespace StreamedMPEditor
               {
                 string search = string.IsNullOrEmpty(parentMenu.subMenuLevel1[j].hyperlinkParameterSearch) ? string.Empty : "|search:" + parentMenu.subMenuLevel1[j].hyperlinkParameterSearch;
                 string category = string.IsNullOrEmpty(parentMenu.subMenuLevel1[j].hyperlinkParameterCategory) ? string.Empty : "|category:" + parentMenu.subMenuLevel1[j].hyperlinkParameterCategory;
-                localxml += "<hyperlinkParameter>site:" + parentMenu.subMenuLevel1[j].hyperlinkParameter + category + search + "|return:" + parentMenu.subMenuLevel1[j].hyperlinkParameterOption + "</hyperlinkParameter>";
+                localxml += "<hyperlinkParameter>site:" + HttpUtility.HtmlEncode(parentMenu.subMenuLevel1[j].hyperlinkParameter + category + search) + "|return:" + parentMenu.subMenuLevel1[j].hyperlinkParameterOption + "</hyperlinkParameter>";
               }
               else
               {
-                localxml += "<hyperlinkParameter>group:" + parentMenu.subMenuLevel1[j].hyperlinkParameter.Substring(7) + "|return:" + parentMenu.subMenuLevel1[j].hyperlinkParameterOption + "</hyperlinkParameter>";
+                localxml += "<hyperlinkParameter>group:" + HttpUtility.HtmlEncode(parentMenu.subMenuLevel1[j].hyperlinkParameter.Substring(7)) + "|return:" + parentMenu.subMenuLevel1[j].hyperlinkParameterOption + "</hyperlinkParameter>";
               }
               break;
             case movingPicturesSkinID:
-              localxml += "<hyperlinkParameter>categoryid:" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "</hyperlinkParameter>";
+              localxml += "<hyperlinkParameter>categoryid:" + HttpUtility.HtmlEncode(parentMenu.subMenuLevel1[j].hyperlinkParameter) + "</hyperlinkParameter>";
               break;
             default:
-              localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel1[j].hyperlinkParameter + "</hyperlinkParameter>";
+              localxml += "<hyperlinkParameter>" + HttpUtility.HtmlEncode(parentMenu.subMenuLevel1[j].hyperlinkParameter) + "</hyperlinkParameter>";
               break;
           }
         }
@@ -277,7 +278,7 @@ namespace StreamedMPEditor
                 "<description>SUB ITEM " + j.ToString() + "</description>" +
                 "<type>button</type>" +
                 "<id>" + (parentMenu.subMenuLevel1ID + (j + 101)).ToString() + "</id>" +
-                "<label>" + parentMenu.subMenuLevel2[j].displayName + "</label>" +
+                "<label>" + HttpUtility.HtmlEncode(parentMenu.subMenuLevel2[j].displayName) + "</label>" +
                 "<width>338</width>";
 
         if (parentMenu.subMenuLevel2[j].hyperlink == "196299")
@@ -302,18 +303,18 @@ namespace StreamedMPEditor
               {
                 string search = string.IsNullOrEmpty(parentMenu.subMenuLevel2[j].hyperlinkParameterSearch) ? string.Empty : "|search:" + parentMenu.subMenuLevel2[j].hyperlinkParameterSearch;
                 string category = string.IsNullOrEmpty(parentMenu.subMenuLevel2[j].hyperlinkParameterCategory) ? string.Empty : "|category:" + parentMenu.subMenuLevel2[j].hyperlinkParameterCategory;
-                localxml += "<hyperlinkParameter>site:" + parentMenu.subMenuLevel2[j].hyperlinkParameter + category + search + "|return:" + parentMenu.subMenuLevel2[j].hyperlinkParameterOption + "</hyperlinkParameter>";
+                localxml += "<hyperlinkParameter>site:" + HttpUtility.HtmlEncode(parentMenu.subMenuLevel2[j].hyperlinkParameter + category + search) + "|return:" + parentMenu.subMenuLevel2[j].hyperlinkParameterOption + "</hyperlinkParameter>";
               }
               else
               {
-                localxml += "<hyperlinkParameter>group:" + parentMenu.subMenuLevel2[j].hyperlinkParameter.Substring(7) + "|return:" + parentMenu.subMenuLevel2[j].hyperlinkParameterOption + "</hyperlinkParameter>";
+                localxml += "<hyperlinkParameter>group:" + HttpUtility.HtmlEncode(parentMenu.subMenuLevel2[j].hyperlinkParameter.Substring(7)) + "|return:" + parentMenu.subMenuLevel2[j].hyperlinkParameterOption + "</hyperlinkParameter>";
               }
               break;
             case movingPicturesSkinID:
-              localxml += "<hyperlinkParameter>categoryid:" + parentMenu.subMenuLevel2[j].hyperlinkParameter + "</hyperlinkParameter>";
+              localxml += "<hyperlinkParameter>categoryid:" + HttpUtility.HtmlEncode(parentMenu.subMenuLevel2[j].hyperlinkParameter) + "</hyperlinkParameter>";
               break;
             default:
-              localxml += "<hyperlinkParameter>" + parentMenu.subMenuLevel2[j].hyperlinkParameter + "</hyperlinkParameter>";
+              localxml += "<hyperlinkParameter>" + HttpUtility.HtmlEncode(parentMenu.subMenuLevel2[j].hyperlinkParameter) + "</hyperlinkParameter>";
               break;
           }
         }
