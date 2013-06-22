@@ -251,7 +251,7 @@ namespace StreamedMPEditor
                       "<animation effect=\"fade\" time=\"200\">WindowClose</animation>" +
                       "<animation effect=\"fade\" time=\"200\">visible</animation>" +
                       "<animation effect=\"fade\" time=\"200\">hidden</animation>" +
-                      "<posX>" + (int.Parse(txtMenuPos.Text) + 339).ToString() + "</posX>" +
+                      "<posX>" + (int.Parse(txtMenuPos.Text) + 335).ToString() + "</posX>" +
                       "<posY>488</posY>" +
                       "<width>338</width>" +
                       "<height>608</height>" +

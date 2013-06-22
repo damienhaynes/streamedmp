@@ -66,7 +66,7 @@ namespace StreamedMPEditor
       //
       //work out where to start the menu
       //
-      int menuStart = (int.Parse(txtMenuPos.Text) - (50 * parentMenu.subMenuLevel1.Count) - 20);
+      int menuStart = (int.Parse(txtMenuPos.Text) - (75 * parentMenu.subMenuLevel1.Count) - 5);
 
       localxml += "<control>" +
                       "<description>dummy for lateral blade visibility</description>" +
