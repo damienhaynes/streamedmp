@@ -3,7 +3,7 @@
   <!--Example user defined translation property-->
   <!--Field name must start with a '#'. The entry below creates the skin property-->
   <!--'#StreamedMP.Example.Property' that is set to 'Translated String'-->
-  <string name="#StreamedMP.Example.Property">Translated String</string>
+  <string name="#StreamedMP.Example.Property">Chaîne alphanumerique traduite</string>
   <!--MediaPortal Localised IDs -> Skin Properties-->
   <string name="#StreamedMP.Track">435</string>
   <string name="#StreamedMP.Year">436</string>
@@ -18,12 +18,12 @@
   <string name="MovingPicturesMenu">Paramètres MovingPictures</string>
   <string name="TVMenu">Paramètres TV</string>
   <string name="MiscMenu">Paramètres Divers</string>
-  <string name="SkinSettings">Paramètres Skin</string>
-  <string name="SkinMenu">Skin</string>
-  <string name="SkinInfoText">Skin Information</string>
-  <string name="ConfigRequiresRestartLine1">The following configuration changes will take</string>
-  <string name="ConfigRequiresRestartLine2">affect on next MediaPortal restart.</string>
-  <string name="ConfigRequiresRestartLine3">Would you like to restart now?</string>
+  <string name="SkinSettings">Paramètres du thème</string>
+  <string name="SkinMenu">Thème</string>
+  <string name="SkinInfoText">Information concernant le thème</string>
+  <string name="ConfigRequiresRestartLine1">Les modifications de la configuration seront</string>
+  <string name="ConfigRequiresRestartLine2">prises en compte lors du prochain démarrage de MediaPortal</string>
+  <string name="ConfigRequiresRestartLine3">Voulez-vous redémarrer maintenant?</string>
   <!--Skin Updates / Patching GUI-->
   <string name="UpdateInstall">Mettre à jour et installer</string>
   <string name="NoUpdatesAvailable">Aucune mise à jour disponible</string>
@@ -43,9 +43,9 @@
   <!--Music Options-->
   <string name="CDCover">Voir seulement la pochette CD dans Musique/Lecture En Cours</string>
   <string name="ShowEQ">Voir le graphique EQ dans Musique/Lecture En Cours</string>
-  <string name="NowPlayingStyles">Styles Lecture En Cours</string>
+  <string name="NowPlayingStyles">Styles Lecture en cours</string>
   <!--TVSeries Configuration-->
-  <string name="FanartStyle">Fanart Style</string>
+  <string name="FanartStyle">Style Fanart</string>
   <string name="WideBanners">Bannières Larges</string>
   <string name="WideBannerDefault">Bannières Larges: Défaut</string>
   <string name="WideBanner5x2Grid">Bannières Larges: 5x2 Grille avec Poster</string>
@@ -57,6 +57,7 @@
   <string name="ThumbnailDefault">Mosaïques: Défaut</string>
   <string name="Thumbnail_12x4_8x3_Grid">Mosaïques: 12x4 Petites Icônes, 8x3 Grandes Icônes</string>
   <string name="Thumbnail_12x3_8x2_Grid">Mosaïques: 12x3 Petites Icônes, 8x2 Grandes Icônes + Info</string>
+  <string name="ShowTaglineInDetailsSummary">Afficher les Taglines dans le Résumé</string>
   <!--TV Configuration-->
   <string name="TVGuideSize">Taille Guide TV</string>
   <string name="TVMiniGuideSize">Taille Mini Guide TV</string>
@@ -68,34 +69,35 @@
   <string name="TVMiniGuideFiveRows">Mini Guide TV: 5 Lignes</string>
   <string name="TVMiniGuideSevenRows">Mini Guide TV: 7 Lignes</string>
   <string name="TVMiniGuideNineRows">Mini Guide TV: 9 Lignes</string>
-  <string name="EnableRandomTVSeriesFanartInMyTV">Enable Random TVSeries Fanart</string>
+  <string name="EnableRandomTVSeriesFanartInMyTV">Activer l\'affichage des Fanarts de TVseries de manière aléatoire</string>
   <!--Misc Settings-->
-  <string name="ShowHiddenMenuImage">Montrer Image Cachée Menu</string>
-  <string name="ShowRoundedPosters">Montrer Images Poster Arrondies</string>
-  <string name="ShowIconsInArtwork">Montrer Icônes Vu/Non Vu sur les Pochettes</string>
+  <string name="ShowHiddenMenuImage">Montrer l\'image cachée du menu</string>
+  <string name="ShowRoundedPosters">Montrer les images type Poster arrondi</string>
+  <string name="ShowIconsInArtwork">Montrer l\'icônes Vu/Non Vu sur les Pochettes</string>
   <string name="PlayMostRecents">Activer Action de Lecture sur Récents</string>
-  <string name="FilterWatchedRecents">Filtrer Déjà Vu dans Ajouts Récents</string>
-  <string name="UnfocusedAlpha">Transparency/Opacity Settings</string>
-  <string name="UnfocusedAlphaMenuLists">Unfocused Alpha on List Layouts: {0}</string>
-  <string name="UnfocusedAlphaMenuThumbs">Unfocused Alpha on Thumb Layouts: {0}</string>
-  <string name="UnfocusedAlphaInvalidLine1">Invalid value entered, please enter a value</string>
-  <string name="UnfocusedAlphaInvalidLine2">between 0 - 255.</string>
+  <string name="FilterWatchedRecents">Filtrer Visionné dans Ajouts Récents</string>
+  <string name="UnfocusedAlpha"> Paramètres transparence / opacité</string>
+  <string name="UnfocusedAlphaMenuLists">Niveau de transparence concernant l\'affichage des listes: {0}</string>
+  <string name="UnfocusedAlphaMenuThumbs">Niveau de transparence concernant l\'affichage des vignettes: {0}</string>
+  <string name="UnfocusedAlphaInvalidLine1">La valeur indiquée est incorrecte, veuillez entrer une valeur</string>
+  <string name="UnfocusedAlphaInvalidLine2">comprise entre 0 - 255.</string>
   <string name="UnfocusedAlphaInvalidLine3">Opaque = 255, Transparent = 0</string>
-  <string name="UseLargeFonts">Use Large Fonts</string>
-  <string name="RestoreDefaults">Restore Defaults</string>
-  <string name="ListColors">Set List Colors</string>
-  <string name="ListDefaultColor">Default Color: {0}</string>
-  <string name="ListText2Color">Text 2 Color: {0}</string>
-  <string name="ListText3Color">Text 3 Color: {0}</string>
-  <string name="ListWatchedColor">Watched Color: {0}</string>
+  <string name="UseLargeFonts">Utiliser une police de grande taille</string>
+  <string name="RestoreDefaults">Restaurer les paramètres par défaut</string>
+  <string name="ListColors">Ensemble des listes de couleurs</string>
+  <string name="ListDefaultColor">Couleur par défaut: {0}</string>
+  <string name="ListText2Color">Couleur du texte 2: {0}</string>
+  <string name="ListText3Color">Couleur du texte 3: {0}</string>
+  <string name="ListWatchedColor">Couleur d\'élément  Visionné: {0}</string>
   <string name="ListRemoteColor">Remote Color: {0}</string>
-  <string name="ListColorInvalidLine1">Invalid color code entered, please enter a</string>
-  <string name="ListColorInvalidLine2">valid HEX code e.g. the color red is FF0000.</string>
-  <string name="ListColorInvalidLine3">which is \'255\' red, \'0\' green, and \'0\' blue.</string>
-  <string name="CustomColor">Custom Color</string>
+  <string name="ListColorInvalidLine1">Le code couleur indiquée est incorrecte, veuillez saisir une</string>
+  <string name="ListColorInvalidLine2">valeur hexadécimale correcte, ex: le code pour le rouge est FF0000</string>
+  <string name="ListColorInvalidLine3">correspondant à  \'255 \'rouge, \'0\' vert et \'0 \'bleu.</string>
+  <string name="CustomColor">Couleur personnalisée</string>
   <string name="ShowListScrollingPopup">Afficher la liste de défilement des Popup</string>
   <string name="Scraper">Collecteur d\'infos</string>
-  <string name="MyVideoWatchedProgress">Afficher les Indicateurs de progrès dans ma liste de vidéos</string>
+  <string name="TextualMediaInfoLogos">Logos des Info Média</string>
+  <string name="MyVideoWatchedProgress">Afficher les Indicateurs d\'avancement dans ma liste de vidéos</string>
   <!--General Translations-->
   <string name="Rated">Noté</string>
   <string name="Director">Réalisateur</string>
@@ -103,7 +105,7 @@
   <string name="Runtime">Durée</string>
   <string name="Votes">Votes</string>
   <string name="Trailer">Trailer</string>
-  <string name="Views">Vues</string>
+  <string name="Views">Visionnés</string>
   <string name="Locked">Vérouillé</string>
   <string name="DSTStart">Heure de lever du soleil</string>
   <string name="DSTEnd">Coucher du soleil</string>
@@ -113,7 +115,7 @@
   <string name="SearchHistory">Recherche Historique</string>
   <string name="SearchFields">Recherche Champs</string>
   <string name="SearchType">Recherche Type</string>
-  <string name="CaseSensitive">Sensible à la Casse</string>
+  <string name="CaseSensitive">Sensible à la Case</string>
   <!--Recently Added / Watched-->
   <string name="LatestEpisodes">Derniers Episodes</string>
   <string name="LatestMovies">Derniers Films</string>
@@ -127,5 +129,5 @@
   <string name="MediaPortalRestart">Redémarrer MediaPortal</string>
   <string name="MediaPortalShutDownMenu">Menu de Sortie</string>
   <string name="MediaPortalRestartMessage">Etes-vous sûr de vouloir redémarrer MediaPortal?</string>
-  <string name="MediaPortalSettings">MediaPortal Settings</string>
+  <string name="MediaPortalSettings">Paramètres MediaPortal</string>
 </resources>
