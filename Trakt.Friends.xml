@@ -51,7 +51,7 @@
       <type>label</type>
       <id>0</id>
       <posX>1108</posX>
-      <posY>21</posY>
+      <posY>19</posY>
       <width>330</width>
       <font>mediastream12c</font>
       <label>#(iif(eq(#Trakt.View.Level,'Friends'),'Trakt #Trakt.Translation.Friends.Label','#Trakt.User.Username'))</label>
@@ -78,7 +78,7 @@
       <type>fadelabel</type>
       <id>0</id>
       <posX>739</posX>
-      <posY>21</posY>
+      <posY>19</posY>
       <width>525</width>
       <font>mediastream12c</font>
       <label>#(iif(eq(#Trakt.View.Level,'WatchedHistory'),iif(eq(#Trakt.Selected.Type,'episode'),'#Trakt.Translation.WatchedEpisodes.Label','#Trakt.Translation.WatchedMovies.Label'),'Trakt #Trakt.Translation.Friends.Label'))</label>
