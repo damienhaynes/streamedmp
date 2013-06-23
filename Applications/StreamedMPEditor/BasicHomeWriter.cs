@@ -396,7 +396,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posX>" + (int.Parse(txtMenuPos.Text) - maxXPosition).ToString() + "</posX>");
       rawXML.AppendLine("<posY>0</posY>");
       rawXML.AppendLine("<width>1920</width>");
-      rawXML.AppendLine("<height>1080</height>");
+      rawXML.AppendLine("<height>1082</height>");
       rawXML.AppendLine("<texture>basichome.menu.overlay.png</texture>");
       rawXML.AppendLine("<shouldCache>true</shouldCache>");
       rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " start=" + quote + "-600,0" + quote + " end=" + quote + "0,0" + quote + " tween=" + quote + "quadratic" + quote + " easing=" + quote + "in" + quote + " time=" + quote + "400" + quote + " delay=" + quote + "200" + quote + ">WindowOpen</animation>");
