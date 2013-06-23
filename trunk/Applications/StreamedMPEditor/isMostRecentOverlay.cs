@@ -492,17 +492,17 @@
                     "<id>0</id>" +
                     "<posX>39</posX>" +
                     "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
-                    "<height>272</height>" +
-                    "<width>194</width>" +
+                    "<height>266</height>" +
+                    "<width>192</width>" +
                     "<texture>round.poster.frame.noreflection.png</texture>" +
-                  "</control>      " +
-                "<control>" +
+                  "</control>" +
+                  "<control>" +
                     "<description>Series 1 name</description>" +
                     "<type>fadelabel</type>" +
                     "<id>0</id>" +
-                    "<posX>228</posX>" +
+                    "<posX>238</posX>" +
                     "<posY>" + (overlayYpos + 44).ToString() + "</posY>" +
-                    "<width>387</width>" +
+                    "<width>377</width>" +
                     "<label>#StreamedMP.recentlyAdded.series1.title</label>" +
                     "<font>mediastream12tc</font>" +
                     "<textcolor>White</textcolor>" +
@@ -511,9 +511,9 @@
                     "<description>Series 1 title</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>228</posX>" +
+                    "<posX>238</posX>" +
                     "<posY>" + (overlayYpos + 123).ToString() + "</posY>" +
-                    "<width>383</width>" +
+                    "<width>377</width>" +
                     "<label>#StreamedMP.recentlyAdded.series1.episodetitle</label>" +
                     "<font>mediastream12</font>" +
                     "<textcolor>White</textcolor>" +
@@ -522,9 +522,9 @@
                     "<description>Series 1 episode</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>228</posX>" +
+                    "<posX>238</posX>" +
                     "<posY>" + (overlayYpos + 209).ToString() + "</posY>" +
-                    "<width>383</width>" +
+                    "<width>377</width>" +
                     "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series1.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series1.episodenumber</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>White</textcolor>" +
@@ -556,7 +556,7 @@
                     "<description>Series 2 thumb</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>678</posX>" +
+                    "<posX>675</posX>" +
                     "<posY>" + (overlayYpos + 15).ToString() + "</posY>" +
                     "<height>245</height>" +
                     "<width>167</width>" +
@@ -569,17 +569,17 @@
                     "<id>0</id>" +
                     "<posX>660</posX>" +
                     "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
-                    "<height>272</height>" +
-                    "<width>191</width>" +
+                    "<height>266</height>" +
+                    "<width>192</width>" +
                     "<texture>round.poster.frame.noreflection.png</texture>" +
                   "</control>      " +
                   "<control>" +
                     "<description>Series 2 name</description>" +
                     "<type>fadelabel</type>" +
                     "<id>0</id>" +
-                    "<posX>852</posX>" +
+                    "<posX>862</posX>" +
                     "<posY>" + (overlayYpos + 44).ToString() + "</posY>" +
-                    "<width>387</width>" +
+                    "<width>377</width>" +
                     "<label>#StreamedMP.recentlyAdded.series2.title</label>" +
                     "<font>mediastream12tc</font>" +
                     "<textcolor>White</textcolor>" +
@@ -588,9 +588,9 @@
                     "<description>Series 2 title</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>848</posX>" +
+                    "<posX>862</posX>" +
                     "<posY>" + (overlayYpos + 123).ToString() + "</posY>" +
-                    "<width>383</width>" +
+                    "<width>377</width>" +
                     "<label>#StreamedMP.recentlyAdded.series2.episodetitle</label>" +
                     "<font>mediastream12</font>" +
                     "<textcolor>White</textcolor>" +
@@ -599,9 +599,9 @@
                     "<description>Series 2 episode</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>848</posX>" +
+                    "<posX>862</posX>" +
                     "<posY>" + (overlayYpos + 209).ToString() + "</posY>" +
-                    "<width>387</width>" +
+                    "<width>377</width>" +
                     "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series2.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series2.episodenumber</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>White</textcolor>" +
@@ -620,7 +620,7 @@
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                   "<control>" +
                     "<description>Series 3 BG</description>" +
-                    "<posX>*1283</posX>" +
+                    "<posX>1283</posX>" +
                     "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
                     "<type>image</type>" +
                     "<id>6777</id>" +
@@ -633,7 +633,7 @@
                     "<description>Series 3 thumb</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>1299</posX>" +
+                    "<posX>1295</posX>" +
                     "<posY>" + (overlayYpos + 15).ToString() + "</posY>" +
                     "<height>245</height>" +
                     "<width>167</width>" +
@@ -644,19 +644,19 @@
                     "<description>Series 3 Rounded Cover</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>1287</posX>" +
+                    "<posX>1280</posX>" +
                     "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
-                    "<height>272</height>" +
-                    "<width>191</width>" +
+                    "<height>266</height>" +
+                    "<width>192</width>" +
                     "<texture>round.poster.frame.noreflection.png</texture>" +
-                  "</control>      " +
+                  "</control>" +
                   "<control>" +
                     "<description>Series 3 name</description>" +
                     "<type>fadelabel</type>" +
                     "<id>0</id>" +
-                    "<posX>1472</posX>" +
+                    "<posX>1482</posX>" +
                     "<posY>" + (overlayYpos + 44).ToString() + "</posY>" +
-                    "<width>383</width>" +
+                    "<width>377</width>" +
                     "<label>#StreamedMP.recentlyAdded.series3.title</label>" +
                     "<font>mediastream12tc</font>" +
                     "<textcolor>White</textcolor>" +
@@ -665,9 +665,9 @@
                     "<description>Series 3 title</description>" +
                     "<type>fadelabel</type>" +
                     "<id>0</id>" +
-                    "<posX>1472</posX>" +
+                    "<posX>1482</posX>" +
                     "<posY>" + (overlayYpos + 123).ToString() + "</posY>" +
-                    "<width>383</width>" +
+                    "<width>377</width>" +
                     "<label>#StreamedMP.recentlyAdded.series3.episodetitle</label>" +
                     "<font>mediastream12</font>" +
                     "<textcolor>White</textcolor>" +
@@ -676,9 +676,9 @@
                     "<description>Series 3 episode</description>" +
                     "<type>label</type>" +
                     "<id>0</id>" +
-                    "<posX>1472</posX>" +
+                    "<posX>1482</posX>" +
                     "<posY>" + (overlayYpos + 209).ToString() + "</posY>" +
-                    "<width>383</width>" +
+                    "<width>377</width>" +
                     "<label>#TVSeries.Translation.Season.Label: #StreamedMP.recentlyAdded.series3.season #TVSeries.Translation.Episode.Label: #StreamedMP.recentlyAdded.series3.episodenumber</label>" +
                     "<font>mediastream10</font>" +
                     "<textcolor>White</textcolor>" +
@@ -1416,8 +1416,8 @@
                     "<id>0</id>" +
                     "<posX>39</posX>" +
                     "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
-                    "<height>272</height>" +
-                    "<width>194</width>" +
+                    "<height>266</height>" +
+                    "<width>190</width>" +
                     "<texture>round.poster.frame.noreflection.png</texture>" +
                   "</control>      " +
                 "<control>" +
@@ -1480,7 +1480,7 @@
                     "<description>Movie 2 thumb</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>678</posX>" +
+                    "<posX>675</posX>" +
                     "<posY>" + (overlayYpos + 15).ToString() + "</posY>" +
                     "<height>245</height>" +
                     "<width>167</width>" +
@@ -1492,9 +1492,9 @@
                     "<type>image</type>" +
                     "<id>0</id>" +
                     "<posX>660</posX>" +
-                    "<posY>" + (overlayYpos + 2).ToString() + "</posY>" +
-                    "<height>272</height>" +
-                    "<width>191</width>" +
+                    "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
+                    "<height>266</height>" +
+                    "<width>190</width>" +
                     "<texture>round.poster.frame.noreflection.png</texture>" +
                   "</control>      " +
                   "<control>" +
@@ -1544,7 +1544,7 @@
                   "<animation effect=" + quote + "fade" + quote + " start=" + quote + "0" + quote + " end=" + quote + "100" + quote + " time=" + quote + "4000" + quote + " reversible=" + quote + "false" + quote + ">WindowOpen</animation>" +
                   "<control>" +
                     "<description>Movie 3 BG</description>" +
-                    "<posX>*1283</posX>" +
+                    "<posX>1283</posX>" +
                     "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
                     "<type>image</type>" +
                     "<id>6777</id>" +
@@ -1568,10 +1568,10 @@
                     "<description>Movie 3 Rounded Cover</description>" +
                     "<type>image</type>" +
                     "<id>0</id>" +
-                    "<posX>1287</posX>" +
+                    "<posX>1284</posX>" +
                     "<posY>" + (overlayYpos + 3).ToString() + "</posY>" +
-                    "<height>272</height>" +
-                    "<width>191</width>" +
+                    "<height>266</height>" +
+                    "<width>190</width>" +
                     "<texture>round.poster.frame.noreflection.png</texture>" +
                   "</control>      " +
                   "<control>" +
