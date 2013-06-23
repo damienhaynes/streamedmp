@@ -1,9 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <controls>
-    <!--
-    WindowClose animations cause images not to become visible with tvseries and moving pictures plugins
-    -->
     <control>
       <description>Update Indicator</description>
       <type>group</type>
@@ -41,7 +38,6 @@
       <width>198</width>
       <height>48</height>
       <texture>clockbackground.png</texture>
-      <animation effect="fade" time="200" delay="100">WindowOpen</animation>
     </control>
     <control>
       <description>Time Background</description>
@@ -55,7 +51,6 @@
       <colordiffuse>ffd52020</colordiffuse>
       <visible>!string.equals(#SleepControl.Text,)+plugin.isenabled(Sleep Control)</visible>
       <animation effect="fade" start="0" time="500" condition="true" pulse="true">Conditional</animation>
-      <animation effect="fade" time="200" delay="100">WindowOpen</animation>
     </control>
     <control>
       <description>Time</description>
@@ -68,7 +63,6 @@
       <font>mediastream12c</font>
       <label>#time</label>
       <align>left</align>
-      <animation effect="fade" time="200" delay="100">WindowOpen</animation>
     </control>
   </controls>
 </window>
