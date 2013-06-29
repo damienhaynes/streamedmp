@@ -262,6 +262,17 @@
       <textcolor>FFFFFFFF</textcolor>
       <animation effect="rotate" end="-90" time="0">WindowOpen</animation>
     </control>
+		<control>
+      <description>TV Channel Logo</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>100</posX>
+      <posY>890</posY>
+      <width>150</width>
+      <height>150</height>
+      <texture>#TV.Guide.thumb</texture>
+      <visible>!Player.HasVideo</visible>
+    </control>
     <control>
       <description>TV background</description>
       <type>image</type>
