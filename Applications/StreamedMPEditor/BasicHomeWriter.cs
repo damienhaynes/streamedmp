@@ -362,7 +362,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<height>" + basicHomeValues.menuHeight + "</height>");
       rawXML.AppendLine("<texture>" + basicHomeValues.mymenu + "</texture>");
       rawXML.AppendLine("<shouldCache>true</shouldCache>");
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
       rawXML.AppendLine("</control>");
       if (enableRssfeed.Checked && infoserviceOptions.Enabled)
       {
@@ -375,7 +375,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<width>" + basicHomeValues.subMenuWidth + "</width>");
         rawXML.AppendLine("<height>" + basicHomeValues.subMenuHeight + "</height>");
         rawXML.AppendLine("<texture>" + basicHomeValues.mymenu_submenu + "</texture>");
-        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>");
       }
       xml = xml.Replace("<!-- BEGIN GENERATED MENUGRAPHICS CODE-->", rawXML.ToString());
@@ -544,7 +544,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("<posX>" + (rssImageXposOffset + 60).ToString() + "</posX>");
             rawXML.AppendLine("<texture>#infoservice.feed.img</texture>");
             rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
-            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
             rawXML.AppendLine("</control>");
             break;
           case rssImageType.skinImage:
@@ -558,7 +558,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("<posX>90</posX>");
             rawXML.AppendLine("<texture>InfoService\\defaultFeedRSS.png</texture>");
             rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
-            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
             rawXML.AppendLine("</control>");
             break;
         }
@@ -588,7 +588,7 @@ namespace StreamedMPEditor
         else
           rawXML.AppendLine("<wrapString> :: </wrapString>");
       }
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
       rawXML.AppendLine("</control>");
 
       xml = xml.Replace("<!-- BEGIN GENERATED RSS TICKER CODE-->", rawXML.ToString());
@@ -1520,7 +1520,7 @@ namespace StreamedMPEditor
         if (!menuItems[k].isDefault)
           rawXML.AppendLine("<animation effect=\"slide\" start=\"-240,0\" end=\"-240,0\" time=\"0\" acceleration=\"-0.0\" reversible=\"false\">Visible</animation><!-- needed to display item at negative offset -->");
 
-        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>");
 
         // ** SECOND
@@ -1536,7 +1536,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<font>#labelFont</font>");
         rawXML.AppendLine("<align>center</align>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
-        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>	");
 
         //  CENTER
@@ -1554,7 +1554,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<font>#selectedFont</font>");
           rawXML.AppendLine("<align>center</align>");
           rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
           rawXML.AppendLine("</control>	");
         }
         rawXML.AppendLine("<control>");
@@ -1569,7 +1569,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<font>#selectedFont</font>");
         rawXML.AppendLine("<align>center</align>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
-        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>	");
 
         //  THIRD
@@ -1585,7 +1585,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<font>#labelFont</font>");
         rawXML.AppendLine("<align>center</align>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
-        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>	");
 
         // *** FOURTH
@@ -1601,7 +1601,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<font>#labelFont</font>");
         rawXML.AppendLine("<align>center</align>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
-        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>	");
       }
       xml = xml.Replace("<!-- BEGIN CROWDING FIX CODE-->", rawXML.ToString());
@@ -1707,7 +1707,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<align>center</align>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
         rawXML.AppendLine("<animation effect=\"slide\" start=\"-315,0\" end=\"0,0\" time=\"4\" acceleration=\"-0.0\" reversible=\"false\">WindowOpen</animation><!-- needed to display item at negative offset -->");
-        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>");
 
         // ** SECOND
@@ -1721,7 +1721,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<align>center</align>");
         rawXML.AppendLine("<texture>" + menuItems[second].buttonTexture + "</texture>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
-        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>	");
 
         // ** THIRD
@@ -1735,7 +1735,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<align>center</align>");
         rawXML.AppendLine("<texture>" + menuItems[third].buttonTexture + "</texture>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
-        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>	");
 
         //  CENTER
@@ -1794,7 +1794,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<align>center</align>");
         rawXML.AppendLine("<texture>" + menuItems[fourth].buttonTexture + "</texture>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
-        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>	");
 
         // *** FIFTH
@@ -1808,7 +1808,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<align>center</align>");
         rawXML.AppendLine("<texture>" + menuItems[fifth].buttonTexture + "</texture>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
-        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>	");
 
         // *** SIXTH
@@ -1822,7 +1822,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<align>center</align>");
         rawXML.AppendLine("<texture>" + menuItems[sixth].buttonTexture + "</texture>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menuItems[k].id + 900).ToString() + ")" + submenuControl + topBarButtons + "</visible>");
-        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("</control>	");
       }
       xml = xml.Replace("<!-- BEGIN CROWDING FIX CODE-->", rawXML.ToString());
@@ -2125,7 +2125,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("<font>mediastream14tc</font>");
             rawXML.AppendLine("<align>center</align>");
             rawXML.AppendLine("<animation effect=\"fade\" delay=\"400\" time=\"300\">Visible</animation>");
-            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+            rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
             rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 900).ToString() + ")" + menuIDControl + "</visible>");
             rawXML.AppendLine("</control>");
           }
@@ -2142,7 +2142,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<font>mediastream14tc</font>");
           rawXML.AppendLine("<align>center</align>");
           rawXML.AppendLine("<animation effect=\"fade\" delay=\"400\" time=\"300\">Visible</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
           rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 900).ToString() + ")" + menuIDControl + "</visible>");
           rawXML.AppendLine("</control>");
         }
@@ -2160,7 +2160,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<font>mediastream14tc</font>");
           rawXML.AppendLine("<align>center</align>");
           rawXML.AppendLine("<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
-          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+          rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
           rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")" + menuIDControl + "</visible>");
           rawXML.AppendLine("</control>");
         }
@@ -2176,7 +2176,7 @@ namespace StreamedMPEditor
         rawXML.AppendLine("<font>mediastream14tc</font>");
         rawXML.AppendLine("<align>center</align>");
         rawXML.AppendLine("<animation effect=\"fade\" delay=\"600\" time=\"300\">Visible</animation>");
-        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+        rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,450" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
         rawXML.AppendLine("<visible>Control.HasFocus(" + (menItem.id + 700).ToString() + ")|Control.HasFocus(" + (menItem.id + 800).ToString() + ")" + menuIDControl + "</visible>");
         rawXML.AppendLine("</control>");
       }
@@ -2549,7 +2549,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>" + (yPos1 + 300).ToString() + "</posY>");
       rawXML.AppendLine("<align>left</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay1High</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -2561,7 +2561,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>" + (yPos1 + 300).ToString() + "</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay1Low</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -2601,7 +2601,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>" + (yPos2 + 300).ToString() + "</posY>");
       rawXML.AppendLine("<align>left</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay2High</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -2613,7 +2613,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>" + (yPos2 + 300).ToString() + "</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay2Low</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -2653,7 +2653,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>" + (yPos2 + 300).ToString() + "</posY>");
       rawXML.AppendLine("<align>left</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay3High</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -2665,7 +2665,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>" + (yPos2 + 300).ToString() + "</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay3Low</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -2711,7 +2711,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>-50</posY>");
       rawXML.AppendLine("<label></label>");
       if (weatherId.ToString().Length == 5)
-        rawXML.AppendLine("<visible>plugin.isenabled(World Weather)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
+          rawXML.AppendLine("<visible>plugin.isenabled(World Weather)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
       else
           rawXML.AppendLine("<visible>plugin.isenabled(World Weather)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
       rawXML.AppendLine("</control>");
@@ -2727,7 +2727,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<visible>plugin.isenabled(World Weather)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">Visible</animation>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
-      rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
+      rawXML.AppendLine("<animation effect=\"slide\" end=\"0,450\" time=\"250\" acceleration=\"-0.1\" reversible=\"false\">windowclose</animation>");
       for (i = 0; i < 5; i++)
       {
         rawXML.AppendLine("<control>");
@@ -2751,7 +2751,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<dimColor>0xffffffff</dimColor>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">Visible</animation>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
-      rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
+      rawXML.AppendLine("<animation effect=\"slide\" end=\"0,450\" time=\"250\" acceleration=\"-0.1\" reversible=\"false\">windowclose</animation>");
       if (weatherId.ToString().Length == 5)
           rawXML.AppendLine("<visible>plugin.isenabled(World Weather)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")+!control.isvisible(11111)</visible>");
       else
@@ -2784,7 +2784,7 @@ namespace StreamedMPEditor
             rawXML.AppendLine("<visible>plugin.isenabled(World Weather)+[Control.HasFocus(" + (weatherId + 500).ToString() + ")|Control.HasFocus(" + (weatherId + 600).ToString() + ")|control.isvisible(" + weatherId + ")]+!control.isvisible(11111)</visible>");
         rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">Visible</animation>");
         rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
-        rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
+        rawXML.AppendLine("<animation effect=\"slide\" end=\"0,450\" time=\"250\" acceleration=\"-0.1\" reversible=\"false\">windowclose</animation>");
         rawXML.AppendLine("</control>");
       }
       rawXML.AppendLine("</control>");
@@ -2795,7 +2795,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<type>group</type>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"20\" end=\"100\" delay=\"100\" time=\"400\">Visible</animation>");
       rawXML.AppendLine("<animation effect=\"fade\" start=\"0\" end=\"100\" delay=\"200\" time=\"400\">WindowOpen</animation>");
-      rawXML.AppendLine("<animation effect=\"fade\" start=\"100\" end=\"0\" delay=\"200\" time=\"400\">WindowClose</animation>");
+      rawXML.AppendLine("<animation effect=\"slide\" end=\"0,450\" time=\"250\" acceleration=\"-0.1\" reversible=\"false\">windowclose</animation>");
       rawXML.AppendLine("<dimColor>0xffffffff</dimColor>");
       if (weatherId.ToString().Length == 5)
           rawXML.AppendLine("<visible>plugin.isenabled(World Weather)+control.isvisible(" + int.Parse(weatherId.ToString()) + ")|control.isvisible(" + int.Parse((weatherId + 1).ToString()) + ")]+!control.isvisible(11111)</visible>");
@@ -2820,10 +2820,10 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<type>label</type>");
       rawXML.AppendLine("<id>0</id>");
       rawXML.AppendLine("<posX>450</posX>");
-      rawXML.AppendLine("<posY>923</posY>");
+      rawXML.AppendLine("<posY>903</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.TodayTemperature</label>");
-      rawXML.AppendLine("<font>mediastream11tc</font>");
+      rawXML.AppendLine("<font>mediastream14tc</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -2836,7 +2836,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<width>210</width>");
       rawXML.AppendLine("<height>75</height>");
       rawXML.AppendLine("<label>#WorldWeather.TodayCondition</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream12</font>");
       rawXML.AppendLine("<align>left</align>");
       rawXML.AppendLine("</control>");
       //  DAY 2 *
@@ -2861,7 +2861,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>839</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay0High</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -2873,7 +2873,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>876</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay0Low</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -2912,7 +2912,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>839</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay1High</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -2924,7 +2924,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>876</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay1Low</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -2963,7 +2963,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>839</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay2High</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -2975,7 +2975,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>876</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay2Low</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -3014,7 +3014,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>839</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay3High</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -3026,7 +3026,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>876</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay3Low</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -3252,7 +3252,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>533</posY>");
       rawXML.AppendLine("<align>left</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay1High</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -3264,7 +3264,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>533</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay1Low</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -3302,7 +3302,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>533</posY>");
       rawXML.AppendLine("<align>left</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay2High</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -3314,7 +3314,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>533</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay2Low</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -3352,7 +3352,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>533</posY>");
       rawXML.AppendLine("<align>left</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay3High</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -3364,7 +3364,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<posY>533</posY>");
       rawXML.AppendLine("<align>right</align>");
       rawXML.AppendLine("<label>#WorldWeather.ForecastDay3Low</label>");
-      rawXML.AppendLine("<font>mediastream11</font>");
+      rawXML.AppendLine("<font>mediastream11c</font>");
       rawXML.AppendLine("<textcolor>white</textcolor>");
       rawXML.AppendLine("</control>");
 
@@ -3705,7 +3705,7 @@ namespace StreamedMPEditor
           rawXML.AppendLine("<wrapString> :: </wrapString>");
       }
 
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,480" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,480" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
       rawXML.AppendLine("</control>");
 
       rawXML.AppendLine("<control>");
@@ -3718,7 +3718,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<texture>InfoService\\defaultTwitter.png</texture>");
       rawXML.AppendLine("<keepaspectratio>yes</keepaspectratio>");
       rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,480" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,480" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
       rawXML.AppendLine("</control>");
 
       rawXML.AppendLine("<control>");
@@ -3733,7 +3733,7 @@ namespace StreamedMPEditor
       rawXML.AppendLine("<textcolor>ff000000</textcolor>");
       rawXML.AppendLine("<label>#infoservice.twitter.messages</label>");
       rawXML.AppendLine("<visible>plugin.isenabled(InfoService)</visible>");
-      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,480" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + " -0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
+      rawXML.AppendLine("<animation effect=" + quote + "slide" + quote + " end=" + quote + "0,480" + quote + " time=" + quote + "250" + quote + " acceleration=" + quote + "-0.1" + quote + " reversible=" + quote + "false" + quote + ">windowclose</animation>");
       rawXML.AppendLine("</control>");
 
       xml = xml.Replace("<!-- BEGIN GENERATED TWITTER CODE-->", rawXML.ToString());
