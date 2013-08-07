@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>87258</id>
-  <defaultcontrol>10</defaultcontrol>
+  <defaultcontrol>9</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <rememberLastFocusedControl>yes</rememberLastFocusedControl>
   <define>#header.label:Trakt</define>
   <define>#header.hover:hover_trakt.png</define>
   <define>#selecteditem:#highlightedbutton</define>
-  <define>#activityOnLeft:10</define>
+  <define>#activityOnLeft:9</define>
   <controls>
     <control>
       <type>image</type>
@@ -73,6 +73,15 @@
       <width>382</width>
       <height>568</height>
       <layout>StackLayout(0, Vertical, true)</layout>
+	  <control Style="settingsbutton">
+        <description>User Profile</description>
+        <type>button</type>
+        <width>382</width>
+        <id>9</id>
+        <label>#Trakt.Translation.Profile.Label</label>
+        <hyperlink>87400</hyperlink>
+        <onup>98</onup>
+      </control>
       <control Style="settingsbutton">
         <description>Calendar</description>
         <type>button</type>
@@ -80,15 +89,15 @@
         <id>10</id>
         <label>#Trakt.Translation.Calendar.Label</label>
         <hyperlink>87259</hyperlink>
-        <onup>98</onup>
+        <onup>9</onup>
       </control>
       <control Style="settingsbutton">
-        <description>Friends</description>
+        <description>Network</description>
         <type>button</type>
         <width>382</width>
         <id>11</id>
-        <hyperlink>87260</hyperlink>
-        <label>#Trakt.Translation.Friends.Label</label>
+        <hyperlink>87283</hyperlink>
+        <label>#Trakt.Translation.Network.Label</label>
       </control>
       <control Style="settingsbutton">
         <description>Recommendations</description>
@@ -137,7 +146,7 @@
         <width>382</width>
         <id>98</id>
         <label>#MPEI.Translation.Update.Label</label>
-        <ondown>10</ondown>
+        <ondown>9</ondown>
         <onup>16</onup>
         <visible>string.equals(#mpei.a9c3845a_8718_4712_85cc_26f56520bb9a.haveupdate, true)</visible>
       </control>

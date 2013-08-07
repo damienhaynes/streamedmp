@@ -82,22 +82,32 @@
       <layout>StackLayout(0, Vertical, true)</layout>
       <visible>!string.equals(#Trakt.Settings.Account.Dialog.Visible,true)</visible>
       <control Style="settingsbutton">
-        <description>Trakt Calendar</description>
+        <description>User Profile</description>
+        <type>button</type>
+        <id>9990</id>
+        <width>382</width>
+        <label>#Trakt.Translation.Profile.Label</label>
+        <hyperlink>87400</hyperlink>
+        <onup>9997</onup>
+        <onleft>#defaultcontrol</onleft>
+      </control>
+      <control Style="settingsbutton">
+        <description>Calendar</description>
         <type>button</type>
         <id>9991</id>
         <width>382</width>
         <label>#Trakt.Translation.Calendar.Label</label>
         <hyperlink>87259</hyperlink>
-        <onup>9997</onup>
+        <onup>9990</onup>
         <onleft>#defaultcontrol</onleft>
       </control>
       <control Style="settingsbutton">
-        <description>Friends</description>
+        <description>Network</description>
         <type>button</type>
         <id>9992</id>
         <width>382</width>
-        <label>#Trakt.Translation.Friends.Label</label>
-        <hyperlink>87260</hyperlink>
+        <label>#Trakt.Translation.Network.Label</label>
+        <hyperlink>87283</hyperlink>
         <onleft>#defaultcontrol</onleft>
       </control>
       <control Style="settingsbutton">
