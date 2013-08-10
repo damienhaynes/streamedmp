@@ -92,11 +92,12 @@
       <type>image</type>
       <id>0</id>
       <posX>1050</posX>
-      <posY>610</posY>
+      <posY>606</posY>
       <width>48</width>
       <height>48</height>
       <texture>isupdate.png</texture>
       <visible>string.equals(#StreamedMP.ShowSettingsUpdateInd,true)</visible>
+			<animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
   </controls>
 </window>
