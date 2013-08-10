@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<!--version="1.0" encoding="utf-8" standalone="yes"-->
 <window>
-  <id>87260</id>
+  <id>87288</id>
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
+  <define>#Fanart.1:#Trakt.RecentShouts.Fanart.1</define>
+  <define>#Fanart.2:#Trakt.RecentShouts.Fanart.2</define>
   <controls>
     <control>
       <description>BG</description>
@@ -13,16 +14,6 @@
       <width>1280</width>
       <height>720</height>
       <colordiffuse>90ffffff</colordiffuse>
-    </control>
-    <control>
-      <id>1</id>
-      <description>Fanart Image</description>
-      <type>image</type>
-      <posX>0</posX>
-      <posY>0</posY>
-      <width>1280</width>
-      <height>720</height>
-      <texture>#Trakt.Shout.Fanart</texture>
     </control>
     <import>Trakt.Common.Fanart.xml</import>
     <import>common.window.xml</import>
@@ -46,7 +37,7 @@
       <width>866</width>
       <font>font11</font>
       <textcolor>ff6FAFE1</textcolor>
-      <label>#Trakt.Translation.Shouts.Label | #Trakt.Shout.CurrentItem</label>
+      <label>#Trakt.Translation.RecentShouts.Label | #(iif(eq(#Trakt.User.FullName,''),'#Trakt.User.Username','#Trakt.User.FullName'))</label>
       <align>left</align>
     </control>
     <control>
@@ -61,9 +52,11 @@
           <id>50</id>
           <height>360</height>
           <width>1066</width>
-          <onleft>3</onleft>
+          <onleft>2</onleft>
           <onright>50</onright>
           <spinCanFocus>no</spinCanFocus>
+          <PinIconXOff>1020</PinIconXOff>
+          <textXOff2>1010</textXOff2>
         </control>
       </control>
     </control>
@@ -123,28 +116,6 @@
           <animation effect="slide" time="70" start="-300,0" reversible="false">visible</animation>
           <animation effect="slide" time="70" end="-300,0" reversible="false">hidden</animation>
           <control>
-            <description>Next Episode</description>
-            <type>button</type>
-            <id>3</id>
-            <width>293</width>
-            <label>209</label>
-            <onleft>4</onleft>
-            <onright>50</onright>
-            <onup>21</onup>
-            <ondown>4</ondown>
-          </control>
-            <control>
-            <description>Previous Episode</description>
-            <type>button</type>
-            <id>4</id>
-            <width>293</width>
-            <label>210</label>
-            <onleft>2</onleft>
-            <onright>50</onright>
-            <onup>3</onup>
-            <ondown>2</ondown>
-          </control>
-          <control>
             <description>Toggle Hide Spoilers</description>
             <type>checkbutton</type>
             <id>2</id>
@@ -152,7 +123,6 @@
             <label>-</label>
             <onleft>2</onleft>
             <onright>50</onright>
-            <onup>4</onup>
           </control>
         </control>
       </control>
@@ -167,16 +137,16 @@
       <width>110</width>
       <keepaspectratio>yes</keepaspectratio>
       <zoom>yes</zoom>
-      <texture>#selectedthumb</texture>
+      <texture>#Trakt.User.AvatarFileName</texture>
     </control>
     <control>
       <description>Join Date | Location</description>
       <id>0</id>
-      <label>#(iif(eq(#Trakt.User.FullName,'N/A'),'#Trakt.User.Username','#Trakt.User.FullName')) #(iif(eq(#Trakt.User.Location,'N/A'),'','| #Trakt.User.Location'))</label>
+      <label>#(iif(eq(#Trakt.User.FullName,''),'#Trakt.User.Username','#Trakt.User.FullName')) | #Trakt.User.Location</label>
       <type>label</type>
       <posX>250</posX>
       <posY>495</posY>
-      <width>540</width>
+      <width>893</width>
       <textcolor>ff6FAFE1</textcolor>
       <font>font13</font>
       <visible>!string.equals(#Trakt.User.JoinDate,)</visible>
@@ -191,60 +161,8 @@
       <height>70</height>
       <font>font14</font>
       <label>#Trakt.Shout.Text</label>
-      <scrollStartDelaySec>8</scrollStartDelaySec>
+      <scrollStartDelaySec>12</scrollStartDelaySec>
       <seperator>-----------------------------------------------------------------------------</seperator>
-    </control>
-    
-    <control>
-      <description>Likes Icon</description>
-      <type>image</type>
-      <id>1</id>
-      <width>35</width>
-      <height>32</height>
-      <posX>800</posX>
-      <posY>493</posY>
-      <texture>love.png</texture>
-      <visible>!string.equals(#Trakt.Shout.Likes,)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control>
-      <type>label</type>
-      <label>#Trakt.Shout.Likes #Trakt.Translation.Likes.Label</label>
-      <id>0</id>
-      <posX>850</posX>
-      <posY>495</posY>
-      <width>187</width>
-      <font>font12</font>
-      <textcolor>ffffffff</textcolor>
-      <shadowAngle>45</shadowAngle>
-      <shadowDistance>6</shadowDistance>
-      <shadowColor>#shadow.light</shadowColor>
-      <visible>!string.equals(#Trakt.Shout.Likes,)</visible>
-    </control>
-    <control>
-      <description>Replies Icon</description>
-      <type>image</type>
-      <id>1</id>
-      <width>36</width>
-      <height>36</height>
-      <posX>1000</posX>
-      <posY>493</posY>
-      <texture>traktActivityShout.png</texture>
-      <visible>!string.equals(#Trakt.Shout.Replies,)</visible>
-    </control>
-    <control>
-      <type>label</type>
-      <label>#Trakt.Shout.Replies #Trakt.Translation.Replies.Label</label>
-      <id>0</id>
-      <posX>1045</posX>
-      <posY>495</posY>
-      <width>450</width>
-      <font>font12</font>
-      <textcolor>ffffffff</textcolor>
-      <shadowAngle>45</shadowAngle>
-      <shadowDistance>6</shadowDistance>
-      <shadowColor>#shadow.light</shadowColor>
-      <visible>!string.equals(#Trakt.Shout.Replies,)</visible>
     </control>
   </controls>
 </window>
