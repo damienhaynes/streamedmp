@@ -25,7 +25,7 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#WorldWeather.View,Image)+string.equals(#WorldWeather.ImageView,Flat)</visible>
       <control>
-        <description>Satellite</description>
+        <description>#WorldWeather.ImageWeather1</description>
         <type>button</type>
         <id>19629001</id>
         <onleft>2</onleft>
@@ -33,13 +33,13 @@
         <ondown>19629002</ondown>
         <width>195</width>
         <height>132</height>
-        <textureFocus>#WorldWeather.ImageSatellite</textureFocus>
-        <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImageSatellite</textureNoFocus>
+        <textureFocus>#WorldWeather.ImageWeather1</textureFocus>
+        <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImageWeather1</textureNoFocus>
         <disabledcolor>30ffffff</disabledcolor>
-        <visible>!string.equals(#WorldWeather.ImageSatellite,)+string.equals(#WorldWeather.ImageView,Flat)</visible>
+        <visible>!string.equals(#WorldWeather.ImageWeather1,)+string.equals(#WorldWeather.ImageView,Flat)</visible>
       </control>
       <control>
-        <description>Temperature</description>
+        <description>#WorldWeather.ImageWeather2</description>
         <type>button</type>
         <id>19629002</id>
         <onleft>2</onleft>
@@ -47,13 +47,13 @@
         <ondown>19629003</ondown>
         <width>195</width>
         <height>132</height>
-        <textureFocus>#WorldWeather.ImageTemperature</textureFocus>
-        <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImageTemperature</textureNoFocus>
+        <textureFocus>#WorldWeather.ImageWeather2</textureFocus>
+        <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImageWeather2</textureNoFocus>
         <disabledcolor>30ffffff</disabledcolor>
-        <visible>!string.equals(#WorldWeather.ImageTemperature,)+string.equals(#WorldWeather.ImageView,Flat)</visible>
+        <visible>!string.equals(#WorldWeather.ImageWeather2,)+string.equals(#WorldWeather.ImageView,Flat)</visible>
       </control>
       <control>
-        <description>UV Index</description>
+        <description>#WorldWeather.ImageWeather3</description>
         <type>button</type>
         <id>19629003</id>
         <onleft>2</onleft>
@@ -61,13 +61,13 @@
         <ondown>19629004</ondown>
         <width>195</width>
         <height>132</height>
-        <textureFocus>#WorldWeather.ImageUVIndex</textureFocus>
-        <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImageUVIndex</textureNoFocus>
+        <textureFocus>#WorldWeather.ImageWeather3</textureFocus>
+        <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImageWeather3</textureNoFocus>
         <disabledcolor>30ffffff</disabledcolor>
-        <visible>!string.equals(#WorldWeather.ImageUVIndex,)+string.equals(#WorldWeather.ImageView,Flat)</visible>
+        <visible>!string.equals(#WorldWeather.ImageWeather3,)+string.equals(#WorldWeather.ImageView,Flat)</visible>
       </control>
       <control>
-        <description>Wind</description>
+        <description>#WorldWeather.ImageWeather4</description>
         <type>button</type>
         <id>19629004</id>
         <onleft>2</onleft>
@@ -75,24 +75,24 @@
         <ondown>19629005</ondown>
         <width>195</width>
         <height>132</height>
-        <textureFocus>#WorldWeather.ImageWind</textureFocus>
-        <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImageWind</textureNoFocus>
+        <textureFocus>#WorldWeather.ImageWeather4</textureFocus>
+        <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImageWeather4</textureNoFocus>
         <disabledcolor>30ffffff</disabledcolor>
-        <visible>!string.equals(#WorldWeather.ImageWind,)+string.equals(#WorldWeather.ImageView,Flat)</visible>
+        <visible>!string.equals(#WorldWeather.ImageWeather4,)+string.equals(#WorldWeather.ImageView,Flat)</visible>
       </control>
       <control>
-        <description>Precipitation</description>
+        <description>#WorldWeather.ImageWeather5</description>
         <type>button</type>
         <id>19629005</id>
         <onup>19629004</onup>
         <ondown>2</ondown>
         <width>195</width>
         <height>132</height>
-        <textureFocus>#WorldWeather.ImagePrecipitation</textureFocus>
-        <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImagePrecipitation</textureNoFocus>
+        <textureFocus>#WorldWeather.ImageWeather5</textureFocus>
+        <textureNoFocus mask="thumbborder2.png">#WorldWeather.ImageWeather5</textureNoFocus>
         <disabledcolor>30ffffff</disabledcolor>
         <onleft>2</onleft>
-        <visible>!string.equals(#WorldWeather.ImagePrecipitation,)+string.equals(#WorldWeather.ImageView,Flat)</visible>
+        <visible>!string.equals(#WorldWeather.ImageWeather5,)+string.equals(#WorldWeather.ImageView,Flat)</visible>
       </control>
     </control>
     <!-- *** Location *** -->
@@ -125,26 +125,26 @@
     </control>
     <!-- *** Satellite Image *** -->
     <control>
-      <description>Satellite image</description>
+      <description>#WorldWeather.ImageWeather1 image</description>
       <type>image</type>
       <id>0</id>
-      <posX>267</posX>
-      <posY>160</posY>
-      <width>1030</width>
-      <height>693</height>
+      <posX>263</posX>
+      <posY>156</posY>
+      <width>1038</width>
+      <height>698</height>
       <keepaspectratio>no</keepaspectratio>
-      <texture>#WorldWeather.ImageSatellite</texture>
+      <texture>#WorldWeather.ImageWeather1</texture>
       <visible>string.equals(#WorldWeather.View,Image)+string.equals(#WorldWeather.ImageView,Flat)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Location label</description>
+      <description>#WorldWeather.ImageWeather1 label</description>
       <type>label</type>
       <id>0</id>
       <posX>780</posX>
       <posY>888</posY>
-      <label>#WorldWeather.TranslationSatelliteImage</label>
+      <label>#WorldWeather.ImageWeather1Description</label>
       <font>mediastream14c</font>
       <align>center</align>
       <textcolor>white</textcolor>
@@ -154,26 +154,26 @@
     </control>
     <!-- *** Temperature Image *** -->
     <control>
-      <description>Temperature image</description>
+      <description>#WorldWeather.ImageWeather2 image</description>
       <type>image</type>
       <id>0</id>
-      <posX>267</posX>
-      <posY>160</posY>
-      <width>1030</width>
-      <height>693</height>
+      <posX>263</posX>
+      <posY>156</posY>
+      <width>1038</width>
+      <height>698</height>
       <keepaspectratio>no</keepaspectratio>
-      <texture>#WorldWeather.ImageTemperature</texture>
+      <texture>#WorldWeather.ImageWeather2</texture>
       <visible>string.equals(#WorldWeather.View,Image)+control.hasfocus(19629002)+string.equals(#WorldWeather.ImageView,Flat)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Temperature Image label</description>
+      <description>#WorldWeather.ImageWeather2 Image label</description>
       <type>label</type>
       <id>0</id>
       <posX>780</posX>
       <posY>888</posY>
-      <label>#WorldWeather.TranslationTemperatureImage</label>
+      <label>#WorldWeather.ImageWeather2Description</label>
       <font>mediastream14c</font>
       <align>center</align>
       <textcolor>white</textcolor>
@@ -183,26 +183,26 @@
     </control>
     <!-- *** UV Image *** -->
     <control>
-      <description>UV image</description>
+      <description>#WorldWeather.ImageWeather3 image</description>
       <type>image</type>
       <id>0</id>
-      <posX>267</posX>
-      <posY>160</posY>
-      <width>1030</width>
-      <height>693</height>
+      <posX>263</posX>
+      <posY>156</posY>
+      <width>1038</width>
+      <height>698</height>
       <keepaspectratio>no</keepaspectratio>
-      <texture>#WorldWeather.ImageUVIndex</texture>
+      <texture>#WorldWeather.ImageWeather3</texture>
       <visible>string.equals(#WorldWeather.View,Image)+control.hasfocus(19629003)+string.equals(#WorldWeather.ImageView,Flat)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>UV Image label</description>
+      <description>#WorldWeather.ImageWeather3 Image label</description>
       <type>label</type>
       <id>0</id>
       <posX>780</posX>
       <posY>888</posY>
-      <label>#WorldWeather.TranslationUVIndexImage</label>
+      <label>#WorldWeather.ImageWeather3Description</label>
       <font>mediastream14c</font>
       <align>center</align>
       <textcolor>white</textcolor>
@@ -212,26 +212,26 @@
     </control>
     <!-- *** Wind Image *** -->
     <control>
-      <description>Wind Image</description>
+      <description>#WorldWeather.ImageWeather4 Image</description>
       <type>image</type>
       <id>0</id>
-      <posX>267</posX>
-      <posY>160</posY>
-      <width>1030</width>
-      <height>693</height>
+      <posX>263</posX>
+      <posY>156</posY>
+      <width>1038</width>
+      <height>698</height>
       <keepaspectratio>no</keepaspectratio>
-      <texture>#WorldWeather.ImageWind</texture>
+      <texture>#WorldWeather.ImageWeather4</texture>
       <visible>string.equals(#WorldWeather.View,Image)+control.hasfocus(19629004)+string.equals(#WorldWeather.ImageView,Flat)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Wind Image label</description>
+      <description>#WorldWeather.ImageWeather4 Image label</description>
       <type>label</type>
       <id>0</id>
       <posX>780</posX>
       <posY>888</posY>
-      <label>#WorldWeather.TranslationWindImage</label>
+      <label>#WorldWeather.ImageWeather4Description</label>
       <font>mediastream14c</font>
       <align>center</align>
       <textcolor>white</textcolor>
@@ -241,26 +241,26 @@
     </control>
     <!-- *** Precipitation Image *** -->
     <control>
-      <description>Precipitation Image</description>
+      <description>#WorldWeather.ImageWeather5 Image</description>
       <type>image</type>
       <id>0</id>
-      <posX>267</posX>
-      <posY>160</posY>
-      <width>1030</width>
-      <height>693</height>
+      <posX>263</posX>
+      <posY>156</posY>
+      <width>1038</width>
+      <height>698</height>
       <keepaspectratio>no</keepaspectratio>
-      <texture>#WorldWeather.ImagePrecipitation</texture>
+      <texture>#WorldWeather.ImageWeather5</texture>
       <visible>string.equals(#WorldWeather.View,Image)+control.hasfocus(19629005)+string.equals(#WorldWeather.ImageView,Flat)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Precipitation Image label</description>
+      <description>#WorldWeather.ImageWeather5 Image label</description>
       <type>label</type>
       <id>0</id>
       <posX>780</posX>
       <posY>888</posY>
-      <label>#WorldWeather.TranslationPrecipitationImage</label>
+      <label>#WorldWeather.ImageWeather5Description</label>
       <font>mediastream14c</font>
       <align>center</align>
       <textcolor>white</textcolor>
