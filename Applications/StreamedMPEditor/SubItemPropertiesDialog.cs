@@ -37,9 +37,6 @@ namespace StreamedMPEditor
       gbHyperlinkParameter.Enabled = false;
       currentSkinID = skinFileID;
 
-      if (showHyperlinkParameterDialog)
-        gbHyperlinkParameter.Enabled = true;
-
       cboViews.Visible = false;
       cbOnlineVideosReturn.Visible = false;
       cboOnlineVideosCategories.Visible = false;
@@ -48,46 +45,53 @@ namespace StreamedMPEditor
       lblCategory.Visible = false;
       txtSearch.Visible = false;
 
-      switch (skinFileID)
+      if (showHyperlinkParameterDialog)
       {
-        case formStreamedMpEditor.tvseriesSkinID:
-          cboViews.Visible = true;
-          foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.tvseriesViews)
-          {
-            cboViews.Items.Add(tvv.Value);
-          }
-          break;
-        case formStreamedMpEditor.musicSkinID:
-          cboViews.Visible = true;
-          foreach (KeyValuePair<string, string> mvv in formStreamedMpEditor.musicViews)
-          {
-            cboViews.Items.Add(mvv.Value);
-          }
-          break;
-        case formStreamedMpEditor.onlineVideosSkinID:
-          cboViews.Visible = true;
-          cbOnlineVideosReturn.Visible = true;
-          cboOnlineVideosCategories.Visible = true;
-          lblSearch.Visible = true;
-          lblCategory.Visible = true;
-          txtSearch.Visible = true;          
-          foreach (KeyValuePair<string, string> mvv in formStreamedMpEditor.onlineVideosSites)
-          {
-            cboViews.Items.Add(mvv.Value);
-          }
-          break;
-        case formStreamedMpEditor.movingPicturesSkinID:
-          if (formStreamedMpEditor.MovingPicturesInstalled)
-          {
+        gbHyperlinkParameter.Enabled = true;
+        switch (skinFileID)
+        {
+          case formStreamedMpEditor.tvseriesSkinID:
+            cboViews.Visible = true;
+            foreach (KeyValuePair<string, string> tvv in formStreamedMpEditor.tvseriesViews)
+            {
+              cboViews.Items.Add(tvv.Value);
+            }
+            break;
+          case formStreamedMpEditor.musicSkinID:
+            cboViews.Visible = true;
+            foreach (KeyValuePair<string, string> mvv in formStreamedMpEditor.musicViews)
+            {
+              cboViews.Items.Add(mvv.Value);
+            }
+            break;
+          case formStreamedMpEditor.onlineVideosSkinID:
+            cboViews.Visible = true;
+            cbOnlineVideosReturn.Visible = true;
+            cboOnlineVideosCategories.Visible = true;
+            lblSearch.Visible = true;
+            lblCategory.Visible = true;
+            txtSearch.Visible = true;
+            foreach (KeyValuePair<string, string> mvv in formStreamedMpEditor.onlineVideosSites)
+            {
+              cboViews.Items.Add(mvv.Value);
+            }
+            break;
+          case formStreamedMpEditor.movingPicturesSkinID:
+            if (formStreamedMpEditor.MovingPicturesInstalled)
+            {
               MovPicsCategoryVisibility = true;
               LoadMovingPicturesCategories();
-          }
-          else
-          {
+            }
+            else
+            {
               gbHyperlinkParameter.Visible = false;
-          }
-          break;
-      }      
+            }
+            break;
+          default:
+            cboViews.Visible = true;
+            break;
+        }
+      }
     }
 
     /// <summary>
@@ -133,6 +137,21 @@ namespace StreamedMPEditor
       set
       {
         cboViews.Text = value;
+      }
+    }
+
+    public string genericHyperlinkParameter
+    {
+      get
+      {
+        if (!string.IsNullOrEmpty(cboViews.Text))
+          return cboViews.Text;
+        return "false";
+      }
+      set
+      {
+        if (value != "false")
+          cboViews.Text = value;
       }
     }
 
