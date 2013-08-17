@@ -404,6 +404,9 @@ namespace StreamedMPEditor
           case formStreamedMpEditor.movingPicturesSkinID:
             itemProperties.movingPicturesHyperlinkParmeter = subMenuLevel1[index].hyperlinkParameter;
             break;
+          default:
+            itemProperties.genericHyperlinkParameter = subMenuLevel1[index].hyperlinkParameter;
+            break;
         }
 
         itemProperties.BaseName = subMenuLevel1[index].baseDisplayName;
@@ -437,7 +440,7 @@ namespace StreamedMPEditor
             }
           }
           //Music
-          if (subMenuLevel1[index].hyperlink == formStreamedMpEditor.musicSkinID)
+          else if (subMenuLevel1[index].hyperlink == formStreamedMpEditor.musicSkinID)
           {
             if (string.IsNullOrEmpty(itemProperties.musicHypelinkParameter) || itemProperties.musicHypelinkParameter == "false")
             {
@@ -453,7 +456,7 @@ namespace StreamedMPEditor
             }
           }
           //Onlinevideos
-          if (subMenuLevel1[index].hyperlink == formStreamedMpEditor.onlineVideosSkinID)
+          else if (subMenuLevel1[index].hyperlink == formStreamedMpEditor.onlineVideosSkinID)
           {
             if (string.IsNullOrEmpty(itemProperties.onlineVideosHypelinkParameter) || itemProperties.onlineVideosHypelinkParameter == "false")
             {
@@ -472,7 +475,7 @@ namespace StreamedMPEditor
             }
           }
           //MovingPictures
-          if (subMenuLevel1[index].hyperlink == formStreamedMpEditor.movingPicturesSkinID)
+          else if (subMenuLevel1[index].hyperlink == formStreamedMpEditor.movingPicturesSkinID)
           {
             if (string.IsNullOrEmpty(itemProperties.movingPicturesHyperlinkParmeter) || itemProperties.movingPicturesHyperlinkParmeter == "false")
             {
@@ -484,6 +487,21 @@ namespace StreamedMPEditor
             else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
             {
               subMenuLevel1[index].hyperlinkParameter = itemProperties.movingPicturesHyperlinkParmeter;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+          }
+          else
+          {
+            if (string.IsNullOrEmpty(itemProperties.genericHyperlinkParameter) || itemProperties.genericHyperlinkParameter == "false")
+            {
+              subMenuLevel1[index].hyperlinkParameter = "false";
+              if (!formStreamedMpEditor.changeOutstanding)
+                subMenuLevel1[index].displayName = subMenuLevel1[index].baseDisplayName;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+            else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel1[index].hyperlink))
+            {
+              subMenuLevel1[index].hyperlinkParameter = itemProperties.genericHyperlinkParameter;
               formStreamedMpEditor.changeOutstanding = true;
             }
           }
@@ -527,6 +545,9 @@ namespace StreamedMPEditor
           case formStreamedMpEditor.movingPicturesSkinID:
             itemProperties.movingPicturesHyperlinkParmeter = subMenuLevel2[index].hyperlinkParameter;
             break;
+          default:
+            itemProperties.genericHyperlinkParameter = subMenuLevel2[index].hyperlinkParameter;
+            break;
         }
         itemProperties.BaseName = subMenuLevel2[index].baseDisplayName;
         itemProperties.initialIndex = index;
@@ -560,7 +581,7 @@ namespace StreamedMPEditor
             }
           }
           //Music
-          if (subMenuLevel2[index].hyperlink == formStreamedMpEditor.musicSkinID)
+          else if (subMenuLevel2[index].hyperlink == formStreamedMpEditor.musicSkinID)
           {
             if (string.IsNullOrEmpty(itemProperties.musicHypelinkParameter) || itemProperties.musicHypelinkParameter == "false")
             {
@@ -576,7 +597,7 @@ namespace StreamedMPEditor
             }
           }
           //Onlinevideos
-          if (subMenuLevel2[index].hyperlink == formStreamedMpEditor.onlineVideosSkinID)
+          else if (subMenuLevel2[index].hyperlink == formStreamedMpEditor.onlineVideosSkinID)
           {
             if (string.IsNullOrEmpty(itemProperties.onlineVideosHypelinkParameter) || itemProperties.onlineVideosHypelinkParameter == "false")
             {
@@ -595,7 +616,7 @@ namespace StreamedMPEditor
             }
           }
           //MovingPictures
-          if (subMenuLevel2[index].hyperlink == formStreamedMpEditor.movingPicturesSkinID)
+          else if (subMenuLevel2[index].hyperlink == formStreamedMpEditor.movingPicturesSkinID)
           {
             if (string.IsNullOrEmpty(itemProperties.movingPicturesHyperlinkParmeter) || itemProperties.movingPicturesHyperlinkParmeter == "false")
             {
@@ -607,6 +628,21 @@ namespace StreamedMPEditor
             else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
             {
               subMenuLevel2[index].hyperlinkParameter = itemProperties.movingPicturesHyperlinkParmeter;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+          }
+          else
+          {
+            if (string.IsNullOrEmpty(itemProperties.genericHyperlinkParameter) || itemProperties.genericHyperlinkParameter == "false")
+            {
+              subMenuLevel2[index].hyperlinkParameter = "false";
+              if (!formStreamedMpEditor.changeOutstanding)
+                subMenuLevel2[index].displayName = subMenuLevel2[index].baseDisplayName;
+              formStreamedMpEditor.changeOutstanding = true;
+            }
+            else if (formStreamedMpEditor.pluginTakesParameter(subMenuLevel2[index].hyperlink))
+            {
+              subMenuLevel2[index].hyperlinkParameter = itemProperties.genericHyperlinkParameter;
               formStreamedMpEditor.changeOutstanding = true;
             }
           }

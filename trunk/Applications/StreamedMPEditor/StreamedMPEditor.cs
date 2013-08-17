@@ -186,6 +186,7 @@ namespace StreamedMPEditor
     public const string mvCentralSkinID = "112011";
     //myweather/BBCWeather/WorldWeather/yrWeather
     public const string weatherSkinID = "2600|7977|8192|3231";
+    public const string emulatorsSkinId = "7942";
     public const bool hyperlinkParameterEnabled = true;
     public const bool hyperlinkParameterDisabled = false;
     const string quote = "\"";
@@ -526,6 +527,7 @@ namespace StreamedMPEditor
       parametersValid.Add(tvseriesSkinID, true);
       parametersValid.Add(onlineVideosSkinID, true);
       parametersValid.Add(movingPicturesSkinID, true);
+      parametersValid.Add(emulatorsSkinId, true);
 
       if (isBeta)
       {
@@ -813,20 +815,25 @@ namespace StreamedMPEditor
           item.disableBGSharing = true;
           
         item.showMostRecent = getMostRecentDisplayOption();
-        if ((pluginTakesParameter(item.hyperlink) && cboParameterViews.SelectedIndex != -1) || (MovPicsCategoryVisibility && MovPicsCategorySelectedIndex != -1))
+        if ((pluginTakesParameter(item.hyperlink) && !string.IsNullOrEmpty(cboParameterViews.Text)) || (MovPicsCategoryVisibility && MovPicsCategorySelectedIndex != -1))
         {
           switch (item.hyperlink)
           {
             case tvseriesSkinID:
-              item.hyperlinkParameter = getTVSeriesViewKey(cboParameterViews.SelectedItem.ToString());
+              if (cboParameterViews.SelectedIndex != -1)
+                item.hyperlinkParameter = getTVSeriesViewKey(cboParameterViews.SelectedItem.ToString());
               break;
             case musicSkinID:
-              item.hyperlinkParameter = getMusicViewKey(cboParameterViews.SelectedItem.ToString());
+              if (cboParameterViews.SelectedIndex != -1)
+                item.hyperlinkParameter = getMusicViewKey(cboParameterViews.SelectedItem.ToString());
               break;
             case onlineVideosSkinID:
-              item.hyperlinkParameter = getOnlineVideosViewKey(cboParameterViews.SelectedItem.ToString());
-              item.hyperlinkParameterSearch = ovTxtSearch.Text;
-              item.hyperlinkParameterCategory = cboOnlineVideosCategories.Text;
+              if (cboParameterViews.SelectedIndex != -1)
+              {
+                item.hyperlinkParameter = getOnlineVideosViewKey(cboParameterViews.SelectedItem.ToString());
+                item.hyperlinkParameterSearch = ovTxtSearch.Text;
+                item.hyperlinkParameterCategory = cboOnlineVideosCategories.Text;
+              }
               break;
             case movingPicturesSkinID:
               if (MovingPicturesInstalled)
@@ -850,6 +857,7 @@ namespace StreamedMPEditor
               }
               break;
             default:
+              item.hyperlinkParameter = cboParameterViews.Text;
               break;
           }
         }
@@ -943,52 +951,60 @@ namespace StreamedMPEditor
         fhRBUserDef.Checked = true;
       }
 
-      switch (mnuItem.hyperlink)
+      if (pluginTakesParameter(mnuItem.hyperlink))
       {
-        case tvseriesSkinID:
-          cboParameterViews.DataSource = theTVSeriesViews;
-          if (mnuItem.hyperlinkParameter != "false")
-            cboParameterViews.Text = getTVSeriesViewValue(mnuItem.hyperlinkParameter);
-          else
-            cboParameterViews.Text = string.Empty;
-          break;
-        case musicSkinID:
-          cboParameterViews.DataSource = theMusicViews;
-          if (mnuItem.hyperlinkParameter != "false")
-            cboParameterViews.Text = getMusicViewValue(mnuItem.hyperlinkParameter);
-          else
-            cboParameterViews.Text = string.Empty;
-          break;
-        case onlineVideosSkinID:
-          cboParameterViews.DataSource = theOnlineVideosViews;
-          cboOnlineVideosCategories.Visible = true;
-          ovTxtSearch.Text = mnuItem.hyperlinkParameterSearch;
-          if (mnuItem.hyperlinkParameter != "false")
-            cboParameterViews.Text = getOnlineVideosViewValue(mnuItem.hyperlinkParameter);
-          else
-            cboParameterViews.Text = string.Empty;
-          break;
-        case movingPicturesSkinID:
-          if (MovingPicturesInstalled)
-          {
+        switch (mnuItem.hyperlink)
+        {
+          case tvseriesSkinID:
+            cboParameterViews.DataSource = theTVSeriesViews;
+            if (mnuItem.hyperlinkParameter != "false")
+              cboParameterViews.Text = getTVSeriesViewValue(mnuItem.hyperlinkParameter);
+            else
+              cboParameterViews.Text = string.Empty;
+            break;
+          case musicSkinID:
+            cboParameterViews.DataSource = theMusicViews;
+            if (mnuItem.hyperlinkParameter != "false")
+              cboParameterViews.Text = getMusicViewValue(mnuItem.hyperlinkParameter);
+            else
+              cboParameterViews.Text = string.Empty;
+            break;
+          case onlineVideosSkinID:
+            cboParameterViews.DataSource = theOnlineVideosViews;
+            cboOnlineVideosCategories.Visible = true;
+            ovTxtSearch.Text = mnuItem.hyperlinkParameterSearch;
+            if (mnuItem.hyperlinkParameter != "false")
+              cboParameterViews.Text = getOnlineVideosViewValue(mnuItem.hyperlinkParameter);
+            else
+              cboParameterViews.Text = string.Empty;
+            break;
+          case movingPicturesSkinID:
+            if (MovingPicturesInstalled)
+            {
               linkClearCategories.Visible = true;
               if (mnuItem.hyperlinkParameter != "false" && !string.IsNullOrEmpty(mnuItem.hyperlinkParameter))
               {
-                  int id = 0;
-                  Int32.TryParse(mnuItem.hyperlinkParameter, out id);
-                  SetMovPicsCategorySelectedNode(id);
+                int id = 0;
+                Int32.TryParse(mnuItem.hyperlinkParameter, out id);
+                SetMovPicsCategorySelectedNode(id);
               }
               else
-                  ClearMovingPicturesCategories();
-          }
-          else
-          {
+                ClearMovingPicturesCategories();
+            }
+            else
+            {
               lbParameterView.Visible = false;
               linkClearCategories.Visible = false;
-          }
-          break;
-        default:
-          break;
+            }
+            break;
+          default:
+            cboParameterViews.DataSource = null;
+            if (mnuItem.hyperlinkParameter != "false")
+              cboParameterViews.Text = mnuItem.hyperlinkParameter;
+            else
+              cboParameterViews.Text = string.Empty;
+            break;
+        }
       }
 
       if (cboFanartProperty.Text.ToLower() == "false")
@@ -1035,34 +1051,48 @@ namespace StreamedMPEditor
         item.hyperlink = selectedWindowID.Text;
         
         item.hyperlinkParameter = "false";
-        if (cboParameterViews.SelectedIndex != -1)
+        if (pluginTakesParameter(item.hyperlink))
         {
-          if (item.hyperlink == tvseriesSkinID)
-            item.hyperlinkParameter = getTVSeriesViewKey(cboParameterViews.SelectedItem.ToString());
-
-          if (item.hyperlink == musicSkinID)
-            item.hyperlinkParameter = getMusicViewKey(cboParameterViews.SelectedItem.ToString());
-
-          if (item.hyperlink == onlineVideosSkinID)
+          switch (item.hyperlink)
           {
-            item.hyperlinkParameter = getOnlineVideosViewKey(cboParameterViews.SelectedItem.ToString());
-            item.hyperlinkParameterSearch = ovTxtSearch.Text;
-            item.hyperlinkParameterCategory = cboOnlineVideosCategories.Text;
-          }
-        }
-        else
-        {
-          cboParameterViews.Text = string.Empty;
-        }
-
-        if (MovPicsCategorySelectedIndex != -1)
-        {
-          // store the ID of the selected node
-          if (item.hyperlink == movingPicturesSkinID)
-          {
-            int? id = GetMovPicsSelectedCategoryNodeID();
-            if (id != null)
-              item.hyperlinkParameter = id.ToString();
+            case tvseriesSkinID:
+              if (cboParameterViews.SelectedIndex != -1)
+                item.hyperlinkParameter = getTVSeriesViewKey(cboParameterViews.SelectedItem.ToString());
+              else
+                cboParameterViews.Text = string.Empty;
+              break;
+            case musicSkinID:
+              if (cboParameterViews.SelectedIndex != -1)
+                item.hyperlinkParameter = getMusicViewKey(cboParameterViews.SelectedItem.ToString());
+              else
+                cboParameterViews.Text = string.Empty;
+              break;
+            case onlineVideosSkinID:
+              if (cboParameterViews.SelectedIndex != -1)
+              {
+                item.hyperlinkParameter = getOnlineVideosViewKey(cboParameterViews.SelectedItem.ToString());
+                item.hyperlinkParameterSearch = ovTxtSearch.Text;
+                item.hyperlinkParameterCategory = cboOnlineVideosCategories.Text;
+              }
+              else
+                cboParameterViews.Text = string.Empty;
+              break;
+            case movingPicturesSkinID:
+              if (MovPicsCategorySelectedIndex != -1)
+              {
+                // store the ID of the selected node
+                if (item.hyperlink == movingPicturesSkinID)
+                {
+                  int? id = GetMovPicsSelectedCategoryNodeID();
+                  if (id != null)
+                    item.hyperlinkParameter = id.ToString();
+                }
+              }
+              break;
+            default:
+              if (!string.IsNullOrEmpty(cboParameterViews.Text))
+                item.hyperlinkParameter = cboParameterViews.Text;
+              break;
           }
         }
 
@@ -1299,6 +1329,14 @@ namespace StreamedMPEditor
             }
             break;
           default:
+            cboParameterViews.DataSource = null;
+            if (mnuItem.hyperlinkParameter != "false")
+              cboParameterViews.Text = mnuItem.hyperlinkParameter;
+            else
+            {
+              cboParameterViews.Text = string.Empty;
+              cboParameterViews.SelectedIndex = -1;
+            }
             break;
         }
       }

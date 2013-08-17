@@ -362,6 +362,7 @@ namespace StreamedMPEditor
           cboParameterViews.DataSource = theOnlineVideosViews;
           break;
         default:
+          cboParameterViews.DataSource = null;
           cboParameterViews.Text = string.Empty;
           break;
       }
