@@ -14,7 +14,7 @@ namespace SMPCheckSum
     #region Public Methods
     
     //
-    // Add Checksum to specified file if one does not exist and retuen the calculated checksum.
+    // Add Checksum to specified file if one does not exist and return the calculated checksum.
     //
     public string Add(string xmlFileName)
     {
@@ -34,7 +34,7 @@ namespace SMPCheckSum
       return readChksum(xmlFileName);
     }
     //
-    // Read the existing Checksum and compare with recalculated checksum on the file after stripping off the embedded checksum.
+    // Read the existing Checksum and compare with re-calculated checksum on the file after stripping off the embedded checksum.
     //
     public bool Compare(string xmlFileName)
     {
@@ -63,7 +63,7 @@ namespace SMPCheckSum
     //
     public void ReplaceAllFiles(string xmlPath)
     {
-      string[] xmlFileNames = System.IO.Directory.GetFiles(xmlPath, "*.xml", SearchOption.AllDirectories);
+      string[] xmlFileNames = Directory.GetFiles(xmlPath, "*.xml", SearchOption.AllDirectories);
       
       foreach (string xmlFileName in xmlFileNames)
       {
@@ -98,22 +98,26 @@ namespace SMPCheckSum
     {
       string chkSum = null;
       checkAndThrow(xmlFileName);
-      XmlTextReader reader = new XmlTextReader(xmlFileName);
-      while (!reader.Value.StartsWith("Checksum:") && !reader.EOF)
+      try
       {
-        reader.Read();
+          XmlTextReader reader = new XmlTextReader(xmlFileName);
+          while (!reader.Value.StartsWith("Checksum:") && !reader.EOF)
+          {
+              reader.Read();
+          }
+          if (reader.EOF)
+          {
+              reader.Close();
+              return null;
+          }
+          else
+          {
+              chkSum = reader.Value.Substring(9);
+              reader.Close();
+              return chkSum;
+          }
       }
-      if (reader.EOF)
-      {
-        reader.Close();
-        return null;
-      }
-      else
-      {
-        chkSum = reader.Value.Substring(9);
-        reader.Close();
-        return chkSum;
-      }
+      catch { return null; }
     }
 
     void stripChecksum(string xmlFileName, int bytesToIgnore)
@@ -154,39 +158,42 @@ namespace SMPCheckSum
       return sb.ToString();
     }
 
-
-
     void rewriteXMLFile(string xmlFileName)
     {
       checkAndThrow(xmlFileName);
 
-
       XmlDocument doc = new XmlDocument();
-      doc.Load(xmlFileName);
-      Encoding encoding = Encoding.GetEncoding("utf-8");
-      XmlTextWriter writer = new XmlTextWriter(Path.Combine(Path.GetDirectoryName(xmlFileName), "temp.xml"), encoding);
-      writer.Formatting = Formatting.Indented;
-      doc.Save(writer);
-      writer.Close();
-      System.IO.File.Delete(xmlFileName);
-      File.Move(Path.Combine(Path.GetDirectoryName(xmlFileName), "temp.xml"), xmlFileName);
+      try
+      {
+          doc.Load(xmlFileName);
+          Encoding encoding = Encoding.GetEncoding("utf-8");
+          XmlTextWriter writer = new XmlTextWriter(Path.Combine(Path.GetDirectoryName(xmlFileName), "temp.xml"), encoding);
+          writer.Formatting = Formatting.Indented;
+          doc.Save(writer);
+          writer.Close();
+          File.Delete(xmlFileName);
+          File.Move(Path.Combine(Path.GetDirectoryName(xmlFileName), "temp.xml"), xmlFileName);
+      }
+      catch { return; }
     }
 
     string addCheckSum(string xmlFileName, string chksum)
     {
       XmlDocument xmlDoc = new XmlDocument();
+      try
+      {
+          xmlDoc.Load(xmlFileName);
 
-      xmlDoc.Load(xmlFileName);
+          XmlComment chkSumComment;
+          chkSumComment = xmlDoc.CreateComment("Checksum:" + chksum);
 
-      XmlComment chkSumComment;
-      chkSumComment = xmlDoc.CreateComment("Checksum:" + chksum);
-
-      XmlElement root = xmlDoc.DocumentElement;
-      xmlDoc.InsertAfter(chkSumComment, root);
-      xmlDoc.Save(xmlFileName);
-      return chksum;
+          XmlElement root = xmlDoc.DocumentElement;
+          xmlDoc.InsertAfter(chkSumComment, root);
+          xmlDoc.Save(xmlFileName);
+          return chksum;
+      }
+      catch { return null; }
     }
-
 
     void checkAndThrow(string xmlFileName)
     {
@@ -198,6 +205,5 @@ namespace SMPCheckSum
     }
 
     #endregion
-
   }
 }
