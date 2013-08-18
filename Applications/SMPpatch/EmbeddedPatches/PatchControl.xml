@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <patches>
-  <!-- This defines the minium skin version this patch can run against -->
+  <!-- This defines the minimum skin version this patch can run against -->
   <minskinversion>2.1.0.3340</minskinversion>
   <!-- There are 4 possible fields for each patch, 'version' is only needed for the zip file as versions are extracted from .dll and .exe -->
   <!-- Set <action> to mandatoryinstall if it must be installed even though it doesn't exist locally e.g. new core file -->
@@ -21,11 +21,13 @@
     <action>install</action>
     <location>windows</location>
   </patch>
+  -->
   <patch>
     <name>TraktPlugin.dll</name>
     <action>install</action>
     <location>windows</location>
   </patch>
+  <!--
   <patch>
     <name>MP-TVSeries.dll</name>
     <action>install</action>
@@ -60,19 +62,18 @@
     <name>Cornerstone.MP.dll</name>
     <action>install</action>
     <location>windows</location>
-  </patch>
+  </patch>-->
   <patch>
     <name>MyLyrics.dll</name>
     <action>install</action>
     <location>windows</location>
-  </patch>-->
+  </patch>
   <!-- Process Plugins -->
   <patch>
     <name>StreamedMPEditor.dll</name>
     <action>install</action>
     <location>process</location>
   </patch>
-  <!--
   <patch>
     <name>FanartHandler.dll</name>
     <action>install</action>
@@ -83,7 +84,6 @@
     <action>install</action>
     <location>process</location>
   </patch>
-  -->
   <!-- MediaPortal Binaries (Base Dir) -->
   <patch>
     <name>SMPEditor.exe</name>
@@ -100,7 +100,7 @@
     <action>install</action>
     <location>mediaportal</location>
   </patch>
-  <!--<patch>
+  <patch>
     <name>TranslateProvider.dll</name>
     <action>install</action>
     <location>mediaportal</location>
@@ -109,12 +109,12 @@
     <name>LyricsEngine.dll</name>
     <action>install</action>
     <location>mediaportal</location>
-  </patch>-->
+  </patch>
   <!-- Patch Archive -->
   <patch>
     <name>SkinUpdate.zip</name>
     <action>unzip</action>
     <location>temp</location>
-    <version>2.1.1.3353</version>
+    <version>2.1.2.3366</version>
   </patch>
 </patches>
