@@ -684,16 +684,20 @@ namespace StreamedMPConfig
       List<DBMovieInfo> filteredMovies = pcFilterEnabled ? pcFilter.Filter(movies).ToList() : movies;
 
       smcLog.WriteLog(string.Format("{0} Movies found in database", movies.Count.ToString()), LogLevel.Info);
-      smcLog.WriteLog(string.Format("{0} Movies filtered by parental controls", movies.Count - filteredMovies.Count), LogLevel.Info);      
+      smcLog.WriteLog(string.Format("{0} Movies filtered by parental controls", movies.Count - filteredMovies.Count), LogLevel.Info);
 
       // Sort list in to most recent first
       filteredMovies.Sort((m1, m2) =>
         {
           return m2.DateAdded.CompareTo(m1.DateAdded); 
         });
-      
+
+      smcLog.WriteLog("Movies sorted by date added", LogLevel.Debug);
+
       // Remove anything older than 30 days
       filteredMovies.RemoveAll(movie => movie.DateAdded < DateTime.Now.Subtract(new TimeSpan(30, 0, 0, 0, 0)));
+
+      smcLog.WriteLog("Movies filtered by most recently added", LogLevel.Debug);
 
       RecentlyAdded.recentAddedMovies = filteredMovies;
 
@@ -717,7 +721,7 @@ namespace StreamedMPConfig
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".thumb", movie.CoverThumbFullPath);
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".fanart", movie.BackdropFullPath);
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".runtime", GetMovieRuntime(movie) + " mins");
-        SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".certification", (string.IsNullOrEmpty(movie.Certification.Trim()) ? string.Empty : " [" + movie.Certification + "]"));
+        SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".certification", (string.IsNullOrEmpty((movie.Certification ?? string.Empty).Trim()) ? string.Empty : " [" + movie.Certification + "]"));
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".score", Math.Round(movie.Score, MidpointRounding.AwayFromZero).ToString());
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".actualscore", movie.Score.ToString());
         SetProperty("#StreamedMP.recentlyAdded.movie" + mrMovieNumber.ToString() + ".show", "true");
