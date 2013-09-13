@@ -189,7 +189,7 @@
           <label>#StreamedMP.SkinSettings</label>
           <hyperlink>196205</hyperlink>
           <onleft>50</onleft>
-          <ondown>66610</ondown>
+          <ondown>66612</ondown>
         </control>
         <control>
           <description>Empty button</description>
@@ -199,23 +199,12 @@
           <visible>true</visible>
         </control>
         <control>
-          <description>MovingPictures</description>
-          <id>66610</id>
-          <type>button</type>
-          <label>Moving Pictures</label>
-          <hyperlink>96742</hyperlink>
-          <onleft>50</onleft>
-          <onup>66609</onup>
-          <ondown>66612</ondown>
-          <visible>plugin.isenabled(Moving Pictures)</visible>
-        </control>
-        <control>
           <description>SubCentral</description>
           <type>button</type>
           <id>66612</id>
           <label>287</label>
           <hyperlink>84623</hyperlink>
-          <onup>66610</onup>
+          <onup>66609</onup>
           <ondown>97270</ondown>
           <onleft>50</onleft>
           <visible>plugin.isenabled(SubCentral)+control.isvisible(1239)</visible>
@@ -226,6 +215,16 @@
           <id>97270</id>
           <label>Trakt...</label>
           <onup>66612</onup>
+          <ondown>97263</ondown>
+          <onleft>50</onleft>
+          <visible>plugin.isenabled(Trakt)+[control.isvisible(1239)|control.isvisible(1237)]+![facadeview.smallicons|facadeview.largeicons]</visible>
+        </control>
+        <control>
+          <description>Trakt Search By</description>
+          <type>button</type>
+          <id>97263</id>
+          <label>Trakt #Trakt.Translation.SearchBy.Label...</label>
+          <onup>97270</onup>
           <ondown>99000</ondown>
           <onleft>50</onleft>
           <visible>plugin.isenabled(Trakt)+[control.isvisible(1239)|control.isvisible(1237)]+![facadeview.smallicons|facadeview.largeicons]</visible>
@@ -235,7 +234,7 @@
           <type>button</type>
           <id>99000</id>
           <label>#MPEI.Translation.UpdateAvailable.Label</label>
-          <onup>97270</onup>
+          <onup>97263</onup>
           <ondown>2</ondown>
           <onleft>50</onleft>
           <visible>string.equals(#mpei.5e2777c3_966c_407f_b5a9_e51205b70b3e.haveupdate, true)+control.isvisible(1237)</visible>

@@ -138,6 +138,14 @@
         <id>16</id>
         <label>#Trakt.Translation.Settings.Label</label>
         <hyperlink>87271</hyperlink>
+      </control>
+      <control Style="settingsbutton">
+        <description>Search</description>
+        <type>button</type>
+        <width>382</width>
+        <id>17</id>
+        <label>#Trakt.Translation.Search.Label</label>
+        <hyperlink>874001</hyperlink>
         <ondown>98</ondown>
       </control>
       <control Style="settingsbutton">
@@ -147,7 +155,7 @@
         <id>98</id>
         <label>#MPEI.Translation.Update.Label</label>
         <ondown>9</ondown>
-        <onup>16</onup>
+        <onup>17</onup>
         <visible>string.equals(#mpei.a9c3845a_8718_4712_85cc_26f56520bb9a.haveupdate, true)</visible>
       </control>
     </control>
@@ -156,7 +164,7 @@
       <type>image</type>
       <id>0</id>
       <posX>390</posX>
-      <posY>815</posY>
+      <posY>880</posY>
       <width>48</width>
       <height>48</height>
       <texture>isupdate.png</texture>

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-  <id>87283</id>
+  <id>874001</id>
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
-  <define>#header.hover:TraktNetwork.jpg</define>
+  <define>#header.hover:hover_trakt.png</define>
   <define>#header.BG.colordiffuse:ffffffff</define>
   <define>#header.BG.overlay:mainoverlay.png</define>
   <controls>
@@ -32,7 +32,7 @@
       <description>Top Title Extension Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>571</posX>
+      <posX>621</posX>
       <posY>16</posY>
       <width>629</width>
       <height>52</height>
@@ -42,14 +42,14 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Current Friend / View</description>
+      <description>Search Term</description>
       <type>label</type>
       <id>0</id>
-      <posX>1158</posX>
+      <posX>1208</posX>
       <posY>19</posY>
-      <width>380</width>
+      <width>430</width>
       <font>mediastream12c</font>
-      <label>#(iif(eq(#Trakt.View.Level,'Network'),'#Trakt.CurrentView','#Trakt.User.Username'))</label>
+      <label>#Trakt.Search.SearchTerm</label>
       <align>right</align>
       <animation effect="fade" time="100" delay="0">visiblechange</animation>
       <animation effect="fade" time="150">WindowOpen</animation>
@@ -75,7 +75,7 @@
       <posY>19</posY>
       <width>525</width>
       <font>mediastream12c</font>
-      <label>Trakt #Trakt.Translation.Network.Label</label>
+      <label>#Trakt.Translation.Search.Label</label>
       <align>right</align>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -88,6 +88,7 @@
       <width>1920</width>
       <height>70</height>
       <texture>imagestreamtitle.png</texture>
+      <visible>!facadeview.filmstrip</visible>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -109,7 +110,7 @@
     <control>
       <description>Item Count Label</description>
       <type>label</type>
-      <label>#Trakt.Translation.Users.Label</label>
+      <label>507</label>
       <id>0</id>
       <width>202</width>
       <posX>1585</posX>
@@ -146,6 +147,7 @@
       <width>390</width>
       <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
+      <visible>!facadeview.filmstrip</visible>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
@@ -160,6 +162,7 @@
       <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
+      <visible>!facadeview.filmstrip</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
@@ -174,6 +177,7 @@
       <width>1425</width>
       <font>mediastream16tc</font>
       <label>#selecteditem</label>
+      <visible>!facadeview.filmstrip</visible>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -187,6 +191,7 @@
       <control>
         <type>facadeview</type>
         <id>50</id>
+        <animation effect="fade" time="250" delay="0">WindowClose</animation>
         <control>
           <description>listcontrol</description>
           <type>listcontrol</type>
@@ -202,10 +207,6 @@
           <itemHeight>48</itemHeight>
           <IconXOff>37</IconXOff>
           <IconYOff>6</IconYOff>
-		  <PinIconXOff>800</PinIconXOff>
-          <PinIconYOff>6</PinIconYOff>
-          <PinIconWidth>48</PinIconWidth>
-          <PinIconHeight>48</PinIconHeight>
           <textXOff>37</textXOff>
           <textYOff>7</textYOff>
           <textXOff2>0</textXOff2>
@@ -230,107 +231,78 @@
         </control>
       </control>
     </control>
-	<!-- Hidden Menu -->
     <control>
-      <description>Hidden Menu Indicator</description>
-      <type>image</type>
-      <posX>1848</posX>
-      <posY>75</posY>
-      <width>72</width>
-      <height>216</height>
-      <texture>#StreamedMP.ActionMenu.Image</texture>
-      <visible>control.isvisible(50)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control>
-      <type>actiongroup</type>
-      <description>action menu</description>
-      <defaultcontrol>2</defaultcontrol>
-      <onexit>50</onexit>
-      <dimColor>00ffffff</dimColor>
-      <buttonX>1846</buttonX>
-      <buttonY>82</buttonY>
-      <buttonwidth>73</buttonwidth>
-      <buttonheight>379</buttonheight>
-      <control>
-        <type>image</type>
-        <posX>1503</posX>
-        <posY>0</posY>
-        <width>417</width>
-        <height>1080</height>
-        <texture>hiddenmenu_right.png</texture>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="450,0">visible</animation>
-        <animation effect="slide" time="0" end="450,0">hidden</animation>
-      </control>
-      <control>
-        <id>0</id>
-        <description>Dummy Button (for Mouse)</description>
-        <label>-</label>
+      <type>group</type>
+      <description>group element</description>
+      <posX>120</posX>
+      <posY>360</posY>
+      <layout>StackLayout</layout>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <control Style="skinbutton">
+        <description>Search...</description>
         <type>button</type>
-        <posX>1503</posX>
-        <posY>0</posY>
-        <width>417</width>
-        <height>1080</height>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="450,0">visible</animation>
-        <animation effect="slide" time="0" end="450,0">hidden</animation>
+        <id>2</id>
+        <label>#Trakt.Translation.Search.Label...</label>
+        <ondown>11</ondown>
+        <onup>7</onup>
+        <onright>50</onright>
+        <onleft>2</onleft>
+        <ondown>3</ondown>
+        <width>450</width>
       </control>
-      <control>
-        <id>0</id>
-        <description>MENU</description>
-        <label>924</label>
-        <type>label</type>
-        <font>mediastream12tc</font>
-        <posX>1560</posX>
-        <posY>334</posY>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="450,0">visible</animation>
-        <animation effect="slide" time="0" end="450,0">hidden</animation>
+      <control Style="skincheckbutton">
+        <description>Movies</description>
+        <type>checkbutton</type>
+        <id>3</id>
+        <label>#Trakt.Translation.Movies.Label</label>
+        <width>450</width>
+        <onleft>3</onleft>
+        <onright>50</onright>
+        <ondown>4</ondown>
       </control>
-      <control>
-        <type>group</type>
-        <description>group element</description>
-        <visible>!Control.HasFocus(50)</visible>
-        <animation effect="slide" time="100" start="450,0">visible</animation>
-        <animation effect="slide" time="0" end="450,0">hidden</animation>
-        <posX>1560</posX>
-        <posY>362</posY>
-        <width>330</width>
-        <height>1080</height>
-        <layout>StackLayout</layout>
-        <control>
-          <description>Switch View</description>
-          <type>button</type>
-          <id>2</id>
-          <label>-</label>
-          <onup>21</onup>
-		  <ondown>3</ondown>
-          <onleft>50</onleft>
-        </control>
-		<control>
-          <description>Search User</description>
-          <type>button</type>
-          <id>3</id>
-          <label>#Trakt.Translation.Search.Label</label>
-          <onup>2</onup>
-          <onleft>50</onleft>
-		  <ondown>4</ondown>
-        </control>
-		<control>
-          <description>Refresh</description>
-          <type>button</type>
-          <id>4</id>
-          <label>#Trakt.Translation.Refresh.Label</label>
-          <onup>3</onup>
-          <onleft>50</onleft>
-		  <ondown>2</ondown>
-        </control>
+      <control Style="skincheckbutton">
+        <description>Shows</description>
+        <type>checkbutton</type>
+        <id>4</id>
+        <label>#Trakt.Translation.TVShows.Label</label>
+        <width>450</width>
+        <onleft>4</onleft>
+        <onright>50</onright>
+        <ondown>5</ondown>
+      </control>
+      <control Style="skincheckbutton">
+        <description>Episodes</description>
+        <type>checkbutton</type>
+        <id>5</id>
+        <label>#Trakt.Translation.Episodes.Label</label>
+        <width>450</width>
+        <onleft>5</onleft>
+        <onright>50</onright>
+        <ondown>6</ondown>
+      </control>
+      <control Style="skincheckbutton">
+        <description>People</description>
+        <type>checkbutton</type>
+        <id>6</id>
+        <label>#Trakt.Translation.People.Label</label>
+        <width>450</width>
+        <onleft>6</onleft>
+        <onright>50</onright>
+        <ondown>7</ondown>
+      </control>
+      <control Style="skincheckbutton">
+        <description>Users</description>
+        <type>checkbutton</type>
+        <id>7</id>
+        <label>#Trakt.Translation.Users.Label</label>
+        <width>450</width>
+        <onleft>7</onleft>
+        <onright>50</onright>
+        <ondown>2</ondown>
       </control>
     </control>
-    <import>Trakt.Common.Users.xml</import>
     <import>common.overlays.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:3bf3398552064ff2e59a6c9621ffbd07-->
