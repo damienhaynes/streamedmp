@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-  <id>87283</id>
+  <id>874006</id>
   <defaultcontrol>50</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <define>#header.hover:TraktNetwork.jpg</define>
@@ -34,7 +34,7 @@
       <id>0</id>
       <posX>571</posX>
       <posY>16</posY>
-      <width>629</width>
+      <width>729</width>
       <height>52</height>
       <texture>tvtitlebgshort.png</texture>
       <animation effect="fade" time="100" delay="0">visiblechange</animation>
@@ -42,15 +42,17 @@
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
     <control>
-      <description>Current Friend / View</description>
-      <type>label</type>
+      <description>Search Term</description>
+      <type>fadelabel</type>
       <id>0</id>
-      <posX>1158</posX>
+      <posX>1243</posX>
       <posY>19</posY>
-      <width>380</width>
+      <width>480</width>
       <font>mediastream12c</font>
-      <label>#(iif(eq(#Trakt.View.Level,'Network'),'#Trakt.CurrentView','#Trakt.User.Username'))</label>
+      <label>#Trakt.Search.SearchTerm</label>
       <align>right</align>
+      <wrapString> |  </wrapString>
+      <scrollStartDelaySec>10</scrollStartDelaySec>
       <animation effect="fade" time="100" delay="0">visiblechange</animation>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -75,7 +77,7 @@
       <posY>19</posY>
       <width>525</width>
       <font>mediastream12c</font>
-      <label>Trakt #Trakt.Translation.Network.Label</label>
+      <label>#Trakt.Translation.SearchUsers.Label</label>
       <align>right</align>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -88,6 +90,7 @@
       <width>1920</width>
       <height>70</height>
       <texture>imagestreamtitle.png</texture>
+      <visible>!facadeview.filmstrip</visible>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -146,6 +149,7 @@
       <width>390</width>
       <height>45</height>
       <texture>mediacountbg_Spin.png</texture>
+      <visible>!facadeview.filmstrip</visible>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
@@ -160,6 +164,7 @@
       <posY>1032</posY>
       <font>mediastream12tc</font>
       <textcolor>ff909090</textcolor>
+      <visible>!facadeview.filmstrip</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
@@ -174,6 +179,7 @@
       <width>1425</width>
       <font>mediastream16tc</font>
       <label>#selecteditem</label>
+      <visible>!facadeview.filmstrip</visible>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -187,6 +193,7 @@
       <control>
         <type>facadeview</type>
         <id>50</id>
+        <animation effect="fade" time="250" delay="0">WindowClose</animation>
         <control>
           <description>listcontrol</description>
           <type>listcontrol</type>
@@ -228,9 +235,93 @@
           <spinHeight>55</spinHeight>
           <suffix>|</suffix>
         </control>
+        <control>
+          <description>Filmstrip view</description>
+          <type>filmstrip</type>
+          <dimColor>90ffffff</dimColor>
+          <id>50</id>
+          <posX>950</posX>
+          <posY>450</posY>
+          <onup>2</onup>
+          <ondown>2</ondown>
+          <scrollOffset>2</scrollOffset>
+          <width>800</width>
+          <height>864</height>
+          <thumbWidth>180</thumbWidth>
+          <thumbHeight>180</thumbHeight>
+          <thumbPosX>6</thumbPosX>
+          <thumbPosY>6</thumbPosY>
+          <itemWidth>198</itemWidth>
+          <itemHeight>163</itemHeight>
+          <textureWidth>225</textureWidth>
+          <textureHeight>137</textureHeight>
+          <thumbs flipY="true" diffuse="Thumb_Mask.png">
+          </thumbs>
+          <showFrame>yes</showFrame>
+          <showFolder>yes</showFolder>
+          <showBackGround>no</showBackGround>
+          <showInfoImage>no</showInfoImage>
+          <spinPosX>2847</spinPosX>
+          <spinPosY>21027</spinPosY>
+          <spinAlign>center</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
+          <textureUp>arrow_round_right_nofocus.png</textureUp>
+          <textureDown>arrow_round_left_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_right_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_left_focus.png</textureDownFocus>
+          <thumbAnimation effect="zoom" start="100,100" end="180,180" time="700" tween="circle" ease="inout">focus</thumbAnimation>
+          <thumbAnimation effect="zoom" start="170,170" end="100,100" time="900" tween="back" ease="inout">unfocus</thumbAnimation>
+        </control>
+        <control>
+          <description>Thumbnail Panel</description>
+          <type>thumbnailpanel</type>
+          <id>50</id>
+          <onleft>2</onleft>
+          <onup>50</onup>
+          <onright>2</onright>
+          <textureUp>-</textureUp>
+          <textureDown>-</textureDown>
+          <posX>920</posX>
+          <posY>340</posY>
+          <width>1000</width>
+          <height>720</height>
+          <itemWidth>135</itemWidth>
+          <itemHeight>135</itemHeight>
+          <textureWidth>136</textureWidth>
+          <textureHeight>135</textureHeight>
+          <thumbWidth>120</thumbWidth>
+          <thumbHeight>120</thumbHeight>
+          <thumbPosX>7</thumbPosX>
+          <thumbPosY>7</thumbPosY>
+          <imageFolderFocus>thumbborder3.png</imageFolderFocus>
+          <font>font12</font>
+          <suffix>|</suffix>
+          <textureWidthBig>225</textureWidthBig>
+          <textureHeightBig>225</textureHeightBig>
+          <itemWidthBig>225</itemWidthBig>
+          <itemHeightBig>225</itemHeightBig>
+          <thumbWidthBig>210</thumbWidthBig>
+          <thumbHeightBig>210</thumbHeightBig>
+          <thumbPosXBig>7</thumbPosXBig>
+          <thumbPosYBig>7</thumbPosYBig>
+          <thumbZoom>no</thumbZoom>
+          <enableFocusZoom>no</enableFocusZoom>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
+        </control>
       </control>
     </control>
-	<!-- Hidden Menu -->
+    <!-- Hidden Menu -->
     <control>
       <description>Hidden Menu Indicator</description>
       <type>image</type>
@@ -289,48 +380,74 @@
         <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
       <control>
+        <id>0</id>
+        <description>JUMP TO</description>
+        <label>1065</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1560</posX>
+        <posY>412</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+      </control>
+      <control>
         <type>group</type>
         <description>group element</description>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="450,0">visible</animation>
         <animation effect="slide" time="0" end="450,0">hidden</animation>
         <posX>1560</posX>
-        <posY>362</posY>
+        <posY>367</posY>
         <width>330</width>
         <height>1080</height>
         <layout>StackLayout</layout>
         <control>
-          <description>Switch View</description>
+          <description>Change Layout</description>
           <type>button</type>
           <id>2</id>
           <label>-</label>
           <onup>21</onup>
-		  <ondown>3</ondown>
+          <!-- Top Bar -->
           <onleft>50</onleft>
         </control>
-		<control>
-          <description>Search User</description>
+        <control>
+          <description>Empty button</description>
           <type>button</type>
-          <id>3</id>
-          <label>#Trakt.Translation.Search.Label</label>
-          <onup>2</onup>
-          <onleft>50</onleft>
-		  <ondown>4</ondown>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
         </control>
-		<control>
-          <description>Refresh</description>
+        <control>
+          <description>MovingPictures</description>
+          <id>66610</id>
           <type>button</type>
-          <id>4</id>
-          <label>#Trakt.Translation.Refresh.Label</label>
-          <onup>3</onup>
+          <label>Moving Pictures</label>
+          <hyperlink>96742</hyperlink>
           <onleft>50</onleft>
-		  <ondown>2</ondown>
+        </control>
+        <control>
+          <description>My Videos</description>
+          <type>button</type>
+          <id>66611</id>
+          <label>100006</label>
+          <onleft>50</onleft>
+          <hyperlink>6</hyperlink>
+          <ondown>66612</ondown>
+        </control>
+        <control>
+          <description>MP-TVSeries</description>
+          <type>button</type>
+          <id>66612</id>
+          <label>MP-TVSeries</label>
+          <hyperlink>9811</hyperlink>
+          <ondown>2</ondown>
+          <onleft>50</onleft>
         </control>
       </control>
     </control>
-    <import>Trakt.Common.Users.xml</import>
+	<import>Trakt.Common.Users.xml</import>
     <import>common.overlays.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:3bf3398552064ff2e59a6c9621ffbd07-->

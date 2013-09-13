@@ -173,7 +173,7 @@
       <buttonY>82</buttonY>
       <buttonwidth>73</buttonwidth>
       <buttonheight>379</buttonheight>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(10000)|control.hasfocus(10001)|control.hasfocus(10002)|control.hasfocus(10003)|control.hasfocus(97258)|control.hasfocus(97259)|control.hasfocus(97260)|control.hasfocus(97261)|control.hasfocus(97262)]</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(10000)|control.hasfocus(10001)|control.hasfocus(10002)|control.hasfocus(10003)|control.hasfocus(97258)|control.hasfocus(97259)|control.hasfocus(97260)|control.hasfocus(97261)|control.hasfocus(97262)|control.hasfocus(97263)]</visible>
       <animation effect="slide" time="100" start="450,0">visible</animation>
       <animation effect="slide" time="0" end="450,0">hidden</animation>
       <control>
@@ -343,6 +343,17 @@
           <id>97258</id>
           <label>#Trakt.Translation.AddToWatchList.Label</label>
           <onup>97261</onup>
+          <ondown>97263</ondown>
+          <onleft>6</onleft>
+          <onright>6</onright>
+          <visible>plugin.isenabled(Trakt)</visible>
+        </control>
+        <control>
+          <description>Trakt Search By Person</description>
+          <type>button</type>
+          <id>97263</id>
+          <label>#Trakt.Translation.SearchBy.Label...</label>
+          <onup>97258</onup>
           <ondown>10000</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
