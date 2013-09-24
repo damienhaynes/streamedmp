@@ -91,8 +91,8 @@
       <posX>120</posX>
       <posY>150</posY>
       <layout>StackLayout</layout>
-      <control>
-        <description>TVGuide</description>
+      <control Style="skinbutton">
+        <description>TV Guide</description>
         <type>button</type>
         <id>2</id>
         <label>600</label>
@@ -100,176 +100,107 @@
         <onup>9</onup>
         <ondown>3</ondown>
         <onright>99</onright>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <height>60</height>
         <width>450</width>
-        <textYOff>12</textYOff>
-        <textXOff>30</textXOff>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
         <animation effect="zoom" start="110,100" end="100,100" center="433,81" time="500">unfocus</animation>
       </control>
-      <control>
+      <control Style="skinbutton">
         <description>Search</description>
         <type>button</type>
         <id>3</id>
         <label>137</label>
         <hyperlink>49850</hyperlink>
         <onup>2</onup>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <width>450</width>
-        <height>60</height>
-        <textYOff>12</textYOff>
-        <textXOff>30</textXOff>
         <ondown>4</ondown>
         <onright>99</onright>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <width>450</width>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
         <animation effect="zoom" start="110,100" end="100,100" center="433,81" time="500">unfocus</animation>
       </control>
-      <control>
+      <control Style="skinbutton">
         <description>Recordings</description>
         <type>button</type>
         <id>4</id>
         <label>604</label>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
         <width>450</width>
-        <height>60</height>
-        <textYOff>12</textYOff>
-        <textXOff>30</textXOff>
         <hyperlink>603</hyperlink>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <onup>3</onup>
+        <ondown>5</ondown>
+        <onright>99</onright>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
         <animation effect="zoom" start="110,100" end="100,100" center="433,81" time="500">unfocus</animation>
-        <onright>99</onright>
-        <onup>3</onup>
-        <ondown>5</ondown>
       </control>
-      <control>
+      <control Style="skinbutton">
         <description>Channel button</description>
         <type>button</type>
         <id>5</id>
         <label>602</label>
         <onup>4</onup>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <width>450</width>
-        <height>60</height>
-        <textYOff>12</textYOff>
-        <textXOff>30</textXOff>
         <ondown>6</ondown>
         <onright>99</onright>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <width>450</width>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
         <animation effect="zoom" start="110,100" end="100,100" center="433,81" time="500">unfocus</animation>
       </control>
-      <control>
+      <control Style="skincheckbutton">
         <description>TV On/Off button</description>
         <type>checkbutton</type>
         <id>6</id>
         <label>707</label>
-        <textureFocus>tv_button_focus_ledon.png</textureFocus>
         <onup>5</onup>
         <ondown>7</ondown>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
+        <onright>99</onright>
         <width>450</width>
-        <height>60</height>
-        <textYOff>12</textYOff>
-        <textXOff>30</textXOff>
-        <textureNoFocus>tv_button_no_focus_ledon.png</textureNoFocus>
-        <AltTextureFocus>tv_button_focus_ledoff.png</AltTextureFocus>
-        <AltTextureNoFocus>tv_button_no_focus_ledoff.png</AltTextureNoFocus>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
         <animation effect="zoom" start="110,100" end="100,100" center="433,81" time="500">unfocus</animation>
-        <onup>5</onup>
-        <ondown>7</ondown>
-        <onright>99</onright>
       </control>
-      <control>
+      <control Style="skinbutton">
         <description>Upcoming Recordings</description>
         <type>button</type>
         <id>7</id>
         <label>603</label>
         <onup>6</onup>
-        <font>mediastream12tc</font>
-        <width>450</width>
-        <height>60</height>
-        <textYOff>12</textYOff>
-        <textXOff>30</textXOff>
         <ondown>8</ondown>
         <onright>99</onright>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
+        <width>450</width>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
         <animation effect="zoom" start="110,100" end="100,100" center="433,81" time="500">unfocus</animation>
       </control>
-      <control>
+      <control Style="skinbutton">
         <description>Active Recordings</description>
         <type>button</type>
         <id>8</id>
         <label>200052</label>
         <onup>7</onup>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <width>450</width>
-        <height>60</height>
-        <textYOff>12</textYOff>
-        <textXOff>30</textXOff>
+		<ondown>9</ondown>
         <onright>99</onright>
-				<ondown>9</ondown>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <width>450</width>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
         <animation effect="zoom" start="110,100" end="100,100" center="433,81" time="500">unfocus</animation>
       </control>
-      <control>
+      <control Style="skinbutton">
         <description>Teletext</description>
         <type>button</type>
         <id>9</id>
         <label>Teletext</label>
         <onup>8</onup>
         <ondown>2</ondown>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <width>450</width>
-        <height>60</height>
-        <textYOff>12</textYOff>
-        <textXOff>30</textXOff>
-        <ondown>2</ondown>
         <onright>99</onright>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+        <width>450</width>
         <animation effect="fade" time="250">WindowOpen</animation>
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="zoom" start="100,100" end="110,100" center="433,81" time="300">focus</animation>
@@ -297,8 +228,10 @@
       <posY>174</posY>
       <width>865</width>
       <height>487</height>
-      <onup>8</onup>
-      <ondown>10</ondown>
+      <onup>2</onup>
+      <onleft>2</onleft>
+      <onright>2</onright>
+      <ondown>2</ondown>
       <action>18</action>
       <textureFocus>tv_blue_border.png</textureFocus>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -493,4 +426,3 @@
     </control>
   </controls>
 </window>
-<!--Checksum:a6b6d9c5659ff92dd632096f5e26a643-->
