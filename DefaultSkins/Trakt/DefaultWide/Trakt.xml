@@ -31,7 +31,7 @@
       <type>image</type>
       <id>0</id>
       <posX>40</posX>
-      <posY>140</posY>
+      <posY>80</posY>
       <width>106</width>
       <height>80</height>
       <keepaspectratio>yes</keepaspectratio>
@@ -41,7 +41,7 @@
       <type>group</type>
       <description>group element</description>
       <posX>40</posX>
-      <posY>221</posY>
+      <posY>161</posY>
       <width>280</width>
       <height>379</height>
       <layout>StackLayout(Vertical)</layout>
@@ -52,7 +52,7 @@
         <id>2</id>
         <label>#Trakt.Translation.Profile.Label</label>
         <hyperlink>87400</hyperlink>
-        <onup>15</onup>
+        <onup>99</onup>
         <onright>98300</onright>
       </control>
       <control>
@@ -116,6 +116,16 @@
         <id>9</id>
         <label>#Trakt.Translation.Settings.Label</label>
         <hyperlink>87271</hyperlink>
+        <ondown>10</ondown>
+        <onright>98301</onright>
+      </control>
+      <control>
+        <description>Search</description>
+        <type>button</type>
+        <width>280</width>
+        <id>10</id>
+        <label>#Trakt.Translation.Search.Label</label>
+        <hyperlink>874001</hyperlink>
         <ondown>99</ondown>
         <onright>98301</onright>
       </control>
@@ -126,7 +136,7 @@
         <id>99</id>
         <label>#MPEI.Translation.Update.Label</label>
         <ondown>2</ondown>
-        <onup>8</onup>
+        <onup>10</onup>
         <visible>string.equals(#mpei.a9c3845a_8718_4712_85cc_26f56520bb9a.haveupdate, true)</visible>
         <onright>98302</onright>
       </control>
@@ -136,7 +146,7 @@
       <type>image</type>
       <id>0</id>
       <posX>280</posX>
-      <posY>556</posY>
+      <posY>536</posY>
       <width>28</width>
       <height>28</height>
       <texture>isupdate.png</texture>
