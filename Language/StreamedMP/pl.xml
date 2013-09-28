@@ -3,7 +3,7 @@
   <!--Example user defined translation property-->
   <!--Field name must start with a '#'. The entry below creates the skin property-->
   <!--'#StreamedMP.Example.Property' that is set to 'Translated String'-->
-  <string name="#StreamedMP.Example.Property">Translated String</string>
+  <string name="#StreamedMP.Example.Property">Tłumaczenie</string>
   <!--MediaPortal Localised IDs -> Skin Properties-->
   <string name="#StreamedMP.Track">435</string>
   <string name="#StreamedMP.Year">436</string>
@@ -30,7 +30,7 @@
   <string name="DownloadingPatch">Pobieranie aktualizacji: {0}</string>
   <string name="DownloadingProgress">Pobrano {0}KB z {1}KB ({2}%)</string>
   <string name="NumPatchesInstalled">Liczba zainstalowanych plików aktualizacji: {0}</string>
-  <string name="PatchUpdateComplete">Aktualizacja skórki do wersji: {0} zakończona</string>
+  <string name="PatchUpdateComplete">Aktualizacja skóry do wersji: {0} zakończona</string>
   <string name="UpdateAvailableHeading">Dostępna aktualizacja - rejestr zmian</string>
   <string name="mupdateheader">Instalator aktualizacji pobrany i zapisany na pulpicie</string>
   <string name="mupdateline1">Konieczna jest ręczna aktualizacja - aby zaktualizować zamknij</string>
@@ -57,28 +57,29 @@
   <string name="ThumbnailDefault">Miniatury: domyślnie</string>
   <string name="Thumbnail_12x4_8x3_Grid">Miniatury: 12x4 małe ikony, 8x3 duże ikony</string>
   <string name="Thumbnail_12x3_8x2_Grid">Miniatury: 12x3 małe ikony, 8x2 duże ikony + informacje</string>
+  <string name="ShowTaglineInDetailsSummary">Myśl przewodnia w szczegółach</string>
   <!--TV Configuration-->
-  <string name="TVGuideSize">Liczba wierszy przewodnika telewizyjnego</string>
-  <string name="TVMiniGuideSize">Liczba wierszy mini przewodnika telewizyjnego</string>
-  <string name="TVGuideEightRows">Przewodnik telewizyjny: 8 wierszy</string>
-  <string name="TVGuideTenRows">Przewodnik telewizyjny: 10 wierszy</string>
-  <string name="TVGuideTwelveRows">Przewodnik telewizyjny: 12 wierszy</string>
-  <string name="TVGuideSixteenRows">Przewodnik telewizyjny: 16 wierszy</string>
-  <string name="TVMiniGuideThreeRows">Mini przewodnik telewizyjny: 3 wiersze</string>
-  <string name="TVMiniGuideFiveRows">Mini przewodnik telewizyjny: 5 wierszy</string>
-  <string name="TVMiniGuideSevenRows">Mini przewodnik telewizyjny: 7 wierszy</string>
-  <string name="TVMiniGuideNineRows">Mini przewodnik telewizyjny: 9 wierszy</string>
-  <string name="EnableRandomTVSeriesFanartInMyTV">Losowe serialowe FanArty w menu telewizji</string>
+  <string name="TVGuideSize">Liczba wierszy przewodnika TV</string>
+  <string name="TVMiniGuideSize">Liczba wierszy mini przewodnika TV</string>
+  <string name="TVGuideEightRows">Przewodnik TV: 8 wierszy</string>
+  <string name="TVGuideTenRows">Przewodnik TV: 10 wierszy</string>
+  <string name="TVGuideTwelveRows">Przewodnik TV: 12 wierszy</string>
+  <string name="TVGuideSixteenRows">Przewodnik TV: 16 wierszy</string>
+  <string name="TVMiniGuideThreeRows">Mini przewodnik TV: 3 wiersze</string>
+  <string name="TVMiniGuideFiveRows">Mini przewodnik TV: 5 wierszy</string>
+  <string name="TVMiniGuideSevenRows">Mini przewodnik TV: 7 wierszy</string>
+  <string name="TVMiniGuideNineRows">Mini przewodnik TV: 9 wierszy</string>
+  <string name="EnableRandomTVSeriesFanartInMyTV">Uaktywnij losowe serialowe Fanarty</string>
   <!--Misc Settings-->
   <string name="ShowHiddenMenuImage">Wyświetlaj wskaźnik kontekstowego menu</string>
   <string name="ShowRoundedPosters">Plakaty z zaokrąglonymi brzegami</string>
-  <string name="ShowIconsInArtwork">Wyświetlaj ikonę Objeżane/Nieobejżane na FanArtach</string>
+  <string name="ShowIconsInArtwork">Ikona Objerzane/Nieobejrzane na Fanartach</string>
   <string name="PlayMostRecents">Używaj Odtwarzaj dla Ostatnich ...</string>
   <string name="FilterWatchedRecents">Ukryj obejrzane na liście Ostatnio Dodanych</string>
   <string name="UnfocusedAlpha">Ustawienia przeźroczystości/przyciemnienia</string>
-  <string name="UnfocusedAlphaMenuLists">Przeźroczystość elementów na widokach list: {0}</string>
-  <string name="UnfocusedAlphaMenuThumbs">Przeźroczystość elementów na widokach ikon: {0}</string>
-  <string name="UnfocusedAlphaInvalidLine1">Podano nieprawidłową wartość, wprowadź poprawną wartość</string>
+  <string name="UnfocusedAlphaMenuLists">Przeźroczystość elementów na układzie lista: {0}</string>
+  <string name="UnfocusedAlphaMenuThumbs">Przeźroczystość elementów na układzie miniatury: {0}</string>
+  <string name="UnfocusedAlphaInvalidLine1">Podano nieprawidłową wartość, wprowadź wartość</string>
   <string name="UnfocusedAlphaInvalidLine2">z zakresu 0 - 255.</string>
   <string name="UnfocusedAlphaInvalidLine3">Przyciemniony = 255, Przeźroczysty = 0</string>
   <string name="UseLargeFonts">Używaj dużych czcionek</string>
@@ -93,25 +94,34 @@
   <string name="ListColorInvalidLine2">poprawny kod szesnastkowy np. kolor czerwony to FF0000</string>
   <string name="ListColorInvalidLine3">składający się z \'FF\' czerwony, \'00\' zielony, \'00\' niebieski.</string>
   <string name="CustomColor">Kolor niestandardowy</string>
+  <string name="ShowListScrollingPopup">Wyświetlaj wskaźnik przewijanie listy</string>
+  <string name="Scraper">Skrypt pobierający</string>
+  <string name="TextualMediaInfoLogos">Tekstowe etykiety MediaInfo</string>
+  <string name="MyVideoWatchedProgress">Wskaźnik boczny na liście filmów</string>
   <!--General Translations-->
   <string name="Rated">Ocena</string>
   <string name="Director">Reżyser</string>
-  <string name="ReleaseDate">Data wydania</string>
+  <string name="ReleaseDate">Data publikacji</string>
   <string name="Runtime">Czas</string>
   <string name="Votes">głosów</string>
   <string name="Trailer">Zwiastun</string>
+  <string name="Views">Widoki</string>
+  <string name="Locked">Zablokowane</string>
+  <string name="DSTStart">Początek dnia</string>
+  <string name="DSTEnd">Koniec dnia</string>
   <!--Global Search-->
   <string name="SearchMusic">Szukaj w muzyce</string>
   <string name="SearchPhrase">Szukaj zwrotu</string>
   <string name="SearchHistory">Historia wyszukiwań</string>
   <string name="SearchFields">Pola wyszukiwania</string>
   <string name="SearchType">Typ wyszukiwania</string>
-  <string name="CaseSensitive">Wielkość liter</string>
+  <string name="CaseSensitive">Wielkość liter istotna</string>
   <!--Recently Added / Watched-->
   <string name="LatestEpisodes">Najnowsze odcinki</string>
   <string name="LatestMovies">Najnowsze filmy</string>
-  <string name="LatestTVRecordings">Ostatnio nagrane</string>
+  <string name="LatestTVRecordings">Najnowsze nagrania</string>
   <string name="LatestMusic">Najnowsza muzyka</string>
+  <string name="LatestMusicVideos">Najnowsze klipy muzyczne</string>
   <string name="RecentlyWatched">Ostatnio oglądane</string>
   <string name="RecordedOn">Nagrane:</string>
   <!--MediaPortal Exit Buttons-->
