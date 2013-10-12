@@ -38,7 +38,6 @@
       <width>629</width>
       <height>52</height>
       <texture>tvtitlebgshort.png</texture>
-      <visible>!string.equals(#Trakt.User.Username,)</visible>
       <animation effect="fade" time="100" delay="0">visiblechange</animation>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -51,7 +50,7 @@
       <posY>19</posY>
       <width>380</width>
       <font>mediastream12c</font>
-      <label>#(iif(eq(#Trakt.User.FullName,''),'#Trakt.User.Username','#Trakt.User.FullName'))</label>
+      <label>#Trakt.UserProfile.CurrentUser</label>
       <align>right</align>
       <animation effect="fade" time="100" delay="0">visiblechange</animation>
       <animation effect="fade" time="150">WindowOpen</animation>
