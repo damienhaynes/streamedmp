@@ -108,7 +108,7 @@
       <label>2553</label>
       <onup>6</onup>
       <ondown>667</ondown>
-      <onright>10000</onright>
+      <onright>11899</onright>
       <onleft>666</onleft>
       <posX>1560</posX>
       <posY>997</posY>
@@ -133,7 +133,7 @@
       <onup>666</onup>
       <ondown>667</ondown>
       <onright>6</onright>
-      <onleft>10000</onleft>
+      <onleft>11899</onleft>
       <posX>1305</posX>
       <posY>997</posY>
       <width>255</width>
@@ -166,14 +166,14 @@
     <control>
       <type>actiongroup</type>
       <description>action menu</description>
-      <defaultcontrol>10000</defaultcontrol>
+      <defaultcontrol>11899</defaultcontrol>
       <onexit>6</onexit>
       <dimColor>00ffffff</dimColor>
       <buttonX>1846</buttonX>
       <buttonY>82</buttonY>
       <buttonwidth>73</buttonwidth>
       <buttonheight>379</buttonheight>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(10000)|control.hasfocus(10001)|control.hasfocus(10002)|control.hasfocus(10003)|control.hasfocus(97258)|control.hasfocus(97259)|control.hasfocus(97260)|control.hasfocus(97261)|control.hasfocus(97262)|control.hasfocus(97263)]</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(11899)|control.hasfocus(10003)|control.hasfocus(97258)|control.hasfocus(97259)|control.hasfocus(97260)|control.hasfocus(97261)|control.hasfocus(97262)|control.hasfocus(97263)]</visible>
       <animation effect="slide" time="100" start="450,0">visible</animation>
       <animation effect="slide" time="0" end="450,0">hidden</animation>
       <control>
@@ -201,7 +201,7 @@
         <label>5900</label>
         <font>mediastream12tc</font>
         <posX>1560</posX>
-        <posY>339</posY>
+        <posY>344</posY>
       </control>
       <control>
         <id>0</id>
@@ -210,7 +210,7 @@
         <label>#StreamedMP.Scraper</label>
         <font>mediastream12tc</font>
         <posX>1560</posX>
-        <posY>510</posY>
+        <posY>420</posY>
       </control>
       <control>
         <id>0</id>
@@ -219,7 +219,7 @@
         <label>Trakt</label>
         <font>mediastream12tc</font>
         <posX>1560</posX>
-        <posY>592</posY>
+        <posY>502</posY>
         <visible>plugin.isenabled(Trakt)</visible>
       </control>
       <control>
@@ -233,40 +233,14 @@
         <height>1080</height>
         <layout>StackLayout(0, Vertical, true)</layout>
         <control>
-          <description>Trailer Search (IMDB)</description>
+          <description>Trailers Plugin</description>
           <type>button</type>
-          <id>10000</id>
-          <label>IMDb</label>
-          <ondown>10001</ondown>
+          <id>11899</id>
+          <label>#Trailers.Translation.Trailers.Label...</label>
+          <ondown>10003</ondown>
           <onup>17</onup>
           <onleft>6</onleft>
           <onright>6</onright>
-          <hyperlink>4755</hyperlink>
-          <hyperlinkParameter>site:IMDb Movie Trailers|search:#(iif(neq(#MovingPictures.SelectedMovie.imdb_id,''),#MovingPictures.SelectedMovie.imdb_id,#MovingPictures.SelectedMovie.title))|return:Locked</hyperlinkParameter>
-        </control>
-        <control>
-          <description>Trailer Search (iTunes)</description>
-          <type>button</type>
-          <id>10001</id>
-          <label>iTUNES</label>
-          <ondown>10002</ondown>
-          <onup>10000</onup>
-          <onleft>6</onleft>
-          <onright>6</onright>
-          <hyperlink>4755</hyperlink>
-          <hyperlinkParameter>site:iTunes Movie Trailers|search:#MovingPictures.SelectedMovie.title|return:Locked</hyperlinkParameter>
-        </control>
-        <control>
-          <description>Trailer Search (YouTube)</description>
-          <type>button</type>
-          <id>10002</id>
-          <label>YouTube</label>
-          <ondown>10003</ondown>
-          <onup>10001</onup>
-          <onleft>6</onleft>
-          <onright>6</onright>
-          <hyperlink>4755</hyperlink>
-          <hyperlinkParameter>site:YouTube|search:#MovingPictures.SelectedMovie.title|return:Locked</hyperlinkParameter>
         </control>
         <control>
           <description>Empty button</description>
@@ -281,7 +255,7 @@
           <id>10003</id>
           <label>IMDb+</label>
           <hyperlink>31415</hyperlink>
-          <onup>10002</onup>
+          <onup>11899</onup>
           <ondown>97259</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
@@ -354,7 +328,7 @@
           <id>97263</id>
           <label>#Trakt.Translation.SearchBy.Label...</label>
           <onup>97258</onup>
-          <ondown>10000</ondown>
+          <ondown>11899</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
           <visible>plugin.isenabled(Trakt)</visible>

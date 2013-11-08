@@ -530,19 +530,17 @@
         <id>6</id>
         <label>1010</label>
         <onleft>10</onleft>
-        <ondown>4755</ondown>
+        <ondown>11899</ondown>
         <width>450</width>
       </control>
       <control>
         <description>Trailer</description>
         <type>button</type>
-        <id>4755</id>
-        <label>#StreamedMP.Trailer</label>
+        <id>11899</id>
+        <label>#Trailers.Translation.Trailers.Label...</label>
         <onleft>10</onleft>
         <onup>6</onup>
         <ondown>97270</ondown>
-        <hyperlink>4755</hyperlink>
-        <hyperlinkParameter>site:IMDb Movie Trailers|search:#(iif(neq(#imdbnumber,''),#imdbnumber,#title))|return:Locked</hyperlinkParameter>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
         <font>mediastream12tc</font>
@@ -552,7 +550,7 @@
         <textXOff>30</textXOff>
         <textureFocus>tv_button_focus.png</textureFocus>
         <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <visible>plugin.isenabled(OnlineVideos)</visible>
+        <visible>plugin.isenabled(Trailers)</visible>
       </control>
       <control>
         <description>Trakt Menu</description>
@@ -560,7 +558,7 @@
         <id>97270</id>
         <label>Trakt...</label>
         <onleft>10</onleft>
-        <onup>4755</onup>
+        <onup>11899</onup>
         <ondown>2</ondown>
         <textcolor>ffffffff</textcolor>
         <textcolorNoFocus>bfffffff</textcolorNoFocus>
