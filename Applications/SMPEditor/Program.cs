@@ -19,7 +19,7 @@ namespace SMPEditor
       if (args.Length != 0)
       {
         if (args[0].ToLower().Contains("regenerateonly"))
-          appStart.reGenterateMenu();
+          appStart.reGenerateMenu(true);
       }
       else
         appStart.ShowPlugin();

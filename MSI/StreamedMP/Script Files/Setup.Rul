@@ -109,8 +109,8 @@
 #define MYLYRICS_MIN_VERSION						"1.8.0.230"
 #define GLOBALSEARCH_MIN_VERSION					"1.8.0.68"
 #define INFOSERVICE_MIN_VERSION						"1.7.2.248"
-#define TRAKT_MIN_VERSION							"3.1.0.0"    
-#define WEATHER_MIN_VERSION							"1.2.5.0"
+#define TRAKT_MIN_VERSION							"3.1.2.0"    
+#define WEATHER_MIN_VERSION							"1.3.1.0"
 
 
 // XML Path Defines
@@ -925,22 +925,15 @@ function OnFirstUIAfter()
     NUMBER bOpt1, bOpt2;
 begin
 	
-	// Delete old Trakt Process plugin if it still exists
-	if (Is(FILE_EXISTS, g_sPluginsDir ^ "windows\\TraktPlugin.dll")) then
-		if (Is(FILE_EXISTS, g_sPluginsDir ^ "process\\TraktPlugin.dll")) then
-			DeleteFile(g_sPluginsDir ^ "process\\TraktPlugin.dll");
-		endif;
-	endif;
-	
  	// Update Settings
 	UpdateSettings();
 	
 	// Generate new BasicHome screen
-	GenerateBasicHome();
+	if (g_bSetAsDefaultSkin) then
+		GenerateBasicHome();
+	endif;
 	
-	// Clean Cache Folder    
-    CleanCache("Default");
-    CleanCache("DefaultWide");
+	// Clean Cache Folder
 	CleanCache(SKIN_NAME);
 	   
 	// Major Upgrade Tasks
@@ -958,7 +951,7 @@ begin
 		szMsg1 = SdLoadString(IFX_SDFINISH_MSG1);
 		szOption1 = "&Launch Home Page in default Browser"; 
 		
-		if Is(FILE_EXISTS,szFile) && g_bStartBasicHome then
+		if Is(FILE_EXISTS,szFile) && g_bStartBasicHome && g_bSetAsDefaultSkin then
 			szOption2 = "Launch &StreamedMP Basic Home Editor";
 		endif;
 		SdFinishEx(szTitle, szMsg1, szMsg2, szOption1, szOption2, bOpt1, bOpt2);	
@@ -988,9 +981,7 @@ function OnMaintUIAfter()
 	NUMBER bOpt1, bOpt2;
 begin     
 
-    // Clean Cache Folder    
-    CleanCache("Default");
-    CleanCache("DefaultWide");
+    // Clean Cache Folder
     CleanCache(SKIN_NAME);
     
 	Disable(STATUSEX);	
