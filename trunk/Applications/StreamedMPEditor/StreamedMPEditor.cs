@@ -735,7 +735,7 @@ namespace StreamedMPEditor
       }
       else
       {
-        helper.showError("Error reading Skin diectory - no files found", errorCode.major);
+        helper.showError("Error reading Skin directory - no files found", errorCode.major);
         return false;
       }
     }
@@ -1565,8 +1565,8 @@ namespace StreamedMPEditor
     }
 
     // This function call will regenerate the menu from the currenly saved usermenuprofile.xml
-    // it assums that this file is correct.....
-    public void reGenterateMenu()
+    // it assumes that this file is correct...
+    public void reGenerateMenu(bool silentMode = false)
     {
       this.WindowState = FormWindowState.Minimized;
       GetMediaPortalSkinPath();
