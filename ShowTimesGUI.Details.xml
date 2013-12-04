@@ -279,92 +279,23 @@
     <control>
       <type>group</type>
       <description>group element</description>
-      <posX>1512</posX>
+      <posX>1420</posX>
       <posY>270</posY>
-      <layout>StackLayout</layout>
+      <layout>StackLayout(0, Vertical, true)</layout>
       <visible>control.isvisible(24)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <control>
-        <description>Show Times</description>
-        <type>button</type>
-        <id>40</id>
-        <label>Show Times</label>
-        <onup>17</onup>
-        <ondown>41</ondown>
-        <onright>40</onright>
-        <onleft>40</onleft>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <width>375</width>
-        <height>60</height>
-        <textYOff>12</textYOff>
-        <textXOff>30</textXOff>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      </control>
-      <control>
-        <description>Play Trailer</description>
-        <type>button</type>
-        <id>41</id>
-        <label>Play Trailer</label>
-        <onup>40</onup>
-        <ondown>97258</ondown>
-        <onright>41</onright>
-        <onleft>41</onleft>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <width>375</width>
-        <height>60</height>
-        <textYOff>12</textYOff>
-        <textXOff>30</textXOff>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-      </control>
-      <control>
-        <description>Add to Trakt Movie Watch List</description>
-        <type>button</type>
-        <id>97258</id>
-        <label>#Trakt.Translation.AddToWatchList.Label</label>
-        <onup>41</onup>
-        <ondown>42</ondown>
-        <onright>97258</onright>
-        <onleft>97258</onleft>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <width>375</width>
-        <height>60</height>
-        <textYOff>12</textYOff>
-        <textXOff>30</textXOff>
-        <scrollStartDelaySec>1</scrollStartDelaySec>
-        <scrollWrapString>|</scrollWrapString>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
-        <visible>control.isvisible(24)+plugin.isenabled(Trakt)</visible>
-      </control>
-      <control>
+      <control Style="skinbutton">
         <description>Next</description>
         <type>button</type>
         <id>42</id>
         <label>Next</label>
-        <onup>97258</onup>
+        <onup>11899</onup>
         <ondown>43</ondown>
         <onright>42</onright>
         <onleft>42</onleft>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <width>375</width>
-        <height>60</height>
-        <textYOff>12</textYOff>
-        <textXOff>30</textXOff>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
       </control>
-      <control>
+      <control Style="skinbutton">
         <description>Previous</description>
         <type>button</type>
         <id>43</id>
@@ -373,15 +304,51 @@
         <ondown>40</ondown>
         <onright>43</onright>
         <onleft>43</onleft>
-        <textcolor>ffffffff</textcolor>
-        <textcolorNoFocus>bfffffff</textcolorNoFocus>
-        <font>mediastream12tc</font>
-        <width>375</width>
-        <height>60</height>
-        <textYOff>12</textYOff>
-        <textXOff>30</textXOff>
-        <textureFocus>tv_button_focus.png</textureFocus>
-        <textureNoFocus>tv_button_ no_focus.png</textureNoFocus>
+      </control>
+      <control Style="skinbutton">
+        <description>Show Times</description>
+        <type>button</type>
+        <id>40</id>
+        <label>Show Times</label>
+        <onup>43</onup>
+        <ondown>97258</ondown>
+        <onright>40</onright>
+        <onleft>40</onleft>
+      </control>
+      <control Style="skinbutton">
+        <description>Add to Trakt Movie Watch List</description>
+        <type>button</type>
+        <id>97258</id>
+        <label>#Trakt.Translation.AddToWatchList.Label</label>
+        <onup>40</onup>
+        <ondown>11899</ondown>
+        <onright>97258</onright>
+        <onleft>97258</onleft>
+        <scrollStartDelaySec>1</scrollStartDelaySec>
+        <scrollWrapString>|</scrollWrapString>
+        <visible>control.isvisible(24)+plugin.isenabled(Trakt)</visible>
+      </control>
+      <control Style="skinbutton">
+        <description>Trailers...</description>
+        <type>button</type>
+        <id>11899</id>
+        <label>#Trailers.Translation.Trailers.Label...</label>
+        <onup>97258</onup>
+        <ondown>41</ondown>
+        <onright>11899</onright>
+        <onleft>11899</onleft>
+        <visible>control.isvisible(24)+plugin.isenabled(Trailers)</visible>
+      </control>
+      <control Style="skinbutton">
+        <description>Play Trailer</description>
+        <type>button</type>
+        <id>41</id>
+        <label>Play Trailer</label>
+        <onup>11899</onup>
+        <ondown>42</ondown>
+        <onright>41</onright>
+        <onleft>41</onleft>
+        <visible>control.isvisible(24)+!plugin.isenabled(Trailers)</visible>
       </control>
     </control>
   </controls>
