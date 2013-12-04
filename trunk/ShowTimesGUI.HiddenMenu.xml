@@ -108,7 +108,7 @@
           <id>4</id>
           <label>-</label>
           <onup>3</onup>
-          <ondown>66602</ondown>
+          <ondown>11900</ondown>
           <onleft>50</onleft>
         </control>
         <control>
@@ -120,50 +120,14 @@
           <onleft>50</onleft>
         </control>
         <control>
-          <description>Moving Pictures</description>
+          <description>Trailers</description>
           <type>button</type>
-          <id>66602</id>
-          <label>Moving Pictures</label>
-          <hyperlink>96742</hyperlink>
-          <visible>plugin.isenabled(Moving Pictures)</visible>
+          <id>11900</id>
           <onleft>50</onleft>
           <onup>4</onup>
-          <ondown>66603</ondown>
-        </control>
-        <control>
-          <description>TV Shows</description>
-          <type>button</type>
-          <id>66603</id>
-          <hyperlink>9811</hyperlink>
-          <label>1300</label>
-          <visible>plugin.isenabled(MP-TV Series)</visible>
-          <onleft>50</onleft>
-          <onup>66602</onup>
-          <ondown>66604</ondown>
-        </control>
-        <control>
-          <description>Trailers (IMDb)</description>
-          <type>button</type>
-          <id>66604</id>
-          <onleft>50</onleft>
-          <onup>66603</onup>
-          <ondown>66605</ondown>
-          <label>#(L(5900)) IMDb</label>
-          <hyperlink>4755</hyperlink>
-          <hyperlinkParameter>site:IMDb Movie Trailers|return:Locked</hyperlinkParameter>
-          <visible>plugin.isenabled(OnlineVideos)</visible>
-        </control>
-        <control>
-          <description>Trailers (iTunes)</description>
-          <type>button</type>
-          <id>66605</id>
-          <onleft>50</onleft>
-          <onup>66604</onup>
           <ondown>2</ondown>
-          <label>#(L(5900)) iTunes</label>
-          <hyperlink>4755</hyperlink>
-          <hyperlinkParameter>site:iTunes Movie Trailers|return:Locked</hyperlinkParameter>
-          <visible>plugin.isenabled(OnlineVideos)</visible>
+          <label>#Trailers.Translation.Trailers.Label...</label>
+          <visible>!control.isvisible(24)+plugin.isenabled(Trailers)</visible>
         </control>
         <control>
           <description>Empty button</description>
