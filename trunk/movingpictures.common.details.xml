@@ -173,7 +173,7 @@
       <buttonY>82</buttonY>
       <buttonwidth>73</buttonwidth>
       <buttonheight>379</buttonheight>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(11899)|control.hasfocus(10003)|control.hasfocus(97258)|control.hasfocus(97259)|control.hasfocus(97260)|control.hasfocus(97261)|control.hasfocus(97262)|control.hasfocus(97263)]</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(11899)|control.hasfocus(9999)|control.hasfocus(10003)|control.hasfocus(97258)|control.hasfocus(97259)|control.hasfocus(97260)|control.hasfocus(97261)|control.hasfocus(97262)|control.hasfocus(97263)]</visible>
       <animation effect="slide" time="100" start="450,0">visible</animation>
       <animation effect="slide" time="0" end="450,0">hidden</animation>
       <control>
@@ -198,7 +198,7 @@
         <id>0</id>
         <description>Trailers</description>
         <type>label</type>
-        <label>5900</label>
+        <label>#Trailers.Translation.Trailers.Label</label>
         <font>mediastream12tc</font>
         <posX>1560</posX>
         <posY>344</posY>
@@ -210,7 +210,7 @@
         <label>#StreamedMP.Scraper</label>
         <font>mediastream12tc</font>
         <posX>1560</posX>
-        <posY>420</posY>
+        <posY>460</posY>
       </control>
       <control>
         <id>0</id>
@@ -219,7 +219,7 @@
         <label>Trakt</label>
         <font>mediastream12tc</font>
         <posX>1560</posX>
-        <posY>502</posY>
+        <posY>547</posY>
         <visible>plugin.isenabled(Trakt)</visible>
       </control>
       <control>
@@ -236,11 +236,22 @@
           <description>Trailers Plugin</description>
           <type>button</type>
           <id>11899</id>
-          <label>#Trailers.Translation.Trailers.Label...</label>
-          <ondown>10003</ondown>
+          <label>#Trailers.Translation.Search.Label / #Trailers.Translation.Play.Label...</label>
+          <ondown>9999</ondown>
           <onup>17</onup>
           <onleft>6</onleft>
           <onright>6</onright>
+        </control>
+        <control>
+          <description>MPEICONFIGURE:b4293f64_9e83_4f1f_b2e3_8bdea2a37425</description>
+          <type>button</type>
+          <id>9999</id>
+          <label>#Trailers.Translation.Settings.Label</label>
+          <onup>11899</onup>
+          <ondown>10003</ondown>
+          <onleft>6</onleft>
+          <onright>6</onright>
+          <visible>string.equals(#mpei.b4293f64_9e83_4f1f_b2e3_8bdea2a37425.isinstalled, true)</visible>
         </control>
         <control>
           <description>Empty button</description>
@@ -255,7 +266,7 @@
           <id>10003</id>
           <label>IMDb+</label>
           <hyperlink>31415</hyperlink>
-          <onup>11899</onup>
+          <onup>9999</onup>
           <ondown>97259</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
