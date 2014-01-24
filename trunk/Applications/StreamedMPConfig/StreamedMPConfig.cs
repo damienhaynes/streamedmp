@@ -808,7 +808,8 @@ namespace StreamedMPConfig
       }
       catch (Exception e)
       {
-          smcLog.WriteLog("Error: ", e.Message);
+          smcLog.WriteLog("Error: {0}", e.Message);
+          return;
       }
       // Clear the properties first
       for (int i = 1; i < 4; i++)
