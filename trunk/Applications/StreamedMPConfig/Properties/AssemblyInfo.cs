@@ -11,7 +11,7 @@ using MediaPortal.Common.Utils;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("MediaPortal")]
 [assembly: AssemblyProduct("Configuration Plugin")]
-[assembly: AssemblyCopyright("Copyright ©  2010")]
+[assembly: AssemblyCopyright("Copyright © 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -30,4 +30,4 @@ using MediaPortal.Common.Utils;
 //      Build Number
 //      Revision
 //
-[assembly: CompatibleVersion("1.1.7.0", "1.1.6.0")]
+[assembly: CompatibleVersion("1.6.0.0", "1.6.0.0")]
