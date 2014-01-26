@@ -314,7 +314,7 @@
       <posX>-255</posX>
       <posY>0</posY>
       <width>1920</width>
-      <height>1080</height>
+      <height>1082</height>
       <texture>basichome.menu.overlay.png</texture>
       <shouldCache>true</shouldCache>
       <animation effect="slide" start="-600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
@@ -353,7 +353,7 @@
       <id>1</id>
       <width>1875</width>
       <height>75</height>
-      <posY>1043</posY>
+      <posY>1041</posY>
       <posX>180</posX>
       <font>mediastream12tc</font>
       <label>#infoservice.feed.titles</label>
@@ -389,9 +389,11 @@
         <description>SUB ITEM 0</description>
         <type>button</type>
         <id>80001</id>
-        <label>ONLINEVIDEOS</label>
+        <label>TRAKT.TV</label>
         <width>338</width>
-        <hyperlink>4755</hyperlink>
+        <hyperlink>87258</hyperlink>
+        <hyperlinkParameter>
+        </hyperlinkParameter>
         <onleft>1907</onleft>
         <onright>7777</onright>
         <ondown>80002</ondown>
@@ -402,11 +404,9 @@
         <description>SUB ITEM 1</description>
         <type>button</type>
         <id>80002</id>
-        <label>TRAKT.TV</label>
+        <label>ONLINEVIDEOS</label>
         <width>338</width>
-        <hyperlink>87258</hyperlink>
-        <hyperlinkParameter>
-        </hyperlinkParameter>
+        <hyperlink>4755</hyperlink>
         <onleft>1907</onleft>
         <onright>7777</onright>
         <ondown>80003</ondown>
@@ -533,7 +533,7 @@
     </control>
     <!--             End of Submenu Code            -->
     <control>
-      <description>Dummy label indicating PICTURES visibility when submen open</description>
+      <description>Dummy label indicating PICTURES visibility when submenu open</description>
       <id>1000</id>
       <type>label</type>
       <posX>150</posX>
@@ -756,7 +756,7 @@
       <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
-      <description>Dummy label indicating MUSIC visibility when submen open</description>
+      <description>Dummy label indicating MUSIC visibility when submenu open</description>
       <id>1001</id>
       <type>label</type>
       <posX>150</posX>
@@ -979,7 +979,7 @@
       <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
-      <description>Dummy label indicating MOVIES visibility when submen open</description>
+      <description>Dummy label indicating MOVIES visibility when submenu open</description>
       <id>1002</id>
       <type>label</type>
       <posX>150</posX>
@@ -1202,7 +1202,7 @@
       <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
-      <description>Dummy label indicating SERIES visibility when submen open</description>
+      <description>Dummy label indicating SERIES visibility when submenu open</description>
       <id>1003</id>
       <type>label</type>
       <posX>150</posX>
@@ -1425,7 +1425,7 @@
       <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
-      <description>Dummy label indicating TV visibility when submen open</description>
+      <description>Dummy label indicating TV visibility when submenu open</description>
       <id>1004</id>
       <type>label</type>
       <posX>150</posX>
@@ -1648,7 +1648,7 @@
       <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
-      <description>Dummy label indicating TRAILERS visibility when submen open</description>
+      <description>Dummy label indicating TRAILERS visibility when submenu open</description>
       <id>1005</id>
       <type>label</type>
       <posX>150</posX>
@@ -1873,7 +1873,7 @@
       <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
-      <description>Dummy label indicating VIDEOS visibility when submen open</description>
+      <description>Dummy label indicating VIDEOS visibility when submenu open</description>
       <id>1006</id>
       <type>label</type>
       <posX>150</posX>
@@ -2096,7 +2096,7 @@
       <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
-      <description>Dummy label indicating PLUGINS visibility when submen open</description>
+      <description>Dummy label indicating PLUGINS visibility when submenu open</description>
       <id>1007</id>
       <type>label</type>
       <posX>150</posX>
@@ -2319,7 +2319,7 @@
       <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
-      <description>Dummy label indicating WEATHER visibility when submen open</description>
+      <description>Dummy label indicating WEATHER visibility when submenu open</description>
       <id>1008</id>
       <type>label</type>
       <posX>150</posX>
@@ -2542,7 +2542,7 @@
       <animation effect="slide" start="0,-150" time="250" acceleration=" -0.4" reversible="false">Visible</animation>
     </control>
     <control>
-      <description>Dummy label indicating SETTINGS visibility when submen open</description>
+      <description>Dummy label indicating SETTINGS visibility when submenu open</description>
       <id>1009</id>
       <type>label</type>
       <posX>150</posX>
@@ -3875,393 +3875,12 @@
       <animation effect="slide" end="-600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <visible>Control.HasFocus(1709)|Control.HasFocus(1809)|Control.HasFocus(1909)</visible>
     </control>
-    <control>
-      <description>5-Day Weather Dummy Label</description>
-      <type>label</type>
-      <id>6767</id>
-      <posX>-50</posX>
-      <posY>-50</posY>
-      <label>
-      </label>
-      <visible>plugin.isenabled(World Weather)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]+!control.isvisible(11111)</visible>
-    </control>
-    <control>
-      <description>GROUP: Forecast BGs</description>
-      <type>group</type>
-      <dimColor>0xffffffff</dimColor>
-      <visible>plugin.isenabled(World Weather)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]+!control.isvisible(11111)</visible>
-      <animation effect="fade" start="100" end="0" delay="100" time="400" reversible="false">Hidden</animation>
-      <animation effect="fade" start="20" end="100" delay="100" time="400" reversible="false">Visible</animation>
-      <animation effect="fade" start="0" end="100" delay="100" time="400" reversible="false">WindowOpen</animation>
-      <animation effect="fade" start="100" end="0" delay="100" time="400" reversible="false">WindowClose</animation>
-      <control>
-        <description>TODAY BG</description>
-        <posX>690</posX>
-        <posY>338</posY>
-        <type>image</type>
-        <id>6777</id>
-        <width>270</width>
-        <height>405</height>
-        <texture>weather2.png</texture>
-        <shouldCache>true</shouldCache>
-      </control>
-      <control>
-        <description>DAY 1 BG</description>
-        <posX>1058</posX>
-        <posY>105</posY>
-        <type>image</type>
-        <id>6777</id>
-        <width>270</width>
-        <height>405</height>
-        <texture>weather2.png</texture>
-      </control>
-      <control>
-        <description>DAY 2 BG</description>
-        <posX>1433</posX>
-        <posY>105</posY>
-        <type>image</type>
-        <id>6777</id>
-        <width>270</width>
-        <height>405</height>
-        <texture>weather2.png</texture>
-      </control>
-      <control>
-        <description>DAY 3 BG</description>
-        <posX>1058</posX>
-        <posY>623</posY>
-        <type>image</type>
-        <id>6777</id>
-        <width>270</width>
-        <height>405</height>
-        <texture>weather2.png</texture>
-      </control>
-      <control>
-        <description>DAY 4 BG</description>
-        <posX>1433</posX>
-        <posY>623</posY>
-        <type>image</type>
-        <id>6777</id>
-        <width>270</width>
-        <height>405</height>
-        <texture>weather2.png</texture>
-      </control>
-    </control>
-    <control>
-      <description>TODAY ICON</description>
-      <id>0</id>
-      <type>image</type>
-      <texture>#WorldWeather.TodayIconImage</texture>
-      <posX>690</posX>
-      <posY>233</posY>
-      <height>270</height>
-      <width>270</width>
-      <visible>plugin.isenabled(World Weather)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]+!control.isvisible(11111)</visible>
-      <animation effect="fade" start="100" end="0" delay="100" time="400" reversible="false">Hidden</animation>
-      <animation effect="fade" start="0" end="100" delay="100" time="400" reversible="false">Visible</animation>
-      <animation effect="fade" start="0" end="100" delay="100" time="400" reversible="false">WindowOpen</animation>
-      <animation effect="fade" start="100" end="0" delay="100" time="400" reversible="false">WindowClose</animation>
-    </control>
-    <control>
-      <description>DAY 1 ICON</description>
-      <id>0</id>
-      <type>image</type>
-      <texture>#WorldWeather.ForecastDay0IconImage</texture>
-      <shouldCache>true</shouldCache>
-      <posX>1058</posX>
-      <posY>0</posY>
-      <height>270</height>
-      <width>270</width>
-      <visible>plugin.isenabled(World Weather)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]+!control.isvisible(11111)</visible>
-      <animation effect="fade" start="100" end="0" delay="100" time="400" reversible="false">Hidden</animation>
-      <animation effect="fade" start="20" end="100" delay="100" time="400" reversible="false">Visible</animation>
-      <animation effect="fade" start="0" end="100" delay="100" time="400" reversible="false">WindowOpen</animation>
-      <animation effect="fade" start="100" end="0" delay="100" time="400" reversible="false">WindowClose</animation>
-    </control>
-    <control>
-      <description>DAY 2 ICON</description>
-      <id>0</id>
-      <type>image</type>
-      <texture>#WorldWeather.ForecastDay1IconImage</texture>
-      <shouldCache>true</shouldCache>
-      <posX>1433</posX>
-      <posY>0</posY>
-      <height>270</height>
-      <width>270</width>
-      <visible>plugin.isenabled(World Weather)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]+!control.isvisible(11111)</visible>
-      <animation effect="fade" start="100" end="0" delay="100" time="400" reversible="false">Hidden</animation>
-      <animation effect="fade" start="20" end="100" delay="100" time="400" reversible="false">Visible</animation>
-      <animation effect="fade" start="0" end="100" delay="100" time="400" reversible="false">WindowOpen</animation>
-      <animation effect="fade" start="100" end="0" delay="100" time="400" reversible="false">WindowClose</animation>
-    </control>
-    <control>
-      <description>DAY 3 ICON</description>
-      <id>0</id>
-      <type>image</type>
-      <texture>#WorldWeather.ForecastDay2IconImage</texture>
-      <shouldCache>true</shouldCache>
-      <posX>1058</posX>
-      <posY>518</posY>
-      <height>270</height>
-      <width>270</width>
-      <visible>plugin.isenabled(World Weather)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]+!control.isvisible(11111)</visible>
-      <animation effect="fade" start="100" end="0" delay="100" time="400" reversible="false">Hidden</animation>
-      <animation effect="fade" start="20" end="100" delay="100" time="400" reversible="false">Visible</animation>
-      <animation effect="fade" start="0" end="100" delay="100" time="400" reversible="false">WindowOpen</animation>
-      <animation effect="fade" start="100" end="0" delay="100" time="400" reversible="false">WindowClose</animation>
-    </control>
-    <control>
-      <description>DAY 4 ICON</description>
-      <id>0</id>
-      <type>image</type>
-      <texture>#WorldWeather.ForecastDay3IconImage</texture>
-      <shouldCache>true</shouldCache>
-      <posX>1433</posX>
-      <posY>518</posY>
-      <height>270</height>
-      <width>270</width>
-      <visible>plugin.isenabled(World Weather)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]+!control.isvisible(11111)</visible>
-      <animation effect="fade" start="100" end="0" delay="100" time="400" reversible="false">Hidden</animation>
-      <animation effect="fade" start="20" end="100" delay="100" time="400" reversible="false">Visible</animation>
-      <animation effect="fade" start="0" end="100" delay="100" time="400" reversible="false">WindowOpen</animation>
-      <animation effect="fade" start="100" end="0" delay="100" time="400" reversible="false">WindowClose</animation>
-    </control>
-    <control>
-      <description>GROUP: FULL WEATHER DETAILS</description>
-      <type>group</type>
-      <dimColor>0xffffffff</dimColor>
-      <animation effect="fade" start="100" end="0" delay="100" time="400" reversible="false">Hidden</animation>
-      <animation effect="fade" start="0" end="100" delay="100" time="400" reversible="false">Visible</animation>
-      <animation effect="fade" start="0" end="100" delay="100" time="400" reversible="false">WindowOpen</animation>
-      <animation effect="fade" start="100" end="0" delay="100" time="400" reversible="false">WindowClose</animation>
-      <visible>plugin.isenabled(World Weather)+[Control.HasFocus(1708)|Control.HasFocus(1808)|control.isvisible(1208)]+!control.isvisible(11111)</visible>
-      <control>
-        <description>DAY 1 LABEL</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>825</posX>
-        <posY>705</posY>
-        <align>center</align>
-        <label>6030</label>
-        <font>mediastream11tc</font>
-        <textcolor>White</textcolor>
-      </control>
-      <control>
-        <description>DAY 1 TEMP</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>825</posX>
-        <posY>608</posY>
-        <align>center</align>
-        <label>#WorldWeather.TodayTemperature</label>
-        <font>mediastream28tc</font>
-        <textcolor>white</textcolor>
-      </control>
-      <control>
-        <description>DAY 1 GENERAL WEATHER</description>
-        <type>textbox</type>
-        <id>0</id>
-        <posX>697</posX>
-        <posY>488</posY>
-        <width>255</width>
-        <height>90</height>
-        <font>mediastream13</font>
-        <align>right</align>
-        <textcolor>white</textcolor>
-        <label>#WorldWeather.TodayCondition</label>
-      </control>
-      <control>
-        <description>DAY 2 LABEL</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>1193</posX>
-        <posY>473</posY>
-        <align>center</align>
-        <label>#WorldWeather.ForecastDay0Day</label>
-        <font>mediastream11tc</font>
-        <textcolor>White</textcolor>
-      </control>
-      <control>
-        <description>DAY 2 MAX VALUE</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>1066</posX>
-        <posY>405</posY>
-        <align>left</align>
-        <label>#WorldWeather.ForecastDay0High</label>
-        <font>mediastream12</font>
-        <textcolor>white</textcolor>
-      </control>
-      <control>
-        <description>DAY 2 MIN VALUE</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>1321</posX>
-        <posY>405</posY>
-        <align>right</align>
-        <label>#WorldWeather.ForecastDay0Low</label>
-        <font>mediastream12</font>
-        <textcolor>white</textcolor>
-      </control>
-      <control>
-        <description>DAY 2 AM WEATHER</description>
-        <type>textbox</type>
-        <id>0</id>
-        <posX>1066</posX>
-        <posY>255</posY>
-        <width>240</width>
-        <height>75</height>
-        <label>#WorldWeather.ForecastDay0Condition</label>
-        <font>mediastream10</font>
-        <align>left</align>
-        <textcolor>white</textcolor>
-      </control>
-      <control>
-        <description>DAY 3 LABEL</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>1568</posX>
-        <posY>473</posY>
-        <align>center</align>
-        <label>#WorldWeather.ForecastDay1Day</label>
-        <font>mediastream11tc</font>
-        <textcolor>White</textcolor>
-      </control>
-      <control>
-        <description>DAY 3 MAX VALUE</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>1441</posX>
-        <posY>405</posY>
-        <align>left</align>
-        <label>#WorldWeather.ForecastDay1High</label>
-        <font>mediastream11</font>
-        <textcolor>white</textcolor>
-      </control>
-      <control>
-        <description>DAY 3 MIN VALUE</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>1696</posX>
-        <posY>405</posY>
-        <align>right</align>
-        <label>#WorldWeather.ForecastDay1Low</label>
-        <font>mediastream11</font>
-        <textcolor>white</textcolor>
-      </control>
-      <control>
-        <description>DAY 3 AM WEATHER</description>
-        <type>textbox</type>
-        <id>0</id>
-        <posX>1441</posX>
-        <posY>255</posY>
-        <width>240</width>
-        <height>75</height>
-        <width>255</width>
-        <label>#WorldWeather.ForecastDay1Condition</label>
-        <font>mediastream10</font>
-        <align>left</align>
-        <textcolor>white</textcolor>
-      </control>
-      <control>
-        <description>DAY 4 LABEL</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>1193</posX>
-        <posY>991</posY>
-        <align>center</align>
-        <label>#WorldWeather.ForecastDay2Day</label>
-        <font>mediastream11tc</font>
-        <textcolor>White</textcolor>
-      </control>
-      <control>
-        <description>DAY 4 MAX VALUE</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>1066</posX>
-        <posY>923</posY>
-        <align>left</align>
-        <label>#WorldWeather.ForecastDay2High</label>
-        <font>mediastream11</font>
-        <textcolor>white</textcolor>
-      </control>
-      <control>
-        <description>DAY 4 MIN VALUE</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>1321</posX>
-        <posY>923</posY>
-        <align>right</align>
-        <label>#WorldWeather.ForecastDay2Low</label>
-        <font>mediastream11</font>
-        <textcolor>white</textcolor>
-      </control>
-      <control>
-        <description>DAY 4 AM WEATHER</description>
-        <type>textbox</type>
-        <id>0</id>
-        <posX>1066</posX>
-        <posY>773</posY>
-        <width>240</width>
-        <height>75</height>
-        <width>255</width>
-        <label>#WorldWeather.ForecastDay2Condition</label>
-        <font>mediastream10</font>
-        <align>left</align>
-        <textcolor>white</textcolor>
-      </control>
-      <control>
-        <description>DAY 5 LABEL</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>1568</posX>
-        <posY>991</posY>
-        <align>center</align>
-        <label>#WorldWeather.ForecastDay3Day</label>
-        <font>mediastream11tc</font>
-        <textcolor>White</textcolor>
-      </control>
-      <control>
-        <description>DAY 5 MAX VALUE</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>1441</posX>
-        <posY>923</posY>
-        <align>left</align>
-        <label>#WorldWeather.ForecastDay3High</label>
-        <font>mediastream11</font>
-        <textcolor>white</textcolor>
-      </control>
-      <control>
-        <description>DAY 5 MIN VALUE</description>
-        <type>label</type>
-        <id>0</id>
-        <posX>1696</posX>
-        <posY>923</posY>
-        <align>right</align>
-        <label>#WorldWeather.ForecastDay3Low</label>
-        <font>mediastream11</font>
-        <textcolor>white</textcolor>
-      </control>
-      <control>
-        <description>DAY 5 AM WEATHER</description>
-        <type>textbox</type>
-        <id>0</id>
-        <posX>1441</posX>
-        <posY>773</posY>
-        <width>240</width>
-        <height>75</height>
-        <width>255</width>
-        <label>#WorldWeather.ForecastDay3Condition</label>
-        <font>mediastream10</font>
-        <align>left</align>
-        <textcolor>white</textcolor>
-      </control>
-    </control>
+    <!-- BEGIN GENERATED FIVE DAY WEATHER CODE -->
     <control>
       <description>GROUP: WEATHER SUMMARY</description>
       <type>group</type>
       <dimColor>0xffffffff</dimColor>
-      <visible>plugin.isenabled(World Weather)+!control.isvisible(1208)</visible>
+      <visible>plugin.isenabled(World Weather)</visible>
       <animation effect="slide" start="600,0" end="0,0" tween="quadratic" easing="in" time="400" delay="200">WindowOpen</animation>
       <animation effect="slide" end="600,0" tween="quadratic" easing="in" time="400" delay="200">WindowClose</animation>
       <control>
@@ -4275,7 +3894,7 @@
         <texture>homeweatheroverlaybg.png</texture>
       </control>
       <control>
-        <description>Todays weather image</description>
+        <description>TODAYs weather image</description>
         <type>image</type>
         <id>0</id>
         <posX>1490</posX>
@@ -4298,7 +3917,7 @@
         <label>#WorldWeather.TodayTemperature</label>
       </control>
       <control>
-        <description>Todays Weather Condition</description>
+        <description>TODAYs Weather Condition</description>
         <type>textbox</type>
         <id>1</id>
         <width>225</width>
@@ -4343,4 +3962,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:ee2abcdcb2b914e0647c59f6b6cab71f-->
+<!--Checksum:ebb64d42b030b0efec5a2d176319baa5-->
