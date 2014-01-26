@@ -11,11 +11,28 @@
   <string name="ActivityCommunityDesc">Pozrite sa, čo sleduje komunita...</string>
   <string name="ActivityWatching">{0} pozerá {1}</string>
   <string name="ActivityWatched">{0} pozrel {1}</string>
-  <string name="ActivityReview">{0} ohodnotil {1}</string>
+  <string name="ActivityCheckedIn">{0} sa prihlásil do {1}</string>
+  <string name="ActivityCollected">{0} zaradil do zbierky {1}</string>
+  <string name="ActivityCollectedEpisodes">{0} zaradil do zbierky {1} epizód z {2}</string>
+  <string name="ActivitySeen">{0} videl {1}</string>
+  <string name="ActivitySeenEpisodes">{0} videl {1} epizód z {2}</string>
+  <string name="ActivityRating">{0} ohodnotil {1}</string>
+  <string name="ActivityRatingAdvanced">{0} ohodnotil {1} [{2}/10]</string>
+  <string name="ActivityWatchlist">{0} pridal {1} do svojho watchlistu</string>
+  <string name="ActivityAddToList">{0} pridal {1} do {2}</string>
+  <string name="ActivityCreatedList">{0} vytvoril {1}</string>
+  <string name="ActivityReview">{0} recenzoval {1}</string>
+  <string name="ActivityShouts">{0} vykríkol na {1}</string>
   <string name="Activities">Aktivity</string>
   <string name="AddFriend">Pridať priateľa...</string>
   <string name="AddToLibrary">Pridať do knižnice</string>
   <string name="AddToList">Zaradiť do zoznamu...</string>
+  <string name="AddToWatchList">Pridať do watchlistu</string>
+  <string name="AddShowToWatchList">Pridať reláciu do watchlistu</string>
+  <string name="AddEpisodeToWatchList">Pridať epizódu do watchlistu</string>
+  <string name="AddShowToList">Pridať reláciu do zoznamu</string>
+  <string name="AddEpisodeToList">Pridať epizódu do zoznamu</string>
+  <string name="AddThisItemToWatchList">Pridať položku do watchlistu?</string>
   <string name="Age">Vek</string>
   <string name="AirDate">Vysielané</string>
   <string name="AirDay">Deň vysielania</string>
@@ -68,6 +85,8 @@
   <string name="Director">Režisér</string>
   <string name="Directors">Režiséri</string>
   <string name="DisconnectAccount">Odpojiť účet: {0}</string>
+  <string name="DismissRecommendation">Neprijať odporučenie</string>
+  <string name="DontIncludeMeInFriendsActivity">Neuvádzať ma v aktivitách priateľov</string>
   <string name="DownloadFanart">Stiahnuť grafiku</string>
   <string name="DownloadFullSizeFanart">Stiahnuť grafiku pôvodnej veľkosti</string>
   <!--E-->
@@ -87,6 +106,7 @@
   <string name="Friends">Priatelia</string>
   <string name="FriendActivity">Aktivita priateľov</string>
   <string name="FriendRequest">Žiadosť o priateľstvo</string>
+  <string name="FriendRequestMessage">Máte {0} žiadostí o priateľstvo, schváľte ich o okna \"Priatelia\"</string>
   <string name="FullName">Celé meno</string>
   <!--G-->
   <string name="Gender">Pohlavie</string>
@@ -110,29 +130,46 @@
   <string name="GenreHomeAndGarden">Dom a záhrada</string>
   <string name="GenreHorror">Horor</string>
   <string name="GenreIndie">Nezávislý</string>
+  <string name="GenreMiniSeries">Mini Series</string>
   <string name="GenreMusic">Hudba</string>
   <string name="GenreMusical">Muzikál</string>
+  <string name="GenreMystery">Mysteriózne</string>
   <string name="GenreNews">Správy</string>
   <string name="GenreNone">Žiadny</string>
+  <string name="GenreReality">Reality show</string>
   <string name="GenreRomance">Romantika</string>
   <string name="GenreScienceFiction">Sci-Fi</string>
+  <string name="GenreSoap">telenovela</string>
+  <string name="GenreSpecialInterest">Záujmový</string>
   <string name="GenreSport">Šport</string>
+  <string name="GenreSuspense">Napätie</string>
   <string name="GenreTalkShow">Talk Show</string>
   <string name="GenreThriller">Thriller</string>
   <string name="GenreWar">Vojnový</string>
+  <string name="GenreWestern">Western</string>
   <string name="GettingTrailerUrls">Načítam URL traileru</string>
   <!--H-->
   <!--I-->
+  <string name="Inserted">Vložené</string>
   <string name="Item">Položka</string>
   <string name="Items">Položky</string>
   <!--J-->
+  <string name="JoinDate">Dátum pripojenia</string>
+  <string name="Joined">Pripojil sa</string>
   <!--K-->
   <!--L-->
+  <string name="Location">Lokalita</string>
+  <string name="Layout">Rozloženie</string>
   <string name="Like">Páči sa</string>
   <string name="Likes">Sa to páči</string>
   <string name="List">Zoznam</string>
+  <string name="Lists">Zoznamy</string>
+  <string name="LoggedIn">Prihlásený</string>
+  <string name="Login">Prihláste sa</string>
+  <string name="ListNameAlreadyExists">Zoznam takéhoto mena už existuje.</string>
   <!--M-->
-  <string name="MarkAsWatched">Označiť za zhliadnuté</string>
+  <string name="MarkAsWatched">Označiť film ktorý som videl</string>
+  <string name="MarkAsUnWatched">Označiť film ktorý som nevidel</string>
   <string name="Me">Ja</string>
   <string name="Movie">Film</string>
   <string name="Movies">filmov</string>
@@ -140,16 +177,23 @@
   <!--N-->
   <string name="Name">Meno</string>
   <string name="Network">Sieť</string>
+  <string name="NextEpisode">Ďalšia epizóda</string>
+  <string name="NextWeek">Budúci týždeň</string>
+  <string name="NoActivities">Aktivita sa nenašla.</string>
+  <string name="NoFriends">Bez priateľov.</string>
+  <string name="NoFriendsTaunt">Nemáte v systéme priateľov.</string>
   <string name="NoSearchResultsFound">Žiadne záznamy neboli nájdené! Skúste zmeniť vyhľadávaciu podmienku.</string>
   <string name="No">Nie</string>
   <!--O-->
   <string name="Off">Vyp.</string>
   <string name="OK">OK</string>
   <string name="On">Zap.</string>
+  <string name="Overview">Prehľad</string>
   <!--P-->
   <string name="Password">Heslo</string>
   <string name="People">Ľudia</string>
   <string name="Person">Osoba</string>
+  <string name="Percentage">Percentá</string>
   <string name="Plugin">Doplnok</string>
   <string name="Plugins">Doplnky</string>
   <string name="Profile">Profil</string>
