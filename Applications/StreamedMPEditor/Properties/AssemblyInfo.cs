@@ -9,9 +9,9 @@ using MediaPortal.Common.Utils;
 [assembly: AssemblyTitle("StreamedMP Editor")]
 [assembly: AssemblyDescription("Menu Editor for MediaPortal StreamedMP Skin")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Team MediaPortal")]
+[assembly: AssemblyCompany("MediaPortal")]
 [assembly: AssemblyProduct("StreamedMP Editor")]
-[assembly: AssemblyCopyright("Copyright © Microsoft 2010")]
+[assembly: AssemblyCopyright("Copyright © 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -23,4 +23,4 @@ using MediaPortal.Common.Utils;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("20efe727-8a7c-46e8-a526-a134e7a15a49")]
 
-[assembly: CompatibleVersion("1.1.7.0", "1.1.6.0")]
+[assembly: CompatibleVersion("1.6.0.0", "1.6.0.0")]
