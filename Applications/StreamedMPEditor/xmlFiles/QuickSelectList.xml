@@ -159,6 +159,16 @@
   </item>
 
   <item>
+    <context>CONFIGURE</context>
+    <name>IMDB+</name>
+    <folder>settings</folder>
+    <fanartproperty></fanartproperty>
+    <fanarthandlerenabled>False</fanarthandlerenabled>
+    <xmlfile>IMDb+</xmlfile>
+    <id>31415</id>
+  </item>
+  
+  <item>
     <context>LISTEN TO</context>
     <name>MUSIC</name>
     <folder>music</folder>
@@ -168,6 +178,16 @@
     <id>501</id>
   </item>
 
+  <item>
+    <context>LISTEN TO</context>
+    <name>ROCKSTAR</name>
+    <folder>music</folder>
+    <fanartproperty>music</fanartproperty>
+    <fanarthandlerenabled>False</fanarthandlerenabled>
+    <xmlfile>rockstar</xmlfile>
+    <id>47286</id>
+  </item>
+  
   <item>
     <context>WATCH</context>
     <name>MVCENTRAL</name>
@@ -197,6 +217,17 @@
     <fanarthandlerenabled>False</fanarthandlerenabled>
     <xmlfile>myradio</xmlfile>
     <id>30</id>
+  </item>
+  
+  <item>
+    <context>SELECT</context>
+    <name>RADIO</name>
+    <name2> (GUIDE)</name2>
+    <folder>radio</folder>
+    <fanartproperty>music</fanartproperty>
+    <fanarthandlerenabled>False</fanarthandlerenabled>
+    <xmlfile>myradioguide</xmlfile>
+    <id>762</id>
   </item>
   
   <item>
@@ -376,13 +407,23 @@
   </item>
   <item>
     <context>VIEW</context>
-    <name>FRIENDS</name>
+    <name>NETWORK</name>
     <name2> (TRAKT)</name2>
     <folder>pluginsbg</folder>
     <fanartproperty></fanartproperty>
     <fanarthandlerenabled>False</fanarthandlerenabled>
-    <xmlfile>Trakt.Friends</xmlfile>
-    <id>87260</id>
+    <xmlfile>Trakt.Network</xmlfile>
+    <id>87283</id>
+  </item>
+  <item>
+    <context>VIEW</context>
+    <name>PROFILE</name>
+    <name2> (TRAKT)</name2>
+    <folder>pluginsbg</folder>
+    <fanartproperty></fanartproperty>
+    <fanarthandlerenabled>False</fanarthandlerenabled>
+    <xmlfile>Trakt.UserProfile</xmlfile>
+    <id>87400</id>
   </item>
   <item>
     <context>VIEW</context>
@@ -446,6 +487,16 @@
   </item>
   <item>
     <context>VIEW</context>
+    <name>LISTS</name>
+    <name2> (TRAKT)</name2>
+    <folder>pluginsbg</folder>
+    <fanartproperty></fanartproperty>
+    <fanarthandlerenabled>False</fanarthandlerenabled>
+    <xmlfile>Trakt.Lists</xmlfile>
+    <id>87275</id>
+  </item>
+  <item>
+    <context>VIEW</context>
     <name>WATCH LIST</name>
     <name2> (TRAKT)</name2>
     <folder>pluginsbg</folder>
@@ -493,6 +544,16 @@
     <fanarthandlerenabled>False</fanarthandlerenabled>
     <xmlfile>Trakt.Settings</xmlfile>
     <id>87271</id>
+  </item>
+  <item>
+    <context>TRAKT</context>
+    <name>SEARCH</name>
+    <name2> (TRAKT)</name2>
+    <folder>pluginsbg</folder>
+    <fanartproperty></fanartproperty>
+    <fanarthandlerenabled>False</fanarthandlerenabled>
+    <xmlfile>Trakt.Search</xmlfile>
+    <id>874001</id>
   </item>
   <item>
     <context>INSTALL</context>
