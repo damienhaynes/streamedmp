@@ -102,7 +102,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1560</posX>
-        <posY>348</posY>
+        <posY>390</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="450,0">visible</animation>
         <animation effect="slide" time="0" end="450,0">hidden</animation>
@@ -114,22 +114,25 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1560</posX>
-        <posY>598</posY>
+        <posY>645</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="450,0">visible</animation>
         <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
+      <!--
       <control>
+        <description>SCROBBLER</description>
         <id>0</id>
         <label>SCROBBLER</label>
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1560</posX>
-        <posY>852</posY>
-        <visible>!Control.HasFocus(50)+plugin.isenabled(Audioscrobbler)</visible>
+        <posY>895</posY>
+        <visible>!Control.HasFocus(50)+plugin.isenabled(LastFMScrobbler)</visible>
         <animation effect="slide" time="100" start="450,0">visible</animation>
         <animation effect="slide" time="0" end="450,0">hidden</animation>
       </control>
+      -->
       <control>
         <type>group</type>
         <description>group element</description>
@@ -142,18 +145,25 @@
         <height>1080</height>
         <layout>StackLayout(0, Vertical, true)</layout>
         <control>
-          <description>View-As</description>
+          <description>Layout</description>
           <type>menubutton</type>
           <id>2</id>
-          <label>
-          </label>
+          <label>-</label>
           <onleft>50</onleft>
           <onup>17</onup>
-          <ondown>20</ondown>
+          <ondown>18</ondown>
           <mode>dialoglist</mode>
           <dialogTitle>792</dialogTitle>
           <valueTextInButton>yes</valueTextInButton>
           <valuePrefixText>95</valuePrefixText>
+        </control>
+        <control>
+          <description>AutoDJ</description>
+          <type>checkbutton</type>
+          <id>18</id>
+          <label>Auto DJ</label>
+          <onleft>50</onleft>
+          <ondown>20</ondown>
         </control>
         <control>
           <description>Empty button</description>
@@ -168,7 +178,7 @@
           <id>20</id>
           <label>191</label>
           <onleft>50</onleft>
-          <onup>2</onup>
+          <onup>18</onup>
         </control>
         <control>
           <description>Repeat on/off button</description>
@@ -249,15 +259,16 @@
           <onleft>50</onleft>
           <label>137</label>
           <hyperlink>30885</hyperlink>
-          <ondown>28</ondown>
+          <ondown>2</ondown>
           <visible>plugin.isenabled(Search music)</visible>
         </control>
+        <!--
         <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
           <label>-</label>
-          <visible>false</visible>
+          <visible>true</visible>
         </control>
         <control>
           <description>scrobble mode button</description>
@@ -266,7 +277,7 @@
           <label>33001</label>
           <onleft>50</onleft>
           <ondown>27</ondown>
-          <visible>plugin.isenabled(Audioscrobbler)</visible>
+          <visible>plugin.isenabled(LastFMScrobbler)</visible>
         </control>
         <control>
           <description>scrobble on/off button</description>
@@ -275,7 +286,7 @@
           <label>33000</label>
           <onleft>50</onleft>
           <ondown>29</ondown>
-          <visible>plugin.isenabled(Audioscrobbler)</visible>
+          <visible>plugin.isenabled(LastFMScrobbler)</visible>
         </control>
         <control>
           <description>scrobble user button</description>
@@ -284,8 +295,9 @@
           <label>Scrobbler: </label>
           <onleft>50</onleft>
           <ondown>2</ondown>
-          <visible>plugin.isenabled(Audioscrobbler)</visible>
+          <visible>plugin.isenabled(LastFMScrobbler)</visible>
         </control>
+        -->
       </control>
     </control>
     <import>common.overlays.xml</import>
