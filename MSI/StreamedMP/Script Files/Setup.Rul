@@ -77,13 +77,6 @@
 
 #define STREAMEDMP_SKIN_EMULATORS					INSTALLDIR^SKIN_NAME^"myEmulators.xml"
 
-#define STREAMEDMP_SKIN_4TRACTIVE			        INSTALLDIR^SKIN_NAME^"4TR_Active.xml"
-#define STREAMEDMP_SKIN_4TRTVGUIDE			        INSTALLDIR^SKIN_NAME^"4TR_TvGuide.xml"
-#define STREAMEDMP_SKIN_4TRPROGRAMINFO		        INSTALLDIR^SKIN_NAME^"4TR_ProgramInfo.xml"
-#define STREAMEDMP_SKIN_4TRRECORDEDTV		        INSTALLDIR^SKIN_NAME^"4TR_RecordedTv.xml"
-#define STREAMEDMP_SKIN_4TRTVGUIDESEARCH		    INSTALLDIR^SKIN_NAME^"4TR_TvGuideSearch.xml"
-#define STREAMEDMP_SKIN_4TRUPCOMING			        INSTALLDIR^SKIN_NAME^"4TR_Upcoming.xml"
-     
 #define STREAMEDMP_SKIN_ARGUSTVGUIDE			    INSTALLDIR^SKIN_NAME^"Argus_TvGuide.xml"
 #define STREAMEDMP_SKIN_ARGUSPROGRAMINFO		    INSTALLDIR^SKIN_NAME^"Argus_ProgramInfo2.xml"
 #define STREAMEDMP_SKIN_ARGUSRECORDEDTV		        INSTALLDIR^SKIN_NAME^"Argus_RecordedTv2.xml"
@@ -106,7 +99,7 @@
 #define MOVINGPICTURES_MIN_VERSION					"1.6.2.1556"
 #define FANARTHANDLER_MIN_VERSION					"3.1.0.0"
 #define LATESTMEDIAHANDLER_MIN_VERSION				"1.6.2.0"
-#define MYLYRICS_MIN_VERSION						"1.9.0.249"
+#define MYLYRICS_MIN_VERSION						"1.9.1.256"
 #define GLOBALSEARCH_MIN_VERSION					"1.8.0.68"
 #define INFOSERVICE_MIN_VERSION						"1.7.2.248"
 #define TRAKT_MIN_VERSION							"3.1.3.0"    
@@ -2430,20 +2423,12 @@ begin
 	sFile = STREAMEDMP_SKIN_DIALOGTVGUIDE;
 	SetXMLProperty(sFile, TVGUIDE_ROWS_PATH, "mytvguide.common."+g_sTVGuideSize+"rows.channeltemplate.xml");
 	
-	sFile = STREAMEDMP_SKIN_4TRTVGUIDE;
-	SetXMLProperty(sFile, TVGUIDE_ROWS_PATH, "mytvguide.common."+g_sTVGuideSize+"rows.channeltemplate.xml");
-			
 	sFile = STREAMEDMP_SKIN_ARGUSTVGUIDE;
 	SetXMLProperty(sFile, TVGUIDE_ROWS_PATH, "mytvguide.common."+g_sTVGuideSize+"rows.channeltemplate.xml");
 	
 	// Enable/Disable Random Fanart in MyTV sections	
-	szDefine = "#useRandomTVSeriesFanart";
-	SetSkinDefine(STREAMEDMP_SKIN_4TRACTIVE, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
-	SetSkinDefine(STREAMEDMP_SKIN_4TRPROGRAMINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));		
-	SetSkinDefine(STREAMEDMP_SKIN_4TRRECORDEDTV, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
-	SetSkinDefine(STREAMEDMP_SKIN_4TRTVGUIDESEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
-	SetSkinDefine(STREAMEDMP_SKIN_4TRUPCOMING, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
-	   
+	szDefine = "#useRandomTVSeriesFanart";    
+	
 	SetSkinDefine(STREAMEDMP_SKIN_ARGUSPROGRAMINFO, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));		
 	SetSkinDefine(STREAMEDMP_SKIN_ARGUSRECORDEDTV, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
 	SetSkinDefine(STREAMEDMP_SKIN_ARGUSTVGUIDESEARCH, szDefine, BoolToString(g_bEnableRandomFanartInMyTV));	
