@@ -193,7 +193,7 @@
             <type>button</type>
             <onright>200</onright>
             <ondown>3</ondown>
-            <label>Search Music</label>
+            <label>#(L(137))</label>
           </control>
           <control Style="skinbutton">
             <id>3</id>
@@ -219,17 +219,26 @@
             <type>button</type>
             <onright>200</onright>
             <onup>4</onup>
-            <ondown>32</ondown>
+            <ondown>40</ondown>
             <label>Popular Songs</label>
+          </control>
+          <control Style="skinbutton">
+            <id>40</id>
+            <description>Settings</description>
+            <type>button</type>
+            <onright>200</onright>
+            <onup>20</onup>
+            <ondown>32</ondown>
+            <label>#(L(5))</label>
           </control>
           <control Style="skincheckbutton">
             <id>32</id>
             <description>Shuffle on/off button</description>
             <type>checkbutton</type>
             <onright>200</onright>
-            <onup>20</onup>
+            <onup>40</onup>
             <ondown>30</ondown>
-            <label>Shuffle</label>
+            <label>#(L(191))</label>
           </control>
           <control Style="skincheckbutton">
             <id>30</id>
@@ -237,7 +246,7 @@
             <type>checkbutton</type>
             <onright>200</onright>
             <onup>32</onup>
-            <label>Repeat</label>
+            <label>#(L(486))</label>
           </control>
         </control>
       </control>
