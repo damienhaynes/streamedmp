@@ -260,7 +260,7 @@ prototype VOID		BackupMPSkinSettings();
 prototype VOID		RestoreImages();                             
 prototype VOID		RestoreMPSkinSettings();
 prototype BOOL		CheckEditorDependencies();
-prototype BOOL		IsFileExists(STRING); 
+//prototype BOOL		IsFileExists(STRING); 
                                        
 prototype NUMBER 	ShowSelectTVSeries(BOOL);
 prototype NUMBER 	ShowSelectMovingPics(BOOL);
@@ -550,7 +550,7 @@ begin
 	
 	// Rounded Covers in Fanart Style (TVSeries/MovingPictures) default
 	if GetMPXMLProperty(sFile, "MiscConfig", "miscShowRoundedCovers", svValue) < 0 then
-		svValue = "1";
+		svValue = "0";
 	endif;
 	if svValue = "1" then
 		g_bShowRoundedCovers = TRUE;
@@ -2482,14 +2482,14 @@ begin
 	
 end;             
 
-function BOOL IsFileExists(szFile)
-begin
-	if (Is(FILE_EXISTS, szFile)) then
-		return TRUE;
-	else
-		return FALSE;
-	endif;
-end;
+//function BOOL IsFileExists(szFile)
+//begin
+//	if (Is(FILE_EXISTS, szFile)) then
+//		return TRUE;
+//	else
+//		return FALSE;
+//	endif;
+//end;
 
 function NUMBER	GetFileVersion(svVersionNumber,sType)
 	STRING svValue,szFileName;	
