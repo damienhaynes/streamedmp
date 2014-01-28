@@ -257,7 +257,7 @@
       <type>image</type>
       <id>117</id>
       <posX>525</posX>
-      <posY>1005</posY>
+      <posY>1000</posY>
       <width>900</width>
       <height>18</height>
       <texture>osd_progress_background_medium.png</texture>
@@ -270,7 +270,7 @@
       <type>image</type>
       <id>0</id>
       <posX>384</posX>
-      <posY>1005</posY>
+      <posY>1000</posY>
       <width>891</width>
       <height>43</height>
       <texture>osdprogressbackv.png</texture>
@@ -283,7 +283,7 @@
       <description>track progress</description>
       <id>118</id>
       <posX>385</posX>
-      <posY>1012</posY>
+      <posY>1007</posY>
       <width>881</width>
       <height>34</height>
       <label>#percentage</label>
@@ -439,28 +439,14 @@
     </control>
     <control>
       <id>0</id>
-      <description>Shadow -list of top album tracks label</description>
-      <type>fadelabel</type>
-      <visible>Control.HasFocus(5102) | Control.HasFocus(166)</visible>
-      <posX>303</posX>
-      <posY>789</posY>
-      <width>940</width>
-      <font>mediastream16c</font>
-      <textcolor>ff000000</textcolor>
-      <label>33030</label>
-      <animation effect="Fade" time="800">WindowOpen</animation>
-      <animation effect="Fade" time="300">WindowClose</animation>
-    </control>
-    <control>
-      <id>0</id>
       <description>list of top album tracks label</description>
       <type>fadelabel</type>
       <visible>Control.HasFocus(5102) | Control.HasFocus(166)</visible>
       <posX>300</posX>
       <posY>787</posY>
       <width>940</width>
-      <font>mediastream16c</font>
-      <textcolor>ff006699</textcolor>
+      <font>mediastream16tc</font>
+      <textcolor>ffffffff</textcolor>
       <label>33030</label>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
@@ -485,24 +471,6 @@
     </control>
     <control>
       <id>0</id>
-      <description>Shadow - list of tagged tracks label</description>
-      <type>fadelabel</type>
-      <visible>Control.HasFocus(5103) | Control.HasFocus(155)</visible>
-      <posX>303</posX>
-      <posY>789</posY>
-      <width>940</width>
-      <onleft>155</onleft>
-      <onright>5103</onright>
-      <onup>155</onup>
-      <ondown>155</ondown>
-      <font>mediastream16c</font>
-      <textcolor>ff000000</textcolor>
-      <label>33011</label>
-      <animation effect="Fade" time="200">WindowOpen</animation>
-      <animation effect="Fade" time="200">WindowClose</animation>
-    </control>
-    <control>
-      <id>0</id>
       <description>list of tagged tracks label</description>
       <type>fadelabel</type>
       <visible>Control.HasFocus(5103) | Control.HasFocus(155)</visible>
@@ -513,8 +481,8 @@
       <onright>5103</onright>
       <onup>155</onup>
       <ondown>155</ondown>
-      <font>mediastream16c</font>
-      <textcolor>ff006699</textcolor>
+      <font>mediastream16tc</font>
+      <textcolor>ffffffff</textcolor>
       <label>33011</label>
       <animation effect="Fade" time="200">WindowOpen</animation>
       <animation effect="Fade" time="200">WindowClose</animation>
@@ -528,18 +496,15 @@
       <onup>155</onup>
       <ondown>155</ondown>
       <visible>Control.HasFocus(5103) | Control.HasFocus(155)</visible>
-      <posX>491</posX>
-      <posY>805</posY>
-      <width>973</width>
-      <height>315</height>
-      <animation effect="Fade" time="200">WindowOpen</animation>
-      <animation effect="Fade" time="200">WindowClose</animation>
       <posX>337</posX>
       <posY>832</posY>
       <width>750</width>
       <height>315</height>
+      <textXOff2>800</textXOff2>
       <textureHeight>48</textureHeight>
       <textYOff>6</textYOff>
+      <animation effect="Fade" time="200">WindowOpen</animation>
+      <animation effect="Fade" time="200">WindowClose</animation>
     </control>
     <control>
       <id>77</id>
