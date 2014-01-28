@@ -175,11 +175,11 @@ namespace StreamedMPEditor
                   "<height>171</height>" +
                   "<colordiffuse>EFFFFFFF</colordiffuse>" +
                   "<texture>overlayfanartmask.png</texture>" +
-                  "<visible>player.hasaudio+control.isvisible(91919294)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+control.isvisible(91919294)+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "+string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<!-- MUSIC OVERLAY -->" +
                 "<control>" +
-                  "<description>music logo</description>" +
+                  "<description>Default Music Logo</description>" +
                   "<type>image</type>" +
                   "<id>0</id>" +
                   "<posX>" + (baseXpos + 27).ToString() + "</posX>" +
@@ -190,10 +190,10 @@ namespace StreamedMPEditor
                   "<centered>yes</centered>" +
                   "<zoom>no</zoom>" +
                   "<texture>defaultAudioBig.png</texture>" +
-                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+string.starts(#Play.Current.thumb,#)+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "+string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
-                  "<description>music logo</description>" +
+                  "<description>Artist Logo</description>" +
                   "<type>image</type>" +
                   "<id>7220</id>" +
                   "<posX>" + (baseXpos + 27).ToString() + "</posX>" +
@@ -204,10 +204,10 @@ namespace StreamedMPEditor
                   "<centered>yes</centered>" +
                   "<zoom>yes</zoom>" +
                   "<texture>#StreamedMP.ArtistPath\\#StreamedMP.Current.ArtistL.jpg</texture>" +
-                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+string.equals(#Play.Current.thumb,)+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "+string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
-                  "<description>music logo</description>" +
+                  "<description>Album Logo</description>" +
                   "<type>image</type>" +
                   "<id>7230</id>" +
                   "<posX>" + (baseXpos + 27).ToString() + "</posX>" +
@@ -218,10 +218,10 @@ namespace StreamedMPEditor
                   "<centered>yes</centered>" +
                   "<zoom>no</zoom>" +
                   "<texture>#Play.Current.Thumb</texture>" +
-                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+!string.equals(#Play.Current.thumb,)+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+!control.isvisible(6767)" + hideControls + "+string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
-                  "<description>Music logo Animation</description>" +
+                  "<description>Music Artist and Album Animation</description>" +
                   "<type>animation</type>" +
                   "<id>7210</id>" +
                   "<posX>" + (baseXpos + 27).ToString() + "</posX>" +
@@ -234,7 +234,7 @@ namespace StreamedMPEditor
                   "<keepaspectratio>no</keepaspectratio>" +
                   "<centered>yes</centered>" +
                   "<zoom>yes</zoom>" +
-                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+control.hasthumb(7220)+control.hasthumb(7230)+!control.isvisible(6767)" + hideControls + " + string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
+                  "<visible>player.hasaudio+![window.istopmost(0)|window.istopmost(34)]+control.hasthumb(7220)+control.hasthumb(7230)+!control.isvisible(6767)" + hideControls + "+string.equals(#StreamedMP.VideoWallpaper,false)</visible>" +
                 "</control>" +
                 "<control>" +
                   "<description>Selectable Button</description>" +

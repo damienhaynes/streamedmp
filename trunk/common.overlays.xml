@@ -17,7 +17,7 @@
     </control>
     <!-- MUSIC OVERLAY -->
     <control>
-      <description>music logo</description>
+      <description>Default Music Logo</description>
       <type>image</type>
       <id>0</id>
       <posX>27</posX>
@@ -28,14 +28,14 @@
       <centered>yes</centered>
       <zoom>yes</zoom>
       <texture>defaultAudioBig.png</texture>
-      <visible>player.hasaudio+string.equals(#Play.Current.Thumb,)</visible>
+      <visible>player.hasaudio</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
     <control>
-      <description>music logo</description>
+      <description>Artist Thumb</description>
       <type>image</type>
-      <id>7220</id>
+      <id>8220</id>
       <posX>27</posX>
       <posY>117</posY>
       <width>171</width>
@@ -43,16 +43,15 @@
       <keepaspectratio>no</keepaspectratio>
       <centered>yes</centered>
       <zoom>yes</zoom>
-      <!-- Update by Setup (Ensure ID is unique)-->
       <texture>#StreamedMP.ArtistPath\#StreamedMP.Current.ArtistL.jpg</texture>
-      <visible>player.hasaudio+string.equals(#Play.Current.Thumb,)</visible>
+      <visible>player.hasaudio</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
     <control>
-      <description>music logo</description>
+      <description>Album Thumb</description>
       <type>image</type>
-      <id>7230</id>
+      <id>8230</id>
       <posX>27</posX>
       <posY>117</posY>
       <width>171</width>
@@ -61,26 +60,25 @@
       <centered>yes</centered>
       <zoom>no</zoom>
       <texture>#Play.Current.Thumb</texture>
-      <visible>player.hasaudio+!string.equals(#Play.Current.Thumb,)</visible>
+      <visible>player.hasaudio</visible>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
     </control>
     <control>
-      <description>Music logo Animation</description>
+      <description>Music Artist and Album Animation</description>
       <type>animation</type>
-      <id>7210</id>
+      <id>8210</id>
       <posX>27</posX>
       <posY>117</posY>
       <width>171</width>
       <height>171</height>
-      <!-- Updated by setup (Ensure ID is unique)-->
       <textures>#Play.Current.Thumb;#StreamedMP.ArtistPath\#StreamedMP.Current.ArtistL.jpg</textures>
       <Duration>0:0:45</Duration>
       <randomize>no</randomize>
       <keepaspectratio>no</keepaspectratio>
       <centered>yes</centered>
       <zoom>yes</zoom>
-      <visible>player.hasaudio+control.hasthumb(7220)+control.hasthumb(7230)</visible>
+      <visible>player.hasaudio+control.hasthumb(8220)+control.hasthumb(8230)</visible>
       <animation effect="fade" time="500" reversible="true">Visible</animation>
       <animation effect="fade" time="500">WindowOpen</animation>
       <animation effect="fade" time="500">WindowClose</animation>
