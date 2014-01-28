@@ -361,7 +361,7 @@ namespace StreamedMPConfig
           #region Misc
           case settings.cXMLSectionMisc:
             MiscConfigGUI.ShowHiddenMenuImage = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowHiddenMenuImage, 1) == 1;
-            MiscConfigGUI.ShowRoundedImages = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowRoundedCovers, 1) == 1;
+            MiscConfigGUI.ShowRoundedImages = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowRoundedCovers, 0) == 1;
             MiscConfigGUI.ShowIconsInArtwork = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowIconsInArtwork, 1) == 1;
             MiscConfigGUI.EnablePlayMostRecents = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscEnablePlayMostRecents, 1) == 1;
             MiscConfigGUI.FilterWatchedInRecentlyAdded = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscFilterWatchedInRecentlyAdded, 0) == 1;
