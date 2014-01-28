@@ -3,7 +3,7 @@
   <controls>
     <!-- MUSIC OVERLAY -->
     <control>
-      <description>music logo</description>
+      <description>Default Music Logo</description>
       <type>image</type>
       <id>0</id>
       <posX>124</posX>
@@ -14,12 +14,12 @@
       <centered>yes</centered>
       <zoom>yes</zoom>
       <texture>defaultAudioBig.png</texture>
-      <visible>player.hasmedia+control.isvisible(3337)+string.equals(#Play.Current.Thumb,)</visible>
+      <visible>player.hasmedia</visible>
     </control>
     <control>
-      <description>music logo</description>
+      <description>Artist Thumb</description>
       <type>image</type>
-      <id>7220</id>
+      <id>6220</id>
       <posX>124</posX>
       <posY>837</posY>
       <width>171</width>
@@ -27,14 +27,13 @@
       <keepaspectratio>no</keepaspectratio>
       <centered>yes</centered>
       <zoom>yes</zoom>
-      <!-- Updated by Setup (Ensure ID is unique)-->
       <texture>#StreamedMP.ArtistPath\#StreamedMP.Current.ArtistL.jpg</texture>
-      <visible>player.hasaudio+string.equals(#Play.Current.Thumb,)</visible>
+      <visible>player.hasaudio</visible>
     </control>
     <control>
-      <description>music logo</description>
+      <description>Album Thumb</description>
       <type>image</type>
-      <id>7230</id>
+      <id>6230</id>
       <posX>124</posX>
       <posY>837</posY>
       <width>171</width>
@@ -46,21 +45,20 @@
       <visible>player.hasaudio</visible>
     </control>
     <control>
-      <description>Music logo Animation</description>
+      <description>Music Album and Artist Animation</description>
       <type>animation</type>
-      <id>7210</id>
+      <id>6210</id>
       <posX>124</posX>
       <posY>837</posY>
       <width>171</width>
       <height>171</height>
-      <!-- Updated by setup (Ensure ID is unique)-->
       <textures>#Play.Current.Thumb;#StreamedMP.ArtistPath\#StreamedMP.Current.ArtistL.jpg</textures>
       <Duration>0:0:45</Duration>
       <randomize>no</randomize>
       <keepaspectratio>no</keepaspectratio>
       <centered>yes</centered>
       <zoom>yes</zoom>
-      <visible>player.hasaudio+control.hasthumb(7220)+control.hasthumb(7230)</visible>
+      <visible>player.hasaudio+control.hasthumb(6220)+control.hasthumb(6230)</visible>
     </control>
     <control>
       <description>Selectable Button (Cover preview window)</description>
