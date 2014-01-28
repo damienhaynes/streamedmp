@@ -4,7 +4,7 @@
     <control>
       <description>Trailers Category Image</description>
       <type>image</type>
-      <id>0</id>
+      <id>1</id>
       <posX>150</posX>
       <posY>225</posY>
       <width>681</width>
@@ -12,12 +12,12 @@
       <texture flipY="true" diffuse="Thumb_Mask.png">Categories\Trailers.png</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <visible>facadeview.list+!Control.HasThumb(25)+!string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
+      <visible>facadeview.list+string.equals(#OnlineVideos.state,categories)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
     </control>
     <control>
       <type>image</type>
-      <description>Movie Poster</description>
-      <id>25</id>
+      <description>Movie Poster (Videos view)</description>
+      <id>1</id>
       <posX>150</posX>
       <posY>337</posY>
       <height>600</height>
@@ -26,12 +26,12 @@
       <texture flipY="true" diffuse="Thumb_Mask.png">#selectedthumb</texture>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
-      <visible>facadeview.list+!string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
+      <visible>facadeview.list+string.equals(#OnlineVideos.state,videos)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
     </control>
     <control>
       <type>image</type>
       <description>Movie Poster (Details)</description>
-      <id>26</id>
+      <id>1</id>
       <posX>46</posX>
       <posY>381</posY>
       <width>385</width>
@@ -41,19 +41,6 @@
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
-    </control>
-    <control>
-      <description>Movie Poster Glass Overlay</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>46</posX>
-      <posY>381</posY>
-      <width>342</width>
-      <height>265</height>
-      <texture>glassoverlay2.png</texture>
-      <animation effect="fade" time="250">WindowOpen</animation>
-      <animation effect="fade" time="250">WindowClose</animation>
-      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+Control.HasThumb(26)</visible>
     </control>
     <control>
       <description>Movie Title Shadow</description>
