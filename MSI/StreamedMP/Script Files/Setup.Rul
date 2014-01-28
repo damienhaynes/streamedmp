@@ -2607,22 +2607,21 @@ begin
                           
 end;*/
                  
-// StreamedMP BasicHome Edtior depends on MovingPictures and it's libraries
-// so enforce installation of plugin, it can be disabled but must be installed
-// note: we only check movingpictures, assumption is that cornerstone exists.
+// StreamedMP BasicHome Edtior depends on certain libraries, check these are met...
+// Note: In MediaPortal 1.6 we no longer need to check for MovingPictures as the problem has been fixed in MP code.
 function BOOL CheckEditorDependencies()
 	STRING szFile, szMessage;
 begin
-	szFile = g_sPluginsDir^"windows\\MovingPictures.dll";
+	//szFile = g_sPluginsDir^"windows\\MovingPictures.dll";
 
-	if (!IsFileExists(szFile) && !FeatureIsItemSelected(MEDIA,"Plugins\\MovingPictures") && FeatureIsItemSelected(MEDIA,"Plugins\\MenuEditor")) then    
-    	szMessage = "StreamedMP depends on MovingPictures and it's libraries. Ensure this is selected if you also install the BasicHome editor, " +
-    				"if your local version is newer it will not be overwritten. If you don't use the MovingPictures plugin, you can disable " +
-    				"it from the MediaPortal plugin configuration dialog.";
-    	
-    	MessageBox(szMessage, WARNING);
-	   	return FALSE;                                    	   			
-	endif;
+	//if (!IsFileExists(szFile) && !FeatureIsItemSelected(MEDIA,"Plugins\\MovingPictures") && FeatureIsItemSelected(MEDIA,"Plugins\\MenuEditor")) then    
+    //	szMessage = "StreamedMP depends on MovingPictures and it's libraries. Ensure this is selected if you also install the BasicHome editor, " +
+    //				"if your local version is newer it will not be overwritten. If you don't use the MovingPictures plugin, you can disable " +
+    //				"it from the MediaPortal plugin configuration dialog.";
+    //	
+    //	MessageBox(szMessage, WARNING);
+	// 	return FALSE;                                    	   			
+	//endif;
 	return TRUE;
 end;          
           
