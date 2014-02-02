@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SMPpatch</RootNamespace>
     <AssemblyName>SMPpatch</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject>SMPpatch.Program</StartupObject>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -34,6 +34,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -119,6 +120,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="EmbeddedPatches\PreBuild.bat" />
     <EmbeddedResource Include="EmbeddedPatches\SkinUpdate.zip" />
     <None Include="Properties\app.manifest" />
@@ -147,10 +149,6 @@
     <EmbeddedResource Include="EmbeddedPatches\SMPMediaPortalRestart.exe" />
     <EmbeddedResource Include="EmbeddedPatches\StreamedMPConfig.dll" />
     <EmbeddedResource Include="EmbeddedPatches\StreamedMPEditor.dll" />
-    <EmbeddedResource Include="EmbeddedPatches\TraktPlugin.dll" />
-    <EmbeddedResource Include="EmbeddedPatches\Micropolis.MPCore.dll" />
-    <EmbeddedResource Include="EmbeddedPatches\WorldWeather.Core.dll" />
-    <EmbeddedResource Include="EmbeddedPatches\WorldWeather.dll" />
     <Content Include="patchNotInstalled.png" />
     <Content Include="patchInstalled.png" />
     <EmbeddedResource Include="EmbeddedPatches\PatchControl.xml">
@@ -210,7 +208,7 @@
   <PropertyGroup>
     <PostBuildEvent>copy "$(SolutionDir)Externals\ILMerge.exe" "$(TargetDir)" /Y 
 copy "$(ProjectDir)\ILMerge\merge.bat" "$(TargetDir)" /Y
-"$(TargetDir)merge.bat"</PostBuildEvent>
+rem "$(TargetDir)merge.bat"</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"
 cd "$(ProjectDir)EmbeddedPatches"
 call PreBuild.bat</PreBuildEvent>
