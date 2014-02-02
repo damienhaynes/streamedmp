@@ -550,7 +550,7 @@ namespace StreamedMPEditor
 
       if (helper.readMPConfiguration("skin", "name") != "StreamedMP")
       {
-        DialogResult result = helper.showError("MediaPortal is not configured to use the StreamedMP skin\n\nThe Menu Editor requires the selected Skin to be StreamedMP.\n\nDo you want set StreamedMP as the selected Skin", errorCode.infoQuestion);
+        DialogResult result = helper.showError("MediaPortal is not configured to use the StreamedMP skin.\n\nThe Menu Editor requires the selected Skin to be StreamedMP.\n\nDo you want set StreamedMP as the selected skin?", errorCode.infoQuestion);
 
         if (result == DialogResult.No)
         {

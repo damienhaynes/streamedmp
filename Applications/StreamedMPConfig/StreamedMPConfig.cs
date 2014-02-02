@@ -1257,7 +1257,7 @@ namespace StreamedMPConfig
     private void GUIWindowManager_OnDeActivateWindow(int windowID)
     {
       // Settings/General window
-      if (windowID == (int)Window.WINDOW_SETTINGS_SKIN)
+      if (windowID == (int)Window.WINDOW_SETTINGS_GUISKIN)
       {
         // check if skin changed
         if (settings.CurrentSkin != settings.PreviousSkin && settings.CurrentSkin.EndsWith("StreamedMP"))
