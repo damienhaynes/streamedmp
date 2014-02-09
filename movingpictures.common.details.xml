@@ -54,7 +54,7 @@
       <description>Watched Icon Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>408</posX>
+      <posX>406</posX>
       <posY>508</posY>
       <width>48</width>
       <height>58</height>
@@ -66,7 +66,7 @@
       <description>Watched Icon</description>
       <type>image</type>
       <id>0</id>
-      <posX>418</posX>
+      <posX>414</posX>
       <posY>513</posY>
       <width>36</width>
       <height>36</height>
@@ -78,7 +78,7 @@
       <description>Un-Watched Icon</description>
       <type>image</type>
       <id>0</id>
-      <posX>418</posX>
+      <posX>414</posX>
       <posY>513</posY>
       <width>36</width>
       <height>36</height>
@@ -634,7 +634,7 @@
     </control>
     <control>
       <type>label</type>
-      <description>Year and Category (Full Fanart View)</description>
+      <description>Tagline (Full Fanart View)</description>
       <id>1</id>
       <posX>45</posX>
       <posY>1035</posY>
@@ -645,7 +645,7 @@
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <textcolor>ff909090</textcolor>
-      <label>#MovingPictures.SelectedMovie.genres</label>
+      <label>#MovingPictures.SelectedMovie.tagline</label>
       <visible>!control.isvisible(50)+!control.isvisible(51)+control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
