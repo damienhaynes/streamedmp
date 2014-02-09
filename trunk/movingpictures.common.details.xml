@@ -535,9 +535,9 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
-      <description>Year Label</description>
+      <description>Release Date Label</description>
       <type>label</type>
-      <label>#MovingPictures.Translation.Year.Label</label>
+      <label>#MovingPictures.Translation.ReleaseDate.Label</label>
       <id>0</id>
       <posX>1440</posX>
       <posY>876</posY>
@@ -551,11 +551,11 @@
     <control>
       <description>Year</description>
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.year</label>
+      <label>#MovingPictures.SelectedMovie.release_date.localized.short</label>
       <id>0</id>
       <posX>1470</posX>
       <posY>876</posY>
-      <width>75</width>
+      <width>200</width>
       <align>left</align>
       <font>mediastream11c</font>
       <textcolor>ffFFFFFF</textcolor>
