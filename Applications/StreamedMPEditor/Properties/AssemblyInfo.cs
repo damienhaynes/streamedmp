@@ -23,4 +23,4 @@ using MediaPortal.Common.Utils;
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("20efe727-8a7c-46e8-a526-a134e7a15a49")]
 
-[assembly: CompatibleVersion("1.6.0.0", "1.6.0.0")]
+[assembly: CompatibleVersion("1.6.100.0", "1.6.100.0")]
