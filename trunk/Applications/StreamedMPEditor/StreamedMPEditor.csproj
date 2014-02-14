@@ -78,6 +78,9 @@
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.GUIPlugins">
+      <HintPath>..\Externals\Common.GUIPlugins.dll</HintPath>
+    </Reference>
     <Reference Include="Common.Utils">
       <HintPath>..\Externals\Common.Utils.dll</HintPath>
     </Reference>
