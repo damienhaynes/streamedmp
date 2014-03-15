@@ -109,7 +109,7 @@ namespace StreamedMPConfig
     public static void SetProperties()
     {
       StreamedMPConfig.SetProperty("#StreamedMP.ActionMenu.Image", ShowHiddenMenuImage ? "Action_menu.png" : "-");
-      StreamedMPConfig.SetProperty("#StreamedMP.RoundedPosters.Image", ShowRoundedImages ? "round.poster.frame.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.Settings.ShowRoundedCovers", ShowRoundedImages.ToString());
 
       // Icons in Artwork require a few image properties
       StreamedMPConfig.SetProperty("#StreamedMP.Icons.Background", ShowIconsInArtwork ? "overlaywubg.png" : "-");

@@ -38,18 +38,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
-      <description>Rounded cover edges</description>
-      <type>image</type>
-      <id>246</id>
-      <posX>-6</posX>
-      <posY>474</posY>
-      <width>354</width>
-      <height>487</height>
-      <texture>#StreamedMP.RoundedPosters.Image</texture>
-      <visible>[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(146)|Control.HasThumb(46)]]+facadeview.list</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control>
       <description>Cover Art Glass Overlay</description>
       <type>image</type>
       <id>0</id>
