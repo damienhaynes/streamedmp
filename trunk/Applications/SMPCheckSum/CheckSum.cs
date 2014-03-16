@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.Security.Cryptography;
+using System.Windows.Forms;
 using System.Xml;
 
 namespace SMPCheckSum
@@ -63,7 +64,6 @@ namespace SMPCheckSum
     public void ReplaceAllFiles(string xmlPath)
     {
       string[] xmlFileNames = Directory.GetFiles(xmlPath, "*.xml", SearchOption.AllDirectories);
-      
       foreach (string xmlFileName in xmlFileNames)
       {
         try

@@ -352,7 +352,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.User.FullName,N/A)</visible>
     </control>
-
     <control Style="smallTitleB">
       <description>Vip</description>
       <id>0</id>
@@ -419,7 +418,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Statistics.Friends,)</visible>
     </control>
-    
     <!-- Episodes Statistics -->
     <control Style="smallTitleB">
       <description>Episodes Label</description>
@@ -444,7 +442,6 @@
       <visible>!string.equals(#Trakt.Statistics.Episodes.WatchedUnique,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-
     <control>
       <description>Episodes Watched Icon</description>
       <type>image</type>
@@ -469,7 +466,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Statistics.Episodes.WatchedUnique,)</visible>
     </control>
-
     <control>
       <description>Episodes Collected Icon</description>
       <type>image</type>
@@ -494,7 +490,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Statistics.Episodes.Collection,)</visible>
     </control>
-    
     <control>
       <description>Episodes Loved Icon</description>
       <type>image</type>
@@ -519,7 +514,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Statistics.Episodes.Loved,)</visible>
     </control>
-
     <control>
       <description>Episodes Shouts Icon</description>
       <type>image</type>
@@ -544,7 +538,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Statistics.Episodes.Shouts,)</visible>
     </control>
-    
     <!-- Shows Statistics -->
     <control Style="smallTitleB">
       <description>Shows Label</description>
@@ -569,7 +562,6 @@
       <visible>!string.equals(#Trakt.Statistics.Shows.Watched,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-
     <control>
       <description>Shows Watched Icon</description>
       <type>image</type>
@@ -594,7 +586,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Statistics.Shows.Watched,)</visible>
     </control>
-
     <control>
       <description>Shows Collected Icon</description>
       <type>image</type>
@@ -619,7 +610,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Statistics.Shows.Collection,)</visible>
     </control>
-
     <control>
       <description>Shows Loved Icon</description>
       <type>image</type>
@@ -644,7 +634,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Statistics.Shows.Loved,)</visible>
     </control>
-    
     <control>
       <description>Shows Shouts Icon</description>
       <type>image</type>
@@ -669,7 +658,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Statistics.Shows.Shouts,)</visible>
     </control>
-    
     <!-- Movie Section -->
     <control Style="smallTitleB">
       <description>Movies Label</description>
@@ -694,7 +682,6 @@
       <visible>!string.equals(#Trakt.Statistics.Movies.WatchedUnique,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-
     <control>
       <description>Movie Watched Icon</description>
       <type>image</type>
@@ -719,7 +706,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Statistics.Movies.WatchedUnique,)</visible>
     </control>
-
     <control>
       <description>Movies Collected Icon</description>
       <type>image</type>
@@ -744,7 +730,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Statistics.Movies.Collection,)</visible>
     </control>
-
     <control>
       <description>Movies Loved Icon</description>
       <type>image</type>
@@ -769,7 +754,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Statistics.Movies.Loved,)</visible>
     </control>
-    
     <control>
       <description>Movies Shouts Icon</description>
       <type>image</type>
@@ -794,9 +778,8 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Statistics.Movies.Shouts,)</visible>
     </control>
-    
     <import>common.overlays.xml</import>
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:3bf3398552064ff2e59a6c9621ffbd07-->
+<!--Checksum:22aec6c3a3ee3cc7f3f5a65a2d5e5b31-->

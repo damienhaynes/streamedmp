@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
   <id>87288</id>
   <defaultcontrol>50</defaultcontrol>
@@ -185,7 +185,7 @@
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
-	<control>
+    <control>
       <description>Cover Art</description>
       <type>image</type>
       <id>6101</id>
@@ -211,7 +211,7 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
-	<control>
+    <control>
       <description>Avatar</description>
       <type>image</type>
       <id>1</id>
@@ -224,7 +224,7 @@
       <texture>#Trakt.User.AvatarFileName</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-	<control>
+    <control>
       <description>Shout / Review Text</description>
       <type>textboxscrollup</type>
       <id>0</id>
@@ -233,59 +233,59 @@
       <width>1240</width>
       <height>130</height>
       <font>mediastream11</font>
-	  <lineSpacing>0.9</lineSpacing>
+      <lineSpacing>0.9</lineSpacing>
       <label>#Trakt.Shout.Text</label>
       <scrollStartDelaySec>9</scrollStartDelaySec>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <visible>!string.equals(#Trakt.Shout.Text,)</visible>
-	</control>
-	<control>
-		<description>Recent Shouts</description>
-		<type>facadeview</type>
-		<id>50</id>
-		<animation effect="fade" time="150">WindowOpen</animation>
-		<animation effect="fade" time="250">WindowClose</animation>
-		<animation effect="slide" time="150" start="1800,0">WindowOpen</animation>
-		<animation effect="slide" time="250" end="1800,0">WindowClose</animation>
-		<control>
-			<type>listcontrol</type>
-			<id>50</id>
-			<posX>450</posX>
-			<posY>375</posY>
-			<height>500</height>
-			<width>1410</width>
-			<onleft>2</onleft>
-			<onright>2</onright>
-			<scrollOffset>2</scrollOffset>
-			<itemWidth>48</itemWidth>
-			<itemHeight>48</itemHeight>
-			<IconXOff>37</IconXOff>
-			<IconYOff>6</IconYOff>
-			<PinIconXOff>1380</PinIconXOff>
-			<PinIconYOff>0</PinIconYOff>
-			<PinIconWidth>48</PinIconWidth>
-			<PinIconHeight>48</PinIconHeight>
-			<textXOff>37</textXOff>
-			<textYOff>7</textYOff>
-			<textXOff2>1380</textXOff2>
-			<textYOff2>7</textYOff2>
-			<font>mediastream12c</font>
-			<font2>mediastream10c</font2>
-			<keepaspectratio>yes</keepaspectratio>
-			<spinPosX>1762</spinPosX>
-			<spinPosY>1021</spinPosY>
-			<spinAlign>Right</spinAlign>
-			<spinColor>ff006698</spinColor>
-			<textureUp>arrow_round_up_nofocus.png</textureUp>
-			<textureDown>arrow_round_down_nofocus.png</textureDown>
-			<textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
-			<textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
-			<spinWidth>75</spinWidth>
-			<spinHeight>55</spinHeight>
-			<suffix>|</suffix>
-		</control>
-	</control>
+    </control>
+    <control>
+      <description>Recent Shouts</description>
+      <type>facadeview</type>
+      <id>50</id>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="1800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1800,0">WindowClose</animation>
+      <control>
+        <type>listcontrol</type>
+        <id>50</id>
+        <posX>450</posX>
+        <posY>375</posY>
+        <height>500</height>
+        <width>1410</width>
+        <onleft>2</onleft>
+        <onright>2</onright>
+        <scrollOffset>2</scrollOffset>
+        <itemWidth>48</itemWidth>
+        <itemHeight>48</itemHeight>
+        <IconXOff>37</IconXOff>
+        <IconYOff>6</IconYOff>
+        <PinIconXOff>1380</PinIconXOff>
+        <PinIconYOff>0</PinIconYOff>
+        <PinIconWidth>48</PinIconWidth>
+        <PinIconHeight>48</PinIconHeight>
+        <textXOff>37</textXOff>
+        <textYOff>7</textYOff>
+        <textXOff2>1380</textXOff2>
+        <textYOff2>7</textYOff2>
+        <font>mediastream12c</font>
+        <font2>mediastream10c</font2>
+        <keepaspectratio>yes</keepaspectratio>
+        <spinPosX>1762</spinPosX>
+        <spinPosY>1021</spinPosY>
+        <spinAlign>Right</spinAlign>
+        <spinColor>ff006698</spinColor>
+        <textureUp>arrow_round_up_nofocus.png</textureUp>
+        <textureDown>arrow_round_down_nofocus.png</textureDown>
+        <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+        <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+        <spinWidth>75</spinWidth>
+        <spinHeight>55</spinHeight>
+        <suffix>|</suffix>
+      </control>
+    </control>
     <!-- Hidden Menu -->
     <control>
       <description>Hidden Menu Indicator</description>
@@ -370,4 +370,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:9215121d43887fa5664360039fcfa62f-->
+<!--Checksum:8bdc2a58a93abd35fdedf4fe885e7c43-->
