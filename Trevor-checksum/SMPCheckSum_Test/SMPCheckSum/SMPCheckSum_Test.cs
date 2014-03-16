@@ -8,10 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Security.Cryptography;
-using System.Security.Cryptography.Xml;
 using System.Xml;
 using SMPCheckSum;
-
 
 namespace SMPCheckSum_Test
 {
@@ -21,21 +19,13 @@ namespace SMPCheckSum_Test
     string[] skinFiles;
     CheckSum checkSum = new CheckSum();
     string baseDirectory = null;
-
-
-
+      
     public SMPCheckSum_Test()
     {
       InitializeComponent();
       baseDirectory = SkinInfo.mpPaths.streamedMPpath;
       cboxXmlFolder.Items.Add(baseDirectory);
       cboxXmlFolder.SelectedIndex = 0;
-
-
-      //SMPCheckSum_Test.Properties.Settings.Default.baseDirs.Clear();
-      //SMPCheckSum_Test.Properties.Settings.Default.Save();
-
-      //MessageBox.Show(Properties.Settings.Default.baseDirs.Count.ToString());
 
       if (Properties.Settings.Default.baseDirs.Count < 2)
       {

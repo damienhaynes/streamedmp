@@ -1,146 +1,147 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-	<controls>
-		<control>
-		  <description>Avatar</description>
-		  <type>image</type>
-		  <id>1</id>
-		  <posX>27</posX>
-		  <posY>360</posY>
-		  <height>207</height>
-		  <width>207</width>
-		  <keepaspectratio>yes</keepaspectratio>
-		  <zoom>yes</zoom>
-		  <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
-		  <animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		<control>
-		  <type>label</type>
-		  <label>#Trakt.User.Username</label>
-		  <id>0</id>
-		  <posX>247</posX>
-		  <posY>360</posY>
-		  <font>mediastream12tc</font>
-		  <textcolor>ff909090</textcolor>
-		  <shadowAngle>45</shadowAngle>
-		  <shadowDistance>4</shadowDistance>
-		  <shadowColor>#shadow.dark</shadowColor>
-		  <animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		<control>
-		  <type>textboxscrollup</type>
-		  <label>#Trakt.User.FullName</label>
-		  <id>0</id>
-		  <posX>247</posX>
-		  <posY>387</posY>
-		  <width>690</width>
-		  <height>90</height>
-		  <font>mediastream14tc</font>
-		  <textcolor>ffffffff</textcolor>
-		  <shadowAngle>45</shadowAngle>
-		  <shadowDistance>6</shadowDistance>
-		  <shadowColor>#shadow.light</shadowColor>
-		  <animation effect="fade" time="250" delay="0">WindowClose</animation>
-		  <visible>!string.equals(#Trakt.User.FullName,N/A)</visible>
-		</control>
-		<control Style="smallTitleB">
-		  <description>Join Date</description>
-		  <id>0</id>
-		  <label>#Trakt.Translation.JoinDate.Label</label>
-		  <type>label</type>
-		  <posX>27</posX>
-		  <posY>657</posY>
-		  <width>225</width>
-		  <animation effect="fade" time="250" delay="0">WindowClose</animation>
-		  <visible>!string.equals(#Trakt.User.JoinDate,)</visible>
-		</control>
-		<control Style="smallTitle">
-		  <description>Join Date Value</description>
-		  <id>12001</id>
-		  <label>#Trakt.User.JoinDate</label>
-		  <type>label</type>
-		  <posX>259</posX>
-		  <posY>658</posY>
-		  <width>345</width>
-		  <animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		<control Style="smallTitleB">
-		  <description>Gender</description>
-		  <id>0</id>
-		  <label>#Trakt.Translation.Gender.Label</label>
-		  <type>label</type>
-		  <posX>27</posX>
-		  <posY>694</posY>
-		  <width>225</width>
-		  <animation effect="fade" time="250" delay="0">WindowClose</animation>
-		  <visible>!string.equals(#Trakt.User.Gender,)</visible>
-		</control>
-		<control Style="smallTitle">
-		  <description>Gender Value</description>
-		  <id>12001</id>
-		  <label>#Trakt.User.Gender</label>
-		  <type>label</type>
-		  <posX>259</posX>
-		  <posY>696</posY>
-		  <width>345</width>
-		  <animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		<control Style="smallTitleB">
-		  <description>Location</description>
-		  <id>0</id>
-		  <label>#Trakt.Translation.Location.Label</label>
-		  <type>label</type>
-		  <posX>27</posX>
-		  <posY>732</posY>
-		  <width>225</width>
-		  <animation effect="fade" time="250" delay="0">WindowClose</animation>
-		  <visible>!string.equals(#Trakt.User.Location,)</visible>
-		</control>
-		<control Style="smallTitle">
-		  <description>Location Value</description>
-		  <id>12001</id>
-		  <label>#Trakt.User.Location</label>
-		  <type>label</type>
-		  <posX>259</posX>
-		  <posY>733</posY>
-		  <width>345</width>
-		  <animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		<control Style="smallTitleB">
-		  <description>Protected</description>
-		  <id>0</id>
-		  <label>#Trakt.Translation.Protected.Label</label>
-		  <type>label</type>
-		  <posX>27</posX>
-		  <posY>769</posY>
-		  <width>225</width>
-		  <animation effect="fade" time="250" delay="0">WindowClose</animation>
-		  <visible>!string.equals(#Trakt.User.Protected,)</visible>
-		</control>
-		<control Style="smallTitle">
-		  <description>Protected Value</description>
-		  <id>12001</id>
-		  <label>#Trakt.User.Protected</label>
-		  <type>label</type>
-		  <posX>259</posX>
-		  <posY>771</posY>
-		  <width>345</width>
-		  <animation effect="fade" time="250" delay="0">WindowClose</animation>
-		</control>
-		<control>
-		  <description>User About</description>
-		  <type>textboxscrollup</type>
-		  <id>0</id>
-		  <posX>27</posX>
-		  <posY>810</posY>
-		  <width>930</width>
-		  <height>187</height>
-		  <font>mediastream11</font>
-		  <label>#Trakt.User.About</label>
-		  <scrollStartDelaySec>12</scrollStartDelaySec>
-		  <animation effect="fade" time="250" delay="0">WindowClose</animation>
-		  <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-		  <visible>!string.equals(#Trakt.User.About,)+!string.equals(#Trakt.User.About,N/A)</visible>
-		</control>
-	</controls>
+  <controls>
+    <control>
+      <description>Avatar</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>27</posX>
+      <posY>360</posY>
+      <height>207</height>
+      <width>207</width>
+      <keepaspectratio>yes</keepaspectratio>
+      <zoom>yes</zoom>
+      <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <type>label</type>
+      <label>#Trakt.User.Username</label>
+      <id>0</id>
+      <posX>247</posX>
+      <posY>360</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <type>textboxscrollup</type>
+      <label>#Trakt.User.FullName</label>
+      <id>0</id>
+      <posX>247</posX>
+      <posY>387</posY>
+      <width>690</width>
+      <height>90</height>
+      <font>mediastream14tc</font>
+      <textcolor>ffffffff</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>6</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <visible>!string.equals(#Trakt.User.FullName,N/A)</visible>
+    </control>
+    <control Style="smallTitleB">
+      <description>Join Date</description>
+      <id>0</id>
+      <label>#Trakt.Translation.JoinDate.Label</label>
+      <type>label</type>
+      <posX>27</posX>
+      <posY>657</posY>
+      <width>225</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <visible>!string.equals(#Trakt.User.JoinDate,)</visible>
+    </control>
+    <control Style="smallTitle">
+      <description>Join Date Value</description>
+      <id>12001</id>
+      <label>#Trakt.User.JoinDate</label>
+      <type>label</type>
+      <posX>259</posX>
+      <posY>658</posY>
+      <width>345</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Gender</description>
+      <id>0</id>
+      <label>#Trakt.Translation.Gender.Label</label>
+      <type>label</type>
+      <posX>27</posX>
+      <posY>694</posY>
+      <width>225</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <visible>!string.equals(#Trakt.User.Gender,)</visible>
+    </control>
+    <control Style="smallTitle">
+      <description>Gender Value</description>
+      <id>12001</id>
+      <label>#Trakt.User.Gender</label>
+      <type>label</type>
+      <posX>259</posX>
+      <posY>696</posY>
+      <width>345</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Location</description>
+      <id>0</id>
+      <label>#Trakt.Translation.Location.Label</label>
+      <type>label</type>
+      <posX>27</posX>
+      <posY>732</posY>
+      <width>225</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <visible>!string.equals(#Trakt.User.Location,)</visible>
+    </control>
+    <control Style="smallTitle">
+      <description>Location Value</description>
+      <id>12001</id>
+      <label>#Trakt.User.Location</label>
+      <type>label</type>
+      <posX>259</posX>
+      <posY>733</posY>
+      <width>345</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Protected</description>
+      <id>0</id>
+      <label>#Trakt.Translation.Protected.Label</label>
+      <type>label</type>
+      <posX>27</posX>
+      <posY>769</posY>
+      <width>225</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <visible>!string.equals(#Trakt.User.Protected,)</visible>
+    </control>
+    <control Style="smallTitle">
+      <description>Protected Value</description>
+      <id>12001</id>
+      <label>#Trakt.User.Protected</label>
+      <type>label</type>
+      <posX>259</posX>
+      <posY>771</posY>
+      <width>345</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>User About</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>27</posX>
+      <posY>810</posY>
+      <width>930</width>
+      <height>187</height>
+      <font>mediastream11</font>
+      <label>#Trakt.User.About</label>
+      <scrollStartDelaySec>12</scrollStartDelaySec>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>!string.equals(#Trakt.User.About,)+!string.equals(#Trakt.User.About,N/A)</visible>
+    </control>
+  </controls>
 </window>
+<!--Checksum:d5a8b20e471d8083bd95693a98d5db23-->

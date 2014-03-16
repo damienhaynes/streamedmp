@@ -1,224 +1,225 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-	<controls>
-        <!-- Person List Layout -->
-        <control>
-          <description>Cover Art</description>
-          <type>image</type>
-          <id>2001</id>
-          <posX>46</posX>
-          <posY>381</posY>
-          <width>385</width>
-          <height>570</height>
-          <texture>#selectedthumb</texture>
-          <visible>facadeview.list</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-        <control>
-          <description>Cover Art Glass Overlay</description>
-          <type>image</type>
-          <id>0</id>
-          <posX>46</posX>
-          <posY>381</posY>
-          <width>342</width>
-          <height>265</height>
-          <texture>glassoverlay2.png</texture>
-          <visible>Control.HasThumb(2001)+facadeview.list</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-        <control>
-          <description>Biography</description>
-          <type>label</type>
-          <id>0</id>
-          <posX>462</posX>
-          <posY>376</posY>
-          <width>585</width>
-          <font>mediastream16tc</font>
-          <label>#Trakt.Translation.Biography.Label</label>
-          <textcolor>ff909090</textcolor>
-          <shadowAngle>45</shadowAngle>
-          <shadowDistance>6</shadowDistance>
-          <shadowColor>#shadow.dark</shadowColor>
-          <visible>!string.equals(#Trakt.Person.Name,)+facadeview.list</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-        <control>
-          <description>Biography</description>
-          <type>textboxscrollup</type>
-          <id>0</id>
-          <posX>462</posX>
-          <posY>425</posY>
-          <width>600</width>
-          <height>430</height>
-          <textcolor>ffFFFFFF</textcolor>
-          <seperator>-----------------------------------------------------------------------------------</seperator>
-          <font>mediastream11</font>
-          <label>#Trakt.Person.Biography</label>
-          <visible>!string.equals(#Trakt.Person.Biography,)+facadeview.list</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-        <control Style="smallTitleB">
-          <description>Born Label</description>
-          <id>0</id>
-          <type>label</type>
-          <label>#Trakt.Translation.Born.Label</label>
-          <posX>465</posX>
-          <posY>891</posY>
-          <width>285</width>
-          <visible>!string.equals(#Trakt.Person.Birthplace,)+facadeview.list</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-        <control Style="smallTitle">
-          <description>Birthplace</description>
-          <id>0</id>
-          <type>label</type>
-          <label>#Trakt.Person.Birthplace</label>
-          <posX>730</posX>
-          <posY>892</posY>
-          <width>350</width>
-          <visible>!string.equals(#Trakt.Person.Birthplace,)+facadeview.list</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-        <control Style="smallTitleB">
-          <description>Birthday Label</description>
-          <type>label</type>
-          <label>#Trakt.Translation.Birthday.Label</label>
-          <posX>465</posX>
-          <posY>924</posY>
-          <width>285</width>
-          <visible>!string.equals(#Trakt.Person.Birthday,)+facadeview.list</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-        <control Style="smallTitle">
-          <description>Birthday</description>
-          <id>0</id>
-          <type>label</type>
-          <label>#Trakt.Person.Birthday</label>
-          <posX>730</posX>
-          <posY>925</posY>
-          <visible>!string.equals(#Trakt.Person.Birthday,)+facadeview.list</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-        <!-- Person Thumbnails Layout -->
-        <control>
-          <description>Biography Name</description>
-          <type>label</type>
-          <id>0</id>
-          <posX>30</posX>
-          <posY>360</posY>
-          <width>750</width>
-          <font>mediastream14tc</font>
-          <label>#Trakt.Translation.Biography.Label</label>
-          <textcolor>ff909090</textcolor>
-          <shadowAngle>45</shadowAngle>
-          <shadowDistance>6</shadowDistance>
-          <shadowColor>#shadow.dark</shadowColor>
-          <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Person.Name,)</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-        <control>
-          <description>Biography</description>
-          <type>textboxscrollup</type>
-          <id>0</id>
-          <posX>30</posX>
-          <posY>415</posY>
-          <width>750</width>
-          <height>470</height>
-          <textcolor>ffFFFFFF</textcolor>
-          <seperator>-----------------------------------------------------------------------------------</seperator>
-          <font>mediastream11</font>
-          <label>#Trakt.Person.Biography</label>
-          <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Person.Biography,)</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-        <control Style="smallTitleB">
-          <description>Born Label</description>
-          <id>0</id>
-          <type>label</type>
-          <label>#Trakt.Translation.Born.Label</label>
-          <posX>30</posX>
-          <posY>919</posY>
-          <width>210</width>
-          <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Person.Birthplace,)</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-        <control Style="smallTitle">
-          <description>Birthplace</description>
-          <id>0</id>
-          <type>label</type>
-          <label>#Trakt.Person.Birthplace</label>
-          <posX>270</posX>
-          <posY>921</posY>
-          <width>450</width>
-          <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Person.Birthplace,)</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-        <control Style="smallTitleB">
-          <description>Birthday Label</description>
-          <type>label</type>
-          <label>#Trakt.Translation.Birthday.Label</label>
-          <posX>30</posX>
-          <posY>952</posY>
-          <width>210</width>
-          <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Person.Birthday,)</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-        <control Style="smallTitle">
-          <description>Birthday</description>
-          <id>0</id>
-          <type>label</type>
-          <label>#Trakt.Person.Birthday</label>
-          <posX>270</posX>
-          <posY>953</posY>
-          <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Person.Birthday,)</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-        <!-- Filmstrip -->
-        <control>
-          <description>Person Name</description>
-          <type>label</type>
-          <id>1</id>
-          <posX>30</posX>
-          <posY>990</posY>
-          <width>1920</width>
-          <align>center</align>
-          <font>mediastream16tc</font>
-          <label>#Trakt.Person.Name</label>
-          <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#Trakt.Person.Name,)</visible>
-          <animation effect="fade" time="150">WindowOpen</animation>
-          <animation effect="fade" time="250">WindowClose</animation>
-        </control>
-        <control>
-          <description>Person Birthplace</description>
-          <type>label</type>
-          <label>#Trakt.Person.Birthplace</label>
-          <id>0</id>
-          <posX>30</posX>
-          <posY>1020</posY>
-          <width>1920</width>
-          <align>center</align>
-          <font>mediastream12tc</font>
-          <textcolor>ff909090</textcolor>
-          <shadowAngle>45</shadowAngle>
-          <shadowDistance>4</shadowDistance>
-          <shadowColor>#shadow.dark</shadowColor>
-          <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#Trakt.Person.Birthplace,)</visible>
-          <animation effect="fade" time="250" delay="0">WindowClose</animation>
-          <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-        </control>
-	</controls>
+  <controls>
+    <!-- Person List Layout -->
+    <control>
+      <description>Cover Art</description>
+      <type>image</type>
+      <id>2001</id>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>385</width>
+      <height>570</height>
+      <texture>#selectedthumb</texture>
+      <visible>facadeview.list</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Cover Art Glass Overlay</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>46</posX>
+      <posY>381</posY>
+      <width>342</width>
+      <height>265</height>
+      <texture>glassoverlay2.png</texture>
+      <visible>Control.HasThumb(2001)+facadeview.list</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Biography</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>462</posX>
+      <posY>376</posY>
+      <width>585</width>
+      <font>mediastream16tc</font>
+      <label>#Trakt.Translation.Biography.Label</label>
+      <textcolor>ff909090</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>6</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
+      <visible>!string.equals(#Trakt.Person.Name,)+facadeview.list</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Biography</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>462</posX>
+      <posY>425</posY>
+      <width>600</width>
+      <height>430</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#Trakt.Person.Biography</label>
+      <visible>!string.equals(#Trakt.Person.Biography,)+facadeview.list</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Born Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Translation.Born.Label</label>
+      <posX>465</posX>
+      <posY>891</posY>
+      <width>285</width>
+      <visible>!string.equals(#Trakt.Person.Birthplace,)+facadeview.list</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Birthplace</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Person.Birthplace</label>
+      <posX>730</posX>
+      <posY>892</posY>
+      <width>350</width>
+      <visible>!string.equals(#Trakt.Person.Birthplace,)+facadeview.list</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Birthday Label</description>
+      <type>label</type>
+      <label>#Trakt.Translation.Birthday.Label</label>
+      <posX>465</posX>
+      <posY>924</posY>
+      <width>285</width>
+      <visible>!string.equals(#Trakt.Person.Birthday,)+facadeview.list</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Birthday</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Person.Birthday</label>
+      <posX>730</posX>
+      <posY>925</posY>
+      <visible>!string.equals(#Trakt.Person.Birthday,)+facadeview.list</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <!-- Person Thumbnails Layout -->
+    <control>
+      <description>Biography Name</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>30</posX>
+      <posY>360</posY>
+      <width>750</width>
+      <font>mediastream14tc</font>
+      <label>#Trakt.Translation.Biography.Label</label>
+      <textcolor>ff909090</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>6</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Person.Name,)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Biography</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>30</posX>
+      <posY>415</posY>
+      <width>750</width>
+      <height>470</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#Trakt.Person.Biography</label>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Person.Biography,)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Born Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Translation.Born.Label</label>
+      <posX>30</posX>
+      <posY>919</posY>
+      <width>210</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Person.Birthplace,)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Birthplace</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Person.Birthplace</label>
+      <posX>270</posX>
+      <posY>921</posY>
+      <width>450</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Person.Birthplace,)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Birthday Label</description>
+      <type>label</type>
+      <label>#Trakt.Translation.Birthday.Label</label>
+      <posX>30</posX>
+      <posY>952</posY>
+      <width>210</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Person.Birthday,)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Birthday</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Person.Birthday</label>
+      <posX>270</posX>
+      <posY>953</posY>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Person.Birthday,)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <!-- Filmstrip -->
+    <control>
+      <description>Person Name</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>30</posX>
+      <posY>990</posY>
+      <width>1920</width>
+      <align>center</align>
+      <font>mediastream16tc</font>
+      <label>#Trakt.Person.Name</label>
+      <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#Trakt.Person.Name,)</visible>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Person Birthplace</description>
+      <type>label</type>
+      <label>#Trakt.Person.Birthplace</label>
+      <id>0</id>
+      <posX>30</posX>
+      <posY>1020</posY>
+      <width>1920</width>
+      <align>center</align>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
+      <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#Trakt.Person.Birthplace,)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+  </controls>
 </window>
+<!--Checksum:3e26afad35b2f55a777a103d0f920a33-->

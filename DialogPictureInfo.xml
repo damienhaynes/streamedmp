@@ -52,214 +52,214 @@
       <posY>165</posY>
       <label>-</label>
     </control>
-		<control>
+    <control>
       <description>Photo Labels</description>
       <type>group</type>
       <posX>345</posX>
-			<posY>232</posY>
+      <posY>232</posY>
       <dimColor>ffFFFFFF</dimColor>
       <layout>StackLayout(0, Vertical, true)</layout>
-			<control Style="smallTitleB">
-				<description>Dimensions txt</description>
-				<type>label</type>
-				<id>0</id>
-				<height>40</height>
-				<width>250</width>
-				<label>#(string.rtrim(L(9000),':'))</label>
-			</control>
-			<control Style="smallTitleB">
-				<description>Resolution txt</description>
-				<type>label</type>
-				<id>0</id>
-				<height>40</height>
-				<width>250</width>
-				<label>#(string.rtrim(L(9001),':'))</label>
-			</control>
-			<control Style="smallTitleB">
-				<description>Flash txt</description>
-				<type>label</type>
-				<id>0</id>
-				<height>40</height>
-				<width>250</width>
-				<label>#(string.rtrim(L(9002),':'))</label>
-			</control>
-			<control Style="smallTitleB">
-				<description>Metering mode txt</description>
-				<type>label</type>
-				<id>0</id>
-				<height>40</height>
-				<width>250</width>
-				<label>#(string.rtrim(L(9003),':'))</label>
-			</control>
-			<control Style="smallTitleB">
-				<description>Exposure Compensation txt</description>
-				<type>label</type>
-				<id>0</id>
-				<height>40</height>
-				<width>250</width>
-				<label>#(string.rtrim(L(9004),':'))</label>
-			</control>
-			<control Style="smallTitleB">
-				<description>Shutterspeed txt</description>
-				<type>label</type>
-				<id>0</id>
-				<height>40</height>
-				<width>250</width>
-				<label>#(string.rtrim(L(9005),':'))</label>
-			</control>
-			<control Style="smallTitleB">
-				<description>Date Taken txt</description>
-				<type>label</type>
-				<id>0</id>
-				<height>40</height>
-				<width>250</width>
-				<label>#(string.rtrim(L(9006),':'))</label>
-			</control>
-			<control Style="smallTitleB">
-				<description>Fstop txt</description>
-				<type>label</type>
-				<id>0</id>
-				<height>40</height>
-				<width>250</width>
-				<label>#(string.rtrim(L(9007),':'))</label>
-			</control>
-			<control Style="smallTitleB">
-				<description>Exposure Time txt</description>
-				<type>label</type>
-				<id>0</id>
-				<height>40</height>
-				<width>250</width>
-				<label>#(string.rtrim(L(9008),':'))</label>
-			</control>
-			<control Style="smallTitleB">
-				<description>Camera Model txt</description>
-				<type>label</type>
-				<id>0</id>
-				<height>40</height>
-				<width>250</width>
-				<label>#(string.rtrim(L(9009),':'))</label>
-			</control>
-			<control Style="smallTitleB">
-				<description>Equipment make txt</description>
-				<type>label</type>
-				<id>0</id>
-				<height>40</height>
-				<width>250</width>
-				<label>#(string.rtrim(L(9010),':'))</label>
-			</control>
-			<control Style="smallTitleB">
-				<description>View Comment txt</description>
-				<type>label</type>
-				<id>0</id>
-				<height>40</height>
-				<width>250</width>
-				<label>#(string.rtrim(L(9011),':'))</label>
-			</control>
-		</control>
-		<control>
+      <control Style="smallTitleB">
+        <description>Dimensions txt</description>
+        <type>label</type>
+        <id>0</id>
+        <height>40</height>
+        <width>250</width>
+        <label>#(string.rtrim(L(9000),':'))</label>
+      </control>
+      <control Style="smallTitleB">
+        <description>Resolution txt</description>
+        <type>label</type>
+        <id>0</id>
+        <height>40</height>
+        <width>250</width>
+        <label>#(string.rtrim(L(9001),':'))</label>
+      </control>
+      <control Style="smallTitleB">
+        <description>Flash txt</description>
+        <type>label</type>
+        <id>0</id>
+        <height>40</height>
+        <width>250</width>
+        <label>#(string.rtrim(L(9002),':'))</label>
+      </control>
+      <control Style="smallTitleB">
+        <description>Metering mode txt</description>
+        <type>label</type>
+        <id>0</id>
+        <height>40</height>
+        <width>250</width>
+        <label>#(string.rtrim(L(9003),':'))</label>
+      </control>
+      <control Style="smallTitleB">
+        <description>Exposure Compensation txt</description>
+        <type>label</type>
+        <id>0</id>
+        <height>40</height>
+        <width>250</width>
+        <label>#(string.rtrim(L(9004),':'))</label>
+      </control>
+      <control Style="smallTitleB">
+        <description>Shutterspeed txt</description>
+        <type>label</type>
+        <id>0</id>
+        <height>40</height>
+        <width>250</width>
+        <label>#(string.rtrim(L(9005),':'))</label>
+      </control>
+      <control Style="smallTitleB">
+        <description>Date Taken txt</description>
+        <type>label</type>
+        <id>0</id>
+        <height>40</height>
+        <width>250</width>
+        <label>#(string.rtrim(L(9006),':'))</label>
+      </control>
+      <control Style="smallTitleB">
+        <description>Fstop txt</description>
+        <type>label</type>
+        <id>0</id>
+        <height>40</height>
+        <width>250</width>
+        <label>#(string.rtrim(L(9007),':'))</label>
+      </control>
+      <control Style="smallTitleB">
+        <description>Exposure Time txt</description>
+        <type>label</type>
+        <id>0</id>
+        <height>40</height>
+        <width>250</width>
+        <label>#(string.rtrim(L(9008),':'))</label>
+      </control>
+      <control Style="smallTitleB">
+        <description>Camera Model txt</description>
+        <type>label</type>
+        <id>0</id>
+        <height>40</height>
+        <width>250</width>
+        <label>#(string.rtrim(L(9009),':'))</label>
+      </control>
+      <control Style="smallTitleB">
+        <description>Equipment make txt</description>
+        <type>label</type>
+        <id>0</id>
+        <height>40</height>
+        <width>250</width>
+        <label>#(string.rtrim(L(9010),':'))</label>
+      </control>
+      <control Style="smallTitleB">
+        <description>View Comment txt</description>
+        <type>label</type>
+        <id>0</id>
+        <height>40</height>
+        <width>250</width>
+        <label>#(string.rtrim(L(9011),':'))</label>
+      </control>
+    </control>
+    <control>
       <description>Photo Values</description>
       <type>group</type>
       <posX>615</posX>
-			<posY>232</posY>
+      <posY>232</posY>
       <dimColor>ffFFFFFF</dimColor>
       <layout>StackLayout(0, Vertical, true)</layout>
-			<control Style="smallTitle">
-				<description>Image Dimensions value</description>
-				<type>label</type>
-				<id>21</id>
-				<height>40</height>
-				<width>300</width>
-				<label>-</label>
-			</control>
-			<control Style="smallTitle">
-				<description>Resolutions value</description>
-				<type>label</type>
-				<id>22</id>
-				<height>40</height>
-				<width>300</width>
-				<label>-</label>
-			</control>
-			<control Style="smallTitle">
-				<description>Flash value</description>
-				<type>fadelabel</type>
-				<id>23</id>
-				<height>40</height>
-				<width>300</width>
-				<label>-</label>
-			</control>
-			<control Style="smallTitle">
-				<description>Metering Mode value</description>
-				<type>fadelabel</type>
-				<id>24</id>
-				<height>40</height>
-				<width>300</width>
-				<label>-</label>
-			</control>
-			<control Style="smallTitle">
-				<description>Exposure Compensation value</description>
-				<type>fadelabel</type>
-				<id>25</id>
-				<height>40</height>
-				<width>300</width>
-				<label>-</label>
-			</control>
-			<control Style="smallTitle">
-				<description>Shutter Speed value</description>
-				<type>fadelabel</type>
-				<id>26</id>
-				<height>40</height>
-				<width>300</width>
-				<label>-</label>
-			</control>
-			<control Style="smallTitle">
-				<description>Date Taken value</description>
-				<type>label</type>
-				<id>27</id>
-				<height>40</height>
-				<width>300</width>
-				<label>-</label>
-			</control>
-			<control Style="smallTitle">
-				<description>Fstop value</description>
-				<type>label</type>
-				<id>28</id>
-				<height>40</height>
-				<width>300</width>
-				<label>-</label>
-			</control>
-			<control Style="smallTitle">
-				<description>Exposure Time value</description>
-				<type>label</type>
-				<id>29</id>
-				<height>40</height>
-				<width>300</width>
-				<label>-</label>
-			</control>
-			<control Style="smallTitle">
-				<description>Camera Model value</description>
-				<type>fadelabel</type>
-				<id>30</id>
-				<height>40</height>
-				<width>300</width>
-				<label>-</label>
-			</control>
-			<control Style="smallTitle">
-				<description>Equipment Make value</description>
-				<type>fadelabel</type>
-				<id>31</id>
-				<height>40</height>
-				<width>300</width>
-				<label>-</label>
-			</control>
-			<control Style="smallTitle">
-				<description>View Comments value</description>
-				<type>label</type>
-				<id>32</id>
-				<height>40</height>
-				<width>300</width>
-				<label>-</label>
-			</control>
-		</control>
+      <control Style="smallTitle">
+        <description>Image Dimensions value</description>
+        <type>label</type>
+        <id>21</id>
+        <height>40</height>
+        <width>300</width>
+        <label>-</label>
+      </control>
+      <control Style="smallTitle">
+        <description>Resolutions value</description>
+        <type>label</type>
+        <id>22</id>
+        <height>40</height>
+        <width>300</width>
+        <label>-</label>
+      </control>
+      <control Style="smallTitle">
+        <description>Flash value</description>
+        <type>fadelabel</type>
+        <id>23</id>
+        <height>40</height>
+        <width>300</width>
+        <label>-</label>
+      </control>
+      <control Style="smallTitle">
+        <description>Metering Mode value</description>
+        <type>fadelabel</type>
+        <id>24</id>
+        <height>40</height>
+        <width>300</width>
+        <label>-</label>
+      </control>
+      <control Style="smallTitle">
+        <description>Exposure Compensation value</description>
+        <type>fadelabel</type>
+        <id>25</id>
+        <height>40</height>
+        <width>300</width>
+        <label>-</label>
+      </control>
+      <control Style="smallTitle">
+        <description>Shutter Speed value</description>
+        <type>fadelabel</type>
+        <id>26</id>
+        <height>40</height>
+        <width>300</width>
+        <label>-</label>
+      </control>
+      <control Style="smallTitle">
+        <description>Date Taken value</description>
+        <type>label</type>
+        <id>27</id>
+        <height>40</height>
+        <width>300</width>
+        <label>-</label>
+      </control>
+      <control Style="smallTitle">
+        <description>Fstop value</description>
+        <type>label</type>
+        <id>28</id>
+        <height>40</height>
+        <width>300</width>
+        <label>-</label>
+      </control>
+      <control Style="smallTitle">
+        <description>Exposure Time value</description>
+        <type>label</type>
+        <id>29</id>
+        <height>40</height>
+        <width>300</width>
+        <label>-</label>
+      </control>
+      <control Style="smallTitle">
+        <description>Camera Model value</description>
+        <type>fadelabel</type>
+        <id>30</id>
+        <height>40</height>
+        <width>300</width>
+        <label>-</label>
+      </control>
+      <control Style="smallTitle">
+        <description>Equipment Make value</description>
+        <type>fadelabel</type>
+        <id>31</id>
+        <height>40</height>
+        <width>300</width>
+        <label>-</label>
+      </control>
+      <control Style="smallTitle">
+        <description>View Comments value</description>
+        <type>label</type>
+        <id>32</id>
+        <height>40</height>
+        <width>300</width>
+        <label>-</label>
+      </control>
+    </control>
     <control>
       <description>Image</description>
       <type>image</type>
@@ -272,4 +272,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:7b93d82763691e7ba5aa50a4ef505525-->
+<!--Checksum:616f9b080d5a2777d39e5f06b18a766d-->

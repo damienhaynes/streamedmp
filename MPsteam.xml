@@ -1,85 +1,86 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <window>
-    <id>8465</id>
-    <defaultcontrol>2</defaultcontrol>
-    <allowoverlay>yes</allowoverlay>
-    <controls>
-		  <control>
-			  <id>0</id>
-			  <description>steam overlay image</description>
-			  <type>image</type>
-			  <posX>0</posX>
-			  <posY>0</posY>
-			  <width>1920</width>
-			  <height>1080</height>
-			  <texture>hover_steam.jpg</texture>
-			  <animation effect="fade" time="300" start="0">WindowOpen</animation>
-		  </control>
-		  <control>
-			  <id>0</id>
-			  <description>steam overlay image</description>
-			  <type>image</type>
-			  <posX>0</posX>
-			  <posY>0</posY>
-			  <width>1921</width>
-			  <height>1080</height>
-			  <texture>mainoverlay.png</texture>
-		  </control>
-      <control>
-        <description>Top Title Background</description>
-        <type>image</type>
-        <id>0</id>
-        <posX>115</posX>
-        <posY>16</posY>
-        <width>655</width>
-        <height>52</height>
-        <texture>tvtitlebg.png</texture>
-        <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+  <id>8465</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>yes</allowoverlay>
+  <controls>
+    <control>
+      <id>0</id>
+      <description>steam overlay image</description>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1920</width>
+      <height>1080</height>
+      <texture>hover_steam.jpg</texture>
+      <animation effect="fade" time="300" start="0">WindowOpen</animation>
+    </control>
+    <control>
+      <id>0</id>
+      <description>steam overlay image</description>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1921</width>
+      <height>1080</height>
+      <texture>mainoverlay.png</texture>
+    </control>
+    <control>
+      <description>Top Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <type>fadelabel</type>
+      <description>Top Title</description>
+      <id>0</id>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
+      <font>mediastream12c</font>
+      <align>right</align>
+      <label>Steam</label>
+      <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+    </control>
+    <import>common.time.xml</import>
+    <control>
+      <description>steam-logo</description>
+      <type>image</type>
+      <posX>150</posX>
+      <posY>508</posY>
+      <width>300</width>
+      <height>300</height>
+      <texture>Steam-logo.png</texture>
+    </control>
+    <control>
+      <type>group</type>
+      <description>Button Group</description>
+      <posX>1135</posX>
+      <posY>525</posY>
+      <layout>StackLayout(0, Vertical, true)</layout>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <control Style="skinbutton">
+        <description>Start Again</description>
+        <type>button</type>
+        <id>2</id>
+        <width>550</width>
+        <label>Start Steam Again</label>
       </control>
-      <control>
-        <type>fadelabel</type>
-        <description>Top Title</description>
-        <id>0</id>
-        <posX>739</posX>
-        <posY>19</posY>
-        <width>525</width>
-        <font>mediastream12c</font>
-        <align>right</align>
-        <label>Steam</label>
-        <animation effect="slide" start="-771,0" end="0,0" tween="quadratic" time="300" delay="0">WindowOpen</animation>
+      <control Style="skinbutton">
+        <description>Set Focus</description>
+        <type>button</type>
+        <id>3</id>
+        <width>550</width>
+        <label>Set Focus to Steam</label>
       </control>
-		  <import>common.time.xml</import>
-      <control>
-        <description>steam-logo</description>
-        <type>image</type>
-        <posX>150</posX>
-        <posY>508</posY>
-        <width>300</width>
-        <height>300</height>
-        <texture>Steam-logo.png</texture>
-      </control>
-      <control>
-        <type>group</type>
-        <description>Button Group</description>
-        <posX>1135</posX>
-        <posY>525</posY>
-        <layout>StackLayout(0, Vertical, true)</layout>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
-        <control Style="skinbutton">
-          <description>Start Again</description>
-          <type>button</type>
-          <id>2</id>
-          <width>550</width>
-          <label>Start Steam Again</label>
-        </control>
-        <control Style="skinbutton">
-          <description>Set Focus</description>
-          <type>button</type>
-          <id>3</id>
-          <width>550</width>
-          <label>Set Focus to Steam</label>
-        </control>
-      </control>          
-   </controls>
+    </control>
+  </controls>
 </window>
+<!--Checksum:75fba90d63ad495b5c90332d0ddcc477-->
