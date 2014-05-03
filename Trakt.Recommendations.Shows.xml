@@ -358,12 +358,24 @@
       </control>
       <control>
         <id>0</id>
+        <description>Trailers</description>
+        <label>#Trailers.Translation.Trailers.Label</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1560</posX>
+        <posY>667</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
         <description>JUMP TO</description>
         <label>1065</label>
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1560</posX>
-        <posY>667</posY>
+        <posY>795</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="450,0">visible</animation>
         <animation effect="slide" time="0" end="450,0">hidden</animation>
@@ -436,21 +448,31 @@
           <visible>false</visible>
         </control>
         <control>
-          <description>MovingPictures</description>
-          <id>66610</id>
+          <description>Trailers Plugin</description>
           <type>button</type>
-          <label>Moving Pictures</label>
-          <hyperlink>96742</hyperlink>
+          <id>11899</id>
+          <label>#Trailers.Translation.Search.Label / #Trailers.Translation.Play.Label...</label>
+          <ondown>9999</ondown>
+          <onup>7</onup>
           <onleft>50</onleft>
+          <onright>50</onright>
         </control>
         <control>
-          <description>My Videos</description>
+          <description>MPEICONFIGURE:b4293f64_9e83_4f1f_b2e3_8bdea2a37425</description>
           <type>button</type>
-          <id>66611</id>
-          <label>100006</label>
-          <onleft>50</onleft>
-          <hyperlink>6</hyperlink>
+          <id>9999</id>
+          <label>#Trailers.Translation.Settings.Label</label>
+          <onup>11899</onup>
           <ondown>66612</ondown>
+          <onleft>50</onleft>
+          <onright>50</onright>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
         </control>
         <control>
           <description>MP-TVSeries</description>
@@ -458,6 +480,7 @@
           <id>66612</id>
           <label>MP-TVSeries</label>
           <hyperlink>9811</hyperlink>
+          <onup>9999</onup>
           <ondown>2</ondown>
           <onleft>50</onleft>
         </control>
