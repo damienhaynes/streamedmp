@@ -215,16 +215,26 @@
           <id>97270</id>
           <label>Trakt...</label>
           <onup>66612</onup>
+          <ondown>11900</ondown>
+          <onleft>50</onleft>
+          <visible>plugin.isenabled(Trakt)+[control.isvisible(1239)|control.isvisible(1237)]</visible>
+        </control>
+        <control>
+          <description>Trailers</description>
+          <type>button</type>
+          <id>11900</id>
+          <label>#Trailers.Translation.Trailers.Label...</label>
+          <onup>97270</onup>
           <ondown>99000</ondown>
           <onleft>50</onleft>
-          <visible>plugin.isenabled(Trakt)+[control.isvisible(1239)|control.isvisible(1237)]+![facadeview.smallicons|facadeview.largeicons]</visible>
+          <visible>plugin.isenabled(Trailers)+!control.isvisible(1240)</visible>
         </control>
         <control>
           <description>MPEIUPDATE:5e2777c3_966c_407f_b5a9_e51205b70b3e</description>
           <type>button</type>
           <id>99000</id>
           <label>#MPEI.Translation.UpdateAvailable.Label</label>
-          <onup>97270</onup>
+          <onup>11900</onup>
           <ondown>2</ondown>
           <onleft>50</onleft>
           <visible>string.equals(#mpei.5e2777c3_966c_407f_b5a9_e51205b70b3e.haveupdate, true)+control.isvisible(1237)</visible>

@@ -292,12 +292,24 @@
       </control>
       <control>
         <id>0</id>
+        <description>Trailers</description>
+        <label>#Trailers.Translation.Trailers.Label</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1560</posX>
+        <posY>495</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
         <description>JUMP TO</description>
         <label>1065</label>
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1560</posX>
-        <posY>495</posY>
+        <posY>625</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="450,0">visible</animation>
         <animation effect="slide" time="0" end="450,0">hidden</animation>
@@ -334,6 +346,33 @@
           <id>4</id>
           <label>-</label>
           <onleft>50</onleft>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>Trailers Plugin</description>
+          <type>button</type>
+          <id>11899</id>
+          <label>#Trailers.Translation.Search.Label / #Trailers.Translation.Play.Label...</label>
+          <ondown>9999</ondown>
+          <onup>4</onup>
+          <onleft>50</onleft>
+          <onright>50</onright>
+        </control>
+        <control>
+          <description>MPEICONFIGURE:b4293f64_9e83_4f1f_b2e3_8bdea2a37425</description>
+          <type>button</type>
+          <id>9999</id>
+          <label>#Trailers.Translation.Settings.Label</label>
+          <onup>11899</onup>
+          <ondown>66610</ondown>
+          <onleft>50</onleft>
+          <onright>50</onright>
         </control>
         <control>
           <description>Empty button</description>
