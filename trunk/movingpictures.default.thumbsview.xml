@@ -97,7 +97,7 @@ This file should contain the thumbs view
       <posX>30</posX>
       <posY>826</posY>
       <width>210</width>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -108,7 +108,7 @@ This file should contain the thumbs view
       <posX>270</posX>
       <posY>828</posY>
       <width>300</width>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
@@ -119,7 +119,7 @@ This file should contain the thumbs view
       <posX>30</posX>
       <posY>859</posY>
       <width>210</width>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -130,7 +130,7 @@ This file should contain the thumbs view
       <posX>270</posX>
       <posY>861</posY>
       <width>300</width>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
@@ -140,7 +140,7 @@ This file should contain the thumbs view
       <posX>30</posX>
       <posY>892</posY>
       <width>210</width>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -150,7 +150,7 @@ This file should contain the thumbs view
       <label>#(iif(neq(#MovingPictures.SelectedMovie.year,''),#MovingPictures.SelectedMovie.year,'N/A'))</label>
       <posX>270</posX>
       <posY>893</posY>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>

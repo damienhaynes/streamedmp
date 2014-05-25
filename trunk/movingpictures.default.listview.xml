@@ -157,7 +157,7 @@ This file should contain the list view
       <posX>465</posX>
       <posY>858</posY>
       <width>210</width>
-      <visible>facadeview.list+control.isvisible(50)</visible>
+      <visible>facadeview.list+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -168,7 +168,7 @@ This file should contain the list view
       <posX>705</posX>
       <posY>859</posY>
       <width>300</width>
-      <visible>facadeview.list+control.isvisible(50)</visible>
+      <visible>facadeview.list+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
@@ -179,7 +179,7 @@ This file should contain the list view
       <posX>465</posX>
       <posY>891</posY>
       <width>210</width>
-      <visible>facadeview.list+control.isvisible(50)</visible>
+      <visible>facadeview.list+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -190,7 +190,7 @@ This file should contain the list view
       <posX>705</posX>
       <posY>892</posY>
       <width>300</width>
-      <visible>facadeview.list+control.isvisible(50)</visible>
+      <visible>facadeview.list+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
@@ -200,7 +200,7 @@ This file should contain the list view
       <posX>465</posX>
       <posY>924</posY>
       <width>210</width>
-      <visible>facadeview.list+control.isvisible(50)</visible>
+      <visible>facadeview.list+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -210,7 +210,7 @@ This file should contain the list view
       <label>#(iif(neq(#MovingPictures.SelectedMovie.year,''),#MovingPictures.SelectedMovie.year,'N/A'))</label>
       <posX>705</posX>
       <posY>925</posY>
-      <visible>facadeview.list+control.isvisible(50)</visible>
+      <visible>facadeview.list+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>
