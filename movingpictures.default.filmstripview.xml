@@ -106,7 +106,7 @@ This file should contain the thumbs view
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-      <visible>facadeview.filmstrip+control.isvisible(50)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -174,7 +174,7 @@ This file should contain the thumbs view
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-      <visible>facadeview.filmstrip+control.isvisible(50)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -215,7 +215,7 @@ This file should contain the thumbs view
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-      <visible>facadeview.filmstrip+control.isvisible(50)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -245,7 +245,7 @@ This file should contain the thumbs view
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-      <visible>facadeview.filmstrip+control.isvisible(50)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -275,7 +275,7 @@ This file should contain the thumbs view
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
       <shadowColor>ff222222</shadowColor>
-      <visible>facadeview.filmstrip+control.isvisible(50)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#MovingPictures.general.filteredmoviecount,0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
