@@ -332,67 +332,14 @@
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
     <control>
-      <description>Certification (PG-13)</description>
+      <description>Certification Logo</description>
       <type>image</type>
       <id>0</id>
       <posX>1455</posX>
       <posY>135</posY>
       <width>388</width>
       <height>85</height>
-      <texture>Logos\Certification\PG-13.png</texture>
-      <visible>!control.hasfocus(10099)+[string.contains(#myfilms.db.certification.value,Rated PG-13)|string.contains(#myfilms.db.certification.value,USA PG-13)]</visible>
-      <animation effect="fade" time="250" delay="0">visible</animation>
-      <animation effect="fade" time="250" delay="0">hidden</animation>
-    </control>
-    <control>
-      <description>Certification (PG)</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>1455</posX>
-      <posY>135</posY>
-      <width>388</width>
-      <height>85</height>
-      <texture>Logos\Certification\PG.png</texture>
-      <visible>!control.hasfocus(10099)+[string.equals(#myfilms.db.certification.value,Rated PG)|string.equals(#myfilms.db.certification.value,USA PG)]</visible>
-      <animation effect="fade" time="250" delay="0">visible</animation>
-      <animation effect="fade" time="250" delay="0">hidden</animation>
-    </control>
-    <control>
-      <description>Certification (R)</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>1455</posX>
-      <posY>135</posY>
-      <width>388</width>
-      <height>85</height>
-      <texture>Logos\Certification\R.png</texture>
-      <visible>!control.hasfocus(10099)+[string.contains(#myfilms.db.certification.value,Rated R)|string.contains(#myfilms.db.certification.value,USA R)]</visible>
-      <animation effect="fade" time="250" delay="0">visible</animation>
-      <animation effect="fade" time="250" delay="0">hidden</animation>
-    </control>
-    <control>
-      <description>Certification (G)</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>1455</posX>
-      <posY>135</posY>
-      <width>388</width>
-      <height>85</height>
-      <texture>Logos\Certification\G.png</texture>
-      <visible>!control.hasfocus(10099)+[string.contains(#myfilms.db.certification.value,Rated G)|string.contains(#myfilms.db.certification.value,USA G)]</visible>
-      <animation effect="fade" time="250" delay="0">visible</animation>
-      <animation effect="fade" time="250" delay="0">hidden</animation>
-    </control>
-    <control>
-      <description>Certification (NC-17)</description>
-      <type>image</type>
-      <id>0</id>
-      <posX>1455</posX>
-      <posY>135</posY>
-      <width>388</width>
-      <height>85</height>
-      <texture>Logos\Certification\NC-17.png</texture>
-      <visible>!control.hasfocus(10099)+[string.contains(#myfilms.db.certification.value,Rated NC-17)|string.contains(#myfilms.db.certification.value,USA NC-17)]</visible>
+      <texture>Logos\Certification\#myfilms.db.certification.logo.value.png</texture>
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
