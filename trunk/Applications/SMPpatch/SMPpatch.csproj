@@ -213,7 +213,7 @@
   <PropertyGroup>
     <PostBuildEvent>copy "$(SolutionDir)Externals\ILMerge.exe" "$(TargetDir)" /Y 
 copy "$(ProjectDir)\ILMerge\merge.bat" "$(TargetDir)" /Y
-rem "$(TargetDir)merge.bat"</PostBuildEvent>
+"$(TargetDir)merge.bat"</PostBuildEvent>
     <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"
 cd "$(ProjectDir)EmbeddedPatches"
 call PreBuild.bat</PreBuildEvent>

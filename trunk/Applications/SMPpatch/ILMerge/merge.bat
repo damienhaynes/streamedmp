@@ -14,5 +14,4 @@ if "%programfiles(x86)%XXX"=="XXX" goto 32BIT
 
 IF EXIST SMPpatch_UNMERGED.exe del SMPpatch_UNMERGED.exe
 ren SMPpatch.exe SMPpatch_UNMERGED.exe
-rem ilmerge /out:SMPpatch.exe SMPpatch_UNMERGED.exe ICSharpCode.SharpZipLib.dll SMPCheckSum.dll
 ilmerge /out:SMPpatch.exe SMPpatch_UNMERGED.exe ICSharpCode.SharpZipLib.dll SMPCheckSum.dll /target:dll /targetplatform:"v4,%PROGS%\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /wildcards
