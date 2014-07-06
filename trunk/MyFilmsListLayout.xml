@@ -139,7 +139,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
-      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)+!string.equals(#myfilms.db.rating.value,)</visible>
+      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)+!string.equals(#myfilms.db.rating.value,)+!string.equals(#myfilms.db.rating.value,0.0)</visible>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -189,7 +189,7 @@
       <posX>465</posX>
       <posY>858</posY>
       <width>210</width>
-      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)</visible>
+      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)+!string.equals(#myfilms.user.item2.value,)</visible>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -213,7 +213,7 @@
       <posX>465</posX>
       <posY>891</posY>
       <width>210</width>
-      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)</visible>
+      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)+!string.equals(#myfilms.user.item3.value,)</visible>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
@@ -236,7 +236,7 @@
       <posX>465</posX>
       <posY>924</posY>
       <width>210</width>
-      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)</visible>
+      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)+!string.equals(#myfilms.user.item5.value,)</visible>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>

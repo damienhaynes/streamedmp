@@ -66,7 +66,7 @@
       <align>left</align>
       <imagesToDraw>5</imagesToDraw>
       <percentage>#myfilms.db.rating.value</percentage>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!control.isvisible(34)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)+!string.equals(#myfilms.db.rating.value,)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>
@@ -80,7 +80,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#myfilms.db.rating.value,)+!control.isvisible(34)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#myfilms.db.rating.value,)+!control.isvisible(34)+!string.equals(#myfilms.db.rating.value,0.0)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
@@ -108,7 +108,7 @@
       <posX>30</posX>
       <posY>826</posY>
       <width>210</width>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)+!string.equals(#myfilms.user.item2.value,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
@@ -132,7 +132,7 @@
       <posX>30</posX>
       <posY>859</posY>
       <width>210</width>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)+!string.equals(#myfilms.user.item3.value,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
@@ -155,7 +155,7 @@
       <posX>30</posX>
       <posY>892</posY>
       <width>210</width>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!control.isvisible(34)+!string.equals(#myfilms.user.item5.value,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
