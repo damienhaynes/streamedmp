@@ -340,6 +340,7 @@
       <width>388</width>
       <height>85</height>
       <texture>Logos\Certification\#myfilms.db.certification.logo.value.png</texture>
+      <visible>!control.hasfocus(10099)</visible>
       <animation effect="fade" time="250" delay="0">visible</animation>
       <animation effect="fade" time="250" delay="0">hidden</animation>
     </control>
