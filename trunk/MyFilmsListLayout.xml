@@ -35,7 +35,7 @@
       <width>342</width>
       <height>265</height>
       <texture>glassoverlay2.png</texture>
-      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)</visible>
+      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)+control.hasthumb(1155)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
@@ -48,7 +48,7 @@
       <width>48</width>
       <height>58</height>
       <texture>#StreamedMP.Icons.Background</texture>
-      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)</visible>
+      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)+control.hasthumb(1155)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
@@ -61,7 +61,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.Watched</texture>
-      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)+string.contains(#myfilms.user.watched.value)+!string.contains(#myfilms.globalfilter.unwatched,True)</visible>
+      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)+string.contains(#myfilms.user.watched.value)+!string.contains(#myfilms.globalfilter.unwatched,True)+control.hasthumb(1155)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
@@ -74,7 +74,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
-      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)+!string.contains(#myfilms.user.watched.value)+!string.contains(#myfilms.globalfilter.unwatched,True)</visible>
+      <visible>[facadeview.list|facadeview.album]+control.isvisible(50)+!control.isvisible(34)+!string.contains(#myfilms.user.watched.value)+!string.contains(#myfilms.globalfilter.unwatched,True)+control.hasthumb(1155)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
