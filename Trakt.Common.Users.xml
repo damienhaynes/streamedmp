@@ -41,7 +41,7 @@
       <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <visible>!string.equals(#Trakt.User.FullName,N/A)</visible>
+      <visible>!string.equals(#Trakt.User.FullName,--)</visible>
     </control>
     <control Style="smallTitleB">
       <description>Join Date</description>
@@ -140,7 +140,7 @@
       <scrollStartDelaySec>12</scrollStartDelaySec>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>!string.equals(#Trakt.User.About,)+!string.equals(#Trakt.User.About,N/A)</visible>
+      <visible>!string.equals(#Trakt.User.About,)+!string.equals(#Trakt.User.About,--)</visible>
     </control>
   </controls>
 </window>
