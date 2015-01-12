@@ -572,8 +572,8 @@
       <textcolor>ffFFFFFF</textcolor>
       <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
-      <label>#Trakt.Show.Overview</label>
-      <visible>!string.equals(#Trakt.Show.Overview,)+facadeview.list</visible>
+      <label>#Trakt.Season.Overview</label>
+      <visible>!string.equals(#Trakt.Season.Overview,)+facadeview.list</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>

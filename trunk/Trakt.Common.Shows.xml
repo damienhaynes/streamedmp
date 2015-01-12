@@ -100,7 +100,7 @@
       <posY>466</posY>
       <width>585</width>
       <font>mediastream10c</font>
-      <label>#Trakt.Show.Ratings.Votes #Trakt.Translation.Votes.Label</label>
+      <label>#(string.format('{0:#,0}', cint(#Trakt.Show.Ratings.Votes))) #Trakt.Translation.Votes.Label</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
@@ -165,7 +165,7 @@
       <description>Runtime</description>
       <id>0</id>
       <type>label</type>
-      <label>#Trakt.Show.Runtime mins</label>
+      <label>#Trakt.Show.Runtime #(iif(neq(#Trakt.Show.Runtime,'N/A'),'#Trakt.Translation.Minutes.Label',''))</label>
       <posX>780</posX>
       <posY>892</posY>
       <width>300</width>
@@ -180,7 +180,7 @@
       <posX>465</posX>
       <posY>924</posY>
       <width>285</width>
-      <visible>!string.equals(#Trakt.Show.FirstAired,)+facadeview.list</visible>
+      <visible>!string.equals(#Trakt.Show.FirstAiredLocalized,)+facadeview.list</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
@@ -188,10 +188,10 @@
       <description>FirstAired</description>
       <id>0</id>
       <type>label</type>
-      <label>#Trakt.Show.FirstAired</label>
+      <label>#Trakt.Show.FirstAiredLocalized</label>
       <posX>780</posX>
       <posY>925</posY>
-      <visible>!string.equals(#Trakt.Show.FirstAired,)+facadeview.list</visible>
+      <visible>!string.equals(#Trakt.Show.FirstAiredLocalized,)+facadeview.list</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
@@ -268,7 +268,7 @@
       <posY>438</posY>
       <width>585</width>
       <font>mediastream10c</font>
-      <label>#Trakt.Show.Ratings.Votes #Trakt.Translation.Votes.Label</label>
+      <label>#(string.format('{0:#,0}', cint(#Trakt.Show.Ratings.Votes))) #Trakt.Translation.Votes.Label</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
@@ -333,7 +333,7 @@
       <description>Runtime</description>
       <id>1005</id>
       <type>label</type>
-      <label>#Trakt.Show.Runtime mins</label>
+      <label>#Trakt.Show.Runtime #(iif(neq(#Trakt.Show.Runtime,'N/A'),'#Trakt.Translation.Minutes.Label',''))</label>
       <posX>270</posX>
       <posY>861</posY>
       <width>300</width>
@@ -348,7 +348,7 @@
       <posX>30</posX>
       <posY>892</posY>
       <width>210</width>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Show.FirstAired,)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Show.FirstAiredLocalized,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
@@ -356,10 +356,10 @@
       <description>First Aired</description>
       <id>1006</id>
       <type>label</type>
-      <label>#Trakt.Show.FirstAired</label>
+      <label>#Trakt.Show.FirstAiredLocalized</label>
       <posX>270</posX>
       <posY>893</posY>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Show.FirstAired,)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Show.FirstAiredLocalized,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>

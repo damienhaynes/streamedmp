@@ -673,7 +673,7 @@
       <posY>466</posY>
       <width>585</width>
       <font>mediastream10c</font>
-      <label>#Trakt.Movie.Ratings.Votes #Trakt.Translation.Votes.Label</label>
+      <label>#(string.format('{0:#,0}', cint(#Trakt.Movie.Ratings.Votes))) #Trakt.Translation.Votes.Label</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
@@ -690,7 +690,7 @@
       <posY>466</posY>
       <width>585</width>
       <font>mediastream10c</font>
-      <label>#Trakt.Show.Ratings.Votes #Trakt.Translation.Votes.Label</label>
+      <label>#(string.format('{0:#,0}', cint(#Trakt.Show.Ratings.Votes))) #Trakt.Translation.Votes.Label</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
@@ -707,7 +707,7 @@
       <posY>466</posY>
       <width>585</width>
       <font>mediastream10c</font>
-      <label>#Trakt.Episode.Ratings.Votes #Trakt.Translation.Votes.Label</label>
+      <label>#(string.format('{0:#,0}', cint(#Trakt.Episode.Ratings.Votes))) #Trakt.Translation.Votes.Label</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
@@ -837,7 +837,7 @@
       <description>Runtime</description>
       <id>0</id>
       <type>label</type>
-      <label>#Trakt.Movie.Runtime mins</label>
+      <label>#Trakt.Movie.Runtime #Trakt.Translation.Minutes.Label</label>
       <posX>780</posX>
       <posY>892</posY>
       <width>300</width>
@@ -849,7 +849,7 @@
       <description>Runtime</description>
       <id>0</id>
       <type>label</type>
-      <label>#Trakt.Show.Runtime mins</label>
+      <label>#Trakt.Show.Runtime #Trakt.Translation.Minutes.Label</label>
       <posX>780</posX>
       <posY>892</posY>
       <width>300</width>
@@ -1123,7 +1123,7 @@
       <posY>438</posY>
       <width>585</width>
       <font>mediastream10c</font>
-      <label>#Trakt.Movie.Ratings.Votes #Trakt.Translation.Votes.Label</label>
+      <label>#(string.format('{0:#,0}', cint(#Trakt.Movie.Ratings.Votes))) #Trakt.Translation.Votes.Label</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
@@ -1140,7 +1140,7 @@
       <posY>438</posY>
       <width>585</width>
       <font>mediastream10c</font>
-      <label>#Trakt.Show.Ratings.Votes #Trakt.Translation.Votes.Label</label>
+      <label>#(string.format('{0:#,0}', cint(#Trakt.Show.Ratings.Votes))) #Trakt.Translation.Votes.Label</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
@@ -1157,7 +1157,7 @@
       <posY>438</posY>
       <width>585</width>
       <font>mediastream10c</font>
-      <label>#Trakt.Episode.Ratings.Votes #Trakt.Translation.Votes.Label</label>
+      <label>#(string.format('{0:#,0}', cint(#Trakt.Episode.Ratings.Votes))) #Trakt.Translation.Votes.Label</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
@@ -1287,7 +1287,7 @@
       <description>Runtime</description>
       <id>1005</id>
       <type>label</type>
-      <label>#Trakt.Movie.Runtime mins</label>
+      <label>#Trakt.Movie.Runtime #Trakt.Translation.Minutes.Label</label>
       <posX>270</posX>
       <posY>861</posY>
       <width>300</width>
@@ -1299,7 +1299,7 @@
       <description>Runtime</description>
       <id>1005</id>
       <type>label</type>
-      <label>#Trakt.Show.Runtime mins</label>
+      <label>#Trakt.Show.Runtime #Trakt.Translation.Minutes.Label</label>
       <posX>270</posX>
       <posY>861</posY>
       <width>300</width>

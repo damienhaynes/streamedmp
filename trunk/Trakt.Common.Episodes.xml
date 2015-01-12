@@ -56,7 +56,7 @@
       <posY>696</posY>
       <width>585</width>
       <font>mediastream10c</font>
-      <label>#Trakt.Episode.Ratings.Votes #Trakt.Translation.Votes.Label</label>
+      <label>#(string.format('{0:#,0}', cint(#Trakt.Episode.Ratings.Votes))) #Trakt.Translation.Votes.Label</label>
       <textcolor>ffFFFFFF</textcolor>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
@@ -144,7 +144,7 @@
       <width>225</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>facadeview.list+!string.equals(#Trakt.Show.AirDay,)</visible>
+      <visible>facadeview.list+!string.equals(#Trakt.Episode.FirstAiredLocalizedDayOfWeek,)</visible>
     </control>
     <control Style="smallTitle">
       <id>0</id>
@@ -155,18 +155,7 @@
       <width>150</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>facadeview.list+!string.equals(#Trakt.Episode.FirstAiredLocalizedDayOfWeek,)+!string.equals(#Trakt.Episode.FirstAiredLocalizedDayOfWeek,N/A)</visible>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <label>#Trakt.Show.AirDay</label>
-      <type>label</type>
-      <posX>840</posX>
-      <posY>589</posY>
-      <width>150</width>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>facadeview.list+string.equals(#Trakt.Episode.FirstAiredLocalizedDayOfWeek,)</visible>
+      <visible>facadeview.list+!string.equals(#Trakt.Episode.FirstAiredLocalizedDayOfWeek,)</visible>
     </control>
     <control Style="smallTitleB">
       <id>0</id>
@@ -177,11 +166,11 @@
       <width>225</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>facadeview.list+!string.equals(#Trakt.Show.AirTime,)</visible>
+      <visible>facadeview.list+!string.equals(#Trakt.Episode.FirstAiredLocalizedTime,)</visible>
     </control>
     <control Style="smallTitle">
       <id>0</id>
-      <label>#Trakt.Show.AirTimeLocalized</label>
+      <label>#Trakt.Episode.FirstAiredLocalizedTime</label>
       <type>label</type>
       <posX>840</posX>
       <posY>623</posY>
@@ -189,19 +178,7 @@
       <width>150</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>facadeview.list+!string.equals(#Trakt.Show.AirTimeLocalized,)+!string.equals(#Trakt.Show.AirTimeLocalized,N/A)</visible>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <label>#Trakt.Show.AirTime</label>
-      <type>label</type>
-      <posX>840</posX>
-      <posY>623</posY>
-      <width>270</width>
-      <width>150</width>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>facadeview.list+string.equals(#Trakt.Show.AirTimeLocalized,N/A)</visible>
+      <visible>facadeview.list+!string.equals(#Trakt.Episode.FirstAiredLocalizedTime,)</visible>
     </control>
     <control Style="smallTitleB">
       <label>#Trakt.Translation.Certification.Label</label>
@@ -242,7 +219,7 @@
     <control>
       <description>FirstAired</description>
       <type>label</type>
-      <label>#Trakt.Episode.FirstAired</label>
+      <label>#Trakt.Episode.FirstAiredLocalized</label>
       <id>0</id>
       <posX>15</posX>
       <posY>1020</posY>
@@ -253,7 +230,7 @@
       <shadowAngle>45</shadowAngle>
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
-      <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#Trakt.Episode.FirstAired,)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#Trakt.Episode.FirstAiredLocalized,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
