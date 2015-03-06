@@ -404,7 +404,7 @@ namespace StreamedMPEditor
       }
 
       filename = Path.Combine(Path.Combine(SkinInfo.mpPaths.pluginPath, "windows\\OnlineVideos"), "OnlineVideos.dll");
-      if (Helper.IsAssemblyAvailable("OnlineVideos", new Version(1, 0, 0, 0), filename))
+      if (Helper.IsAssemblyAvailable("OnlineVideos", new Version(2, 0, 0, 0), filename))
       {
         onlineVideosSites = GetOnlineVideosSites();
         cboParameterViews.Visible = false;
