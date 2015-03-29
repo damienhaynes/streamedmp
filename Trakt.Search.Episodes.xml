@@ -494,7 +494,151 @@
         </control>
       </control>
     </control>
-    <import>Trakt.Common.Episodes.xml</import>
+    <control>
+      <description>Big Episode Thumb</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>42</posX>
+      <posY>381</posY>
+      <height>300</height>
+      <width>531</width>
+      <keepaspectratio>yes</keepaspectratio>
+      <zoom>yes</zoom>
+      <texture flipY="true" diffuse="diffusemirrorwide.png">#selectedthumb</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>facadeview.list</visible>
+    </control>
+    <control>
+      <description>Rating Percent</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>238</posX>
+      <posY>690</posY>
+      <width>120</width>
+      <align>right</align>
+      <font>mediastream14tc</font>
+      <label>#Trakt.Episode.Ratings.Percentage%</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>6</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
+      <visible>facadeview.list+!string.equals(#Trakt.Episode.Ratings.Percentage,)+!string.equals(#Trakt.Episode.Ratings.Votes,0)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Rating Icon</description>
+      <type>image</type>
+      <id>1</id>
+      <width>52</width>
+      <height>48</height>
+      <posX>256</posX>
+      <posY>687</posY>
+      <texture>#Trakt.Episode.Ratings.Icon.png</texture>
+      <visible>facadeview.list+!string.equals(#Trakt.Episode.Ratings.Icon,)+!string.equals(#Trakt.Episode.Ratings.Votes,0)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Rating Votes</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>324</posX>
+      <posY>696</posY>
+      <width>585</width>
+      <font>mediastream10c</font>
+      <label>#(string.format('{0:#,0}', cint(#Trakt.Episode.Ratings.Votes))) #Trakt.Translation.Votes.Label</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>3</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
+      <visible>facadeview.list+!string.equals(#Trakt.Episode.Ratings.Votes,)+!string.equals(#Trakt.Episode.Ratings.Votes,0)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Episode Plot</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>45</posX>
+      <posY>750</posY>
+      <width>930</width>
+      <height>225</height>
+      <seperator>----------------------------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#Trakt.Episode.Overview</label>
+      <scrollStartDelaySec>12</scrollStartDelaySec>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>facadeview.list+!string.equals(#Trakt.Episode.Overview,)</visible>
+    </control>
+    <control>
+      <type>label</type>
+      <label>#(iif(eq(#Trakt.Episode.Season,'0'),'#Trakt.Translation.Specials.Label','#Trakt.Translation.Season.Label #Trakt.Episode.Season'))</label>
+      <id>0</id>
+      <posX>600</posX>
+      <posY>376</posY>
+      <width>442</width>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>facadeview.list+!string.equals(#Trakt.Episode.Season,)</visible>
+    </control>
+    <control>
+      <type>textbox</type>
+      <label>#Trakt.Episode.Title</label>
+      <id>0</id>
+      <posX>600</posX>
+      <posY>405</posY>
+      <width>405</width>
+      <height>150</height>
+      <font>mediastream14tc</font>
+      <textcolor>ffffffff</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>6</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>facadeview.list+!string.equals(#Trakt.Episode.Title,)</visible>
+    </control>
+    <!-- Filmstrip -->
+    <control>
+      <description>Episode Title</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>15</posX>
+      <posY>990</posY>
+      <width>1920</width>
+      <align>center</align>
+      <font>mediastream16tc</font>
+      <label>#selecteditem</label>
+      <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#Trakt.Show.Title,)</visible>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Year</description>
+      <type>label</type>
+      <label>#Trakt.Show.Year</label>
+      <id>0</id>
+      <posX>15</posX>
+      <posY>1020</posY>
+      <width>1920</width>
+      <align>center</align>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
+      <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#Trakt.Show.Year,)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
     <import>common.overlays.xml</import>
     <import>common.time.xml</import>
   </controls>
