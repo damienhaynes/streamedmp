@@ -1,0 +1,480 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>87101</id>
+  <defaultcontrol>50</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.hover:hover_trakt.png</define>
+  <define>#header.BG.colordiffuse:ffffffff</define>
+  <define>#header.BG.overlay:mainoverlay.png</define>
+  <define>#Fanart.1:#Trakt.PopularMovies.Fanart.1</define>
+  <define>#Fanart.2:#Trakt.PopularMovies.Fanart.2</define>
+  <controls>
+    <control>
+      <id>1</id>
+      <description>Background Image</description>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1920</width>
+      <height>1080</height>
+      <texture>#header.hover</texture>
+      <colordiffuse>#header.BG.colordiffuse</colordiffuse>
+      <animation effect="fade" time="300">WindowOpen</animation>
+    </control>
+    <import>Trakt.Common.Fanart.xml</import>
+    <control>
+      <id>1</id>
+      <description>Overlay Image</description>
+      <type>image</type>
+      <posX>0</posX>
+      <posY>0</posY>
+      <width>1921</width>
+      <height>1080</height>
+      <texture>#header.BG.overlay</texture>
+    </control>
+    <control>
+      <description>Title Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>115</posX>
+      <posY>16</posY>
+      <width>655</width>
+      <height>52</height>
+      <texture>tvtitlebg.png</texture>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Current View</description>
+      <type>fadelabel</type>
+      <id>0</id>
+      <posX>739</posX>
+      <posY>19</posY>
+      <width>525</width>
+      <font>mediastream12c</font>
+      <label>#Trakt.Translation.PopularMovies.Label</label>
+      <align>right</align>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <posX>0</posX>
+      <posY>1012</posY>
+      <width>1920</width>
+      <height>70</height>
+      <texture>imagestreamtitle.png</texture>
+      <visible>!facadeview.filmstrip</visible>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <!-- Facade Item Counts -->
+    <control>
+      <description>Item Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1567</posX>
+      <posY>19</posY>
+      <width>333</width>
+      <height>42</height>
+      <texture>mediacountbg.png</texture>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Item Count Label</description>
+      <type>label</type>
+      <label>#Trakt.Translation.Movies.Label</label>
+      <id>0</id>
+      <width>202</width>
+      <posX>1585</posX>
+      <posY>25</posY>
+      <align>left</align>
+      <font>mediastream10tc</font>
+      <textcolor>ff909090</textcolor>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Item Count</description>
+      <type>label</type>
+      <label>#itemcount</label>
+      <id>0</id>
+      <posX>1855</posX>
+      <posY>22</posY>
+      <font>mediastream11c</font>
+      <textcolor>ff006698</textcolor>
+      <align>right</align>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Count Background</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>1519</posX>
+      <posY>1026</posY>
+      <width>390</width>
+      <height>45</height>
+      <texture>mediacountbg_Spin.png</texture>
+      <visible>!facadeview.filmstrip</visible>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Page Count Label</description>
+      <type>label</type>
+      <label>30009</label>
+      <id>0</id>
+      <posX>1534</posX>
+      <posY>1032</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <visible>!facadeview.filmstrip</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="1200,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1200,0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Selected item Label</description>
+      <type>fadelabel</type>
+      <id>1</id>
+      <posX>37</posX>
+      <posY>1026</posY>
+      <width>1425</width>
+      <font>mediastream16tc</font>
+      <label>#selecteditem</label>
+      <visible>!facadeview.filmstrip</visible>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>group element</description>
+      <type>group</type>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="1800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1800,0">WindowClose</animation>
+      <control>
+        <type>facadeview</type>
+        <id>50</id>
+        <animation effect="fade" time="250" delay="0">WindowClose</animation>
+        <control>
+          <description>listcontrol</description>
+          <type>listcontrol</type>
+          <id>50</id>
+          <posX>1050</posX>
+          <posY>360</posY>
+          <height>720</height>
+          <width>870</width>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <scrollOffset>5</scrollOffset>
+          <itemWidth>48</itemWidth>
+          <itemHeight>48</itemHeight>
+          <IconXOff>37</IconXOff>
+          <IconYOff>6</IconYOff>
+          <textXOff>37</textXOff>
+          <textYOff>7</textYOff>
+          <textXOff2>0</textXOff2>
+          <textYOff2>7</textYOff2>
+          <textXOff3>112</textXOff3>
+          <textYOff3>15</textYOff3>
+          <font>mediastream12c</font>
+          <font2>mediastream10c</font2>
+          <font3>mediastream12tc</font3>
+          <keepaspectratio>yes</keepaspectratio>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
+          <suffix>|</suffix>
+        </control>
+        <control>
+          <visible>control.isvisible(50)</visible>
+          <description>Filmstrip</description>
+          <type>filmstrip</type>
+          <id>50</id>
+          <onup>2</onup>
+          <posX>60</posX>
+          <posY>382</posY>
+          <width>1920</width>
+          <height>330</height>
+          <scrollOffset>4</scrollOffset>
+          <thumbWidth>345</thumbWidth>
+          <thumbHeight>510</thumbHeight>
+          <thumbPosX>6</thumbPosX>
+          <thumbPosY>6</thumbPosY>
+          <itemWidth>367</itemWidth>
+          <itemHeight>277</itemHeight>
+          <textureWidth>375</textureWidth>
+          <textureHeight>228</textureHeight>
+          <thumbPosX>10</thumbPosX>
+          <thumbPosY>10</thumbPosY>
+          <thumbs flipY="true" diffuse="diffusemirrorwide.png" />
+          <InfoImage>
+          </InfoImage>
+          <imageFolder>-</imageFolder>
+          <imageFolderFocus>-</imageFolderFocus>
+          <frame>-</frame>
+          <frameFocus>-</frameFocus>
+          <showFrame>no</showFrame>
+          <showFolder>yes</showFolder>
+          <showBackGround>no</showBackGround>
+          <showInfoImage>no</showInfoImage>
+          <thumbAnimation effect="zoom" start="100,100" end="120,120" tween="quadratic" time="0">focus</thumbAnimation>
+          <!-- Spin Controls -->
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
+          <spinPosX>877</spinPosX>
+          <spinPosY>1027</spinPosY>
+          <spinAlign>center</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+        </control>
+        <control>
+          <description>Thumbnail Panel</description>
+          <type>thumbnailpanel</type>
+          <id>50</id>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <posX>795</posX>
+          <posY>345</posY>
+          <width>1125</width>
+          <height>720</height>
+          <!-- Small Icons 0.66 aspect ratio -->
+          <itemWidth>150</itemWidth>
+          <itemHeight>217</itemHeight>
+          <textureWidth>150</textureWidth>
+          <textureHeight>216</textureHeight>
+          <thumbWidth>135</thumbWidth>
+          <thumbHeight>202</thumbHeight>
+          <thumbPosX>7</thumbPosX>
+          <thumbPosY>7</thumbPosY>
+          <!-- Large Icons 0.66 aspect ratio -->
+          <textureWidthBig>222</textureWidthBig>
+          <textureHeightBig>325</textureHeightBig>
+          <itemWidthBig>220</itemWidthBig>
+          <itemHeightBig>322</itemHeightBig>
+          <thumbWidthBig>198</thumbWidthBig>
+          <thumbHeightBig>300</thumbHeightBig>
+          <thumbPosXBig>12</thumbPosXBig>
+          <thumbPosYBig>12</thumbPosYBig>
+          <imageFolderFocus>thumbborder3.png</imageFolderFocus>
+          <font>font12</font>
+          <suffix>|</suffix>
+          <thumbZoom>yes</thumbZoom>
+          <enableFocusZoom>no</enableFocusZoom>
+          <!-- Spin Controls -->
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+        </control>
+      </control>
+    </control>
+    <!-- Hidden Menu -->
+    <control>
+      <description>Hidden Menu Indicator</description>
+      <type>image</type>
+      <posX>1848</posX>
+      <posY>75</posY>
+      <width>72</width>
+      <height>216</height>
+      <texture>#StreamedMP.ActionMenu.Image</texture>
+      <visible>control.isvisible(50)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <type>actiongroup</type>
+      <description>action menu</description>
+      <defaultcontrol>2</defaultcontrol>
+      <onexit>50</onexit>
+      <dimColor>00ffffff</dimColor>
+      <buttonX>1846</buttonX>
+      <buttonY>82</buttonY>
+      <buttonwidth>73</buttonwidth>
+      <buttonheight>379</buttonheight>
+      <control>
+        <type>image</type>
+        <posX>1503</posX>
+        <posY>0</posY>
+        <width>417</width>
+        <height>1080</height>
+        <texture>hiddenmenu_right.png</texture>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>Dummy Button (for Mouse)</description>
+        <label>-</label>
+        <type>button</type>
+        <posX>1503</posX>
+        <posY>0</posY>
+        <width>417</width>
+        <height>1080</height>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>MENU</description>
+        <label>924</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1560</posX>
+        <posY>334</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>Filters</description>
+        <label>#Trakt.Translation.Filters.Label</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1560</posX>
+        <posY>457</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+      </control>
+      <control>
+        <id>0</id>
+        <description>Trailers</description>
+        <label>#Trailers.Translation.Trailers.Label</label>
+        <type>label</type>
+        <font>mediastream12tc</font>
+        <posX>1560</posX>
+        <posY>667</posY>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+      </control>
+      <control>
+        <type>group</type>
+        <description>group element</description>
+        <visible>!Control.HasFocus(50)</visible>
+        <animation effect="slide" time="100" start="450,0">visible</animation>
+        <animation effect="slide" time="0" end="450,0">hidden</animation>
+        <posX>1560</posX>
+        <posY>367</posY>
+        <width>330</width>
+        <height>1080</height>
+        <layout>StackLayout</layout>
+        <control>
+          <description>Change Layout</description>
+          <type>button</type>
+          <id>2</id>
+          <label>-</label>
+          <onup>21</onup>
+          <!-- Top Bar -->
+          <onleft>50</onleft>
+        </control>
+        <control>
+          <description>Sort</description>
+          <type>sortbutton</type>
+          <id>8</id>
+          <label>-</label>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>Hide Watched</description>
+          <type>checkbutton</type>
+          <id>9</id>
+          <label>#Trakt.Translation.HideWatched.Label</label>
+          <onleft>50</onleft>
+        </control>
+        <control>
+          <description>Hide Watchlisted</description>
+          <type>checkbutton</type>
+          <id>10</id>
+          <label>#Trakt.Translation.HideWatchlisted.Label</label>
+          <onleft>50</onleft>
+        </control>
+        <control>
+          <description>Hide Collected</description>
+          <type>checkbutton</type>
+          <id>11</id>
+          <label>#Trakt.Translation.HideCollected.Label</label>
+          <onleft>50</onleft>
+        </control>
+        <control>
+          <description>Hide Rated</description>
+          <type>checkbutton</type>
+          <id>12</id>
+          <label>#Trakt.Translation.HideRated.Label</label>
+          <onleft>50</onleft>
+          <ondown>11899</ondown>
+        </control>
+        <control>
+          <description>Empty button</description>
+          <type>button</type>
+          <id>0</id>
+          <label>-</label>
+          <visible>false</visible>
+        </control>
+        <control>
+          <description>Trailers Plugin</description>
+          <type>button</type>
+          <id>11899</id>
+          <label>#Trailers.Translation.Search.Label / #Trailers.Translation.Play.Label...</label>
+          <ondown>9999</ondown>
+          <onup>12</onup>
+          <onleft>50</onleft>
+          <onright>50</onright>
+        </control>
+        <control>
+          <description>MPEICONFIGURE:b4293f64_9e83_4f1f_b2e3_8bdea2a37425</description>
+          <type>button</type>
+          <id>9999</id>
+          <label>#Trailers.Translation.Settings.Label</label>
+          <onup>11899</onup>
+          <ondown>2</ondown>
+          <onleft>50</onleft>
+          <onright>50</onright>
+          <visible>string.equals(#mpei.b4293f64_9e83_4f1f_b2e3_8bdea2a37425.isinstalled, true)</visible>
+        </control>
+      </control>
+    </control>
+    <import>Trakt.Common.Movies.xml</import>
+    <import>common.overlays.xml</import>
+    <import>common.time.xml</import>
+  </controls>
+</window>
+<!--Checksum:93f29d94391da98754f97ebe6f09d601-->

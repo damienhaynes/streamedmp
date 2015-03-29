@@ -88,7 +88,7 @@
         <width>382</width>
         <label>#Trakt.Translation.Profile.Label</label>
         <hyperlink>87400</hyperlink>
-        <onup>9998</onup>
+        <onup>9997</onup>
         <onleft>#defaultcontrol</onleft>
       </control>
       <control Style="settingsbutton">
@@ -129,6 +129,15 @@
         <onleft>#defaultcontrol</onleft>
       </control>
       <control Style="settingsbutton">
+        <description>Popular</description>
+        <type>button</type>
+        <id>9999</id>
+        <width>382</width>
+        <label>#Trakt.Translation.Popular.Label</label>
+        <hyperlink>87100</hyperlink>
+        <onleft>#defaultcontrol</onleft>
+      </control>
+      <control Style="settingsbutton">
         <description>Watch List</description>
         <type>button</type>
         <id>9995</id>
@@ -147,15 +156,6 @@
         <onleft>#defaultcontrol</onleft>
       </control>
       <control Style="settingsbutton">
-        <description>Settings</description>
-        <type>button</type>
-        <id>9997</id>
-        <width>382</width>
-        <label>#Trakt.Translation.Settings.Label</label>
-        <hyperlink>87271</hyperlink>
-        <onleft>#defaultcontrol</onleft>
-      </control>
-      <control Style="settingsbutton">
         <description>Search</description>
         <type>button</type>
         <id>9998</id>
@@ -163,6 +163,16 @@
         <label>#Trakt.Translation.Search.Label</label>
         <hyperlink>874001</hyperlink>
         <onleft>#defaultcontrol</onleft>
+      </control>
+      <control Style="settingsbutton">
+        <description>Settings</description>
+        <type>button</type>
+        <id>9997</id>
+        <width>382</width>
+        <label>#Trakt.Translation.Settings.Label</label>
+        <hyperlink>87271</hyperlink>
+        <onleft>#defaultcontrol</onleft>
+        <ondown>9990</ondown>
       </control>
     </control>
     <control>
