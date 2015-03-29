@@ -300,7 +300,7 @@
       <label>#Trakt.Translation.Certification.Label</label>
       <posX>30</posX>
       <posY>826</posY>
-      <width>210</width>
+      <width>270</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Show.Certification,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
@@ -310,7 +310,7 @@
       <id>1004</id>
       <type>label</type>
       <label>#Trakt.Show.Certification</label>
-      <posX>270</posX>
+      <posX>338</posX>
       <posY>828</posY>
       <width>300</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Show.Certification,)</visible>
@@ -324,17 +324,17 @@
       <label>#Trakt.Translation.Runtime.Label</label>
       <posX>30</posX>
       <posY>859</posY>
-      <width>210</width>
+      <width>270</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Show.Runtime,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
     <control Style="smallTitle">
       <description>Runtime</description>
-      <id>1005</id>
+      <id>0</id>
       <type>label</type>
       <label>#Trakt.Show.Runtime #(iif(neq(#Trakt.Show.Runtime,'N/A'),'#Trakt.Translation.Minutes.Label',''))</label>
-      <posX>270</posX>
+      <posX>338</posX>
       <posY>861</posY>
       <width>300</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Show.Runtime,)</visible>
@@ -342,22 +342,23 @@
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
     <control Style="smallTitleB">
+      <id>0</id>
       <description>First Aired Label</description>
       <type>label</type>
       <label>#Trakt.Translation.FirstAired.Label</label>
       <posX>30</posX>
       <posY>892</posY>
-      <width>210</width>
+      <width>270</width>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Show.FirstAiredLocalized,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
     <control Style="smallTitle">
       <description>First Aired</description>
-      <id>1006</id>
+      <id>0</id>
       <type>label</type>
       <label>#Trakt.Show.FirstAiredLocalized</label>
-      <posX>270</posX>
+      <posX>338</posX>
       <posY>893</posY>
       <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Show.FirstAiredLocalized,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -393,6 +394,299 @@
       <shadowDistance>4</shadowDistance>
       <shadowColor>#shadow.dark</shadowColor>
       <visible>facadeview.filmstrip+control.isvisible(50)+!string.equals(#Trakt.Show.Genres,)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+        <!-- Page Info (List) -->
+    <control>
+      <description>Page Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>462</posX>
+      <posY>376</posY>
+      <width>585</width>
+      <font>mediastream16tc</font>
+      <label>#selecteditem</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>6</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
+      <visible>facadeview.list+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>CurrentPage Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Translation.CurrentPage.Label</label>
+      <posX>462</posX>
+      <posY>426</posY>
+      <width>210</width>
+      <visible>facadeview.list+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>CurrentPage</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Facade.CurrentPage</label>
+      <posX>760</posX>
+      <posY>428</posY>
+      <width>300</width>
+      <visible>facadeview.list+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>NextPage Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Translation.NextPage.Label</label>
+      <posX>462</posX>
+      <posY>456</posY>
+      <width>210</width>
+      <visible>facadeview.list+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>NextPage</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Facade.PageToLoad</label>
+      <posX>760</posX>
+      <posY>458</posY>
+      <width>300</width>
+      <visible>facadeview.list+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Shows Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Translation.Shows.Label</label>
+      <posX>462</posX>
+      <posY>486</posY>
+      <width>210</width>
+      <visible>facadeview.list+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Shows / TotalItemsPerPage</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#itemcount / #Trakt.Facade.TotalItemsPerPage</label>
+      <posX>760</posX>
+      <posY>488</posY>
+      <width>300</width>
+      <visible>facadeview.list+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>TotalPages Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Translation.TotalPages.Label</label>
+      <posX>462</posX>
+      <posY>516</posY>
+      <width>210</width>
+      <visible>facadeview.list+string.equals(#Trakt.Facade.IsPageItem,true)+!string.equals(#Trakt.Facade.TotalPages,0)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>TotalPages</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Facade.TotalPages</label>
+      <posX>760</posX>
+      <posY>518</posY>
+      <width>300</width>
+      <visible>facadeview.list+string.equals(#Trakt.Facade.IsPageItem,true)+!string.equals(#Trakt.Facade.TotalPages,0)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Trending Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>462</posX>
+      <posY>557</posY>
+      <width>550</width>
+      <height>330</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#Trakt.Trending.Description</label>
+      <visible>facadeview.list+string.equals(#Trakt.Facade.IsPageItem,true)+window.istopmost(87265)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <!-- Page Info (Icons) -->
+    <control>
+      <description>Page Label</description>
+      <type>label</type>
+      <id>0</id>
+      <posX>30</posX>
+      <posY>376</posY>
+      <width>585</width>
+      <font>mediastream16tc</font>
+      <label>#selecteditem</label>
+      <textcolor>ffFFFFFF</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>6</shadowDistance>
+      <shadowColor>#shadow.light</shadowColor>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>CurrentPage Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Translation.CurrentPage.Label</label>
+      <posX>30</posX>
+      <posY>426</posY>
+      <width>270</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>CurrentPage</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Facade.CurrentPage</label>
+      <posX>338</posX>
+      <posY>428</posY>
+      <width>300</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>NextPage Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Translation.NextPage.Label</label>
+      <posX>30</posX>
+      <posY>456</posY>
+      <width>270</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>NextPage</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Facade.PageToLoad</label>
+      <posX>338</posX>
+      <posY>458</posY>
+      <width>300</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>Shows Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Translation.Shows.Label</label>
+      <posX>30</posX>
+      <posY>486</posY>
+      <width>270</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>Shows / TotalItemsPerPage</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#itemcount / #Trakt.Facade.TotalItemsPerPage</label>
+      <posX>338</posX>
+      <posY>488</posY>
+      <width>300</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitleB">
+      <description>TotalPages Label</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Translation.TotalPages.Label</label>
+      <posX>30</posX>
+      <posY>516</posY>
+      <width>270</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+string.equals(#Trakt.Facade.IsPageItem,true)+!string.equals(#Trakt.Facade.TotalPages,0)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control Style="smallTitle">
+      <description>TotalPages</description>
+      <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Facade.TotalPages</label>
+      <posX>338</posX>
+      <posY>518</posY>
+      <width>300</width>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+string.equals(#Trakt.Facade.IsPageItem,true)+!string.equals(#Trakt.Facade.TotalPages,0)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <control>
+      <description>Trending Summary</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>30</posX>
+      <posY>557</posY>
+      <width>640</width>
+      <height>330</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#Trakt.Trending.Description</label>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+string.equals(#Trakt.Facade.IsPageItem,true)+window.istopmost(87265)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+    <!-- Page Info (Filmstrip) -->
+    <control>
+      <description>Page Label</description>
+      <type>label</type>
+      <id>1</id>
+      <posX>30</posX>
+      <posY>990</posY>
+      <width>1920</width>
+      <align>center</align>
+      <font>mediastream16tc</font>
+      <label>#selecteditem</label>
+      <visible>facadeview.filmstrip+string.equals(#Trakt.Facade.IsPageItem,true)</visible>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Trending Summary</description>
+      <type>label</type>
+      <label>#Trakt.Trending.Description</label>
+      <id>0</id>
+      <posX>30</posX>
+      <posY>1020</posY>
+      <width>1920</width>
+      <align>center</align>
+      <font>mediastream12tc</font>
+      <textcolor>ff909090</textcolor>
+      <shadowAngle>45</shadowAngle>
+      <shadowDistance>4</shadowDistance>
+      <shadowColor>#shadow.dark</shadowColor>
+      <visible>facadeview.filmstrip+string.equals(#Trakt.Facade.IsPageItem,true)+window.istopmost(87265)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
