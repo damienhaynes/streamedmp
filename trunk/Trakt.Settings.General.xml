@@ -27,7 +27,7 @@
         <onleft>2</onleft>
         <textXOff>37</textXOff>
         <onright>#defaultcontrol.onright</onright>
-        <onup>8</onup>
+        <onup>20</onup>
       </control>
       <control Style="settingsmaincheckbutton">
         <description>Download FullSize Fanart</description>
@@ -91,8 +91,30 @@
         <textXOff>37</textXOff>
         <onleft>8</onleft>
         <onright>#defaultcontrol.onright</onright>
-        <ondown>2</ondown>
       </control>
+      <control Style="settingsmaincheckbutton">
+        <description>Sync Playback</description>
+        <type>checkbutton</type>
+        <id>10</id>
+        <label>#Trakt.Translation.SettingSyncPlaybackName.Label</label>
+        <textXOff>37</textXOff>
+        <onleft>10</onleft>
+        <onright>#defaultcontrol.onright</onright>
+        <ondown>20</ondown>
+      </control>
+    </control>
+    <control Style="settingsmainbutton">
+        <type>button</type>
+        <description>Start Library And Playback Sync</description>
+        <id>20</id>
+        <posX>310</posX>
+        <posY>925</posY>
+        <textalign>center</textalign>
+        <textYOff>0</textYOff>
+        <label>#Trakt.Translation.StartLibraryAndPlaybackSync.Label</label>
+        <onup>10</onup>
+        <onright>#defaultcontrol.onright</onright>
+        <animation effect="fade" time="200" delay="200">windowopen</animation>
     </control>
   </controls>
 </window>
