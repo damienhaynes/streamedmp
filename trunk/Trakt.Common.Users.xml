@@ -67,7 +67,7 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
-      <type>textboxscrollup</type>
+      <type>textbox</type>
       <label>#Trakt.User.FullName</label>
       <id>0</id>
       <posX>247</posX>
@@ -80,78 +80,57 @@
       <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <visible>!string.equals(#Trakt.User.FullName,--)</visible>
     </control>
+    
     <control Style="smallTitleB">
       <description>Join Date</description>
       <id>0</id>
       <label>#Trakt.Translation.JoinDate.Label</label>
       <type>label</type>
-      <posX>27</posX>
-      <posY>657</posY>
+      <posX>247</posX>
+      <posY>483</posY>
       <width>225</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.User.JoinDate,)</visible>
     </control>
     <control Style="smallTitle">
-      <description>Join Date Value</description>
+      <description>JoinDate Value</description>
       <id>0</id>
       <label>#Trakt.User.JoinDate</label>
       <type>label</type>
-      <posX>259</posX>
-      <posY>658</posY>
-      <width>345</width>
+      <posX>480</posX>
+      <posY>484</posY>
+      <width>480</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
-      <description>Gender</description>
-      <id>0</id>
-      <label>#Trakt.Translation.Gender.Label</label>
-      <type>label</type>
-      <posX>27</posX>
-      <posY>694</posY>
-      <width>225</width>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <visible>!string.equals(#Trakt.User.Gender,)</visible>
-    </control>
-    <control Style="smallTitle">
-      <description>Gender Value</description>
-      <id>0</id>
-      <label>#Trakt.User.Gender</label>
-      <type>label</type>
-      <posX>259</posX>
-      <posY>696</posY>
-      <width>345</width>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitleB">
-      <description>Age</description>
+      <description>Age Label</description>
       <id>0</id>
       <label>#Trakt.Translation.Age.Label</label>
       <type>label</type>
-      <posX>27</posX>
-      <posY>732</posY>
+      <posX>247</posX>
+      <posY>513</posY>
       <width>225</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <visible>!string.equals(#Trakt.User.Age,)+!string.equals(#Trakt.User.Age,0)</visible>
+      <visible>!string.equals(#Trakt.User.Age,)</visible>
     </control>
     <control Style="smallTitle">
       <description>Age Value</description>
       <id>0</id>
       <label>#Trakt.User.Age</label>
       <type>label</type>
-      <posX>259</posX>
-      <posY>733</posY>
-      <width>345</width>
+      <posX>480</posX>
+      <posY>514</posY>
+      <width>480</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
-      <description>Location</description>
+      <description>Location Label</description>
       <id>0</id>
       <label>#Trakt.Translation.Location.Label</label>
       <type>label</type>
-      <posX>27</posX>
-      <posY>769</posY>
+      <posX>247</posX>
+      <posY>543</posY>
       <width>225</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.User.Location,)</visible>
@@ -161,18 +140,19 @@
       <id>0</id>
       <label>#Trakt.User.Location</label>
       <type>label</type>
-      <posX>259</posX>
-      <posY>771</posY>
-      <width>345</width>
+      <posX>480</posX>
+      <posY>544</posY>
+      <width>480</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
+    
     <control>
       <description>User About</description>
       <type>textboxscrollup</type>
       <id>0</id>
       <posX>27</posX>
-      <posY>810</posY>
-      <width>930</width>
+      <posY>610</posY>
+      <width>1000</width>
       <height>187</height>
       <font>mediastream11</font>
       <label>#Trakt.User.About</label>
