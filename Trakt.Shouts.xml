@@ -430,6 +430,46 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Shout.Replies,)</visible>
     </control>
+    
+    <control>
+      <description>VIP</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>249</posX>
+      <posY>433</posY>
+      <height>50</height>
+      <width>106</width>
+      <keepaspectratio>yes</keepaspectratio>      
+      <visible>string.equals(#Trakt.User.VIP,True)+!string.equals(#Trakt.User.Protected,True)</visible>
+      <texture>traktVIP.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>PRIVATE</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>249</posX>
+      <posY>433</posY>
+      <height>50</height>
+      <width>106</width>
+      <keepaspectratio>yes</keepaspectratio>      
+      <visible>string.equals(#Trakt.User.Protected,True)+!string.equals(#Trakt.User.VIP,True)</visible>
+      <texture>traktPrivate.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>VIP+PRIVATE</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>249</posX>
+      <posY>433</posY>
+      <height>50</height>
+      <width>212</width>
+      <keepaspectratio>yes</keepaspectratio>      
+      <visible>string.equals(#Trakt.User.Protected,True)+string.equals(#Trakt.User.VIP,True)</visible>
+      <texture>traktVIPPrivate.png</texture>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
     <control>
       <type>label</type>
       <label>#Trakt.User.Username</label>
@@ -444,7 +484,7 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
-      <type>textboxscrollup</type>
+      <type>textbox</type>
       <label>#Trakt.User.FullName</label>
       <id>0</id>
       <posX>247</posX>
@@ -457,18 +497,39 @@
       <shadowDistance>6</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <visible>!string.equals(#Trakt.User.FullName,N/A)</visible>
+    </control>
+    
+    <control Style="smallTitleB">
+      <description>Join Date</description>
+      <id>0</id>
+      <label>#Trakt.Translation.JoinDate.Label</label>
+      <type>label</type>
+      <posX>247</posX>
+      <posY>483</posY>
+      <width>225</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <visible>!string.equals(#Trakt.User.JoinDate,)</visible>
+    </control>
+    <control Style="smallTitle">
+      <description>JoinDate Value</description>
+      <id>0</id>
+      <label>#Trakt.User.JoinDate</label>
+      <type>label</type>
+      <posX>480</posX>
+      <posY>484</posY>
+      <width>480</width>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitleB">
-      <description>Age</description>
+      <description>Age Label</description>
       <id>0</id>
       <label>#Trakt.Translation.Age.Label</label>
       <type>label</type>
       <posX>247</posX>
-      <posY>477</posY>
+      <posY>513</posY>
       <width>225</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <visible>!string.equals(#Trakt.User.Age,)+!string.equals(#Trakt.User.Age,N/A)</visible>
+      <visible>!string.equals(#Trakt.User.Age,)</visible>
     </control>
     <control Style="smallTitle">
       <description>Age Value</description>
@@ -476,43 +537,20 @@
       <label>#Trakt.User.Age</label>
       <type>label</type>
       <posX>480</posX>
-      <posY>478</posY>
-      <width>345</width>
+      <posY>514</posY>
+      <width>480</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <visible>!string.equals(Trakt.User.Age,)+!string.equals(#Trakt.User.Age,N/A)</visible>
     </control>
     <control Style="smallTitleB">
-      <description>Gender</description>
-      <id>0</id>
-      <label>#Trakt.Translation.Gender.Label</label>
-      <type>label</type>
-      <posX>247</posX>
-      <posY>507</posY>
-      <width>225</width>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <visible>!string.equals(#Trakt.User.Gender,)+!string.equals(#Trakt.User.Gender,N/A)</visible>
-    </control>
-    <control Style="smallTitle">
-      <description>Gender Value</description>
-      <id>0</id>
-      <label>#Trakt.User.Gender</label>
-      <type>label</type>
-      <posX>480</posX>
-      <posY>508</posY>
-      <width>345</width>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <visible>!string.equals(Trakt.User.Gender,)+!string.equals(#Trakt.User.Gender,N/A)</visible>
-    </control>
-    <control Style="smallTitleB">
-      <description>Location</description>
+      <description>Location Label</description>
       <id>0</id>
       <label>#Trakt.Translation.Location.Label</label>
       <type>label</type>
       <posX>247</posX>
-      <posY>537</posY>
+      <posY>543</posY>
       <width>225</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <visible>!string.equals(#Trakt.User.Location,)+!string.equals(#Trakt.User.Location,N/A)</visible>
+      <visible>!string.equals(#Trakt.User.Location,)</visible>
     </control>
     <control Style="smallTitle">
       <description>Location Value</description>
@@ -520,11 +558,11 @@
       <label>#Trakt.User.Location</label>
       <type>label</type>
       <posX>480</posX>
-      <posY>538</posY>
-      <width>345</width>
+      <posY>544</posY>
+      <width>480</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-      <visible>!string.equals(#Trakt.User.Location,)+!string.equals(#Trakt.User.Location,N/A)</visible>
     </control>
+    
     <control>
       <description>Shout</description>
       <type>textboxscrollup</type>
