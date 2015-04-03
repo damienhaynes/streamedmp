@@ -102,51 +102,61 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
     </control>
+    
     <control>
-      <description>Summary</description>
+      <description>Summary/Actors</description>
       <type>textboxscrollup</type>
       <id>0</id>
       <posX>462</posX>
       <posY>472</posY>
-      <width>600</width>
-      <height>232</height>
-      <textcolor>ffFFFFFF</textcolor>
-      <seperator>-------------------------------------------------------------------------------------------</seperator>
-      <font>mediastream11</font>
-      <label>#OnlineVideos.DetailsItem.Description</label>
-      <scrollStartDelaySec>9</scrollStartDelaySec>
-      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+!string.equals(#OnlineVideos.DetailsItem.Description,)</visible>
-    </control>
-    <control>
-      <description>Summary</description>
-      <type>textboxscrollup</type>
-      <id>0</id>
-      <posX>462</posX>
-      <posY>472</posY>
-      <width>600</width>
-      <height>232</height>
-      <textcolor>ffFFFFFF</textcolor>
-      <seperator>-------------------------------------------------------------------------------------------</seperator>
-      <font>mediastream11</font>
-      <label>#OnlineVideos.Details.Plot</label>
-      <scrollStartDelaySec>12</scrollStartDelaySec>
-      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+string.equals(#selecteditem,..)</visible>
-    </control>
-    <control>
-      <description>Actors</description>
-      <type>textboxscrollup</type>
-      <id>0</id>
-      <posX>462</posX>
-      <posY>712</posY>
       <width>600</width>
       <height>334</height>
       <textcolor>ffFFFFFF</textcolor>
-      <seperator>-------------------------------------------------------------------------------------------</seperator>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
       <font>mediastream11</font>
-      <label>#OnlineVideos.Translation.Actors.Label: #OnlineVideos.Details.Actors</label>
-      <scrollStartDelaySec>4</scrollStartDelaySec>
-      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+!string.equals(#OnlineVideos.Details.Actors,)</visible>
+      <label>#OnlineVideos.Details.Plot 
+	  
+	  #OnlineVideos.Translation.Actors.Label: #OnlineVideos.Details.Actors</label>
+      <scrollStartDelaySec>12</scrollStartDelaySec>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+!string.equals(#OnlineVideos.Details.Plot ,)+!string.equals(#OnlineVideos.Details.Actors,)</visible>
     </control>
+    <control>
+      <description>Summary (Only)</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>462</posX>
+      <posY>472</posY>
+      <width>600</width>
+      <height>334</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#OnlineVideos.Details.Plot </label>
+      <scrollStartDelaySec>12</scrollStartDelaySec>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+!string.equals(#OnlineVideos.Details.Plot ,)+string.equals(#OnlineVideos.Details.Actors,)</visible>
+    </control>
+    <control>
+      <description>Actors (Only)</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>462</posX>
+      <posY>472</posY>
+      <width>600</width>
+      <height>334</height>
+      <textcolor>ffFFFFFF</textcolor>
+      <seperator>-----------------------------------------------------------------------------------</seperator>
+      <font>mediastream11</font>
+      <label>#OnlineVideos.Details.Actors</label>
+      <scrollStartDelaySec>12</scrollStartDelaySec>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+string.equals(#OnlineVideos.Details.Plot ,)+!string.equals(#OnlineVideos.Details.Actors,)</visible>
+    </control>
+   
     <control Style="smallTitleB">
       <description>Release Date Label</description>
       <id>0</id>
