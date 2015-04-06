@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <controls>
+    <!-- Bitrate Label -->
+    <control>
+      <description>Bitrate</description>
+      <type>label</type>
+      <id>0</id>
+      <width>124</width>
+      <posX>303</posX>
+      <posY>979</posY>
+      <textalign>center</textalign>
+      <font>mediastream10</font>
+      <label>#Play.Current.TSBitRate Mbit/s</label>
+      <!-- check if new properties are available i.e. MP 1.11+ -->
+      <visible>string.equals(#StreamedMP.MediaInfo.Type,Textual)+[string.equals(#TV.TuningDetails.FreeToAir,false)|string.equals(#TV.TuningDetails.FreeToAir,true)]</visible>
+    </control>
+    <control>
+      <type>group</type>
+      <description>MediaInfo logos</description>
+      <posX>285</posX>
+      <posY>971</posY>
+      <dimColor>ffffffff</dimColor>
+      <layout>StackLayout(1, Horizontal, true)</layout>
+      <visible>string.equals(#TV.TuningDetails.FreeToAir,false)|string.equals(#TV.TuningDetails.FreeToAir,true)</visible>
+        <!-- Bitrate -->
+        <control>
+          <description>Bitrate</description>
+          <type>image</type>
+          <id>0</id>
+          <width>150</width>
+          <height>48</height>
+          <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\blank.png</texture>
+          <visible>string.equals(#StreamedMP.MediaInfo.Type,Textual)</visible>
+        </control>
+        <!-- Video Resolutions / Aspect Ratio-->
+        <control>
+          <description>720p, 1080i, 1080p</description>
+          <type>image</type>
+          <id>9997</id>
+          <width>150</width>
+          <height>48</height>
+          <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#Play.Current.VideoResolution.png</texture>
+          <visible>Control.HasThumb(9997)</visible>
+        </control>
+        <control>
+          <description>SD/HD Fullscreen/Widescreen</description>
+          <type>image</type>
+          <id>0</id>
+          <width>150</width>
+          <height>48</height>
+          <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#Play.Current.VideoResolution #Play.Current.AspectRatio.png</texture>
+          <visible>!Control.HasThumb(9997)</visible>
+        </control>
+        <!-- Video Codecs -->
+        <control>
+          <description>Video Codecs</description>
+          <type>image</type>
+          <id>0</id>
+          <width>150</width>
+          <height>48</height>
+          <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Video\#Play.Current.VideoCodec.Texture.png</texture>
+        </control>
+        <!-- Audio Channels / Codecs -->
+        <control>
+          <description>Audio Channels / Codecs</description>
+          <type>image</type>
+          <id>9998</id>
+          <width>150</width>
+          <height>48</height>
+          <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#Play.Current.AudioCodec.Texture #Play.Current.AudioChannels.png</texture>
+          <visible>Control.HasThumb(9998)</visible>
+        </control>
+        <control>
+          <description>Audio Codecs - Unknown number of channels</description>
+          <type>image</type>
+          <id>9998</id>
+          <width>150</width>
+          <height>48</height>
+          <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Audio\#Play.Current.AudioCodec.Texture.png</texture>
+          <visible>!Control.HasThumb(9998)</visible>
+        </control>
+        <!-- Free To Air -->
+        <control>
+          <description>FTA</description>
+          <type>image</type>
+          <id>0</id>
+          <width>150</width>
+          <height>48</height>
+          <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\FTA.png</texture>
+          <visible>string.equals(#TV.TuningDetails.FreeToAir,true)</visible>
+        </control>
+        <!-- Teletext -->
+        <control>
+          <description>Teletext</description>
+          <type>image</type>
+          <id>0</id>
+          <width>150</width>
+          <height>48</height>
+          <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\Teletext.png</texture>
+          <visible>string.equals(#TV.View.HasTeletext,true)</visible>
+        </control>
+        <!-- Subtitles -->
+        <control>
+          <description>Subtitles</description>
+          <type>image</type>
+          <id>0</id>
+          <width>150</width>
+          <height>48</height>
+          <texture>Logos\MediaInfo\#StreamedMP.MediaInfo.Type\Misc\Subtitles.png</texture>
+          <visible>string.equals(#Play.Current.HasSubtitles,true)</visible>
+        </control>
+      </control>
+  </controls>
+</window>
+<!--Checksum:da965419b3c16b23e66f9c6647ff622c-->
