@@ -11,42 +11,42 @@
   <string name="#StreamedMP.RefreshTime">397</string>
   <string name="#StreamedMP.Minutes">3004</string>
   <!--Menu Options-->
-  <string name="MusicMenu">Nastavení Hudby</string>
-  <string name="VideoMenu">Nastavení Videa</string>
-  <string name="SkinUpdate">Aktualizace Skinu</string>
-  <string name="TVSeriesMenu">Nastavení TVSeries</string>
+  <string name="MusicMenu">Nastavení hudby</string>
+  <string name="VideoMenu">Nastavení videa</string>
+  <string name="SkinUpdate">Aktualizace vzhledu</string>
+  <string name="TVSeriesMenu">Nastavení seriálů</string>
   <string name="MovingPicturesMenu">Nastavení MovingPictures</string>
   <string name="TVMenu">Nastavení TV</string>
-  <string name="MiscMenu">Ostatní Nastavení</string>
-  <string name="SkinSettings">Nastavení Skinu</string>
-  <string name="SkinMenu">Skin</string>
-  <string name="SkinInfoText">Informace o Skinu</string>
+  <string name="MiscMenu">Ostatní nastavení</string>
+  <string name="SkinSettings">Nastavení vzhledu</string>
+  <string name="SkinMenu">Vzhled SteamedMP</string>
+  <string name="SkinInfoText">Informace o vzhledu</string>
   <string name="ConfigRequiresRestartLine1">Následující nastavení se projeví</string>
   <string name="ConfigRequiresRestartLine2">až při příštím spuštění MediaPortalu.</string>
-  <string name="ConfigRequiresRestartLine3">Would you like to restart now?</string>
+  <string name="ConfigRequiresRestartLine3">Chcete restartovat nyní?</string>
   <!--Skin Updates / Patching GUI-->
   <string name="UpdateInstall">Aktualizace a Instalace</string>
   <string name="NoUpdatesAvailable">Nejsou k dispozici žádné aktualizace</string>
   <string name="DownloadingPatch">Stahování aktualizace: {0}</string>
   <string name="DownloadingProgress">Staženo {0}KB z {1}KB ({2}%)</string>
   <string name="NumPatchesInstalled">Počet nainstalovaných aktualizací: {0}</string>
-  <string name="PatchUpdateComplete">Aktualizace verze Skinu: {0} Complete</string>
+  <string name="PatchUpdateComplete">Aktualizace verze vzhledu: Hotovo {0}</string>
   <string name="UpdateAvailableHeading">Aktualizace k dispozici - seznam změn</string>
   <string name="mupdateheader">Instalátor aktualizace stažen na plochu</string>
   <string name="mupdateline1">Je vyžadován manuální upgrade - pro pokračování</string>
   <string name="mupdateline2">zavřete MediaPortal a Konfiguraci</string>
-  <string name="mupdateline3">a spusťte:  {0}</string>
+  <string name="mupdateline3">a spusťte: {0}</string>
   <string name="mupdateline4">který naleznete na ploše.</string>
   <!--Plugin Options-->
-  <string name="MinVideoOSD">Použít zmenšený Video OSD při pauze</string>
-  <string name="VideoWallpaperLabel">Video Tapety</string>
+  <string name="MinVideoOSD">Při pauze použít zmenšený OSD videa</string>
+  <string name="VideoWallpaperLabel">Tapety videa</string>
   <!--Music Options-->
-  <string name="CDCover">Zobrazit obal CDp pouze v Music Now Playing</string>
-  <string name="ShowEQ">Zobrazit ekvalizér v Music Now Playing</string>
-  <string name="NowPlayingStyles">Styly Now Playing obrazovky</string>
+  <string name="CDCover">Zobrazit obal CD pouze v Právě hraje u hudby</string>
+  <string name="ShowEQ">Zobrazit ekvalizér v Právě hraje u hudby</string>
+  <string name="NowPlayingStyles">Styly obrazovky Právě hraje</string>
   <!--TVSeries Configuration-->
-  <string name="FanartStyle">Fanart Styly</string>
-  <string name="WideBanners">Široké Bannery</string>
+  <string name="FanartStyle">Styly pozadí</string>
+  <string name="WideBanners">Široké poutače</string>
   <string name="WideBannerDefault">výchozí</string>
   <string name="WideBanner5x2Grid">5x2 mřížka s plakátem</string>
   <string name="WideBanner5x3Grid">5x3 mřížka</string>
@@ -57,6 +57,7 @@
   <string name="ThumbnailDefault">výchozí</string>
   <string name="Thumbnail_12x4_8x3_Grid">12x4 malé ikony, 8x3 velké ikony</string>
   <string name="Thumbnail_12x3_8x2_Grid">12x3 malé ikony, 8x2 velké ikony + info</string>
+  <string name="ShowTaglineInDetailsSummary">Zobrazit slogan ve shrnutí</string>
   <!--TV Configuration-->
   <string name="TVGuideSize">Velikost TV programu</string>
   <string name="TVMiniGuideSize">Velikost Mini TV programu</string>
@@ -68,56 +69,65 @@
   <string name="TVMiniGuideFiveRows">Mini TV program: 5 řádků</string>
   <string name="TVMiniGuideSevenRows">Mini TV program: 7 řádků</string>
   <string name="TVMiniGuideNineRows">Mini TV program: 9 řádků</string>
-  <string name="EnableRandomTVSeriesFanartInMyTV">Povolit náhodný seriálový Fanart</string>
+  <string name="EnableRandomTVSeriesFanartInMyTV">Povolit náhodné pozadí seriálu</string>
   <!--Misc Settings-->
   <string name="ShowHiddenMenuImage">Zobrazit skryté obrázky menu</string>
   <string name="ShowRoundedPosters">Zobrazit kulaté obrázky plakátů</string>
-  <string name="ShowIconsInArtwork">Zobrazit ikonu Shlédnuto/Neshlédnuto v obrázku</string>
-  <string name="PlayMostRecents">Povolit funkci Přehrát pro Poslední Přidané</string>
-  <string name="FilterWatchedRecents">Filtrovat shlédnuté v Posledních Přidaných</string>
-  <string name="UnfocusedAlpha">Transparency/Opacity Settings</string>
-  <string name="UnfocusedAlphaMenuLists">Unfocused Alpha on List Layouts: {0}</string>
-  <string name="UnfocusedAlphaMenuThumbs">Unfocused Alpha on Thumb Layouts: {0}</string>
-  <string name="UnfocusedAlphaInvalidLine1">Invalid value entered, please enter a value</string>
-  <string name="UnfocusedAlphaInvalidLine2">between 0 - 255.</string>
-  <string name="UnfocusedAlphaInvalidLine3">Opaque = 255, Transparent = 0</string>
-  <string name="UseLargeFonts">Use Large Fonts</string>
-  <string name="RestoreDefaults">Restore Defaults</string>
-  <string name="ListColors">Set List Colors</string>
-  <string name="ListDefaultColor">Default Color: {0}</string>
-  <string name="ListText2Color">Text 2 Color: {0}</string>
-  <string name="ListText3Color">Text 3 Color: {0}</string>
-  <string name="ListWatchedColor">Watched Color: {0}</string>
-  <string name="ListRemoteColor">Remote Color: {0}</string>
-  <string name="ListColorInvalidLine1">Invalid color code entered, please enter a</string>
-  <string name="ListColorInvalidLine2">valid HEX code e.g. the color red is FF0000.</string>
-  <string name="ListColorInvalidLine3">which is \'255\' red, \'0\' green, and \'0\' blue.</string>
-  <string name="CustomColor">Custom Color</string>
+  <string name="ShowIconsInArtwork">Zobrazit ikonu Zhlédnuto/Nezhlédnuto v obrázku</string>
+  <string name="PlayMostRecents">Povolit funkci Přehrát pro Poslední přidané</string>
+  <string name="FilterWatchedRecents">Filtrovat zhlédnuté v Posledních přidaných</string>
+  <string name="UnfocusedAlpha">Nastavení Průhlednosti/Překrytí</string>
+  <string name="UnfocusedAlphaMenuLists">Alfa rozostření u rozložení seznamů: {0}</string>
+  <string name="UnfocusedAlphaMenuThumbs">Alfa rozostření u rozložení náhledů: {0}</string>
+  <string name="UnfocusedAlphaInvalidLine1">Zadána neplatná hodnota, prosím zadejte hodnotu</string>
+  <string name="UnfocusedAlphaInvalidLine2">mezi 0 - 255.</string>
+  <string name="UnfocusedAlphaInvalidLine3">Překrytí = 255, Průhlednost = 0</string>
+  <string name="UseLargeFonts">Použít velké fonty</string>
+  <string name="RestoreDefaults">Obnovit výchozí</string>
+  <string name="ListColors">Nastavit barvy seznamu</string>
+  <string name="ListDefaultColor">Výchozí barva: {0}</string>
+  <string name="ListText2Color">Barva 2 textu: {0}</string>
+  <string name="ListText3Color">Barva 3 textu: {0}</string>
+  <string name="ListWatchedColor">Barva Prohlédnuto: {0}</string>
+  <string name="ListRemoteColor">Barva ovladače: {0}</string>
+  <string name="ListColorInvalidLine1">Zadána neplatná hodnota barvy, zadejte prosím</string>
+  <string name="ListColorInvalidLine2">platný HEX kód např. červená je FF0000.</string>
+  <string name="ListColorInvalidLine3">což znamená \'255\' červená, \'0\' zelená, a \'0\' modrá.</string>
+  <string name="CustomColor">Vlastní barva</string>
+  <string name="ShowListScrollingPopup">Zobrazit okno posunu seznamu</string>
+  <string name="Scraper">Scraper</string>
+  <string name="TextualMediaInfoLogos">Textové popisky informací o médiích</string>
+  <string name="MyVideoWatchedProgress">Zobrazit indikátor postupu v seznamu mých videí</string>
   <!--General Translations-->
   <string name="Rated">Hodnocení</string>
   <string name="Director">Režisér</string>
   <string name="ReleaseDate">Datum vydání</string>
   <string name="Runtime">Délka</string>
   <string name="Votes">hlasů</string>
-  <string name="Trailer">Trailer</string>
+  <string name="Trailer">Upoutávka</string>
+  <string name="Views">Zobrazení</string>
+  <string name="Locked">Zamčeno</string>
+  <string name="DSTStart">Východ slunce</string>
+  <string name="DSTEnd">Západ slunce</string>
   <!--Global Search-->
   <string name="SearchMusic">Najít hudbu</string>
   <string name="SearchPhrase">Fráze</string>
-  <string name="SearchHistory">Historie Hledání</string>
+  <string name="SearchHistory">Historie hledání</string>
   <string name="SearchFields">Pole k hledání</string>
   <string name="SearchType">Typ hledání</string>
   <string name="CaseSensitive">Rozlišovat velikost písmen</string>
   <!--Recently Added / Watched-->
-  <string name="LatestEpisodes">Poslední Episody</string>
-  <string name="LatestMovies">Poslední Filmy</string>
+  <string name="LatestEpisodes">Poslední episody</string>
+  <string name="LatestMovies">Poslední filmy</string>
   <string name="LatestTVRecordings">Poslední TV nahrávky</string>
   <string name="LatestMusic">Poslední hudba</string>
-  <string name="RecentlyWatched">Poslední shlédnuté</string>
+  <string name="LatestMusicVideos">Poslední hudební videa</string>
+  <string name="RecentlyWatched">Poslední zhlédnuté</string>
   <string name="RecordedOn">Nahráno:</string>
   <!--MediaPortal Exit Buttons-->
   <string name="MediaPortalExit">Vypnout MediaPortal</string>
   <string name="MediaPortalRestart">Restartovat MediaPortal</string>
-  <string name="MediaPortalShutDownMenu">Vypínací menu</string>
+  <string name="MediaPortalShutDownMenu">Možnosti vypnutí</string>
   <string name="MediaPortalRestartMessage">Opravdu chcete restartovat MediaPortal?</string>
-  <string name="MediaPortalSettings">MediaPortal Settings</string>
+  <string name="MediaPortalSettings">Možnosti MediaPortal</string>
 </resources>
