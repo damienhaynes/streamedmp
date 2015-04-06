@@ -128,7 +128,7 @@
       <posX>345</posX>
       <posY>810</posY>
       <width>1230</width>
-      <height>163</height>
+      <height>130</height>
       <seperator>__________________________________________________________________________________________________________________________________________________________________________________________</seperator>
       <label>#TV.View.description</label>
       <font>mediastream12</font>
@@ -140,11 +140,26 @@
       <width>1350</width>
       <height>36</height>
       <posX>292</posX>
-      <posY>982</posY>
+      <posY>937</posY>
       <font>mediastream12tc</font>
       <textcolor>ff888888</textcolor>
       <label>#StreamedMP.Next #TV.Next.title ( #TV.Next.start - #TV.Next.stop )</label>
-      <visible>!string.equals(#TV.Next.title,)</visible>
+      <!-- check if new properties are available i.e. MP 1.11+ -->
+      <visible>!string.equals(#TV.Next.title,)+[string.equals(#TV.TuningDetails.FreeToAir,false)|string.equals(#TV.TuningDetails.FreeToAir,true)]</visible>
+    </control>
+    <control>
+      <description>On TV NEXT</description>
+      <id>0</id>
+      <type>label</type>
+      <width>1350</width>
+      <height>36</height>
+      <posX>292</posX>
+      <posY>980</posY>
+      <font>mediastream12tc</font>
+      <textcolor>ff888888</textcolor>
+      <label>#StreamedMP.Next #TV.Next.title ( #TV.Next.start - #TV.Next.stop )</label>
+      <!-- check if new properties are available i.e. MP 1.11+ -->
+      <visible>!string.equals(#TV.Next.title,)+![string.equals(#TV.TuningDetails.FreeToAir,false)|string.equals(#TV.TuningDetails.FreeToAir,true)]</visible>
     </control>
     <control>
       <description>Progress Bar Background</description>
@@ -789,6 +804,7 @@
       <keepaspectratio>yes</keepaspectratio>
     </control>
     <import>common.player.xml</import>
+    <import>TVOSD.mediainfo.xml</import>
   </controls>
 </window>
 <!--Checksum:ee22851474f806735e290c35ba2ea112-->
