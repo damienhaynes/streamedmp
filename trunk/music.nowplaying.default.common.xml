@@ -59,24 +59,9 @@
         <textureNoFocus>listbg_nf.png</textureNoFocus>
       </control>
       <control>
-        <id>5102</id>
-        <description>Top Album Tracks button</description>
-        <type>button</type>
-        <posX>975</posX>
-        <posY>352</posY>
-        <width>397</width>
-        <height>38</height>
-        <label>33030</label>
-        <textYOff>1</textYOff>
-        <textureFocus>listbg_fo.png</textureFocus>
-        <textureNoFocus>listbg_nf.png</textureNoFocus>
-      </control>
-      <control>
         <id>5103</id>
-        <description>Tagged Tracks button</description>
+        <description>Similar Tracks button</description>
         <type>button</type>
-        <posX>975</posX>
-        <posY>352</posY>
         <width>397</width>
         <height>38</height>
         <label>33011</label>
@@ -436,39 +421,7 @@
       </subitems>
       <animation effect="Fade" time="800">WindowOpen</animation>
       <animation effect="Fade" time="300">WindowClose</animation>
-    </control>
-    <control>
-      <id>0</id>
-      <description>list of top album tracks label</description>
-      <type>fadelabel</type>
-      <visible>Control.HasFocus(5102) | Control.HasFocus(166)</visible>
-      <posX>300</posX>
-      <posY>787</posY>
-      <width>940</width>
-      <font>mediastream16tc</font>
-      <textcolor>ffffffff</textcolor>
-      <label>33030</label>
-      <animation effect="Fade" time="800">WindowOpen</animation>
-      <animation effect="Fade" time="300">WindowClose</animation>
-    </control>
-    <control>
-      <id>166</id>
-      <description>list of top album tracks</description>
-      <type>listcontrol</type>
-      <onleft>166</onleft>
-      <onright>5102</onright>
-      <onup>166</onup>
-      <ondown>166</ondown>
-      <visible>Control.HasFocus(5102) | Control.HasFocus(166)</visible>
-      <posX>337</posX>
-      <posY>832</posY>
-      <width>750</width>
-      <height>315</height>
-      <animation effect="Fade" time="800">WindowOpen</animation>
-      <animation effect="Fade" time="300">WindowClose</animation>
-      <textureHeight>48</textureHeight>
-      <textYOff>6</textYOff>
-    </control>
+    </control>    
     <control>
       <id>0</id>
       <description>list of tagged tracks label</description>
