@@ -424,7 +424,7 @@
     </control>    
     <control>
       <id>0</id>
-      <description>list of tagged tracks label</description>
+      <description>Similar Tracks label</description>
       <type>fadelabel</type>
       <visible>Control.HasFocus(5103) | Control.HasFocus(155)</visible>
       <posX>300</posX>
@@ -442,7 +442,7 @@
     </control>
     <control>
       <id>155</id>
-      <description>list of tagged tracks</description>
+      <description>Similar Tracks</description>
       <type>listcontrol</type>
       <onleft>155</onleft>
       <onright>5103</onright>
@@ -453,9 +453,10 @@
       <posY>832</posY>
       <width>750</width>
       <height>315</height>
-      <textXOff2>800</textXOff2>
+      <textXOff2>730</textXOff2>
       <textureHeight>48</textureHeight>
-      <textYOff>6</textYOff>
+      <textYOff>4</textYOff>
+      <textYOff2>4</textYOff2>
       <animation effect="Fade" time="200">WindowOpen</animation>
       <animation effect="Fade" time="200">WindowClose</animation>
     </control>
