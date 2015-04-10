@@ -102,7 +102,6 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)</visible>
     </control>
-    
     <control>
       <description>Summary/Actors</description>
       <type>textboxscrollup</type>
@@ -156,7 +155,6 @@
       <animation effect="fade" time="250">WindowClose</animation>
       <visible>string.equals(#OnlineVideos.state,details)+string.equals(#OnlineVideos.selectedSiteUtil,IMDB)+string.equals(#OnlineVideos.Details.Plot ,)+!string.equals(#OnlineVideos.Details.Actors,)</visible>
     </control>
-   
     <control Style="smallTitleB">
       <description>Release Date Label</description>
       <id>0</id>
@@ -291,4 +289,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:78320bfe6241d456edfb2c8631e15650-->
+<!--Checksum:8cb11b8034efe3755a937c3aab7776b9-->

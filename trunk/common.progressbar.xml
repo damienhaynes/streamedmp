@@ -29,7 +29,7 @@
       <label>-</label>
       <visible>no</visible>
     </control>
-	<control>
+    <control>
       <type>image</type>
       <id>105</id>
       <posX>295</posX>
@@ -52,37 +52,32 @@
       <righttexture>osdprogressright.png</righttexture>
       <visible>window.isosdvisible|window.ispauseosdvisible|player.rewinding|player.forwarding|control.isvisible(10)|player.seeking</visible>
     </control>
-	<control>
-		<description>Progress Bar</description>
-		<type>tvprogress</type>
-		<id>105</id>
-		<posX>305</posX>
-		<posY>1029</posY>
-		<width>1322</width>
-        <!--height>15</height-->
-        <toptexture>osd_progress_indicatorTV.png</toptexture>
-        <TextureOffsetY>16</TextureOffsetY>
-        <bottomtexture>-</bottomtexture>
-        <texturetick>-</texturetick>
-        <!--lefttexture>osdprogressleft.png</lefttexture-->
-        <midtexture>-</midtexture>
-        <righttexture>-</righttexture>
-        <logotexture>-</logotexture>
-        <fillbackgroundtexture>-</fillbackgroundtexture>
-        <fillbgxoff>-3</fillbgxoff>
-        <fillbgyoff>0</fillbgyoff>
-        <!--filltexture1>osd_progress_mid_red.png</filltexture1>
-        <filltexture2>osd_progress_mid_green.png</filltexture2>
-        <filltexture3>osd_progress_mid_orange.png</filltexture3-->
-        <markertexture>osdprogressmid_sepia.jpg</markertexture>
-		<fillheight>6</fillheight>
-		<label>#percentage</label>
-		<label1>#percent2</label1>
-		<label2>#percent3</label2>
-		<labelmarkerstarts>#jumppoints</labelmarkerstarts>
-		<labelmarkerends>#chapters</labelmarkerends>
-		<visible>window.isosdvisible|window.ispauseosdvisible|player.rewinding|player.forwarding|control.isvisible(10)|player.seeking</visible>
-	</control>
+    <control>
+      <description>Progress Bar</description>
+      <type>tvprogress</type>
+      <id>105</id>
+      <posX>305</posX>
+      <posY>1029</posY>
+      <width>1322</width>
+      <toptexture>osd_progress_indicatorTV.png</toptexture>
+      <TextureOffsetY>16</TextureOffsetY>
+      <bottomtexture>-</bottomtexture>
+      <texturetick>-</texturetick>
+      <midtexture>-</midtexture>
+      <righttexture>-</righttexture>
+      <logotexture>-</logotexture>
+      <fillbackgroundtexture>-</fillbackgroundtexture>
+      <fillbgxoff>-3</fillbgxoff>
+      <fillbgyoff>0</fillbgyoff>
+      <markertexture>osdprogressmid_sepia.jpg</markertexture>
+      <fillheight>6</fillheight>
+      <label>#percentage</label>
+      <label1>#percent2</label1>
+      <label2>#percent3</label2>
+      <labelmarkerstarts>#jumppoints</labelmarkerstarts>
+      <labelmarkerends>#chapters</labelmarkerends>
+      <visible>window.isosdvisible|window.ispauseosdvisible|player.rewinding|player.forwarding|control.isvisible(10)|player.seeking</visible>
+    </control>
     <control>
       <description>Start Time Info</description>
       <type>label</type>
@@ -109,4 +104,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:c67fe37be3f27c837211dcd296b5f248-->
+<!--Checksum:a3e8d630a0586a5c34230a51c12e85e0-->
