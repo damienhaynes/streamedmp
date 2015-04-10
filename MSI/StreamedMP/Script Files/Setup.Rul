@@ -94,16 +94,17 @@
 // Version Defines
 #define MEDIAPORTAL_MINNOWARN_VERSION				"1.6.100.0" 	// 1.7.0 Pre
 #define MEDIAPORTAL_MIN_VERSION						"1.6.100.0"		// 1.7.0 Pre
-                           
-#define TVSERIES_MIN_VERSION						"4.0.2.2072"
-#define MOVINGPICTURES_MIN_VERSION					"1.7.2.1582"
-#define FANARTHANDLER_MIN_VERSION					"3.1.0.0"
-#define LATESTMEDIAHANDLER_MIN_VERSION				"1.6.2.0"
-#define MYLYRICS_MIN_VERSION						"1.9.5.262"
+                                                                            
+#define TVSERIES_MIN_VERSION						"4.1.0.2089"
+#define MOVINGPICTURES_MIN_VERSION					"1.8.0.1607"
+#define FANARTHANDLER_MIN_VERSION					"4.0.1.195"
+#define LATESTMEDIAHANDLER_MIN_VERSION				"2.1.0.22"
+#define MYLYRICS_MIN_VERSION						"2.1.1.284"
 #define GLOBALSEARCH_MIN_VERSION					"2.0.0.73"
-#define INFOSERVICE_MIN_VERSION						"1.7.2.248"
-#define TRAKT_MIN_VERSION							"4.0.1.0"    
-#define WEATHER_MIN_VERSION							"1.4.1.0"
+#define INFOSERVICE_MIN_VERSION						"1.7.3.249"
+#define TRAKT_MIN_VERSION							"5.2.0.0"    
+#define WEATHER_MIN_VERSION							"1.6.9.0"  
+#define TRAILERS_MIN_VERSION						"1.2.0.0"
 
 
 // XML Path Defines
@@ -2527,6 +2528,9 @@ begin
             
         case "TRAKT": 
             szFileName = g_sPluginsDir^"windows\\TraktPlugin.dll"; 
+        
+        case "TRAILERS": 
+            szFileName = g_sPluginsDir^"windows\\Trailers.dll";
             
         case "WORLDWEATHER": 
             szFileName = g_sPluginsDir^"windows\\WorldWeather.dll";   
@@ -2775,7 +2779,23 @@ begin
 	    	endif;
 	    endif;
     endif;
-
+           
+    if (!FeatureIsItemSelected(MEDIA,"Plugins\\Trailers")) then
+		// Check that compatible version of plugin is used
+		if GetFileVersion(svVersion2,"TRAILERS") = 0 then
+			svVersion1 = TRAILERS_MIN_VERSION;
+	    	if VerCompare(svVersion1, svVersion2, VERSION) = 0 then
+		    	if nReturn < 0 then
+		    		szQuestion = szQuestion + "\n\n";
+		    	endif;
+		    	szQuestion = szQuestion + "Your current version of Trailers plugin v" + svVersion2 + 
+		    				" is not supported by StreamedMP. Its recommended that you select this feature to upgrade to v" +
+		    				svVersion1;
+		        nReturn = nReturn - 1;
+	    	endif;
+	    endif;
+    endif;
+    
     if nReturn < 0 then
     	szQuestion = szQuestion + "\n\nDo you wish to go back to the select features dialog?";
     endif;

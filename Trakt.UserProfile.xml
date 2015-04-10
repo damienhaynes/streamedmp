@@ -331,7 +331,7 @@
       <posY>433</posY>
       <height>50</height>
       <width>106</width>
-      <keepaspectratio>yes</keepaspectratio>      
+      <keepaspectratio>yes</keepaspectratio>
       <visible>string.equals(#Trakt.User.VIP,True)+!string.equals(#Trakt.User.Protected,True)</visible>
       <texture>traktVIP.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -344,7 +344,7 @@
       <posY>433</posY>
       <height>50</height>
       <width>106</width>
-      <keepaspectratio>yes</keepaspectratio>      
+      <keepaspectratio>yes</keepaspectratio>
       <visible>string.equals(#Trakt.User.Protected,True)+!string.equals(#Trakt.User.VIP,True)</visible>
       <texture>traktPrivate.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -357,7 +357,7 @@
       <posY>433</posY>
       <height>50</height>
       <width>212</width>
-      <keepaspectratio>yes</keepaspectratio>      
+      <keepaspectratio>yes</keepaspectratio>
       <visible>string.equals(#Trakt.User.Protected,True)+string.equals(#Trakt.User.VIP,True)</visible>
       <texture>traktVIPPrivate.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -821,4 +821,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:22aec6c3a3ee3cc7f3f5a65a2d5e5b31-->
+<!--Checksum:9462a2c169549b15df3aa6c6a3990879-->

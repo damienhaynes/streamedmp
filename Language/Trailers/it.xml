@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--A-->
+  <!--B-->
+  <string name="BufferingTrailer">Bufferizzazione trailer...</string>
+  <!--C-->
+  <!--D-->
+  <!--E-->
+  <string name="Error">Errore trailers</string>
+  <!--F-->
+  <!--G-->
+  <string name="GettingTrailers">Ricezione trailers</string>
+  <string name="GettingTrailerUrls">Ricezione URLs trailer</string>
+  <!--H-->
+  <!--I-->
+  <string name="IMDbTrailers">Trailers da IMDb</string>
+  <string name="ITunesTrailers">Trailers da iTunes</string>
+  <!--J-->
+  <!--K-->
+  <!--L-->
+  <string name="Language">Lingua</string>
+  <string name="Local">Locale</string>
+  <!--M-->
+  <string name="MultiSelectDialog">Finestra di selezione multipla</string>
+  <!--N-->
+  <string name="No">No</string>
+  <string name="NoTrailersFound">Nessun trailer trovato!</string>
+  <!--O-->
+  <string name="Off">Off</string>
+  <string name="OK">OK</string>
+  <string name="On">On</string>
+  <string name="Online">Online</string>
+  <string name="OnlineVideosNotInstalled">Il pluing Online Videos è necessario per la riproduzione dei trailers.
+Assicurati che sia installato ed abilitato.</string>
+  <!--P-->
+  <string name="Play">Riproduci</string>
+  <!--R-->
+  <!--S-->
+  <string name="Search">Cerca</string>
+  <string name="SettingPluginEnabledName">Plugin abilitato</string>
+  <string name="SettingPluginEnabledDescription">Questa voce abilita il caricamento del plugin con MediaPortal.</string>
+  <string name="SettingListedHomeName">Mostra in Home</string>
+  <string name="SettingListedHomeDescription">Questa voce abilita la visualizzazione del plugin nella schermata principale.</string>
+  <string name="SettingListedPluginsName">Mostra in My Plugins.</string>
+  <string name="SettingListedPluginsDescription">Questa voce abilita la visualizzazione del plugin nella schermata dei plugins.</string>
+  <string name="SettingWebMaxRetriesName">Numero massimo tentativi per richieste via web</string>
+  <string name="SettingWebMaxRetriesDescription">Numero massimo tentativi per effettuare ripetute richieste via web nel caso in cui un tentativo fallisce.</string>
+  <string name="SettingWebTimeoutName">Timeout richiesta via web</string>
+  <string name="SettingWebTimeoutDescription">Tempo massimo di attesa risposta da un richiesta via web.</string>
+  <string name="SettingWebTimeoutIncrementName">Attesa tra tentativi di richieste via web</string>
+  <string name="SettingWebTimeoutIncrementDescription">Tempo di attesa prima di ripetere una richiesta via web fallita.</string>
+  <string name="SettingProviderLocalSearchName">Abilita le cartelle locali come sorgente per i trailer</string>
+  <string name="SettingProviderLocalSearchDescription">Verranno cercati i trailers nelle cartelle dei tuoi dischi locali. I trailers possono essere memorizzati sia nella cartella corrente per i media oppure in cartelle dedicate.</string>
+  <string name="SettingProviderTMDbMoviesName">Abilita theMovieDb come sorgente per i trailer</string>
+  <string name="SettingProviderTMDbMoviesDescription">TheMovieDb fornirà una lista di trailers/featurettes, clips e teaser per il film specificato. E\' la sorgente da preferire per la ricerca online dei trailers.</string>
+  <string name="SettingProviderOnlineVideoSearchName">Abilita OnlineVideos come sorgente per i trailer</string>
+  <string name="SettingProviderOnlineVideoSearchDescription">OnlineVideos agisce come una riserva, che consente una ricerca manuale se non sono stati trovati trailer online o in locale.</string>
+  <string name="SettingSearchLocalInCurrentMediaFolderName">Cerca i trailers locali nella cartella corrente</string>
+  <string name="SettingSearchLocalInCurrentMediaFolderDescription">Abilita la ricerca dei trailers nella cartella corrente per i media, tipicamente il nome del file dovrebbe contenere il titolo del film e il termine \'trailer\'.</string>
+  <string name="SettingSearchLocalInSubFolderName">Cerca i trailers locali nella sotto-cartella corrente</string>
+  <string name="SettingSearchLocalInSubFolderDescription">Abilita la ricerca dei trailers in una lista di sotto-cartelle dedicate della cartella corrente per i media, ad esempio nella sotto-cartella \'Trailer\'.</string>
+  <string name="SettingSearchLocalInDedicatedDirectoryName">Cerca i trailers locali in cartelle dedicate</string>
+  <string name="SettingSearchLocalInDedicatedDirectoryDescription">Abilita la ricerca dei trailers in una lista di sotto-cartelle dedicate, quindi fuori dal percorso della cartella corrente per i media.</string>
+  <string name="SettingOnlineVideosYouTubeEnabledName">Abilita la ricerca manuale in YouTube</string>
+  <string name="SettingOnlineVideosYouTubeEnabledDescription">YouTube è probabilmente il sito migliore per eseguire una ricerca manuale con OnlineVideos, sono disponibili molti trailers e di buona qualità.</string>
+  <string name="SettingOnlineVideosITunesEnabledName">Abilita la ricerca manuale in iTunes</string>
+  <string name="SettingOnlineVideosITunesEnabledDescription">iTunes Movie Trailer è un sito dedicato per i trailers, ci sono buone possibilità di trovare film recenti.</string>
+  <string name="SettingOnlineVideosIMDbEnabledName">Abilita la ricerca manuale in IMDb</string>
+  <string name="SettingOnlineVideosIMDbEnabledDescription">iIMDb Movie Trailer è un sito dedicato per i trailers, ci sono buone possibilità di trovare film recenti e anche di trovare il trailer corretto usando l\'identificativo IMDb.</string>
+  <string name="SettingSearchLocalAggressiveSearchName">Abilita la ricerca trailers aggressiva per le cartelle locali</string>
+  <string name="SettingSearchLocalAggressiveSearchDescription">La ricerca aggressiva continuerà a cercare trailers con i vari metodi di ricerca locali abilitati anche quando non sia già stata trovata una corrispondenza (o più). Questa impostazione non è necessaria se non si hanno trailers per lo stesso film sparsi in più cartelle.</string>
+  <string name="SettingSkipOnlineProvidersIfLocalFoundName">Salta la ricerca online, se trovato un trailer in locale</string>
+  <string name="SettingSkipOnlineProvidersIfLocalFoundDescription">Se trovato un trailer in locale, viene immediatamente riprodotto/mostrato il risultato oppure si continua con la ricerca online per presentare entrambi i risultati.</string>
+  <string name="SettingAutoPlayOnSingleLocalOrOnlineTrailerName">Riproduzione automatica singoli trailer</string>
+  <string name="SettingAutoPlayOnSingleLocalOrOnlineTrailerDescription">Si effettua la riproduzione automatica nel caso in cui venga trovato un unico trailer, in locale o online. Se disabilitata (impostazione predefinita) verrà mostrato un menù dei risultati che include la ricerca manuale.</string>
+  <string name="SettingAutoDownloadTrailersMovingPicturesName">Abilita il download automatico dei trailers  per MovingPictures</string>
+  <string name="SettingAutoDownloadTrailersMovingPicturesDescription">Abilita il download automatico dei trailers per i film del plugin MovingPictures.</string>
+  <string name="SettingAutoDownloadTrailersMyFilmsName">Abilita il download automatico dei trailers  per MyFilms</string>
+  <string name="SettingAutoDownloadTrailersMyFilmsDescription">Abilita il download automatico dei trailers per i film del plugin MyFilms.</string>
+  <string name="SettingAutoDownloadTrailersMyVideosName">Abilita il download automatico dei trailers  per MyVideos</string>
+  <string name="SettingAutoDownloadTrailersMyVideosDescription">Abilita il download automatico dei trailers per i film del plugin MyVideos.</string>
+  <string name="SettingAutoDownloadStartDelayName">Ritardo per auto-download</string>
+  <string name="SettingAutoDownloadStartDelayDescription">Imposta il ritardo all\'avvio, prima di verificare se ci sono nuovi trailers da scaricare per i tuoi plugins.</string>
+  <string name="SettingAutoDownloadIntervalName">Intervallo per auto-download</string>
+  <string name="SettingAutoDownloadIntervalDescription">Imposta l\'intervallo di verifica di nuovi trailers da scaricare per i tuoi plugins.</string>
+  <string name="SettingAutoDownloadUpdateIntervalName">Intervallo di aggiornamento per auto-download</string>
+  <string name="SettingAutoDownloadUpdateIntervalDescription">Imposta l\'intervallo per riverificare la presenza di trailers per film non trovati in precedenza.</string>
+  <string name="SettingAutoDownloadQualityName">Qualità video per l\'auto-download</string>
+  <string name="SettingAutoDownloadQualityDescription">Imposta la qualità video per scaricare il trailer da YouTube, se la qualità desiderata non è disponibile, verrà selezionata quella immediatamente più bassa.</string>
+  <string name="SettingAutoDownloadTrailersName">Abilita l\'auto-download dei trailers</string>
+  <string name="SettingAutoDownloadTrailersDescription">Verifica se la tipologia video è un trailer per l\'auto-download</string>
+  <string name="SettingAutoDownloadTeasersName">Abilita l\'auto-download dei teasers</string>
+  <string name="SettingAutoDownloadTeasersDescription">Verifica se la tipologia video è un teaser per l\'auto-download</string>
+  <string name="SettingAutoDownloadFeaturettesName">Abilita l\'auto-download delle featurettes</string>
+  <string name="SettingAutoDownloadFeaturettesDescription">Verifica se la tipologia video è una featurette per l\'auto-download</string>
+  <string name="SettingAutoDownloadClipsName">Abilita l\'auto-download delle clips</string>
+  <string name="SettingAutoDownloadClipsDescription">Verifica se la tipologia video è una clip per l\'auto-download</string>
+  <string name="SettingAutoDownloadCleanupName">Abilita la pulizia per l\'auto-download</string>
+  <string name="SettingAutoDownloadCleanupDescription">Abilita la rimozione dei trailers che non hanno più un film associato nei tuoi plugins.</string>
+  <string name="Settings">Impostazioni</string>
+  <!--T-->
+  <string name="Timeout">Scaduto</string>
+  <string name="Trailer">Trailer</string>
+  <string name="Trailers">Trailers</string>
+  <!--U-->
+  <string name="UnableToPlayTrailer">Impossibile riprodurre il trailer.</string>
+  <!--V-->
+  <!--W-->
+  <!--Y-->
+  <string name="Yes">Sì</string>
+  <string name="YouTubeTrailers">Trailers da YouTube</string>
+</resources>

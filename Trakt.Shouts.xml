@@ -430,7 +430,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <visible>!string.equals(#Trakt.Shout.Replies,)</visible>
     </control>
-    
     <control>
       <description>VIP</description>
       <type>image</type>
@@ -439,7 +438,7 @@
       <posY>433</posY>
       <height>50</height>
       <width>106</width>
-      <keepaspectratio>yes</keepaspectratio>      
+      <keepaspectratio>yes</keepaspectratio>
       <visible>string.equals(#Trakt.User.VIP,True)+!string.equals(#Trakt.User.Protected,True)</visible>
       <texture>traktVIP.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -452,7 +451,7 @@
       <posY>433</posY>
       <height>50</height>
       <width>106</width>
-      <keepaspectratio>yes</keepaspectratio>      
+      <keepaspectratio>yes</keepaspectratio>
       <visible>string.equals(#Trakt.User.Protected,True)+!string.equals(#Trakt.User.VIP,True)</visible>
       <texture>traktPrivate.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -465,7 +464,7 @@
       <posY>433</posY>
       <height>50</height>
       <width>212</width>
-      <keepaspectratio>yes</keepaspectratio>      
+      <keepaspectratio>yes</keepaspectratio>
       <visible>string.equals(#Trakt.User.Protected,True)+string.equals(#Trakt.User.VIP,True)</visible>
       <texture>traktVIPPrivate.png</texture>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
@@ -498,7 +497,6 @@
       <shadowColor>#shadow.light</shadowColor>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-    
     <control Style="smallTitleB">
       <description>Join Date</description>
       <id>0</id>
@@ -562,7 +560,6 @@
       <width>480</width>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-    
     <control>
       <description>Shout</description>
       <type>textboxscrollup</type>
@@ -581,4 +578,4 @@
     <import>common.time.xml</import>
   </controls>
 </window>
-<!--Checksum:52c4bc854bf215531bda10ab5392daef-->
+<!--Checksum:c3e99729a6c64a1155b3ca6d8ab7532d-->
