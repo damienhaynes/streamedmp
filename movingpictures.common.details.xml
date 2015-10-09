@@ -399,10 +399,10 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
-      <description>Star Rating Value + Votes + User Star Rating Value (normalized to 10 star)</description>
+      <description>Star Rating Value + Votes + User Star Rating Value (10 star)</description>
       <id>0</id>
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.score.localized (#MovingPictures.SelectedMovie.popularity.localized #StreamedMP.Votes, #MovingPictures.Translation.Rated.Label: #(mul(cint(#MovingPictures.UserMovieSettings.user_rating),2)))</label>
+      <label>#MovingPictures.SelectedMovie.score.localized (#MovingPictures.SelectedMovie.popularity.localized #StreamedMP.Votes, #MovingPictures.Translation.Rated.Label: #MovingPictures.UserMovieSettings.10point_user_rating)</label>
       <posX>735</posX>
       <posY>675</posY>
       <width>1050</width>
