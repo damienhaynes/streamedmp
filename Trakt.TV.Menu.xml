@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>87500</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <rememberLastFocusedControl>yes</rememberLastFocusedControl>
+  <define>#header.label:#Trakt.Translation.TV.Label</define>
+  <define>#header.hover:hover_trakt.png</define>
+  <define>#defaultcontrol:2</define>
+  <define>#defaultcontrol.onright:9993</define>
+  <controls>
+    <import>Trakt.Common.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>376</posX>
+      <posY>225</posY>
+      <width>892</width>
+      <height>750</height>
+      <layout>StackLayout</layout>
+      <control Style="settingsmainbutton">
+        <type>button</type>
+        <description>Trending</description>
+        <id>2</id>
+        <label>#Trakt.Translation.Trending.Label</label>
+        <hyperlink>87265</hyperlink>
+        <onup>5</onup>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Popular</description>
+        <type>button</type>
+        <id>3</id>
+        <label>#Trakt.Translation.Popular.Label</label>
+        <hyperlink>87102</hyperlink>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Recommendations</description>
+        <type>button</type>
+        <id>4</id>
+        <label>#Trakt.Translation.Recommendations.Label</label>
+        <hyperlink>87262</hyperlink>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+      <control Style="settingsmainbutton">
+        <description>Anticipated</description>
+        <type>button</type>
+        <id>5</id>
+        <label>#Trakt.Translation.Anticipated.Label</label>
+        <hyperlink>87606</hyperlink>
+        <onright>#defaultcontrol.onright</onright>
+        <ondown>2</ondown>
+      </control>
+    </control>
+  </controls>
+</window>
+<!--Checksum:ec4acf5e5009283587ef363cf4c28f75-->
