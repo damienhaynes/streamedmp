@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using MediaPortal.Common.Utils;
 
@@ -31,4 +30,4 @@ using MediaPortal.Common.Utils;
 //      Revision
 //
 [assembly: CompatibleVersion("1.6.100.0", "1.6.100.0")]
-[assembly: AssemblyVersion("3.1.0.0")]
+[assembly: AssemblyVersion("3.2.0.0")]

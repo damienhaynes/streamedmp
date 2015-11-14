@@ -34,13 +34,13 @@
 #include "ifx.h"
 
 #define SKIN_NAME									"StreamedMP"
-#define DEFAULT_SKIN								"DefaultWide" 
+#define DEFAULT_SKIN								"Titan" 
 
 #define MEDIAPORTAL_REG_KEY  						"SOFTWARE\\Team MediaPortal\\MediaPortal"
 #define MEDIAPORTALUNINSTALL_REG_KEY    			"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\MediaPortal"
 #define STREAMEDMP_REG_KEY  						"SOFTWARE\\StreamedMP"
 
-#define STREAMEDMP_HOMEPAGE_URL						"http://code.google.com/p/streamedmp/" 
+#define STREAMEDMP_HOMEPAGE_URL						"https://github.com/damienhaynes/streamedmp/" 
 
 // Feature Defines 
 #define TVSERIES_LISTICONS_FEATURE					"Main\\tvseriesListIcons"
@@ -92,19 +92,19 @@
 #define STREAMEDMP_SKIN_VIDEOOSD					INSTALLDIR^SKIN_NAME^"videoOSD.xml"
 
 // Version Defines
-#define MEDIAPORTAL_MINNOWARN_VERSION				"1.6.100.0" 	// 1.7.0 Pre
-#define MEDIAPORTAL_MIN_VERSION						"1.6.100.0"		// 1.7.0 Pre
+#define MEDIAPORTAL_MINNOWARN_VERSION				"1.11.0.0"
+#define MEDIAPORTAL_MIN_VERSION						"1.11.0.0"
                                                                             
-#define TVSERIES_MIN_VERSION						"4.1.0.2089"
-#define MOVINGPICTURES_MIN_VERSION					"1.8.0.1607"
-#define FANARTHANDLER_MIN_VERSION					"4.0.1.195"
-#define LATESTMEDIAHANDLER_MIN_VERSION				"2.1.0.22"
+#define TVSERIES_MIN_VERSION						"4.2.2.2152"
+#define MOVINGPICTURES_MIN_VERSION					"1.8.1.0"
+#define FANARTHANDLER_MIN_VERSION					"4.0.2.220"
+#define LATESTMEDIAHANDLER_MIN_VERSION				"2.3.0.49"
 #define MYLYRICS_MIN_VERSION						"2.1.1.284"
 #define GLOBALSEARCH_MIN_VERSION					"2.0.0.73"
 #define INFOSERVICE_MIN_VERSION						"1.7.3.249"
-#define TRAKT_MIN_VERSION							"5.2.0.0"    
-#define WEATHER_MIN_VERSION							"1.6.9.0"  
-#define TRAILERS_MIN_VERSION						"1.2.0.0"
+#define TRAKT_MIN_VERSION							"5.6.1.0"    
+#define WEATHER_MIN_VERSION							"1.8.1.0"  
+#define TRAILERS_MIN_VERSION						"1.2.1.0"
 
 
 // XML Path Defines

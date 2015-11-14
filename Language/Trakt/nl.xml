@@ -12,8 +12,10 @@
   <string name="ActivityCommunityDesc">Kijk wat de community doet...</string>
   <string name="ActivityFollowersDesc">Kijk wat je volgers doen...</string>
   <string name="ActivityFollowingDesc">Bekijk de activiteit van mensen die je volgt</string>
+  <string name="ActivityMeDesc">Kijk wat je gedaan hebt...</string>
   <string name="ActivityWatching">{0} bekijkt {1}</string>
   <string name="ActivityWatched">{0} bekeek {1}</string>
+  <string name="ActivityWatchedWithPlays">{0} bekeek {1} [{2} keer]</string>
   <string name="ActivityCheckedIn">{0} ingecheckt in {1}</string>
   <string name="ActivityCollected">{0} verzamelde {1}</string>
   <string name="ActivityCollectedEpisodes">{0} verzamelde {1} afleveringen van {2}</string>
@@ -22,11 +24,20 @@
   <string name="ActivityRating">{0} waardeerde {1}</string>
   <string name="ActivityRatingAdvanced">{0} waardeerde {1} [{2}/10]</string>
   <string name="ActivityWatchlist">{0} voegde {1} toe aan hun kijklijst</string>
+  <string name="ActivityYourWatchlist">{0} voegde {1} aan kijk lijst toe</string>
   <string name="ActivityAddToList">{0} voegde {1} toe aan {2}</string>
   <string name="ActivityCreatedList">{0} maakte {1}</string>
+  <string name="ActivityUpdatedList">{0} geüpdatet {1}</string>
+  <string name="ActivityUpdatedListWithItemCountSingular">{0} updatete {1} [{2} Item]</string>
+  <string name="ActivityUpdatedListWithItemCount">{0} updatete {1} [{2} Items]</string>
   <string name="ActivityReview">{0} beoordeelde {1}</string>
   <string name="ActivityShouts">{0} stemde op {1}</string>
+  <string name="ActivityPaused">{0} gepauseerd {1} [{2}%]</string>
+  <string name="ActivityLikedComment">{0} vind commentaar van {1} - {2} leuk </string>
+  <string name="ActivityLikedList">{0} vind lijst {1} leuk</string>
   <string name="Activities">Activiteiten</string>
+  <string name="ActivityFilterActions">Filter op Acties...</string>
+  <string name="ActivityFilterTypes">Filter op Type...</string>
   <string name="AddFriend">Vriend toevoegen</string>
   <string name="AddToLibrary">Voeg toe aan collectie</string>
   <string name="AddToList">Voeg toe aan lijst</string>
@@ -48,6 +59,7 @@
   <string name="ApproveFollowerMessage">Vind je het leuk als gebruiker {0} je gaat volgen?</string>
   <string name="ApproveFollowerAndFollowBackMessage">Wil je toestaan dat gebruiker {0} je volgt en dat jij deze gebruiker gaat volgen?</string>
   <string name="AdvancedSettings">Geavanceerde instellingen</string>
+  <string name="Animation">Animatie</string>
   <!--B-->
   <string name="BufferingTrailer">Trailer bufferen</string>
   <string name="Biography">Biografie</string>
@@ -63,6 +75,7 @@
   <string name="CalendarPremieres">Premières</string>
   <string name="CalendarAllShows">Alle series</string>
   <string name="Cast">Rolverdeling:</string>
+  <string name="CastAndCrew">Cast en Crew</string>
   <string name="Certification">Classificatie</string>
   <string name="ChangeView">Wijzig weergave</string>
   <string name="ChangeLayout">Wijzig lay-out</string>
@@ -86,7 +99,9 @@
   <string name="ConfirmDeleteListItem">Weet je zeker dat je dit item wilt verwijderen van de lijst?</string>
   <string name="Continuing">Lopend</string>
   <string name="CopyList">Kopiëer lijst...</string>
+  <string name="Country">Land</string>
   <string name="CurrentPage">Huidige Pagina</string>
+  <string name="CustomLists">Aangepaste Lijsten</string>
   <!--D-->
   <string name="Dashboard">Dashboard</string>
   <string name="DateToday">Vandaag</string>
@@ -230,11 +245,23 @@
   <string name="Hate">Haat</string>
   <string name="Hated">Gehaat</string>
   <string name="HideTVShowsInWatchlist">Verberg TV serie in kijk lijst</string>
+  <string name="HideAdded">Verberg Toegevoegd</string>
+  <string name="HideCommented">Verberg Becommentarieerd</string>
+  <string name="HideComments">Verberg Commentaren</string>
   <string name="HideCollected">Verberg verzameld</string>
+  <string name="HideEpisodes">Verberg Afleveringen</string>
+  <string name="HideLiked">Verberg leuk gevonden</string>
+  <string name="HideLists">Verberg Lijsten</string>
+  <string name="HideMovies">Verberg films</string>
+  <string name="HidePaused">Verberg Gepauzeerd</string>
+  <string name="HidePeople">Verberg Personen</string>
   <string name="HideRated">Gewaardeerde verbergen</string>
+  <string name="HideSeasons">Verberg Seizoenen</string>
+  <string name="HideShows">Verberg TV Shows</string>
+  <string name="HideSpoilers">Verberg spoilers</string>
+  <string name="HideUpdated">Verberg Geüpdate</string>
   <string name="HideWatched">Verberg bekeken</string>
   <string name="HideWatchlisted">Verberg kijklijst</string>
-  <string name="HideSpoilers">Verberg spoilers</string>
   <string name="HiddenToPreventSpoilers">Deze stem is verborgen om spoilers te voorkomen en je kunt deze optie wijzigen via het menu.</string>
   <!--I-->
   <string name="IncludeMeInFriendsActivity">Voeg me toe aan de activiteit van vrienden</string>
@@ -270,10 +297,13 @@
   <string name="MarkAsWatched">Markeer als bekeken</string>
   <string name="MarkAsUnWatched">Markeer als onbekeken</string>
   <string name="Me">Mij</string>
+  <string name="Menu">Menu</string>
   <string name="Minutes">Minuten</string>
   <string name="Minute">Minuut</string>
+  <string name="Music">Muziek</string>
   <string name="Movie">Film</string>
   <string name="Movies">Films</string>
+  <string name="MovieCount">{0} Films</string>
   <string name="MultiSelectDialog">Multi-Select dialoog</string>
   <!--N-->
   <string name="Name">Naam</string>
@@ -318,6 +348,7 @@
   <string name="Off">Uit</string>
   <string name="OK">OK</string>
   <string name="On">Aan</string>
+  <string name="Other">Overige</string>
   <string name="Overview">Overzicht</string>
   <!--P-->
   <string name="Page">Pagine</string>
@@ -329,6 +360,7 @@
   <string name="Protected">Beveiligd</string>
   <string name="PersonWatching">1 persoon kijkt</string>
   <string name="PeopleWatching">{0} mensen kijken</string>
+  <string name="Plays">keer bekeken</string>
   <string name="PlayTrailer">Trailer afspelen</string>
   <string name="Plugin">Plug-in</string>
   <string name="Plugins">Plug-ins</string>
@@ -499,6 +531,14 @@
   <string name="SettingMaxPopularMoviesRequestDescription">Stel maximum aantal te verzoeken populaire films per pagina in.</string>
   <string name="SettingMaxPopularShowsRequestName">Maximum Populaire TV Series om te verzoeken</string>
   <string name="SettingMaxPopularShowsRequestDescription">Stel maximum aantal te verzoeken populaire TV series per pagina in.</string>
+  <string name="SettingMaxUserWatchedMoviesRequestName">Maximum Recent Bekeken Films om te verzoeken</string>
+  <string name="SettingMaxUserWatchedMoviesRequestDescription">Stel maximum aantal te verzoeken recent bekeken films per pagina in voor een gebruiker</string>
+  <string name="SettingMaxUserWatchedEpisodesRequestName">Maximum Recent Bekeken Afleveringen om te verzoeken</string>
+  <string name="SettingMaxUserWatchedEpisodesRequestDescription">Stel maximum aantal te verzoeken recent bekeken afleveringen per pagina in voor een gebruiker</string>
+  <string name="SettingMaxUserCommentsRequestName">Maximum Recente Opmerkingen om te verzoeken</string>
+  <string name="SettingMaxUserCommentsRequestDescription">Stel maximum aantal te verzoeken recente opmerkingen per pagina in voor een gebruiker</string>
+  <string name="SettingSkipMoviesWithNoIdsOnSyncName">Sla films zonder online ID over tijdens Sync</string>
+  <string name="SettingSkipMoviesWithNoIdsOnSyncDescription">Schakel deze optie in om elke film uit je lokale database over te slaan tijdens het syncen, als deze geen geldige IMDb of TMDb ID heeft.</string>
   <string name="StartYear">Start: {0}</string>
   <string name="StartLibrarySync">Start Bibliotheek Sync</string>
   <string name="StartLibraryAndPlaybackSync">Start Bibliotheek en Afspeel Sync</string>
@@ -518,6 +558,7 @@
   <string name="TrendingMovies">Populaire films</string>
   <string name="TrendingMoviePeople">Er kijken {0} mensen naar {1} films op dit moment!</string>
   <string name="TrendingTVShowsPeople">Er kijken {0} mensen naar {1}  series op dit moment!</string>
+  <string name="TV">TV</string>
   <string name="TVShow">TV serie</string>
   <string name="TVShows">TV series</string>
   <string name="Tagline">Label</string>

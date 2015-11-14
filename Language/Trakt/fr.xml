@@ -14,6 +14,7 @@
   <string name="ActivityFollowingDesc">Voir l\'activité des personnes que vous suivez...</string>
   <string name="ActivityWatching">{0} regarde {1}</string>
   <string name="ActivityWatched">{0} a regardé {1}</string>
+  <string name="ActivityWatchedWithPlays">{0} {1} Visionné [{2} Lu]</string>
   <string name="ActivityCheckedIn">{0} a enregistré {1}</string>
   <string name="ActivityCollected">{0} a collecté {1}</string>
   <string name="ActivityCollectedEpisodes">{0} a collecté {1} épisodes de {2}</string>
@@ -22,11 +23,20 @@
   <string name="ActivityRating">{0} a évalué {1}</string>
   <string name="ActivityRatingAdvanced">{0} a évalué {1} [{2}/10]</string>
   <string name="ActivityWatchlist">{0} a ajouté {1} à sa liste </string>
+  <string name="ActivityYourWatchlist">{0}  ajouté à la liste {1}</string>
   <string name="ActivityAddToList">{0} a ajouté {1} à {2}</string>
   <string name="ActivityCreatedList">{0} a créé {1}</string>
+  <string name="ActivityUpdatedList">{0} mises à jour sur {1}</string>
+  <string name="ActivityUpdatedListWithItemCountSingular">{0} mises à jour sur {1} [{2} éléments]</string>
+  <string name="ActivityUpdatedListWithItemCount">{0} mises à jour sur {1} [{2} éléments]</string>
   <string name="ActivityReview">{0} a commenté {1}</string>
   <string name="ActivityShouts">{0} messages sur {1}</string>
+  <string name="ActivityPaused">{0} {1} en pause [{2}%]</string>
+  <string name="ActivityLikedComment">{0} a apprécié les commentaire de {1} - {2}</string>
+  <string name="ActivityLikedList">{0} a apprécié la liste {1}</string>
   <string name="Activities">Activités</string>
+  <string name="ActivityFilterActions">Filtrer par actions ...</string>
+  <string name="ActivityFilterTypes">Filtrer par types ...</string>
   <string name="AddFriend">Ajouter un ami...</string>
   <string name="AddToLibrary">Ajouter à la collection</string>
   <string name="AddToList">Ajouter à la liste...</string>
@@ -48,6 +58,14 @@
   <string name="ApproveFollowerMessage">Voulez-vous permettre à l\'utilisateur {0} de vous suivre?</string>
   <string name="ApproveFollowerAndFollowBackMessage">Voulez-vous permettre à l\'utilisateur {0} \nde vous suivre et vous de suivre l\'utilisateur ?</string>
   <string name="AdvancedSettings">Paramétrages avancés</string>
+  <string name="Animation">Animation</string>
+  <string name="Anticipated">Prévoir</string>
+  <string name="AnticipatedShows">Séries prévues</string>
+  <string name="AnticipatedMovies">Films prévus</string>
+  <string name="ArtDirection">Directeur artistique </string>
+  <string name="AssistantArtDirector">Directeur artistique adjoint</string>
+  <string name="AssistantDirector">Assistant réalisateur</string>
+  <string name="AssociateProducer">Producteur associé</string>
   <!--B-->
   <string name="BufferingTrailer">Mise en mémoire de la bande-annonce</string>
   <string name="Biography">Biographie</string>
@@ -56,6 +74,8 @@
   <string name="Born">Né</string>
   <string name="BirthPlace">Lieu de naissance</string>
   <!--C-->
+  <string name="Camera">Camera</string>
+  <string name="CameraOperator">Opérateur Caméra</string>
   <string name="Cancel">Annuler</string>
   <string name="Canceled">Annuler</string>
   <string name="Calendar">Calendrier</string>
@@ -63,9 +83,13 @@
   <string name="CalendarPremieres">Pilotes</string>
   <string name="CalendarAllShows">Toutes les séries</string>
   <string name="Cast">Distribution</string>
+  <string name="CastAndCrew">Distribution et équipe </string>
+  <string name="Casting">Castings</string>
   <string name="Certification">Certification</string>
   <string name="ChangeView">Changer de vue ...</string>
   <string name="ChangeLayout">Changer la mise en page</string>
+  <string name="Character">Personnage</string>
+  <string name="Characters">Personnages</string>
   <string name="Create">Créer</string>
   <string name="CreateAccount">Créer un compte</string>
   <string name="CreateNewAccount">Créer un nouveau compte</string>
@@ -82,11 +106,17 @@
   <string name="Comments">Commentaires</string>
   <string name="Community">Communauté</string>
   <string name="CommunityActivity">Activité de la communauté</string>
+  <string name="Compositors">Compositeurs</string>
+  <string name="ConstructionCoordinator">Décorateur</string>
   <string name="ConfirmDeleteList">Etes-vous sûr de vouloir supprimer\ncet liste?</string>
   <string name="ConfirmDeleteListItem">Etes-vous sûr de vouloir supprimer\ncet élément de la liste?</string>
   <string name="Continuing">En cours</string>
   <string name="CopyList">Copie de la liste</string>
+  <string name="CostumeDesign">Création des costumes</string>
+  <string name="Country">Pays</string>
+  <string name="CostumeAndMakeUp">Costume et Maquillage</string>
   <string name="CurrentPage">Page courante</string>
+  <string name="CustomLists">listes personnalisées</string>
   <!--D-->
   <string name="Dashboard">Tableau de bord</string>
   <string name="DateToday">Aujourd\'hui</string>
@@ -106,6 +136,7 @@
   <string name="Died">Mort</string>
   <string name="Director">Réalisateur</string>
   <string name="Directors">Réalisateurs</string>
+  <string name="DirectorOfPhotography">Directeur de la photographie</string>
   <string name="DisconnectAccount">Compte déconnecté: {0}</string>
   <string name="DismissRecommendation">Ne pas tenir compte de la recommandation</string>
   <string name="DontIncludeMeInFriendsActivity">Ne pas m\'inclure dans Activités des amis</string>
@@ -122,6 +153,7 @@
   <string name="Episodes">Episodes</string>
   <string name="Error">Erreur de Trakt</string>
   <string name="ErrorCalendar">Erreur lors de l\'obtention du calendrier</string>
+  <string name="ErrorGeneral">Il y a eu une erreur lors de la mise à jour des données, réessayer plus tard</string>
   <string name="ErrorUserProfile">Erreur pour obtenir le profil et les statistiques de l\'utilisateur</string>
   <string name="ExecutiveProducer">Producteur exécutif</string>
   <!--F-->
@@ -150,6 +182,7 @@
   <string name="FollowerRequestMessage">Vous avez  {0}  requêtes d\'abonné, accepter ou refuser via la fenêtre de réseau</string>
   <string name="FullName">Nom complet</string>
   <!--G-->
+  <string name="Gaffer">Chef-électricien</string>
   <string name="Gender">Genre</string>
   <string name="GenderMale">Homme</string>
   <string name="GenderFemale">Femme</string>
@@ -212,6 +245,8 @@
   <string name="GettingShowSeasons">Récupération des saisons d\'une série</string>
   <string name="GettingTrendingMovies">Récupération des films tendances</string>
   <string name="GettingTrendingShows">Récupération des séries tendances</string>
+  <string name="GettingPopularMovies">Obtenir des Films populaires</string>
+  <string name="GettingPopularShows">Obtenir des spectacles populaires</string>
   <string name="GettingRecommendedMovies">Récupération des films recommandés</string>
   <string name="GettingRecommendedShows">Récupération des séries recommandées</string>
   <string name="GettingWatchListMovies">Obtenir la liste des films </string>
@@ -224,14 +259,27 @@
   <string name="GuestStar">Célébrité Invité</string>
   <string name="GuestStars">Célébrités Invités</string>
   <!--H-->
+  <string name="HairStylist">Coiffeur</string>
   <string name="Hate">Détester</string>
   <string name="Hated">A détesté</string>
   <string name="HideTVShowsInWatchlist">Cacher les séries de la liste </string>
+  <string name="HideAdded">Masquer les ajouts</string>
+  <string name="HideCommented">Masquer ce qui  est commenté</string>
+  <string name="HideComments">Masquer les commentaires</string>
   <string name="HideCollected">Masquer ce qui est collecté</string>
+  <string name="HideEpisodes">Masquer les épisodes</string>
+  <string name="HideLiked">Masquer les favoris</string>
+  <string name="HideLists">Masquer les listes</string>
+  <string name="HideMovies">Masquer les films</string>
+  <string name="HidePaused">Masquer la pause</string>
+  <string name="HidePeople">Masquer les personnes</string>
   <string name="HideRated">Masquer les éléments notés</string>
+  <string name="HideSeasons">Masquer les saisons</string>
+  <string name="HideShows">Masquer les émissions</string>
+  <string name="HideSpoilers">Masquer les spoilers</string>
+  <string name="HideUpdated">Masquer la mise à jour</string>
   <string name="HideWatched">Masquer ce qui est visionné</string>
   <string name="HideWatchlisted">Masquer la liste</string>
-  <string name="HideSpoilers">Masquer les spoilers</string>
   <string name="HiddenToPreventSpoilers">Ce message a été masqué pour éviter d’éventuel résumé, vous pouvez modifier cette option à partir du menu.</string>
   <!--I-->
   <string name="IncludeMeInFriendsActivity">M\'inclure dans Activités des amis</string>
@@ -247,9 +295,15 @@
   <string name="Language">Langue</string>
   <string name="Languages">Langues</string>
   <string name="Location">Emplacement</string>
+  <string name="LoginFailedServerError">La connection à trakt.tv a échoué en raison d\'une erreur de serveur, réessayez plus tard</string>
   <string name="Layout">Mise en page</string>
+  <string name="LibrarySyncAlreadyRunning">La synchronisation de la bibliothèque est déjà en cours, essayez à nouveau plus tard.</string>
+  <string name="LibrarySyncStarted">La synchronisation de la bibliothèque a commencé</string>
+  <string name="LibraryAndPlaybackSyncAlreadyRunning">La synchronisation de la bibliothèque  et des lectures est déjà en cours, essayez à nouveau plus tard.</string>
+  <string name="LibraryAndPlaybackSyncStarted">Une synchronisation de la bibliothèque  et des lectures est en cours.</string>
   <string name="Like">Apprécie</string>
   <string name="Likes">Apprécies</string>
+  <string name="LineProducer">Producteur</string>
   <string name="List">Liste</string>
   <string name="Lists">Listes</string>
   <string name="Love">Aimer</string>
@@ -259,13 +313,17 @@
   <string name="Login">Connexion</string>
   <string name="ListNameAlreadyExists">Une liste de même nom existe déjà</string>
   <!--M-->
+  <string name="MakeupArtist">Maquilleur</string>
   <string name="MarkAsWatched">Marquer comme visionné</string>
   <string name="MarkAsUnWatched">Marquer comme  non visionné</string>
   <string name="Me">Moi</string>
+  <string name="Menu">Menu</string>
   <string name="Minutes">Minutes</string>
   <string name="Minute">Minute</string>
+  <string name="Music">Musique</string>
   <string name="Movie">Film</string>
   <string name="Movies">Films</string>
+  <string name="MovieCount">{0} Films</string>
   <string name="MultiSelectDialog">Fenêtre à sélection multiple</string>
   <!--N-->
   <string name="Name">Nom</string>
@@ -306,11 +364,15 @@
   <string name="NoRelatedMovies">Aucun film similaire trouvé pour {0}</string>
   <string name="NoRelatedShows">Aucune série similaire trouvée pour {0}</string>
   <string name="No">Non</string>
+  <string name="Novel">Roman</string>
   <!--O-->
   <string name="Off">Off</string>
   <string name="OK">OK</string>
   <string name="On">On</string>
+  <string name="Other">Autres</string>
   <string name="Overview">Vue d\'ensemble</string>
+  <string name="OriginalStory">Histoire Originale</string>
+  <string name="OriginalMusicComposer">Compositeur</string>
   <!--P-->
   <string name="Page">Page</string>
   <string name="Pages">Pages</string>
@@ -321,9 +383,12 @@
   <string name="Protected">Protégé</string>
   <string name="PersonWatching">1 téléspectateur</string>
   <string name="PeopleWatching">{0} téléspectateurs</string>
+  <string name="Plays">Lectures</string>
   <string name="PlayTrailer">Lire la bande annonce</string>
   <string name="Plugin">Plugin</string>
   <string name="Plugins">Plugins</string>
+  <string name="Popular">Populaire</string>
+  <string name="Popularity">Popularité</string>
   <string name="PopularShows">Spectacles populaires</string>
   <string name="PopularMovies">Films populaires</string>
   <string name="Public">Public</string>
@@ -337,6 +402,10 @@
   <string name="Profile">Profil</string>
   <string name="Producer">Producteur</string>
   <string name="Producers">Producteurs</string>
+  <string name="Production">Création des décors</string>
+  <string name="ProductionDesign">Création des décors</string>
+  <string name="ProductionManager">Directeur de production</string>
+  <string name="ProductionOfficeAssistant">Assistant de production</string>
   <!--R-->
   <string name="Rate">Note</string>
   <string name="Rated">Noté</string>
@@ -381,6 +450,7 @@
   <string name="ReturningSeries">Retour vers les séries</string>
   <string name="Runtime">Durée</string>
   <!--S-->
+  <string name="Screenplay">Scénario</string>
   <string name="Score">Score</string>
   <string name="Scrobble">Scrobble</string>
   <string name="SearchWithMpNZB">Recherche de NZB</string>
@@ -398,12 +468,15 @@
   <string name="SearchForFriend">Rechercher un ami...</string>
   <string name="SearchForUser">Recherche d\'utilisateur....</string>
   <string name="SearchTypes">Types de recherche</string>
+  <string name="SecondUnit">Deuxième Equipe</string>
   <string name="SendFriendRequest">Envoyer une invitation à {0}?</string>
   <string name="SendFollowRequest">Envoyer la demande de suivi à {0}?</string>
   <string name="SelectLists">Sélectionnez les listes</string>
   <string name="SelectUser">Sélectionnez un utilisateur</string>
   <string name="Series">Séries</string>
   <string name="SeriesPlural">Séries</string>
+  <string name="SetDecoration">Décorateur</string>
+  <string name="SetDesigner">Scénographe</string>
   <string name="SetPassword">Votre mot de passe chez Trakt n\'est pas défini , voulez vous \nle créer maintenant?</string>
   <string name="Settings">Paramètres</string>
   <string name="Shout">Commentaire</string>
@@ -462,14 +535,29 @@
   <string name="SettingFilterTrendingOnDashboardDescription">Activer ce paramètre pour appliquer une série de filtres sur le dashboard c.a.d. masquer,visionné, masquer la liste des vus etc. Ceux-ci peuvent être configurés depuis le GUI correspondant ou dans le menu contextuel.</string>
   <string name="SettingIgnoreWatchedPercentOnDVDName">Ignorer le pourcentage visionné sur les DVD</string>
   <string name="SettingIgnoreWatchedPercentOnDVDDescription">Activez ce paramètre pour ignorer le pourcentage regardé du Dvd à l\'arrêt de celui ci. Pour les Dvd et Blu-ray, le pourcentage n\'est pas toujours une bonne Indication concernant la durée  visionnée de la vidéo. Ceci permet de scrobbler la vidéo (envoyer un état visionné​​) sur trakt.tv sans notification du pourcentage regardé.</string>
+  <string name="SettingMaxTrendingMoviesRequestName">Nombre de films tendances </string>
+  <string name="SettingMaxTrendingMoviesRequestDescription">Définissez le nombre maximum de films tendances par page.</string>
+  <string name="SettingMaxTrendingShowsRequestName">Nombre de shows tendances </string>
+  <string name="SettingMaxTrendingShowsRequestDescription">Définissez le nombre maximum de shows tendances par page.</string>
+  <string name="SettingUseSSLName">Communication du serveur sécurisé</string>
+  <string name="SettingMaxUserWatchedEpisodesRequestDescription">Définissez le nombre maximum d\'épisodes regardées récemment  par page.</string>
+  <string name="SettingMaxUserCommentsRequestDescription">Définissez le nombre maximum de commentaires récents par page.</string>
   <string name="StartYear">Début: {0}</string>
+  <string name="StartLibrarySync">Démarrer a synchronisation de la bibliothèque</string>
+  <string name="StartLibraryAndPlaybackSync">Démarrer la synchronisation de la bibliothèque et des lectures </string>
+  <string name="StartPlaybackSync">Démarrer la synchronisation des lectures</string>
+  <string name="Storyboard">Storyboard</string>
   <string name="SortBy">Trier par : {0}</string>
   <string name="SortSeasonsAscending">Trier les saisons par ordre croissant</string>
   <string name="SortSeasonsDescending">Trier les saisons par ordre décroissant</string>
+  <string name="Sound">Son</string>
   <string name="Specials">Spéciaux</string>
+  <string name="SpecialEffects">Effets spéciaux</string>
   <string name="Status">Status</string>
+  <string name="StillPhotographer">Photographe</string>
   <!--T-->
   <string name="Timeout">Temps expiré</string>
+  <string name="TotalPages">Nombre de Pages</string>
   <string name="TotalItemsPerPage">Nombre d\'items par page</string>
   <string name="Trending">Tendances</string>
   <string name="TrendingShows">Les  séries tendances</string>
@@ -477,6 +565,7 @@
   <string name="TrendingMovies">Les  films tendances</string>
   <string name="TrendingMoviePeople">Il y a {0} personne(s) qui regarde(nt) {1} film(s) actuellement</string>
   <string name="TrendingTVShowsPeople">Il y a {0} personne(s) qui regarde(nt) {1} Show TV actuellement</string>
+  <string name="TV">TV</string>
   <string name="TVShow">Show TV</string>
   <string name="TVShows">Shows TV</string>
   <string name="Tagline">Tagline</string>
@@ -486,6 +575,7 @@
   <string name="Trailer">Trailer</string>
   <string name="Trailers">Bandes annonces...</string>
   <!--U-->
+  <string name="UnLike">Contrairement à</string>
   <string name="UserHasNotWatchedEpisodes">L\'utilisateur n\'a  visionné aucun épisode</string>
   <string name="UserHasNotWatchedMovies">L\'utilisateur n\'a  visionné aucun film</string>
   <string name="UserHasNoRecentAddedEpisodes">L\'utilisateur n\'a ajouté aucun épisode récemment  </string>
@@ -507,7 +597,11 @@
   <string name="UnableToPlayTrailer">Impossible de lire la bande annonce.</string>
   <string name="UserIsProtected">L\'utilisateur actuel est protégé ! Les utilisateurs \nprotégés ne peuvent être vus que depuis la page \'Amis\'</string>
   <string name="UserProfile">Profil utilisateur</string>
+  <string name="UserRatingsDistribution">Notation de 1 à 10 coeurs</string>
   <!--V-->
+  <string name="VisualEffects">Effets visuels</string>
+  <string name="VisualEffectsProducer"> Producteur des Effets Visuels</string>
+  <string name="VisualEffectsSupervisor">Superviseur des effets visuels</string>
   <string name="View">Vu</string>
   <string name="Votes">Votes</string>
   <string name="ValidUsername">Vous devez indiquer un nom d\'utilisateur valide</string>
