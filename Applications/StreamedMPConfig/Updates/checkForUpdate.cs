@@ -68,7 +68,7 @@ namespace StreamedMPConfig
         if (System.IO.File.Exists("C:\\SkinUpdate.xml"))
           xmlURL = "C:\\SkinUpdate.xml";
         else
-          xmlURL = "http://streamedmp.googlecode.com/svn/trunk/SkinUpdate/SkinUpdate.xml";
+            xmlURL = "https://raw.githubusercontent.com/damienhaynes/streamedmp/master/SkinUpdate/SkinUpdate.xml";
 
         // Read the file
         reader = new XmlTextReader(xmlURL);
