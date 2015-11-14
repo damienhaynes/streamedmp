@@ -113,7 +113,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\VersionInfo.cs" />
     <Compile Include="SMPLog.cs" />
     <Compile Include="GUI\VideoOptionsGUI.cs" />
     <Compile Include="GUI\MusicConfigGUI.cs" />
@@ -152,9 +151,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\VersionInfo.cs.tmpl" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\SMPCheckSum\SMPCheckSum.csproj">
       <Project>{96319632-3BE1-4D71-A494-7186A947DFD0}</Project>
       <Name>SMPCheckSum</Name>
@@ -190,6 +186,7 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>if $(ConfigurationName) == Release copy "$(TargetPath)" ..\..\..\..\Plugins\Windows /Y</PostBuildEvent>
-    <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

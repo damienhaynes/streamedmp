@@ -290,7 +290,6 @@
     <None Include="Resources\style7.png" />
     <None Include="Resources\style8.png" />
     <None Include="Resources\style5.png" />
-    <None Include="Properties\VersionInfo.cs.tmpl" />
     <Compile Include="BHHorizontalWriter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,7 +330,6 @@
     <Compile Include="mrTVSeriesFormatOptions.Designer.cs">
       <DependentUpon>mrTVSeriesFormatOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\VersionInfo.cs" />
     <Compile Include="SkinInfo.cs" />
     <Compile Include="SkinOptions.cs">
       <SubType>Form</SubType>
@@ -406,6 +404,7 @@
   -->
   <PropertyGroup>
     <PostBuildEvent>if $(ConfigurationName) == Release copy "$(TargetPath)" ..\..\..\..\Plugins\Process /Y</PostBuildEvent>
-    <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

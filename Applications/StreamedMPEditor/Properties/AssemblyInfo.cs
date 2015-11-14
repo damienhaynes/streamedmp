@@ -11,7 +11,7 @@ using MediaPortal.Common.Utils;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("MediaPortal")]
 [assembly: AssemblyProduct("StreamedMP Editor")]
-[assembly: AssemblyCopyright("Copyright © 2014")]
+[assembly: AssemblyCopyright("Copyright © 2006-2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -24,3 +24,4 @@ using MediaPortal.Common.Utils;
 [assembly: Guid("20efe727-8a7c-46e8-a526-a134e7a15a49")]
 
 [assembly: CompatibleVersion("1.6.100.0", "1.6.100.0")]
+[assembly: AssemblyVersion("3.1.0.0")]

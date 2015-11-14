@@ -120,7 +120,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
     <None Include="EmbeddedPatches\PreBuild.bat" />
     <EmbeddedResource Include="EmbeddedPatches\SkinUpdate.zip" />
     <None Include="Properties\app.manifest" />
@@ -128,7 +127,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Properties\VersionInfo.cs.tmpl" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -140,7 +138,6 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\VersionInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Banner.bmp" />
@@ -214,8 +211,7 @@
     <PostBuildEvent>copy "$(SolutionDir)Externals\ILMerge.exe" "$(TargetDir)" /Y 
 copy "$(ProjectDir)\ILMerge\merge.bat" "$(TargetDir)" /Y
 "$(TargetDir)merge.bat"</PostBuildEvent>
-    <PreBuildEvent>subwcrev "$(SolutionDir)..\." "$(ProjectDir)Properties\VersionInfo.cs.tmpl" "$(ProjectDir)Properties\VersionInfo.cs"
-cd "$(ProjectDir)EmbeddedPatches"
+    <PreBuildEvent>cd "$(ProjectDir)EmbeddedPatches"
 call PreBuild.bat</PreBuildEvent>
   </PropertyGroup>
 </Project>
