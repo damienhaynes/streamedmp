@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Drawing;
 using System.IO;
 using MediaPortal.Configuration;
 using MediaPortal.Dialogs;
 using MediaPortal.GUI.Library;
 using Action = MediaPortal.GUI.Library.Action;
-using System.Drawing;
 
 namespace StreamedMPConfig
 {
@@ -25,7 +24,8 @@ namespace StreamedMPConfig
       ListColors = 9,
       ListControlScrollPopup = 10,
       TextualLogos = 11,
-      MyVideoWatchedProgress = 12
+      MyVideoWatchedProgress = 12,
+      TraktIconsInArtwork = 13
     }  
     #endregion
 
@@ -55,6 +55,9 @@ namespace StreamedMPConfig
 
     [SkinControl((int)GUIControls.IconsInArtwork)]
     protected GUICheckButton btnIconsInArtwork = null;
+
+    [SkinControl((int)GUIControls.TraktIconsInArtwork)]
+    protected GUICheckButton btnTraktIconsInArtwork = null;
 
     [SkinControl((int)GUIControls.PlayRecents)]
     protected GUICheckButton btnPlayRecents = null;
@@ -89,6 +92,7 @@ namespace StreamedMPConfig
     public static bool ShowHiddenMenuImage { get; set; }
     public static bool ShowRoundedImages { get; set; }
     public static bool ShowIconsInArtwork { get; set; }
+    public static bool ShowTraktStyleIconsInArtwork { get; set; }
     public static bool EnablePlayMostRecents { get; set; }
     public static bool FilterWatchedInRecentlyAdded { get; set; }
     public static int MostRecentFanartTimerInt { get; set; }
@@ -117,6 +121,8 @@ namespace StreamedMPConfig
       StreamedMPConfig.SetProperty("#StreamedMP.Icons.UnWatched", ShowIconsInArtwork ? "overlayunwatched.png" : "-");
       StreamedMPConfig.SetProperty("#StreamedMP.Icons.NAWatched", ShowIconsInArtwork ? "overlaywatchedna.png" : "-");
       StreamedMPConfig.SetProperty("#StreamedMP.Icons.NAUnWatched", ShowIconsInArtwork ? "overlayunwatchedna.png" : "-");
+      StreamedMPConfig.SetProperty("#StreamedMP.Icons.Hide", ShowIconsInArtwork ? "false" : "true");
+      StreamedMPConfig.SetProperty("#StreamedMP.Icons.Trakt", ShowTraktStyleIconsInArtwork ? "true" : "false");
 
       StreamedMPConfig.SetProperty("#StreamedMP.ListScrollPopup", ShowListScrollingPopup ? "yes" : "no");
 
@@ -514,6 +520,10 @@ namespace StreamedMPConfig
       // Icons In Artwork
       btnIconsInArtwork.Selected = ShowIconsInArtwork;
       btnIconsInArtwork.Label = Translation.ShowIconsInArtwork;
+
+      // Icons In Artwork
+      btnTraktIconsInArtwork.Selected = ShowTraktStyleIconsInArtwork;
+      btnTraktIconsInArtwork.Label = Translation.ShowTraktIconsInArtwork;
 
       // Play Most Recents
       btnPlayRecents.Selected = EnablePlayMostRecents;

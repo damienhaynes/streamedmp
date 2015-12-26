@@ -38,6 +38,32 @@
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!Control.HasThumb(610)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
+    
+    <control>
+      <description>Trakt Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>333</posX>
+      <posY>463</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>traktSeenIt.png</texture>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+control.isvisible(9)+Control.HasThumb(601)+!control.hasfocus(667)+string.equals(#StreamedMP.Icons.Trakt,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Trakt Rating Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>333</posX>
+      <posY>463</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>traktHeart#MovingPictures.UserMovieSettings.10point_user_rating.png</texture>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!control.hasfocus(667)+string.equals(#StreamedMP.Icons.Trakt,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    
     <control>
       <description>Watched Icon Background</description>
       <type>image</type>
@@ -47,7 +73,7 @@
       <width>48</width>
       <height>58</height>
       <texture>#StreamedMP.Icons.Background</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!control.hasfocus(667)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!control.hasfocus(667)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -59,7 +85,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.Watched</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+control.isvisible(9)+!control.hasfocus(667)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+control.isvisible(9)+!control.hasfocus(667)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -71,7 +97,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!control.isvisible(9)+!control.hasfocus(667)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!control.isvisible(9)+!control.hasfocus(667)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Details Box -->
@@ -161,7 +187,7 @@
       <buttonY>82</buttonY>
       <buttonwidth>73</buttonwidth>
       <buttonheight>379</buttonheight>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(11899)|control.hasfocus(9999)|control.hasfocus(10003)|control.hasfocus(97258)|control.hasfocus(97259)|control.hasfocus(97260)|control.hasfocus(97261)|control.hasfocus(97262)|control.hasfocus(97263)]</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+[control.hasfocus(11899)|control.hasfocus(9999)|control.hasfocus(10003)|control.hasfocus(97270)|control.hasfocus(99000)]</visible>
       <animation effect="slide" time="100" start="450,0">visible</animation>
       <animation effect="slide" time="0" end="450,0">hidden</animation>
       <control>
@@ -255,7 +281,7 @@
           <label>IMDb+</label>
           <hyperlink>31415</hyperlink>
           <onup>9999</onup>
-          <ondown>97259</ondown>
+          <ondown>97270</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
         </control>
@@ -267,66 +293,23 @@
           <visible>true</visible>
         </control>
         <control>
-          <description>Trakt Rate</description>
+          <description>Trakt Menu</description>
           <type>button</type>
-          <id>97259</id>
-          <label>#Trakt.Translation.Rate.Label</label>
+          <id>97270</id>
+          <label>#Trakt.Translation.Menu.Label ...</label>
           <onup>10003</onup>
-          <ondown>97260</ondown>
+          <ondown>99000</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
           <visible>plugin.isenabled(Trakt)</visible>
         </control>
         <control>
-          <description>Trakt Shouts</description>
+          <description>Trakt Home</description>
           <type>button</type>
-          <id>97260</id>
-          <label>#Trakt.Translation.Shouts.Label</label>
-          <onup>97259</onup>
-          <ondown>97262</ondown>
-          <onleft>6</onleft>
-          <onright>6</onright>
-          <visible>plugin.isenabled(Trakt)</visible>
-        </control>
-        <control>
-          <description>Trakt Related Movies</description>
-          <type>button</type>
-          <id>97262</id>
-          <label>#Trakt.Translation.RelatedMovies.Label</label>
-          <onup>97260</onup>
-          <ondown>97261</ondown>
-          <onleft>6</onleft>
-          <onright>6</onright>
-          <visible>plugin.isenabled(Trakt)</visible>
-        </control>
-        <control>
-          <description>Trakt Add to Custom List</description>
-          <type>button</type>
-          <id>97261</id>
-          <label>#Trakt.Translation.AddToList.Label</label>
-          <onup>97262</onup>
-          <ondown>97258</ondown>
-          <onleft>6</onleft>
-          <onright>6</onright>
-          <visible>plugin.isenabled(Trakt)</visible>
-        </control>
-        <control>
-          <description>Trakt Add to Watch List</description>
-          <type>button</type>
-          <id>97258</id>
-          <label>#Trakt.Translation.AddToWatchList.Label</label>
-          <onup>97261</onup>
-          <ondown>97263</ondown>
-          <onleft>6</onleft>
-          <onright>6</onright>
-          <visible>plugin.isenabled(Trakt)</visible>
-        </control>
-        <control>
-          <description>Trakt Search By Person</description>
-          <type>button</type>
-          <id>97263</id>
-          <label>#Trakt.Translation.SearchBy.Label...</label>
-          <onup>97258</onup>
+          <id>99000</id>
+          <hyperlink>87258</hyperlink>
+          <label>2143</label>
+          <onup>97270</onup>
           <ondown>11899</ondown>
           <onleft>6</onleft>
           <onright>6</onright>
@@ -374,15 +357,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
-      <description>Dummy User Star Rating Value</description>
-      <id>199</id>
-      <type>label</type>
-      <label>#MovingPictures.UserMovieSettings.user_rating</label>
-      <posX>-75</posX>
-      <posY>-75</posY>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+!control.hasfocus(667)</visible>
-    </control>
-    <control>
       <description>Star Rating Value + Votes</description>
       <id>0</id>
       <type>label</type>
@@ -392,23 +366,7 @@
       <width>1050</width>
       <align>left</align>
       <font>mediastream11c</font>
-      <shadowAngle>45</shadowAngle>
-      <shadowDistance>3</shadowDistance>
-      <shadowColor>ff222222</shadowColor>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,0)+!Control.HasText(199)+!control.hasfocus(667)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control>
-      <description>Star Rating Value + Votes + User Star Rating Value (10 star)</description>
-      <id>0</id>
-      <type>label</type>
-      <label>#MovingPictures.SelectedMovie.score.localized (#MovingPictures.SelectedMovie.popularity.localized #StreamedMP.Votes, #MovingPictures.Translation.Rated.Label: #MovingPictures.UserMovieSettings.10point_user_rating)</label>
-      <posX>735</posX>
-      <posY>675</posY>
-      <width>1050</width>
-      <align>left</align>
-      <font>mediastream11c</font>
-      <visible>!control.isvisible(50)+!control.isvisible(51)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,0)+Control.HasText(199)+!control.hasfocus(667)</visible>
+      <visible>!control.isvisible(50)+!control.isvisible(51)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,)+!string.equals(#MovingPictures.SelectedMovie.score.rounded,0)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -537,7 +495,7 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
-      <description>Year</description>
+      <description>Release Date</description>
       <type>label</type>
       <label>#MovingPictures.SelectedMovie.release_date.localized.short</label>
       <id>0</id>

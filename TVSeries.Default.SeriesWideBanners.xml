@@ -59,6 +59,31 @@
     </control>
     <!-- Watched Icons for Series Poster View and Season View in List Layout and Wide Banners -->
     <control>
+      <description>Series/Season Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>311</posX>
+      <posY>381</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>traktSeenIt.png</texture>
+      <visible>facadeview.largeicons+control.isvisible(1237)+control.isvisible(1243)+Control.HasThumb(61)+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Series Rated Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>311</posX>
+      <posY>381</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>#TVSeries.Series.HeartPath</texture>
+      <visible>facadeview.largeicons+control.isvisible(1237)+Control.HasThumb(61)+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    
+    <control>
       <description>Watched Icon Background</description>
       <type>image</type>
       <id>0</id>
@@ -67,7 +92,7 @@
       <width>48</width>
       <height>58</height>
       <texture>#StreamedMP.Icons.Background</texture>
-      <visible>facadeview.largeicons+control.isvisible(1237)+Control.HasThumb(61)</visible>
+      <visible>facadeview.largeicons+control.isvisible(1237)+Control.HasThumb(61)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -79,7 +104,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.Watched</texture>
-      <visible>facadeview.largeicons+control.isvisible(1237)+control.isvisible(1243)+control.isvisible(1244)+Control.HasThumb(61)</visible>
+      <visible>facadeview.largeicons+control.isvisible(1237)+control.isvisible(1243)+control.isvisible(1244)+Control.HasThumb(61)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -91,7 +116,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
-      <visible>facadeview.largeicons+control.isvisible(1237)+!control.isvisible(1243)+control.isvisible(1244)+Control.HasThumb(61)</visible>
+      <visible>facadeview.largeicons+control.isvisible(1237)+!control.isvisible(1243)+control.isvisible(1244)+Control.HasThumb(61)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -103,7 +128,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.NAWatched</texture>
-      <visible>facadeview.largeicons+control.isvisible(1237)+control.isvisible(1243)+!control.isvisible(1244)+Control.HasThumb(61)</visible>
+      <visible>facadeview.largeicons+control.isvisible(1237)+control.isvisible(1243)+!control.isvisible(1244)+Control.HasThumb(61)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -115,7 +140,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.NAUnWatched</texture>
-      <visible>facadeview.largeicons+control.isvisible(1237)+!control.isvisible(1243)+!control.isvisible(1244)+Control.HasThumb(61)</visible>
+      <visible>facadeview.largeicons+control.isvisible(1237)+!control.isvisible(1243)+!control.isvisible(1244)+Control.HasThumb(61)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -191,47 +216,11 @@
     <control Style="smallTitle">
       <id>0</id>
       <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine40Value #TVSeries.Series.DataPanelLine43Value</label>
+      <label>#TVSeries.Series.DataPanelLine40Value #TVSeries.Series.DataPanelLine44Value</label>
       <posX>765</posX>
       <posY>927</posY>
       <width>450</width>
-      <visible>facadeview.largeicons+control.isvisible(1237)+control.isvisible(5555)+control.isvisible(5556)+control.isvisible(5560)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine41Value #TVSeries.Series.DataPanelLine42Value</label>
-      <posX>765</posX>
-      <posY>927</posY>
-      <visible>facadeview.largeicons+control.isvisible(1237)+control.isvisible(5555)+control.isvisible(5556)+!control.isvisible(5560)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine41Value #TVSeries.Series.DataPanelLine44Value</label>
-      <posX>765</posX>
-      <posY>927</posY>
-      <visible>facadeview.largeicons+control.isvisible(1237)+control.isvisible(5555)+!control.isvisible(5556)+control.isvisible(5560)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine41Value</label>
-      <posX>765</posX>
-      <posY>927</posY>
-      <visible>facadeview.largeicons+control.isvisible(1237)+control.isvisible(5555)+!control.isvisible(5556)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <type>label</type>
-      <label>N/A</label>
-      <posX>765</posX>
-      <posY>927</posY>
-      <visible>facadeview.largeicons+control.isvisible(1237)+!control.isvisible(5555)+!control.isvisible(5556)</visible>
+      <visible>facadeview.largeicons+control.isvisible(1237)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>

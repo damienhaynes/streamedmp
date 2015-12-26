@@ -68,6 +68,7 @@ namespace StreamedMPConfig
     public const string cXMLSettingMiscShowHiddenMenuImage = "miscShowHiddenMenuImage";
     public const string cXMLSettingMiscShowRoundedCovers = "miscShowRoundedCovers";
     public const string cXMLSettingMiscShowIconsInArtwork = "miscShowIconsInArtwork";
+    public const string cXMLSettingMiscShowTraktStyleIconsInArtwork = "miscShowTraktStyleIconsInArtwork";
     public const string cXMLSettingMiscEnablePlayMostRecents = "miscEnablePlayMostRecents";
     public const string cXMLSettingMiscFilterWatchedInRecentlyAdded = "MiscFilterWatchedInRecentlyAdded";
     public const string cXMLSettingMiscMostRecentFanartTimerInt = "miscMostRecentFanartTimerInt";
@@ -363,6 +364,7 @@ namespace StreamedMPConfig
             MiscConfigGUI.ShowHiddenMenuImage = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowHiddenMenuImage, 1) == 1;
             MiscConfigGUI.ShowRoundedImages = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowRoundedCovers, 0) == 1;
             MiscConfigGUI.ShowIconsInArtwork = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowIconsInArtwork, 1) == 1;
+            MiscConfigGUI.ShowTraktStyleIconsInArtwork = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscShowTraktStyleIconsInArtwork, 1) == 1;
             MiscConfigGUI.EnablePlayMostRecents = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscEnablePlayMostRecents, 1) == 1;
             MiscConfigGUI.FilterWatchedInRecentlyAdded = xmlreader.GetValueAsInt(section, settings.cXMLSettingMiscFilterWatchedInRecentlyAdded, 0) == 1;
             MiscConfigGUI.TextColor = xmlreader.GetValueAsString(section, settings.cXMLSettingMiscTextColor, "FFFFFF");
@@ -446,6 +448,7 @@ namespace StreamedMPConfig
             xmlwriter.SetValue(section, settings.cXMLSettingMiscShowHiddenMenuImage, MiscConfigGUI.ShowHiddenMenuImage ? 1 : 0);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscShowRoundedCovers, MiscConfigGUI.ShowRoundedImages ? 1 : 0);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscShowIconsInArtwork, MiscConfigGUI.ShowIconsInArtwork ? 1 : 0);
+            xmlwriter.SetValue(section, settings.cXMLSettingMiscShowTraktStyleIconsInArtwork, MiscConfigGUI.ShowTraktStyleIconsInArtwork ? 1 : 0);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscEnablePlayMostRecents, MiscConfigGUI.EnablePlayMostRecents ? 1 : 0);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscFilterWatchedInRecentlyAdded, MiscConfigGUI.FilterWatchedInRecentlyAdded ? 1 : 0);
             xmlwriter.SetValue(section, settings.cXMLSettingMiscMostRecentFanartTimerInt, MiscConfigGUI.MostRecentFanartTimerInt);

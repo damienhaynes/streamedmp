@@ -29,6 +29,31 @@
     </control>
     <!-- Watched Icons for Episode View-->
     <control>
+      <description>Episode Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>452</posX>
+      <posY>381</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>traktSeenIt.png</texture>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(1243)+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Episode Rated Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>452</posX>
+      <posY>381</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>#TVSeries.Episode.HeartPath</texture>
+      <visible>control.isvisible(1239)+facadeview.list+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    
+    <control>
       <description>Episode Watched Icon Background</description>
       <type>image</type>
       <id>0</id>
@@ -37,7 +62,7 @@
       <width>48</width>
       <height>58</height>
       <texture>#StreamedMP.Icons.Background</texture>
-      <visible>control.isvisible(1239)+facadeview.list</visible>
+      <visible>control.isvisible(1239)+facadeview.list+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -49,7 +74,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.Watched</texture>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(1243)+control.isvisible(1244)</visible>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(1243)+control.isvisible(1244)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -61,7 +86,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
-      <visible>control.isvisible(1239)+facadeview.list+!control.isvisible(1243)+control.isvisible(1244)</visible>
+      <visible>control.isvisible(1239)+facadeview.list+!control.isvisible(1243)+control.isvisible(1244)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -73,7 +98,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.NAWatched</texture>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(1243)+!control.isvisible(1244)</visible>
+      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(1243)+!control.isvisible(1244)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -85,9 +110,10 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.NAUnWatched</texture>
-      <visible>control.isvisible(1239)+facadeview.list+!control.isvisible(1243)+!control.isvisible(1244)</visible>
+      <visible>control.isvisible(1239)+facadeview.list+!control.isvisible(1243)+!control.isvisible(1244)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
+    
     <control>
       <description>Episode Plot</description>
       <type>textboxscrollup</type>
@@ -163,48 +189,11 @@
     </control>
     <control Style="smallTitle">
       <id>0</id>
-      <label>#TVSeries.Episode.DataPanelLine31Value #TVSeries.Episode.DataPanelLine32Value</label>
+      <label>#TVSeries.Episode.DataPanelLine30Value #TVSeries.Episode.DataPanelLine34Value</label>
       <type>label</type>
       <posX>840</posX>
       <posY>589</posY>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)+!control.isvisible(5561)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <label>#TVSeries.Episode.DataPanelLine30Value #TVSeries.Episode.DataPanelLine33Value</label>
-      <type>label</type>
-      <posX>840</posX>
-      <posY>589</posY>
-      <width>292</width>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+control.isvisible(5558)+control.isvisible(5561)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <label>#TVSeries.Episode.DataPanelLine31Value #TVSeries.Episode.DataPanelLine34Value</label>
-      <type>label</type>
-      <posX>840</posX>
-      <posY>589</posY>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)+control.isvisible(5561)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <label>#TVSeries.Episode.DataPanelLine31Value</label>
-      <type>label</type>
-      <posX>840</posX>
-      <posY>589</posY>
-      <visible>control.isvisible(1239)+facadeview.list+control.isvisible(5557)+!control.isvisible(5558)+!control.isvisible(5561)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <label>N/A</label>
-      <type>label</type>
-      <posX>840</posX>
-      <posY>589</posY>
-      <visible>control.isvisible(1239)+facadeview.list+!control.isvisible(5557)+!control.isvisible(5558)</visible>
+      <visible>control.isvisible(1239)+facadeview.list</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Prevent gaps between writer and director -->

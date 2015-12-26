@@ -26,6 +26,32 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Watched Icons -->
+    
+    <control>
+      <description>Trakt Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>257</posX>
+      <posY>450</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>traktSeenIt.png</texture>
+      <visible>facadeview.list+control.isvisible(50)+control.isvisible(9)+Control.HasThumb(90)+string.equals(#StreamedMP.Icons.Trakt,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Trakt Rating Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>257</posX>
+      <posY>450</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>traktHeart#MovingPictures.UserMovieSettings.10point_user_rating.png</texture>
+      <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(90)+string.equals(#StreamedMP.Icons.Trakt,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    
     <control>
       <description>Movie Watched Icon Background</description>
       <type>image</type>
@@ -35,7 +61,7 @@
       <width>48</width>
       <height>58</height>
       <texture>#StreamedMP.Icons.Background</texture>
-      <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(90)</visible>
+      <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(90)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -47,7 +73,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.Watched</texture>
-      <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(90)+control.isvisible(9)</visible>
+      <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(90)+control.isvisible(9)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -59,7 +85,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
-      <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(90)+!control.isvisible(9)</visible>
+      <visible>facadeview.list+control.isvisible(50)+Control.HasThumb(90)+!control.isvisible(9)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Movie Details -->
@@ -114,10 +140,10 @@
       <id>0</id>
       <posX>592</posX>
       <posY>706</posY>
-      <width>367</width>
+      <width>540</width>
       <textcolor>ffFFFFFF</textcolor>
       <font>mediastream11c</font>
-      <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
+      <label>#MovingPictures.SelectedMovie.score.localized (#MovingPictures.SelectedMovie.popularity.localized #StreamedMP.Votes)</label>
       <shadowAngle>45</shadowAngle>
       <shadowDistance>3</shadowDistance>
       <shadowColor>#shadow.light</shadowColor>

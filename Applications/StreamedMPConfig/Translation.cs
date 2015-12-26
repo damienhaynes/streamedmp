@@ -247,6 +247,7 @@ namespace StreamedMPConfig
     public static string ShowHiddenMenuImage = "Show Hidden Menu Image";    
     public static string ShowRoundedPosters = "Show Rounded Poster Images";
     public static string ShowIconsInArtwork = "Show Watched/UnWatched Icons In Artwork";
+    public static string ShowTraktIconsInArtwork = "Show Trakt Style Icons In Artwork";
     public static string LatestEpisodes = "Latest Episodes";
     public static string LatestMovies = "Latest Movies";
     public static string NowPlayingStyles = "Now Playing Screen Styles";

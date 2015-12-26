@@ -100,7 +100,7 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
-      <description>TVDB Series Rating Stars</description>
+      <description>TVDb Series Rating Stars</description>
       <type>image</type>
       <id>1</id>
       <posX>352</posX>
@@ -114,52 +114,11 @@
     <control Style="smallTitle">
       <id>0</id>
       <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine41Value #TVSeries.Series.DataPanelLine42Value</label>
+      <label>#TVSeries.Series.DataPanelLine40Value #TVSeries.Series.DataPanelLine44Value</label>
       <posX>540</posX>
       <posY>703</posY>
       <font>mediastream11c</font>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+control.isvisible(5555)+control.isvisible(5556)+!control.isvisible(5560)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine40Value #TVSeries.Series.DataPanelLine43Value</label>
-      <posX>540</posX>
-      <posY>703</posY>
-      <font>mediastream11c</font>
-      <width>525</width>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+control.isvisible(5555)+control.isvisible(5556)+control.isvisible(5560)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine41Value #TVSeries.Series.DataPanelLine44Value</label>
-      <posX>540</posX>
-      <posY>703</posY>
-      <font>mediastream11c</font>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+control.isvisible(5555)+!control.isvisible(5556)+control.isvisible(5560)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine41Value</label>
-      <posX>540</posX>
-      <posY>703</posY>
-      <font>mediastream11c</font>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+control.isvisible(5555)+!control.isvisible(5556)+!control.isvisible(5560)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <type>label</type>
-      <label>N/A</label>
-      <posX>540</posX>
-      <posY>703</posY>
-      <font>mediastream11c</font>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+!control.isvisible(5555)+!control.isvisible(5556)</visible>
+      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="TVSeriesTitle">
@@ -219,64 +178,90 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!--**********Watched/Unwatched Icons Season/SeriesPoster View*************-->
+    
+    <control>
+      <description>Series/Season Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>204</posX>
+      <posY>495</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>traktSeenIt.png</texture>
+      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(46)|Control.HasThumb(146)]]+control.isvisible(1243)+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Series Rated Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>204</posX>
+      <posY>495</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>#TVSeries.Series.HeartPath</texture>
+      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(46)|Control.HasThumb(146)]]+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    
     <control>
       <description>Series Watched Icon Background</description>
       <type>image</type>
       <id>0</id>
-      <posX>279</posX>
+      <posX>278</posX>
       <posY>525</posY>
       <width>48</width>
       <height>58</height>
       <texture>#StreamedMP.Icons.Background</texture>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(46)|Control.HasThumb(146)]]</visible>
+      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(46)|Control.HasThumb(146)]]+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Series Watched Icon</description>
       <type>image</type>
       <id>0</id>
-      <posX>286</posX>
+      <posX>285</posX>
       <posY>529</posY>
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.Watched</texture>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(46)|Control.HasThumb(146)]]+control.isvisible(1243)+control.isvisible(1244)</visible>
+      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(46)|Control.HasThumb(146)]]+control.isvisible(1243)+control.isvisible(1244)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Series Un-Watched Icon</description>
       <type>image</type>
       <id>0</id>
-      <posX>286</posX>
+      <posX>285</posX>
       <posY>529</posY>
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(46)|Control.HasThumb(146)]]+!control.isvisible(1243)+control.isvisible(1244)</visible>
+      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(46)|Control.HasThumb(146)]]+!control.isvisible(1243)+control.isvisible(1244)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Series Not Available and Watched Icon</description>
       <type>image</type>
       <id>0</id>
-      <posX>286</posX>
+      <posX>285</posX>
       <posY>529</posY>
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.NAWatched</texture>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(46)|Control.HasThumb(146)]]+control.isvisible(1243)+!control.isvisible(1244)</visible>
+      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(46)|Control.HasThumb(146)]]+control.isvisible(1243)+!control.isvisible(1244)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
       <description>Series Not Available and Un-Watched Icon</description>
       <type>image</type>
       <id>0</id>
-      <posX>286</posX>
+      <posX>285</posX>
       <posY>529</posY>
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.NAUnWatched</texture>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(46)|Control.HasThumb(146)]]+!control.isvisible(1243)+!control.isvisible(1244)</visible>
+      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(46)|Control.HasThumb(146)]]+!control.isvisible(1243)+!control.isvisible(1244)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
   </controls>

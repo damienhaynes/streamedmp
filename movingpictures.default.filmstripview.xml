@@ -1,7 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<!-- 
-This file should contain the thumbs view
--->
 <window>
   <controls>
     <control>
@@ -28,6 +25,32 @@ This file should contain the thumbs view
       <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(60)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
+    
+    <control>
+      <description>Trakt Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>414</posX>
+      <posY>109</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>traktSeenIt.png</texture>
+      <visible>facadeview.filmstrip+control.isvisible(50)+control.isvisible(9)+Control.HasThumb(60)+string.equals(#StreamedMP.Icons.Trakt,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Trakt Rating Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>414</posX>
+      <posY>109</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>traktHeart#MovingPictures.UserMovieSettings.10point_user_rating.png</texture>
+      <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(60)+string.equals(#StreamedMP.Icons.Trakt,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    
     <control>
       <description>Watched Icon Background</description>
       <type>image</type>
@@ -37,7 +60,7 @@ This file should contain the thumbs view
       <width>48</width>
       <height>58</height>
       <texture>#StreamedMP.Icons.Background</texture>
-      <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(60)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(60)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -49,7 +72,7 @@ This file should contain the thumbs view
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.Watched</texture>
-      <visible>facadeview.filmstrip+control.isvisible(50)+control.isvisible(9)+Control.HasThumb(60)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)+control.isvisible(9)+Control.HasThumb(60)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -61,7 +84,7 @@ This file should contain the thumbs view
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
-      <visible>facadeview.filmstrip+control.isvisible(50)+!control.isvisible(9)+Control.HasThumb(60)</visible>
+      <visible>facadeview.filmstrip+control.isvisible(50)+!control.isvisible(9)+Control.HasThumb(60)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -191,7 +214,7 @@ This file should contain the thumbs view
     </control>
     <control>
       <type>label</type>
-      <label>#MovingPictures.SelectedMovie.score.localized / 10</label>
+      <label>#MovingPictures.SelectedMovie.score.localized (#MovingPictures.SelectedMovie.popularity.localized #StreamedMP.Votes)</label>
       <posX>615</posX>
       <posY>685</posY>
       <width>540</width>

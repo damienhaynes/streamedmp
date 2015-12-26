@@ -14,6 +14,32 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!-- Watched Icons -->
+    
+    <control>
+      <description>Series Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>407</posX>
+      <posY>105</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>traktSeenIt.png</texture>
+      <visible>control.isvisible(1237)+facadeview.largeicons+Control.HasThumb(60)+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Series Watched Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>407</posX>
+      <posY>105</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>#TVSeries.Series.HeartPath</texture>
+      <visible>control.isvisible(1237)+facadeview.largeicons+Control.HasThumb(60)+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    
     <control>
       <description>Series Watched Icon Background</description>
       <type>image</type>
@@ -23,7 +49,7 @@
       <width>48</width>
       <height>58</height>
       <texture>#StreamedMP.Icons.Background</texture>
-      <visible>control.isvisible(1237)+facadeview.largeicons+Control.HasThumb(60)</visible>
+      <visible>control.isvisible(1237)+facadeview.largeicons+Control.HasThumb(60)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -35,7 +61,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.Watched</texture>
-      <visible>control.isvisible(1237)+facadeview.largeicons+control.isvisible(1243)+control.isvisible(1244)+Control.HasThumb(60)</visible>
+      <visible>control.isvisible(1237)+facadeview.largeicons+control.isvisible(1243)+control.isvisible(1244)+Control.HasThumb(60)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -47,7 +73,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
-      <visible>control.isvisible(1237)+facadeview.largeicons+!control.isvisible(1243)+control.isvisible(1244)+Control.HasThumb(60)</visible>
+      <visible>control.isvisible(1237)+facadeview.largeicons+!control.isvisible(1243)+control.isvisible(1244)+Control.HasThumb(60)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -59,7 +85,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.NAWatched</texture>
-      <visible>control.isvisible(1237)+facadeview.largeicons+control.isvisible(1243)+!control.isvisible(1244)+Control.HasThumb(60)</visible>
+      <visible>control.isvisible(1237)+facadeview.largeicons+control.isvisible(1243)+!control.isvisible(1244)+Control.HasThumb(60)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -71,7 +97,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.NAUnWatched</texture>
-      <visible>control.isvisible(1237)+facadeview.largeicons+!control.isvisible(1243)+!control.isvisible(1244)+Control.HasThumb(60)</visible>
+      <visible>control.isvisible(1237)+facadeview.largeicons+!control.isvisible(1243)+!control.isvisible(1244)+Control.HasThumb(60)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
