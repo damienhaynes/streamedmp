@@ -61,7 +61,7 @@
       <width>122</width>
       <height>122</height>
       <texture>traktSeenIt.png</texture>
-      <visible>facadeview.filmstrip+control.isvisible(1243)+[Control.HasThumb(63)|Control.HasThumb(64)]+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
+      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+control.isvisible(1243)+[Control.HasThumb(63)|Control.HasThumb(64)]+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -73,7 +73,7 @@
       <width>122</width>
       <height>122</height>
       <texture>#TVSeries.Series.HeartPath</texture>
-      <visible>facadeview.filmstrip+Control.HasThumb(63)|Control.HasThumb(64)]+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
+      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+[Control.HasThumb(63)|Control.HasThumb(64)]+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     
@@ -86,7 +86,7 @@
       <width>48</width>
       <height>58</height>
       <texture>#StreamedMP.Icons.Background</texture>
-      <visible>facadeview.filmstrip+[Control.HasThumb(63)|Control.HasThumb(64)]+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
+      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+[Control.HasThumb(63)|Control.HasThumb(64)]+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -98,7 +98,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.Watched</texture>
-      <visible>facadeview.filmstrip+control.isvisible(1243)+control.isvisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
+      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+control.isvisible(1243)+control.isvisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -110,7 +110,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.UnWatched</texture>
-      <visible>facadeview.filmstrip+!control.isvisible(1243)+control.isvisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
+      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+!control.isvisible(1243)+control.isvisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -122,7 +122,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.NAWatched</texture>
-      <visible>facadeview.filmstrip+control.isvisible(1243)+!control.isvisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
+      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+control.isvisible(1243)+!control.isvisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -134,7 +134,7 @@
       <width>36</width>
       <height>36</height>
       <texture>#StreamedMP.Icons.NAUnWatched</texture>
-      <visible>facadeview.filmstrip+!control.isvisible(1243)+!control.isvisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
+      <visible>facadeview.filmstrip+[control.isvisible(1237)|control.isvisible(1238)]+!control.isvisible(1243)+!control.isvisible(1244)+[Control.HasThumb(63)|Control.HasThumb(64)]+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>

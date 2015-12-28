@@ -261,47 +261,11 @@
     <control Style="smallTitle">
       <id>0</id>
       <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine40Value #TVSeries.Series.DataPanelLine43Value</label>
+      <label>#TVSeries.Series.DataPanelLine40Value #TVSeries.Series.DataPanelLine44Value</label>
       <posX>765</posX>
       <posY>927</posY>
       <width>360</width>
-      <visible>[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+facadeview.list+control.isvisible(5555)+control.isvisible(5556)+control.isvisible(5560)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine41Value #TVSeries.Series.DataPanelLine42Value</label>
-      <posX>765</posX>
-      <posY>927</posY>
-      <visible>[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+facadeview.list+control.isvisible(5555)+control.isvisible(5556)+!control.isvisible(5560)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine41Value #TVSeries.Series.DataPanelLine44Value</label>
-      <posX>765</posX>
-      <posY>927</posY>
-      <visible>[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+facadeview.list+control.isvisible(5555)+!control.isvisible(5556)+control.isvisible(5560)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <type>label</type>
-      <label>#TVSeries.Series.DataPanelLine41Value</label>
-      <posX>765</posX>
-      <posY>927</posY>
-      <visible>[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+facadeview.list+control.isvisible(5555)+!control.isvisible(5556)</visible>
-      <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>
-    <control Style="smallTitle">
-      <id>0</id>
-      <type>label</type>
-      <label>N/A</label>
-      <posX>765</posX>
-      <posY>927</posY>
-      <visible>[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+facadeview.list+!control.isvisible(5555)+!control.isvisible(5556)</visible>
+      <visible>[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+facadeview.list</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     
