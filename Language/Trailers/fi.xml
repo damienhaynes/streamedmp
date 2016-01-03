@@ -31,11 +31,14 @@
   <string name="On">Päällä</string>
   <string name="Online">Online</string>
   <string name="OnlineVideosNotInstalled">OnlineVideos -lisäosa vaaditaan trailereiden toistoon, varmista että sinulla on lisäosa asennettu ja käytössä.</string>
+  <string name="OnlineVideosMinVersionNotInstalled">OnlineVideos minimi versio tarkastus epäonnistui, asenna viimeisin versio.</string>
   <!--P-->
   <string name="Play">Toista</string>
   <!--R-->
   <!--S-->
   <string name="Search">Haku</string>
+  <string name="Season">Tuotantokausi</string>
+  <string name="Seasons">Tuotantokaudet</string>
   <string name="SettingPluginEnabledName">Lisäosa käytössä</string>
   <string name="SettingPluginEnabledDescription">Ota käyttöön/poista käytöstä tämä asetus määrittääksesi ladataanko Trailers kun MP käynnistyy.</string>
   <string name="SettingListedHomeName">Näkyy Kotivalikossa</string>
@@ -48,6 +51,8 @@
   <string name="SettingWebTimeoutDescription">Määritä aika joka pitää odottaa vastausta internet pyyntöön.</string>
   <string name="SettingWebTimeoutIncrementName">Internet yhdistyksen aika-katkaisun lisäys</string>
   <string name="SettingWebTimeoutIncrementDescription">Määritä aika joka pitää odottaa ennen uudelleen yhdistystä kun yhditys on epäonnistut.</string>
+  <string name="SettingWebRequestCacheMinutesName">Internet yhdistyksen välimuistin kesto</string>
+  <string name="SettingWebRequestCacheMinutesDescription">Aseta haluttu kesto minuuteissa kuinka pitkään välimuistin tallennetaan, sallitut arvot ovat väliltä 1 ja 1440 (24 tuntia).</string>
   <string name="SettingProviderLocalSearchName">Ota käyttöön \"Paikallinen\" trailereiden tarjoaja</string>
   <string name="SettingProviderLocalSearchDescription">\"Paikallinen\" tarjoaja etsii trailereita paikallisilta kovalevyiltäsi, trailerit voidaan lisätä joko omasta mediastasi tai määritellyistä kansiosta / kansioista.</string>
   <string name="SettingProviderTMDbMoviesName">Ota käyttöön \"TheMovieDb\" trailereiden tarjoaja</string>
@@ -62,6 +67,7 @@
   <string name="SettingSearchLocalInDedicatedDirectoryDescription">Ota käyttöön trailereiden etsintä määritellyissä kansioissa, nämä voisivat olla nykyisen media hakemiston ulkopuolella. Oletuksena \"OnlineVideos\" ja \"ShowTimes\" lataus hakemistoja käytetään etsintään.</string>
   <string name="SettingOnlineVideosYouTubeEnabledName">Ota käyttöön \"YouTube\" manuaaliseen etsintään</string>
   <string name="SettingOnlineVideosYouTubeEnabledDescription">\"Youtube\" sivu on varmaankin paras sivusto \"OnlineVideos\" -lisäosassa suorittaa etsintöjä, siellä on iso valikoima elokuvien trailereita hyvällä laadulla.</string>
+  <string name="SettingOnlineVideosYouTubeMovieSearchStringName">YouTube elokuvan etsintä</string>
   <string name="SettingOnlineVideosITunesEnabledName">Ota käyttöön iTunes sivu manuaaliseen etsintään</string>
   <string name="SettingOnlineVideosITunesEnabledDescription">\"iTunes\" traileri sivu on omistettu vain trailereille, tämä on hyvä vaihtoehto uudemmille elokuville.</string>
   <string name="SettingOnlineVideosIMDbEnabledName">Ota käyttöön \"IMDB\" manuaaliseen etsintään</string>
@@ -69,6 +75,7 @@
   <string name="SettingSearchLocalAggressiveSearchName">Ota käyttöön \"Agressiivinen\" etsintä paikallisille trailereille</string>
   <string name="SettingSearchLocalAggressiveSearchDescription">Agressiivinen etsintä jatkaa trailereiden etsintää useita paikallisia etsintä metodeja käyttäen, jopa silloin kun osuma(t) on löydetty. Tätä asetusta tarvitaan ainoastaan jos sinulla on trailereita samaan elokuvaan useammassa paikassa.</string>
   <string name="SettingSkipOnlineProvidersIfLocalFoundName">Ohita internet tarjoajat jos Paikallinen traileri löytyy</string>
+  <string name="SettingAutoPlayOnSingleLocalOrOnlineTrailerName">Automaattinen toisto paikallisille tai online trailereille</string>
   <string name="SettingAutoDownloadStartDelayName">Automaattisen latauksen käynnistysviive</string>
   <string name="SettingAutoDownloadIntervalName">Automaattisen latauksen aikaväli</string>
   <string name="SettingAutoDownloadUpdateIntervalName">Automaattisen latauksen päivitysväli</string>
@@ -78,7 +85,11 @@
   <string name="SettingAutoDownloadFeaturettesName">Ota käyttöön automaattinen lyhytelokuvien lataus</string>
   <string name="SettingAutoDownloadClipsName">Ota käyttöön automaattinen klippien lataus</string>
   <string name="SettingAutoDownloadCleanupName">Ota käyttöön automaattinen \"Cleanup\" lataus</string>
+  <string name="SettingPreferredLanguageName">Suositeltu trailerin kieli</string>
+  <string name="SettingAlwaysGetEnglishTrailersName">Hae aina englantilaiset trailerit</string>
   <string name="Settings">Asetukset</string>
+  <string name="Special">Erikoinen</string>
+  <string name="Specials">Erikoisuudet</string>
   <!--T-->
   <string name="Timeout">Aikakatkaisu</string>
   <string name="Trailer">Traileri</string>
