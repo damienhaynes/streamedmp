@@ -10,7 +10,7 @@ using MediaPortal.Common.Utils;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("MediaPortal")]
 [assembly: AssemblyProduct("StreamedMP Editor")]
-[assembly: AssemblyCopyright("Copyright © 2006-2015")]
+[assembly: AssemblyCopyright("Copyright © 2006-2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
