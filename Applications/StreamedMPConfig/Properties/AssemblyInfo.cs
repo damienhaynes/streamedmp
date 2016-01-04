@@ -9,7 +9,7 @@ using MediaPortal.Common.Utils;
 [assembly: AssemblyDescription("Windows Plugin to handle StreamedMP Configuration")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("MediaPortal")]
-[assembly: AssemblyProduct("Configuration Plugin")]
+[assembly: AssemblyProduct("StreamedMP Configuration Plugin")]
 [assembly: AssemblyCopyright("Copyright © 2006-2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

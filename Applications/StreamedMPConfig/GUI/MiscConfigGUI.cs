@@ -558,21 +558,22 @@ namespace StreamedMPConfig
 
     private void GetControlStates()
     {
-      ShowHiddenMenuImage = btnHiddenMenuImage.Selected;
-      ShowRoundedImages = btnRoundedImages.Selected;
-      ShowIconsInArtwork = btnIconsInArtwork.Selected;
-      EnablePlayMostRecents = btnPlayRecents.Selected;
-      ShowListScrollingPopup = btnListControlScrollPopup.Selected;
-      TextualLogos = btnTextualLogos.Selected;
-      MyVideoWatchedProgress = btnMyVideoWatchedProgress.Selected;
+        ShowHiddenMenuImage = btnHiddenMenuImage.Selected;
+        ShowRoundedImages = btnRoundedImages.Selected;
+        ShowIconsInArtwork = btnIconsInArtwork.Selected;
+        ShowTraktStyleIconsInArtwork = btnTraktIconsInArtwork.Selected;
+        EnablePlayMostRecents = btnPlayRecents.Selected;
+        ShowListScrollingPopup = btnListControlScrollPopup.Selected;
+        TextualLogos = btnTextualLogos.Selected;
+        MyVideoWatchedProgress = btnMyVideoWatchedProgress.Selected;
 
-      // Update BasicHome RecentlyAdded with new setting
-      if (FilterWatchedInRecentlyAdded != btnFilterWatchedRecents.Selected)
-      {
-        FilterWatchedInRecentlyAdded = btnFilterWatchedRecents.Selected;
-        StreamedMPConfig.getLastThreeAddedTVSeries();
-        StreamedMPConfig.getLastThreeAddedMovies();
-      }
+        // Update BasicHome RecentlyAdded with new setting
+        if (FilterWatchedInRecentlyAdded != btnFilterWatchedRecents.Selected)
+        {
+            FilterWatchedInRecentlyAdded = btnFilterWatchedRecents.Selected;
+            StreamedMPConfig.getLastThreeAddedTVSeries();
+            StreamedMPConfig.getLastThreeAddedMovies();
+        }
     }
 
     private void UpdateTVSeriesLogos()
