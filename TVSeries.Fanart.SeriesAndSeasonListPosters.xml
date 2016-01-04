@@ -200,7 +200,6 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <!--**********Watched/Unwatched Icons Season/SeriesPoster View*************-->
-    
     <control>
       <description>Series/Season Watched Icon</description>
       <type>image</type>
@@ -237,7 +236,6 @@
       <visible>facadeview.list+[[control.isvisible(1238)+Control.HasThumb(46)]+[Control.HasThumb(46)|Control.HasThumb(146)]]+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-    
     <control>
       <description>Series Watched Icon Background</description>
       <type>image</type>
@@ -300,4 +298,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:47a3bbe089310b6fe895ad78811b161a-->
+<!--Checksum:cb8c9f19ae7a3d4b0ea5d780ecd8baf3-->

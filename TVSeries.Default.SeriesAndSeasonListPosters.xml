@@ -74,7 +74,6 @@
       <visible>control.isvisible(1238)+facadeview.list+[Control.HasThumb(61)|Control.HasThumb(62)]+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-    
     <control>
       <description>Watched Icon Background</description>
       <type>image</type>
@@ -134,8 +133,7 @@
       <texture>#StreamedMP.Icons.NAUnWatched</texture>
       <visible>[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+facadeview.list+!control.isvisible(1243)+!control.isvisible(1244)+[Control.HasThumb(61)|Control.HasThumb(62)]+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
-    </control>    
-    
+    </control>
     <control>
       <description>Series Title - ListPoster</description>
       <type>label</type>
@@ -303,4 +301,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:c936431f8b3199d1984a923991160a51-->
+<!--Checksum:193f2edbca94bd397349f8473e2f24cf-->

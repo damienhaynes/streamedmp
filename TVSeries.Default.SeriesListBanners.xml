@@ -25,7 +25,6 @@
       <visible>control.isvisible(1237)+facadeview.list+!control.isvisible(1242)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-    
     <control>
       <description>Series Watched Icon</description>
       <type>image</type>
@@ -50,7 +49,6 @@
       <visible>control.isvisible(1237)+facadeview.list+!control.isvisible(1242)+Control.HasThumb(46)+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-    
     <control>
       <description>Series Watched Icon Background</description>
       <type>image</type>
@@ -248,4 +246,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:91d7158ab9841733233e0a627f74647a-->
+<!--Checksum:e35c5682c01d9bd92e4cf2c72f16060f-->

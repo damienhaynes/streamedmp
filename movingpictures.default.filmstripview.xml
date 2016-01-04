@@ -25,7 +25,6 @@
       <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(60)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-    
     <control>
       <description>Trakt Watched Icon</description>
       <type>image</type>
@@ -50,7 +49,6 @@
       <visible>facadeview.filmstrip+control.isvisible(50)+Control.HasThumb(60)+string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-    
     <control>
       <description>Watched Icon Background</description>
       <type>image</type>
@@ -318,4 +316,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:972d46121c5de518d0375656cc518bbe-->
+<!--Checksum:45c265808b0859d60e76dbfd2a47fb4d-->

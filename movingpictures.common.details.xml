@@ -38,7 +38,6 @@
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!Control.HasThumb(610)+!control.hasfocus(667)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-    
     <control>
       <description>Trakt Watched Icon</description>
       <type>image</type>
@@ -63,7 +62,6 @@
       <visible>!control.isvisible(50)+!control.isvisible(51)+Control.HasThumb(601)+!control.hasfocus(667)+string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-    
     <control>
       <description>Watched Icon Background</description>
       <type>image</type>
@@ -597,4 +595,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:b4d9f5a9f0f3407e6b720cc27f377ab9-->
+<!--Checksum:852cd74ba83cb23d2f2fb0ca68e06312-->

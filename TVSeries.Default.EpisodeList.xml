@@ -52,7 +52,6 @@
       <visible>control.isvisible(1239)+facadeview.list+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-    
     <control>
       <description>Episode Watched Icon Background</description>
       <type>image</type>
@@ -113,7 +112,6 @@
       <visible>control.isvisible(1239)+facadeview.list+!control.isvisible(1243)+!control.isvisible(1244)+!string.equals(#StreamedMP.Icons.Trakt,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-    
     <control>
       <description>Episode Plot</description>
       <type>textboxscrollup</type>
@@ -261,4 +259,4 @@
     </control>
   </controls>
 </window>
-<!--Checksum:66c2b46452db8d3430052365a97bcfef-->
+<!--Checksum:2465b2f1ebc864fa300d80d8f0a48a64-->
