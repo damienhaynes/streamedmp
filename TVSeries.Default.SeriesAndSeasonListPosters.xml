@@ -62,6 +62,18 @@
       <visible>[control.isvisible(1237)+control.isvisible(1242)]+facadeview.list+[Control.HasThumb(61)|Control.HasThumb(62)]+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
+    <control>
+      <description>Season Rated Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>310</posX>
+      <posY>381</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>#TVSeries.Season.HeartPath</texture>
+      <visible>control.isvisible(1238)+facadeview.list+[Control.HasThumb(61)|Control.HasThumb(62)]+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
     
     <control>
       <description>Watched Icon Background</description>
@@ -180,7 +192,18 @@
       <posX>465</posX>
       <posY>457</posY>
       <texture>#TVSeries.Series.FiveStarPath</texture>
-      <visible>[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+facadeview.list</visible>
+      <visible>[control.isvisible(1237)+control.isvisible(1242)]+facadeview.list</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <type>image</type>
+      <id>0</id>
+      <width>172</width>
+      <height>33</height>
+      <posX>465</posX>
+      <posY>457</posY>
+      <texture>#TVSeries.Season.FiveStarPath</texture>
+      <visible>[control.isvisible(1238)+control.isvisible(1242)]+facadeview.list</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
@@ -265,10 +288,19 @@
       <posX>765</posX>
       <posY>927</posY>
       <width>360</width>
-      <visible>[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]+facadeview.list</visible>
+      <visible>[control.isvisible(1237)+control.isvisible(1242)]+facadeview.list</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
-    
+    <control Style="smallTitle">
+      <id>0</id>
+      <type>label</type>
+      <label>#TVSeries.Season.CommunityRating #TVSeries.Season.Votes</label>
+      <posX>765</posX>
+      <posY>927</posY>
+      <width>360</width>
+      <visible>[control.isvisible(1238)+control.isvisible(1242)]+facadeview.list</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
   </controls>
 </window>
 <!--Checksum:c936431f8b3199d1984a923991160a51-->

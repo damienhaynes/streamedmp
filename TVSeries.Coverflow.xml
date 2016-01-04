@@ -11,7 +11,20 @@
       <width>172</width>
       <height>33</height>
       <texture>#TVSeries.Series.FiveStarPath</texture>
-      <visible>facadeview.coverflow</visible>
+      <visible>facadeview.coverflow+control.isvisible(1237)</visible>
+      <animation effect="fade" time="250">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+    </control>
+    <control>
+      <description>Rating Stars</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>874</posX>
+      <posY>1012</posY>
+      <width>172</width>
+      <height>33</height>
+      <texture>#TVSeries.Season.FiveStarPath</texture>
+      <visible>facadeview.coverflow+control.isvisible(1238)</visible>
       <animation effect="fade" time="250">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
     </control>

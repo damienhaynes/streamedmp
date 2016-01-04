@@ -100,7 +100,7 @@
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control>
-      <description>TVDb Series Rating Stars</description>
+      <description>Series Rating Stars</description>
       <type>image</type>
       <id>1</id>
       <posX>352</posX>
@@ -108,7 +108,19 @@
       <width>172</width>
       <height>33</height>
       <texture>#TVSeries.Series.FiveStarPath</texture>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]</visible>
+      <visible>facadeview.list+[control.isvisible(1237)+control.isvisible(1242)]</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Season Rating Stars</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>352</posX>
+      <posY>702</posY>
+      <width>172</width>
+      <height>33</height>
+      <texture>#TVSeries.Season.FiveStarPath</texture>
+      <visible>facadeview.list+control.isvisible(1238)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="smallTitle">
@@ -118,7 +130,17 @@
       <posX>540</posX>
       <posY>703</posY>
       <font>mediastream11c</font>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)]|control.isvisible(1238)]</visible>
+      <visible>facadeview.list+[control.isvisible(1237)+control.isvisible(1242)]+!string.equals(#TVSeries.Series.RatingCount,0)+!string.equals(#TVSeries.Series.RatingCount,)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control Style="smallTitle">
+      <id>0</id>
+      <type>label</type>
+      <label>#TVSeries.Season.CommunityRating #TVSeries.Season.Votes</label>
+      <posX>540</posX>
+      <posY>703</posY>
+      <font>mediastream11c</font>
+      <visible>facadeview.list+control.isvisible(1238)+!string.equals(#TVSeries.Season.RatingCount,0)+!string.equals(#TVSeries.Season.RatingCount,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     <control Style="TVSeriesTitle">
@@ -200,7 +222,19 @@
       <width>122</width>
       <height>122</height>
       <texture>#TVSeries.Series.HeartPath</texture>
-      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]|control.isvisible(1238)+[Control.HasThumb(46)|Control.HasThumb(146)]]+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
+      <visible>facadeview.list+[[control.isvisible(1237)+control.isvisible(1242)+Control.HasThumb(46)]+[Control.HasThumb(46)|Control.HasThumb(146)]]+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+    </control>
+    <control>
+      <description>Season Rated Icon</description>
+      <type>image</type>
+      <id>0</id>
+      <posX>204</posX>
+      <posY>495</posY>
+      <width>122</width>
+      <height>122</height>
+      <texture>#TVSeries.Season.HeartPath</texture>
+      <visible>facadeview.list+[[control.isvisible(1238)+Control.HasThumb(46)]+[Control.HasThumb(46)|Control.HasThumb(146)]]+string.equals(#StreamedMP.Icons.Trakt,true)+!string.equals(#StreamedMP.Icons.Hide,true)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
     </control>
     

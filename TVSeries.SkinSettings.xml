@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <settings>
   <!--
 		The purpose of TVSeries.SkinSettings.xml is to allow the skinner to control the presentation of the TVSeries plugin to the user
@@ -108,8 +108,8 @@
 <Enabled>1<Format><Episode.DataPanelLine30Value><FormatAs>Eval(Round(<Episode.Rating>*10)/10)
 <Enabled>1<Format><Episode.DataPanelLine31Value><FormatAs>Eval(Round(<Episode.Rating>*10)/10) / 10
 <Enabled>1<Format><Episode.DataPanelLine32Value><FormatAs>(Trans(Rated): <Episode.myRating>)
-<Enabled>1<Format><Episode.DataPanelLine33Value><FormatAs>(<Episode.RatingCount> Trans(Votes), Trans(Rated): <Episode.myRating>)
-<Enabled>1<Format><Episode.DataPanelLine34Value><FormatAs>(<Episode.RatingCount> Trans(Votes))
+<Enabled>1<Format><Episode.DataPanelLine33Value><FormatAs>(Eval(FormatThousands(<Episode.RatingCount>)) Trans(Votes), Trans(Rated): <Episode.myRating>)
+<Enabled>1<Format><Episode.DataPanelLine34Value><FormatAs>(Eval(FormatThousands(<Episode.RatingCount>)) Trans(Votes))
 <Enabled>1<Format><Episode.DataPanelLine4Key><FormatAs>Trans(Director)
 <Enabled>1<Format><Episode.DataPanelLine4Value><FormatAs><Episode.Director>
 <Enabled>1<Format><Episode.DataPanelLine5Key><FormatAs>Trans(Writer)
@@ -117,6 +117,7 @@
 <Enabled>1<Format><Episode.SeasonLabel><FormatAs>Season <Episode.SeasonIndex>
 <Enabled>1<Format><Episode.SeriesName><FormatAs><Series.Pretty_Name>
 <Enabled>1<Format><Episode.SeasonLabel><FormatAs>Season <Episode.SeasonIndex>
+<Enabled>1<Format><Episode.HeartPath><FormatAs>traktheartEval(<Episode.myRating>).png
 <Enabled>1<Format><Season.SeasonLabel><FormatAs>Season <Season.SeasonIndex>
 <Enabled>1<Format><Season.SeasonTitle><FormatAs><Series.Pretty_Name>Season <Season.SeasonIndex>
 <Enabled>1<Format><Series.DataPanelLine1Key><FormatAs>Trans(Genre)
@@ -129,8 +130,8 @@
 <Enabled>1<Format><Series.DataPanelLine40Value><FormatAs>Eval(Round(<Series.Rating>*10)/10)
 <Enabled>1<Format><Series.DataPanelLine41Value><FormatAs>Eval(Round(<Series.Rating>*10)/10) / 10
 <Enabled>1<Format><Series.DataPanelLine42Value><FormatAs>(Trans(Rated): <Series.myRating>)
-<Enabled>1<Format><Series.DataPanelLine43Value><FormatAs>(<Series.RatingCount> Trans(Votes), Trans(Rated): <Series.myRating>)
-<Enabled>1<Format><Series.DataPanelLine44Value><FormatAs>(<Series.RatingCount> Trans(Votes))
+<Enabled>1<Format><Series.DataPanelLine43Value><FormatAs>(Eval(FormatThousands(<Series.RatingCount>)) Trans(Votes), Trans(Rated): <Series.myRating>)
+<Enabled>1<Format><Series.DataPanelLine44Value><FormatAs>(Eval(FormatThousands(<Series.RatingCount>)) Trans(Votes))
 <Enabled>1<Format><Series.DataPanelLine5Key><FormatAs>Trans(Network)
 <Enabled>1<Format><Series.DataPanelLine5Value><FormatAs><Series.Network>
 <Enabled>1<Format><Series.DataPanelLine6Value><FormatAs>Eval(<Series.EpisodeCount>-<Series.EpisodesUnWatched>) Trans(Watched)
@@ -138,7 +139,13 @@
 <Enabled>1<Format><Series.DataPanelLine8Key><FormatAs>Trans(Episodes)
 <Enabled>1<Format><Series.DataPanelLine8Value><FormatAs><Series.EpisodeCount> Trans(Episodes), <Series.EpisodesUnWatched> Trans(Unwatched)
 <Enabled>1<Format><Series.FiveStarPath><FormatAs>starEval(Round(<Series.Rating>)).png
+<Enabled>1<Format><Season.FiveStarPath><FormatAs>starEval(Round(<Season.Rating>)).png
+<Enabled>1<Format><Season.CommunityRating><FormatAs>Eval(Round(<Season.Rating>*10)/10)
+<Enabled>1<Format><Season.Votes><FormatAs>(Eval(FormatThousands(<Season.RatingCount>)) Trans(Votes))
+<Enabled>1<Format><Series.HeartPath><FormatAs>traktheartEval(<Series.myRating>).png
+<Enabled>1<Format><Season.HeartPath><FormatAs>traktheartEval(<Season.myRating>).png
 <Enabled>1<Format>star.png<FormatAs>star0.png
+<Enabled>1<Format>()<FormatAs> 
 <Enabled>1<Format>SeriesUnWatched<FormatAs><Series.EpisodesUnWatched>
 <Enabled>1<Format>SeriesWatchedAndUnWatched<FormatAs>Eval(PrettyNumber100(<Series.EpisodesUnWatched>))       Eval(PrettyNumber100(<Series.EpisodeCount>-<Series.EpisodesUnWatched>))
 <Enabled>1<Format>SeriesTotalEpisodes<FormatAs><Series.EpisodeCount> Episodes
