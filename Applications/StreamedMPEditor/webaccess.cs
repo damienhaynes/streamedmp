@@ -58,42 +58,42 @@ namespace StreamedMPEditor
 
     private void installAnimatedIcons_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if (!downloadActive)
-      {
-        optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP_V1.0_AnimatedWeatherIcons.zip";
-        optionDownloadPath = Path.Combine(Path.GetTempPath(),"StreamedMP_V1.0_AnimatedWeatherIcons.zip");
-        destinationPath = SkinInfo.mpPaths.skinBasePath;
-        downloadForm.Text = "Download and Install Animated Weather Icons";
-        pLabel.Text = "Starting Download";
-        theDownload = new Thread(Download);
-        theDownload.Start();
-        downloadForm.Show();
-      }
-      else
-      {
-        DialogResult result = helper.showError("Please wait until current download has finished before contining", errorCode.info);
-        downloadForm.BringToFront();
-      }
+        if (!downloadActive)
+        {
+            optionDownloadURL = "https://github.com/damienhaynes/streamedmp/releases/download/BH/StreamedMP_V1.0_AnimatedWeatherIcons.zip";
+            optionDownloadPath = Path.Combine(Path.GetTempPath(), "StreamedMP_V1.0_AnimatedWeatherIcons.zip");
+            destinationPath = SkinInfo.mpPaths.skinBasePath;
+            downloadForm.Text = "Download and Install Animated Weather Icons";
+            pLabel.Text = "Starting Download";
+            theDownload = new Thread(Download);
+            theDownload.Start();
+            downloadForm.Show();
+        }
+        else
+        {
+            DialogResult result = helper.showError("Please wait until the current download has finished before continuing", errorCode.info);
+            downloadForm.BringToFront();
+        }
     }
 
     private void installWeatherBackgrounds_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if (!downloadActive)
-      {
-        optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP_V1.0_LinkedWeatherBackgrounds.zip";
-        optionDownloadPath = Path.Combine(Path.GetTempPath(),"StreamedMP_V1.0_LinkedWeatherBackgrounds.zip");
-        destinationPath = SkinInfo.mpPaths.skinBasePath;
-        downloadForm.Text = "Download and Install Weather Backgrounds";
-        pLabel.Text = "Starting Download";
-        theDownload = new Thread(Download);
-        theDownload.Start();
-        downloadForm.Show();
-      }
-      else
-      {
-        DialogResult result = helper.showError("Please wait until current download has finished before contining", errorCode.info);
-        downloadForm.BringToFront();
-      }
+        if (!downloadActive)
+        {
+            optionDownloadURL = "https://github.com/damienhaynes/streamedmp/releases/download/BH/StreamedMP_V1.0_LinkedWeatherBackgrounds.zip";
+            optionDownloadPath = Path.Combine(Path.GetTempPath(), "StreamedMP_V1.0_LinkedWeatherBackgrounds.zip");
+            destinationPath = SkinInfo.mpPaths.skinBasePath;
+            downloadForm.Text = "Download and Install Weather Backgrounds";
+            pLabel.Text = "Starting Download";
+            theDownload = new Thread(Download);
+            theDownload.Start();
+            downloadForm.Show();
+        }
+        else
+        {
+            DialogResult result = helper.showError("Please wait until the current download has finished before continuing", errorCode.info);
+            downloadForm.BringToFront();
+        }
     }
 
     private void Download()
@@ -125,11 +125,14 @@ namespace StreamedMPEditor
         }
         finally
         {
-          webResponse.Close();
-          strResponse.Close();
-          strLocal.Close();
-          this.Invoke(new MethodInvoker(extractAndCleanup));
-          downloadActive = false;
+            if (webResponse != null)
+            {
+                webResponse.Close();
+                strResponse.Close();
+                strLocal.Close();
+                this.Invoke(new MethodInvoker(extractAndCleanup));
+            }
+            downloadActive = false;
         }
       }
     }
@@ -138,7 +141,7 @@ namespace StreamedMPEditor
     {
       PercentProgress = Convert.ToInt32((BytesRead * 100) / TotalBytes);
       pBar.Value = PercentProgress;
-      pLabel.Text = "Downloaded " + BytesRead + " out of " + TotalBytes + " (" + PercentProgress + "%)";
+      pLabel.Text = "Downloaded " + BytesRead / 1024 + " KB out of " + TotalBytes / 1024 + " KB (" + PercentProgress + "%)";
     }
 
     private void downloadStop_Click(object sender, EventArgs e)

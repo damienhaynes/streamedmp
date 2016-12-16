@@ -128,22 +128,22 @@ namespace StreamedMPEditor
 
     private void splashDownloadLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
     {
-      if (!downloadActive)
-      {
-        optionDownloadURL = "http://streamedmp.googlecode.com/files/StreamedMP-SplashScreens-V1.0.zip";
-        optionDownloadPath = System.IO.Path.GetTempPath() + "StreamedMP-SplashScreens-V1.0.zip";
-        destinationPath = SkinInfo.mpPaths.skinBasePath;
-        downloadForm.Text = "Download and Install Alternative SplashScreens";
-        pLabel.Text = "Starting Download";
-        theDownload = new Thread(Download);
-        theDownload.Start();
-        downloadForm.Show();
-      }
-      else
-      {
-        DialogResult result = helper.showError("Please wait till current download has finished before contining", errorCode.info);
-        downloadForm.BringToFront();
-      }
+        if (!downloadActive)
+        {
+            optionDownloadURL = "https://github.com/damienhaynes/streamedmp/releases/download/BH/StreamedMP-SplashScreens-V1.0.zip";
+            optionDownloadPath = System.IO.Path.GetTempPath() + "StreamedMP-SplashScreens-V1.0.zip";
+            destinationPath = SkinInfo.mpPaths.skinBasePath;
+            downloadForm.Text = "Download and Install Alternative SplashScreens";
+            pLabel.Text = "Starting Download";
+            theDownload = new Thread(Download);
+            theDownload.Start();
+            downloadForm.Show();
+        }
+        else
+        {
+            DialogResult result = helper.showError("Please wait until the current download has finished before continuing", errorCode.info);
+            downloadForm.BringToFront();
+        }
     }
 
     private void userConfirmation()
