@@ -678,8 +678,9 @@ namespace StreamedMPConfig
 
       // get filter criteria of movies protected by parental conrols
       bool pcFilterEnabled = MovingPicturesCore.Settings.ParentalControlsEnabled;
-      DBFilter<DBMovieInfo> pcFilter = MovingPicturesCore.Settings.ParentalControlsFilter;     
-           
+      DBFilter<DBMovieInfo> pcFilter = MovingPicturesCore.Settings.ParentalControlsFilter;
+      if (pcFilter == null) return;     
+
       // apply parental control filter to movie list
       List<DBMovieInfo> filteredMovies = pcFilterEnabled ? pcFilter.Filter(movies).ToList() : movies;
 
