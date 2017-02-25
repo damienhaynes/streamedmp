@@ -97,8 +97,8 @@
                                                                             
 #define TVSERIES_MIN_VERSION						"4.3.0.0"
 #define MOVINGPICTURES_MIN_VERSION					"1.8.1.0"
-#define FANARTHANDLER_MIN_VERSION					"4.0.2.220"
-#define LATESTMEDIAHANDLER_MIN_VERSION				"2.3.0.49"
+#define FANARTHANDLER_MIN_VERSION					"4.0.2.245"
+#define LATESTMEDIAHANDLER_MIN_VERSION				"2.3.0.63"
 #define MYLYRICS_MIN_VERSION						"2.1.1.284"
 #define GLOBALSEARCH_MIN_VERSION					"2.0.0.73"
 #define INFOSERVICE_MIN_VERSION						"1.7.3.249"
@@ -242,7 +242,7 @@ prototype NUMBER	ReplaceStringInFile(STRING, STRING, STRING);
 prototype VOID 		ShowNowPlayingPreviewImage(STRING);
 prototype VOID 		HideControl(STRING, NUMBER);   
 prototype VOID 		ShowControl(STRING, NUMBER);    
-prototype VOID		DetectWinLargeFonts();   
+//prototype VOID		DetectWinLargeFonts();   
 prototype STRING	BoolToString(BOOL); 
 prototype STRING	BoolToStringInt(BOOL);
 //prototype NUMBER	GetVersionDigit(STRING, INT);
@@ -334,7 +334,7 @@ function OnBegin()
 	NUMBER nResult;
 	BOOL bUpgradeSupported;	
 begin    
-	DetectWinLargeFonts();
+	//DetectWinLargeFonts();
 	
 	// See if older version is installed
 	g_bMajorUpgrade = IsMajorUpgrade(szVersion, g_sMajorUpgradeGUID, bUpgradeSupported);
@@ -3427,35 +3427,35 @@ end;
    
 //end; 
 
-function void DetectWinLargeFonts()
-	STRING szKey, svValue, szMessage;
-	NUMBER nvType, nvSize, nvValue;
-begin
-	if (MODE=SILENTMODE) then
-		return;
-	endif;
+//function void DetectWinLargeFonts()
+//	STRING szKey, svValue, szMessage;
+//	NUMBER nvType, nvSize, nvValue;
+//begin
+//	if (MODE=SILENTMODE) then
+//		return;
+//	endif;
 	
-	// Detect Windows Font Size
-	RegDBSetDefaultRoot(HKEY_CURRENT_USER);
+//	// Detect Windows Font Size
+//	RegDBSetDefaultRoot(HKEY_CURRENT_USER);
 	
-	szKey = "Control Panel\\Desktop\\WindowMetrics";
-	if RegDBGetKeyValueEx(szKey,"AppliedDPI", nvType, svValue, nvSize) < 0 then
-		svValue = "96";
-	endif;
-	StrToNum(nvValue, svValue);
+//	szKey = "Control Panel\\Desktop\\WindowMetrics";
+//	if RegDBGetKeyValueEx(szKey,"AppliedDPI", nvType, svValue, nvSize) < 0 then
+//		svValue = "96";
+//	endif;
+//	StrToNum(nvValue, svValue);
 	
-	// StreamedMP does not support Windows Fonts > 96dpi
-	if nvValue > 96 then
+//	// StreamedMP does not support Windows Fonts > 96dpi
+//	if nvValue > 96 then
 			
-		szMessage = "WARNING: Large Fonts setting has been detected in windows,\n";
-		szMessage = szMessage + "this is not supported by StreamedMP. We recommend you set\n";
-		szMessage = szMessage + "your font setting back to Default before starting\n";
-		szMessage = szMessage + "MediaPortal.";
+//		szMessage = "WARNING: Large Fonts setting has been detected in windows,\n";
+//		szMessage = szMessage + "this is not supported by StreamedMP. We recommend you set\n";
+//		szMessage = szMessage + "your font setting back to Default before starting\n";
+//		szMessage = szMessage + "MediaPortal.";
 		
-		MessageBox(szMessage,WARNING);
+//		MessageBox(szMessage,WARNING);
 		
-	endif;
-end;
+//	endif;
+//end;
 
 function string BoolToString(bState)
 	STRING sReturn;
