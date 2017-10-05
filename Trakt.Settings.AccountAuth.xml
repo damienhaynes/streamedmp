@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <id>87275</id>
+  <defaultcontrol>2</defaultcontrol>
+  <allowoverlay>no</allowoverlay>
+  <define>#header.label:#Trakt.Translation.AccountSetup.Label</define>
+  <define>#header.hover:hover_trakt.png</define>
+  <define>#defaultcontrol:2</define>
+  <define>#defaultcontrol.onright:9997</define>
+  <controls>
+    <import>Trakt.Common.xml</import>
+    <import>common.time.xml</import>
+    <control>
+      <type>group</type>
+      <description>group element</description>
+      <animation effect="fade" time="200" delay="200">windowopen</animation>
+      <posX>376</posX>
+      <posY>205</posY>
+      <width>892</width>
+      <height>750</height>
+      <layout>StackLayout</layout>
+      <control Style="settingsmainbutton">
+        <description>Authorise Application / Disconnect</description>
+        <type>button</type>
+        <id>2</id>
+		<!-- Plugin sets the label basis state -->
+        <label/>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+    </control>
+	
+	<control>
+      <type>textbox</type>
+      <description>Scan QR or enter in URL</description>
+      <id>0</id>
+      <posX>360</posX>
+      <posY>310</posY>
+      <width>850</width>
+	  <height>200</height>
+      <label>#Trakt.Settings.Account.ScanQRCode</label>
+      <font>mediastream12tc</font>
+      <visible>string.equals(#Trakt.Settings.Account.Authorise,true)</visible>
+    </control>
+	<control>
+      <description>QR URL Image</description>
+      <type>image</type>
+      <id>1</id>
+      <posX>380</posX>
+      <posY>450</posY>
+      <width>330</width>
+      <height>330</height>
+      <texture>QRActivateUrl.png</texture>
+	  <visible>string.equals(#Trakt.Settings.Account.Authorise,true)</visible>
+    </control>
+	<control>
+      <type>label</type>
+      <description>User Code</description>
+      <id>0</id>
+      <posX>380</posX>
+      <posY>800</posY>
+      <width>892</width>
+      <label>#Trakt.Settings.Account.UserCode</label>
+      <font>mediastream28tc</font>
+      <visible>string.equals(#Trakt.Settings.Account.Authorise,true)</visible>
+    </control>
+	<control>
+      <type>textbox</type>
+      <description>Application Wait</description>
+      <id>0</id>
+      <posX>380</posX>
+      <posY>900</posY>
+      <width>850</width>
+	  <height>200</height>
+      <label>#Trakt.Translation.ApplicationAuthWait.Label</label>
+      <font>mediastream12tc</font>
+      <visible>string.equals(#Trakt.Settings.Account.Authorise,true)</visible>
+    </control>
+  </controls>
+</window>
