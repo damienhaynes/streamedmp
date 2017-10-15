@@ -632,7 +632,7 @@
       <posX>465</posX>
       <posY>891</posY>
       <width>285</width>
-      <visible>!string.equals(#Trakt.Show.FirstAiredLocalized,)+facadeview.list</visible>
+      <visible>!string.equals(#Trakt.Season.FirstAiredLocalized,)+facadeview.list</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
@@ -640,10 +640,10 @@
       <description>FirstAired</description>
       <id>0</id>
       <type>label</type>
-      <label>#(iif(neq(#Trakt.Show.FirstAiredLocalized,'1/01/1970'),'#Trakt.Show.FirstAiredLocalized','--'))</label>
+      <label>#(iif(neq(#Trakt.Season.FirstAiredLocalized,'1/01/1970'),'#Trakt.Season.FirstAiredLocalized','--'))</label>
       <posX>780</posX>
       <posY>892</posY>
-      <visible>!string.equals(#Trakt.Show.FirstAiredLocalized,)+facadeview.list</visible>
+      <visible>!string.equals(#Trakt.Season.FirstAiredLocalized,)+facadeview.list</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
@@ -823,7 +823,7 @@
       <posX>30</posX>
       <posY>892</posY>
       <width>270</width>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Show.FirstAiredLocalized,)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Season.FirstAiredLocalized,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
@@ -831,10 +831,10 @@
       <description>First Aired</description>
       <id>0</id>
       <type>label</type>
-      <label>#(iif(neq(#Trakt.Show.FirstAiredLocalized,'1/01/1970'),'#Trakt.Show.FirstAiredLocalized','--'))</label>
+      <label>#(iif(neq(#Trakt.Season.FirstAiredLocalized,'1/01/1970'),'#Trakt.Season.FirstAiredLocalized','--'))</label>
       <posX>338</posX>
       <posY>893</posY>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Show.FirstAiredLocalized,)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Season.FirstAiredLocalized,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
@@ -846,7 +846,7 @@
       <posX>30</posX>
       <posY>925</posY>
       <width>270</width>
-      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Show.FirstAiredLocalized,)</visible>
+      <visible>[facadeview.smallicons|facadeview.largeicons]+control.isvisible(50)+!string.equals(#Trakt.Show.Status,)</visible>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
     </control>
