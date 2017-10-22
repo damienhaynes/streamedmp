@@ -297,7 +297,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1560</posX>
-        <posY>495</posY>
+        <posY>540</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="450,0">visible</animation>
         <animation effect="slide" time="0" end="450,0">hidden</animation>
@@ -309,7 +309,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1560</posX>
-        <posY>625</posY>
+        <posY>670</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="450,0">visible</animation>
         <animation effect="slide" time="0" end="450,0">hidden</animation>
@@ -337,6 +337,13 @@
           <description>Start Date</description>
           <type>button</type>
           <id>3</id>
+          <label>-</label>
+          <onleft>50</onleft>
+        </control>
+		<control>
+          <description>Max Days</description>
+          <type>button</type>
+          <id>5</id>
           <label>-</label>
           <onleft>50</onleft>
         </control>
