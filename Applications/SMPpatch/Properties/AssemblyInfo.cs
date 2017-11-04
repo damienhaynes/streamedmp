@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("MediaPortal")]
 [assembly: AssemblyProduct("StreamedMP Patch Utility")]
-[assembly: AssemblyCopyright("Copyright © 2006-2016")]
+[assembly: AssemblyCopyright("Copyright © 2006-2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,4 +20,4 @@ using System.Runtime.InteropServices;
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("89b61916-c982-46e5-8cba-0a3883601fcb")]
-[assembly: AssemblyVersion("3.2.0.1")]
+[assembly: AssemblyVersion("3.2.1.0")]

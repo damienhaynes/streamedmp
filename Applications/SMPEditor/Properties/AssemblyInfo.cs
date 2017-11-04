@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("StreamedMP Team")]
 [assembly: AssemblyProduct("StreamedMP Menu Editor")]
-[assembly: AssemblyCopyright("Copyright © 2006-2016")]
+[assembly: AssemblyCopyright("Copyright © 2006-2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -28,4 +28,4 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("3.2.0.1")]
+[assembly: AssemblyVersion("3.2.1.0")]

@@ -10,7 +10,7 @@ using MediaPortal.Common.Utils;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("MediaPortal")]
 [assembly: AssemblyProduct("StreamedMP Configuration Plugin")]
-[assembly: AssemblyCopyright("Copyright © 2006-2016")]
+[assembly: AssemblyCopyright("Copyright © 2006-2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -30,4 +30,4 @@ using MediaPortal.Common.Utils;
 //      Revision
 //
 [assembly: CompatibleVersion("1.6.100.0", "1.6.100.0")]
-[assembly: AssemblyVersion("3.2.0.1")]
+[assembly: AssemblyVersion("3.2.1.0")]
