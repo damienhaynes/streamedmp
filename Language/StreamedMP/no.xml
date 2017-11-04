@@ -1,132 +1,300 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <!--Example user defined translation property-->
-  <!--Field name must start with a '#'. The entry below creates the skin property-->
-  <!--'#StreamedMP.Example.Property' that is set to 'Translated String'-->
-  <string name="#StreamedMP.Example.Property">Translated String</string>
-  <!--MediaPortal Localised IDs -> Skin Properties-->
-  <string name="#StreamedMP.Track">435</string>
-  <string name="#StreamedMP.Year">436</string>
-  <string name="#StreamedMP.Next">790</string>
-  <string name="#StreamedMP.RefreshTime">397</string>
-  <string name="#StreamedMP.Minutes">3004</string>
-  <!--Menu Options-->
-  <string name="MusicMenu">Musikkinnstillinger</string>
-  <string name="VideoMenu">Videoinnstillinger</string>
-  <string name="SkinUpdate">Oppdater skin</string>
-  <string name="TVSeriesMenu">TV-serier innstillinger</string>
-  <string name="MovingPicturesMenu">MovingPictures innstillinger</string>
-  <string name="TVMenu">TV-innstillinger</string>
-  <string name="MiscMenu">Andre innstillinger</string>
-  <string name="SkinSettings">Skininnstillinger</string>
-  <string name="SkinMenu">Skin</string>
-  <string name="SkinInfoText">Skin Information</string>
-  <string name="ConfigRequiresRestartLine1">The following configuration changes will take</string>
-  <string name="ConfigRequiresRestartLine2">affect on next MediaPortal restart.</string>
-  <string name="ConfigRequiresRestartLine3">Would you like to restart now?</string>
-  <!--Skin Updates / Patching GUI-->
-  <string name="UpdateInstall">Oppdater og installer</string>
-  <string name="NoUpdatesAvailable">Ingen oppdateringer er tilgjengelig nå</string>
-  <string name="DownloadingPatch">Laster ned oppdatering: {0}</string>
-  <string name="DownloadingProgress">{0}KB av {1}KB ({2}%) er lastet ned</string>
-  <string name="NumPatchesInstalled">Antall installerte oppdateringer: {0}</string>
-  <string name="PatchUpdateComplete">Oppdatering til versjon: {0} fullført</string>
-  <string name="UpdateAvailableHeading">Oppdatering tilgjengelig - Endringslogg</string>
-  <string name="mupdateheader">Oppdateringen er lastet ned til skrivebordet</string>
-  <string name="mupdateline1">Manuell oppdatering kreves - For å installere, lukk</string>
-  <string name="mupdateline2">MediaPortal og/eller Konfigureringen</string>
-  <string name="mupdateline3">og start:  {0}</string>
-  <string name="mupdateline4">som ligger på skrivebordet</string>
-  <!--Plugin Options-->
-  <string name="MinVideoOSD">Ved pause, bruk mini Video OSD</string>
-  <string name="VideoWallpaperLabel">Bakgrunnsbilde for video</string>
-  <!--Music Options-->
-  <string name="CDCover">Vis CD cover kun i avspillingsvinduet</string>
-  <string name="ShowEQ">Vis grafisk EQ i avspillingsvinduet</string>
-  <string name="NowPlayingStyles">Avspillingsvinduer:</string>
-  <!--TVSeries Configuration-->
-  <string name="FanartStyle">Fanart stil</string>
-  <string name="WideBanners">WideBanners</string>
-  <string name="WideBannerDefault">WideBanners: Standard</string>
-  <string name="WideBanner5x2Grid">WideBanners: 5x2 rutenett med plakat</string>
-  <string name="WideBanner5x3Grid">WideBanners: 5x3 rutenett</string>
-  <string name="WideBanner7x3Grid">WideBanners: 7x3 rutenett</string>
-  <string name="WideBanner10x4Grid">WideBanners: 10x4 rutenett</string>
-  <!--MovingPictures Configuration-->
-  <string name="Thumbnails">Miniatyrbilder</string>
-  <string name="ThumbnailDefault">Miniatyrbilder: Standard</string>
-  <string name="Thumbnail_12x4_8x3_Grid">Miniatyrbilder: 12x4 små ikoner, 8x3 store ikoner</string>
-  <string name="Thumbnail_12x3_8x2_Grid">Miniatyrbilder: 12x3 små ikoner, 8x2 store ikoner + info</string>
-  <string name="ShowTaglineInDetailsSummary">Vis undertittel i detalj sammedraget</string>
-  <!--TV Configuration-->
-  <string name="TVGuideSize">TV-guide størrelse</string>
-  <string name="TVMiniGuideSize">Mini TV-guide størrelse</string>
-  <string name="TVGuideEightRows">TV-guide: 8 rader</string>
-  <string name="TVGuideTenRows">TV-guide: 10 rader</string>
-  <string name="TVGuideTwelveRows">TV-guide: 12 rader</string>
-  <string name="TVGuideSixteenRows">TV-guide: 16 rader</string>
-  <string name="TVMiniGuideThreeRows">Mini TV-guide: 3 rader</string>
-  <string name="TVMiniGuideFiveRows">Mini TV-guide: 5 rader</string>
-  <string name="TVMiniGuideSevenRows">Mini TV-guide: 7 rader</string>
-  <string name="TVMiniGuideNineRows">Mini TV-guide: 9 rader</string>
-  <string name="EnableRandomTVSeriesFanartInMyTV">Enable Random TVSeries Fanart</string>
-  <!--Misc Settings-->
-  <string name="ShowHiddenMenuImage">Vis ikon for skjult meny</string>
-  <string name="ShowRoundedPosters">Bruk avrundede plakater</string>
-  <string name="ShowIconsInArtwork">Bruk ikoner for sett/usett i skinet</string>
-  <string name="PlayMostRecents">Aktiver spill av i \"Nylig sett\"</string>
-  <string name="FilterWatchedRecents">Filter Watched in Recently Added</string>
-  <string name="UnfocusedAlpha">Transparency/Opacity Settings</string>
-  <string name="UnfocusedAlphaMenuLists">Unfocused Alpha on List Layouts: {0}</string>
-  <string name="UnfocusedAlphaMenuThumbs">Unfocused Alpha on Thumb Layouts: {0}</string>
-  <string name="UnfocusedAlphaInvalidLine1">Invalid value entered, please enter a value</string>
-  <string name="UnfocusedAlphaInvalidLine2">between 0 - 255.</string>
-  <string name="UnfocusedAlphaInvalidLine3">Opaque = 255, Transparent = 0</string>
-  <string name="UseLargeFonts">Use Large Fonts</string>
-  <string name="RestoreDefaults">Restore Defaults</string>
-  <string name="ListColors">Set List Colors</string>
-  <string name="ListDefaultColor">Default Color: {0}</string>
-  <string name="ListText2Color">Text 2 Color: {0}</string>
-  <string name="ListText3Color">Text 3 Color: {0}</string>
-  <string name="ListWatchedColor">Watched Color: {0}</string>
-  <string name="ListRemoteColor">Remote Color: {0}</string>
-  <string name="ListColorInvalidLine1">Invalid color code entered, please enter a</string>
-  <string name="ListColorInvalidLine2">valid HEX code e.g. the color red is FF0000.</string>
-  <string name="ListColorInvalidLine3">which is \'255\' red, \'0\' green, and \'0\' blue.</string>
-  <string name="CustomColor">Custom Color</string>
-  <string name="ShowListScrollingPopup">Vis rullemeny i dialogboks</string>
-  <string name="Scraper">Datakilde</string>
-  <string name="TextualMediaInfoLogos">Grafiske mediainformasjons logoer</string>
-  <!--General Translations-->
-  <string name="Rated">Vurdering</string>
+  <!--A-->
+  <string name="Account">Konto</string>
+  <string name="AccountSetup">Oppsett for konto</string>
+  <string name="AccountDialog">Dialog konto</string>
+  <string name="Actor">Skuespiller</string>
+  <string name="Actors">Skuespillere</string>
+  <string name="Activity">Aktivitet</string>
+  <string name="ActivityFriendsDesc">Se hva vennene dine gjør...</string>
+  <string name="ActivityCommunityDesc">Se hva samfunnet gjør...</string>
+  <string name="ActivityWatching">{0} ser {1}</string>
+  <string name="ActivityWatched">{0} så {1}</string>
+  <string name="ActivityCheckedIn">{0} sjekket inn {1}</string>
+  <string name="ActivityCollected">{0} samlet {1}</string>
+  <string name="ActivityCollectedEpisodes">{0} samlet {1} episoder av {2}</string>
+  <string name="ActivitySeen">{0} har sett {1}</string>
+  <string name="ActivitySeenEpisodes">{0} har sett {1} episode av {2}</string>
+  <string name="ActivityRating">{0} rangerte {1}</string>
+  <string name="ActivityRatingAdvanced">{0} ragerte {1} [{2}/10]</string>
+  <string name="ActivityWatchlist">{0} la {1} til i deres visningsliste</string>
+  <string name="ActivityAddToList">{0} la {1} til {2}</string>
+  <string name="ActivityCreatedList">{0} opprettet {1}</string>
+  <string name="ActivityShouts">{0} ropte ut til {1}</string>
+  <string name="Activities">Aktiviteter</string>
+  <string name="AddFriend">Add Friend...</string>
+  <string name="AddToList">Legg til i liste...</string>
+  <string name="AddShowToList">Legg serie til i liste...</string>
+  <string name="AddEpisodeToList">Legg episode til i liste...</string>
+  <string name="Age">Age</string>
+  <string name="AirDate">Dato</string>
+  <string name="AirDay">Dag</string>
+  <string name="AirTime">Klokkeslett</string>
+  <string name="Approve">Approve</string>
+  <string name="ApprovedDate">Approved Date</string>
+  <string name="AdvancedSettings">Avanserte innstillinger</string>
+  <string name="Animation">Tegnefilm</string>
+  <!--B-->
+  <string name="BufferingTrailer">Bufrer forhåndsvisning</string>
+  <!--C-->
+  <string name="Cancel">Avbryt</string>
+  <string name="Calendar">Kalender</string>
+  <string name="CalendarMyShows">Mine Serier</string>
+  <string name="CalendarPremieres">Premiere</string>
+  <string name="CalendarAllMovies">Alle filmer</string>
+  <string name="CalendarAllShows">All Shows</string>
+  <string name="Cast">Rolleinhavere</string>
+  <string name="Certification">Aldersgrense</string>
+  <string name="ChangeView">Bytt visning...</string>
+  <string name="ChangeLayout">Bytt utseende...</string>
+  <string name="Create">Lag</string>
+  <string name="CreateAccount">Lag konto</string>
+  <string name="CreateNewAccount">Lag ny konto...</string>
+  <string name="CreatingAccount">Lager konto...</string>
+  <string name="CreateMovingPicturesCategories">Opprett Moving Pictures kategori</string>
+  <string name="CreateMovingPicturesFilters">Opprett Moving Pictures filter</string>
+  <string name="CreateMyFilmsCategories">Opprett My Films kategori</string>
+  <string name="CreatingCategories">Opprett kategorier</string>
+  <string name="CreatingFilters">Opprett filtre</string>
+  <string name="CreatingList">Oppretter liste</string>
+  <string name="CreateList">Opprett ny liste...</string>
+  <string name="Community">Samfunn</string>
+  <string name="CommunityActivity">Samfunns aktiviteter</string>
+  <string name="CopyList">Kopier liste...</string>
+  <!--D-->
+  <string name="DateToday">I dag</string>
+  <string name="DateYesterday">Yesterday</string>
+  <string name="DateOneWeekAgo">1 Week Ago</string>
+  <string name="DateTwoWeeksAgo">2 Weeks Ago</string>
+  <string name="DateOneMonthAgo">1 Month Ago</string>
+  <string name="Deny">Deny</string>
+  <string name="DeleteList">Slett liste</string>
+  <string name="DeleteListItem">Slett liste objekt</string>
+  <string name="DeletingList">Sletter liste</string>
+  <string name="DeleteFriend">Delete Friend</string>
   <string name="Director">Regissør</string>
+  <string name="Directors">Regissører</string>
+  <string name="DisconnectAccount">Koble fra konto: {0}</string>
+  <string name="DismissRecommendation">Overse denne anbefalingen</string>
+  <string name="DontIncludeMeInFriendsActivity">Ikke inkluder meg i venners aktiviteter</string>
+  <string name="DownloadFanart">Last ned Fanart</string>
+  <string name="DownloadFullSizeFanart">Bruk original størrelse på Fanart</string>
+  <!--E-->
+  <string name="EditList">Endre liste...</string>
+  <string name="EditingList">Endrer liste</string>
+  <string name="Email">Epost</string>
+  <string name="EndYear">Slutt: {0}</string>
+  <string name="Episode">Episode</string>
+  <string name="Episodes">Episoder</string>
+  <string name="Error">Feil med Trakt</string>
+  <!--F-->
+  <string name="Filters">Filtre</string>
+  <string name="FirstAired">Først sendt</string>
+  <string name="Friend">Venn</string>
+  <string name="Friends">Venner</string>
+  <string name="FriendActivity">Venners aktivitet</string>
+  <string name="FriendRequest">Friend Request</string>
+  <string name="FriendRequestMessage">You have {0} friend requests, approve or deny from friends window</string>
+  <string name="FullName">Fult Navn</string>
+  <!--G-->
+  <string name="Gender">Kjønn</string>
+  <string name="General">Generelt</string>
+  <string name="Genre">Sjanger</string>
+  <string name="GenreItem">Sjanger: {0}</string>
+  <string name="GenreAction">Action</string>
+  <string name="GenreAdventure">Eventyr</string>
+  <string name="GenreAll">Alle</string>
+  <string name="GenreAnimation">Tegnefilm</string>
+  <string name="GenreChildren">Barn</string>
+  <string name="GenreComedy">Komedie</string>
+  <string name="GenreCrime">Krim</string>
+  <string name="GenreDocumentary">Dokumentar</string>
+  <string name="GenreDrama">Drama</string>
+  <string name="GenreFamily">Familie</string>
+  <string name="GenreFantasy">Fantasi</string>
+  <string name="GenreGameShow">Game show </string>
+  <string name="GenreFilmNoir">Film Noir</string>
+  <string name="GenreHistory">Historie</string>
+  <string name="GenreHomeAndGarden">Hjem og hage</string>
+  <string name="GenreHorror">Grøsser</string>
+  <string name="GenreIndie">Indie</string>
+  <string name="GenreMiniSeries">Mini serie</string>
+  <string name="GenreMusic">Musikk</string>
+  <string name="GenreMusical">Musikal</string>
+  <string name="GenreMystery">Mysterie</string>
+  <string name="GenreNews">Nyheter</string>
+  <string name="GenreNone">Ingen</string>
+  <string name="GenreReality">Virkelighet</string>
+  <string name="GenreRomance">Romantikk</string>
+  <string name="GenreScienceFiction">Science Fiction</string>
+  <string name="GenreSoap">Såpedrama</string>
+  <string name="GenreSpecialInterest">Spesielle interesser</string>
+  <string name="GenreSport">Sport</string>
+  <string name="GenreSuspense">Uvisshet</string>
+  <string name="GenreTalkShow">Diskusjonsprogram</string>
+  <string name="GenreThriller">Thriller</string>
+  <string name="GenreWar">Krig</string>
+  <string name="GenreWestern">Ville vesten</string>
+  <string name="GetFriendRequestsOnStartup">Get Friend Requests on Startup</string>
+  <string name="GettingActivity">Henter aktivitet</string>
+  <string name="GettingCalendar">Henter kalender</string>
+  <string name="GettingFriendsList">Henter liste med venner</string>
+  <string name="GettingFriendsRequests">Getting Friend Requests</string>
+  <string name="GettingFriendsWatchedHistory">Henter hva venner har sett</string>
+  <string name="GettingLists">Henter lister</string>
+  <string name="GettingListItems">Henter liste objekter</string>
+  <string name="GettingSearchResults">Getting Search Results</string>
+  <string name="GettingShouts">Getting Shouts</string>
+  <string name="GettingShowSeasons">Henter serie sesonger</string>
+  <string name="GettingTrendingMovies">Henter populære filmer</string>
+  <string name="GettingTrendingShows">Henter populære serier</string>
+  <string name="GettingRecommendedMovies">Henter anbefalte filmer</string>
+  <string name="GettingRecommendedShows">Henter anbefalte serier</string>
+  <string name="GettingRelatedMovies">Henter relaterte filmer</string>
+  <string name="GettingRelatedShows">Henter relaterte serier</string>
+  <string name="GettingTrailerUrls">Henter trailer URLer</string>
+  <string name="GuestStar">Gjest</string>
+  <string name="GuestStars">Gjester</string>
+  <!--H-->
+  <string name="Hate">Hater</string>
+  <string name="Hated">Hatet</string>
+  <string name="Hide">Skjul</string>
+  <string name="HideCollected">Skjul samlet</string>
+  <string name="HideSpoilers">Skjul avsløringer</string>
+  <string name="HideWatched">Skjul sette</string>
+  <string name="HideWatchlisted">Skjul visningsliste</string>
+  <!--I-->
+  <string name="Inserted">Satt inn</string>
+  <string name="Item">Objekt</string>
+  <string name="Items">Objekter</string>
+  <!--J-->
+  <string name="JoinDate">Ble med den</string>
+  <string name="Joined">Blitt med</string>
+  <!--K-->
+  <!--L-->
+  <string name="Language">Språk</string>
+  <string name="Languages">Språk</string>
+  <string name="Location">Lokasjon</string>
+  <string name="Layout">Utseende</string>
+  <string name="List">Liste</string>
+  <string name="Lists">Lister</string>
+  <string name="Love">Liker</string>
+  <string name="Loved">Likt</string>
+  <string name="LoginExistingAccount">Logg inn på eksisterende konto...</string>
+  <string name="LoggedIn">Innlogget</string>
+  <string name="Login">Logg inn</string>
+  <string name="ListNameAlreadyExists">List med tilsvarende navn finnes allerede</string>
+  <!--M-->
+  <string name="MarkAsWatched">Marker som sett</string>
+  <string name="MarkAsUnWatched">Marker som usett</string>
+  <string name="Minutes">Minutter</string>
+  <string name="Music">Musikk</string>
+  <string name="Movie">Film</string>
+  <string name="Movies">Filmer</string>
+  <!--N-->
+  <string name="Name">Navn</string>
+  <string name="Network">Kanal</string>
+  <string name="NextWeek">Neste uke</string>
+  <string name="NoEpisodeSummary">Episode oppsummering ikke tigjengelig.</string>
+  <string name="NoEpisodesThisWeek">Ingen episode denne uke</string>
+  <string name="NoMovieSummary">Film oppsummering ikke tigjengelig.</string>
+  <string name="NoShowSummary">Serie oppsummering ikke tigjengelig.</string>
+  <string name="NoFriends">Ingen venner!</string>
+  <string name="NoFriendsTaunt">Du har ingen venner!</string>
+  <string name="No">Nei</string>
+  <!--O-->
+  <string name="OK">Ok</string>
+  <string name="Other">Annet</string>
+  <string name="Overview">Oversikt</string>
+  <!--P-->
+  <string name="Password">Passord</string>
+  <string name="People">People</string>
+  <string name="Percentage">Prosent</string>
+  <string name="Protected">Beskyttet</string>
+  <string name="PersonWatching">1 Person ser på</string>
+  <string name="PeopleWatching">{0} Personer ser på</string>
+  <string name="Plugins">Tillegg</string>
+  <string name="PinCode">Pinkode</string>
+  <string name="PinCodeDialog">Pinkode dialog</string>
+  <string name="PinCodeDlgLabel2">Tast inn den fire sirede pinkoden for å fortsette:</string>
+  <string name="PinCodeMessageIncorrect">Feil pinkode</string>
+  <!--R-->
+  <string name="Rate">Vurder</string>
+  <string name="Rated">Rangering</string>
+  <string name="Rating">Rangering</string>
+  <string name="RateMovie">Gi filmen en karakter...</string>
+  <string name="RateShow">Gi serien en karakter...</string>
+  <string name="RateEpisode">Gi episoden en karakter...</string>
+  <string name="RateDialog">Trakt karakter dialog</string>
+  <string name="RateHate">Svak Saus :(</string>
+  <string name="RateLove">Komplett Ninja!</string>
+  <string name="RateHeading">Hva synes du?</string>
+  <string name="RateTwo">Dårlig</string>
+  <string name="RateThree">Veldig dårlig</string>
+  <string name="RateFour">Dårlig</string>
+  <string name="RateSix">Ok</string>
+  <string name="RateSeven">God</string>
+  <string name="RateEight">Veldig bra</string>
+  <string name="RateNine">Bra</string>
+  <string name="RecentAddedMovies">Nylig lagt til</string>
+  <string name="Recommendations">Anbefalinger</string>
+  <string name="RecommendedMovies">Anbefalte filmer</string>
+  <string name="RecommendedShows">Anbefalte serier</string>
+  <string name="Released">Utgitt</string>
   <string name="ReleaseDate">Utgivelsesdato</string>
   <string name="Runtime">Varighet</string>
-  <string name="Votes">votes</string>
+  <!--S-->
+  <string name="Score">Vurdering</string>
+  <string name="Season">Sesong</string>
+  <string name="Seasons">Sesonger</string>
+  <string name="Search">Søk</string>
+  <string name="SearchForFriend">Search for Friend...</string>
+  <string name="SendFriendRequest">Send friend request to {0}?</string>
+  <string name="Series">Serie</string>
+  <string name="SeriesPlural">Serie</string>
+  <string name="Settings">Innstillinger</string>
+  <string name="Shout">Shout</string>
+  <string name="Shouts">Utrop</string>
+  <string name="SigningIntoAccount">Logger inn på konto...</string>
+  <string name="StartDate">Start Date</string>
+  <string name="Specials">Spesielle</string>
+  <!--T-->
+  <string name="Timeout">Tiden gikk ut</string>
+  <string name="Trending">Populært</string>
+  <string name="TrendingShows">Populære serier</string>
+  <string name="TrendingMovies">Populære filmer</string>
+  <string name="TrendingMoviePeople">There are {0} people watching {1} movies right now!</string>
+  <string name="TrendingTVShowsPeople">There are {0} people watching {1} tv shows right now!</string>
+  <string name="TVShow">TV serie</string>
+  <string name="TVShows">TV serier</string>
+  <string name="Tagline">Tagline</string>
+  <string name="Title">Tittel</string>
+  <string name="Today">I dag</string>
   <string name="Trailer">Trailer</string>
-  <string name="Views">Visning</string>
-  <string name="Locked">Låst</string>
-  <string name="DSTStart">Soloppgang</string>
-  <string name="DSTEnd">Solnedgang</string>
-  <!--Global Search-->
-  <string name="SearchMusic">Musikksøk</string>
-  <string name="SearchPhrase">Søk etter:</string>
-  <string name="SearchHistory">Søkehistorie</string>
-  <string name="SearchFields">Søkefelt</string>
-  <string name="SearchType">Type søk</string>
-  <string name="CaseSensitive">Forskjell på store og små bokstaver</string>
-  <!--Recently Added / Watched-->
-  <string name="LatestEpisodes">Siste episoder</string>
-  <string name="LatestMovies">Siste filmer</string>
-  <string name="LatestTVRecordings">Siste TV-opptak</string>
-  <string name="LatestMusic">Siste musikk</string>
-  <string name="LatestMusicVideos">Siste musikkvideoer</string>
-  <string name="RecentlyWatched">Nylig sett</string>
-  <string name="RecordedOn">Recorded On:</string>
-  <!--MediaPortal Exit Buttons-->
-  <string name="MediaPortalExit">Avslutt MediaPortal</string>
-  <string name="MediaPortalRestart">Start MediaPortal på nytt</string>
-  <string name="MediaPortalShutDownMenu">Avslutningsmeny</string>
-  <string name="MediaPortalRestartMessage">Er du sikker på at du vil starte MediaPortal på nytt?</string>
-  <string name="MediaPortalSettings">MediaPortal Settings</string>
+  <string name="Trailers">Trailers...</string>
+  <!--U-->
+  <string name="UnHide">Vis</string>
+  <string name="UserHasNotWatchedEpisodes">Brukeren har ikke sett noen episoder!</string>
+  <string name="UserHasNotWatchedMovies">Brukeren har ikke sett noen filmer!</string>
+  <string name="User">Bruker</string>
+  <string name="Users">Users</string>
+  <string name="Username">Brukernavn</string>
+  <!--V-->
+  <string name="View">Visning</string>
+  <string name="Votes">Stemmer</string>
+  <string name="ValidUsername">Du må skrive inn et gyldig navn!</string>
+  <string name="ValidPassword">Du må skrive inn et gyldig passord!</string>
+  <string name="ValidEmail">Du må skrive inn en gyldig epost!</string>
+  <!--W-->
+  <string name="Watched">Sett</string>
+  <string name="WatchedMovies">Sette filmer</string>
+  <string name="WatchedShows">Sette serier</string>
+  <string name="Watching">Ser på nå</string>
+  <string name="Writer">Manus</string>
+  <string name="Writers">Forfattere</string>
+  <!--Y-->
+  <string name="Year">År</string>
+  <string name="Yes">Ja</string>
+  <string name="Yesterday">Yesterday</string>
 </resources>

@@ -372,6 +372,7 @@
 		<row><td>libNLog</td><td>{B9C558E2-1005-46EB-BD3D-19FC898042A3}</td><td>MPBINDIR</td><td>24</td><td/><td>nlog.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libSMPCheckSum</td><td>{31694058-055D-40BF-8E3E-8C0385EA33EC}</td><td>MPBINDIR</td><td>0</td><td/><td>smpchecksum.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libSMPCheckSumNet35</td><td>{44FB300D-6813-4D20-A3E8-761DDB77078A}</td><td>MPBINDIR</td><td>0</td><td/><td>smpchecksum_dotnet35.dll</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
+		<row><td>libTraktAPI</td><td>{7BDD7967-0454-4C50-A21C-EFA70324CC15}</td><td>MPBINDIR</td><td>24</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>libWebBrowserDependencies</td><td>{FF4957A4-6B69-459D-8107-EB0EFBEC7C3E}</td><td>MPBINDIR</td><td>24</td><td/><td/><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>playingFullscreenSlidingMenu</td><td>{93C19F08-61A7-4E5D-BFD5-C8B4E48A9609}</td><td>NEW_DIRECTORY22</td><td>0</td><td/><td>mymusicplayingnow.xml8</td><td>1</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
 		<row><td>playingNowDefault</td><td>{C49F1338-A156-4253-AF86-00D72390F534}</td><td>STREAMEDMP</td><td>0</td><td/><td>mymusicplayingnow.xml</td><td>17</td><td/><td/><td/><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td><td>/LogFile=</td></row>
@@ -721,6 +722,7 @@
 		<row><td>INSTALLDIR</td><td>AllOtherFiles</td></row>
 		<row><td>INSTALLDIR</td><td>ISRegistryComponent</td></row>
 		<row><td>INSTALLDIR</td><td>languagesFanartHandler</td></row>
+		<row><td>INSTALLDIR</td><td>libTraktAPI</td></row>
 		<row><td>MPCONFIGDIR</td><td>AllOtherFiles</td></row>
 		<row><td>MPCONFIGDIR</td><td>FanartHandlerConfig</td></row>
 		<row><td>MPCONFIGDIR</td><td>LatestMediaHandlerConfig</td></row>
@@ -1684,6 +1686,7 @@
 		<row><td>Trailers</td><td>languagesTrailers</td></row>
 		<row><td>Trailers</td><td>pluginTrailersDLL</td></row>
 		<row><td>TraktMainPlugin</td><td>languagesTrakt</td></row>
+		<row><td>TraktMainPlugin</td><td>libTraktAPI</td></row>
 		<row><td>TraktMainPlugin</td><td>pluginTraktDLL</td></row>
 		<row><td>Transparent</td><td>tvlogosGermanyTransparent</td></row>
 		<row><td>UK</td><td>tvlogosUK</td></row>
@@ -1786,6 +1789,7 @@
 		<row><td>mymusicplayingnowledvu.xml6</td><td>playingNowWindowNoMask</td><td>MYMUSI~1.XML|MyMusicPlayingNowLedVU.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\nowplayingscreens\style8\MyMusicPlayingNowLedVU.xml</td><td>1</td><td/></row>
 		<row><td>mymusicplayingnowledvu.xml7</td><td>playingNowWindowNoFade</td><td>MYMUSI~1.XML|MyMusicPlayingNowLedVU.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\nowplayingscreens\style7\MyMusicPlayingNowLedVU.xml</td><td>1</td><td/></row>
 		<row><td>mymusicplayingnowledvu.xml8</td><td>playingFullscreenSlidingMenu</td><td>MYMUSI~1.XML|MyMusicPlayingNowLedVU.xml</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\nowplayingscreens\style2\MyMusicPlayingNowLedVU.xml</td><td>1</td><td/></row>
+		<row><td>newtonsoft.json.dll</td><td>libTraktAPI</td><td>NEWTON~1.DLL|Newtonsoft.Json.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\PluginDependencies\Newtonsoft.Json.dll</td><td>1</td><td/></row>
 		<row><td>nlog.dll</td><td>libNLog</td><td>NLog.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\NLog.dll</td><td>1</td><td/></row>
 		<row><td>smpchecksum.dll</td><td>libSMPCheckSum</td><td>SMPCHE~1.DLL|SMPCheckSum.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugindependencies\SMPCheckSum.dll</td><td>1</td><td/></row>
 		<row><td>smpchecksum_dotnet35.dll</td><td>libSMPCheckSumNet35</td><td>SMPCHE~1.DLL|SMPCheckSum_DotNet35.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugindependencies\SMPCheckSum_DotNet35.dll</td><td>1</td><td/></row>
@@ -1797,6 +1801,7 @@
 		<row><td>streamedmpeditor.dll</td><td>pluginStreamedMPEditorDLL</td><td>STREAM~1.DLL|StreamedMPEditor.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugins\process\StreamedMPEditor.dll</td><td>1</td><td/></row>
 		<row><td>titlecaps.ttf</td><td>fontsFluidTitleCaps</td><td>TITLEC~1.TTF|TitleCaps.ttf</td><td>0</td><td>65535.0.0.0</td><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\streamedfonts\TitleCaps.ttf</td><td>17</td><td/></row>
 		<row><td>trailers.dll</td><td>pluginTrailersDLL</td><td>Trailers.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugins\windows\Trailers.dll</td><td>1</td><td/></row>
+		<row><td>traktapi.dll</td><td>libTraktAPI</td><td>TraktAPI.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\PluginDependencies\TraktAPI.dll</td><td>1</td><td/></row>
 		<row><td>traktplugin.dll</td><td>pluginTraktDLL</td><td>TRAKTP~1.DLL|TraktPlugin.dll</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\plugins\windows\TraktPlugin.dll</td><td>1</td><td/></row>
 		<row><td>translateprovider.dll</td><td>libGoogleTranslate</td><td>TRANSL~1.DLL|TranslateProvider.dll</td><td>0</td><td/><td/><td>0</td><td>1</td><td>&lt;SKINFILES&gt;\plugindependencies\TranslateProvider.dll</td><td>1</td><td/></row>
 		<row><td>tvseries_seasonlisticon.png</td><td>tvseriesListWatchedIcons</td><td>TVSERI~1.PNG|tvseries_SeasonListIcon.png</td><td>0</td><td/><td/><td/><td>1</td><td>&lt;StreamedMP&gt;\media\tvseries_SeasonListIcon.png</td><td>1</td><td/></row>
@@ -1981,6 +1986,7 @@
 		<row><td>libNLog</td><td/><td/><td>_66DA8A3D_8044_476A_BD46_7F3BE1BAC0D5_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libSMPCheckSum</td><td/><td/><td>_6050D8A7_0F9C_48EA_8856_CCB532AA40BD_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libSMPCheckSumNet35</td><td/><td/><td>_B7B419EF_3E01_4BAC_8A2E_A72F6903819D_FILTER</td><td/><td/><td/><td/></row>
+		<row><td>libTraktAPI</td><td/><td/><td>_57F6A758_BA33_4561_9006_DBA341EA2D8F_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>libWebBrowserDependencies</td><td/><td/><td>_78CB0E94_033C_4BF7_B7C5_5E9DB9352728_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>playingFullscreenSlidingMenu</td><td/><td/><td>_F7B4BF9A_AD50_44E4_8464_E18304D0EB9C_FILTER</td><td/><td/><td/><td/></row>
 		<row><td>playingNowDefault</td><td/><td/><td>_8F5B3446_F8AF_4EF1_BF4C_7938B2D68AC2_FILTER</td><td/><td/><td/><td/></row>
@@ -4914,9 +4920,9 @@ UwB0AHIAZQBhAG0AZQBkAE0AUAABAFIAZQBsAGUAYQBzAGUA
 		<row><td>PROGMSG_IIS_ROLLBACKAPPPOOLS</td><td>##IDS_PROGMSG_IIS_ROLLBACKAPPPOOLS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKVROOTS</td><td>##IDS_PROGMSG_IIS_ROLLBACKVROOTS##</td><td/></row>
 		<row><td>PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS</td><td>##IDS_PROGMSG_IIS_ROLLBACKWEBSERVICEEXTENSIONS##</td><td/></row>
-		<row><td>ProductCode</td><td>{3E77C367-667E-4398-929B-C2759CA34FDF}</td><td/></row>
+		<row><td>ProductCode</td><td>{6E6E5769-F433-4341-AD13-7017E59716C1}</td><td/></row>
 		<row><td>ProductName</td><td>Streamed MP</td><td/></row>
-		<row><td>ProductVersion</td><td>3.2.0.1</td><td/></row>
+		<row><td>ProductVersion</td><td>3.2.1.0</td><td/></row>
 		<row><td>REBOOT</td><td>Suppress</td><td/></row>
 		<row><td>STANDARD_USE_SETUPEXE</td><td>##IDS_STANDARD_USE_SETUPEXE##</td><td/></row>
 		<row><td>SecureCustomProperties</td><td>ARPNOMODIFY;ARPNOREMOVE;ARPSYSTEMCOMPONENT;COMPANYNAME;INSTALLDIR;ISALWAYSINSTALLELEVATED;ISFOUNDNEWERPRODUCTVERSION;ISSETUPDRIVEN;ISX_SERIALNUM;IS_NET_API_GROUP_LIST;IS_NET_API_LOGON_DOMAIN_TOKEN;IS_NET_API_LOGON_PASSWORD;IS_NET_API_LOGON_USERNAME;IS_NET_API_LOGON_USERNAME_TOKEN;IS_NET_API_NEW_USER_CONFIRM;IS_NET_API_NEW_USER_GROUP;IS_NET_API_NEW_USER_NAME;IS_NET_API_NEW_USER_PASSWORD;IS_NET_API_NEW_USER_SERVER;IS_NET_API_SERVER_LIST;IS_NET_API_SERVER_NEW_USER_LIST;IS_NET_API_USER_LIST;IS_NEW_USER_CONFIRM_TEXT;IS_NEW_USER_GROUP_TEXT;IS_NEW_USER_NAME_TEXT;IS_NEW_USER_PASSWORD_TEXT;IS_NEW_USER_SERVER_TEXT;IS_SQLSERVER_AUTHENTICATION;IS_SQLSERVER_DATABASE;IS_SQLSERVER_LIST;IS_SQLSERVER_PASSWORD;IS_SQLSERVER_SERVER;IS_SQLSERVER_USERNAME;LOGOS;MAJORUPGRADE_01;SUPPORTDIR;USERNAME</td><td/></row>
