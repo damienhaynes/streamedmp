@@ -23,4 +23,4 @@ using MediaPortal.Common.Utils;
 [assembly: Guid("20efe727-8a7c-46e8-a526-a134e7a15a49")]
 
 [assembly: CompatibleVersion("1.6.100.0", "1.6.100.0")]
-[assembly: AssemblyVersion("3.2.1.0")]
+[assembly: AssemblyVersion("3.2.1.1")]
