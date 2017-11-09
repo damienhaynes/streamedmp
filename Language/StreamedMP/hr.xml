@@ -1,119 +1,133 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <!--A-->
-  <string name="Actor">Glumac</string>
-  <string name="Actors">Glumci</string>
-  <string name="Animation">Animirani</string>
-  <!--B-->
-  <!--C-->
-  <string name="Cancel">Odustanite</string>
-  <string name="Calendar">Kalendar</string>
-  <string name="CalendarAllMovies">Svi filmovi</string>
-  <string name="Cast">Glumci</string>
-  <string name="CastAndCrew">Uloge i ekipa</string>
-  <string name="Certification">Potvrda</string>
-  <!--D-->
-  <string name="DateToday">Danas</string>
-  <string name="DateYesterday">Jučer</string>
+  <!--Example user defined translation property-->
+  <!--Field name must start with a '#'. The entry below creates the skin property-->
+  <!--'#StreamedMP.Example.Property' that is set to 'Translated String'-->
+  <string name="#StreamedMP.Example.Property">Prevedeno polje</string>
+  <!--MediaPortal Localised IDs -> Skin Properties-->
+  <string name="#StreamedMP.Track">435</string>
+  <string name="#StreamedMP.Year">436</string>
+  <string name="#StreamedMP.Next">790</string>
+  <string name="#StreamedMP.RefreshTime">397</string>
+  <string name="#StreamedMP.Minutes">3004</string>
+  <!--Menu Options-->
+  <string name="MusicMenu">Postavke Glazbe</string>
+  <string name="VideoMenu">Postavke Videa</string>
+  <string name="SkinUpdate">Aktualizacija Skina</string>
+  <string name="TVSeriesMenu">Postavke Serija</string>
+  <string name="MovingPicturesMenu">MovingPictures Postavke</string>
+  <string name="TVMenu">Postavke TV-a</string>
+  <string name="MiscMenu">Postavke Ostalog</string>
+  <string name="SkinSettings">Postavke Skina</string>
+  <string name="SkinMenu">Skin</string>
+  <string name="SkinInfoText">Informacije o skinu</string>
+  <string name="ConfigRequiresRestartLine1">Promjene u konfiguraciji bit će</string>
+  <string name="ConfigRequiresRestartLine2">primijenjene nakon ponovnog pokretanja Mediaportala.</string>
+  <string name="ConfigRequiresRestartLine3">Želite li odmah ponovno pokrenuti?</string>
+  <!--Skin Updates / Patching GUI-->
+  <string name="UpdateInstall">Nadogradi i instaliraj</string>
+  <string name="NoUpdatesAvailable">Trenutno nema dostupnih nadogradnji</string>
+  <string name="DownloadingPatch">Preuzimam nadogradnju: {0}</string>
+  <string name="DownloadingProgress">Preuzeto {0}KB od {1}KB ({2}%)</string>
+  <string name="NumPatchesInstalled">Broj aktualiziranih datoteka: {0}</string>
+  <string name="PatchUpdateComplete">Nadogradnja skina na inačicu: {0} dovršena</string>
+  <string name="UpdateAvailableHeading">Dostupna nadogradnja - Popis izmjena</string>
+  <string name="mupdateheader">Instalacija nadogradnje preuzeta na radnu površinu</string>
+  <string name="mupdateline1">Potrebna ručna nadogradnja - Za prihvat zatvori</string>
+  <string name="mupdateline2">MediaPortal i/ili Konfiguriranje</string>
+  <string name="mupdateline3">i pokreni:  {0}</string>
+  <string name="mupdateline4">koji možete pronaći na svojoj radnoj površini</string>
+  <!--Plugin Options-->
+  <string name="MinVideoOSD">Pri pauzi koristi smanjeni Video OSD</string>
+  <string name="VideoWallpaperLabel">Video Pozadine</string>
+  <!--Music Options-->
+  <string name="CDCover"> Prikaži omot CD-a samo u Glazbi - Upravo svira</string>
+  <string name="ShowEQ">Prikaži grafički EQ u Glazbi - Upravo svira</string>
+  <string name="NowPlayingStyles">Stilovi prikaza Sada svira</string>
+  <!--TVSeries Configuration-->
+  <string name="FanartStyle">Stil Fanarta</string>
+  <string name="WideBanners">Široki baneri</string>
+  <string name="WideBannerDefault">Široki baneri: Zadano</string>
+  <string name="WideBanner5x2Grid">Široki baneri: 5x2 mreža s posterom</string>
+  <string name="WideBanner5x3Grid">Široki baneri: 5x3 mreža</string>
+  <string name="WideBanner7x3Grid">Široki baneri: 7x3 mreža</string>
+  <string name="WideBanner10x4Grid">Široki baneri: 10x4 mreža</string>
+  <!--MovingPictures Configuration-->
+  <string name="Thumbnails">Sličice</string>
+  <string name="ThumbnailDefault">Sličice: Zadano</string>
+  <string name="Thumbnail_12x4_8x3_Grid">Sličice: 12x4 Male ikone, 8x3 Velike ikone</string>
+  <string name="Thumbnail_12x3_8x2_Grid">Sličice: 12x3 Male ikone, 8x2 Velike ikone + Info</string>
+  <string name="ShowTaglineInDetailsSummary">Prikaži Tagline u sažetku s detaljima</string>
+  <!--TV Configuration-->
+  <string name="TVGuideSize">Veličina TV Vodiča</string>
+  <string name="TVMiniGuideSize">Veličina TV Mini Vodiča</string>
+  <string name="TVGuideEightRows">TV vodič: 8 redova</string>
+  <string name="TVGuideTenRows">TV vodič: 10 redova</string>
+  <string name="TVGuideTwelveRows">TV vodič: 12 redova</string>
+  <string name="TVGuideSixteenRows">TV vodič: 16 redova</string>
+  <string name="TVMiniGuideThreeRows">TV Mini vodič: 3 reda</string>
+  <string name="TVMiniGuideFiveRows">TV Mini vodič: 5 redova</string>
+  <string name="TVMiniGuideSevenRows">TV Mini vodič: 7 redova</string>
+  <string name="TVMiniGuideNineRows">TV Mini vodič: 9 redova</string>
+  <string name="EnableRandomTVSeriesFanartInMyTV">Omogući nasumični fanart u TV serijama</string>
+  <!--Misc Settings-->
+  <string name="ShowHiddenMenuImage">Prikaži sliku skrivenog menija</string>
+  <string name="ShowRoundedPosters">Prikaži sliku zaobljenog postera</string>
+  <string name="ShowIconsInArtwork">Prikaži gledano/nepogledano ikone u omotima</string>
+  <string name="PlayMostRecents">Omogući \"Reproduciraj\" radnju za Nedavno korišteno</string>
+  <string name="FilterWatchedRecents">Filtriraj Gledano u Nedavno dodanom</string>
+  <string name="UnfocusedAlpha">Postavke prozirnosti</string>
+  <string name="UnfocusedAlphaMenuLists">Nefokusirana Alpha na prikazu s popisima: {0}</string>
+  <string name="UnfocusedAlphaMenuThumbs">Nefokusirana Alpha na prikazu sa sličicama: {0}</string>
+  <string name="UnfocusedAlphaInvalidLine1">Unesena pogrešna vrijednost, molimo unesite vrijednost</string>
+  <string name="UnfocusedAlphaInvalidLine2">između 0 - 255.</string>
+  <string name="UnfocusedAlphaInvalidLine3">Neprozirnost = 255, Transparentnost = 0</string>
+  <string name="UseLargeFonts">Koristi velike fontove</string>
+  <string name="RestoreDefaults">Vrati zadano</string>
+  <string name="ListColors">Podesi boje popisa</string>
+  <string name="ListDefaultColor">Zadana boja: {0}</string>
+  <string name="ListText2Color">Boja 2. teksta: {0}</string>
+  <string name="ListText3Color">Boja 3. teksta: {0}</string>
+  <string name="ListWatchedColor">Pogledano - boja: {0}</string>
+  <string name="ListRemoteColor">Udaljeno - boja: {0}</string>
+  <string name="ListColorInvalidLine1">Unesen pogrešan kod boje, molimo unesite</string>
+  <string name="ListColorInvalidLine2">valjani HEX kod, npr. za crvenu boju je FF0000.</string>
+  <string name="ListColorInvalidLine3">gdje je \'255\' crvena, \'0\' zelena, i \'0\' plava.</string>
+  <string name="CustomColor">Vlastita boja</string>
+  <string name="ShowListScrollingPopup">Prikaži skrolajući popis u skočnom prozoru</string>
+  <string name="Scraper">Scraper</string>
+  <string name="TextualMediaInfoLogos">Tekstualne MediaInfo oznake</string>
+  <string name="MyVideoWatchedProgress">Prikaži indikator napredovanja u Moj Video popisu</string>
+  <!--General Translations-->
+  <string name="Rated">Ocjena</string>
   <string name="Director">Režija</string>
-  <string name="Directors">Redatelji</string>
-  <string name="DownloadFanart">Preuzmite Fanart</string>
-  <!--E-->
-  <string name="Email">E-pošta</string>
-  <string name="Episode">Epizoda</string>
-  <string name="Episodes">Epizoda</string>
-  <!--F-->
-  <string name="Filters">Filteri</string>
-  <string name="FirstAired">Prvo emitiranje</string>
-  <!--G-->
-  <string name="Genre">Žanr</string>
-  <string name="GenreAction">Akcijski</string>
-  <string name="GenreAll">Svi</string>
-  <string name="GenreAnimation">Animirani</string>
-  <string name="GenreComedy">Komedija</string>
-  <string name="GenreCrime">Kriminalistički</string>
-  <string name="GenreDocumentary">Dokumentarni</string>
-  <string name="GenreDrama">Drama</string>
-  <string name="GenreFamily">Obiteljski</string>
-  <string name="GenreHistory">Povijesni</string>
-  <string name="GenreMusic">Glazba</string>
-  <string name="GenreNews">Vijesti</string>
-  <string name="GenreThriller">Triler</string>
-  <string name="GenreWar">Ratni</string>
-  <string name="GuestStar">Gostujuća uloga</string>
-  <string name="GuestStars">Gostujuće uloge</string>
-  <!--H-->
-  <string name="Hide">Sakrijte</string>
-  <!--I-->
-  <!--J-->
-  <!--K-->
-  <!--L-->
-  <string name="Language">Jezik</string>
-  <string name="List">Popis</string>
-  <!--M-->
-  <string name="MarkAsWatched">Označite kao pogledano</string>
-  <string name="Minutes">Minuta</string>
-  <string name="Music">Glazba</string>
-  <string name="Movie">Film</string>
-  <string name="Movies">Filmova</string>
-  <!--N-->
-  <string name="Network">TV Mreža</string>
-  <string name="No">Ne</string>
-  <!--O-->
-  <string name="OK">U redu</string>
-  <string name="Other">Ostalo</string>
-  <!--P-->
-  <string name="Plugin">Dodatak</string>
-  <string name="Plugins">Dodaci</string>
-  <string name="PinCode">Pin kod</string>
-  <string name="PinCodeDialog">Okvir za unos PIN-a</string>
-  <string name="PinCodeDlgLabel2">Unesi PIN od 4 znamenke za nastavak:</string>
-  <string name="PinCodeMessageIncorrect">PIN je netočan</string>
-  <!--R-->
-  <string name="Rate">Ocijeni</string>
-  <string name="Rated">Ocijenjeno</string>
-  <string name="Rating">Ocjena</string>
-  <string name="RateTwo">Užasno</string>
-  <string name="RateThree">Loše</string>
-  <string name="RateFour">Jadno</string>
-  <string name="RateSix">Korektno</string>
-  <string name="RateSeven">Dobro</string>
-  <string name="RateEight">Odlično</string>
-  <string name="RateNine">Izvrsno</string>
-  <string name="RecentAddedMovies">Nedavno dodani filmovi</string>
-  <string name="Recommendations">Preporuke</string>
   <string name="ReleaseDate">Datum izdanja</string>
   <string name="Runtime">Trajanje</string>
-  <!--S-->
-  <string name="Score">Ocjena</string>
-  <string name="Season">Sezona</string>
-  <string name="Seasons">Sezona</string>
-  <string name="Search">Pretražite</string>
-  <string name="SearchBy">Pretražite po</string>
-  <string name="Series">Serija</string>
-  <string name="SeriesPlural">Serija</string>
-  <string name="Settings">Postavke</string>
-  <string name="Shouts">Shouts</string>
-  <string name="SettingPluginEnabledName">Dodatak omogućen</string>
-  <string name="SettingListedHomeName">Na popisu u Početnom izborniku</string>
-  <string name="SettingListedPluginsName">Na popisu u Mojim dodacima</string>
-  <string name="Specials">Specijala</string>
-  <!--T-->
-  <string name="Timeout">Isteklo vrijeme</string>
-  <string name="Trending">Trendovi</string>
-  <string name="Title">Naslov</string>
-  <string name="Today">Danas</string>
+  <string name="Votes">glasova</string>
   <string name="Trailer">Foršpan</string>
-  <!--U-->
-  <string name="UnHide">Razotkrijte</string>
-  <!--V-->
-  <string name="Votes">Glasova</string>
-  <!--W-->
-  <string name="Watched">Pogledano</string>
-  <string name="Writer">Scenarij</string>
-  <string name="Writers">Scenarij</string>
-  <!--Y-->
-  <string name="Year">Godina</string>
-  <string name="Yes">Da</string>
-  <string name="Yesterday">Jucer</string>
+  <string name="Views">Pogledi</string>
+  <string name="Locked">Zaključano</string>
+  <string name="DSTStart">Ljetno računanje vremena</string>
+  <string name="DSTEnd">Zimsko računanje vremena</string>
+  <!--Global Search-->
+  <string name="SearchMusic">Pretraži glazbu</string>
+  <string name="SearchPhrase">Pretraži izraz</string>
+  <string name="SearchHistory">Pretraži povijest</string>
+  <string name="SearchFields">Pretraži polja</string>
+  <string name="SearchType">Pretraži vrstu</string>
+  <string name="CaseSensitive">Osjetljiv unos</string>
+  <!--Recently Added / Watched-->
+  <string name="LatestEpisodes">Posljednje epizode</string>
+  <string name="LatestMovies">Zadnji filmovi</string>
+  <string name="LatestTVRecordings">Zadnje TV snimke</string>
+  <string name="LatestMusic">Posljednja glazba</string>
+  <string name="LatestMusicVideos">Posljednji glazbeni video</string>
+  <string name="RecentlyWatched">Nedavno pogledano</string>
+  <string name="RecordedOn">Snimljeno sa:</string>
+  <!--MediaPortal Exit Buttons-->
+  <string name="MediaPortalExit">Izađite iz MediaPortala</string>
+  <string name="MediaPortalRestart">Ponovno pokrenite MediaPortal</string>
+  <string name="MediaPortalShutDownMenu">Meni za gašenje</string>
+  <string name="MediaPortalRestartMessage">Jeste li sigurni da želite ponovno pokrenuti MediaPortal?</string>
+  <string name="MediaPortalSettings">Postavke Mediaportala</string>
 </resources>

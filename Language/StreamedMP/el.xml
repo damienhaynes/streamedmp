@@ -1,91 +1,133 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <resources>
-  <!--A-->
-  <string name="Actor">Ηθοποιός</string>
-  <string name="Actors">Ηθοποιοί</string>
-  <!--B-->
-  <!--C-->
-  <string name="Cancel">Άκυρο</string>
-  <string name="CalendarAllMovies">Όλες οι ταινίες</string>
-  <string name="Cast">Ηθοποιοί</string>
-  <string name="Certification">Καταλληλότητα</string>
-  <!--D-->
-  <string name="DateToday">Σήμερα</string>
-  <string name="DateYesterday">Χθες</string>
-  <string name="Director">Σκηνοθέτης</string>
-  <string name="Directors">Σκηνοθέτες</string>
-  <string name="DownloadFanart">Μεταφόρτωση Fanart</string>
-  <!--E-->
-  <string name="Episode">Επεισόδιο</string>
-  <string name="Episodes">Επεισόδια</string>
-  <!--F-->
-  <string name="FirstAired">Πρώτη προβολή</string>
-  <!--G-->
-  <string name="Genre">Είδος</string>
-  <string name="GenreAll">Όλοι</string>
-  <string name="GuestStar">Έκτακτη συμμετοχή</string>
-  <string name="GuestStars">Έκτακτες συμμετοχές</string>
-  <!--H-->
-  <string name="Hide">Απόκρυψη</string>
-  <!--I-->
-  <!--J-->
-  <!--K-->
-  <!--L-->
-  <string name="Language">Γλώσσα</string>
-  <string name="Languages">Γλώσσες</string>
-  <string name="List">Λίστα</string>
-  <!--M-->
-  <string name="MarkAsWatched">Σημείωση ως προβληθείσας</string>
-  <string name="Minutes">Λεπτά</string>
-  <string name="Movie">Ταινία</string>
-  <string name="Movies">Ταινίες</string>
-  <string name="MultiSelectDialog">Πολλαπλής διάλογος Επιλογής</string>
-  <!--N-->
-  <string name="Name">Όνομα</string>
-  <string name="Network">Δίκτυο</string>
-  <string name="No">Όχι</string>
-  <!--O-->
-  <string name="OK">Εντάξει</string>
-  <!--P-->
-  <string name="PinCode">Κωδικός Pin</string>
-  <string name="PinCodeDialog">Διάλογος κωδικού Pin</string>
-  <string name="PinCodeDlgLabel2">Εισάγετε τον τετραψήφιο κωδικό Pin για να συνεχίσετε:</string>
-  <string name="PinCodeMessageIncorrect">Λάθος Pin</string>
-  <!--R-->
-  <string name="Rate">Αξιολόγηση</string>
+  <!--Example user defined translation property-->
+  <!--Field name must start with a '#'. The entry below creates the skin property-->
+  <!--'#StreamedMP.Example.Property' that is set to 'Translated String'-->
+  <string name="#StreamedMP.Example.Property">Translated String</string>
+  <!--MediaPortal Localised IDs -> Skin Properties-->
+  <string name="#StreamedMP.Track">435</string>
+  <string name="#StreamedMP.Year">436</string>
+  <string name="#StreamedMP.Next">790</string>
+  <string name="#StreamedMP.RefreshTime">397</string>
+  <string name="#StreamedMP.Minutes">3004</string>
+  <!--Menu Options-->
+  <string name="MusicMenu">Ρυθμίσεις μουσικής</string>
+  <string name="VideoMenu">Ρυθμίσεις βίντεο</string>
+  <string name="SkinUpdate">Ενημέρωση θέματος</string>
+  <string name="TVSeriesMenu">Ρυθμίσεις TVSeries</string>
+  <string name="MovingPicturesMenu">Ρυθμίσεις MovingPictures</string>
+  <string name="TVMenu">Ρυθμίσεις τηλεόρασης</string>
+  <string name="MiscMenu">Διάφορες ρυθμίσεις</string>
+  <string name="SkinSettings">Ρυθμίσεις θέματος</string>
+  <string name="SkinMenu">Skin</string>
+  <string name="SkinInfoText">Πληροφορίες θέματος</string>
+  <string name="ConfigRequiresRestartLine1">Οι παρακάτω αλλαγές παραμετροποίησης θα</string>
+  <string name="ConfigRequiresRestartLine2">εφαρμοστούν στην επόμενη εκκίνηση του MediaPortal.</string>
+  <string name="ConfigRequiresRestartLine3">Θέλετε να γίνει επανεκκινηση τώρα?</string>
+  <!--Skin Updates / Patching GUI-->
+  <string name="UpdateInstall">Ενημέρωση και Εγκατάσταση</string>
+  <string name="NoUpdatesAvailable">Δεν υπάρχουν διαθέσιμες ενημερώσεις</string>
+  <string name="DownloadingPatch">Λήψη ενημέρωσης: {0}</string>
+  <string name="DownloadingProgress">Κατέβηκαν {0}KB από {1}KB ({2}%)</string>
+  <string name="NumPatchesInstalled">Αριθμός εγκατεστημένων ενημερώσεων: {0}</string>
+  <string name="PatchUpdateComplete">Ενημέρωση της έκδοσης του θέματος: {0} Ολοκληρώθηκε</string>
+  <string name="UpdateAvailableHeading">Ενημέρωση διαθέσιμη - Λίστα αλλαγών</string>
+  <string name="mupdateheader">Η εγκατάσταση για την ενημέρωση βρίσκεται στην επιφάνεια εργασίας</string>
+  <string name="mupdateline1">Απαιτήται χειροκίνητη εγκατάσταση - Για να εφαρμοστεί</string>
+  <string name="mupdateline2">κλείστε το MediaPortal και/ή τις Ρυθμίσεις</string>
+  <string name="mupdateline3">και εκτελέστε το:  {0}</string>
+  <string name="mupdateline4">που βρίσκεται στην επιφάνεια εργασίας σας</string>
+  <!--Plugin Options-->
+  <string name="MinVideoOSD">Χρήση μικρού Βίντεο OSD κατά την παύση</string>
+  <string name="VideoWallpaperLabel">Ταπετσαρία με βίντεο</string>
+  <!--Music Options-->
+  <string name="CDCover">Εμφάνιση εξωφύλλου μόνο στο Παίζει Τώρα της Μουσικής</string>
+  <string name="ShowEQ">Εμφάνιση γραφικού ισοσταθμιστή στο Παίζει Τώρα της Μουσικής</string>
+  <string name="NowPlayingStyles">Στύλ οθόνης Παίζει Τώρα</string>
+  <!--TVSeries Configuration-->
+  <string name="FanartStyle">Στύλ Fanart</string>
+  <string name="WideBanners">Ευρεία Banners</string>
+  <string name="WideBannerDefault">Ευρεία Banners: Προεπιλογή</string>
+  <string name="WideBanner5x2Grid">Ευρεία Banners: 5x2 Πλέγμα με Poster</string>
+  <string name="WideBanner5x3Grid">Ευρεία Banners: 5x3 Πλέγμα</string>
+  <string name="WideBanner7x3Grid">Ευρεία Banners: 7x3 Πλέγμα</string>
+  <string name="WideBanner10x4Grid">Ευρεία Banners: 10x4 Πλέγμα</string>
+  <!--MovingPictures Configuration-->
+  <string name="Thumbnails">Μικρογραφίες</string>
+  <string name="ThumbnailDefault">Μικρογραφίες: Προεπιλογή</string>
+  <string name="Thumbnail_12x4_8x3_Grid">Μικρογραφίες: 12x4 Μικρά εικονίδια, 8x3 Μεγάλα εικονίδια</string>
+  <string name="Thumbnail_12x3_8x2_Grid">Μικρογραφίες: 12x3 Μικρά εικονίδια, 8x2 Μεγάλα εικονίδια + Πληροφορίες</string>
+  <string name="ShowTaglineInDetailsSummary">Εμφάνιση Ετικετογραμμή σε λεπτομέρειες Περίληψης</string>
+  <!--TV Configuration-->
+  <string name="TVGuideSize">Μέγεθος Οδηγού Τηλεόρασης</string>
+  <string name="TVMiniGuideSize">Μέγεθος μικρού Οδηγού Τηλεόρασης</string>
+  <string name="TVGuideEightRows">Οδηγός Τηλεόρασης: 8 γραμμές</string>
+  <string name="TVGuideTenRows">Οδηγός Τηλεόρασης: 10 γραμμές</string>
+  <string name="TVGuideTwelveRows">Οδηγός Τηλεόρασης: 12 γραμμές</string>
+  <string name="TVGuideSixteenRows">Οδηγός Τηλεόρασης: 16 γραμμές</string>
+  <string name="TVMiniGuideThreeRows">Μικρός Οδηγός Τηλεόρασης: 3 γραμμές</string>
+  <string name="TVMiniGuideFiveRows">Μικρός Οδηγός Τηλεόρασης: 5 γραμμές</string>
+  <string name="TVMiniGuideSevenRows">Μικρός Οδηγός Τηλεόρασης: 7 γραμμές</string>
+  <string name="TVMiniGuideNineRows">Μικρός Οδηγός Τηλεόρασης: 9 γραμμές</string>
+  <string name="EnableRandomTVSeriesFanartInMyTV">Ενεργοποίηση τυχαίου fanart για το TVSeries</string>
+  <!--Misc Settings-->
+  <string name="ShowHiddenMenuImage">Εμφάνιση κρυφής εικόνας μενού</string>
+  <string name="ShowRoundedPosters">Εμφάνιση στρογγυλεμένων Poster</string>
+  <string name="ShowIconsInArtwork">Εμφάνιση εικονιδίων Προβληθέν/Μη προβληθέν στα Artwork</string>
+  <string name="PlayMostRecents">Ενεργοποίηση εντολής αναπαραγωγής για τα Πιο Πρόσφατα</string>
+  <string name="FilterWatchedRecents">Φιλτράρισμα προβληθέντων στα Προσφάτως Προστηθέμενα</string>
+  <string name="UnfocusedAlpha">Ρυθμίσεις Διαφάνειας / Αδιαφάνειας</string>
+  <string name="UnfocusedAlphaMenuLists">Διαφάνεια μη επιλεγμένων στην διάταξη Λίστας: {0}</string>
+  <string name="UnfocusedAlphaMenuThumbs">Διαφάνεια μη επιλεγμένων στην διάταξη Μικρογραφιών: {0}</string>
+  <string name="UnfocusedAlphaInvalidLine1">Τέθηκε άκυρη τιμή, εισάγετε μία τιμή</string>
+  <string name="UnfocusedAlphaInvalidLine2">μεταξύ 0 - 255.</string>
+  <string name="UnfocusedAlphaInvalidLine3">Αδιαφανές = 255, Διαφανές = 0</string>
+  <string name="UseLargeFonts">Χρήση μεγάλων γραμματοσειρών</string>
+  <string name="RestoreDefaults">Επαναφορά προεπιλογών</string>
+  <string name="ListColors">Ορισμός χρώματων λίστας</string>
+  <string name="ListDefaultColor">Προεπιλεγμένο χρώμα: {0}</string>
+  <string name="ListText2Color">Χρώμα κειμένου 2: {0}</string>
+  <string name="ListText3Color">Χρώμα κειμένου 3: {0}</string>
+  <string name="ListWatchedColor">Χρώμα Προβεβλημένων: {0}</string>
+  <string name="ListRemoteColor">Απομακρυσμένο χρώμα: {0}</string>
+  <string name="ListColorInvalidLine1">Τέθηκε άκυρη τιμή, εισάγετε ένα</string>
+  <string name="ListColorInvalidLine2">έκγυρο δεκαεξαδικό κωδικό π.χ. το χρώμα κόκκινο είναι FF0000.</string>
+  <string name="ListColorInvalidLine3">δηλαδή \'255\' για το κόκκινο, \'0\' για το πράσινο και \'0\' για το μπλέ.</string>
+  <string name="CustomColor">Προσαρμοσμένο χρώμα</string>
+  <string name="ShowListScrollingPopup">Εμφάνιση κύλισης Λίστα αναδυόμενων</string>
+  <string name="Scraper">Αποξέστης</string>
+  <string name="TextualMediaInfoLogos">Αναλυτικα MediaInfo Λογότυπα</string>
+  <string name="MyVideoWatchedProgress">Εμφάνιση δεικτών προόδου στην ενότητα Τα βίντεό στην λίστα μου</string>
+  <!--General Translations-->
   <string name="Rated">Αξιολογήθηκε</string>
-  <string name="Rating">Αξιολόγηση</string>
-  <string name="RateTwo">Απαίσιο</string>
-  <string name="RateThree">Κακό</string>
-  <string name="RateFour">Φτωχό</string>
-  <string name="RateSix">Τίμιο</string>
-  <string name="RateSeven">Καλό</string>
-  <string name="RateEight">Σπουδαίο</string>
-  <string name="RateNine">Εξαιρετικό</string>
-  <string name="RecentAddedMovies">Πρόσφατες ταινίες</string>
+  <string name="Director">Σκηνοθέτης</string>
   <string name="ReleaseDate">Ημερομηνία κυκλοφορίας</string>
   <string name="Runtime">Διάρκεια</string>
-  <!--S-->
-  <string name="Score">Βαθμολογία</string>
-  <string name="Season">Σαιζόν</string>
-  <string name="Seasons">Κύκλοι</string>
-  <string name="Search">Αναζήτηση</string>
-  <string name="Series">Σειρές</string>
-  <string name="SeriesPlural">Σειρές</string>
-  <string name="Specials">Σπέσιαλ</string>
-  <!--T-->
-  <string name="Title">Τίτλος</string>
-  <string name="Today">Σήμερα</string>
+  <string name="Votes">ψήφοι</string>
   <string name="Trailer">Trailer</string>
-  <!--U-->
-  <string name="UnHide">Εμφάνιση</string>
-  <!--V-->
-  <!--W-->
-  <string name="Watched">Προβληθέν</string>
-  <string name="Writer">Σεναριογράφος</string>
-  <string name="Writers">Σεναριογράφοι</string>
-  <!--Y-->
-  <string name="Year">Έτος</string>
-  <string name="Yes">Ναι</string>
-  <string name="Yesterday">Χθες</string>
+  <string name="Views">Προβολή </string>
+  <string name="Locked">Κλειδωμένα</string>
+  <string name="DSTStart">Έναρξη Daylight</string>
+  <string name="DSTEnd">Τέλος Daylight</string>
+  <!--Global Search-->
+  <string name="SearchMusic">Αναζήτηση μουσικής</string>
+  <string name="SearchPhrase">Αναζήτηση φράσης</string>
+  <string name="SearchHistory">Αναζήτηση ιστορικού</string>
+  <string name="SearchFields">Αναζήτηση πεδίων</string>
+  <string name="SearchType">Αναζήτηση τύπου</string>
+  <string name="CaseSensitive">Πεζών-κεφαλαίων</string>
+  <!--Recently Added / Watched-->
+  <string name="LatestEpisodes">Τελευταία επεισόδια</string>
+  <string name="LatestMovies">Τελευταίες ταινίες</string>
+  <string name="LatestTVRecordings">Τελευταίες τηλεοπτικές εγγραφές</string>
+  <string name="LatestMusic">Τελευταία μουσικά κομμάτια</string>
+  <string name="LatestMusicVideos">Πρόσφατα Βίντεο μουσικής</string>
+  <string name="RecentlyWatched">Προσφατα προβληθέντα</string>
+  <string name="RecordedOn">Καταγράφηκε στις:</string>
+  <!--MediaPortal Exit Buttons-->
+  <string name="MediaPortalExit">Έξοδος από το MediaPortal</string>
+  <string name="MediaPortalRestart">Επανεκίνηση MediaPortal</string>
+  <string name="MediaPortalShutDownMenu">Μενού τερματισμού λειτουργίας</string>
+  <string name="MediaPortalRestartMessage">Να γίνει επανεκίνηση του MediaPortal;</string>
+  <string name="MediaPortalSettings">MediaPortal Settings</string>
 </resources>
