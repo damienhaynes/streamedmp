@@ -15,7 +15,7 @@
       <description>group element</description>
       <animation effect="fade" time="200" delay="200">windowopen</animation>
       <posX>376</posX>
-      <posY>238</posY>
+      <posY>190</posY>
       <width>885</width>
       <height>750</height>
       <layout>StackLayout</layout>
@@ -86,6 +86,16 @@
         <onleft>6</onleft>
         <onright>#defaultcontrol.onright</onright>
         <onup>5</onup>
+        <ondown>14</ondown>
+        <width>885</width>
+      </control>
+	  <control Style="settingsmaincheckbutton">
+        <description>Ignore Parental Control Filter in Most Recents</description>
+        <type>checkbutton</type>
+        <id>14</id>
+        <onleft>6</onleft>
+        <onright>#defaultcontrol.onright</onright>
+        <onup>6</onup>
         <ondown>7</ondown>
         <width>885</width>
       </control>
@@ -95,7 +105,7 @@
         <id>7</id>
         <onleft>7</onleft>
         <onright>#defaultcontrol.onright</onright>
-        <onup>6</onup>
+        <onup>14</onup>
         <ondown>10</ondown>
         <width>885</width>
       </control>
