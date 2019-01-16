@@ -1,6 +1,6 @@
-﻿using System.Reflection;
+﻿using MediaPortal.Common.Utils;
+using System.Reflection;
 using System.Runtime.InteropServices;
-using MediaPortal.Common.Utils;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -10,7 +10,7 @@ using MediaPortal.Common.Utils;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("MediaPortal")]
 [assembly: AssemblyProduct("StreamedMP Editor")]
-[assembly: AssemblyCopyright("Copyright © 2006-2017")]
+[assembly: AssemblyCopyright("Copyright © 2006-2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -23,4 +23,4 @@ using MediaPortal.Common.Utils;
 [assembly: Guid("20efe727-8a7c-46e8-a526-a134e7a15a49")]
 
 [assembly: CompatibleVersion("1.6.100.0", "1.6.100.0")]
-[assembly: AssemblyVersion("3.2.1.1")]
+[assembly: AssemblyVersion("3.2.1.2")]

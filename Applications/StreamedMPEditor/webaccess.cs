@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-using System.Xml;
+﻿using ICSharpCode.SharpZipLib.Zip;
+using System;
 using System.IO;
 using System.Net;
 using System.Threading;
-using ICSharpCode.SharpZipLib.Zip;
+using System.Windows.Forms;
 
 namespace StreamedMPEditor
 {
@@ -103,6 +101,12 @@ namespace StreamedMPEditor
       {
         try
         {
+          // In .NET 4.0 default transport level security standard is TLS 1.1,
+          // Some endpoints will reject this older insecure standard.
+          // SecurityProtocolType in .NET 4.0 doesn’t have an entry for TLS1.2, 
+          // so we have to use a numerical representation of this enum value.
+          ServicePointManager.SecurityProtocol |= (SecurityProtocolType)3072;
+
           downloadForm.Enabled = false;
           webRequest = (HttpWebRequest)WebRequest.Create(optionDownloadURL);
           webRequest.Credentials = CredentialCache.DefaultCredentials;
