@@ -49,7 +49,7 @@
       <posY>19</posY>
       <width>330</width>
       <font>mediastream12c</font>
-      <label>#Trakt.Lists.CurrentUser</label>
+      <label>#(iif(eq(#Trakt.Lists.ListType,'User'),'#Trakt.Lists.CurrentUser','#Trakt.Lists.ListType'))</label>
       <align>right</align>
       <animation effect="fade" time="100" delay="0">visiblechange</animation>
       <animation effect="fade" time="150">WindowOpen</animation>
@@ -239,7 +239,7 @@
       <id>0</id>
       <posX>60</posX>
       <posY>360</posY>
-      <width>750</width>
+      <width>950</width>
       <font>mediastream14tc</font>
       <label>#Trakt.List.Name</label>
       <textcolor>ffFFFFFF</textcolor>
@@ -328,14 +328,80 @@
       <posX>60</posX>
       <posY>500</posY>
       <width>975</width>
-      <height>520</height>
+      <height>490</height>
       <font>mediastream11</font>
       <label>#Trakt.List.Description</label>
       <scrollStartDelaySec>12</scrollStartDelaySec>
       <animation effect="fade" time="250" delay="0">WindowClose</animation>
       <animation effect="fade" time="250" delay="0">WindowOpen</animation>
-      <visible>!string.equals(#Trakt.List.Description,N/A)</visible>
+      <visible>!string.equals(#Trakt.List.Description,--)+!string.equals(#Trakt.Lists.ListType,trending)</visible>
     </control>
+	<control>
+      <description>List Description</description>
+      <type>textboxscrollup</type>
+      <id>0</id>
+      <posX>60</posX>
+      <posY>500</posY>
+      <width>975</width>
+      <height>390</height>
+      <font>mediastream11</font>
+      <label>#Trakt.List.Description</label>
+      <scrollStartDelaySec>12</scrollStartDelaySec>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+      <visible>!string.equals(#Trakt.List.Description,--)+string.equals(#Trakt.Lists.ListType,trending)</visible>
+    </control>
+	
+	
+	<control Style="smallTitleB">
+      <description>Likes This Week Label</description>
+	  <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Translation.LikesThisWeek.Label</label>
+      <posX>60</posX>
+      <posY>900</posY>
+      <width>300</width>
+      <visible>!string.equals(#Trakt.List.LikesThisWeek,)+string.equals(#Trakt.Lists.ListType,trending)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+	<control Style="smallTitle">
+      <description>Likes This Week</description>
+	  <id>0</id>
+      <type>label</type>
+      <label>#Trakt.List.LikesThisWeek</label>
+      <posX>400</posX>
+      <posY>901</posY>
+      <visible>!string.equals(#Trakt.List.LikesThisWeek,)+string.equals(#Trakt.Lists.ListType,trending)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+	
+	<control Style="smallTitleB">
+      <description>Comments This Week Label</description>
+	  <id>0</id>
+      <type>label</type>
+      <label>#Trakt.Translation.CommentsThisWeek.Label</label>
+      <posX>60</posX>
+      <posY>940</posY>
+      <width>300</width>
+      <visible>!string.equals(#Trakt.List.CommentsThisWeek,)+string.equals(#Trakt.Lists.ListType,trending)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+	<control Style="smallTitle">
+      <description>Comments This Week</description>
+	  <id>0</id>
+      <type>label</type>
+      <label>#Trakt.List.CommentsThisWeek</label>
+      <posX>400</posX>
+      <posY>941</posY>
+      <visible>!string.equals(#Trakt.List.CommentsThisWeek,)+string.equals(#Trakt.Lists.ListType,trending)</visible>
+      <animation effect="fade" time="250" delay="0">WindowClose</animation>
+      <animation effect="fade" time="250" delay="0">WindowOpen</animation>
+    </control>
+	
+	
     <import>common.overlays.xml</import>
     <import>common.time.xml</import>
   </controls>

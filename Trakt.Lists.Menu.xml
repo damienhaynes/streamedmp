@@ -26,7 +26,7 @@
         <id>2</id>
         <label>#Trakt.Translation.WatchListMovies.Label</label>
         <hyperlink>87270</hyperlink>
-        <onup>5</onup>
+        <onup>8</onup>
         <onright>#defaultcontrol.onright</onright>
       </control>
       <control Style="settingsmainbutton">
@@ -51,6 +51,33 @@
         <id>5</id>
         <label>#Trakt.Translation.CustomLists.Label</label>
         <hyperlink>87275</hyperlink>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+	  <control Style="settingsmainbutton">
+        <description>TrendingLists</description>
+        <type>button</type>
+        <id>6</id>
+        <label>#Trakt.Translation.TrendingLists.Label</label>
+        <hyperlink>87275</hyperlink>
+		<hyperlinkParameter>trending</hyperlinkParameter>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+	  <control Style="settingsmainbutton">
+        <description>PopularLists</description>
+        <type>button</type>
+        <id>7</id>
+        <label>#Trakt.Translation.PopularLists.Label</label>
+        <hyperlink>87275</hyperlink>
+		<hyperlinkParameter>popular</hyperlinkParameter>
+        <onright>#defaultcontrol.onright</onright>
+      </control>
+	  <control Style="settingsmainbutton">
+        <description>LikedLists</description>
+        <type>button</type>
+        <id>8</id>
+        <label>#Trakt.Translation.LikedLists.Label</label>
+        <hyperlink>87275</hyperlink>
+		<hyperlinkParameter>liked</hyperlinkParameter>
         <onright>#defaultcontrol.onright</onright>
         <ondown>2</ondown>
       </control>
