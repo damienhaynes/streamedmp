@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<window>
+  <controls>
+		<control>
+      <description>Series WideBanners</description>
+      <type>group</type>
+      <animation effect="fade" time="150">WindowOpen</animation>
+      <animation effect="fade" time="250">WindowClose</animation>
+      <animation effect="slide" time="150" start="1800,0">WindowOpen</animation>
+      <animation effect="slide" time="250" end="1800,0">WindowClose</animation>
+      <control>
+        <type>facadeview</type>
+        <id>50</id>
+        <animation effect="fade" time="250" delay="0">WindowClose</animation>
+        <control>
+          <description>listcontrol</description>
+          <type>listcontrol</type>
+          <id>50</id>
+          <posX>850</posX>
+          <posY>360</posY>
+          <height>720</height>
+          <width>1070</width>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <scrollOffset>5</scrollOffset>
+          <itemWidth>190</itemWidth>
+          <itemHeight>36</itemHeight>
+          <IconXOff>45</IconXOff>
+          <IconYOff>12</IconYOff>
+          <textXOff>47</textXOff>
+          <textYOff>7</textYOff>
+          <textXOff2>0</textXOff2>
+          <textYOff2>7</textYOff2>
+          <textXOff3>112</textXOff3>
+          <textYOff3>15</textYOff3>
+          <font>mediastream12c</font>
+          <font2>mediastream10c</font2>
+          <font3>mediastream12tc</font3>
+          <keepaspectratio>yes</keepaspectratio>
+					<texturebg>-.png</texturebg>
+					<lefttexture>-.png</lefttexture>
+					<midtexture>osdprogressmid.png</midtexture>
+					<righttexture>-.png</righttexture>
+					<ProgressBarWidth>1000</ProgressBarWidth>
+					<ProgressBarHeight>3</ProgressBarHeight>
+					<ProgressBarXOffset>40</ProgressBarXOffset>
+					<ProgressBarYOffset>48</ProgressBarYOffset>
+					<SelectedProgressOnly>No</SelectedProgressOnly>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
+          <suffix>|</suffix>
+        </control>
+        <control>
+          <visible>control.isvisible(50)</visible>
+          <description>Filmstrip</description>
+          <type>filmstrip</type>
+          <id>50</id>
+          <onup>2</onup>
+          <posX>160</posX>
+          <posY>782</posY>
+          <width>1920</width>
+          <height>330</height>
+          <scrollOffset>4</scrollOffset>
+          <itemWidth>540</itemWidth>
+          <itemHeight>400</itemHeight>
+          <textureWidth>450</textureWidth>
+          <textureHeight>83</textureHeight>
+          <thumbWidth>495</thumbWidth>
+          <thumbHeight>92</thumbHeight>
+          <thumbPosX>10</thumbPosX>
+          <thumbPosY>10</thumbPosY>
+          <thumbs flipY="true" diffuse="diffusemirrorwide.png" />
+          <InfoImage>
+          </InfoImage>
+          <imageFolder>-</imageFolder>
+          <imageFolderFocus>-</imageFolderFocus>
+          <frame>-</frame>
+          <frameFocus>-</frameFocus>
+          <showFrame>no</showFrame>
+          <showFolder>yes</showFolder>
+          <showBackGround>no</showBackGround>
+          <showInfoImage>no</showInfoImage>
+          <thumbAnimation effect="zoom" start="100,100" end="140,140" tween="quadratic" time="0">focus</thumbAnimation>
+          <!-- Spin Controls -->
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+        </control>
+        <control>
+          <description>Thumbnail Panel</description>
+          <type>thumbnailpanel</type>
+          <id>50</id>
+          <onleft>2</onleft>
+          <onright>2</onright>
+          <posX>40</posX>
+          <posY>345</posY>
+          <width>1840</width>
+          <height>720</height>
+					
+          <!-- margin -->
+          <itemWidth>456</itemWidth>
+          <itemHeight>91</itemHeight>
+          <!-- frame texture -->
+          <textureWidth>456</textureWidth>
+          <textureHeight>96</textureHeight>
+          <!-- wide banners -->
+          <thumbWidth>441</thumbWidth>
+          <thumbHeight>81</thumbHeight>
+          <thumbPosX>7</thumbPosX>
+          <thumbPosY>7</thumbPosY>
+					
+          <!-- margin -->
+          <itemWidthBig>610</itemWidthBig>
+          <itemHeightBig>127</itemHeightBig>
+          <!-- frame texture -->
+          <textureWidthBig>607</textureWidthBig>
+          <textureHeightBig>127</textureHeightBig>
+          <!-- wide banners -->
+          <thumbWidthBig>585</thumbWidthBig>
+          <thumbHeightBig>111</thumbHeightBig>
+          <thumbPosXBig>10</thumbPosXBig>
+          <thumbPosYBig>7</thumbPosYBig>
+					
+          <imageFolderFocus>widebannerborder.png</imageFolderFocus>
+          <font>font12</font>
+          <suffix>|</suffix>
+          <thumbZoom>no</thumbZoom>
+          <enableFocusZoom>no</enableFocusZoom>
+          <!-- Spin Controls -->
+          <spinWidth>75</spinWidth>
+          <spinHeight>55</spinHeight>
+          <spinPosX>1762</spinPosX>
+          <spinPosY>1021</spinPosY>
+          <spinAlign>Right</spinAlign>
+          <spinColor>ff006698</spinColor>
+          <textureUp>arrow_round_up_nofocus.png</textureUp>
+          <textureDown>arrow_round_down_nofocus.png</textureDown>
+          <textureUpFocus>arrow_round_up_focus.png</textureUpFocus>
+          <textureDownFocus>arrow_round_down_focus.png</textureDownFocus>
+        </control>
+      </control>
+    </control>
+		<control>
+  		<description>Widebanner</description>
+  		<type>image</type>
+  		<id>1</id>
+  		<posX>80</posX>
+  		<posY>380</posY>
+  		<width>758</width>
+  		<height>140</height>
+  		<texture>#selectedthumb</texture>
+  		<visible>facadeview.list+Control.IsVisible(50)</visible>
+  		<animation effect="fade" time="250">WindowOpen</animation>
+  		<animation effect="fade" time="250">WindowClose</animation>
+  	</control>
+	</controls>
+</window>
