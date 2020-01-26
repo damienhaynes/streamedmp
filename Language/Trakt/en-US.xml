@@ -4,6 +4,7 @@
   <string name="Account">Account</string>
   <string name="AccountSetup">Account Setup</string>
   <string name="AccountDialog">Account Dialog</string>
+  <string name="ActivationUrl">ActivationURL</string>
   <string name="Actor">Actor</string>
   <string name="Actors">Actors</string>
   <string name="ActorAndRole">{0} as {1}</string>
@@ -36,6 +37,11 @@
   <string name="ActivityPaused">{0} paused {1} [{2}%]</string>
   <string name="ActivityLikedComment">{0} liked comment by {1} - {2}</string>
   <string name="ActivityLikedList">{0} liked list {1}</string>
+  <string name="ActivityHidCalendarItem">hid {0} from calendar</string>
+  <string name="ActivityHidRecommendation">hid {0} from recommedations</string>
+  <string name="ActivityHidProgressWatched">hid {0} from watched progress</string>
+  <string name="ActivityHidProgressCollection">hid {0} from collected progress</string>  
+ 
   <string name="Activities">Activities</string>
   <string name="ActivityFilterActions">Filter By Actions...</string>
   <string name="ActivityFilterTypes">Filter By Types...</string>
@@ -57,6 +63,7 @@
   <string name="AiredEpisodes">Aired Episodes</string>
   <string name="AirTime">Air Time</string>
   <string name="AppearsInList">{0} Lists</string>
+  <string name="ApplicationAuthWait">Waiting for user to login or create account at trakt.tv and allow access...</string>
   <string name="Approve">Approve</string>
   <string name="ApproveAndFollowBack">Approve and Follow Back</string>
   <string name="ApprovedDate">Approved Date</string>
@@ -76,6 +83,8 @@
   <string name="AssistantArtDirector">Assistant Art Director</string>
   <string name="AssistantDirector">Assistant Director</string>
   <string name="AssociateProducer">Associate Producer</string>
+  <string name="AuthorizeApplication">Authorize Application</string>
+  <string name="AuthorizingApplication">Authorizing Application</string>
   <!--B-->
   <string name="BestBoyElectric">Best Boy Electric</string>
   <string name="BufferingTrailer">Buffering Trailer</string>
@@ -96,8 +105,18 @@
   <string name="Canceled">Cancelled</string>
   <string name="Calendar">Calendar</string>
   <string name="CalendarMyShows">My Shows</string>
+  <string name="CalendarMyMovies">My Movies</string>
+  <string name="CalendarMyDVDs">My DVDs and Blurays</string>
+  <string name="CalendarMyNewShows">My New Shows</string>
+  <string name="CalendarMyPremieres">My Premieres</string>
+  <string name="CalendarMySeasonPremieres">My Season Premieres</string>  
   <string name="CalendarPremieres">Premieres</string>
+  <string name="CalendarAllPremieres">All Premieres</string>
+  <string name="CalendarAllMovies">All Movies</string>
+  <string name="CalendarAllDVDs">All DVDs and Blurays</string>
   <string name="CalendarAllShows">All Shows</string>
+  <string name="CalendarAllNewShows">All New Shows</string>
+  <string name="CalendarAllSeasonPremieres">All Season Premieres</string>  
   <string name="Cast">Cast</string>
   <string name="CastAndCrew">Cast and Crew</string>
   <string name="Casting">Casting</string>
@@ -121,6 +140,7 @@
   <string name="CreateAccountWebsite">Sorry, this feature is no longer\navailable. Please use the website\nto create an account.</string>
   <string name="Comment">Comment</string>
   <string name="Comments">Comments</string>
+  <string name="CommentsThisWeek">Comments this week</string>
   <string name="Community">Community</string>
   <string name="CommunityActivity">Community Activity</string>
   <string name="Compositors">Compositors</string>
@@ -144,6 +164,8 @@
   <string name="DateOneWeekAgo">1 Week Ago</string>
   <string name="DateTwoWeeksAgo">2 Weeks Ago</string>
   <string name="DateOneMonthAgo">1 Month Ago</string>
+  <string name="Day">Day</string>
+  <string name="Days">Days</string>
   <string name="Dead">Dead</string>
   <string name="Death">Death</string>
   <string name="Deny">Deny</string>
@@ -193,7 +215,9 @@
   <string name="FailedCreateList">Failed to create list online</string>
   <string name="FailedDeleteList">Failed to delete list from online</string>
   <string name="FailedLogin">Failed to login to trakt.tv, check username and password in settings</string>
+  <string name="FailedOnlineSettings">Failed to get online settings from trakt</string>
   <string name="FailedUpdateList">Failed to update list online</string>
+  <string name="FailedApplicationAuthorization">Failed to authorize user for application</string>
   <string name="FeatureNotAvailable">Sorry, this feature is currently not available</string>
   <string name="Filters">Filters</string>
   <string name="FirstAired">First Aired</string>
@@ -306,6 +330,10 @@
   <string name="Hated">Hated</string>
   <string name="HelicopterCamera">Helicopter Camera</string>
   <string name="HideTVShowsInWatchlist">Hide TV Shows in Watchlist</string>
+  <string name="Hide">Hide</string>
+  <string name="HideShow">Hide Show</string>
+  <string name="HideSeason">Hide Season</string>
+  <string name="HideMovie">Hide Movie</string>
   <string name="HideAdded">Hide Added</string>
   <string name="HideCommented">Hide Commented</string>
   <string name="HideComments">Hide Comments</string>
@@ -323,6 +351,10 @@
   <string name="HideUpdated">Hide Updated</string>
   <string name="HideWatched">Hide Watched</string>
   <string name="HideWatchlisted">Hide Watchlisted</string>
+  <string name="HideHiddenCalendarItems">Hide Hidden Calendar Items</string>
+  <string name="HideHiddenRecommendations">Hide Hidden Recommendations</string>
+  <string name="HideHiddenCollectedProgress">Hide Hidden Collected Progress</string>
+  <string name="HideHiddenWatchedProgress">Hide Hidden Watched Progress</string>
   <string name="HiddenToPreventSpoilers">This shout has been hidden to prevent spoilers, you can change this option from the menu.</string>
   <!--I-->
   <string name="IncludeMeInFriendsActivity">Include Me in Friends Activity</string>
@@ -347,7 +379,9 @@
   <string name="LibraryAndPlaybackSyncStarted">Manual Library and Playback Sync has started</string>
   <string name="LightingTechnician">Lighting Technician</string>
   <string name="Like">Like</string>
+  <string name="LikedLists">Liked Lists</string>
   <string name="Likes">Likes</string>
+  <string name="LikesThisWeek">Likes this week</string>
   <string name="LineProducer">Line Producer</string>
   <string name="List">List</string>
   <string name="Lists">Lists</string>
@@ -361,6 +395,7 @@
   <string name="MakeupArtist">Makeup Artist</string>
   <string name="MarkAsWatched">Mark as Watched</string>
   <string name="MarkAsUnWatched">Mark as UnWatched</string>
+  <string name="MaxDays">Max Days</string>
   <string name="Me">Me</string>
   <string name="Menu">Menu</string>
   <string name="Minutes">Minutes</string>
@@ -379,6 +414,8 @@
   <string name="NextEpisode">Next Episode</string>
   <string name="NextPage">Next Page</string>
   <string name="NextWeek">Next Week</string>
+  <string name="NextDays">Next {0} Days</string>
+  <string name="NDays">{0} Days</string>
   <string name="NoActivities">No activity found.</string>
   <string name="NoBoxOffice">No Box Office movies found!</string>
   <string name="NoCreditsFound">No credits found.</string>
@@ -386,6 +423,7 @@
   <string name="NoEpisodesInSeason">No Episodes are available in Season.</string>
   <string name="NoEpisodeSummary">Episode summary is currently not available.</string>
   <string name="NoEpisodesThisWeek">No episodes on this week</string>
+  <string name="NoMoviesThisWeek">No movies on this week</string>
   <string name="NoMovieSummary">Movie summary is currently not available.</string>
   <string name="NoShowSummary">Show summary is currently not available.</string>
   <string name="NoFriends">No Friends!</string>
@@ -451,6 +489,7 @@
   <string name="Public">Public</string>
   <string name="PreviousEpisode">Previous Episode</string>
   <string name="PreviousPage">Previous Page</string>
+  <string name="PreviousDays">Previous {0} Days</string>
   <string name="Private">Private</string>
   <string name="Privacy">Privacy</string>
   <string name="PrivacyPublic">Anyone can view this list</string>
@@ -511,10 +550,12 @@
   <string name="Requests">Requests</string>
   <string name="ReturningSeries">Returning Series</string>
   <string name="Revenue">Revenue</string>
+  <string name="RevokeAccess">Revoke Access: {0}</string>
   <string name="RiggingGaffer">Rigging Gaffer</string>
   <string name="RiggingGrip">Rigging Grip</string>
   <string name="Runtime">Runtime</string>
   <!--S-->
+  <string name="ScanQRCode">Scan QR Code or browse to {0} and enter in code {1} to authorize</string>
   <string name="ScenicArtist">Scenic Artist</string>
   <string name="ScoreEngineer">Score Engineer</string>
   <string name="Screenplay">Screenplay</string>
@@ -701,6 +742,7 @@
   <string name="Trailer">Trailer</string>
   <string name="Trailers">Trailers...</string>
   <!--U-->
+  <string name="UnHide">UnHide</string>
   <string name="UnLike">UnLike</string>
   <string name="UserHasNotWatchedEpisodes">User has not watched any episodes!</string>
   <string name="UserHasNotWatchedMovies">User has not watched any movies!</string>
@@ -710,7 +752,7 @@
   <string name="User">User</string>
   <string name="Users">Users</string>
   <string name="Username">Username</string>
-  <string name="UnAuthorized">Authentication failed, please check username and password in settings.</string>
+  <string name="UnAuthorized">Authentication failed, please authorize application again from settings</string>
   <string name="UnFollow">UnFollow</string>
   <string name="UnFollowMessage">Are you sure you no longer want\nto follow user {0}?</string>
   <string name="UnRate">UnRate</string>
@@ -721,9 +763,11 @@
   <string name="UpdatingFiltersMenuMovingPics">Updating Filters Menu in MovingPictures.</string>
   <string name="UpdatingFiltersMenuMovingPicsWarning">You can\'t remove trakt from the filters menu whilst they\'re still being updated!</string>
   <string name="UnableToPlayTrailer">Unable to play trailer.</string>
+  <string name="UserCode">User Code</string>
   <string name="UserIsProtected">The current user is protected!\nProtected users can only be viewed\nfrom the \'Friends\' view.</string>
   <string name="UserProfile">User Profile</string>
   <string name="UserRatingsDistribution">Ratings distribution 1 to 10 hearts</string>
+  <string name="UserLoginSuccess">User {0} successfully authorized to use trakt account</string>
   <!--V-->
   <string name="VideoAssistOperator">Video Assist Operator</string>
   <string name="VisualDevelopment">Visual Development</string>
@@ -754,6 +798,7 @@
   <string name="Writer">Writer</string>
   <string name="Writers">Writers</string>
   <string name="Writing">Writing</string>
+  <string name="WifiRemotePluginInCompatible">Your version of WifiRemote conflicts with\nthis version of Trakt.\nThe Rate dialog can not be shown.</string>
   <!--Y-->
   <string name="Year">Year</string>
   <string name="Yes">Yes</string>
