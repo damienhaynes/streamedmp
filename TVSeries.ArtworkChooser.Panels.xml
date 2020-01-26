@@ -2,7 +2,7 @@
 <window>
   <controls>
 		<control>
-      <description>Series Fanart</description>
+      <description>Series Fanart / Episode Stills</description>
       <type>group</type>
       <animation effect="fade" time="150">WindowOpen</animation>
       <animation effect="fade" time="250">WindowClose</animation>
@@ -150,14 +150,14 @@
       </control>
     </control>
 		<control>
-  		<description>Fanart</description>
+  		<description>Fanart / Episode Stills</description>
   		<type>image</type>
   		<id>1</id>
   		<posX>40</posX>
   		<posY>380</posY>
   		<width>994</width>
   		<height>559</height>
-  		<texture>#selectedthumb</texture>
+			<texture>#selectedthumb</texture>
   		<visible>![facadeview.filmstrip|facadeview.coverflow]+Control.IsVisible(50)</visible>
   		<animation effect="fade" time="250">WindowOpen</animation>
   		<animation effect="fade" time="250">WindowClose</animation>

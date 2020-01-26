@@ -176,7 +176,7 @@
     </control>
 		<!-- Facade -->
 		<include condition="#(or(eq(#TVSeries.Artwork.Type,'SeriesPoster'),eq(#TVSeries.Artwork.Type,'SeasonPoster')))">TVSeries.ArtworkChooser.Posters.xml</include>
-		<include condition="#(eq(#TVSeries.Artwork.Type,'SeriesFanart'))">TVSeries.ArtworkChooser.Panels.xml</include>
+		<include condition="#(or(eq(#TVSeries.Artwork.Type,'SeriesFanart'),eq(#TVSeries.Artwork.Type,'EpisodeThumb')))">TVSeries.ArtworkChooser.Panels.xml</include>
 		<include condition="#(eq(#TVSeries.Artwork.Type,'SeriesBanner'))">TVSeries.ArtworkChooser.Banners.xml</include>
     <!-- Hidden Menu -->
     <control>
