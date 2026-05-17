@@ -377,7 +377,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1560</posX>
-        <posY>667</posY>
+        <posY>707</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="450,0">visible</animation>
         <animation effect="slide" time="0" end="450,0">hidden</animation>
@@ -389,7 +389,7 @@
         <type>label</type>
         <font>mediastream12tc</font>
         <posX>1560</posX>
-        <posY>795</posY>
+        <posY>835</posY>
         <visible>!Control.HasFocus(50)</visible>
         <animation effect="slide" time="100" start="450,0">visible</animation>
         <animation effect="slide" time="0" end="450,0">hidden</animation>
@@ -456,6 +456,13 @@
           <onleft>50</onleft>
         </control>
         <control>
+          <description>Hide Favorited</description>
+          <type>checkbutton</type>
+          <id>13</id>
+          <label>#Trakt.Translation.HideFavorited.Label</label>
+          <onleft>50</onleft>
+        </control>
+        <control>
           <description>Empty button</description>
           <type>button</type>
           <id>0</id>
@@ -468,7 +475,7 @@
           <id>11899</id>
           <label>#Trailers.Translation.Search.Label / #Trailers.Translation.Play.Label...</label>
           <ondown>9999</ondown>
-          <onup>12</onup>
+          <onup>13</onup>
           <onleft>50</onleft>
           <onright>50</onright>
         </control>
